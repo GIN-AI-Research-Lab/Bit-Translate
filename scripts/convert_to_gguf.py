@@ -70,10 +70,15 @@ def main():
                     help="linears F16 thay vì F32 -> file ~1/2 (dễ tải qua mạng cloud chậm). "
                          "i2_s sau khi quantize GIỐNG HỆT bản F32 (llama-quantize đọc về f32 nội bộ). "
                          "norms+embed VẪN F32 (kernel bitnet đòi src1 f32).")
+    ap.add_argument("--d-model", type=int, default=768)
+    ap.add_argument("--d-ff", type=int, default=2048)
+    ap.add_argument("--n-layers", type=int, default=12)
+    ap.add_argument("--n-heads", type=int, default=12)
     args = ap.parse_args()
 
     sp = spm.SentencePieceProcessor(model_file=args.tokenizer)
-    cfg = BitNetConfig(vocab_size=sp.get_piece_size())
+    cfg = BitNetConfig(vocab_size=sp.get_piece_size(), d_model=args.d_model,
+                       d_ff=args.d_ff, n_layers=args.n_layers, n_heads=args.n_heads)
     model = BitNetLM(cfg).eval()
     if args.ckpt:
         ck = torch.load(args.ckpt, map_location="cpu")
@@ -106,8 +111,20 @@ def main():
     def t32(t):
         return t.detach().float().numpy()
 
-    def tlin(t):  # linear weights: F16 nếu --f16 (tải nhẹ), mặc định F32
-        return t.detach().to(torch.float16).numpy() if args.f16 else t.detach().float().numpy()
+    def weight_quant_ternary(w):
+        """Giải-lượng-tử ternary GIỐNG HỆT src/bitnet.py weight_quant: trả về
+        {-m, 0, +m} với m=mean|w|. BẮT BUỘC: quantize_i2_s của bitnet.cpp gán
+        ternary theo DẤU + scale=max|w| (KHÔNG tự chuẩn hoá absmean). Nếu lưu
+        weight master thô (~0.02) thì phân bố sai -> model chạy ra 0 -> câm.
+        Lưu dạng {-m,0,+m}: kernel sign+max khôi phục ĐÚNG ternary t và scale=m,
+        tái tạo chính xác weight lúc train = t*m."""
+        wf = w.detach().float()
+        s = 1.0 / wf.abs().mean().clamp(min=1e-5)
+        return (wf * s).round().clamp(-1, 1) / s
+
+    def tlin(t):  # linear weights: áp weight_quant TRƯỚC, rồi F16 nếu --f16
+        q = weight_quant_ternary(t)
+        return q.to(torch.float16).numpy() if args.f16 else q.numpy()
 
     w.add_tensor("token_embd.weight", t32(model.embed.weight))
     w.add_tensor("output_norm.weight", t32(model.output_norm.weight))
