@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Data (large, gathered/generated — not source)
+data/raw/
+data/interim/
+data/clean/
+data/bin/
+data/synthetic/
+data/bin_build.log
+
+# Model checkpoints, weights, exported artifacts (large binaries)
+checkpoints/
+models/
+dist/
+
+# Tokenizer training log (keep the trained model files themselves)
+tokenizer/train.log
+
+# Editor/OS
+.DS_Store
