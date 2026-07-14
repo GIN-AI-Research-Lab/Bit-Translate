@@ -2,7 +2,7 @@
 
 > Bản đồ vị trí mọi checkpoint/model/data. **Cập nhật 2026-07-14.**
 > ⚠️ Các file nặng dưới đây **KHÔNG nằm trong git** (`.gitignore` loại `checkpoints/ cloud_backup/ dist/ data/`).
-> Ổ đĩa local `e:\Bit-Translate\` là **bản duy nhất** (trừ bản trên GitHub Release). Nên backup thêm 1 chỗ.
+> **Backup:** data + checkpoint train + model deploy đã có **bản trên GitHub Release** (mục cuối) — mất ổ local vẫn tải lại được. Các milestone cũ (5900/7700/4000) chỉ có ở local.
 
 ## Checkpoint để TRAIN TIẾP (Bước 5)
 
@@ -35,12 +35,27 @@
 
 Giải nén để train tiếp: `tar -I zstd -xf cloud_backup/vija_data.tar.zst` → ra `data/bin/`.
 
-## GitHub Release
+## GitHub Release (repo `github.com/trituenguyen97/Bit-Translate`, private)
 
-- Repo: `github.com/trituenguyen97/Bit-Translate` (private) — code + docs; binary gitignored.
-- Release **v1.0-step14000**: https://github.com/trituenguyen97/Bit-Translate/releases/tag/v1.0-step14000
-- Assets: `vija-1p58-step14000-i2s.gguf` (68MB) + `spm_vija_32k.model` (tokenizer).
-- Tải về: `gh release download v1.0-step14000 --repo trituenguyen97/Bit-Translate` (hoặc từ trang release).
+Code + docs ở git; binary ở 2 release dưới đây (cần `gh auth login` để tải vì repo private):
+
+**Deploy — `v1.0-step14000`**: https://github.com/trituenguyen97/Bit-Translate/releases/tag/v1.0-step14000
+- `vija-1p58-step14000-i2s.gguf` (68MB, i2_s CPU) + `spm_vija_32k.model` (tokenizer).
+
+**Train — `train-assets-step14000`**: https://github.com/trituenguyen97/Bit-Translate/releases/tag/train-assets-step14000
+- `vija_data.tar.zst` (319MB, `data/bin/` + flores) + `last_final_14000.pt` (1.3GB, fp32+optimizer).
+- → **Đây là bản backup trên GitHub của data + checkpoint** (đồng bộ với `cloud_backup/`).
+
+**Dựng node mới để train (một mạch):**
+```bash
+git clone git@github.com:trituenguyen97/Bit-Translate.git ~/Train-model-translate
+cd ~/Train-model-translate && bash cloud/setup_cloud.sh && gh auth login
+gh release download train-assets-step14000 --repo trituenguyen97/Bit-Translate
+tar -I zstd -xf vija_data.tar.zst && mkdir -p checkpoints && mv last_final_14000.pt checkpoints/last.pt
+# 12GB VRAM: sed -i 's/8192 --grad-accum 16/4096 --grad-accum 32/' cloud/run_cloud.sh
+# Train TIẾP: tăng --max-steps trong cloud/run_cloud.sh (>14000)
+nohup bash cloud/run_cloud.sh > checkpoints/cloud.log 2>&1 &
+```
 
 ## Cloud node (ckey.vn)
 
