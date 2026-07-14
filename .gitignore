@@ -15,6 +15,7 @@ data/bin_build.log
 checkpoints/
 models/
 dist/
+cloud_backup/
 
 # Tokenizer training log (keep the trained model files themselves)
 tokenizer/train.log

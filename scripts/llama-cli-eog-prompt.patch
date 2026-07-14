@@ -1,0 +1,42 @@
+diff --git a/examples/main/main.cpp b/examples/main/main.cpp
+index fb10c20..9c93ad9 100644
+--- a/examples/main/main.cpp
++++ b/examples/main/main.cpp
+@@ -497,6 +497,7 @@ int main(int argc, char ** argv) {
+ 
+     bool is_antiprompt        = false;
+     bool input_echo           = true;
++    bool did_sample           = false; // PATCH: chi break EOG khi token do model sinh ra
+     bool display              = true;
+     bool need_to_save_session = !path_session.empty() && n_matching_session_tokens < embd_inp.size();
+ 
+@@ -686,6 +687,7 @@ int main(int argc, char ** argv) {
+             // LOG_DBG("last: %s\n", string_from(ctx, smpl->prev.to_vector()).c_str());
+ 
+             embd.push_back(id);
++            did_sample = true; // PATCH
+ 
+             // echo this to console
+             input_echo = true;
+@@ -906,7 +908,7 @@ int main(int argc, char ** argv) {
+         }
+ 
+         // end of generation
+-        if (!embd.empty() && llama_token_is_eog(model, embd.back()) && !(params.interactive)) {
++        if (did_sample && !embd.empty() && llama_token_is_eog(model, embd.back()) && !(params.interactive)) { // PATCH
+             LOG(" [end of text]\n");
+             break;
+         }
+diff --git a/src/ggml-bitnet-mad.cpp b/src/ggml-bitnet-mad.cpp
+index 4ba9d65..ad18bac 100644
+--- a/src/ggml-bitnet-mad.cpp
++++ b/src/ggml-bitnet-mad.cpp
+@@ -808,7 +808,7 @@ void ggml_vec_dot_i2_i8_s_Nx1(int n, float * s, size_t bs, const void * vx, size
+             accu[iy] = _mm256_setzero_si256();
+         }
+ 
+-        int8_t * y_col = y + col * by;
++        const int8_t * y_col = y + col * by;
+         
+         for (int i = 0; i < group32_num; i++) {
+             const uint8_t *px = x + i * 1024;

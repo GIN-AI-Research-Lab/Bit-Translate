@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VI⇄JA BitNet 1.58-bit — Re-translate Demo</title>
+<style>
+  :root {
+    --bg: #0f1216; --panel: #171c22; --panel2: #1d242c; --line: #2a333d;
+    --text: #e6ebf0; --dim: #8b98a5; --acc: #4fc3f7; --ok: #7ee787; --warn: #f0b429;
+    font-size: 15px;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--text); min-height: 100vh;
+    font-family: "Segoe UI", "Yu Gothic UI", system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; padding: 1.2rem;
+  }
+  .wrap { width: 100%; max-width: 880px; }
+  header { display: flex; align-items: baseline; gap: .8rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  h1 { font-size: 1.05rem; font-weight: 600; letter-spacing: .02em; }
+  h1 .bit { color: var(--acc); }
+  .sub { color: var(--dim); font-size: .8rem; }
+  .row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+  .dirbar { margin-bottom: .7rem; }
+  .dir { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .dir button {
+    background: var(--panel); color: var(--dim); border: 0; padding: .45rem 1rem;
+    font: inherit; cursor: pointer;
+  }
+  .dir button.on { background: var(--acc); color: #082030; font-weight: 600; }
+  select, input[type=range] { accent-color: var(--acc); }
+  select {
+    background: var(--panel); color: var(--text); border: 1px solid var(--line);
+    border-radius: 6px; padding: .3rem .4rem; font: inherit; font-size: .82rem;
+  }
+  label.opt { color: var(--dim); font-size: .8rem; display: flex; gap: .35rem; align-items: center; }
+  .io { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+  @media (max-width: 720px) { .io { grid-template-columns: 1fr; } }
+  textarea, .out {
+    width: 100%; min-height: 9.5rem; background: var(--panel); color: var(--text);
+    border: 1px solid var(--line); border-radius: 10px; padding: .8rem .9rem;
+    font: inherit; font-size: 1.15rem; line-height: 1.55; resize: vertical;
+  }
+  textarea:focus { outline: 1px solid var(--acc); }
+  .out { background: var(--panel2); white-space: pre-wrap; overflow-wrap: anywhere; position: relative; }
+  .out.busy { border-color: var(--acc); }
+  .out .ph { color: var(--dim); }
+  .statusline { height: 1.3rem; color: var(--dim); font-size: .78rem; margin: .35rem 0 .8rem; }
+  .statusline .err { color: #ff7b72; }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(122px, 1fr));
+    gap: .55rem; margin-top: .2rem;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 9px;
+    padding: .55rem .7rem;
+  }
+  .card .k { color: var(--dim); font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; }
+  .card .v { font-size: 1.18rem; font-variant-numeric: tabular-nums; margin-top: .15rem; }
+  .card .v small { font-size: .7rem; color: var(--dim); }
+  canvas { width: 100%; height: 46px; background: var(--panel); border: 1px solid var(--line); border-radius: 9px; margin-top: .55rem; }
+  footer { color: var(--dim); font-size: .72rem; margin-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>VI⇄JA dịch máy <span class="bit">BitNet 1.58-bit</span> · 68MB · CPU</h1>
+    <span class="sub">re-translate liên tục khi gõ (mô phỏng STT partial)</span>
+  </header>
+
+  <div class="row dirbar">
+    <div class="dir">
+      <button id="d-jpn" class="on">VI → JA</button>
+      <button id="d-vie">JA → VI</button>
+    </div>
+    <label class="opt">debounce <input id="deb" type="range" min="0" max="500" step="50" value="150">
+      <span id="debv">150ms</span></label>
+    <label class="opt">max token
+      <select id="npred"><option>48</option><option selected>96</option><option>160</option></select>
+    </label>
+  </div>
+
+  <div class="io">
+    <textarea id="src" autofocus placeholder="Gõ tiếng Việt ở đây — dịch liên tục theo từng phím…"></textarea>
+    <div class="out" id="out"><span class="ph">bản dịch hiện ở đây</span></div>
+  </div>
+  <div class="statusline" id="status"></div>
+
+  <div class="grid">
+    <div class="card"><div class="k">Độ trễ (client)</div><div class="v" id="m-lat">–</div></div>
+    <div class="card"><div class="k">Sinh</div><div class="v" id="m-gen">–</div></div>
+    <div class="card"><div class="k">Tốc độ sinh</div><div class="v" id="m-tps">–</div></div>
+    <div class="card"><div class="k">Prompt eval</div><div class="v" id="m-pp">–</div></div>
+    <div class="card"><div class="k">RAM server</div><div class="v" id="m-rss">–</div></div>
+    <div class="card"><div class="k">CPU server</div><div class="v" id="m-cpu">–</div></div>
+    <div class="card"><div class="k">Requests</div><div class="v" id="m-req">0<small> / bỏ 0</small></div></div>
+  </div>
+  <canvas id="spark" width="880" height="46" title="độ trễ 60 request gần nhất (ms)"></canvas>
+
+  <footer>model step4000 (29% train) · llama-server + KV prefix cache (cache_prompt) · gõ thêm ký tự chỉ tốn phần chênh prompt</footer>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+let dir = "jpn";               // "jpn" = VI->JA, "vie" = JA->VI
+let inflight = false;          // single-flight: chỉ 1 request tại một thời điểm
+let pendingText = null;        // latest-wins: text mới nhất chờ dịch
+let composing = false;         // đang gõ IME (tiếng Nhật)
+let timer = null;
+let nSent = 0, nSuperseded = 0;
+const latHist = [];
+
+function setDir(d) {
+  dir = d;
+  $("d-jpn").classList.toggle("on", d === "jpn");
+  $("d-vie").classList.toggle("on", d === "vie");
+  $("src").placeholder = d === "jpn"
+    ? "Gõ tiếng Việt ở đây — dịch liên tục theo từng phím…"
+    : "ここに日本語を入力 — 打つたびに翻訳します…";
+  queueTranslate();
+}
+$("d-jpn").onclick = () => setDir("jpn");
+$("d-vie").onclick = () => setDir("vie");
+$("deb").oninput = () => $("debv").textContent = $("deb").value + "ms";
+
+function queueTranslate() {
+  clearTimeout(timer);
+  timer = setTimeout(fire, +$("deb").value);
+}
+
+async function fire() {
+  const text = $("src").value;
+  if (inflight) { pendingText = text; return; }   // đè request cũ: chỉ giữ bản mới nhất
+  inflight = true;
+  $("out").classList.add("busy");
+  const t0 = performance.now();
+  try {
+    const r = await fetch("/translate", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ text, dir, n_predict: +$("npred").value }),
+    });
+    const j = await r.json();
+    const lat = performance.now() - t0;
+    nSent++;
+    if (j.error) {
+      $("status").innerHTML = `<span class="err">lỗi: ${j.error}</span>`;
+    } else {
+      $("out").textContent = j.translation || "";
+      if (!j.translation) $("out").innerHTML = '<span class="ph">bản dịch hiện ở đây</span>';
+      $("status").textContent = "";
+      paintTimings(j, lat);
+    }
+  } catch (e) {
+    $("status").innerHTML = `<span class="err">mất kết nối sidecar: ${e.message}</span>`;
+  } finally {
+    inflight = false;
+    $("out").classList.remove("busy");
+    if (pendingText !== null) {          // co text moi hon toi trong luc ban
+      pendingText = null;
+      nSuperseded++;
+      fire();                            // fire() tu doc gia tri textarea moi nhat
+    }
+  }
+}
+
+function paintTimings(j, lat) {
+  const t = j.timings || {};
+  latHist.push(lat); if (latHist.length > 60) latHist.shift();
+  $("m-lat").textContent = lat.toFixed(0) + " ms";
+  $("m-gen").innerHTML = `${t.predicted_n ?? "–"}<small> tok / ${(t.predicted_ms ?? 0).toFixed(0)}ms</small>`;
+  $("m-tps").innerHTML = `${(t.predicted_per_second ?? 0).toFixed(0)}<small> tok/s</small>`;
+  $("m-pp").innerHTML = `${t.prompt_n ?? 0}<small> tok / ${(t.prompt_ms ?? 0).toFixed(0)}ms</small>`;
+  $("m-req").innerHTML = `${nSent}<small> / bỏ ${nSuperseded}</small>`;
+  drawSpark();
+}
+
+function drawSpark() {
+  const c = $("spark"), ctx = c.getContext("2d");
+  ctx.clearRect(0, 0, c.width, c.height);
+  if (!latHist.length) return;
+  const max = Math.max(...latHist, 200), w = c.width / 60;
+  ctx.fillStyle = "#4fc3f7";
+  latHist.forEach((v, i) => {
+    const h = Math.max(2, v / max * (c.height - 6));
+    ctx.fillRect(i * w + 1, c.height - h - 2, w - 2, h);
+  });
+  ctx.fillStyle = "#8b98a5"; ctx.font = "10px monospace";
+  ctx.fillText(max.toFixed(0) + "ms max", 6, 12);
+}
+
+// nhập liệu: bỏ qua khi đang gõ IME, dịch ngay khi chốt IME
+$("src").addEventListener("compositionstart", () => composing = true);
+$("src").addEventListener("compositionend", () => { composing = false; queueTranslate(); });
+$("src").addEventListener("input", () => { if (!composing) queueTranslate(); });
+
+// poll tài nguyên server mỗi giây
+setInterval(async () => {
+  try {
+    const s = await (await fetch("/stats")).json();
+    if (s.rss_mb !== undefined) {
+      $("m-rss").innerHTML = `${s.rss_mb.toFixed(0)}<small> MB</small>`;
+      $("m-cpu").innerHTML = `${s.cpu_pct.toFixed(0)}%<small> · ${s.threads} thr</small>`;
+    }
+  } catch {}
+}, 1000);
+</script>
+</body>
+</html>

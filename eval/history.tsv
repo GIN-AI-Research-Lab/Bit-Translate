@@ -1,0 +1,4 @@
+# Lịch sử eval — nguồn: bitnet.cpp i2_s (deployed artifact), FLORES devtest, greedy, n=100/chiều
+# Lưu ý: khác fidelity với evaluate.py (GPU/quant-aware). So sánh trong cùng nguồn.
+step=4000	flores_vi-ja=17.29	flores_ja-vi=35.75	(bitnet.cpp-i2s, n=100)
+step=5900	flores_vi-ja=18.00	flores_ja-vi=39.07	(bitnet.cpp-i2s, n=100)

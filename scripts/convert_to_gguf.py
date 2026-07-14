@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""Convert our BitNetLM checkpoint -> GGUF (arch "bitnet") for bitnet.cpp.
+"""Convert our BitNetLM checkpoint -> GGUF (arch "bitnet-b1.58") for bitnet.cpp.
 
 Writes an F32 GGUF with the exact tensor names + metadata bitnet.cpp expects
 (verified from the reference GGUF), plus the embedded SentencePiece tokenizer.
-Then run `llama-quantize <out> <i2s> i2_s` to get the ternary model, and
-`llama-cli`/`llama-bench` to run it.
+Then quantize — BẮT BUỘC single-thread (tham số cuối `1`):
+
+    llama-quantize <out> <i2s> I2_S 1
+
+CẢNH BÁO: bỏ số `1` (nthreads) là llama-quantize chạy đa luồng và GHI HỎNG
+i2_s: ggml_quantize_chunk đặt mỗi chunk tại start_row*row_size (stride 4x quá
+xa so với dữ liệu packed 2-bit), per-tensor scale bị ghi đè/lạc chỗ; runtime
+đọc scale tại offset ne0*ne1/4 (ggml.c:12457) trúng vùng chưa ghi = 0.0
+-> MỌI matmul ternary ra đúng 0 -> model câm. Pipeline chính chủ luôn truyền
+nthreads=1 (setup_env.py). Chỉ i2_s dính lỗi này; Q8_0/F16 quantize an toàn.
 
 With --ckpt: convert a trained model. Without: build an UNTRAINED model (for
 validating the conversion+run path before committing to a long retrain).
