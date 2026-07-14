@@ -35,6 +35,34 @@ def upstream_json(path, payload=None, timeout=60):
         return json.loads(r.read())
 
 
+# Model train theo CẶP 1-CÂU -> 1-CÂU (data OPUS/pivot/synth đều căn theo câu) và
+# nhả EOS sau mỗi câu -> KHÔNG dịch được cả đoạn trong 1 lần. Giải pháp chuẩn của
+# NMT câu-level: tách input thành câu, dịch từng câu, ghép lại. Dấu kết câu: JP
+# 。．！？ (luôn tách) + Latin .!? khi theo sau là khoảng trắng/cuối, và mỗi dòng.
+_TERM = re.compile(r"([。．！？!?]+|\.(?=\s)|\.(?=$))")
+
+
+def segment(text):
+    segs = []
+    for line in text.replace("\r", "").split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        for s in _TERM.sub(lambda m: m.group(0) + "\x00", line).split("\x00"):
+            s = s.strip()
+            if s:
+                segs.append(s)
+    return segs
+
+
+def translate_seg(seg, tag, n_predict, cache):
+    ids = [BOS, tag] + upstream_json("/tokenize", {"content": seg})["tokens"] + [EOS]
+    out = upstream_json("/completion", {
+        "prompt": ids, "n_predict": n_predict, "temperature": 0.0, "cache_prompt": cache,
+    })
+    return (out.get("content") or "").strip(), out.get("timings", {}), len(ids)
+
+
 _pid = None
 _last_cpu = (0.0, 0.0)  # (giây CPU tiến trình, wall time)
 
@@ -92,22 +120,33 @@ class Handler(BaseHTTPRequestHandler):
         try:
             req = json.loads(self.rfile.read(n))
             text = (req.get("text") or "").strip()
-            tag = TAG.get(req.get("dir", "jpn"), TAG["jpn"])
+            dirn = req.get("dir", "jpn")
+            tag = TAG.get(dirn, TAG["jpn"])
             if not text:
                 return self._send(200, {"translation": "", "timings": {}, "wall_ms": 0})
             t0 = time.time()
-            ids = [BOS, tag] + upstream_json("/tokenize", {"content": text})["tokens"] + [EOS]
-            out = upstream_json("/completion", {
-                "prompt": ids,
-                "n_predict": int(req.get("n_predict", 96)),
-                "temperature": 0.0,
-                "cache_prompt": True,  # KV prefix reuse: gõ thêm chỉ tốn phần chênh
-            })
+            n_predict = int(req.get("n_predict", 96))
+            segs = segment(text)
+            joiner = "" if dirn == "jpn" else " "   # target JA không cách chữ, VI có
+            outs, pn, pms, gn, gms, plen = [], 0, 0.0, 0, 0.0, 0
+            for i, s in enumerate(segs):
+                # câu CUỐI để cache_prompt=True: re-translate khi gõ tiếp chỉ tốn phần chênh
+                txt, tm, il = translate_seg(s, tag, n_predict, i == len(segs) - 1)
+                outs.append(txt)
+                pn += tm.get("prompt_n", 0); pms += tm.get("prompt_ms", 0.0)
+                gn += tm.get("predicted_n", 0); gms += tm.get("predicted_ms", 0.0)
+                plen += il
             self._send(200, {
-                "translation": (out.get("content") or "").strip(),
-                "timings": out.get("timings", {}),
+                "translation": joiner.join(outs),
+                "n_segments": len(segs),
+                "timings": {
+                    "prompt_n": pn, "prompt_ms": round(pms, 1),
+                    "predicted_n": gn, "predicted_ms": round(gms, 1),
+                    "predicted_per_second": (gn / (gms / 1000.0)) if gms else 0,
+                    "prompt_per_second": (pn / (pms / 1000.0)) if pms else 0,
+                },
                 "wall_ms": round((time.time() - t0) * 1000, 1),
-                "prompt_len": len(ids),
+                "prompt_len": plen,
             })
         except Exception as e:  # noqa: BLE001 - demo: trả lỗi về UI
             self._send(500, {"error": str(e)})
