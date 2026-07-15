@@ -20,6 +20,22 @@ PY=python3
 REPO=trituenguyen97/Bit-Translate
 say(){ echo -e "\n==================== $* ===================="; }
 
+# Khoá chống chạy trùng: back-translation/mix ghi đè cùng file (resume-by-line-count
+# không an toàn khi 2 tiến trình cùng đọc "đã có N dòng" rồi cùng append từ N), và
+# train.py chạy 2 lần sẽ tranh nhau 1 GPU (bài học cũ: "2 process tranh GPU -> kẹt").
+LOCK=checkpoints/.prep_vong1.lock
+mkdir -p checkpoints
+if [ -f "$LOCK" ]; then
+  OLD_PID=$(cat "$LOCK" 2>/dev/null || echo "")
+  if [ -n "$OLD_PID" ] && tr '\0' ' ' < "/proc/$OLD_PID/cmdline" 2>/dev/null | grep -q "prep_vong1.sh"; then
+    echo "!! prep_vong1.sh ĐANG CHẠY (PID $OLD_PID) -> không chạy trùng. Xem tiến độ: tail -f checkpoints/train.log"
+    exit 1
+  fi
+  echo "(lock cũ PID $OLD_PID không còn sống -> dọn, chạy tiếp)"
+fi
+echo $$ > "$LOCK"
+trap 'rm -f "$LOCK"' EXIT
+
 # preflight: gh phải đăng nhập mới tải được release của repo PRIVATE.
 # (chưa auth -> API trả 404 "release not found", gây hiểu nhầm là mất release)
 if ! command -v gh >/dev/null 2>&1; then

@@ -26,6 +26,17 @@ ARGS="--max-tokens $MT --grad-accum $GA --max-steps $STEPS --lr-anchor $ANCHOR \
 mkdir -p checkpoints
 if [ ! -f checkpoints/last.pt ]; then echo "THIẾU checkpoints/last.pt — chạy prep_vong1.sh trước"; exit 1; fi
 
+# Chặn 2 launcher/train.py cùng chạy (tranh 1 GPU -> cả hai kẹt không tiến,
+# bài học từ lần train 14000). pgrep -c tự match cả tiến trình shell hiện tại
+# nên KHÔNG dùng; đếm đúng bằng /proc/<pid>/cmdline.
+for pid in $(pgrep -f 'scripts/train.py' 2>/dev/null); do
+  [ "$pid" = "$$" ] && continue
+  if tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null | grep -q 'scripts/train.py'; then
+    echo "!! đã có train.py chạy (PID $pid) -> không launch trùng. Theo dõi: tail -f checkpoints/train.log"
+    exit 1
+  fi
+done
+
 # Log của lần train base (đã chứa 'training loop exited' @14000) sẽ làm vòng lặp
 # hiểu nhầm là XONG ngay. Lưu nó sang bên 1 lần, để train.log của Vòng 1 sạch.
 if [ ! -f checkpoints/train.prevong1.log ] && [ -f checkpoints/train.log ]; then
