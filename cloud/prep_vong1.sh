@@ -20,6 +20,15 @@ PY=python3
 REPO=trituenguyen97/Bit-Translate
 say(){ echo -e "\n==================== $* ===================="; }
 
+# preflight: gh phải đăng nhập mới tải được release của repo PRIVATE.
+# (chưa auth -> API trả 404 "release not found", gây hiểu nhầm là mất release)
+if ! command -v gh >/dev/null 2>&1; then
+  echo "!! chưa cài gh. Chạy: conda install -y gh -c conda-forge  (rồi gh auth login)"; exit 1
+fi
+if ! gh auth status >/dev/null 2>&1; then
+  echo "!! gh CHƯA đăng nhập -> chạy: gh auth login (GitHub.com, HTTPS, PAT scope 'repo'). Rồi chạy lại."; exit 1
+fi
+
 # 0) base data + checkpoint (release train-assets-step14000) --------------------
 if [ ! -f data/bin/train.tokens.u16 ]; then
   say "Thiếu data/bin base -> tải release train-assets-step14000"
