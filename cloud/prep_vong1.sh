@@ -23,19 +23,21 @@ say(){ echo -e "\n==================== $* ===================="; }
 # 0) base data + checkpoint (release train-assets-step14000) --------------------
 if [ ! -f data/bin/train.tokens.u16 ]; then
   say "Thiếu data/bin base -> tải release train-assets-step14000"
-  gh release download train-assets-step14000 --repo "$REPO" --pattern 'vija_data.tar.zst' --clobber
+  rm -f vija_data.tar.zst
+  gh release download train-assets-step14000 --repo "$REPO" --pattern 'vija_data.tar.zst'
   tar -I zstd -xf vija_data.tar.zst
 fi
 if [ ! -f checkpoints/last.pt ]; then
   say "Thiếu checkpoints/last.pt -> dùng last_final_14000.pt"
-  [ -f last_final_14000.pt ] || gh release download train-assets-step14000 --repo "$REPO" --pattern 'last_final_14000.pt' --clobber
+  [ -f last_final_14000.pt ] || gh release download train-assets-step14000 --repo "$REPO" --pattern 'last_final_14000.pt'
   mkdir -p checkpoints && mv last_final_14000.pt checkpoints/last.pt
 fi
 
 # 1) data synthetic Vòng 1 (release train-assets-vong1) -------------------------
 if [ ! -f data/synthetic/glossary_sents.jsonl ]; then
   say "Thiếu data synthetic -> tải release train-assets-vong1"
-  gh release download train-assets-vong1 --repo "$REPO" --pattern 'vong1-data.tar.gz' --clobber
+  rm -f vong1-data.tar.gz
+  gh release download train-assets-vong1 --repo "$REPO" --pattern 'vong1-data.tar.gz'
   tar xzf vong1-data.tar.gz
 fi
 
