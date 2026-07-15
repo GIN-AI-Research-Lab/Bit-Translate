@@ -82,13 +82,13 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 
 **Glossary tổng:** 18.027 thuật ngữ (`data/glossary/glossary_merged.csv`); đã tách 10% test-set (`glossary_test*.{csv,txt}`, 1.674 term — KHÔNG train).
 
-**Còn lại của Vòng 1 (chạy trên GPU node, chưa làm):**
-1. **Back-translation** `ja_indomain_bt.ja` (86k câu JA) → model ja→vi dịch → cặp (VI tổng hợp → JA thật), chỉ train chiều vi→ja.
-2. **Lọc LaBSE ≥ 0.8** cho toàn bộ synthetic + dedup, loại các cặp trùng test-set thuật ngữ.
-3. **Trộn mix** 65% replay (base) + 35% mới, oversample glossary ×3 → binarize `data/bin` mới.
-4. **Resume train** từ `cloud_backup/last_final_14000.pt` +5.000 step → eval (probe64 + chrF FLORES).
+**Chạy trên GPU node — ĐÃ ĐÓNG GÓI THÀNH 1 LỆNH** `bash cloud/prep_vong1.sh`:
+1. **Back-translation** (`cloud/backtranslate.py`): model dịch `ja_indomain_bt.ja` (86k JA thật) → VI → cặp (VI tổng hợp → JA thật), chỉ chiều vi→ja.
+2. **Lọc + trộn** (`scripts/mix_and_binarize.py`): LaBSE ≥ 0.8 cho free-text synthetic + dedup + loại cặp trùng test-term; oversample glossary ×3; nhân data mới đạt ~30% → **trộn ở mức binary** với base (nối token stream, khỏi tokenize lại 5.4M base).
+3. **Resume train** (`cloud/run_vong1.sh`): từ `last_final_14000.pt` +5.000 step (→19000) với **restart LR** (`train.py --lr-anchor 14000`, 1e-4→1e-5) — không restart thì LR ~min, không học.
+4. Xong → convert GGUF → eval (probe64 + chrF FLORES) → gate dưới.
 
-*Script pipeline (`backtranslate.py`, `mix_and_binarize.py`, `prep_vong1.sh`) — TODO gói cùng lượt đưa lên GitHub.*
+*Verify local: 7 nguồn load OK (161k cặp thô), loại 12k trùng test-term, seqs_for/tgt_start khớp `binarize.py`. bt.* sinh trên node.*
 
 ## 3. VÒNG 2 — Hội thoại & Họp (register + keigo)
 

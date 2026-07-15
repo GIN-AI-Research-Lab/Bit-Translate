@@ -95,6 +95,9 @@ def main():
     ap.add_argument("--grad-accum", type=int, default=48)
     ap.add_argument("--max-steps", type=int, default=20000)
     ap.add_argument("--warmup", type=int, default=1000)
+    ap.add_argument("--lr-anchor", type=int, default=0,
+                    help="LR schedule coi step này là mốc bắt đầu (restart LR khi resume "
+                         "vòng data mới; vd resume ở 14000 -> --lr-anchor 14000 để LR chạy lại từ đỉnh)")
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--min-lr", type=float, default=3e-5)
     ap.add_argument("--wd", type=float, default=0.1)
@@ -163,9 +166,11 @@ def main():
             print(f"compile failed, continuing eager: {e}", flush=True)
 
     def lr_at(s):
+        s = s - args.lr_anchor                       # restart: schedule tính từ mốc anchor
+        total = max(1, args.max_steps - args.lr_anchor)
         if s < args.warmup:
             return args.lr * s / max(1, args.warmup)
-        t = (s - args.warmup) / max(1, args.max_steps - args.warmup)
+        t = (s - args.warmup) / max(1, total - args.warmup)
         return args.min_lr + 0.5 * (args.lr - args.min_lr) * (1 + math.cos(math.pi * min(t, 1.0)))
 
     logf = open(CKPT / "train.log", "a", buffering=1)

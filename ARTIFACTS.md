@@ -46,6 +46,10 @@ Code + docs ở git; binary ở 2 release dưới đây (cần `gh auth login` �
 - `vija_data.tar.zst` (319MB, `data/bin/` + flores) + `last_final_14000.pt` (1.3GB, fp32+optimizer).
 - → **Đây là bản backup trên GitHub của data + checkpoint** (đồng bộ với `cloud_backup/`).
 
+**Data Vòng 1 — `train-assets-vong1`**: https://github.com/trituenguyen97/Bit-Translate/releases/tag/train-assets-vong1
+- `vong1-data.tar.gz` (18MB) = `data/synthetic/` + `data/glossary/` (248k cặp nhắm đích + glossary 18k term + test-set).
+- Giải nén: `tar xzf vong1-data.tar.gz` → ra `data/synthetic/` + `data/glossary/`.
+
 **Dựng node mới để train (một mạch):**
 ```bash
 git clone git@github.com:trituenguyen97/Bit-Translate.git ~/Train-model-translate
@@ -56,6 +60,17 @@ tar -I zstd -xf vija_data.tar.zst && mkdir -p checkpoints && mv last_final_14000
 # Train TIẾP: tăng --max-steps trong cloud/run_cloud.sh (>14000)
 nohup bash cloud/run_cloud.sh > checkpoints/cloud.log 2>&1 &
 ```
+
+**Dựng node train VÒNG 1 (một lệnh — BT + LaBSE + mix + train):**
+```bash
+git clone git@github.com:trituenguyen97/Bit-Translate.git ~/Train-model-translate
+cd ~/Train-model-translate && bash cloud/setup_cloud.sh && gh auth login
+bash cloud/prep_vong1.sh          # tự tải 2 release, back-translate, lọc, trộn, train nền
+tail -f checkpoints/train.log     # theo dõi (mục tiêu step 19000)
+```
+`prep_vong1.sh` cờ env: `SKIP_BT=1` (bỏ back-translation), `SKIP_LABSE=1` (bỏ lọc),
+`NO_TRAIN=1` (chỉ chuẩn bị data), `BT_MAX=n` (chạy thử), `NEW_FRAC=0.3` (tỉ trọng data mới).
+Xong 19000 → convert GGUF → eval `probe64`/chrF (gate ở `PLAN_BUOC5.md` §2.6).
 
 ## Cloud node (ckey.vn)
 
