@@ -65,8 +65,9 @@ def main():
     m = BitNetLM(cfg).eval()
     ck = torch.load(CKPT, map_location="cpu")
     m.load_state_dict(ck["model"])
-    m.freeze_for_inference()               # ternary+8bit act: GIỐNG hệt bản i2_s deploy
-    m.to(DEVICE)
+    m.to(DEVICE)                           # PHẢI .to() TRƯỚC freeze: _wq_frozen là attribute
+    m.freeze_for_inference()               # thường (không phải buffer) nên .to() không đẩy nó
+    #                                        lên GPU -> tính freeze SAU khi ở cuda mới khớp device.
     print(f"[BT] loaded {CKPT} step={ck.get('step','?')} | device={DEVICE}", flush=True)
 
     ja_all = [l.rstrip("\n") for l in SRC_JA.read_text(encoding="utf-8").splitlines() if l.strip()]
