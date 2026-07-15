@@ -3,7 +3,7 @@
 > Lập 2026-07-14, dựa trên **probe 64 câu × 4 domain** chạy trên model step-14000 (i2_s, bitnet.cpp)
 > + chrF FLORES: vi→ja **21.3**, ja→vi **41.7** (Google ja→vi: 54.0).
 >
-> **⏱ CẬP NHẬT 2026-07-15 — VÒNG 1: thu thập data XONG (248.101 cặp nhắm đích), sẵn sàng train.** Chi tiết §2.6.
+> **⏱ CẬP NHẬT 2026-07-15 chiều — VÒNG 1: ĐANG TRAIN trên node (14105 → 19000, ~22k tok/s, ETA ~3.5-4h từ 15:00). Watcher tự đóng gói + đẩy Release khi xong.** Chi tiết §2.6-2.7.
 
 ## 0. Hiện trạng đo được (probe nghiêm khắc chuẩn dịch chuyên nghiệp)
 
@@ -89,6 +89,24 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 4. Xong → convert GGUF → eval (probe64 + chrF FLORES) → gate dưới.
 
 *Verify local: 7 nguồn load OK (161k cặp thô), loại 12k trùng test-term, seqs_for/tgt_start khớp `binarize.py`. bt.* sinh trên node.*
+
+### 2.7 ĐANG TRAIN — cập nhật 2026-07-15 ~15:00
+
+**Số thực của prep (đã chạy xong trên node RTX 5060 Ti 16GB):**
+- **BT full 86.172 câu** → giữ **55.846 cặp** vi→ja (65%). Tốc độ 63 câu/s nhờ `backtranslate.py` bản BATCH (nhóm câu cùng độ dài, x20 so với batch=1 cũ chỉ 3 câu/s).
+- **LaBSE ≥0.8 loại 45.874/129.959 cặp free-text (35%!)** → data mới sạch 189.670 cặp. (Lần mix đầu KHÔNG có LaBSE do thiếu sentence-transformers — đã dừng, khôi phục base, làm lại. LaBSE chạy trong venv CPU riêng `.venv_labse` vì cài vào conda global làm vỡ torchvision/transformers; dùng `MIX_PY=.venv_labse/bin/python3 bash cloud/prep_vong1.sh`.)
+- **Mix:** base 10.79M + new 3,83M = **14,63M seq (new 26.2%)**, glossary hiệu dụng ×18, dev giữ nguyên base.
+
+**Train:** resume 14105 → **19000**, LR restart 1e-4 (anchor 14000, warmup 200) ✓ xác nhận trong log; `VONG1_MT=16384 VONG1_GA=8` (16GB VRAM chứa thoải mái, không OOM); **~22,7k tok/s, 2.6s/step** (GPU 98% util, 56°C không throttle — đã thử cả 4096/32, 8192/16, 16384/8 đều ~20-23k ⇒ 22k là ~TRẦN của 5060 Ti, đừng kỳ vọng 30k như 4070 Ti). ETA ~3.5-4h.
+
+**Tự động sau khi xong:** `cloud/watch_vong1.sh` (đang chạy nền, PID-lock) canh `VONG1 COMPLETE` → tự đóng gói (ckpt fp16, **GGUF F16**, bt.ja/vi, fp32+optimizer để resume Vòng 2, train.log) → **GitHub Release `vong1-step19000`**.
+
+**Việc còn lại ở LOCAL khi Release lên:**
+```bash
+gh release download vong1-step19000 --repo trituenguyen97/Bit-Translate --pattern 'vija_*_f16.gguf' --dir dist/
+~/BitNet/build/bin/llama-quantize dist/vija_19000_f16.gguf dist/vija_19000_i2s.gguf I2_S 1   # số 1!
+# rồi chạy gate: probe64 (so 14/64 của bản 14k) + chrF FLORES (vi→ja +4?) + test thuật ngữ
+```
 
 ## 3. VÒNG 2 — Hội thoại & Họp (register + keigo)
 

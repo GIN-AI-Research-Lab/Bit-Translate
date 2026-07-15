@@ -50,6 +50,11 @@ Code + docs ở git; binary ở 2 release dưới đây (cần `gh auth login` �
 - `vong1-data.tar.gz` (18MB) = `data/synthetic/` + `data/glossary/` (248k cặp nhắm đích + glossary 18k term + test-set).
 - Giải nén: `tar xzf vong1-data.tar.gz` → ra `data/synthetic/` + `data/glossary/`.
 
+**Kết quả Vòng 1 — `vong1-step19000`** *(⏳ SẼ CÓ ~tối 15-07: watcher `cloud/watch_vong1.sh` trên node tự upload khi train chạm 19000)*:
+- `last_final_19000.pt` (fp32+optimizer — resume Vòng 2) | `ckpt_19000_fp16.pt` (nhẹ, convert/deploy)
+- `vija_19000_f16.gguf` (GGUF F16 — về local `llama-quantize ... I2_S 1` ra i2_s 68MB)
+- `bt_vong1.tar.gz` (55.846 cặp back-translation — tốn GPU mới có) | `train_vong1_19000.log`
+
 **Dựng node mới để train (một mạch):**
 ```bash
 git clone git@github.com:trituenguyen97/Bit-Translate.git ~/Train-model-translate
