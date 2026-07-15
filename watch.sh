@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 # Xem nhanh tiến độ training. Dùng: bash watch.sh   (hoặc lặp: bash watch.sh -l)
+# Đích step: tự dò --max-steps từ train.py đang chạy; override: MAX=21000 bash watch.sh
 cd "$(dirname "${BASH_SOURCE[0]}")"
-MAX=14000
+MAX=${MAX:-}
+if [ -z "$MAX" ]; then
+  for pid in $(pgrep -f 'scripts/train.py' 2>/dev/null); do
+    MAX=$(tr '\0' '\n' < "/proc/$pid/cmdline" 2>/dev/null | grep -A1 -x -- '--max-steps' | tail -1)
+    [ -n "$MAX" ] && break
+  done
+fi
+[ -z "$MAX" ] && MAX=19000   # fallback: đích Vòng 1
 
 show() {
   clear 2>/dev/null
