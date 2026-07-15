@@ -36,8 +36,9 @@ if command -v nvidia-smi >/dev/null 2>&1; then
     echo "!! torch hiện tại KHÔNG chạy được trên GPU này (nhiều khả năng Blackwell RTX 50)."
     echo "!! Nâng torch lên bản CUDA 12.8 (~2.5GB)..."
     pip install --force-reinstall --no-cache-dir torch --index-url https://download.pytorch.org/whl/cu128
-    python3 -c "import torch;x=torch.randn(4000,4000,device='cuda');print('CUDA OK sau nâng cấp | torch',torch.__version__,'|',(x@x).sum().item())" \
-      || echo "!! VẪN lỗi — driver host có thể quá cũ cho CUDA 12.8. Đổi template CUDA 12.8 / torch>=2.7."
+    if ! python3 -c "import torch;x=torch.randn(4000,4000,device='cuda');print('CUDA OK sau nâng cấp | torch',torch.__version__,'|',(x@x).sum().item())"; then
+      echo "!! VẪN lỗi — driver host có thể quá cũ cho CUDA 12.8. Đổi template CUDA 12.8 / torch>=2.7."
+    fi
   fi
 fi
 echo "=== setup xong ==="
