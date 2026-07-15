@@ -13,10 +13,19 @@
 #   NO_TRAIN=1    chỉ chuẩn bị data, KHÔNG tự train (tự kiểm tra rồi chạy tay)
 #   BT_MAX=n      giới hạn số câu back-translate (chạy thử nhanh)
 #   NEW_FRAC=x    tỉ trọng data mới (mặc định 0.30)
+#   MIX_PY=path   interpreter cho bước mix (mặc định = PY của back-translation).
+#                 mix_and_binarize.py chỉ cần numpy+sentencepiece (+torch/CPU
+#                 NẾU bật LaBSE) -> nếu cài sentence-transformers global làm vỡ
+#                 torchvision/transformers (hay gặp, xung đột bản), KHÔNG sửa
+#                 conda env đang chạy train — tạo venv riêng rồi trỏ MIX_PY vào:
+#                   python3 -m venv .venv_labse && .venv_labse/bin/pip install -q \
+#                     numpy sentencepiece sentence-transformers
+#                   MIX_PY=.venv_labse/bin/python3 bash cloud/prep_vong1.sh
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 export PATH=/opt/conda/bin:$PATH
 PY=python3
+MIX_PY=${MIX_PY:-$PY}
 REPO=trituenguyen97/Bit-Translate
 say(){ echo -e "\n==================== $* ===================="; }
 
@@ -75,9 +84,9 @@ else
 fi
 
 # 3) lọc LaBSE + trộn + binarize ------------------------------------------------
-say "Mix + binarize (LaBSE=$([ "${SKIP_LABSE:-0}" = 1 ] && echo off || echo on), new-frac=${NEW_FRAC:-0.30})"
+say "Mix + binarize (LaBSE=$([ "${SKIP_LABSE:-0}" = 1 ] && echo off || echo on), new-frac=${NEW_FRAC:-0.30}, interpreter=$MIX_PY)"
 LABSE_FLAG=""; [ "${SKIP_LABSE:-0}" = "1" ] && LABSE_FLAG="--no-labse"
-$PY scripts/mix_and_binarize.py --new-frac "${NEW_FRAC:-0.30}" $LABSE_FLAG
+"$MIX_PY" scripts/mix_and_binarize.py --new-frac "${NEW_FRAC:-0.30}" $LABSE_FLAG
 
 # 4) train ----------------------------------------------------------------------
 if [ "${NO_TRAIN:-0}" = "1" ]; then
