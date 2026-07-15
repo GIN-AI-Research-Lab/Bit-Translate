@@ -80,9 +80,10 @@ def main():
         done = sum(1 for _ in OUT_JA.open(encoding="utf-8"))
         print(f"[BT] resume: đã có {done:,}/{n:,}", flush=True)
 
-    fja = OUT_JA.open("a", encoding="utf-8", buffering=1 << 16)
-    fvi = OUT_VI.open("a", encoding="utf-8", buffering=1 << 16)
+    fja = OUT_JA.open("a", encoding="utf-8", buffering=1)   # line-buffered: wc -l theo realtime
+    fvi = OUT_VI.open("a", encoding="utf-8", buffering=1)
     kept, t0 = 0, time.time()
+    print(f"[BT] bắt đầu generate {n-done:,} câu trên {DEVICE}... (in tiến độ mỗi 100 câu)", flush=True)
     try:
         for i in range(done, n):
             ja = ja_all[i]
@@ -101,7 +102,7 @@ def main():
                 kept += 1
             fja.write(ja + "\n")
             fvi.write(vi + "\n")
-            if (i + 1) % 500 == 0:
+            if (i + 1) % 100 == 0:
                 dt = time.time() - t0
                 rate = (i + 1 - done) / max(dt, 1e-9)
                 eta = (n - i - 1) / max(rate, 1e-9) / 60
