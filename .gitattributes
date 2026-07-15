@@ -1,0 +1,7 @@
+# Kho này chạy trên Linux node (WSL/cloud) -> mọi text file PHẢI dùng LF.
+# Không có file này, git trên Windows có thể lưu CRLF -> bash trên node gãy
+# ("unexpected end of file"), python đôi khi lỗi shebang.
+* text=auto eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
