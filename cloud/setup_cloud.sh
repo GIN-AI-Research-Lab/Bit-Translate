@@ -21,7 +21,9 @@ pip install -U sentence-transformers || echo "WARN: thiếu sentence-transformer
 
 # gh CLI: tải release private (data + checkpoint). Không có thì cài best-effort.
 if ! command -v gh >/dev/null 2>&1; then
-  $SUDO apt-get install -y gh 2>/dev/null || echo "WARN: chưa có gh. Cài: https://github.com/cli/cli/blob/trunk/docs/install_linux.md rồi 'gh auth login'"
+  # apt thường KHÔNG có gh trên Debian gốc; image conda -> conda-forge có gh.
+  $SUDO apt-get install -y gh 2>/dev/null || conda install -y gh -c conda-forge 2>/dev/null \
+    || echo "WARN: chưa cài được gh. Xem https://github.com/cli/cli/blob/trunk/docs/install_linux.md"
 fi
 
 echo "=== kiểm tra môi trường ==="
