@@ -2,6 +2,8 @@
 
 > Lập 2026-07-14, dựa trên **probe 64 câu × 4 domain** chạy trên model step-14000 (i2_s, bitnet.cpp)
 > + chrF FLORES: vi→ja **21.3**, ja→vi **41.7** (Google ja→vi: 54.0).
+>
+> **⏱ CẬP NHẬT 2026-07-15 — VÒNG 1: thu thập data XONG (248.101 cặp nhắm đích), sẵn sàng train.** Chi tiết §2.6.
 
 ## 0. Hiện trạng đo được (probe nghiêm khắc chuẩn dịch chuyên nghiệp)
 
@@ -62,6 +64,31 @@ Không kỳ vọng vượt Google Translate (model 110M) — đích là **"tốt
 ### Gate vòng 1 (không đạt thì không sang vòng 2)
 - chrF FLORES **không giảm** ở cả 2 chiều; vi→ja **≥ +4 điểm**.
 - Test set thuật ngữ ≥ 70% đúng; re-run probe 64 câu: IT ok ≥ 9/16.
+
+### 2.6 TRẠNG THÁI THU THẬP DATA — ✅ XONG (2026-07-15)
+
+Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic/`, `data/glossary/` — gitignore, đẩy lên **GitHub Release** không vào git).
+
+| Khối | Cặp | Nguồn / script |
+|---|---:|---|
+| glossary_sents (câu ví dụ theo thuật ngữ) | 104.404 | `gen_via_api.py` (Gemini 2 key) + recover từ journal |
+| ja_indomain_bt (câu JA cho back-translation) | 86.172 | `harvest_ja_indomain.py` (Qiita API) — *chưa dịch, để BT trên GPU* |
+| it_docs (OPUS localization ja-vi) | 27.144 | GNOME/KDE/Ubuntu/PHP tách câu |
+| glossary_direct (cặp term thẳng) | 17.951 | `glossary_merged.csv` (MS-terminology 16.459 + wikidata + user 427 + brse 76) |
+| phase2 (code-switch + Q&A 指摘事項-style HỢP PHÁP) | 8.781 | `gen_phase2.py` (cs 4.656 + qa 4.125) |
+| copythrough (giữ nguyên version/ticket/URL) | 3.448 | `gen_copythrough.py` (sinh bằng code) |
+| codeswitch (VI-EN ↔ JA, sinh bằng code) | 201 | `gen_codeswitch.py` |
+| **TỔNG nhắm đích** | **248.101** | *(+ base OPUS 5.4M cho replay)* |
+
+**Glossary tổng:** 18.027 thuật ngữ (`data/glossary/glossary_merged.csv`); đã tách 10% test-set (`glossary_test*.{csv,txt}`, 1.674 term — KHÔNG train).
+
+**Còn lại của Vòng 1 (chạy trên GPU node, chưa làm):**
+1. **Back-translation** `ja_indomain_bt.ja` (86k câu JA) → model ja→vi dịch → cặp (VI tổng hợp → JA thật), chỉ train chiều vi→ja.
+2. **Lọc LaBSE ≥ 0.8** cho toàn bộ synthetic + dedup, loại các cặp trùng test-set thuật ngữ.
+3. **Trộn mix** 65% replay (base) + 35% mới, oversample glossary ×3 → binarize `data/bin` mới.
+4. **Resume train** từ `cloud_backup/last_final_14000.pt` +5.000 step → eval (probe64 + chrF FLORES).
+
+*Script pipeline (`backtranslate.py`, `mix_and_binarize.py`, `prep_vong1.sh`) — TODO gói cùng lượt đưa lên GitHub.*
 
 ## 3. VÒNG 2 — Hội thoại & Họp (register + keigo)
 
