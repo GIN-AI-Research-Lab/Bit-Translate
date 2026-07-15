@@ -17,8 +17,11 @@ STEPS=${VONG1_STEPS:-19000}
 ANCHOR=${VONG1_ANCHOR:-14000}
 MT=${VONG1_MT:-4096}
 GA=${VONG1_GA:-32}
+# torch.compile: mặc định bật. Trên GPU Blackwell (RTX 50) nếu Triton lỗi thì
+# chạy với VONG1_COMPILE=0 để tắt (chậm ~30% nhưng chắc chạy).
+COMPILE=""; [ "${VONG1_COMPILE:-1}" = "1" ] && COMPILE="--compile"
 ARGS="--max-tokens $MT --grad-accum $GA --max-steps $STEPS --lr-anchor $ANCHOR \
---lr 1e-4 --min-lr 1e-5 --warmup 200 --save-every 100 --milestone-every 1000 --log-every 5 --compile"
+--lr 1e-4 --min-lr 1e-5 --warmup 200 --save-every 100 --milestone-every 1000 --log-every 5 $COMPILE"
 
 mkdir -p checkpoints
 if [ ! -f checkpoints/last.pt ]; then echo "THIẾU checkpoints/last.pt — chạy prep_vong1.sh trước"; exit 1; fi
