@@ -9,6 +9,7 @@ data/interim/
 data/clean/
 data/bin/
 data/synthetic/
+data/glossary/
 data/bin_build.log
 
 # Model checkpoints, weights, exported artifacts (large binaries)
