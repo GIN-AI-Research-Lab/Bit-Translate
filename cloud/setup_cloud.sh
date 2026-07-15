@@ -26,6 +26,20 @@ fi
 
 echo "=== kiểm tra môi trường ==="
 python3 -c "import torch,sentencepiece,numpy,sacrebleu; print('torch',torch.__version__,'| CUDA:',torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NO GPU')"
+
+# GPU Blackwell (RTX 50, sm_120): template torch cũ (cu124) THIẾU kernel sm_120 ->
+# torch.cuda.is_available() vẫn True nhưng mọi phép tính lỗi "no kernel image".
+# Thử 1 phép nhân thật; lỗi -> nâng torch lên bản CUDA 12.8. Node Ada (40xx) pass
+# nên KHÔNG bị đụng. Chạy SAU cùng để không gói nào downgrade lại torch.
+if command -v nvidia-smi >/dev/null 2>&1; then
+  if ! python3 -c "import torch;(torch.randn(8,8,device='cuda')@torch.randn(8,8,device='cuda')).sum().item()" 2>/dev/null; then
+    echo "!! torch hiện tại KHÔNG chạy được trên GPU này (nhiều khả năng Blackwell RTX 50)."
+    echo "!! Nâng torch lên bản CUDA 12.8 (~2.5GB)..."
+    pip install --force-reinstall --no-cache-dir torch --index-url https://download.pytorch.org/whl/cu128
+    python3 -c "import torch;x=torch.randn(4000,4000,device='cuda');print('CUDA OK sau nâng cấp | torch',torch.__version__,'|',(x@x).sum().item())" \
+      || echo "!! VẪN lỗi — driver host có thể quá cũ cho CUDA 12.8. Đổi template CUDA 12.8 / torch>=2.7."
+  fi
+fi
 echo "=== setup xong ==="
 echo "  - Train Vòng 1 (BT+LaBSE+mix+train): gh auth login && bash cloud/prep_vong1.sh"
 echo "  - Train base/tiếp thường:            bash cloud/run_cloud.sh"
