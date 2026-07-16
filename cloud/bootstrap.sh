@@ -45,8 +45,12 @@ say "Kiểm python/torch/GPU"
 python3 - <<'EOF'
 import torch, numpy
 assert torch.cuda.is_available(), "torch không thấy GPU — thuê node phải chọn template PyTorch/CUDA!"
-print("torch", torch.__version__, "| GPU:", torch.cuda.get_device_name(0),
+print("torch", torch.__version__, "| numpy", numpy.__version__, "| GPU:", torch.cuda.get_device_name(0),
       "| VRAM:", round(torch.cuda.get_device_properties(0).total_memory / 1e9, 1), "GB")
+mm = tuple(int(x) for x in torch.__version__.split("+")[0].split(".")[:2])
+if not ((2, 4) <= mm <= (2, 6)):
+    print(f"⚠ torch {torch.__version__} NGOÀI dải đã kiểm chứng 2.4-2.6 (cloud/requirements-node.txt)"
+          f" — vẫn chạy tiếp, nhưng nếu compile lỗi lạ thì nghi version trước, thử M300_COMPILE=0.")
 EOF
 python3 -c "import sentencepiece" 2>/dev/null || pip install -q sentencepiece
 python3 -c "import gguf"          2>/dev/null || pip install -q gguf

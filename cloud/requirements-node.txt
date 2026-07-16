@@ -1,0 +1,19 @@
+# Bộ lib node train 292M — bản ĐÃ KIỂM CHỨNG (2026-07-16, node 4070 Ti O-1958273 + A4000 n2).
+# Node train chỉ cần đúng 4 package Python này. KHÔNG cần: sentence-transformers/LaBSE
+# (mix làm ở local, node dùng premix bin), sacrebleu (eval làm ở local).
+#
+# TẦNG 1 — đến từ TEMPLATE khi thuê node (KHÔNG tự pip install — bánh vẽ CUDA/driver):
+#   torch  2.5.x + cu12x   # đã kiểm chứng 2.5.1+cu124; 2.4-2.6 coi như an toàn.
+#                          # 2.7+ dynamo/inductor đổi nhiều — chưa kiểm chứng, bootstrap sẽ cảnh báo.
+#   triton (đi kèm torch)  # cần gcc trên máy (bootstrap tự cài) để build driver stub.
+#   numpy  (1.26.x hoặc 2.x đều chạy train được; vụ "numpy>=2 vỡ gguf-py" chỉ ảnh hưởng
+#           việc ĐỌC file i2_s ở máy local, không liên quan node train)
+#
+# TẦNG 2 — bootstrap.sh tự pip install (pure-python, vài giây, version không nhạy):
+sentencepiece>=0.1.99
+gguf>=0.10.0
+#
+# TẦNG 3 — ngoài Python, bootstrap tự lo: gh (binary tĩnh v2.63.0), gcc, zstd.
+#
+# Đóng băng tuyệt đối (nếu template tương lai đổi torch gây lỗi): snapshot node đang
+# chạy tốt thành image riêng của nhà cung cấp — mọi tầng đều đông cứng, khỏi kiểm gì nữa.
