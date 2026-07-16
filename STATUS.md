@@ -4,17 +4,10 @@
 - **✅ VÒNG 2 XONG (19000→23000, node `O-1957139`) + ĐÃ BENCHMARK (2026-07-16 chiều, i2_s local):**
   - chrF FLORES n=100: vi→ja **21.49** (±0 so 19000), ja→vi **42.27** (−0.6, trong nhiễu).
   - probe64: **họp vi→ja 27.4→35.4 (+8.0)** ⭐, câu khó vi→ja +6.5; NHƯNG **hội thoại vi→ja chỉ +0.4** (domain nhắm chính!) và loạt domain cũ tụt: IT vi→ja −3.7, câu khó ja→vi −5.9, họp ja→vi −4.4. Glossary term-trần đứng yên 28%.
-  - **4/4 tín hiệu trần sức chứa BẬT (T1 T2 T3 T4)** — chi tiết `eval/capacity_log.md` + PLAN §3.5. Theo luật §5.1: **CHỐT SCALE ~200M from-scratch** (d_model 1024/16 layer/FFN 2816, 2–3 ngày). Data vòng 2 đã eyeball chống dương tính giả — sạch, không phải lỗi data.
-- **🚀 SCALE ~292M — SẴN SÀNG LAUNCH (2026-07-16 chiều, PLAN §3.6):** user chốt lên thẳng ~300M (thực tế **291.8M**: d1152/16L/18H/ff3072, head_dim 64) sau 4/4 tín hiệu trần. **KHÔNG dừng node** — tái dùng luôn cho run from-scratch. Lệnh trên node (`~/bt`):
-  ```
-  git pull
-  nohup bash cloud/run_300m.sh > checkpoints/scale300m.log 2>&1 &
-  tail -f checkpoints/scale300m.log      # guard tự upload last_final_23000.pt rồi mới train
-  # khi train.log bắt đầu có "step ...":
-  WATCH_TAG=scale300m-step25000 nohup bash cloud/watch_vong1.sh > checkpoints/watch.log 2>&1 &
-  ```
-  25.000 step, LR 2.5e-4, budget 131k tok/step. Ước ~9-10k tok/s, ~6-7s/step → **~2 ngày**. VRAM ~8-9GB/16GB. Sự cố: OOM → `M300_MT=4096 M300_GA=32`; Triton/compile lỗi → `M300_COMPILE=0`. Guard trong script TỰ upload `last_final_23000.pt` (110M fp32+opt, hiện CHƯA có trên release) trước khi dọn checkpoints → `checkpoints_110m/`; nếu guard fail thì KHÔNG train (đừng dùng `M300_FORCE=1` trừ khi chấp nhận mất).
-  Code hỗ trợ đã xong + đã test local: `train.py`/`convert_to_gguf.py` nhận dims (converter tự đọc cfg từ ckpt — watcher đóng gói 292M không cần sửa); smoke test forward 291.8M OK, loss untrained 10.57 ≈ ln(32k) chuẩn.
+  - **4/4 tín hiệu trần sức chứa BẬT (T1 T2 T3 T4)** — chi tiết `eval/capacity_log.md` + PLAN §3.5. Theo luật §5.1: **CHỐT SCALE from-scratch**; user chọn ~292M (bullet dưới). Data vòng 2 đã eyeball chống dương tính giả — sạch, không phải lỗi data.
+- **🔄 ĐANG TRAIN FROM-SCRATCH ~292M (2026-07-16 tối, node MỚI `O-1958273` — RTX 4070 Ti 12GB, 3.444đ/h, hạn thuê 72h, repo `/workspace/bt`):** 291.8M params (d1152/16L/18H/ff3072), 0 → 25.000 step, LR 2.5e-4 (warmup 1000). **Cấu hình CHỐT sau 3 lần dò OOM: `M300_MT=4096 M300_GA=32` + compile** (budget 131k tok/step giữ nguyên) → **12,25k tok/s / 4,78s/step, ETA ~33h (~1,4 ngày)**. Watcher: `WATCH_TAG=scale300m-step25000 bash cloud/watch_vong1.sh`.
+  **Bài học node 12GB (đã ghi vào run_300m.sh):** eager OOM cả ở MT=4096 (STE `x.float()` tạo bản sao fp32 mỗi BitLinear — eager ngốn hơn compile nhiều); compile + MT=8192 cũng OOM; **compile + MT=4096 vừa khít**. Node thiếu gcc phải `apt-get install -y gcc` (Triton cần C compiler). Cần gạt dự phòng mới: `M300_GC=1` (gradient checkpointing). Node cũ O-1957139 (Blackwell, bệnh Triton `device not ready`) + n1: **tắt được, không còn gì độc nhất**.
+  Code hỗ trợ đã test local: `train.py`/`convert_to_gguf.py` nhận dims (converter tự đọc cfg từ ckpt — watcher đóng gói 292M không cần sửa); premix bin đã upload lên `train-assets-vong2` (452MB) — node sau này prep chỉ cần `gh release download` + `run_300m.sh`.
 - **Gate nhận model 292M (sau ~2 ngày):** phải THẮNG 110M step23000 trên cùng harness — mốc phải vượt: FLORES vi→ja 21.49 / ja→vi 42.27; probe64 TB vi2ja 31.7 / ja2vi 48.7; glossary 28%. Thua = nút thắt là data → dồn sức BT (kế hoạch gốc 500k-1M câu JA, mới dùng 86k). Quyết định "thinking"/ngữ cảnh: KHÔNG CoT (nhỏ quá, phá latency); ngữ cảnh zero-pronoun làm ở vòng 3 bằng data format (không đổi arch) — PLAN §3.6.
 - **👀 Việc user lúc rảnh (trong 2 ngày chờ):** eyeball `eval/probe64_step23000.jsonl` của 110M — làm mốc so sánh bằng mắt khi 292M ra lò.
 - **Sự cố node n1 sáng nay: ĐÃ XỬ LÝ XONG** — n1.ckey.vn lỗi GPU/I-O ở ~step 19530, chuyển node mới + gói mix sẵn `bin_mix_vong2.tar.zst` (prep_vong2.sh chế độ PREMIX), KHÔNG mất data. (Backup khẩn cấp cũ trên release `backup-vong2-step<N>` chỉ còn giá trị tham khảo.)
