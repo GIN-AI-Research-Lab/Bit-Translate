@@ -197,6 +197,16 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 - +**4.000 step** → đo full: FLORES (n=1012), 3 test set domain, probe 64 câu, so Google.
 - Đóng gói bản release mới: convert → `llama-quantize I2_S 1` → i2_s 68MB → tag GitHub Release v1.1.
 
+### 4.3 Kỹ thuật "thầy–trò" (chốt hướng 2026-07-16 tối, từ ý tưởng "thinking" của user; đo bằng hardbench200 + probe64)
+
+Bối cảnh: user đề xuất "mode thinking chạy trong khối kiến thức nhỏ" + "người thầy sửa bài". CoT token thật thì KHÔNG làm (đã chốt §3.6: phá latency ×5, 300M quá nhỏ). Ba bản hiện thực hóa được, xếp theo thứ tự pilot:
+
+1. **Glossary/idiom-injection (terminology-aware NMT)** — "khối kiến thức nhỏ" tra bằng CODE lúc chạy, ~0 chi phí: quét câu nguồn theo glossary + từ điển thành ngữ/slang + bảng quy đổi 万/億, nhét gợi ý `[gấu=恋人]` vào đầu prompt; train model vòng 3 biết dùng gợi ý (thêm mẫu có-gợi-ý vào data). Ăn thẳng vào 3 lỗi hardbench: glossary kẹt 28%, thành ngữ/slang mặt chữ, sai hàng số.
+2. **Thầy–trò lúc TRAIN (error-targeted distillation)** — trò dịch → thầy (LLM API, hạ tầng `gen_any.sh` sẵn) chấm + viết bản sửa → train tiếp trên bản sửa. Data bám đúng phân bố lỗi thật. Chi phí inference 0. Đây là bản trung thành nhất với metaphor "thầy dạy trò tới khi thành thạo".
+3. **Tự-sửa 2 lượt lúc INFER (APE)** — ưu tiên thử **CHÍNH MODEL đó tự làm thầy** trước (single-model self-edit): thêm task tag mới (vd `>>fix<<`) vào training, input = câu gốc + bản nháp, target = ref; lúc chạy: lượt 1 dịch, lượt 2 cùng model chạy mode fix. KHÔNG cần train/deploy model riêng, vẫn 1 file GGUF, latency ~2× (chấp nhận được ở 400+ tok/s). Data train task fix gần như miễn phí: (src, draft = output trò trên data sẵn, ref). Giới hạn phải biết: tự-sửa chỉ vá được fluency/sót vế/ngôi — KHÔNG vá được lỗ hổng tri thức (không biết "gấu"=恋人 thì mode fix cũng không biết). Thầy TÁCH RIÊNG (1-2 model phụ, thầy VI cho ja→vi + thầy JA cho vi→ja) chỉ đáng làm nếu self-edit có tín hiệu nhưng kịch trần — vì thầy riêng chỉ hơn khi có data/size khác trò.
+
+Kỳ vọng đã thống nhất: KHÔNG chạm Claude trên đề khó mở (tri thức thế giới ~1000× scale, không pipeline 300M nào bù); đích thực = **vượt Google trong niche công sở IT** (đã thắng hội thoại ja→vi probe64) + bám sát domain chung. Trình tự: gate 292M trước → data vòng 3 + (1) → pilot (2) → chỉ khi chưa đủ mới (3).
+
 ## 5. Quy trình chuẩn mỗi vòng (lặp lại y hệt)
 
 ```
