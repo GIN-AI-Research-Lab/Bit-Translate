@@ -47,15 +47,20 @@ if ! gh release view vong2-step23000 --repo "$REPO" --json assets \
 fi
 
 # ==== GUARD 2: dọn checkpoint + log 110M sang một bên (KHÔNG xoá) ====
-if [ -f checkpoints/last.pt ]; then
-  mkdir -p checkpoints_110m
-  mv -f checkpoints/last.pt checkpoints_110m/
-  mv -f checkpoints/step*.pt checkpoints_110m/ 2>/dev/null || true
-  echo ">> checkpoint 110M -> checkpoints_110m/"
+# Marker .scale300m = last.pt hiện tại LÀ của run 292M (đặt lúc launch đầu / restore_300m.sh)
+# -> các lần chạy lại script sau đó KHÔNG dọn nó đi (không thì train lại từ 0!).
+if [ ! -f checkpoints/.scale300m ]; then
+  if [ -f checkpoints/last.pt ]; then
+    mkdir -p checkpoints_110m
+    mv -f checkpoints/last.pt checkpoints_110m/
+    mv -f checkpoints/step*.pt checkpoints_110m/ 2>/dev/null || true
+    echo ">> checkpoint 110M -> checkpoints_110m/"
+  fi
+  if [ -f checkpoints/train.log ]; then
+    mv -f checkpoints/train.log "checkpoints/train.pre300m.$(date +%s).log"
+  fi
 fi
-if [ -f checkpoints/train.log ]; then
-  mv -f checkpoints/train.log "checkpoints/train.pre300m.$(date +%s).log"
-fi
+touch checkpoints/.scale300m
 
 # ckpt 292M: last.pt (fp32+opt) ~3.5GB ghi đè mỗi 100 step + milestone ~1.2GB x ~12
 echo ">> disk còn trống:"; df -h . | tail -1
