@@ -12,7 +12,10 @@
 #   WATCH_TAG=scale300m-step25000 nohup bash cloud/watch_vong1.sh > checkpoints/watch.log 2>&1 &
 #
 # Env: M300_STEPS=25000  M300_MT=8192  M300_GA=16  M300_LR=2.5e-4  M300_COMPILE=1
-#      M300_FORCE=1 (bỏ guard backup 110M — chỉ khi biết mình làm gì)
+#      M300_GC=1 (gradient checkpointing — VRAM giảm mạnh, đổi ~30% tốc độ; dùng khi
+#      node <12GB OOM cả ở MT nhỏ)   M300_FORCE=1 (bỏ guard backup 110M)
+# Bài học node 4070 Ti 12GB: eager OOM cả MT=4096 (STE tạo bản sao fp32 mỗi BitLinear);
+# compile fuse nên nhẹ hơn — thử compile+MT4096 trước, rồi mới tới M300_GC=1.
 set -u
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 export PATH=/opt/conda/bin:$PATH
@@ -24,6 +27,7 @@ MT=${M300_MT:-8192}
 GA=${M300_GA:-16}       # 8192*16 = 131072 token budget/step — giữ nguyên như 110M
 LR=${M300_LR:-2.5e-4}   # thấp hơn 3e-4 của 110M (model rộng 1.5x); min-lr theo tỉ lệ
 COMPILE=""; [ "${M300_COMPILE:-1}" = "1" ] && COMPILE="--compile"
+GC="";      [ "${M300_GC:-0}" = "1" ] && GC="--grad-ckpt"
 
 mkdir -p checkpoints dist
 
@@ -59,7 +63,7 @@ echo ">> disk còn trống:"; df -h . | tail -1
 ARGS="--d-model 1152 --n-layers 16 --n-heads 18 --d-ff 3072 \
 --max-tokens $MT --grad-accum $GA --max-steps $STEPS \
 --lr $LR --min-lr 2.5e-5 --warmup 1000 \
---save-every 100 --milestone-every 2000 --log-every 5 $COMPILE"
+--save-every 100 --milestone-every 2000 --log-every 5 $COMPILE $GC"
 
 # Chặn 2 train.py cùng chạy (y hệt run_vong2.sh)
 for pid in $(pgrep -f 'scripts/train.py' 2>/dev/null); do
