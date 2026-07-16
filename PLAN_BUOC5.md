@@ -125,6 +125,9 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 
 ## 3. VÒNG 2 — Hội thoại & Họp (register + keigo)
 
+> **✅ DATA VÒNG 2 CHỐT 2026-07-16: 13.858 cặp sạch** (11 mode; release `train-assets-vong2`) — qua đủ 4 lớp QUALITY_GATE (xem `eval/QUALITY_GATE.md`: Claude xoá ~1.700 cặp/gloss lỗi qua các đợt đọc, blacklist 260 mục). Kiểm kê: idh 4.532 (476 idiom đã duyệt), ht 1.381, am 1.262 (ẩm thực/văn hoá — MỚI), dn+dn2 1.898, pb 1.055, id 1.052, pk 819 (phủ định kép — kéo sớm từ V3), hop 794, ps 571, g2 494.
+> **Train:** `bash cloud/prep_vong2.sh` trên node (tự tải 4 gói → mix LaBSE + oversample hội thoại ngắn ×1 → 19000→23000, LR restart anchor 19000). Gate ở §3.4.
+
 ### 3.1 Data sinh bằng LLM (~1.5-2M token output ≈ 25-35k cặp)
 - **Hội thoại đời thường** (theo khung JLPT N3→N1 đã có): rủ rê/hẹn, gọi món (phở bò! trà đá!), mua sắm, hỏi đường, thời tiết, sức khỏe, gia đình. Chú trọng: câu 2 vế ("Hôm nay rảnh không? Đi ăn nhé"), sắc thái **sắp/định/nhớ...nhé** ↔ 〜そう/つもり/忘れずに.
 - **Họp & công sở**: mở/chốt họp, dời lịch, báo cáo tiến độ (%), deadline/納期, biên bản/議事録, phê duyệt/承認, xin phép vắng mặt. **Mỗi câu sinh 2 biến thể register**: keigo (丁寧語/謙譲語) + thể thường, gắn đúng ngữ cảnh.

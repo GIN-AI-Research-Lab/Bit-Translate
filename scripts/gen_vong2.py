@@ -94,6 +94,46 @@ PK_PATTERNS = [
     "〜ないとも言えない (cũng không thể nói là không…)", "〜なければならない vs 〜なくてもいい",
     "〜きれない (không… hết nổi)", "まだ〜ていない vs もう〜ない",
 ]
+AM_TOPICS = [
+    "món phở (bò/gà, tái/chín, nước dùng) khi giới thiệu cho người Nhật",
+    "bún chả, bún bò Huế, mì Quảng — gọi món và tả vị",
+    "bánh mì Việt Nam (pate, thịt nguội, đồ chua)",
+    "cà phê Việt (cà phê sữa đá, bạc xỉu, cà phê trứng) vs cà phê Nhật",
+    "trà đá, trà chanh vỉa hè — văn hoá giải khát",
+    "gỏi cuốn, chả giò/nem rán và cách chấm",
+    "cơm tấm, cơm bình dân, quán cơm văn phòng",
+    "lẩu Việt vs nabe Nhật — rủ nhau đi ăn lẩu",
+    "bánh xèo, bánh cuốn, bánh khọt — giải thích cách ăn",
+    "chè, sinh tố, nước mía — món ngọt giải nhiệt",
+    "mắm tôm, nước mắm, mắm nêm — giải thích cho người Nhật e dè",
+    "bia hơi, văn hoá nhậu vỉa hè Hà Nội/Sài Gòn",
+    "món Nhật cho người Việt: sushi/sashimi lần đầu",
+    "ramen, udon, soba — phân biệt và gọi món",
+    "izakaya: gọi đồ nhắm, toriaezu nama biiru",
+    "onigiri, bento combini — ăn trưa kiểu Nhật",
+    "địa danh Hà Nội (hồ Gươm, phố cổ, Văn Miếu) khi dẫn khách Nhật đi chơi",
+    "địa danh Sài Gòn (chợ Bến Thành, Bùi Viện, Landmark 81)",
+    "Đà Nẵng - Hội An - Huế: gợi ý lịch trình cho đồng nghiệp Nhật",
+    "Tokyo (Shibuya, Asakusa, Akihabara) cho người Việt du lịch",
+    "Kyoto - Osaka - Nara: kể chuyện chuyến đi",
+    "Tết Việt Nam: bánh chưng, lì xì, về quê — giải thích cho người Nhật",
+    "Trung thu, giỗ tổ, các ngày lễ Việt",
+    "Obon, Golden Week, hanami — giải thích cho người Việt",
+    "onsen, sento — văn hoá tắm và quy tắc",
+    "văn hoá đưa danh thiếp, cúi chào, đúng giờ của Nhật",
+    "văn hoá ăn uống: đũa, húp mì thành tiếng, rót bia cho nhau",
+    "xe máy, kẹt xe, mũ bảo hiểm — đời sống Việt kể cho người Nhật",
+    "chợ truyền thống vs siêu thị, trả giá khi mua sắm",
+    "karaoke Việt vs Nhật, văn hoá đi hát sau nhậu",
+]
+DN2_TRAPS = [
+    "気", "手", "先", "話", "口", "力", "上", "下", "中", "外",
+    "出す", "出る", "入れる", "入る", "かける", "つける", "とる", "引く", "打つ", "張る",
+    "きれい", "うまい", "早い", "強い", "弱い", "新しい", "古い", "深い", "浅い", "長い",
+    "バグ", "エラー", "テスト", "コード", "データ", "ログ", "リリース", "アップ", "ダウン", "チェック",
+    "đi", "về", "lên", "xuống", "ra", "vào", "làm", "chơi", "đánh", "bắt",
+    "nước", "đất", "trời", "lửa", "gió", "mặt", "tay", "chân", "đầu", "lòng",
+]
 ID_IDIOMS = [
     "お茶を濁す (làm qua loa cho xong)", "胸がざわざわする (bồn chồn không yên)",
     "腑に落ちない (không thấy thuyết phục)", "目処が立つ (đã thấy hướng ra)",
@@ -153,6 +193,8 @@ PROMPTS = {
     "g2": "Thuật ngữ dev: {seed}. Với MỖI thuật ngữ viết 5 cặp câu Nhật-Việt ngữ cảnh làm việc thật (code review, vận hành, sự cố, daily). Giữ nguyên dạng katakana/kanji ở vế Nhật; vế Việt dùng term tiếng Anh như dân IT Việt nói (rebase, hotfix...) khi tự nhiên hơn dịch nghĩa. Tổng ~20-25 cặp.\n" + COMMON,
     "id": "Quán ngữ tiếng Nhật: {seed}. Viết 22 cặp câu Nhật-Việt dùng quán ngữ này trong ngữ cảnh đời thường + công việc (câu ngắn lẫn câu dài nhiều vế). Bản dịch Việt dịch theo Ý NGHĨA quán ngữ (đã cho trong ngoặc) bằng cách nói tự nhiên của người Việt — TUYỆT ĐỐI không dịch từng chữ (お茶を濁す KHÔNG phải \"làm đục trà\").\n" + COMMON,
     "idh": "Các quán ngữ tiếng Nhật (kèm nghĩa chuẩn): {seed}. Với MỖI quán ngữ viết 11 cặp câu Nhật-Việt ở các NGỮ CẢNH KHÁC NHAU (họp công việc, chat đồng nghiệp, gia đình, email, kể chuyện...) — ngữ cảnh phải THỂ HIỆN NGAY TRONG CÂU NHẬT (chủ thể/tình huống rõ), không viết 2 câu Nhật giống hệt nhau. Bản dịch Việt dịch theo NGHĨA BÓNG đã cho, chỉnh giọng điệu theo ngữ cảnh (lịch sự trong họp, suồng sã khi bạn bè). TUYỆT ĐỐI không dịch từng chữ.\n" + COMMON,
+    "am": "Chủ đề ẩm thực/văn hoá/du lịch Việt-Nhật: {seed}. Viết 22 cặp câu hội thoại + giới thiệu tự nhiên. QUY TẮC TÊN MÓN/ĐỊA DANH: tên món Việt trong câu Nhật viết katakana kèm giữ nguyên khi hợp (フォー、バインミー、ハノイ); tên món/địa danh Nhật trong câu Việt GIỮ NGUYÊN cách gọi quen của người Việt (ramen, sushi, Shibuya). TUYỆT ĐỐI không dịch nghĩa đen tên riêng (trà đá KHÔNG phải 石のお茶 mà là チャーダー(ベトナムのアイスティー)).\n" + COMMON,
+    "dn2": "Từ đa nghĩa: 「{seed}」. CHỈ lấy 3-4 nghĩa/cách dùng PHỔ BIẾN NHẤT trong đời sống + công việc (TUYỆT ĐỐI không bịa nghĩa hiếm, không sáng tác ẩn dụ mới — chỉ dùng cách nói người bản xứ thực sự dùng hằng ngày). Mỗi nghĩa 5-6 cặp câu Nhật-Việt mà bản dịch của từ này khác nhau rõ rệt. Tổng ~20 cặp.\n" + COMMON,
 }
 
 
@@ -176,6 +218,10 @@ def build_prompt(mode, idx):
         return PROMPTS["g2"].format(seed=seed)
     if mode == "id":
         return PROMPTS["id"].format(seed=ID_IDIOMS[idx])
+    if mode == "am":
+        return PROMPTS["am"].format(seed=AM_TOPICS[idx])
+    if mode == "dn2":
+        return PROMPTS["dn2"].format(seed=DN2_TRAPS[idx])
     if mode == "idh":  # sinh từ danh sách harvest (ưu tiên bản ĐÃ review)
         gp = ROOT / "data" / "synthetic" / "gen"
         f = gp / "idiom_glosses_reviewed.jsonl"

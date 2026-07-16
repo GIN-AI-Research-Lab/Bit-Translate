@@ -54,6 +54,8 @@ SOURCES = [
     ("copythrough",     "pair:copythrough",          "both", "other",    False),
     ("codeswitch",      "pair:codeswitch",           "both", "other",    False),
     ("bt",              "pair:bt",                   "vi2ja", "other",   False),
+    # Vòng 2 (đã qua 3 lớp review — QUALITY_GATE; LaBSE là lớp 4 cuối)
+    ("vong2",           "jsonl:vong2_pairs.jsonl",   "both", "other",    True),
 ]
 
 
@@ -144,6 +146,9 @@ def main():
     ap.add_argument("--no-labse", dest="labse", action="store_false")
     ap.add_argument("--labse-thr", type=float, default=0.80)
     ap.add_argument("--labse-device", default="auto")
+    ap.add_argument("--oversample-short", type=int, default=0,
+                    help="nhân thêm N bản sao cho sequence NGẮN trong base (len<=44 token "
+                         "~ hội thoại OpenSubtitles) — PLAN Vòng 2 §3.2. 0 = tắt")
     args = ap.parse_args()
 
     # base bin phải có sẵn (giải nén từ release train-assets-step14000)
@@ -245,19 +250,34 @@ def main():
                 idx.append(tstart)
                 n_new += 1
 
-    # 5) trộn binary: train.* = base.train.* + new
+    # 5) trộn binary: train.* = base.train.* + new (+ bản sao câu ngắn nếu bật)
     BIN.mkdir(parents=True, exist_ok=True)
     out_tok = BIN / "train.tokens.u16"
     shutil.copyfile(base_tok_p, out_tok)               # bắt đầu từ base
+    extra_idx = []
+    if args.oversample_short > 0:
+        # hội thoại ngắn trong base (chủ yếu OpenSubtitles, đã lọc LaBSE ở Bước 2):
+        # chép lại token span của các seq len<=44 thêm N lần.
+        toks = np.fromfile(base_tok_p, dtype=np.uint16)
+        offsets = np.zeros(len(base_idx) + 1, dtype=np.int64)
+        np.cumsum(base_idx[:, 0], out=offsets[1:])
+        short = np.where(base_idx[:, 0] <= 44)[0]
+        with open(out_tok, "ab") as f:
+            for _ in range(args.oversample_short):
+                for i in short:
+                    toks[offsets[i]:offsets[i] + base_idx[i, 0]].tofile(f)
+                    extra_idx.append((int(base_idx[i, 0]), int(base_idx[i, 1])))
+        print(f"[mix] oversample-short: +{len(extra_idx):,} bản sao seq ngắn (<=44 tok)", flush=True)
     with open(out_tok, "ab") as f:
         buf.tofile(f)
     new_idx = np.frombuffer(idx, dtype=np.int32).reshape(-1, 2)
-    all_idx = np.vstack([base_idx, new_idx])
+    parts = [base_idx] + ([np.array(extra_idx, dtype=np.int32)] if extra_idx else []) + [new_idx]
+    all_idx = np.vstack(parts)
     np.save(BIN / "train.index.npy", all_idx)
 
-    total = base_seq + n_new
-    print(f"[mix] XONG: base {base_seq:,} + new {n_new:,} = {total:,} seq "
-          f"(new {100*n_new/total:.1f}%) | bỏ quá dài {n_skip:,}", flush=True)
+    total = base_seq + len(extra_idx) + n_new
+    print(f"[mix] XONG: base {base_seq:,} + short×{args.oversample_short} {len(extra_idx):,} "
+          f"+ new {n_new:,} = {total:,} seq (new {100*n_new/total:.1f}%) | bỏ quá dài {n_skip:,}", flush=True)
     print("[mix] -> data/bin/train.{tokens.u16,index.npy} (dev giữ nguyên base)", flush=True)
 
 
