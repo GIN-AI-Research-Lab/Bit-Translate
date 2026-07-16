@@ -172,6 +172,25 @@ USER eyeball 50 câu (30-60 phút) → chốt gate → vòng kế
 - Eval chạy i2_s trên bitnet.cpp (số thật của sản phẩm cuối, không phải PyTorch).
 - Probe 64 câu tái dùng làm regression test — cùng bộ câu, so ok-rate qua từng vòng.
 
+### 5.1 GATE SỨC CHỨA — cơ sở quyết định scale 200M (điền sau MỖI vòng, ~10 phút)
+
+> Nguyên tắc: scale chỉ có lãi khi nút thắt là SỨC CHỨA của 110M params, không phải data.
+> Vòng 1 đã chứng minh pipeline data hoạt động (+8..+15 chrF đúng domain nhắm) → từ giờ,
+> nếu data nhắm đích đạt chuẩn mà KHÔNG ăn điểm, nghi phạm chính là trần model.
+
+Sau khi eval xong vòng N (probe64 + chrF FLORES + glossary test), điền 1 dòng vào
+`eval/capacity_log.md` rồi đếm **tín hiệu trần**:
+
+- **T1 — Data nhắm không ăn:** domain nhắm có ≥800 cặp sạch (qua đủ 4 lớp QUALITY_GATE + LaBSE, có oversample) mà Δprobe domain đó **< +3 chrF**. (Đối chứng vòng 1: IT +14.6, câu khó +10.5 với điều kiện tương đương.)
+- **T2 — Học mới đè kiến thức cũ:** bất kỳ domain cũ nào tụt **> 2 chrF** dù replay ≥ 65% — model hết chỗ trống, phải ghi đè cái cũ để chứa cái mới.
+- **T3 — Mốc tuyệt đối (§7):** sau Vòng 2 mà vi→ja FLORES vẫn **< 27**.
+- **T4 — Loss chạm sàn:** trung bình loss 500 step cuối (lấy `grep -E "^step " checkpoints/train.log | tail -100`, tính tay hoặc awk) của 2 vòng liên tiếp chênh **< 0.02** — model không nén thêm được gì dù data mới đã vào.
+
+**Quyết định:**
+- **0–1 tín hiệu** → chưa phải trần. Tiếp vòng data kế (rẻ hơn scale nhiều lần).
+- **≥2 tín hiệu trong cùng 1 vòng, HOẶC T1 lặp lại 2 vòng liên tiếp** → chốt scale ~200M: d_model 1024 / 16 layer / FFN 2816 (khởi điểm gợi ý), train **from-scratch** 2–3 ngày trên toàn bộ data mix hiện có (KHÔNG resume được từ ckpt 110M — khác kích thước ma trận). Giữ ckpt 110M làm (a) teacher back-translation, (b) mốc đối chứng: model 200M phải THẮNG 110M trên cùng probe64 mới được nhận.
+- **Chống dương tính giả:** 1 vòng data kém chất lượng cũng bật T1. Trước khi kết tội model, eyeball 10 cặp ngẫu nhiên của mode không ăn điểm — nếu data bẩn/lệch domain thì lỗi ở data, sửa data trước, chưa tính là tín hiệu trần.
+
 ## 6. Việc cần USER làm
 1. **Cấp glossary JA-VI** (csv/tsv/xlsx đều được) — cần cho Vòng 1.
 2. **Cấp tài liệu IT đã dịch** (song ngữ hoặc 2 file riêng) — cần cho Vòng 1.
