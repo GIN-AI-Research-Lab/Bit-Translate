@@ -178,12 +178,18 @@ def build_prompt(mode, idx):
     raise ValueError(mode)
 
 
+REASONING = os.environ.get("GEN_REASONING", "")   # "low"/"medium"/"high" -> bật thinking
+                                                   # (Gemini 2.5/3.x hỗ trợ qua OpenAI-compat;
+                                                   # chậm hơn + tốn TPM hơn, cùng RPD)
+
+
 def gen(task):
     parts = task.split(":")
     mode, idx = parts[0], int(parts[1])
     prompt = build_prompt(mode, idx)
+    extra = {"reasoning_effort": REASONING} if REASONING else {}
     r = client.chat.completions.create(model=MODEL, temperature=0.85, max_tokens=8000,
-                                       messages=[{"role": "user", "content": prompt}])
+                                       messages=[{"role": "user", "content": prompt}], **extra)
     txt = re.sub(r"^```[a-z]*\n?|```$", "", (r.choices[0].message.content or "").strip(), flags=re.M)
     out = []
     for line in txt.splitlines():
