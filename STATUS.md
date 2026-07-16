@@ -1,9 +1,25 @@
-# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-16)
+# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-16 chiều)
 
 ## TL;DR
-- **⚠️ SỰ CỐ NODE n1 (2026-07-16 ~17:00 JST):** Vòng 2 (19000→23000) chạy tới ~step 19530 thì node n1.ckey.vn lỗi GPU/I-O (mọi lệnh đụng disk treo D-state, nvidia-smi treo, load 16, panel ckey báo Ngoại tuyến; SSH `root@n1.ckey.vn -p 1638` lúc được lúc không). **Backup khẩn cấp lên GitHub Release tag `backup-vong2-step<N>`** (script `/root/backup_node.sh` trên node, log `/root/backup.log`): last.pt (fp32+optimizer, resume được) + train.log + data/bin (mix vòng 2 đã LaBSE, tar split 1.9GB/phần: `cat bin_mix_vong2.tar.part_* > bin_mix_vong2.tar` rồi giải nén). Nếu release này KHÔNG có/thiếu file ⇒ backup thất bại (GitHub bị chặn từ node hoặc node chết hẳn) → thuê node mới, chạy lại `bash cloud/prep_vong2.sh` từ release `vong1-step19000` + `train-assets-vong2` (mất ~1-2h prep, KHÔNG mất data). Resume train: `VONG2_MT=16384 VONG2_GA=8 nohup bash cloud/run_vong2.sh > checkpoints/vong2.log 2>&1 &`. Trước sự cố: 26k tok/s, 2.27s/step, loss ~1.46 (LR vừa qua đỉnh restart 1e-4 — bình thường).
-- **MỚI: Gate sức chứa** (quyết định khi nào scale 110M→200M): PLAN_BUOC5 §5.1 + bảng điền từng vòng `eval/capacity_log.md`.
-- **🔄 ĐANG TRAIN VÒNG 1 (2026-07-15 ~15:00, node RTX 5060 Ti 16GB):** resume 14105 → **19000** với data mix Vòng 1 (glossary IT + IT docs + BT 55.846 cặp + LaBSE lọc 35%; new 26.2% = 14,63M seq). ~22,7k tok/s / 2.6s/step (98% util, 56°C, MT=16384/GA=8), LR restart 1e-4 anchor 14000 ✓. ETA ~3.5-4h. **Watcher `cloud/watch_vong1.sh` chạy nền** → train xong TỰ đóng gói + đẩy **Release `vong1-step19000`** (ckpt fp16, GGUF F16, bt data, fp32+optimizer, log). Việc kế ở local: tải F16 → `llama-quantize I2_S 1` → gate (probe64, chrF, term-test). Chi tiết: PLAN_BUOC5 §2.6-2.7.
+- **✅ VÒNG 2 XONG (19000→23000, node `O-1957139`) + ĐÃ BENCHMARK (2026-07-16 chiều, i2_s local):**
+  - chrF FLORES n=100: vi→ja **21.49** (±0 so 19000), ja→vi **42.27** (−0.6, trong nhiễu).
+  - probe64: **họp vi→ja 27.4→35.4 (+8.0)** ⭐, câu khó vi→ja +6.5; NHƯNG **hội thoại vi→ja chỉ +0.4** (domain nhắm chính!) và loạt domain cũ tụt: IT vi→ja −3.7, câu khó ja→vi −5.9, họp ja→vi −4.4. Glossary term-trần đứng yên 28%.
+  - **4/4 tín hiệu trần sức chứa BẬT (T1 T2 T3 T4)** — chi tiết `eval/capacity_log.md` + PLAN §3.5. Theo luật §5.1: **CHỐT SCALE ~200M from-scratch** (d_model 1024/16 layer/FFN 2816, 2–3 ngày). Data vòng 2 đã eyeball chống dương tính giả — sạch, không phải lỗi data.
+- **🚀 SCALE ~292M — SẴN SÀNG LAUNCH (2026-07-16 chiều, PLAN §3.6):** user chốt lên thẳng ~300M (thực tế **291.8M**: d1152/16L/18H/ff3072, head_dim 64) sau 4/4 tín hiệu trần. **KHÔNG dừng node** — tái dùng luôn cho run from-scratch. Lệnh trên node (`~/bt`):
+  ```
+  git pull
+  nohup bash cloud/run_300m.sh > checkpoints/scale300m.log 2>&1 &
+  tail -f checkpoints/scale300m.log      # guard tự upload last_final_23000.pt rồi mới train
+  # khi train.log bắt đầu có "step ...":
+  WATCH_TAG=scale300m-step25000 nohup bash cloud/watch_vong1.sh > checkpoints/watch.log 2>&1 &
+  ```
+  25.000 step, LR 2.5e-4, budget 131k tok/step. Ước ~9-10k tok/s, ~6-7s/step → **~2 ngày**. VRAM ~8-9GB/16GB. Sự cố: OOM → `M300_MT=4096 M300_GA=32`; Triton/compile lỗi → `M300_COMPILE=0`. Guard trong script TỰ upload `last_final_23000.pt` (110M fp32+opt, hiện CHƯA có trên release) trước khi dọn checkpoints → `checkpoints_110m/`; nếu guard fail thì KHÔNG train (đừng dùng `M300_FORCE=1` trừ khi chấp nhận mất).
+  Code hỗ trợ đã xong + đã test local: `train.py`/`convert_to_gguf.py` nhận dims (converter tự đọc cfg từ ckpt — watcher đóng gói 292M không cần sửa); smoke test forward 291.8M OK, loss untrained 10.57 ≈ ln(32k) chuẩn.
+- **Gate nhận model 292M (sau ~2 ngày):** phải THẮNG 110M step23000 trên cùng harness — mốc phải vượt: FLORES vi→ja 21.49 / ja→vi 42.27; probe64 TB vi2ja 31.7 / ja2vi 48.7; glossary 28%. Thua = nút thắt là data → dồn sức BT (kế hoạch gốc 500k-1M câu JA, mới dùng 86k). Quyết định "thinking"/ngữ cảnh: KHÔNG CoT (nhỏ quá, phá latency); ngữ cảnh zero-pronoun làm ở vòng 3 bằng data format (không đổi arch) — PLAN §3.6.
+- **👀 Việc user lúc rảnh (trong 2 ngày chờ):** eyeball `eval/probe64_step23000.jsonl` của 110M — làm mốc so sánh bằng mắt khi 292M ra lò.
+- **Sự cố node n1 sáng nay: ĐÃ XỬ LÝ XONG** — n1.ckey.vn lỗi GPU/I-O ở ~step 19530, chuyển node mới + gói mix sẵn `bin_mix_vong2.tar.zst` (prep_vong2.sh chế độ PREMIX), KHÔNG mất data. (Backup khẩn cấp cũ trên release `backup-vong2-step<N>` chỉ còn giá trị tham khảo.)
+- **Gate sức chứa** (quyết định khi nào scale 110M→200M): PLAN_BUOC5 §5.1 + bảng điền từng vòng `eval/capacity_log.md`.
+- **✅ VÒNG 1 XONG (14000→19000), gate PASS có điều kiện (2026-07-16):** probe64 IT vi→ja **+14.6 chrF**, câu khó +10.5, họp +7.9; FLORES không giảm (vi→ja 21.45, ja→vi 42.88); glossary term-trần 24%→28%. Assets đầy đủ trên Release `vong1-step19000`. Chi tiết: PLAN_BUOC5 §2.8.
 - **Base FINAL step 14000 (mốc so sánh):** chrF FLORES n=100 (i2_s): vi→ja **21.31**, ja→vi **41.72** (Google ja→vi 54.0). Probe 64 câu: 14/64 ok (vi→ja 3/32, ja→vi 11/32). Model + checkpoint + data đầy đủ trên Release `v1.0-step14000` + `train-assets-step14000`.
 - **Model chạy CPU thật:** 344-465 tok/s (5600X, 6 luồng, i2_s 68MB, RAM ~94MB), dịch tốt 2 chiều qua bitnet.cpp (llama-cli đã patch).
 - **🎉 BUG CÂM: GIẢI XONG HOÀN TOÀN (2026-07-14). Model step4000 DỊCH ĐÚNG trên bitnet.cpp i2_s**: `猫が好きです。→Tôi thích mèo.`, `おはようございます。→Chào buổi sáng.`, `これはテストです。→Đây là bài kiểm tra.` Bench máy công ty: **432 tok/s** tg, 3345 tok/s pp (6 luồng). Là **HAI bug chồng nhau** (fix một cái vẫn câm — vì thế mới khó dò):

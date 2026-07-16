@@ -3,7 +3,7 @@
 > Lập 2026-07-14, dựa trên **probe 64 câu × 4 domain** chạy trên model step-14000 (i2_s, bitnet.cpp)
 > + chrF FLORES: vi→ja **21.3**, ja→vi **41.7** (Google ja→vi: 54.0).
 >
-> **⏱ CẬP NHẬT 2026-07-16 — VÒNG 1 XONG & ĐÃ ĐO: train 19000 ✓, eval ✓ (IT vi→ja +14.6 chrF). Gate: PASS có điều kiện → Vòng 2. Chi tiết §2.8.**
+> **⏱ CẬP NHẬT 2026-07-16 chiều — VÒNG 2 XONG & ĐÃ ĐO (§3.5): 4/4 tín hiệu trần sức chứa → SCALE FROM-SCRATCH. User chốt ~292M (d1152/16L/ff3072). Kế hoạch chạy + timeline ~2 ngày: §3.6; script `cloud/run_300m.sh`. Vòng 3 (§4 + ngữ cảnh) chạy trên model 292M.**
 
 ## 0. Hiện trạng đo được (probe nghiêm khắc chuẩn dịch chuyên nghiệp)
 
@@ -126,7 +126,8 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 ## 3. VÒNG 2 — Hội thoại & Họp (register + keigo)
 
 > **✅ DATA VÒNG 2 CHỐT 2026-07-16: 13.858 cặp sạch** (11 mode; release `train-assets-vong2`) — qua đủ 4 lớp QUALITY_GATE (xem `eval/QUALITY_GATE.md`: Claude xoá ~1.700 cặp/gloss lỗi qua các đợt đọc, blacklist 260 mục). Kiểm kê: idh 4.532 (476 idiom đã duyệt), ht 1.381, am 1.262 (ẩm thực/văn hoá — MỚI), dn+dn2 1.898, pb 1.055, id 1.052, pk 819 (phủ định kép — kéo sớm từ V3), hop 794, ps 571, g2 494.
-> **Train:** `bash cloud/prep_vong2.sh` trên node (tự tải 4 gói → mix LaBSE + oversample hội thoại ngắn ×1 → 19000→23000, LR restart anchor 19000). Gate ở §3.4.
+> **Train:** `bash cloud/prep_vong2.sh` trên node (mặc định PREMIX: tải bin mix sẵn `bin_mix_vong2.tar.zst` + ckpt 19000 → train ngay 19000→23000, LR restart anchor 19000; `PREMIX=0` để tự mix như cũ). Gate ở §3.4.
+> **🔄 ĐANG TRAIN (2026-07-16 ~11:45, node mới `O-1957139` sau sự cố n1):** step ~21100/23000, loss ~1.42, 25,1k tok/s / 2.32s/step, ETA ~13:00. Trước khi xong: bật watcher `WATCH_TAG=vong2-step23000 nohup bash cloud/watch_vong1.sh > checkpoints/watch.log 2>&1 &` — checklist sau-train ở STATUS.md TL;DR.
 
 ### 3.1 Data sinh bằng LLM (~1.5-2M token output ≈ 25-35k cặp)
 - **Hội thoại đời thường** (theo khung JLPT N3→N1 đã có): rủ rê/hẹn, gọi món (phở bò! trà đá!), mua sắm, hỏi đường, thời tiết, sức khỏe, gia đình. Chú trọng: câu 2 vế ("Hôm nay rảnh không? Đi ăn nhé"), sắc thái **sắp/định/nhớ...nhé** ↔ 〜そう/つもり/忘れずに.
@@ -145,8 +146,44 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 ### 3.3 Train
 - +**4.000 step**, mix 70% replay (gồm data vòng 1) + 30% mới.
 
-### Gate vòng 2
-- Probe: HoiThoai ok ≥ 8/16, Hop ok ≥ 8/16; register keigo đúng trong bộ test họp; chrF không giảm.
+### 3.4 Gate vòng 2
+- Probe: HoiThoai ok ≥ 8/16, Hop ok ≥ 8/16; register keigo đúng trong bộ test họp; chrF không giảm (mốc 19000: vi→ja 21.45 / ja→vi 42.88).
+- Việc mang theo từ gate Vòng 1: (a) đo glossary bằng **term-trong-câu** thay vì term trần; (b) check T3 — vi→ja FLORES sau vòng 2 vẫn < 27 là 1 tín hiệu trần.
+- Điền dòng Vòng 2 vào `eval/capacity_log.md` (T1–T4, §5.1) rồi mới quyết Vòng 3 hay scale 200M.
+
+### 3.5 KẾT QUẢ GATE VÒNG 2 — đo 2026-07-16 (i2_s 68MB, bitnet.cpp, greedy, cùng harness mọi mốc)
+
+**chrF FLORES devtest (n=100)** — `eval/eval_one.py`:
+| Chiều | 19000 | 23000 | Δ |
+|---|---|---|---|
+| ja→vi | 42.88 | 42.27 | −0.6 (trong nhiễu, không vi phạm gate) |
+| vi→ja | 21.45 | **21.49** | +0.0 → vẫn < 27 ⇒ **tín hiệu T3** |
+
+**probe64 — chrF trung bình theo domain×chiều** (`eval/probe64_step23000.jsonl` để đọc bằng mắt):
+| Domain | vi→ja 19k→23k | ja→vi 19k→23k |
+|---|---|---|
+| **Hội thoại (nhắm)** | 17.7 → 18.1 (**+0.4** ✗) | 53.4 → 56.5 (+3.1) |
+| **Họp (nhắm)** | 27.4 → **35.4 (+8.0)** ⭐ | 45.1 → 40.7 (**−4.4**) |
+| IT (cũ) | 38.9 → 35.2 (**−3.7**) | 47.7 → 44.8 (−2.9) |
+| Câu khó | 31.5 → **38.0 (+6.5)** | 58.7 → 52.8 (**−5.9**) |
+| **TB toàn probe** | 28.9 → 31.7 (+2.8) | 51.2 → 48.7 (−2.5) |
+
+**Glossary term-trần** (200 term held-out): 28% → **28%** (đứng yên; phép đo term-trong-câu vẫn nợ).
+**Loss:** TB 500 step cuối **1.384** — vòng 1 ~1.39, chênh 0.006 < 0.02 ⇒ **tín hiệu T4**.
+
+**Kết luận gate:** mẫu hình "học mới ĐÈ kiến thức cũ" hiện rõ — chỗ nhắm có ăn (họp vi→ja +8.0 nhờ data keigo/register; phủ định kép kéo câu khó vi→ja +6.5) nhưng trả giá bằng tụt loạt domain cũ (IT vi→ja −3.7, câu khó ja→vi −5.9, họp ja→vi −4.4) dù replay 70%; hội thoại vi→ja gần đứng yên (+0.4) dù 5,9k cặp ht+idh sạch (đã eyeball 10 cặp ngẫu nhiên chống dương tính giả — data KHÔNG bẩn).
+→ **4/4 tín hiệu trần (T1+T2+T3+T4) — theo luật §5.1: CHỐT SCALE from-scratch.** Giữ 110M step23000 làm (a) teacher back-translation, (b) mốc đối chứng — model mới phải THẮNG nó trên cùng probe64. *(Chuẩn cuối vẫn là USER eyeball `eval/probe64_step23000.jsonl`.)*
+→ **QUYẾT ĐỊNH SIZE (user, 2026-07-16): lên thẳng ~292M** (thay vì 200M của §5.1) để dư sức chứa cho vòng 3–5, chấp nhận i2_s ~150MB / ~150–200 tok/s CPU (vượt spec 100–200M của CLAUDE.md — đã cân nhắc; vẫn thừa cho re-translation). Kế hoạch chạy: §3.6.
+
+### 3.6 SCALE ~292M — kế hoạch chạy (đang triển khai 2026-07-16)
+
+- **Config:** d_model **1152** / **16 layer** / **18 head** (head_dim 64 — khớp graph build_bitnet_158) / FFN **3072**, vocab 32k, max_seq 256 → **291.8M params** (đã smoke test forward + converter tự đọc dims từ cfg ckpt).
+- **Train:** from-scratch trên node hiện tại (16GB), dùng ngay `data/bin` premix vòng 2 (= base + vòng 1 + vòng 2, đủ toàn bộ data). Script **`cloud/run_300m.sh`**: 25.000 step, token budget 131k/step (MT 8192 × GA 16), LR 2.5e-4 → 2.5e-5 (warmup 1000), milestone mỗi 2000. Có **guard**: tự upload `last_final_23000.pt` (110M) lên release nếu thiếu rồi mới dọn `checkpoints/` → `checkpoints_110m/`.
+- **Ước lượng:** compute/token ≈ 3× của 110M → ~9-10k tok/s, ~6-7s/step, **~42-48h (~2 ngày)**. VRAM ~8-9GB / 16GB (OOM → `M300_MT=4096 M300_GA=32`; Triton lỗi → `M300_COMPILE=0`).
+- **Đóng gói:** tái dùng `watch_vong1.sh` với `WATCH_TAG=scale300m-step25000` (run_300m.sh ghi cùng marker).
+- **Gate nhận model:** 292M phải **thắng 110M step23000** trên cùng probe64 + chrF FLORES (mốc: vi→ja 21.49 / ja→vi 42.27; probe TB vi2ja 31.7 / ja2vi 48.7). Thua = data là nút thắt, không phải size (khi đó dồn sức nở data BT).
+- **KHÔNG làm "thinking"** (CoT): 300M quá nhỏ để reasoning có ích, phá latency (×5 token), data đắt — sức mạnh model dịch nhỏ đến từ data. **Dịch có ngữ cảnh** (zero-pronoun §9#1): làm ở **vòng 3 trên model 292M** — chỉ là quy ước format data (token sẵn có, sinh bằng code từ cặp câu liền kề OpenSubtitles/TED), không cần đổi tokenizer/arch nên không hoãn from-scratch.
+- Vòng 3 (data số liệu/phủ định/câu phức §4 + ngữ cảnh + BT nở thêm) chạy TRÊN model 292M sau khi qua gate.
 
 ## 4. VÒNG 3 — Câu dài, số liệu, phủ định, tổng kết
 

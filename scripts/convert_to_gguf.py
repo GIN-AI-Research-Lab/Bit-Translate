@@ -78,20 +78,29 @@ def main():
                     help="linears F16 thay vì F32 -> file ~1/2 (dễ tải qua mạng cloud chậm). "
                          "i2_s sau khi quantize GIỐNG HỆT bản F32 (llama-quantize đọc về f32 nội bộ). "
                          "norms+embed VẪN F32 (kernel bitnet đòi src1 f32).")
-    ap.add_argument("--d-model", type=int, default=768)
-    ap.add_argument("--d-ff", type=int, default=2048)
-    ap.add_argument("--n-layers", type=int, default=12)
-    ap.add_argument("--n-heads", type=int, default=12)
+    # Dims: mặc định None = tự đọc từ cfg lưu trong checkpoint (train.py lưu
+    # "cfg": vars(cfg)); truyền cờ chỉ khi test dims lạ / ckpt không có cfg.
+    ap.add_argument("--d-model", type=int, default=None)
+    ap.add_argument("--d-ff", type=int, default=None)
+    ap.add_argument("--n-layers", type=int, default=None)
+    ap.add_argument("--n-heads", type=int, default=None)
     args = ap.parse_args()
 
     sp = spm.SentencePieceProcessor(model_file=args.tokenizer)
-    cfg = BitNetConfig(vocab_size=sp.get_piece_size(), d_model=args.d_model,
-                       d_ff=args.d_ff, n_layers=args.n_layers, n_heads=args.n_heads)
+    ck = torch.load(args.ckpt, map_location="cpu") if args.ckpt else None
+    ckcfg = (ck or {}).get("cfg") or {}
+    def dim(key, arg, fallback):
+        return arg if arg is not None else ckcfg.get(key, fallback)
+    cfg = BitNetConfig(vocab_size=sp.get_piece_size(),
+                       d_model=dim("d_model", args.d_model, 768),
+                       d_ff=dim("d_ff", args.d_ff, 2048),
+                       n_layers=dim("n_layers", args.n_layers, 12),
+                       n_heads=dim("n_heads", args.n_heads, 12))
     model = BitNetLM(cfg).eval()
-    if args.ckpt:
-        ck = torch.load(args.ckpt, map_location="cpu")
+    if ck:
         model.load_state_dict(ck["model"])
-        print("loaded", args.ckpt, "step", ck.get("step", "?"))
+        print(f"loaded {args.ckpt} step {ck.get('step', '?')} | "
+              f"d={cfg.d_model} L={cfg.n_layers} H={cfg.n_heads} ff={cfg.d_ff}")
     else:
         print("UNTRAINED model (validation mode)")
 

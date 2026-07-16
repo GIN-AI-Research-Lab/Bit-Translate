@@ -112,6 +112,12 @@ def main():
     ap.add_argument("--throttle", type=float, default=0.0,
                     help="sleep this * step_time after each step (1.0 ~= 50%% GPU duty)")
     ap.add_argument("--smoke", type=int, default=0, help="if >0, run this many steps on a tiny slice")
+    # Kích thước model (mặc định = 110M gốc). Scale 300M: --d-model 1152 --n-layers 16
+    # --n-heads 18 --d-ff 3072 (giữ head_dim 64 để khớp graph build_bitnet_158).
+    ap.add_argument("--d-model", type=int, default=768)
+    ap.add_argument("--d-ff", type=int, default=2048)
+    ap.add_argument("--n-layers", type=int, default=12)
+    ap.add_argument("--n-heads", type=int, default=12)
     args = ap.parse_args()
 
     CKPT.mkdir(exist_ok=True)
@@ -128,10 +134,12 @@ def main():
         idx = idx[:20000]
     print(f"train sequences: {len(idx):,} | tokens: {len(toks):,}", flush=True)
 
-    cfg = BitNetConfig()
+    cfg = BitNetConfig(d_model=args.d_model, d_ff=args.d_ff,
+                       n_layers=args.n_layers, n_heads=args.n_heads)
     model = BitNetLM(cfg).to(device)
     model.gradient_checkpointing = args.grad_ckpt
-    print(f"params: {model.num_params()/1e6:.1f}M", flush=True)
+    print(f"params: {model.num_params()/1e6:.1f}M "
+          f"(d={cfg.d_model} L={cfg.n_layers} H={cfg.n_heads} ff={cfg.d_ff})", flush=True)
 
     # NB: plain AdamW, not bitsandbytes Adam8bit — bnb's 8-bit optimizer kernels
     # trigger "CUDA driver error: device not ready" under async execution in
