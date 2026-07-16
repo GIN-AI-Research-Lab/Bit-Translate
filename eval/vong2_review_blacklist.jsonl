@@ -1,0 +1,19 @@
+{"ja": "このプログラムの構造は結構がしっかりしている。", "reason": "結構 nghĩa 'cấu trúc' — tiếng Nhật hiện đại không dùng; câu tự mâu thuẫn 構造は結構が"}
+{"ja": "データベースの設計において、データの結構を考える必要がある。", "reason": "結構 nghĩa 'cấu trúc' — bịa cách dùng"}
+{"ja": "システム全体の結構を見直す時期に来ている。", "reason": "結構 nghĩa 'cấu trúc' — bịa cách dùng"}
+{"ja": "このアプリのUIは結構がシンプルで使いやすい。", "reason": "結構 nghĩa 'cấu trúc' — bịa cách dùng"}
+{"ja": "コードの結構を整えてからコミットしよう。", "reason": "結構 nghĩa 'cấu trúc' — dân dev nói 構成/構造"}
+{"ja": "サーバーの応答が冷たいままだ。", "reason": "冷たい áp cho server — không phải tiếng Nhật tự nhiên"}
+{"ja": "キャッシュが冷たいので読み込みに時間がかかる。", "reason": "cold cache = コールドキャッシュ, không nói キャッシュが冷たい"}
+{"ja": "このデータセットはもう冷たい状態だ。", "reason": "bịa cách dùng 冷たい cho data"}
+{"ja": "ストレージが冷たいのでアクセス頻度が低い。", "reason": "cold storage = コールドストレージ, không nói ストレージが冷たい"}
+{"ja": "接続が冷たいまま切断された。", "reason": "bịa cách dùng 冷たい cho kết nối"}
+{"ja": "説得されて相手の意見に落ちる。", "reason": "意見に落ちる không phải cách dùng chuẩn (腑に落ちる mới đúng)"}
+{"ja": "受付で名刺を通す。", "reason": "名刺を通す không idiomatic (đúng là 取り次ぐ)"}
+{"ja": "悪口を言って相手を飛ばす。", "reason": "飛ばす không có nghĩa bêu rếu hạ bệ"}
+{"ja": "上司に気に入られて地方へ飛ばされる。", "reason": "câu tự mâu thuẫn: 気に入られて (được quý) nhưng bị đày đi xa; vi dịch 'bị ghét' lệch nguồn"}
+{"ja": "ライバルを蹴落として飛ばす。", "reason": "ghép 蹴落とす+飛ばす gượng, không tự nhiên"}
+{"ja": "そんな怪しい話に乗るなんて、君は本当にやばいな。", "reason": "vi dịch 'ngây ngô' lệch nghĩa やばい (liều/có vấn đề)"}
+{"ja": "重い罰則を科せられることになる。", "reason": "重い罰則 = hình phạt NẶNG; vi dịch 'thích đáng' sai nghĩa"}
+{"ja": "お疲れ様！例のバグ、直せそう？", "reason": "お疲れ様 chào hỏi bị dịch literal 'công nhận mệt thật'"}
+{"ja": "明日も早いですが、引き続きよろしくお願いします。", "reason": "vi thêm 'ngủ ngon' không có trong nguồn, bỏ mất 明日も早い"}
