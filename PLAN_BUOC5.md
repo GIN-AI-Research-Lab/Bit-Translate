@@ -3,7 +3,7 @@
 > Lập 2026-07-14, dựa trên **probe 64 câu × 4 domain** chạy trên model step-14000 (i2_s, bitnet.cpp)
 > + chrF FLORES: vi→ja **21.3**, ja→vi **41.7** (Google ja→vi: 54.0).
 >
-> **⏱ CẬP NHẬT 2026-07-15 chiều — VÒNG 1: ĐANG TRAIN trên node (14105 → 19000, ~22k tok/s, ETA ~3.5-4h từ 15:00). Watcher tự đóng gói + đẩy Release khi xong.** Chi tiết §2.6-2.7.
+> **⏱ CẬP NHẬT 2026-07-16 — VÒNG 1 XONG & ĐÃ ĐO: train 19000 ✓, eval ✓ (IT vi→ja +14.6 chrF). Gate: PASS có điều kiện → Vòng 2. Chi tiết §2.8.**
 
 ## 0. Hiện trạng đo được (probe nghiêm khắc chuẩn dịch chuyên nghiệp)
 
@@ -101,12 +101,27 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 
 **Tự động sau khi xong:** `cloud/watch_vong1.sh` (đang chạy nền, PID-lock) canh `VONG1 COMPLETE` → tự đóng gói (ckpt fp16, **GGUF F16**, bt.ja/vi, fp32+optimizer để resume Vòng 2, train.log) → **GitHub Release `vong1-step19000`**.
 
-**Việc còn lại ở LOCAL khi Release lên:**
-```bash
-gh release download vong1-step19000 --repo trituenguyen97/Bit-Translate --pattern 'vija_*_f16.gguf' --dir dist/
-~/BitNet/build/bin/llama-quantize dist/vija_19000_f16.gguf dist/vija_19000_i2s.gguf I2_S 1   # số 1!
-# rồi chạy gate: probe64 (so 14/64 của bản 14k) + chrF FLORES (vi→ja +4?) + test thuật ngữ
-```
+### 2.8 KẾT QUẢ GATE VÒNG 1 — đo 2026-07-16 (i2_s 68MB, bitnet.cpp, greedy)
+
+**chrF FLORES devtest (n=100)** — `eval/eval_one.py`, cùng harness mọi mốc trước:
+| Chiều | 14000 | 19000 | Δ |
+|---|---|---|---|
+| ja→vi | 41.72 | **42.88** | +1.2 ✓ không giảm |
+| vi→ja | 21.31 | **21.45** | +0.1 ✓ không giảm (✗ chưa +4 trên FLORES) |
+
+**probe64 — chrF trung bình theo domain×chiều** (`eval/run_probe64.py`, chi tiết từng câu ở `eval/probe64_step*.jsonl`):
+| Domain | vi→ja 14k→19k | ja→vi 14k→19k |
+|---|---|---|
+| **IT** | 24.3 → **38.9 (+14.6)** ⭐ | 42.6 → 47.7 (+5.1) |
+| Câu khó | 21.0 → **31.5 (+10.5)** | 49.6 → **58.7 (+9.1)** |
+| Họp | 19.5 → **27.4 (+7.9)** | 42.6 → 45.1 (+2.5) |
+| Hội thoại | 16.4 → 17.7 (+1.3) | 54.4 → 53.4 (−1.0) |
+| **TB toàn probe** | 20.3 → **28.9 (+8.6)** | 47.3 → **51.2 (+3.9)** |
+
+**Glossary test-set** (200 term held-out, JA term trần → VI): 24% → **28%** (✗ gate 70% — nhưng phép đo khắc nghiệt: term chưa từng thấy, không ngữ cảnh; cần đo lại bằng term-trong-câu ở vòng sau).
+
+**Kết luận gate:** data nhắm đích ăn ĐÚNG chỗ nhắm — vi→ja IT +14.6, câu khó +10.5, họp +7.9; FLORES (news/wiki, ngoài domain nhắm) không giảm. Hội thoại đứng yên (đúng — là mục tiêu Vòng 2). Điểm yếu lộ ra: generalize term chưa thấy còn kém (28%).
+→ **QUYẾT ĐỊNH: PASS có điều kiện — sang Vòng 2**; mang theo 2 việc: (a) đo thuật ngữ bằng term-trong-câu, (b) vi→ja FLORES tổng quát vẫn thấp (21.5) — kỳ vọng nhích tiếp nhờ data hội thoại Vòng 2. *(Chuẩn cuối vẫn là USER eyeball probe64 — file `eval/probe64_step19000.jsonl` sẵn để đọc.)*
 
 ## 3. VÒNG 2 — Hội thoại & Họp (register + keigo)
 
