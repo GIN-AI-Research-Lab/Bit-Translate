@@ -3,7 +3,7 @@
 # Chạy trong WSL:  bash demo/run_demo.sh [model.gguf]
 # Rồi mở trình duyệt Windows:  http://localhost:8765
 set -u
-MODEL="${1:-$HOME/vija-test/vija4000_i2s.gguf}"
+MODEL="${1:-$HOME/vija-test/vija19000_i2s.gguf}"
 SERVER_BIN="${LLAMA_SERVER:-$HOME/BitNet-test/build/bin/llama-server}"
 THREADS="${THREADS:-6}"
 cd "$(dirname "$0")"

@@ -94,6 +94,32 @@ PK_PATTERNS = [
     "〜ないとも言えない (cũng không thể nói là không…)", "〜なければならない vs 〜なくてもいい",
     "〜きれない (không… hết nổi)", "まだ〜ていない vs もう〜ない",
 ]
+ID_IDIOMS = [
+    "お茶を濁す (làm qua loa cho xong)", "胸がざわざわする (bồn chồn không yên)",
+    "腑に落ちない (không thấy thuyết phục)", "目処が立つ (đã thấy hướng ra)",
+    "骨が折れる (vất vả cực nhọc)", "手が回らない (không kham nổi hết việc)",
+    "顔が広い (quen biết rộng)", "腰が重い (lề mề khó bắt tay vào việc)",
+    "口が堅い (kín miệng)", "頭が上がらない (chịu ơn không dám cãi)",
+    "気が利く (tinh ý chu đáo)", "馬が合う (hợp cạ)",
+    "水に流す (bỏ qua chuyện cũ)", "念を押す (dặn đi dặn lại cho chắc)",
+    "白紙に戻す (làm lại từ đầu)", "棚に上げる (lờ đi lỗi của mình)",
+    "油を売る (la cà lười biếng)", "足を引っ張る (kéo chân làm vướng cả nhóm)",
+    "顔を立てる (giữ thể diện cho ai)", "肩の荷が下りる (trút được gánh nặng)",
+    "火の車 (túng thiếu tài chính)", "雲行きが怪しい (tình hình có vẻ xấu đi)",
+    "板挟みになる (kẹt giữa hai bên)", "根回しする (đi cửa sau dàn xếp trước)",
+    "一枚噛む (có dính phần tham gia)", "白い目で見る (nhìn bằng ánh mắt lạnh nhạt)",
+    "肝に銘じる (khắc cốt ghi tâm)", "釘を刺す (rào trước dặn kỹ)",
+    "手を抜く (làm ẩu bớt công đoạn)", "泥をかぶる (đứng ra chịu trận)",
+    "花を持たせる (nhường công cho người khác)", "喉から手が出る (thèm muốn cực độ)",
+    "首が回らない (nợ ngập đầu)", "尻拭いをする (dọn hậu quả cho người khác)",
+    "灸を据える (răn đe cho chừa)", "匙を投げる (buông xuôi bỏ cuộc)",
+    "峠を越す (qua giai đoạn gay go nhất)", "軌道に乗る (đi vào quỹ đạo ổn định)",
+    "水を差す (phá đám làm cụt hứng)", "襟を正す (chấn chỉnh thái độ)",
+    "上の空 (lơ đãng tâm trí để đâu đâu)", "気が気でない (đứng ngồi không yên)",
+    "腹を割って話す (nói chuyện thật lòng)", "顔から火が出る (xấu hổ đỏ mặt)",
+    "二の足を踏む (chần chừ không dám tiến)", "揚げ足を取る (bắt bẻ vặt vãnh)",
+    "お墨付きをもらう (được cấp trên bảo chứng)", "太鼓判を押す (cam đoan chắc nịch)",
+]
 G2_TERMS = [
     ("リベース", "rebase"), ("チェリーピック", "cherry-pick"), ("ホットフィックス", "hotfix"),
     ("ロールバック", "rollback"), ("ロールアウト", "rollout"), ("カナリアリリース", "canary release"),
@@ -125,6 +151,7 @@ PROMPTS = {
     "dn": "Từ đa nghĩa: 「{seed}」. Liệt kê các nghĩa/cách dùng khác nhau (kể cả nghĩa lóng, nghĩa trong IT nếu có), mỗi nghĩa viết 5-6 cặp câu Nhật-Việt mà bản dịch của từ này KHÁC HẲN nhau giữa các nghĩa (chứng minh ngữ cảnh đổi nghĩa). Tổng ~20 cặp.\n" + COMMON,
     "pk": "Mẫu ngữ pháp phủ định tiếng Nhật: {seed}. Viết 22 cặp câu dùng mẫu này trong ngữ cảnh đời thường + công việc IT. Bản dịch Việt phải giữ ĐÚNG chiều khẳng định/phủ định và sắc thái (đây là mẫu máy dịch hay dịch NGƯỢC nghĩa — bản dịch phải chuẩn tuyệt đối về logic).\n" + COMMON,
     "g2": "Thuật ngữ dev: {seed}. Với MỖI thuật ngữ viết 5 cặp câu Nhật-Việt ngữ cảnh làm việc thật (code review, vận hành, sự cố, daily). Giữ nguyên dạng katakana/kanji ở vế Nhật; vế Việt dùng term tiếng Anh như dân IT Việt nói (rebase, hotfix...) khi tự nhiên hơn dịch nghĩa. Tổng ~20-25 cặp.\n" + COMMON,
+    "id": "Quán ngữ tiếng Nhật: {seed}. Viết 22 cặp câu Nhật-Việt dùng quán ngữ này trong ngữ cảnh đời thường + công việc (câu ngắn lẫn câu dài nhiều vế). Bản dịch Việt dịch theo Ý NGHĨA quán ngữ (đã cho trong ngoặc) bằng cách nói tự nhiên của người Việt — TUYỆT ĐỐI không dịch từng chữ (お茶を濁す KHÔNG phải \"làm đục trà\").\n" + COMMON,
 }
 
 
@@ -146,6 +173,8 @@ def build_prompt(mode, idx):
         terms = G2_TERMS[idx * 5:(idx + 1) * 5]
         seed = ", ".join(f"{ja} ({en})" for ja, en in terms)
         return PROMPTS["g2"].format(seed=seed)
+    if mode == "id":
+        return PROMPTS["id"].format(seed=ID_IDIOMS[idx])
     raise ValueError(mode)
 
 

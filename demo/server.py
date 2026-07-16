@@ -59,6 +59,9 @@ def translate_seg(seg, tag, n_predict, cache):
     ids = [BOS, tag] + upstream_json("/tokenize", {"content": seg})["tokens"] + [EOS]
     out = upstream_json("/completion", {
         "prompt": ids, "n_predict": n_predict, "temperature": 0.0, "cache_prompt": cache,
+        # chống vòng lặp thoái hoá khi gặp câu ngoài phân phối (idiom, văn chương):
+        # greedy thuần không penalty -> "những phần khác, những phần khác..." vô hạn.
+        "repeat_penalty": 1.25, "repeat_last_n": 64,
     })
     return (out.get("content") or "").strip(), out.get("timings", {}), len(ids)
 
