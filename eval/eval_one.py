@@ -4,6 +4,7 @@
 Server tự bật/tắt. In 1 dòng kết quả + append vào eval/chrf_runs.tsv.
 """
 import json
+import os
 import subprocess
 import sys
 import time
@@ -11,6 +12,8 @@ import urllib.request
 from pathlib import Path
 
 import sacrebleu
+
+SERVER = os.environ.get("LLAMA_SERVER", "/home/tuent/BitNet-test/build/bin/llama-server")
 
 UP = "http://127.0.0.1:8080"
 BOS, EOS, VIE, JPN = 2, 3, 4, 5
@@ -30,7 +33,7 @@ def up(path, payload):
 def main():
     subprocess.run(["pkill", "-f", "llama-server"], capture_output=True)
     time.sleep(1.5)
-    subprocess.Popen(["/home/tuent/BitNet-test/build/bin/llama-server", "-m", GGUF,
+    subprocess.Popen([SERVER, "-m", GGUF,
                       "--host", "127.0.0.1", "--port", "8080", "-t", "6", "-c", "256",
                       "--parallel", "1"],
                      stdout=open("/tmp/eval_server.log", "w"), stderr=subprocess.STDOUT)

@@ -1,0 +1,64 @@
+{"id": 1, "domain": "it", "dir": "vi2ja", "src": "Tính năng đăng nhập đã test xong, tôi sẽ deploy lại vào chiều nay.", "ref": "ログイン機能のテストが完了したので、今日の午後に再デプロイします。", "hyp": "テストが完了したログイン機能なので、もう一度コミットを解除します。", "chrf": 37.3}
+{"id": 2, "domain": "it", "dir": "vi2ja", "src": "Bug này không tái hiện được ở môi trường sản xuất.", "ref": "このバグは本番環境で再現できません。", "hyp": "生産環境で再現しないバグ。", "chrf": 20.1}
+{"id": 3, "domain": "it", "dir": "vi2ja", "src": "Hãy kiểm tra log trước khi điều tra nguyên nhân.", "ref": "原因を調査する前にログを確認してください。", "hyp": "原因を調べて、Log を調べてください。", "chrf": 27.9}
+{"id": 4, "domain": "it", "dir": "vi2ja", "src": "Pull request của bạn cần thêm unit test.", "ref": "あなたのプルリクエストにはユニットテストの追加が必要です。", "hyp": "Pull request は unit test を追加する必要があります。", "chrf": 6.8}
+{"id": 5, "domain": "it", "dir": "vi2ja", "src": "Cơ sở dữ liệu bị quá tải nên hệ thống chậm.", "ref": "データベースが過負荷になっているためシステムが遅くなっています。", "hyp": "データベースの負荷が高すぎてシステムが遅いです。", "chrf": 29.4}
+{"id": 6, "domain": "it", "dir": "vi2ja", "src": "Vui lòng merge nhánh này sau khi review.", "ref": "レビューが終わったらこのブランチをマージしてください。", "hyp": "はreview後にnext ブランチをマージしてください。", "chrf": 50.4}
+{"id": 7, "domain": "it", "dir": "vi2ja", "src": "Chúng ta cần hoàn thành kiểm thử tích hợp trước khi phát hành.", "ref": "リリースまでに結合テストを完了させる必要があります。", "hyp": "リリース時に残存テストを完了する必要があります。", "chrf": 49.9}
+{"id": 8, "domain": "it", "dir": "vi2ja", "src": "Máy chủ sẽ bảo trì từ 2 giờ sáng mai.", "ref": "サーバーは明日の午前2時からメンテナンスを行います。", "hyp": "サーバーは明日の朝2時からメンテナンスします。", "chrf": 60.0}
+{"id": 9, "domain": "it", "dir": "ja2vi", "src": "このバグは本番環境で再現できないので、まずログを確認しましょう。", "ref": "Vì lỗi này không tái hiện được ở môi trường sản xuất, trước tiên hãy kiểm tra log.", "hyp": "Bug này không thể reproduce được trên môi trường production, trước tiên mình check log xem sao.", "chrf": 39.9}
+{"id": 10, "domain": "it", "dir": "ja2vi", "src": "デプロイ前に必ずバックアップを取ってください。", "ref": "Trước khi deploy, nhất định phải sao lưu.", "hyp": "Tôi luôn sao lưu trước khi deploy.", "chrf": 48.3}
+{"id": 11, "domain": "it", "dir": "ja2vi", "src": "単体テストと結合テストを全部完了させる必要があります。", "ref": "Cần hoàn thành toàn bộ kiểm thử đơn vị và kiểm thử tích hợp.", "hyp": "Cần phải hoàn thành tất cả các bài kiểm tra kết hợp với một bài kiểm tra đơn vị.", "chrf": 38.5}
+{"id": 12, "domain": "it", "dir": "ja2vi", "src": "このライブラリのバージョンを更新してください。", "ref": "Vui lòng cập nhật phiên bản của thư viện này.", "hyp": "Tôi đang cập nhật phiên bản của trình duyệt web này.", "chrf": 60.0}
+{"id": 13, "domain": "it", "dir": "ja2vi", "src": "APIのレスポンスが遅いので原因を調べています。", "ref": "Vì phản hồi của API chậm nên tôi đang tìm nguyên nhân.", "hyp": "API response đang bị chậm, tôi đang tìm hiểu nguyên nhân.", "chrf": 47.0}
+{"id": 14, "domain": "it", "dir": "ja2vi", "src": "コードレビューのコメントに対応しました。", "ref": "Tôi đã xử lý các bình luận trong code review.", "hyp": "Đã hỗ trợ cho chú thích về code review.", "chrf": 29.8}
+{"id": 15, "domain": "it", "dir": "ja2vi", "src": "本番環境にアクセスする権限がありません。", "ref": "Tôi không có quyền truy cập môi trường sản xuất.", "hyp": "Tôi không có quyền truy cập vào production.", "chrf": 56.8}
+{"id": 16, "domain": "it", "dir": "ja2vi", "src": "エラーメッセージをスクリーンショットで送ってください。", "ref": "Vui lòng gửi ảnh chụp màn hình thông báo lỗi.", "hyp": "Tôi sẽ gửi ảnh thang máy Ela-mesage qua màn hình chụp.", "chrf": 38.4}
+{"id": 17, "domain": "hoithoai", "dir": "vi2ja", "src": "Cậu ăn cơm chưa? Tối nay đi nhậu không?", "ref": "ご飯もう食べた?今夜飲みに行かない?", "hyp": "飲みに行った?", "chrf": 14.6}
+{"id": 18, "domain": "hoithoai", "dir": "vi2ja", "src": "Xin chào, bạn khỏe không?", "ref": "こんにちは、お元気ですか?", "hyp": "こんにちは、お疲れですか?", "chrf": 55.3}
+{"id": 19, "domain": "hoithoai", "dir": "vi2ja", "src": "Hôm nay trời đẹp quá nhỉ.", "ref": "今日はいい天気ですね。", "hyp": "なんて美しい", "chrf": 1.7}
+{"id": 20, "domain": "hoithoai", "dir": "vi2ja", "src": "Cho tôi hỏi nhà vệ sinh ở đâu ạ?", "ref": "すみません、トイレはどこですか?", "hyp": "ところで、どこのトイレに?", "chrf": 13.4}
+{"id": 21, "domain": "hoithoai", "dir": "vi2ja", "src": "Cảm ơn nhé, mai gặp lại!", "ref": "ありがとう、また明日!", "hyp": "ありがとうございます、明日はございましょう!", "chrf": 29.0}
+{"id": 22, "domain": "hoithoai", "dir": "vi2ja", "src": "Bạn có rảnh cuối tuần này không?", "ref": "今週末、空いてる?", "hyp": "週末は暇ですか?", "chrf": 7.8}
+{"id": 23, "domain": "hoithoai", "dir": "vi2ja", "src": "Món này cay quá, tôi không ăn được.", "ref": "この料理は辛すぎて食べられません。", "hyp": "味が辛くて、食べません。", "chrf": 16.4}
+{"id": 24, "domain": "hoithoai", "dir": "vi2ja", "src": "Để tôi trả tiền cho, đừng ngại.", "ref": "私が払うよ、遠慮しないで。", "hyp": "金を払おう 心配はいらない", "chrf": 6.6}
+{"id": 25, "domain": "hoithoai", "dir": "ja2vi", "src": "すみません、この電車は新宿に止まりますか?", "ref": "Xin lỗi, chuyến tàu này có dừng ở Shinjuku không?", "hyp": "Xin lỗi, chuyến tàu này có dừng ở Shinjuku không?", "chrf": 100.0}
+{"id": 26, "domain": "hoithoai", "dir": "ja2vi", "src": "おはようございます、今日もよろしくお願いします。", "ref": "Chào buổi sáng, hôm nay cũng mong được giúp đỡ.", "hyp": "Chào buổi sáng, hôm nay vui lòng cho tôi biết.", "chrf": 49.7}
+{"id": 27, "domain": "hoithoai", "dir": "ja2vi", "src": "ちょっと手伝ってもらえますか?", "ref": "Bạn giúp tôi một chút được không?", "hyp": "Bạn có thể giúp tôi một chút không?", "chrf": 64.4}
+{"id": 28, "domain": "hoithoai", "dir": "ja2vi", "src": "週末は何をする予定ですか?", "ref": "Cuối tuần bạn định làm gì?", "hyp": "Cuối tuần bạn định làm gì?", "chrf": 100.0}
+{"id": 29, "domain": "hoithoai", "dir": "ja2vi", "src": "お腹すいた、何か食べに行こう。", "ref": "Đói bụng quá, đi ăn gì đó thôi.", "hyp": "Tôi đói, đi ăn gì đó đi.", "chrf": 37.5}
+{"id": 30, "domain": "hoithoai", "dir": "ja2vi", "src": "その映画、すごく面白かったよ。", "ref": "Bộ phim đó hay lắm đấy.", "hyp": "Bộ phim đó thật thú vị.", "chrf": 36.5}
+{"id": 31, "domain": "hoithoai", "dir": "ja2vi", "src": "少し疲れたので休憩しませんか?", "ref": "Hơi mệt rồi, mình nghỉ một chút nhé?", "hyp": "Tôi hơi mệt nên không nghỉ ngơi?", "chrf": 19.5}
+{"id": 32, "domain": "hoithoai", "dir": "ja2vi", "src": "気をつけて帰ってね。", "ref": "Về cẩn thận nhé.", "hyp": "Cẩn thận trở về nhé.", "chrf": 44.4}
+{"id": 33, "domain": "hop", "dir": "vi2ja", "src": "Cuộc họp ngày mai đổi sang 3 giờ chiều.", "ref": "明日の会議は午後3時に変更します。", "hyp": "明日の会議は3時間に変更。", "chrf": 35.0}
+{"id": 34, "domain": "hop", "dir": "vi2ja", "src": "Vui lòng gửi biên bản họp trước thứ Sáu.", "ref": "金曜日までに議事録を送ってください。", "hyp": "退職式の議事録を凌駕してください。", "chrf": 31.9}
+{"id": 35, "domain": "hop", "dir": "vi2ja", "src": "Tôi xin phép nghỉ phép vào tuần sau.", "ref": "来週、有給休暇を取らせていただきます。", "hyp": "来週中に失礼します。", "chrf": 9.0}
+{"id": 36, "domain": "hop", "dir": "vi2ja", "src": "Anh Tanaka phụ trách dự án này.", "ref": "田中さんがこのプロジェクトを担当します。", "hyp": "タナカさんがプロジェクトを担当しました。", "chrf": 54.1}
+{"id": 37, "domain": "hop", "dir": "vi2ja", "src": "Chúng ta cần chuẩn bị phương án thay thế trước cuộc họp.", "ref": "会議までに代替案を準備する必要があります。", "hyp": "会議の代替案を準備する必要があります。", "chrf": 76.8}
+{"id": 38, "domain": "hop", "dir": "vi2ja", "src": "Xin lỗi vì đã trả lời muộn.", "ref": "ご返信が遅くなり申し訳ございません。", "hyp": "返信してすみません。", "chrf": 15.0}
+{"id": 39, "domain": "hop", "dir": "vi2ja", "src": "Tiến độ dự án hiện đạt 70%.", "ref": "プロジェクトの進捗は現在70%です。", "hyp": "プロジェクトの進捗は70%に達しました。", "chrf": 53.1}
+{"id": 40, "domain": "hop", "dir": "vi2ja", "src": "Rất mong được hợp tác với quý công ty.", "ref": "御社とのご協力を心よりお願い申し上げます。", "hyp": "会社員さんと協力していきたいです。", "chrf": 8.3}
+{"id": 41, "domain": "hop", "dir": "ja2vi", "src": "先ほどお客様から連絡があり、打ち合わせを午後3時に変更したいそうです。", "ref": "Vừa nãy khách hàng có liên hệ, họ muốn đổi buổi họp sang 3 giờ chiều.", "hyp": "Khách hàng đã liên lạc với tôi và muốn thay đổi chiều nay lúc 3 giờ chiều.", "chrf": 35.8}
+{"id": 42, "domain": "hop", "dir": "ja2vi", "src": "会議室の予約を取り直してもらえますか?", "ref": "Bạn đặt lại phòng họp giúp tôi được không?", "hyp": "Tôi có thể đặt lại lịch đặt phòng được không?", "chrf": 44.0}
+{"id": 43, "domain": "hop", "dir": "ja2vi", "src": "納期に間に合うよう最善を尽くします。", "ref": "Tôi sẽ cố gắng hết sức để kịp thời hạn giao hàng.", "hyp": "Tôi sẽ cố gắng hết sức để kịp tiến độ.", "chrf": 62.1}
+{"id": 44, "domain": "hop", "dir": "ja2vi", "src": "この件について承認をいただけますか?", "ref": "Về việc này, anh/chị phê duyệt giúp được không?", "hyp": "Bạn có thể phê duyệt vấn đề này không?", "chrf": 30.9}
+{"id": 45, "domain": "hop", "dir": "ja2vi", "src": "お世話になっております。", "ref": "Cảm ơn anh/chị đã luôn quan tâm giúp đỡ.", "hyp": "Tôi rất quan tâm.", "chrf": 18.8}
+{"id": 46, "domain": "hop", "dir": "ja2vi", "src": "本日の議題は三つあります。", "ref": "Chương trình họp hôm nay có ba mục.", "hyp": "Có ba chủ đề của ngày hôm nay.", "chrf": 22.6}
+{"id": 47, "domain": "hop", "dir": "ja2vi", "src": "見積書を明日までにお送りします。", "ref": "Tôi sẽ gửi bảng báo giá trước ngày mai.", "hyp": "Tôi sẽ gửi giấy tờ đến trước ngày mai.", "chrf": 58.2}
+{"id": 48, "domain": "hop", "dir": "ja2vi", "src": "ご不明な点がございましたらご連絡ください。", "ref": "Nếu có điểm nào chưa rõ, xin vui lòng liên hệ.", "hyp": "Nếu có điểm nào chưa rõ thì cứ liên lạc với tôi.", "chrf": 53.4}
+{"id": 49, "domain": "kho", "dir": "vi2ja", "src": "Nếu hôm nay không dịch xong tài liệu này, hãy báo tôi vào sáng sớm mai.", "ref": "今日中にこの資料を翻訳できなければ、明日の朝一番に知らせてください。", "hyp": "祐珀は、明日の朝、翻訳が終わらないよう、私に知らせてください。", "chrf": 33.9}
+{"id": 50, "domain": "kho", "dir": "vi2ja", "src": "Doanh thu quý này tăng 12,5% so với cùng kỳ năm ngoái.", "ref": "今四半期の売上は前年同期比で12.5%増加しました。", "hyp": "四半期の売上高は前年同期比で12.5%増加しました。", "chrf": 84.5}
+{"id": 51, "domain": "kho", "dir": "vi2ja", "src": "Chúng tôi vẫn chưa tìm ra nguyên nhân của sự cố.", "ref": "私たちはまだ問題の原因を見つけられていません。", "hyp": "事件の原因は まだ見つかってない", "chrf": 13.6}
+{"id": 52, "domain": "kho", "dir": "vi2ja", "src": "Mặc dù trời mưa to nhưng sự kiện vẫn diễn ra đúng kế hoạch.", "ref": "大雨だったにもかかわらず、イベントは予定通り行われました。", "hyp": "雨は晴れても、予定通りの出来事が起きる。", "chrf": 10.0}
+{"id": 53, "domain": "kho", "dir": "vi2ja", "src": "Lễ kỷ niệm được tổ chức tại một khách sạn ở trung tâm thành phố.", "ref": "記念式典は市内中心部のホテルで開催されました。", "hyp": "市内中心部のホテルで開催されました。", "chrf": 79.3}
+{"id": 54, "domain": "kho", "dir": "vi2ja", "src": "Giá sản phẩm là 10 vạn yên, chưa bao gồm thuế.", "ref": "商品の価格は税抜きで10万円です。", "hyp": "税抜きで10万円、税抜きです。", "chrf": 44.4}
+{"id": 55, "domain": "kho", "dir": "vi2ja", "src": "Không phải là tôi không muốn đi, mà là tôi không có thời gian.", "ref": "行きたくないわけではなく、時間がないのです。", "hyp": "行くのが嫌だ、時間がないんだ", "chrf": 21.3}
+{"id": 56, "domain": "kho", "dir": "vi2ja", "src": "Xin gửi tài liệu chậm nhất vào ngày 15 tháng 3.", "ref": "遅くとも3月15日までに資料をお送りください。", "hyp": "3月15日に一番ゆっくりおしっこを。", "chrf": 16.7}
+{"id": 57, "domain": "kho", "dir": "ja2vi", "src": "昨日の会議で決まった内容を確認した上で、新しいスケジュールを作成してください。", "ref": "Sau khi xác nhận nội dung đã quyết định trong cuộc họp hôm qua, hãy lập lịch trình mới.", "hyp": "Vừa kiểm tra xong nội dung trong cuộc họp hôm trước, mình mới rành schedule.", "chrf": 36.5}
+{"id": 58, "domain": "kho", "dir": "ja2vi", "src": "10万円の予算では、この計画を実現するのは難しいです。", "ref": "Với ngân sách 100.000 yên thì khó thực hiện được kế hoạch này.", "hyp": "Với ngân sách 100,000 yên, việc thực hiện kế hoạch này là khó khăn.", "chrf": 60.5}
+{"id": 59, "domain": "kho", "dir": "ja2vi", "src": "参加者は前回より減ったわけではありません。", "ref": "Không phải là số người tham gia đã giảm so với lần trước.", "hyp": "Những người tham gia không giảm hơn lần trước.", "chrf": 46.9}
+{"id": 60, "domain": "kho", "dir": "ja2vi", "src": "会議は水曜日ではなく木曜日に延期されました。", "ref": "Cuộc họp bị dời sang thứ Năm chứ không phải thứ Tư.", "hyp": "Cuộc họp bị hoãn vào ngày thứ Năm chứ không phải ngày thứ Tư.", "chrf": 66.0}
+{"id": 61, "domain": "kho", "dir": "ja2vi", "src": "システムが遅いのはコードのせいではなく、データベースの過負荷が原因です。", "ref": "Hệ thống chậm không phải do code mà do cơ sở dữ liệu quá tải.", "hyp": "Sự cố cytemme chậm không phải do code gây ra do quá tải database.", "chrf": 47.9}
+{"id": 62, "domain": "kho", "dir": "ja2vi", "src": "令和6年度の予算はまだ承認されていません。", "ref": "Ngân sách năm tài chính Reiwa 6 vẫn chưa được phê duyệt.", "hyp": "Ngân sách 6 năm của Nghị định vẫn chưa được phê duyệt.", "chrf": 59.3}
+{"id": 63, "domain": "kho", "dir": "ja2vi", "src": "書類が3枚足りないので、至急送っていただけますか。", "ref": "Thiếu 3 tờ tài liệu, anh/chị gửi gấp giúp được không?", "hyp": "Không đủ 3 tài liệu, bạn có nhanh chóng gửi đi không?", "chrf": 31.1}
+{"id": 64, "domain": "kho", "dir": "ja2vi", "src": "この機能は次のバージョンまで実装されない予定です。", "ref": "Tính năng này dự kiến chưa được triển khai cho đến phiên bản tiếp theo.", "hyp": "Tính năng này dự kiến sẽ không được triển khai lên phiên bản tiếp theo.", "chrf": 74.4}

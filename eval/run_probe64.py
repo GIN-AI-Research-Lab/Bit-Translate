@@ -11,6 +11,7 @@ Kết quả in ra stdout + ghi eval/probe64_<label>.jsonl (từng câu, để đ
 """
 import csv
 import json
+import os
 import random
 import subprocess
 import sys
@@ -20,6 +21,8 @@ import urllib.request
 from pathlib import Path
 
 import sacrebleu
+
+SERVER = os.environ.get("LLAMA_SERVER", "/home/tuent/BitNet-test/build/bin/llama-server")
 
 UP = "http://127.0.0.1:8080"
 BOS, EOS, VIE, JPN = 2, 3, 4, 5
@@ -60,7 +63,7 @@ def norm(s):
 def main():
     subprocess.run(["pkill", "-f", "llama-server"], capture_output=True)
     time.sleep(1.5)
-    subprocess.Popen(["/home/tuent/BitNet-test/build/bin/llama-server", "-m", GGUF,
+    subprocess.Popen([SERVER, "-m", GGUF,
                       "--host", "127.0.0.1", "--port", "8080", "-t", "6", "-c", "256",
                       "--parallel", "1"],
                      stdout=open("/tmp/probe_server.log", "w"), stderr=subprocess.STDOUT)
