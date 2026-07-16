@@ -132,6 +132,9 @@ Toàn bộ data nhắm đích Vòng 1 đã sinh/gom (nằm trong `data/synthetic
 - **Phrasebook công thức** (~1.000 câu, ~50k token LLM): câu chào/công thức văn hoá dịch theo **CHỨC NĂNG** chứ không literal — お疲れ様です (≠"bạn đã mệt rồi"), よろしくお願いします (≠"xin đối xử tốt với tôi"), 頑張って, お世話になっております, mở/kết họp, mở/kết email, cảm ơn/xin lỗi khách. Rẻ mà ăn điểm cực lớn cho use case họp/công sở.
 - **Hội thoại theo persona** (quan hệ rõ: sếp↔nhân viên, đồng nghiệp ngang hàng, bạn thân, khách hàng): dạy **xưng hô tiếng Việt đúng quan hệ** (anh/em/chị/mình/bạn) thay vì "tôi/bạn" đều tăm tắp như Google. Đây là chỗ model chuyên domain **vượt được Google** trong công sở IT.
 - **Từ đa nghĩa tương phản**: ~200 từ bẫy JA (大丈夫, 結構, いい, ジョブ…) + ~200 từ VI (đá, cơm, được, nhà…), mỗi nghĩa 5-8 câu ngữ cảnh khác nhau cho ra bản dịch khác nhau.
+- **[KÉO TỪ VÒNG 3 LÊN — theo phân tích 48 câu `eval/analysis_javi48_vong1.md`] Phủ định kép** ないことはない/なくもない/話せないこともない — model đang dịch **NGƯỢC nghĩa** (3/3 câu FAIL), nguy hiểm nhất về nghĩa; data sinh code+LLM rẻ nên làm sớm.
+- **[MỚI] Glossary đợt 2 — term dev-workflow hiếm**: リベース(rebase), ホットフィックス, ロールアウト, カナリア, チェリーピック… (48 câu lộ hallucinate `リベース→"dính cơ sở dữ liệu"`); ~200-300 term + câu ví dụ.
+- **[MỚI] Slang list hội thoại** ~100 từ: やばい・まじで・それな・寝坊した・ドタキャン… gắn vào phần hội thoại đời thường.
 
 ### 3.2 Tận dụng data sẵn có
 - OpenSubtitles VI-JA (hội thoại tự nhiên, đã có trong data thô): lọc lại lấy top LaBSE ≥ 0.8, oversample ×2 phần hội thoại ngắn.

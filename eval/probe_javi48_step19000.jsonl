@@ -1,0 +1,48 @@
+{"id": 1, "ctx": "it_sau", "src": "メモリリークが原因でサーバーが毎晩クラッシュしていました。", "model": "Máy chủ bị sập mỗi đêm vì lý do gây ra memory leak."}
+{"id": 2, "ctx": "it_sau", "src": "このプルリクエストはコンフリクトがあるのでリベースしてください。", "model": "Pull request này bị conflict nên sẽ bị dính cơ sở dữ liệu."}
+{"id": 3, "ctx": "it_sau", "src": "タイムアウトの設定を30秒から60秒に伸ばしたら解決しました。", "model": "Sau khi kéo dài cài đặt timeout từ 30 giây lên 60 giây, nó đã giải quyết xong."}
+{"id": 4, "ctx": "it_sau", "src": "ステージングでは動くのに本番だけ落ちるのはなぜでしょうか。", "model": "Tại sao chỉ có những cuốn sách có thể làm giảm bớt những bài tập về nhà?"}
+{"id": 5, "ctx": "it_sau", "src": "この関数はnullチェックが抜けているので修正が必要です。", "model": "Số nan này bị clear kiểm tra null nên cần phải sửa lại."}
+{"id": 6, "ctx": "it_sau", "src": "データベースのインデックスを張り直したらクエリが10倍速くなりました。", "model": "Sau khi nâng cấp lên index dựa trên deta, truy vấn đã nhanh hơn 10 lần."}
+{"id": 7, "ctx": "keigo", "src": "お忙しいところ恐れ入りますが、ご確認いただけますでしょうか。", "model": "Tôi rất sợ khi bận rộn, bạn có thể kiểm tra giúp tôi không?"}
+{"id": 8, "ctx": "keigo", "src": "本日はお時間をいただき、誠にありがとうございました。", "model": "Ngày hôm đó tôi đã có thời gian và chân thành."}
+{"id": 9, "ctx": "keigo", "src": "申し訳ございませんが、明日の会議は欠席させていただきます。", "model": "Xin lỗi, nhưng tôi đã bỏ lỡ cuộc họp ngày mai."}
+{"id": 10, "ctx": "keigo", "src": "資料を添付いたしましたので、ご査収のほどよろしくお願いいたします。", "model": "Tôi đã đính kèm tài liệu, rất vui lòng thanh toán cho bạn."}
+{"id": 11, "ctx": "keigo", "src": "ご不明な点がございましたら、お気軽にお問い合わせください。", "model": "Nếu bạn có bất kỳ câu hỏi nào, đừng ngần ngại liên hệ với chúng tôi."}
+{"id": 12, "ctx": "keigo", "src": "大変恐縮ですが、納期を一週間延ばしていただくことは可能でしょうか。", "model": "Lạ thay đổi lớn, nhưng liệu có thể trì hoãn thời hạn bàn giao một tuần được không?"}
+{"id": 13, "ctx": "thanmat", "src": "まじで?それやばくない?", "model": "Thật sao? Không phải vậy sao?"}
+{"id": 14, "ctx": "thanmat", "src": "今日残業だから先帰ってて。", "model": "Hôm nay làm thêm giờ nên về nhà đi."}
+{"id": 15, "ctx": "thanmat", "src": "あのラーメン屋、めっちゃうまかったからまた行こうよ。", "model": "Nhà hàng Ramen đó, thật tuyệt vời, nên chúng ta hãy đi tiếp."}
+{"id": 16, "ctx": "thanmat", "src": "ごめん、寝坊した。10分遅れる!", "model": "- Ngủ đi, 10 phút nữa thôi!"}
+{"id": 17, "ctx": "thanmat", "src": "それな、俺もそう思ってた。", "model": "Tôi cũng nghĩ vậy."}
+{"id": 18, "ctx": "thanmat", "src": "週末ひま?ちょっと引っ越し手伝ってほしいんだけど。", "model": "Cuối tuần này em muốn anh đi lại được không?"}
+{"id": 19, "ctx": "solieu", "src": "売上は前年比で12.5%増加し、3億2000万円に達しました。", "model": "Doanh thu tăng 12,5% so với năm trước, đạt 300 triệu yên."}
+{"id": 20, "ctx": "solieu", "src": "会議は来週の水曜日、午後2時半からです。", "model": "Cuộc họp diễn ra vào thứ Tư tuần sau, lúc 2:30 chiều."}
+{"id": 21, "ctx": "solieu", "src": "このサーバーは月額5万円で、年間だと60万円かかります。", "model": "Máy chủ này là 50.000 yên mỗi tháng, mỗi năm là 600.000 yên."}
+{"id": 22, "ctx": "solieu", "src": "令和6年4月1日から新しい制度が始まります。", "model": "Từ ngày 1 tháng 4 năm 2011, một chế độ mới sẽ bắt đầu."}
+{"id": 23, "ctx": "solieu", "src": "ユーザー数は先月の8万人から今月は15万人に倍増しました。", "model": "Số lượng người dùng tăng gấp đôi từ 80.000 người vào tháng trước lên 150.000 người trong tháng này."}
+{"id": 24, "ctx": "solieu", "src": "締め切りは金曜日の17時ですが、木曜日中に提出してください。", "model": "Hạn chót là 17 giờ sáng, nhưng tôi sẽ gửi nó vào ngày thứ Năm."}
+{"id": 25, "ctx": "phudinh", "src": "彼の提案が悪いというわけではありませんが、予算が足りません。", "model": "Không phải là lời đề nghị của anh ấy không tốt, nhưng ngân sách của anh ấy không đủ."}
+{"id": 26, "ctx": "phudinh", "src": "時間がないので、全部はチェックしきれませんでした。", "model": "Vì không có thời gian nên tôi đã không kiểm tra hết tất cả."}
+{"id": 27, "ctx": "phudinh", "src": "この機能は誰も使っていないわけではないので、削除できません。", "model": "Tính năng này không phải ai cũng sử dụng nên không thể gỡ bỏ."}
+{"id": 28, "ctx": "phudinh", "src": "お金がないことはないけど、今は使いたくない。", "model": "Không có tiền, nhưng bây giờ tôi không muốn sử dụng nó."}
+{"id": 29, "ctx": "phudinh", "src": "日本語は話せないこともないですが、自信がありません。", "model": "Tiếng Nhật không nói được nhưng không tự tin."}
+{"id": 30, "ctx": "phudinh", "src": "この問題はまだ解決していません。", "model": "Vấn đề này vẫn chưa được giải quyết."}
+{"id": 31, "ctx": "chungu_an", "src": "昨日メールを送ったんですが、まだ返事が来ていません。", "model": "Tôi đã gửi email hôm qua nhưng vẫn chưa nhận được trả lại."}
+{"id": 32, "ctx": "chungu_an", "src": "大丈夫です、結構です。", "model": "Không sao, không sao."}
+{"id": 33, "ctx": "chungu_an", "src": "もう食べましたか?まだなら一緒に行きませんか?", "model": "Bạn đã ăn chưa? Bạn chưa đi cùng?"}
+{"id": 34, "ctx": "chungu_an", "src": "検討して、来週までに連絡します。", "model": "Chúng tôi sẽ xem xét và liên lạc với anh ấy trước tuần sau."}
+{"id": 35, "ctx": "chungu_an", "src": "その件、聞いてないんですけど。", "model": "Tôi không nghe về chuyện đó."}
+{"id": 36, "ctx": "chungu_an", "src": "いいですね、それで行きましょう。", "model": "Được rồi, chúng ta đi thôi."}
+{"id": 37, "ctx": "caudai", "src": "もし明日までにテストが終わらなければ、リリースを延期するか、機能を減らしてリリースするか、どちらかを選ばなければなりません。", "model": "Nếu ngày mai không có kết thúc test, bạn phải hoãn bản phát hành, giảm chức năng, hoặc chọn một cái gì đó."}
+{"id": 38, "ctx": "caudai", "src": "先週リリースした新機能について、ユーザーからの評判は良いものの、サーバーの負荷が想定より高いため、インフラの増強を検討しています。", "model": "Về các tính năng mới được phát hành tuần trước, danh tiếng của người dùng tốt hơn, nhưng chúng tôi đang xem xét việc tăng cơ sở hạ tầng, cao hơn so với dự kiến tải của máy chủ."}
+{"id": 39, "ctx": "caudai", "src": "彼は入社してまだ半年ですが、誰よりも早くコードレビューを返してくれるので、チーム全員から信頼されています。", "model": "Anh ấy đã đi vào và vẫn còn nửa năm, nhưng anh ấy sẽ sớm trả lại bài đánh giá mã của mình, vì vậy anh ấy được cả đội tin tưởng."}
+{"id": 40, "ctx": "caudai", "src": "この会社は10年前に設立され、現在は東京と大阪とホーチミンに拠点を持ち、約500人の社員が働いています。", "model": "Công ty được thành lập cách đây 10 năm, hiện có trụ sở tại Tokyo, Osaka và Hochimin, và khoảng 500 nhân viên đang làm việc."}
+{"id": 41, "ctx": "caudai", "src": "品質を落とさずにコストを削減するためには、まず現在のプロセスのどこに無駄があるかを分析する必要があります。", "model": "Để giảm chi phí mà không làm giảm chất lượng, trước tiên chúng ta cần phải phân tích nơi mà quá trình hiện tại của chúng ta bị lãng phí."}
+{"id": 42, "ctx": "caudai", "src": "来月の展示会で新製品を発表する予定でしたが、部品の調達が遅れているため、発表を延期せざるを得なくなりました。", "model": "Chúng tôi dự định sẽ trình bày một sản phẩm mới tại triển lãm vào tháng tới, nhưng vì việc mua sắm linh kiện bị trì hoãn nên chúng tôi phải hoãn lại thông báo."}
+{"id": 43, "ctx": "vanhoa", "src": "お疲れ様です。今日の定例会の議事録を共有します。", "model": "Chào anh. Tôi sẽ chia sẻ biên bản họp thường kỳ này cho anh/chị."}
+{"id": 44, "ctx": "vanhoa", "src": "いつもお世話になっております。株式会社ABCの田中です。", "model": "Tôi luôn luôn chăm sóc anh. Tôi là một công ty ABC."}
+{"id": 45, "ctx": "vanhoa", "src": "よろしくお願いします。", "model": "Xin hãy làm ơn."}
+{"id": 46, "ctx": "vanhoa", "src": "先日はごちそうさまでした。とても美味しかったです。", "model": "Hôm trước tôi đã ăn xong. Tôi rất ngon."}
+{"id": 47, "ctx": "vanhoa", "src": "頑張ってください!応援しています。", "model": "Cố gắng lên nhé! ủng hộ."}
+{"id": 48, "ctx": "vanhoa", "src": "お先に失礼します。", "model": "Xin lỗi trước."}
