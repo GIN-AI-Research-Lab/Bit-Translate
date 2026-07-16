@@ -152,6 +152,7 @@ PROMPTS = {
     "pk": "Mẫu ngữ pháp phủ định tiếng Nhật: {seed}. Viết 22 cặp câu dùng mẫu này trong ngữ cảnh đời thường + công việc IT. Bản dịch Việt phải giữ ĐÚNG chiều khẳng định/phủ định và sắc thái (đây là mẫu máy dịch hay dịch NGƯỢC nghĩa — bản dịch phải chuẩn tuyệt đối về logic).\n" + COMMON,
     "g2": "Thuật ngữ dev: {seed}. Với MỖI thuật ngữ viết 5 cặp câu Nhật-Việt ngữ cảnh làm việc thật (code review, vận hành, sự cố, daily). Giữ nguyên dạng katakana/kanji ở vế Nhật; vế Việt dùng term tiếng Anh như dân IT Việt nói (rebase, hotfix...) khi tự nhiên hơn dịch nghĩa. Tổng ~20-25 cặp.\n" + COMMON,
     "id": "Quán ngữ tiếng Nhật: {seed}. Viết 22 cặp câu Nhật-Việt dùng quán ngữ này trong ngữ cảnh đời thường + công việc (câu ngắn lẫn câu dài nhiều vế). Bản dịch Việt dịch theo Ý NGHĨA quán ngữ (đã cho trong ngoặc) bằng cách nói tự nhiên của người Việt — TUYỆT ĐỐI không dịch từng chữ (お茶を濁す KHÔNG phải \"làm đục trà\").\n" + COMMON,
+    "idh": "Các quán ngữ tiếng Nhật (kèm nghĩa chuẩn): {seed}. Với MỖI quán ngữ viết 11 cặp câu Nhật-Việt ở các NGỮ CẢNH KHÁC NHAU (họp công việc, chat đồng nghiệp, gia đình, email, kể chuyện...) — ngữ cảnh phải THỂ HIỆN NGAY TRONG CÂU NHẬT (chủ thể/tình huống rõ), không viết 2 câu Nhật giống hệt nhau. Bản dịch Việt dịch theo NGHĨA BÓNG đã cho, chỉnh giọng điệu theo ngữ cảnh (lịch sự trong họp, suồng sã khi bạn bè). TUYỆT ĐỐI không dịch từng chữ.\n" + COMMON,
 }
 
 
@@ -175,6 +176,15 @@ def build_prompt(mode, idx):
         return PROMPTS["g2"].format(seed=seed)
     if mode == "id":
         return PROMPTS["id"].format(seed=ID_IDIOMS[idx])
+    if mode == "idh":  # sinh từ danh sách harvest (ưu tiên bản ĐÃ review)
+        gp = ROOT / "data" / "synthetic" / "gen"
+        f = gp / "idiom_glosses_reviewed.jsonl"
+        if not f.exists():
+            f = gp / "idiom_glosses.jsonl"
+        glosses = [json.loads(l) for l in f.open(encoding="utf-8")]
+        pair = glosses[idx * 2:(idx + 1) * 2]
+        seed = "; ".join(f"「{g['ja']}」= {g['vi']}" for g in pair)
+        return PROMPTS["idh"].format(seed=seed)
     raise ValueError(mode)
 
 
