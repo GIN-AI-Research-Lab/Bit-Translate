@@ -105,8 +105,10 @@ def labse_keep(pairs, thr, device):
     if device == "auto":
         import torch
         device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"[mix] LaBSE score {len(pairs):,} cặp (device={device}, thr={thr})...", flush=True)
-    model = SentenceTransformer("sentence-transformers/LaBSE", device=device)
+    import os
+    labse_src = os.environ.get("LABSE_MODEL", "sentence-transformers/LaBSE")
+    print(f"[mix] LaBSE score {len(pairs):,} cặp (device={device}, thr={thr}, model={labse_src})...", flush=True)
+    model = SentenceTransformer(labse_src, device=device)
     model.max_seq_length = 128
     if device == "cuda":
         model.half()
