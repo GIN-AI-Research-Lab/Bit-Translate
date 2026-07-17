@@ -12,13 +12,36 @@ export PATH=/opt/conda/bin:$PATH
 REPO=trituenguyen97/Bit-Translate
 TAG=${BK_TAG:-autosave-scale300m}
 
+# gh release download không có progress bar -> tự hiển thị % (so size file đang tải
+# với tổng size asset khớp pattern trên release). Dùng: dl_release <tag> <pattern> [dir]
+dl_release(){
+  local tag=$1 pat=$2 dir=${3:-.} rgx total pid cur f
+  rgx=$(printf '%s' "$pat" | sed 's/[.]/\\./g; s/\*/.*/g')
+  total=$(gh release view "$tag" --repo "$REPO" --json assets \
+          --jq "[.assets[] | select(.name|test(\"^${rgx}\$\")) | .size] | add" 2>/dev/null || echo 0)
+  gh release download "$tag" --repo "$REPO" --pattern "$pat" --dir "$dir" --clobber &
+  pid=$!
+  if [ -n "$total" ] && [ "$total" != "null" ] && [ "$total" -gt 0 ] 2>/dev/null; then
+    while kill -0 "$pid" 2>/dev/null; do
+      cur=0
+      for f in "$dir"/$pat; do
+        [ -f "$f" ] && cur=$((cur + $(stat -c%s "$f" 2>/dev/null || echo 0)))
+      done
+      printf '\r   %s: %3d%%  (%d/%d MB)   ' "$pat" $((cur * 100 / total)) $((cur / 1048576)) $((total / 1048576))
+      sleep 2
+    done
+    printf '\r   %s: 100%%  (%d MB) ✓        \n' "$pat" $((total / 1048576))
+  fi
+  wait "$pid"   # gh fail -> set -e dừng script như cũ
+}
+
 gh auth status >/dev/null 2>&1 || { echo "!! gh chưa đăng nhập (gh auth login)"; exit 1; }
 mkdir -p checkpoints dist
 
 # 1) bin premix (base + vòng1 + vòng2 đã mix/LaBSE)
 if [ ! -f data/bin/train.tokens.u16 ]; then
   echo ">> Tải bin premix (452MB)..."
-  gh release download train-assets-vong2 --repo "$REPO" --pattern 'bin_mix_vong2.tar.zst'
+  dl_release train-assets-vong2 'bin_mix_vong2.tar.zst'
   tar -I zstd -xf bin_mix_vong2.tar.zst && touch data/bin/.premixed_vong2 && rm -f bin_mix_vong2.tar.zst
 fi
 
@@ -30,8 +53,8 @@ SB=$(head -1 dist/restore/last_b.step 2>/dev/null || echo -1)
 if [ "$SA" = "-1" ] && [ "$SB" = "-1" ]; then echo "!! release $TAG chưa có autosave nào."; exit 1; fi
 SET=a; STEP=$SA
 if [ "$SB" -gt "$SA" ] 2>/dev/null; then SET=b; STEP=$SB; fi
-echo ">> Bộ mới nhất: last_${SET} (step $STEP) — tải parts..."
-gh release download "$TAG" --repo "$REPO" --pattern "last_${SET}.part_*" --dir dist/restore
+echo ">> Bộ mới nhất: last_${SET} (step $STEP) — tải parts (~3.5GB)..."
+dl_release "$TAG" "last_${SET}.part_*" dist/restore
 
 cat dist/restore/last_${SET}.part_* > checkpoints/last.pt
 SZ=$(stat -c%s checkpoints/last.pt)

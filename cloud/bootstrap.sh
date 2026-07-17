@@ -22,11 +22,34 @@ export PATH=/opt/conda/bin:/usr/local/bin:$PATH
 REPO=trituenguyen97/Bit-Translate
 say(){ echo -e "\n==== $* ===="; }
 
+# gh release download không có progress bar -> tự hiển thị % (so size file đang tải
+# với tổng size asset khớp pattern trên release). Dùng: dl_release <tag> <pattern> [dir]
+dl_release(){
+  local tag=$1 pat=$2 dir=${3:-.} rgx total pid cur f
+  rgx=$(printf '%s' "$pat" | sed 's/[.]/\\./g; s/\*/.*/g')
+  total=$(gh release view "$tag" --repo "$REPO" --json assets \
+          --jq "[.assets[] | select(.name|test(\"^${rgx}\$\")) | .size] | add" 2>/dev/null || echo 0)
+  gh release download "$tag" --repo "$REPO" --pattern "$pat" --dir "$dir" --clobber &
+  pid=$!
+  if [ -n "$total" ] && [ "$total" != "null" ] && [ "$total" -gt 0 ] 2>/dev/null; then
+    while kill -0 "$pid" 2>/dev/null; do
+      cur=0
+      for f in "$dir"/$pat; do
+        [ -f "$f" ] && cur=$((cur + $(stat -c%s "$f" 2>/dev/null || echo 0)))
+      done
+      printf '\r   %s: %3d%%  (%d/%d MB)   ' "$pat" $((cur * 100 / total)) $((cur / 1048576)) $((total / 1048576))
+      sleep 2
+    done
+    printf '\r   %s: 100%%  (%d MB) ✓        \n' "$pat" $((total / 1048576))
+  fi
+  wait "$pid"   # gh fail -> set -e dừng script như cũ
+}
+
 # ---- 1) gh + auth ----
 if ! command -v gh >/dev/null 2>&1; then
   say "Cài gh"
   VER=2.63.0
-  curl -fsSL "https://github.com/cli/cli/releases/download/v${VER}/gh_${VER}_linux_amd64.tar.gz" | tar xz -C /tmp
+  curl -fL --progress-bar "https://github.com/cli/cli/releases/download/v${VER}/gh_${VER}_linux_amd64.tar.gz" | tar xz -C /tmp
   cp "/tmp/gh_${VER}_linux_amd64/bin/gh" /usr/local/bin/gh
 fi
 if ! gh auth status >/dev/null 2>&1; then
@@ -37,8 +60,8 @@ fi
 gh auth setup-git >/dev/null 2>&1 || true
 
 # ---- 2) toolchain ----
-command -v gcc  >/dev/null 2>&1 || { say "Cài gcc (Triton cần C compiler)"; apt-get update -qq && apt-get install -y -qq gcc; }
-command -v zstd >/dev/null 2>&1 || { say "Cài zstd"; apt-get install -y -qq zstd 2>/dev/null || conda install -y zstd; }
+command -v gcc  >/dev/null 2>&1 || { say "Cài gcc (Triton cần C compiler)"; apt-get update -qq && apt-get install -y gcc; }
+command -v zstd >/dev/null 2>&1 || { say "Cài zstd"; apt-get install -y zstd 2>/dev/null || conda install -y zstd; }
 
 # ---- 3) python: torch bắt buộc có sẵn; lib nhẹ thì tự cài ----
 say "Kiểm python/torch/GPU"
@@ -52,14 +75,14 @@ if not ((2, 4) <= mm <= (2, 6)):
     print(f"⚠ torch {torch.__version__} NGOÀI dải đã kiểm chứng 2.4-2.6 (cloud/requirements-node.txt)"
           f" — vẫn chạy tiếp, nhưng nếu compile lỗi lạ thì nghi version trước, thử M300_COMPILE=0.")
 EOF
-python3 -c "import sentencepiece" 2>/dev/null || pip install -q sentencepiece
-python3 -c "import gguf"          2>/dev/null || pip install -q gguf
+python3 -c "import sentencepiece" 2>/dev/null || pip install sentencepiece
+python3 -c "import gguf"          2>/dev/null || pip install gguf
 
 # ---- 4) data + checkpoint ----
 mkdir -p checkpoints dist
 if [ ! -f data/bin/train.tokens.u16 ]; then
   say "Tải premix bin (452MB, base + vòng1 + vòng2 đã mix/LaBSE)"
-  gh release download train-assets-vong2 --repo "$REPO" --pattern 'bin_mix_vong2.tar.zst'
+  dl_release train-assets-vong2 'bin_mix_vong2.tar.zst'
   tar -I zstd -xf bin_mix_vong2.tar.zst && touch data/bin/.premixed_vong2 && rm -f bin_mix_vong2.tar.zst
 fi
 if [ ! -f checkpoints/last.pt ]; then
