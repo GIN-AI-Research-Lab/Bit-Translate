@@ -15,13 +15,17 @@ TAG=${BK_TAG:-autosave-scale300m}
 # gh release download không có progress bar -> tự hiển thị % (so size file đang tải
 # với tổng size asset khớp pattern trên release). Dùng: dl_release <tag> <pattern> [dir]
 dl_release(){
-  local tag=$1 pat=$2 dir=${3:-.} rgx total pid cur f
-  rgx=$(printf '%s' "$pat" | sed 's/[.]/\\./g; s/\*/.*/g')
-  total=$(gh release view "$tag" --repo "$REPO" --json assets \
-          --jq "[.assets[] | select(.name|test(\"^${rgx}\$\")) | .size] | add" 2>/dev/null || echo 0)
-  gh release download "$tag" --repo "$REPO" --pattern "$pat" --dir "$dir" --clobber &
+  local tag=$1 pat=$2 dir=${3:-.} total=0 pid cur f name size
+  # tổng size các asset khớp pattern (glob-match bằng case, không dùng regex jq)
+  while IFS=$'\t' read -r name size; do
+    case "$name" in $pat) total=$((total + size));; esac
+  done < <(gh release view "$tag" --repo "$REPO" --json assets \
+           --jq '.assets[] | "\(.name)\t\(.size)"' 2>/dev/null || true)
+  # bịt spinner của gh (giữ log để in nếu fail); poll size file để in %
+  gh release download "$tag" --repo "$REPO" --pattern "$pat" --dir "$dir" --clobber \
+    >"$dir/.dl.log" 2>&1 &
   pid=$!
-  if [ -n "$total" ] && [ "$total" != "null" ] && [ "$total" -gt 0 ] 2>/dev/null; then
+  if [ "$total" -gt 0 ]; then
     while kill -0 "$pid" 2>/dev/null; do
       cur=0
       for f in "$dir"/$pat; do
@@ -30,9 +34,10 @@ dl_release(){
       printf '\r   %s: %3d%%  (%d/%d MB)   ' "$pat" $((cur * 100 / total)) $((cur / 1048576)) $((total / 1048576))
       sleep 2
     done
-    printf '\r   %s: 100%%  (%d MB) ✓        \n' "$pat" $((total / 1048576))
+    printf '\r   %s: hoàn tất  (%d MB)          \n' "$pat" $((total / 1048576))
   fi
-  wait "$pid"   # gh fail -> set -e dừng script như cũ
+  if ! wait "$pid"; then echo; cat "$dir/.dl.log" >&2; rm -f "$dir/.dl.log"; return 1; fi
+  rm -f "$dir/.dl.log"
 }
 
 gh auth status >/dev/null 2>&1 || { echo "!! gh chưa đăng nhập (gh auth login)"; exit 1; }
