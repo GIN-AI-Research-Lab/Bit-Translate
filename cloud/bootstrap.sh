@@ -31,23 +31,35 @@ dl_release(){
     case "$name" in $pat) total=$((total + size));; esac
   done < <(gh release view "$tag" --repo "$REPO" --json assets \
            --jq '.assets[] | "\(.name)\t\(.size)"' 2>/dev/null || true)
-  # bịt spinner của gh (giữ log để in nếu fail); poll size file để in %
-  gh release download "$tag" --repo "$REPO" --pattern "$pat" --dir "$dir" --clobber \
-    >"$dir/.dl.log" 2>&1 &
-  pid=$!
-  if [ "$total" -gt 0 ]; then
-    while kill -0 "$pid" 2>/dev/null; do
-      cur=0
-      for f in "$dir"/$pat; do
-        [ -f "$f" ] && cur=$((cur + $(stat -c%s "$f" 2>/dev/null || echo 0)))
+  # bịt spinner của gh (giữ log để in nếu fail); poll size file để in %.
+  # Retry 3 lần; gặp lỗi HTTP/2 (PROTOCOL_ERROR/stream error) -> tự chuyển HTTP/1.1.
+  local try
+  for try in 1 2 3; do
+    gh release download "$tag" --repo "$REPO" --pattern "$pat" --dir "$dir" --clobber \
+      >"$dir/.dl.log" 2>&1 &
+    pid=$!
+    if [ "$total" -gt 0 ]; then
+      while kill -0 "$pid" 2>/dev/null; do
+        cur=0
+        for f in "$dir"/$pat; do
+          [ -f "$f" ] && cur=$((cur + $(stat -c%s "$f" 2>/dev/null || echo 0)))
+        done
+        printf '\r   %s: %3d%%  (%d/%d MB)   ' "$pat" $((cur * 100 / total)) $((cur / 1048576)) $((total / 1048576))
+        sleep 2
       done
-      printf '\r   %s: %3d%%  (%d/%d MB)   ' "$pat" $((cur * 100 / total)) $((cur / 1048576)) $((total / 1048576))
-      sleep 2
-    done
-    printf '\r   %s: hoàn tất  (%d MB)          \n' "$pat" $((total / 1048576))
-  fi
-  if ! wait "$pid"; then echo; cat "$dir/.dl.log" >&2; rm -f "$dir/.dl.log"; return 1; fi
-  rm -f "$dir/.dl.log"
+    fi
+    if wait "$pid"; then
+      [ "$total" -gt 0 ] && printf '\r   %s: hoàn tất  (%d MB)          \n' "$pat" $((total / 1048576))
+      rm -f "$dir/.dl.log"; return 0
+    fi
+    printf '\n!! download fail (lần %d): %s\n' "$try" "$(tail -1 "$dir/.dl.log")"
+    if grep -qiE 'PROTOCOL_ERROR|stream error|http2' "$dir/.dl.log"; then
+      export GODEBUG=http2client=0
+      echo "   -> lỗi HTTP/2, chuyển HTTP/1.1 (GODEBUG=http2client=0) rồi thử lại"
+    fi
+    sleep 5
+  done
+  rm -f "$dir/.dl.log"; return 1
 }
 
 # ---- 1) gh + auth ----
