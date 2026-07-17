@@ -22,6 +22,9 @@ from pathlib import Path
 
 import sacrebleu
 
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+from text_norm import normalize_for_model  # noqa: E402  (NFKC — llama.cpp khong tu chuan hoa)
+
 SERVER = os.environ.get("LLAMA_SERVER", "/home/tuent/BitNet-test/build/bin/llama-server")
 
 UP = "http://127.0.0.1:8080"
@@ -49,6 +52,7 @@ def wait_health(t=90):
 
 
 def translate(text, tag):
+    text = normalize_for_model(text)
     ids = [BOS, tag] + up("/tokenize", {"content": text})["tokens"] + [EOS]
     out = up("/completion", {"prompt": ids, "n_predict": 140, "temperature": 0.0,
                              "cache_prompt": False})
