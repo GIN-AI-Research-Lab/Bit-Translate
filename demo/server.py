@@ -14,10 +14,14 @@ import argparse
 import json
 import re
 import subprocess
+import sys
 import time
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+from text_norm import normalize_for_model  # noqa: E402  (NFKC — llama.cpp khong tu chuan hoa)
 
 UPSTREAM = "http://127.0.0.1:8080"
 BOS, EOS = 2, 3
@@ -56,6 +60,7 @@ def segment(text):
 
 
 def translate_seg(seg, tag, n_predict, cache):
+    seg = normalize_for_model(seg)
     ids = [BOS, tag] + upstream_json("/tokenize", {"content": seg})["tokens"] + [EOS]
     out = upstream_json("/completion", {
         "prompt": ids, "n_predict": n_predict, "temperature": 0.0, "cache_prompt": cache,

@@ -13,6 +13,9 @@ from pathlib import Path
 
 import sacrebleu
 
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+from text_norm import normalize_for_model  # noqa: E402  (NFKC — llama.cpp khong tu chuan hoa)
+
 SERVER = os.environ.get("LLAMA_SERVER", "/home/tuent/BitNet-test/build/bin/llama-server")
 
 UP = "http://127.0.0.1:8080"
@@ -31,7 +34,8 @@ def up(path, payload):
 
 
 def main():
-    subprocess.run(["pkill", "-f", "llama-server"], capture_output=True)
+    # -x: chỉ khớp tên process — pkill -f giết cả shell cha có LLAMA_SERVER=... trong cmdline
+    subprocess.run(["pkill", "-x", "llama-server"], capture_output=True)
     time.sleep(1.5)
     subprocess.Popen([SERVER, "-m", GGUF,
                       "--host", "127.0.0.1", "--port", "8080", "-t", "6", "-c", "256",
@@ -52,12 +56,14 @@ def main():
     t0 = time.time()
     hyps = []
     for s in src:
+        s = normalize_for_model(s)
         ids = [BOS, tag] + up("/tokenize", {"content": s})["tokens"] + [EOS]
         out = up("/completion", {"prompt": ids, "n_predict": 120, "temperature": 0.0,
                                  "cache_prompt": False})
         hyps.append((out.get("content") or "").strip())
     chrf = sacrebleu.corpus_chrf(hyps, [ref]).score
-    subprocess.run(["pkill", "-f", "llama-server"], capture_output=True)
+    # -x: chỉ khớp tên process — pkill -f giết cả shell cha có LLAMA_SERVER=... trong cmdline
+    subprocess.run(["pkill", "-x", "llama-server"], capture_output=True)
     line = f"{LABEL}\t{DIR}\t{chrf:.2f}\t{len(src)}\t{time.time()-t0:.0f}s"
     print(f"RESULT\t{line}", flush=True)
     with (ROOT / "eval" / "chrf_runs.tsv").open("a", encoding="utf-8") as f:

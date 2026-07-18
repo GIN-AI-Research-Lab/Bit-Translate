@@ -5,3 +5,6 @@ step14000	vi2ja	21.31	100	13s
 step23000	vi2ja	21.49	100	15s
 step23000	vi2ja	21.49	100	11s
 step23000	ja2vi	42.27	100	11s
+step23000_nfkc	ja2vi	42.36	100	13s
+step23000_nfkc	ja2vi	42.36	100	11s
+step23000_nfkc	vi2ja	21.49	100	13s
