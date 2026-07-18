@@ -2,7 +2,10 @@
 """Dung de cham mu 4 he (110M step23000 / Google / Claude-Fable / Claude-Haiku)
 tren hardbench200. Xao thu tu A-D deterministic theo id (seed co dinh).
 
-  python eval/build_judge_panels_4way.py <haiku_hyp.jsonl> <outdir>
+  python eval/build_judge_panels_4way.py <haiku_hyp.jsonl> <outdir> [main.jsonl] [main_label]
+
+main.jsonl/main_label (tùy chọn): thay hệ "110M" mặc định bằng model khác —
+vd gate 292M (PLAN_RANKUP §1): ... eval/hardbench_292m_step18400.jsonl 292M
 
 Ghi: <outdir>/panel_{0..4}.jsonl (40 cau/panel, fields: id domain dir src ref A B C D)
      <outdir>/panel_key.json  (id -> {A: system, ...})  -- KHONG dua cho trong tai
@@ -14,6 +17,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 HAIKU, OUTDIR = Path(sys.argv[1]), Path(sys.argv[2])
+MAIN_FILE = Path(sys.argv[3]) if len(sys.argv) > 3 else ROOT / "hardbench_step23000.jsonl"
+MAIN_LABEL = sys.argv[4] if len(sys.argv) > 4 else "110M"
 OUTDIR.mkdir(parents=True, exist_ok=True)
 
 def load(p):
@@ -21,7 +26,7 @@ def load(p):
 
 base = load(ROOT / "hardbench200.jsonl")
 systems = {
-    "110M": load(ROOT / "hardbench_step23000.jsonl"),
+    MAIN_LABEL: load(MAIN_FILE),
     "google": load(ROOT / "hardbench_google.jsonl"),
     "fable": load(ROOT / "hardbench_claude.jsonl"),
     "haiku": load(HAIKU),

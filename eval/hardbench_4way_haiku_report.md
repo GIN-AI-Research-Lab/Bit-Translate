@@ -89,3 +89,58 @@ python eval/build_judge_panels_4way.py eval/hardbench_haiku.jsonl <panels_dir>
 # 4) Tổng hợp:
 python eval/aggregate_judge_4way.py <judges_dir> <panels_dir>
 ```
+
+---
+
+## 9. CẬP NHẬT 2026-07-18 đêm — đo lại 4-way với 292M ĐANG TRAIN DỞ (step 19100/25000, 76%)
+
+Cùng harness (build_judge_panels_4way với arg mới thay 110M bằng 292M; 15 giám khảo
+Claude 5 panel × 3, xáo mù A-D). Checkpoint lấy từ autosave node cloud (premix vòng 2,
+CHƯA có data vòng 3a). Lượt giám khảo MỚI nên điểm tuyệt đối lệch nhẹ so lượt 17/07
+(Google 4.06/4.02 vs 3.88/3.73 cũ) — so sánh TRONG lượt là chuẩn nhất.
+
+### Tốc độ + kích thước (bitnet.cpp i2_s, CPU 5600X 6 luồng)
+| | 110M | 292M |
+|---|---|---|
+| file | 69MB | 100MB |
+| generate | 379.5 tok/s | 228.8 tok/s (60%) — vẫn dư real-time |
+
+### chrF (so cùng lượt đo 18/07)
+| benchmark | 110M | 292M@19100 | Google |
+|---|---|---|---|
+| FLORES n=100 ja→vi | 42.27 | **44.47** | 53.5 |
+| FLORES n=100 vi→ja | 21.49 | **22.55** | 42.6 |
+| hardbench200 ja→vi | 32.6 | **34.3** | 36.1 |
+| hardbench200 vi→ja | 15.0 | 13.9 | 28.3 |
+
+Gate FLORES của Phase 0 (vượt 110M) ĐÃ ĐẠT từ 76% train.
+
+### Judge acc/nat (n=200, 15 giám khảo)
+| hệ | acc vi→ja | acc ja→vi | nat vi→ja | nat ja→vi | %acc≥4 |
+|---|---|---|---|---|---|
+| **292M@19100** | **1.36** | **2.40** | 1.61 | 2.56 | **11.0%** |
+| google | 4.06 | 4.02 | 3.46 | 3.37 | 70.0% |
+| haiku | 4.75 | 4.60 | 4.06 | 3.68 | 95.0% |
+| fable | 5.00 | 5.00 | 4.99 | 4.98 | 100.0% |
+
+So 110M lượt 17/07 (acc 1.22/1.90, %≥4 = 6%): 292M dở dang **+0.14 vi→ja / +0.50 ja→vi,
+%dùng được gần gấp đôi (6%→11%)** — đúng vùng dự báo PLAN_RANKUP §1 (1.56 → ~2.0-2.4
+sau khi train ĐỦ; hiện TB 1.88 ở 76%). Đối đầu vs Google: **7 thắng/18 hòa/175 thua**
+(110M cũ: 3/20/177).
+
+### ACC theo domain — khoảng cách tới Google ở 5 domain G1 (ja→vi)
+| domain | 292M | Google | gap |
+|---|---|---|---|
+| thanhngu | 2.23 | 3.27 | −1.04 (gần nhất) |
+| hoithoai | 2.33 | 3.83 | −1.50 |
+| it_deep | 2.30 | 3.90 | −1.60 |
+| hop | 2.30 | 4.10 | −1.80 |
+| slang | 1.80 | 3.93 | −2.13 |
+
+### Kết luận
+- Params scale ĐANG trả điểm ở ja→vi (+0.50 judge, +1.7-2.2 chrF) nhưng vi→ja gần như
+  đứng yên (1.22→1.36) — tái khẳng định chẩn đoán §3: vi→ja là bệnh cấu trúc, chờ BT.
+- caudai vi→ja 0.80 vẫn là vực sâu nhất (110M: 0.67) — thuốc là nối câu + BT ép câu dài (vòng 3b).
+- Khoảng cách domain G1 còn 1.0-2.1 điểm judge — đúng phần việc của data vòng 3a
+  (idiom/slang/ctx đã nằm sẵn trong premix train-assets-vong3a, vào ở round kế).
+- File: eval/hardbench_292m_step19100.jsonl, eval/judge_4way_292m/{panels,judges}/.

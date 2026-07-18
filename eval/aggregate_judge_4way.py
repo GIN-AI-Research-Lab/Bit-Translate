@@ -35,7 +35,10 @@ for f in sorted(JD.glob("judge_p*_j*.jsonl")):
                 scores[i][key[i][L]].append((s["acc"], s["nat"]))
 print(f"{n_files} file giam khao, {len(scores)} cau co diem")
 
-SYS = ["110M", "google", "fable", "haiku"]
+# hệ lấy từ panel_key (hỗ trợ thay 110M bằng 292M...), giữ thứ tự ưu tiên hiển thị
+_present = set(next(iter(key.values())).values())
+SYS = [s for s in ["110M", "292M", "google", "fable", "haiku"] if s in _present] \
+    + sorted(_present - {"110M", "292M", "google", "fable", "haiku"})
 mean = lambda v: sum(v) / len(v) if v else float("nan")
 
 # diem trung binh tung cau
@@ -70,7 +73,7 @@ for dom, d in doms:
     vals = [mean([per_item[i][s]["acc"] for i in ids]) for s in SYS]
     print(f"{dom:12} {d:6} " + " ".join(f"{v:7.2f}" for v in vals))
 
-for a, b in (("110M", "google"), ("haiku", "google"), ("haiku", "fable")):
+for a, b in ((SYS[0], "google"), ("haiku", "google"), ("haiku", "fable")):
     w = sum(1 for i in per_item if per_item[i][a]["acc"] > per_item[i][b]["acc"])
     t = sum(1 for i in per_item if per_item[i][a]["acc"] == per_item[i][b]["acc"])
     print(f"\nDoi dau {a} vs {b} (acc TB/cau): thang {w} / hoa {t} / thua {len(per_item)-w-t}")
