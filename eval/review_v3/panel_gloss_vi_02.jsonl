@@ -1,0 +1,50 @@
+{"vi": "Chưa học bò đã lo học chạy", "ja": "基礎を固めずに高望みする、背伸びをする", "freq": 3, "lit": "Chưa biết bò đã muốn học chạy", "cat": 0, "m": "gemini-2.5-flash", "i": 100}
+{"vi": "Tức nước vỡ bờ", "ja": "我慢の限界、堪忍袋の緒が切れる", "freq": 3, "lit": "Nước bị dồn nén đến mức không chịu nổi thì sẽ làm vỡ bờ", "cat": 0, "m": "gemini-2.5-flash", "i": 101}
+{"vi": "Thấy sang bắt quàng làm họ", "ja": "権力者に取り入ろうとする、虎の威を借る狐", "freq": 2, "lit": "Thấy người giàu sang thì nhận vơ là họ hàng", "cat": 0, "m": "gemini-2.5-flash", "i": 102}
+{"vi": "Cha chung không ai khóc", "ja": "共同責任は無責任、持ち主が複数いると誰も責任を取らない", "freq": 3, "lit": "Người cha chung thì không ai khóc", "cat": 0, "m": "gemini-2.5-flash", "i": 103}
+{"vi": "Đứng núi này trông núi nọ", "ja": "隣の芝生は青い、他人のものが良く見える", "freq": 3, "lit": "Đứng ở núi này nhìn sang núi khác", "cat": 0, "m": "gemini-2.5-flash", "i": 104}
+{"vi": "Chất chơi", "ja": "イケてる、格好いい、洒落てる", "freq": 3, "cat": 1, "m": "gemini-2.5-flash", "i": 105}
+{"vi": "Hết nước chấm", "ja": "完璧、最高、文句なし", "freq": 3, "lit": "không còn nước chấm", "cat": 1, "m": "gemini-2.5-flash", "i": 106}
+{"vi": "Bánh cuốn", "ja": "夢中になる、楽しい、ハマる", "freq": 3, "lit": "bánh cuốn (món ăn)", "cat": 1, "m": "gemini-2.5-flash", "i": 107}
+{"vi": "Đi vào lòng người", "ja": "心に響く、感動的、素晴らしい", "freq": 2, "lit": "đi vào lòng người", "cat": 1, "m": "gemini-2.5-flash", "i": 108}
+{"vi": "Xĩu up xĩu down", "ja": "ぶっ倒れそう、もう無理、ツボる", "freq": 3, "lit": "ngất lên ngất xuống", "cat": 1, "m": "gemini-2.5-flash", "i": 109}
+{"vi": "Đúng nhận sai cãi", "ja": "その通り、異論なし、まさにそれ", "freq": 2, "lit": "đúng thì nhận, sai thì cãi", "cat": 1, "m": "gemini-2.5-flash", "i": 110}
+{"vi": "Đắt như tôm tươi", "ja": "飛ぶように売れる・大人気", "freq": 3, "cat": 2, "m": "gemini-2.5-flash", "i": 111}
+{"vi": "Khó như lên trời", "ja": "非常に難しい・至難の業", "freq": 3, "cat": 2, "m": "gemini-2.5-flash", "i": 112}
+{"vi": "Đi guốc trong bụng", "ja": "お見通しだ・手に取るようにわかる", "freq": 3, "cat": 2, "m": "gemini-2.5-flash", "i": 113}
+{"vi": "Nói thẳng như ruột ngựa", "ja": "歯に衣着せぬ物言い・率直に言う", "freq": 3, "cat": 2, "m": "gemini-2.5-flash", "i": 114}
+{"vi": "Ăn như hạm", "ja": "大食い・胃袋が大きい", "freq": 2, "lit": "Ăn như tàu chiến", "cat": 2, "m": "gemini-2.5-flash", "i": 115}
+{"vi": "Nói như khướu", "ja": "おしゃべり・ぺらぺら話す", "freq": 2, "lit": "Nói như chim khướu", "cat": 2, "m": "gemini-2.5-flash", "i": 116}
+{"vi": "Nhanh như điện", "ja": "電光石火・あっという間に", "freq": 3, "cat": 2, "m": "gemini-2.5-flash", "i": 117}
+{"vi": "Thôi xong!", "ja": "もうおしまいだ！/終わった！", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 118}
+{"vi": "Hên xui", "ja": "運次第/なるようになる", "freq": 3, "lit": "may mắn hay rủi ro", "cat": 3, "m": "gemini-2.5-flash", "i": 119}
+{"vi": "Kệ đi", "ja": "放っておきなさい/どうでもいい", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 120}
+{"vi": "Biết sao giờ?", "ja": "どうしようもないね/どうすればいいの？", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 121}
+{"vi": "Thế mới tài!", "ja": "それがすごいところだね！/だから面白いんだ！", "freq": 2, "lit": "thế đó mới tài năng", "cat": 3, "m": "gemini-2.5-flash", "i": 122}
+{"vi": "Ai dè!", "ja": "まさか！/意外だね！", "freq": 3, "lit": "ai ngờ đâu", "cat": 3, "m": "gemini-2.5-flash", "i": 123}
+{"vi": "Đùa thôi!", "ja": "冗談だよ！/冗談だろ？", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 124}
+{"vi": "Nói thật đi!", "ja": "本当のことを言って！/マジで？", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 125}
+{"vi": "Bó tay!", "ja": "お手上げだ！/どうしようもない！", "freq": 3, "lit": "bó hai tay lại", "cat": 3, "m": "gemini-2.5-flash", "i": 126}
+{"vi": "Chắc gì!", "ja": "そうとは限らないよ！/確かなの？", "freq": 3, "lit": "chắc chắn gì", "cat": 3, "m": "gemini-2.5-flash", "i": 127}
+{"vi": "Tính ra thì...", "ja": "考えてみれば.../つまり...", "freq": 2, "lit": "tính toán ra thì", "cat": 3, "m": "gemini-2.5-flash", "i": 128}
+{"vi": "Nói vậy chứ...", "ja": "そうは言うものの.../実を言うと...", "freq": 2, "lit": "nói như vậy chứ", "cat": 3, "m": "gemini-2.5-flash", "i": 129}
+{"vi": "Có gì đâu!", "ja": "何でもないよ！/大したことない！", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 130}
+{"vi": "Không nói nhiều!", "ja": "ごちゃごちゃ言わずに！/黙ってろ！", "freq": 2, "lit": "không cần nói nhiều", "cat": 3, "m": "gemini-2.5-flash", "i": 131}
+{"vi": "Cũng được", "ja": "まあまあだ/悪くない", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 132}
+{"vi": "Chạy deadline", "ja": "締め切りに追われる、デッドラインに間に合わせる", "freq": 3, "cat": 4, "m": "gemini-2.5-flash", "i": 133}
+{"vi": "Ôm việc", "ja": "仕事を抱え込む、抱え込みすぎ", "freq": 3, "cat": 4, "m": "gemini-2.5-flash", "i": 134}
+{"vi": "Đá bóng trách nhiệm", "ja": "責任転嫁する、責任を押し付ける", "freq": 3, "lit": "Đá bóng trách nhiệm (kicking the responsibility ball)", "cat": 4, "m": "gemini-2.5-flash", "i": 135}
+{"vi": "Đội sổ", "ja": "成績最下位、リストの末席を汚す", "freq": 2, "lit": "Đội sổ (carrying the book/ledger)", "cat": 4, "m": "gemini-2.5-flash", "i": 136}
+{"vi": "Lươn lẹo", "ja": "ずる賢い、ごまかす、責任を逃れるのがうまい", "freq": 3, "lit": "Lươn lẹo (slippery like an eel)", "cat": 4, "m": "gemini-2.5-flash", "i": 137}
+{"vi": "Làm màu", "ja": "見栄を張る、格好つける、うわべだけ", "freq": 3, "lit": "Làm màu (doing color)", "cat": 4, "m": "gemini-2.5-flash", "i": 138}
+{"vi": "Có gì hot?", "ja": "何か面白いことあった？", "freq": 2, "lit": "Có gì nóng?", "cat": 5, "m": "gemini-2.5-flash", "i": 139}
+{"vi": "Kèo này khó", "ja": "これは厳しい戦いになりそうだ", "freq": 2, "cat": 5, "m": "gemini-2.5-flash", "i": 140}
+{"vi": "Hết pin rồi", "ja": "もう限界だ", "freq": 2, "lit": "Hết pin", "cat": 5, "m": "gemini-2.5-flash", "i": 141}
+{"vi": "Cái gì mà chả biết", "ja": "そんなの当たり前じゃん", "freq": 2, "lit": "Cái gì mà chẳng biết", "cat": 5, "m": "gemini-2.5-flash", "i": 142}
+{"vi": "Ai chẳng biết", "ja": "みんな知ってるよ", "freq": 2, "lit": "Ai chẳng biết", "cat": 5, "m": "gemini-2.5-flash", "i": 143}
+{"vi": "Không phải dạng vừa đâu", "ja": "ただ者じゃないね", "freq": 3, "cat": 5, "m": "gemini-2.5-flash", "i": 144}
+{"vi": "Thôi rồi lượm ơi", "ja": "もうダメだ", "freq": 3, "lit": "Thôi rồi, nhặt ơi", "cat": 5, "m": "gemini-2.5-flash", "i": 145}
+{"vi": "Lại còn bày đặt", "ja": "わざとらしいね", "freq": 2, "lit": "Lại còn bày đặt", "cat": 5, "m": "gemini-2.5-flash", "i": 146}
+{"vi": "Chém đẹp", "ja": "ぼったくる", "freq": 2, "lit": "Chém đẹp", "cat": 5, "m": "gemini-2.5-flash", "i": 147}
+{"vi": "Hết nói nổi", "ja": "呆れて物が言えない", "freq": 3, "cat": 5, "m": "gemini-2.5-flash", "i": 148}
+{"vi": "Thế mà cũng đòi", "ja": "それでよくそんなこと言えるね", "freq": 2, "lit": "Thế mà cũng đòi", "cat": 5, "m": "gemini-2.5-flash", "i": 149}

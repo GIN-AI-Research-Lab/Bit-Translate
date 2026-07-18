@@ -1,0 +1,50 @@
+{"ja": "現実的なスケジュールが立てづらいです", "reading": "げんじつてきな スケジュールが たてづらいです", "vi": "khó đưa ra tiến độ khả thi", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 350}
+{"ja": "体制的に対応できない可能性があります", "reading": "たいせい的に たいおうできない かのうせいがあります", "vi": "có thể bên mình chưa đủ điều kiện để xử lý", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 351}
+{"ja": "方向性を合わせる段階です", "reading": "ほうこうせいを あわせる だんかいです", "vi": "đang trong giai đoạn thống nhất quan điểm", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 352}
+{"ja": "引き続き検討を進めていきます", "reading": "ひきつづき けんとうを すすめて いきます", "vi": "em sẽ tiếp tục xem xét kỹ hơn", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 353}
+{"ja": "慎重に進めていく方針です", "reading": "しんちょうに すすめていく ほうしんです", "vi": "sẽ tiến hành một cách thận trọng", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 354}
+{"ja": "現時点では見送りとなります", "reading": "げんじてんでは みおくりとなります", "vi": "hiện tại đành tạm dừng thôi", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 355}
+{"ja": "まずはフィードバックをいただきたいです", "reading": "まず ふぃーどばっくを いただきたいです", "vi": "mời anh/chị góp ý trước đã", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 356}
+{"ja": "ご要望は承りましたが、検討に時間がかかりそうです", "reading": "ごようぼうは うけたまわりましたが、けんとうに じかんが かかりそうです", "vi": "đã nhận yêu cầu rồi, nhưng cần thêm thời gian để xem xét", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 357}
+{"ja": "内部で調整中ですので、少々お時間をいただけますと", "reading": "ないぶで ちょうせいちゅうですので、しょうしょう おじかんを いただけますと", "vi": "đang điều chỉnh nội bộ, phiền anh/chị đợi thêm chút", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 358}
+{"ja": "現状では対応が見通せません", "reading": "げんしょうでは たいおうが みとおせません", "vi": "hiện tại chưa thấy lối ra nào", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 359}
+{"ja": "課題整理がまだ完了していません", "reading": "かだい せいりが まだ おわりません", "vi": "chưa tổng hợp xong các vấn đề", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 360}
+{"ja": "ひとまず様子を見させてください", "reading": "ひとまず ようすを みさせて ください", "vi": "để em theo dõi tình hình đã", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 361}
+{"ja": "前向きに検討いたします", "reading": "まえむきに けんとういたします", "vi": "em sẽ xem xét tích cực", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 362}
+{"ja": "少し猶予をいただけますと助かります", "reading": "すこし ゆうよを いただけますと たすかります", "vi": "phiền anh/chị cho thêm chút thời gian", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 363}
+{"ja": "関係各所と連携しながら進めます", "reading": "かんけい かくしょと れんけいしながら すすめます", "vi": "sẽ phối hợp cùng các bên liên quan", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 364}
+{"ja": "一旦立ち止まって整理する必要があります", "reading": "いったん たちどまって せいりする ひつようがあります", "vi": "cần dừng lại một chút để làm rõ lại", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 365}
+{"ja": "現時点での結論は出せません", "reading": "げんじてんでの けつろんは だせません", "vi": "giờ này chưa thể kết luận được", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 366}
+{"ja": "丁寧に検討させていただきます", "reading": "ていねいに けんとうさせて いただきます", "vi": "em sẽ xem xét kỹ lưỡng", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 367}
+{"ja": "当面は現状維持を基本としています", "reading": "とうめんは げんしょういじを きほんとしています", "vi": "trong ngắn hạn thì giữ nguyên tình trạng hiện tại", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 368}
+{"ja": "慎重に判断する必要がありそうです", "reading": "しんちょうに はんだんする ひつようがありそうです", "vi": "cần cân nhắc kỹ trước khi quyết", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 369}
+{"ja": "ご要望は理解しましたが、現実的対応は難しいです", "reading": "ごようぼうは りかいしましたが、げんじつてき たいおうは むずかしいです", "vi": "đã hiểu yêu cầu rồi, nhưng khó đáp ứng thực tế", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 370}
+{"ja": "まずは事実関係を確認させてください", "reading": "まず じじつ かんけいを かくにんさせて ください", "vi": "để em xác minh lại sự việc trước đã", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 371}
+{"ja": "具体的な対応は未定です", "reading": "ぐたいてきな たいおうは みていです", "vi": "chưa có phương án cụ thể nào", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 372}
+{"ja": "今後の展開を見守りたいと思います", "reading": "こんごの てんかいを みまもりたいと おもいます", "vi": "để em theo dõi diễn biến tiếp theo", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 373}
+{"ja": "当該案件については、再検討の余地があります", "reading": "とうがい あんけんについては、さいけんとうの よちがあります", "vi": "vụ này còn chỗ để bàn lại", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 374}
+{"ja": "一旦白紙に戻して、ゼロベースで考え直します", "reading": "いったん しろしに戻して、ゼロべーすで かんがえなおします", "vi": "tạm gác hết, bắt đầu lại từ đầu", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 375}
+{"ja": "現時点で最善の対応を模索しています", "reading": "げんじてんでは さいぜんの たいおうを もさくしています", "vi": "đang tìm giải pháp tối ưu nhất ở thời điểm này", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 376}
+{"ja": "きらきら", "reading": "きらきら", "vi": "lấp lánh (cả nghĩa thật lẫn ẩn dụ)", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 377}
+{"ja": "つるつる", "reading": "つるつる", "vi": "trơn láng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 378}
+{"ja": "うんざり", "reading": "うんざり", "vi": "phát ngán", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 379}
+{"ja": "ぶつぶつ", "reading": "ぶつぶつ", "vi": "lẩm bẩm một mình", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 380}
+{"ja": "がたがた", "reading": "がたがた", "vi": "rung lắc dữ dội", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 381}
+{"ja": "すいすい", "reading": "すいすい", "vi": "trôi chảy dễ dàng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 382}
+{"ja": "どさっと", "reading": "どさっと", "vi": "tuột xuống ào một cái", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 383}
+{"ja": "がんがん", "reading": "がんがん", "vi": "liên tục, mạnh mẽ", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 384}
+{"ja": "じりじり", "reading": "じりじり", "vi": "nóng rát từng chút", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 385}
+{"ja": "にょきっと", "reading": "にょきっと", "vi": "vươn lên bất ngờ", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 386}
+{"ja": "どんより", "reading": "どんより", "vi": "u ám, nặng nề", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 387}
+{"ja": "巻き戻し", "reading": "まきもどし", "vi": "đưa lại trạng thái cũ", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 388}
+{"ja": "ぶっこ抜く", "reading": "ぶっこぬく", "vi": "triệt hạ đối thủ/đối phương", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 389}
+{"ja": "ブチ切れる", "reading": "ぶちきれる", "vi": "nổi điên lên", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 390}
+{"ja": "ブチ上げる", "reading": "ぶちあげる", "vi": "đẩy mạnh bất ngờ", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 391}
+{"ja": "ジタバタ", "reading": "じたばた", "vi": "vật lộn lung tung", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 392}
+{"ja": "ドヤる", "reading": "どやる", "vi": "khoe khoang kiểu tự mãn", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 393}
+{"ja": "ナメてる", "reading": "なめてる", "vi": "coi thường / xem nhẹ", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 394}
+{"ja": "ハブる", "reading": "はぶる", "vi": "gạt ra ngoài / loại khỏi nhóm", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 395}
+{"ja": "バッサリ", "reading": "ばっさり", "vi": "cắt bỏ dứt khoát", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 396}
+{"ja": "パッケージ化", "reading": "ぱっけーじか", "vi": "đóng gói thành sản phẩm hoàn chỉnh", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 397}
+{"ja": "ピントが合う", "reading": "ぴんとがあう", "vi": "hiểu ngay / bắt đúng ý", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 398}
+{"ja": "ピントがズレる", "reading": "ぴんとがずれる", "vi": "hiểu sai / lệch hướng", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 399}

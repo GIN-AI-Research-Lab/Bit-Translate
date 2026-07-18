@@ -1,0 +1,50 @@
+{"ja": "どきどき", "reading": "どきどき", "vi": "hồi hộp", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 150}
+{"ja": "わくわく", "reading": "わくわく", "vi": "háo hức", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 151}
+{"ja": "がっかり", "reading": "がっかり", "vi": "thất vọng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 152}
+{"ja": "へこんでる", "reading": "へこんでる", "vi": "xuống tinh thần", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 153}
+{"ja": "むしゃむしゃ", "reading": "むしゃむしゃ", "vi": "ăn ngon lành", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 154}
+{"ja": "ぺちゃくちゃ", "reading": "ぺちゃくちゃ", "vi": "nói linh tinh", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 155}
+{"ja": "ぎりぎり", "reading": "ぎりぎり", "vi": "đúng hạn chót", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 156}
+{"ja": "びくびく", "reading": "びくびく", "vi": "lo lắng run rẩy", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 157}
+{"ja": "ぽかん", "reading": "ぽかん", "vi": "ngơ ngác", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 158}
+{"ja": "ふらふら", "reading": "ふらふら", "vi": "choáng váng, đi loạng choạng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 159}
+{"ja": "べらべら", "reading": "べらべら", "vi": "nói tuôn tuôn", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 160}
+{"ja": "くらくら", "reading": "くらくら", "vi": "choáng váng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 161}
+{"ja": "つらつら", "reading": "つらつら", "vi": "lơ lửng, suy nghĩ vu vơ", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 162}
+{"ja": "さらさら", "reading": "さらさら", "vi": "trôi chảy dễ dàng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 163}
+{"ja": "ひんやり", "reading": "ひんやり", "vi": "mát lạnh dễ chịu", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 164}
+{"ja": "ぬるぬる", "reading": "ぬるぬる", "vi": "trơn trượt", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 165}
+{"ja": "ごろごろ", "reading": "ごろごろ", "vi": "nằm ì ra", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 166}
+{"ja": "のろのろ", "reading": "のろのろ", "vi": "chậm như rùa", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 167}
+{"ja": "くそくそ", "reading": "くそくそ", "vi": "tức điên lên trong lòng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 168}
+{"ja": "がちがち", "reading": "がちがち", "vi": "căng cứng", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 169}
+{"ja": "ぴょんぴょん", "reading": "ぴょんぴょん", "vi": "nhảy nhót linh hoạt", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 170}
+{"ja": "ぱっと", "reading": "ぱっと", "vi": "lập tức, bất ngờ", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 171}
+{"ja": "じわじわ", "reading": "じわじわ", "vi": "từ từ nhưng chắc chắn", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 172}
+{"ja": "ずるずる", "reading": "ずるずる", "vi": "kéo dài vô lý", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 173}
+{"ja": "ぼーっと", "reading": "ぼーっと", "vi": "ngây người, mơ màng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 174}
+{"ja": "ばっちり", "reading": "ばっちり", "vi": "chuẩn không cần chỉnh", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 175}
+{"ja": "すっきり", "reading": "すっきり", "vi": "sảng khoái, rõ ràng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 176}
+{"ja": "うろうろ", "reading": "うろうろ", "vi": "lang thang, đi lòng vòng", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 177}
+{"ja": "ぴんと", "reading": "ぴんと", "vi": "đột nhiên hiểu ra", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 178}
+{"ja": "しっとり", "reading": "しっとり", "vi": "ẩm mượt, dịu nhẹ", "freq": 2, "cat": 4, "m": "qwen-plus", "i": 179}
+{"ja": "がっつり", "reading": "がっつり", "vi": "ăn no căng, làm quyết liệt", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 180}
+{"ja": "なるはや", "reading": "なるはや", "vi": "làm ngay đi", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 181}
+{"ja": "リスケ", "reading": "りすけ", "vi": "dời hạn", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 182}
+{"ja": "ペンディング", "reading": "ぺんでぃんぐ", "vi": "tạm hoãn", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 183}
+{"ja": "ゴネる", "reading": "ごねる", "vi": "đòi hỏi vô lý", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 184}
+{"ja": "フォロー", "reading": "ふぉろー", "vi": "hỗ trợ kịp thời", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 185}
+{"ja": "巻き込む", "reading": "まきこむ", "vi": "kéo vào việc không liên quan", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 186}
+{"ja": "ズレてる", "reading": "ずれてる", "vi": "lệch pha hoàn toàn", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 187}
+{"ja": "察する", "reading": "さっする", "vi": "ngầm hiểu mà không cần nói", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 188}
+{"ja": "流す", "reading": "ながす", "vi": "gạt qua, bỏ qua luôn", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 189}
+{"ja": "丸投げ", "reading": "まるなげ", "vi": "đẩy hết sang người khác", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 190}
+{"ja": "放置プレイ", "reading": "ほうちぷれい", "vi": "bỏ mặc", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 191}
+{"ja": "突っ込む", "reading": "つっこむ", "vi": "đâm thẳng vào vấn đề", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 192}
+{"ja": "煮詰め", "reading": "につめ", "vi": "giai đoạn cuối cùng của thảo luận", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 193}
+{"ja": "落とす", "reading": "おとす", "vi": "đạt được kết quả (thỏa thuận, hợp đồng)", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 194}
+{"ja": "落とし所", "reading": "おとしどころ", "vi": "giải pháp dung hòa", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 195}
+{"ja": "持ち越す", "reading": "もちこす", "vi": "đẩy sang kỳ sau", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 196}
+{"ja": "押し付ける", "reading": "おしつける", "vi": "đổ hết trách nhiệm cho người khác", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 197}
+{"ja": "切り替える", "reading": "きりかえる", "vi": "chuyển trạng thái ngay lập tức", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 198}
+{"ja": "引っ張る", "reading": "ひっぱる", "vi": "kéo dài vô ích", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 199}

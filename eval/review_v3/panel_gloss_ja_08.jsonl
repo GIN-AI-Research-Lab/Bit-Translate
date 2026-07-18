@@ -1,0 +1,50 @@
+{"ja": "フェードアウト", "reading": "ふぇーどあうと", "vi": "rút lui lặng lẽ / biến mất dần", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 400}
+{"ja": "モブ化", "reading": "もぶか", "vi": "thành nhân vật phụ không ai để ý", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 401}
+{"ja": "モブ扱い", "reading": "もぶあつかい", "vi": "đối xử như người thừa", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 402}
+{"ja": "ヤバみ", "reading": "やばみ", "vi": "cảm giác nguy hiểm / kỳ cục", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 403}
+{"ja": "ヨコシマ", "reading": "よこしま", "vi": "tư duy xấu / toan tính đen tối", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 404}
+{"ja": "ワーキングプア", "reading": "わーきんぐぷあ", "vi": "người nghèo làm công ăn lương", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 405}
+{"ja": "ワンオペ", "reading": "わんおぺ", "vi": "làm một mình kiêm hết mọi việc", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 406}
+{"ja": "リテイク", "reading": "りていく", "vi": "làm lại từ đầu", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 407}
+{"ja": "リベンジマッチ", "reading": "りべんじまっち", "vi": "trận đấu trả thù / cơ hội thứ hai", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 408}
+{"ja": "ローリスク・ハイリターン", "reading": "ろーりすく・はいりたーん", "vi": "rủi ro thấp, lợi nhuận cao", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 409}
+{"ja": "ローリスク・ローリターン", "reading": "ろーりすく・ろーりたーん", "vi": "an toàn nhưng chẳng được gì", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 410}
+{"ja": "カスタム対応", "reading": "かすたむたいおう", "vi": "làm riêng theo yêu cầu khách", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 411}
+{"ja": "カジュアル面談", "reading": "かじゅあるめんだん", "vi": "phỏng vấn thân mật, không chính thức", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 412}
+{"ja": "カットイン", "reading": "かっといん", "vi": "chen ngang vào cuộc họp / công việc", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 413}
+{"ja": "カンスト", "reading": "かんすと", "vi": "đạt giới hạn tối đa rồi", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 414}
+{"ja": "ギブアップ", "reading": "ぎぶあっぷ", "vi": "bó tay / đầu hàng", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 415}
+{"ja": "ヒートアップ", "reading": "ひーとあっぷ", "vi": "nóng lên / căng thẳng tăng cao", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 416}
+{"ja": "リリース直前でドッキリ", "reading": "ririizu chokuzen de dokkiri", "vi": "giật mình phút cuối release", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 417}
+{"ja": "CIが青いと安心する", "reading": "si ga aoi to anshin suru", "vi": "CI xanh là tim thắt lại", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 418}
+{"ja": "プルリク死ぬ", "reading": "pururiqo shinu", "vi": "PR bị chặn chết", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 419}
+{"ja": "Gitの歴史を消すな", "reading": "git no rekishi o kesu na", "vi": "đừng xóa lịch sử Git", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 420}
+{"ja": "マージ戦争", "reading": "maaji sensou", "vi": "chiến tranh merge", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 421}
+{"ja": "型エラーに泣く", "reading": "kata eraa ni naku", "vi": "khóc vì lỗi kiểu", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 422}
+{"ja": "TSの型、謎すぎる", "reading": "ts no kata, nazesugiru", "vi": "kiểu TS bí ẩn quá", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 423}
+{"ja": "テスト書いてないやつは許さない", "reading": "tesuto kaite nai yatsu wa yurusanai", "vi": "không tha người không viết test", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 424}
+{"ja": "API仕様書？それ、誰が書くの？", "reading": "api shisho sho? sore, dare ga kaku no?", "vi": "spec API à? Ai viết đây?", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 425}
+{"ja": "フロントが後回し", "reading": "furonto ga atomawashi", "vi": "front cứ để sau", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 426}
+{"ja": "バックエンドが待ってます", "reading": "bakkuendo ga matte masu", "vi": "backend đang đợi", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 427}
+{"ja": "DB設計、またやり直しか", "reading": "db sekkei, mata yarinaoshi ka", "vi": "thiết kế DB lại à?", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 428}
+{"ja": "ログ見てもわからん", "reading": "rogu mite mo wakaran", "vi": "xem log cũng chẳng hiểu", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 429}
+{"ja": "エラー文、日本語じゃない", "reading": "eraa bun, nihongo ja nai", "vi": "lỗi toàn tiếng Anh", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 430}
+{"ja": "監視アラート、無視してた", "reading": "kanshi araato, mushi shiteta", "vi": "bỏ qua alert giám sát", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 431}
+{"ja": "障害対応中、全員黙祷", "reading": "shougai taiou chuu, zen'in mokutou", "vi": "đang xử lý sự cố — im lặng cầu nguyện", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 432}
+{"ja": "デプロイは夜中が基本", "reading": "deproi wa yonaka ga kihon", "vi": "deploy thường vào khuya", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 433}
+{"ja": "レビュー指摘が鋭すぎる", "reading": "ryuubee shiten ga surudoi sugiru", "vi": "review chốt gắt quá", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 434}
+{"ja": "レビュワーが鬼だった", "reading": "ryuubuwaa ga oni datta", "vi": "người review ác như quỷ", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 435}
+{"ja": "スケジュールは希望的観測", "reading": "sukejyuru wa kibouteki kansoku", "vi": "lịch trình chỉ là ước mơ", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 436}
+{"ja": "見積もりは空想", "reading": "mitsumori wa kuusou", "vi": "dự toán là tưởng tượng", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 437}
+{"ja": "要件定義？まだです", "reading": "youken teigi? mada desu", "vi": "spec còn chưa có", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 438}
+{"ja": "リファクタリング、来期予算で", "reading": "rifuakutaringu, raiki yosan de", "vi": "refactor để kỳ sau tính ngân sách", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 439}
+{"ja": "技術選定、流行りで決める", "reading": "gijutsu sentei, hayari de kimeru", "vi": "chọn tech theo trend", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 440}
+{"ja": "POがいないので勝手に進める", "reading": "po ga inai node katte ni susumeru", "vi": "PO vắng mặt nên làm đại", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 441}
+{"ja": "ドキュメントはGitに置いてある（置いちゃった）", "reading": "dokyumento wa git ni oite aru (oitechatta)", "vi": "doc đã đẩy lên Git rồi (đẩy xong mới nhớ)", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 442}
+{"ja": "インフラ構築、全部 Terraform化", "reading": "infura kouchiku, zenbu terraformka", "vi": "infra toàn dùng Terraform", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 443}
+{"ja": "K8s、触ったことないけど大丈夫？", "reading": "keitsu, sawatta koto nai kedo daijoubu?", "vi": "K8s chưa đụng bao giờ, ổn chứ?", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 444}
+{"ja": "SREチーム？それ、何ですか？", "reading": "sre chiimu? sore, nan desu ka?", "vi": "team SRE à? Cái đó là gì?", "freq": 1, "cat": 6, "m": "qwen-plus", "i": 445}
+{"ja": "セキュリティ対策、あとでやる", "reading": "sekkyuriti taisaku, ato de yaru", "vi": "bảo mật để sau", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 446}
+{"ja": "へー", "reading": "へー", "vi": "ồ—", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 447}
+{"ja": "あー", "reading": "あー", "vi": "à…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 448}
+{"ja": "あの", "reading": "あの", "vi": "này…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 449}

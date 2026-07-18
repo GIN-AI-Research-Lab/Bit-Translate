@@ -1,0 +1,50 @@
+{"ja": "マジやば", "reading": "maji yabaa", "vi": "nghiêm trọng thật đấy/đáng lo thật đấy", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 50}
+{"ja": "おっさんチック", "reading": "ossan chikku", "vi": "già dặn quá/già như ông cụ", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 51}
+{"ja": "ダサい", "reading": "dasai", "vi": "lỗi thời/quê mùa/lố bịch", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 52}
+{"ja": "イキり", "reading": "ikiri", "vi": "phô trương vô duyên/dở hơi lên", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 53}
+{"ja": "ガチ勢", "reading": "gachi zei", "vi": "fan cứng/người chơi nghiêm túc đến mức ám ảnh", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 54}
+{"ja": "草生えた", "reading": "kusa haeta", "vi": "cười lăn lộn/haha chết đi được", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 55}
+{"ja": "ノリで", "reading": "nori de", "vi": "cho vui/chơi thôi/chuyện đùa mà", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 56}
+{"ja": "やべえ", "reading": "yabee", "vi": "xong đời rồi/đéo xong rồi", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 57}
+{"ja": "無理ゲー", "reading": "muri gē", "vi": "khó bất khả thi/khó không làm nổi", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 58}
+{"ja": "神対応", "reading": "kami taiō", "vi": "xử lý đỉnh cao/thần thánh thật", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 59}
+{"ja": "最悪", "reading": "saiaku", "vi": "tệ nhất/tệ hại nhất", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 60}
+{"ja": "最強", "reading": "saikyō", "vi": "mạnh nhất/vô địch", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 61}
+{"ja": "クソワロタ", "reading": "kuso warota", "vi": "cười sặc máu/đau bụng vì cười", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 62}
+{"ja": "マジで泣いた", "reading": "maji de naita", "vi": "khóc thiệt luôn/đau lòng thiệt luôn", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 63}
+{"ja": "ズボラ", "reading": "zubora", "vi": "lười biếng/lười tới tận xương", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 64}
+{"ja": "テンパる", "reading": "tenparu", "vi": "hoảng loạn/loạn hết cả người", "freq": 3, "cat": 1, "m": "qwen-plus", "i": 65}
+{"ja": "ヤバいほど", "reading": "yabai hodo", "vi": "tới mức kinh khủng/quá mức đáng lo", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 66}
+{"ja": "ザ・ワールド", "reading": "za wārudo", "vi": "thế giới riêng/đẳng cấp khác hẳn", "freq": 2, "cat": 1, "m": "qwen-plus", "i": 67}
+{"ja": "っす", "reading": "っす", "vi": "dạ/vâng (thân mật)", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 68}
+{"ja": "とりま", "reading": "とりま", "vi": "thôi thì đã vậy", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 69}
+{"ja": "あーね", "reading": "あーね", "vi": "à nhỉ", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 70}
+{"ja": "りょ", "reading": "りょ", "vi": "rồi", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 71}
+{"ja": "おけ", "reading": "おけ", "vi": "ok", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 72}
+{"ja": "やば", "reading": "やば", "vi": "nguy to", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 73}
+{"ja": "まじ", "reading": "まじ", "vi": "thật đấy", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 74}
+{"ja": "ちょ", "reading": "ちょ", "vi": "khoan đã", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 75}
+{"ja": "えっと", "reading": "えっと", "vi": "à…", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 76}
+{"ja": "うん", "reading": "うん", "vi": "ừ", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 77}
+{"ja": "そう", "reading": "そう", "vi": "thế à", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 78}
+{"ja": "はい", "reading": "はい", "vi": "vâng", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 79}
+{"ja": "じゃあ", "reading": "じゃあ", "vi": "thế thì", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 80}
+{"ja": "まぁ", "reading": "まぁ", "vi": "thôi thì", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 81}
+{"ja": "ほんと", "reading": "ほんと", "vi": "thật đấy", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 82}
+{"ja": "むり", "reading": "むり", "vi": "không được", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 83}
+{"ja": "だめ", "reading": "だめ", "vi": "không ổn", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 84}
+{"ja": "やる", "reading": "やる", "vi": "làm đi", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 85}
+{"ja": "やった", "reading": "やった", "vi": "xong rồi", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 86}
+{"ja": "やばい", "reading": "やばい", "vi": "nguy rồi", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 87}
+{"ja": "さすが", "reading": "さすが", "vi": "đáng phục thật", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 88}
+{"ja": "やっぱ", "reading": "やっぱ", "vi": "quả nhiên", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 89}
+{"ja": "やっぱそう", "reading": "やっぱそう", "vi": "quả nhiên là thế", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 90}
+{"ja": "そっか", "reading": "そっか", "vi": "à ra vậy", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 91}
+{"ja": "なるほど", "reading": "なるほど", "vi": "à hiểu rồi", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 92}
+{"ja": "まあいい", "reading": "まあいい", "vi": "thôi kệ đi", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 93}
+{"ja": "ごめん", "reading": "ごめん", "vi": "xin lỗi", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 94}
+{"ja": "ごめんね", "reading": "ごめんね", "vi": "xin lỗi nha", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 95}
+{"ja": "ありがとう", "reading": "ありがとう", "vi": "cảm ơn", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 96}
+{"ja": "ありがと", "reading": "ありがと", "vi": "cảm ơn nha", "freq": 3, "cat": 2, "m": "qwen-plus", "i": 97}
+{"ja": "うんうん", "reading": "うんうん", "vi": "ừ ừ", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 98}
+{"ja": "ええ", "reading": "ええ", "vi": "vâng", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 99}

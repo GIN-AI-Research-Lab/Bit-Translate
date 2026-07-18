@@ -1,0 +1,57 @@
+{"panel":"sent_vong3_idc_qwen-flash","i":50,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":51,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":52,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":53,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":54,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":55,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":56,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":57,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":58,"ok":true}
+{"panel":"sent_vong3_idc_qwen-flash","i":59,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":50,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":51,"ok":false,"reason":"Bản dịch thêm 'kêu to' không có trong 空桶"}
+{"panel":"sent_vong3_ct_qwen-plus","i":52,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":53,"ok":false,"reason":"Đổi tông từ chế giễu thành khẳng định tuyệt đối"}
+{"panel":"sent_vong3_ct_qwen-plus","i":54,"ok":false,"reason":"食べ如艦 không phải tiếng Nhật chuẩn"}
+{"panel":"sent_vong3_ct_qwen-plus","i":55,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":56,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":57,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":58,"ok":true}
+{"panel":"sent_vong3_ct_qwen-plus","i":59,"ok":false,"reason":"Mâu thuẫn logic: kêu tiếng mèo nhưng giống chim khướu"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":50,"ok":false,"reason":"やばい nên dịch 'tệ/khốn' không phải 'nguy hiểm'"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":51,"ok":true}
+{"panel":"sent_vong3_idc_qwen-turbo","i":52,"ok":false,"reason":"私 dịch thành 'chúng tôi' — lỗi chủ thể"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":53,"ok":false,"reason":"'Vì lời nói' sai giới từ"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":54,"ok":false,"reason":"'trải nghiệm buồn tương tự' không tự nhiên"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":55,"ok":true}
+{"panel":"sent_vong3_idc_qwen-turbo","i":56,"ok":true}
+{"panel":"sent_vong3_idc_qwen-turbo","i":57,"ok":true}
+{"panel":"sent_vong3_idc_qwen-turbo","i":58,"ok":true}
+{"panel":"sent_vong3_idc_qwen-turbo","i":59,"ok":true}
+{"panel":"sent_vong3_idc_glm-4.7-flash","i":0,"ok":false,"reason":"vế Việt khác hẳn vế Nhật (lạc đề)"}
+{"panel":"sent_vong3_idc_glm-4.7-flash","i":11,"ok":false,"reason":"cảm xúc phóng đại, thêm chi tiết không có trong JA"}
+{"panel":"sent_vong3_dm_qwen-plus","summary":"45/45 ok, 0 reject"}
+{"panel":"sent_vong3_idcv_qwen-max","i":50,"ok":true,"note":"panel01 10/10 ok"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":0,"ok":false,"reason":"クソワロタ dịch 'cười sặc máu' quá mạnh"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":2,"ok":false,"reason":"VI cẩu thả không rõ nghĩa"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":12,"ok":false,"reason":"おけだった không chuẩn; VI dùng 'ok'"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":14,"ok":false,"reason":"つらつらした không phải tiếng Nhật chuẩn"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":22,"ok":false,"reason":"lật chiều: 'tối đa' phải là 'tối thiểu'"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":34,"ok":false,"reason":"idiom VI không chuẩn"}
+{"panel":"sent_vong3_idc_qwen-turbo","i":45,"ok":false,"reason":"chủ thể sai: JA không xác định, VI 'anh ấy'"}
+{"panel":"sent_vong3_ct_qwen-plus","i":7,"ok":false,"reason":"あいだけ không rõ; VI 'ai dè!' không khớp"}
+{"panel":"sent_vong3_ct_qwen-plus","i":9,"ok":false,"reason":"JA dính từ Việt 'xui' trong ngoặc"}
+{"panel":"sent_vong3_ct_qwen-plus","i":12,"ok":false,"reason":"VI 'thấy sang bắt quàng làm họ' dùng sai ngữ cảnh"}
+{"panel":"sent_vong3_ct_qwen-plus","i":18,"ok":false,"reason":"đổi ẩn dụ 刈 gặt thành gieo"}
+{"panel":"sent_vong3_ct_qwen-plus","i":29,"ok":false,"reason":"誰 dịch thành tên riêng 'Thùy'"}
+{"panel":"sent_vong3_ct_qwen-plus","i":32,"ok":false,"reason":"手加減 (nhẹ tay) dịch thành 'vội'"}
+{"panel":"sent_vong3_idc_gemini-flash-latest","i":0,"ok":false,"reason":"register lệch, dịch từng chữ"}
+{"panel":"sent_vong3_idc_gemini-flash-latest","i":7,"ok":false,"reason":"'giả nai tỏ vẻ' gượng"}
+{"panel":"sent_vong3_idcv_gemini-2.5-flash","i":10,"ok":false,"reason":"'nhức nách' mỉa mai ≠ 最高 khen thẳng"}
+{"panel":"sent_vong3_idcv_qwen-max","i":6,"ok":false,"reason":"ずる賢く không hợp 'khôn như ranh'"}
+{"panel":"sent_vong3_idcv_qwen-max","i":17,"ok":false,"reason":"VI không chứa slang (prompt-compliance, cặp vẫn đúng nghĩa)"}
+{"panel":"sent_vong3_idcv_qwen-max","i":20,"ok":false,"reason":"JA thiếu vế 'cha chung không ai khóc'"}
+{"panel":"sent_vong3_idcv_qwen-max","i":27,"ok":false,"reason":"VI không chứa slang (prompt-compliance)"}
+{"panel":"sent_vong3_idcv_qwen-max","i":41,"ok":false,"reason":"VI không rõ chứa slang"}
+{"panel":"sent_vong3_idc_qwen-flash","i":30,"ok":false,"reason":"lặp từ 'ồn ào'"}
+{"panel":"sent_vong3_idc_qwen-flash","i":38,"ok":false,"reason":"狐の嫁入り dịch literal 'cô dâu cáo'"}

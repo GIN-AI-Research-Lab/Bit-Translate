@@ -141,3 +141,32 @@ Xếp theo tác động/chi phí:
 6. Streaming: re-translation + local agreement (§10 PLAN_BUOC5, đã có) — không hiển thị bản chốt khi câu Nhật chưa hết vì phủ định nằm cuối.
 
 **Thứ tự làm:** pilot (1) ngay hôm nay/mai trên 110M (1-2h, script sẵn) → (3) viết luôn vào app (nửa ngày, thuần regex) → (2)+ngữ cảnh vào data vòng 3 → (4)(5) sau gate 292M.
+
+## 9. CHECKLIST SAU KHI 292M ĐẠT 25000 STEP (ghi 2026-07-18 — data vòng 3a ĐÃ SẴN)
+
+Bối cảnh: toàn bộ data vòng 3a đã sinh + review + mix xong trong 18/07 (Opus review
+`eval/DATA_REVIEW_VONG3_OPUS.md`, tổng kết `data/synthetic/vong3/SUMMARY_VONG3A.md`).
+Premix **`train-assets-vong3a`** (23,45M seq, new 18,7%, cùng công thức oversample-short
+với vòng 2) = base + vòng1 + vòng2 + [6.615 idiom/slang + 50k `ctx|||src` + 5.457 số liệu
++ 4.232 glossary-inject]. Node cloud round kế CHỈ cần đổi tag tải premix.
+
+1. **Gate Phase 0 (~nửa ngày, harness sẵn):** convert GGUF i2_s → FLORES n=100
+   (vi→ja >21.49 / ja→vi >42.27) + probe64 (>31.7/48.7) + glossary-test (>28%)
+   + **hardbench200 4-way judge** (thay 110M bằng 292M; kỳ vọng 1.56→~2.0-2.4)
+   → điền `eval/capacity_log.md` + USER eyeball 50 câu.
+2. **Rẽ nhánh:** ĐẠT → bước 3. TRƯỢT → nút thắt là DATA (§1): vẫn train vòng 3a
+   (cân nhắc trên 110M cho rẻ), hoãn mọi bàn scale.
+3. **Train vòng 3a trên cloud:** đổi tag premix `train-assets-vong2` → `train-assets-vong3a`
+   (dọn data/bin/train.* + marker premix cũ trước khi giải nén) → resume từ ckpt 25000,
+   **+4.000-6.000 step** (PLAN_BUOC5 §4.2) với `--lr-anchor 25000` (LR restart từ đỉnh)
+   → autosave + watcher như cũ.
+4. **Đo G1 (§2) + đo trần:** thắng Google ≥3/5 domain ja→vi {hop, it_deep, hoithoai,
+   thanhngu, slang}; probe64 ja→vi ≥52.2; không domain cũ tụt >2 chrF. Kèm **glossary
+   term-rate**: >35-40% → được harvest từ điển 1.247→2k mục; đứng ~28% → DỪNG nhồi
+   idiom, chuyển app-side (§8.4#2).
+5. **Test glossary-injection runtime:** dịch câu có hint `[term=訳語]` (đã train 4.232 mẫu)
+   — model dùng gợi ý ⇒ mở khóa app-side glossary + Phase 3 (glossary-bench vs Haiku,
+   cần USER cấp term nội bộ).
+6. **Song song:** `harvest_ja_indomain.py` gom 500k-1M câu JA mono (CPU local, làm được
+   NGAY) chuẩn bị BT vòng 3b/G2; nối câu code-gen (§8.1) + self-edit `>>fix<<` để dành
+   vòng 3b; bảng vận hành Fable (0.5 ngày).

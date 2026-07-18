@@ -1,0 +1,50 @@
+{"ja": "ドタバタ", "reading": "どたばた", "vi": "loạn xạ, chạy đôn đáo", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 200}
+{"ja": "ザワザワ", "reading": "ざわざわ", "vi": "rộn ràng lo lắng", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 201}
+{"ja": "モヤモヤ", "reading": "もやもや", "vi": "bồn chồn không rõ lý do", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 202}
+{"ja": "グダグダ", "reading": "ぐだぐだ", "vi": "lê thê, thiếu quyết đoán", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 203}
+{"ja": "ダラダラ", "reading": "だらだら", "vi": "làm cầm chừng, kéo dài", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 204}
+{"ja": "ガチ", "reading": "がち", "vi": "nghiêm túc đến mức ám ảnh", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 205}
+{"ja": "マジ", "reading": "まじ", "vi": "thật đấy", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 206}
+{"ja": "サボる", "reading": "さぼる", "vi": "trốn việc", "freq": 3, "cat": 5, "m": "qwen-plus", "i": 207}
+{"ja": "ハシゴ", "reading": "はしご", "vi": "đi phỏng vấn nhiều chỗ cùng lúc", "freq": 2, "cat": 5, "m": "qwen-plus", "i": 208}
+{"ja": "デグる", "reading": "deguru", "vi": "hỏng rồi", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 209}
+{"ja": "ポンコツコード", "reading": "ponkotsu koodo", "vi": "code lỗi lung tung", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 210}
+{"ja": "おまじない", "reading": "omajinai", "vi": "thủ thuật ma thuật", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 211}
+{"ja": "椅子を温める", "reading": "isu o atatameru", "vi": "ngồi chơi xơi nước", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 212}
+{"ja": "ガチで詰む", "reading": "gachi de tsumu", "vi": "bí thật sự rồi", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 213}
+{"ja": "リセットボタンが壊れた", "reading": "risetto botan ga kowareta", "vi": "mất nút reset luôn", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 214}
+{"ja": "死にかけのPR", "reading": "shinikake no PR", "vi": "pull request sắp chết", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 215}
+{"ja": "マージ待ちパイセン", "reading": "maaji machi paizen", "vi": "anh lớn chờ merge", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 216}
+{"ja": "バグ狩り", "reading": "bagu gari", "vi": "săn bug", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 217}
+{"ja": "ドキュメントは空気", "reading": "dokyumento wa kuuki", "vi": "tài liệu như không tồn tại", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 218}
+{"ja": "Gitの呪い", "reading": "git no noroi", "vi": "lời nguyền Git", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 219}
+{"ja": "本番で初確認", "reading": "honban de hatsu kakunin", "vi": "lần đầu thấy ở môi trường production", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 220}
+{"ja": "ローカルだけ動く", "reading": "rokaaru dake ugoku", "vi": "chỉ chạy được trên local", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 221}
+{"ja": "依存地獄", "reading": "izon jigoku", "vi": "địa ngục dependency", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 222}
+{"ja": "npm install 10分待機", "reading": "npm insutoru juubun taiki", "vi": "chờ npm install 10 phút", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 223}
+{"ja": "GitHubの星が増えると幸せ", "reading": "github no hoshi ga fueru to shiawase", "vi": "được sao GitHub là vui rồi", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 224}
+{"ja": "エラー文を読むのが疲れる", "reading": "eraa bun o yomu no ga tsukareru", "vi": "đọc log lỗi mệt quá", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 225}
+{"ja": "テスト書いてないけど動いてるからOK", "reading": "tesuto kaite nai kedo ugoiteru kara OK", "vi": "không viết test nhưng chạy được nên ổn", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 226}
+{"ja": "CIが赤いと心臓が止まる", "reading": "CI ga akai to shinzou ga tomaru", "vi": "CI đỏ là tim ngừng đập", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 227}
+{"ja": "レビュワーが消えた", "reading": "rebuyuwaa ga kieta", "vi": "người review biến mất", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 228}
+{"ja": "プルリクが宙ぶらりん", "reading": "pururiku ga chuu burarin", "vi": "PR treo lơ lửng", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 229}
+{"ja": "本番環境で「あれ？動いてる？」", "reading": "honban kankyou de \"are? ugoiteru?\"", "vi": "ở production bỗng nhiên: 'Ơ? Nó chạy à?'", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 230}
+{"ja": "サーバー落ちたのでお茶飲んでます", "reading": "saabaa ochita node ocha nonde masu", "vi": "server sập rồi, đang uống trà", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 231}
+{"ja": "コンパイル通ったら勝ち", "reading": "konpairu toottara kachi", "vi": "compile qua là thắng rồi", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 232}
+{"ja": "ログは嘘をつかない（が読めない）", "reading": "rogu wa uso o tsukanai (ga yomenai)", "vi": "log không nói dối (nhưng đọc không hiểu)", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 233}
+{"ja": "API仕様書は生きている伝説", "reading": "API shisho sho wa ikite iru densetsu", "vi": "spec API là truyền thuyết sống", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 234}
+{"ja": "DBの状態は神のみぞ知る", "reading": "DB no joutai wa kami nomizo shiru", "vi": "trạng thái DB chỉ thần mới biết", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 235}
+{"ja": "フロントとバックの温度差", "reading": "furonto to bakku no ondo sa", "vi": "chênh lệch nhiệt độ front – back", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 236}
+{"ja": "エンドポイントが迷子", "reading": "endo pointo ga maigo", "vi": "endpoint lạc trôi", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 237}
+{"ja": "マイクロサービスの森", "reading": "maikuro saabisu no mori", "vi": "rừng microservice", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 238}
+{"ja": "K8sの謎が深まる", "reading": "K8s no nazo ga fukamaru", "vi": "nỗi bí ẩn K8s càng sâu", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 239}
+{"ja": "envファイルが実家", "reading": "env fairu ga oya", "vi": "file env là nhà gốc", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 240}
+{"ja": "deploy後、5分間の祈り", "reading": "deploy go, gobun kan no inori", "vi": "cầu nguyện 5 phút sau deploy", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 241}
+{"ja": "レビュー指摘が哲学的", "reading": "rebyuu shiten ga tetsugakuteki", "vi": "review toàn triết lý", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 242}
+{"ja": "スケジュールは願望リスト", "reading": "sukejyuru wa ganbou risuto", "vi": "lịch trình là danh sách mong ước", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 243}
+{"ja": "リファクタリング＝再就職活動中", "reading": "rifa kutoringu = sai shuushoku katsudouchuu", "vi": "refactor = đang đi phỏng vấn lại", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 244}
+{"ja": "エラーメッセージの9割はGoogleで解決", "reading": "eraa messeeji no kyuu waru wa Google de kaiketsu", "vi": "90% lỗi là Google ra hết", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 245}
+{"ja": "Gitの歴史を読むと人生が変わる", "reading": "git no rekishi o yomu to jinsei ga kawaru", "vi": "đọc lịch sử Git là đổi đời", "freq": 2, "cat": 6, "m": "qwen-plus", "i": 246}
+{"ja": "本番データで開発してます（冗談です）", "reading": "honban deeta de kaihatsu shite masu (joudan desu)", "vi": "đang dev bằng dữ liệu production (đùa thôi)", "freq": 3, "cat": 6, "m": "qwen-plus", "i": 247}
+{"ja": "まさか", "reading": "まさか", "vi": "thật không thể tin nổi", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 248}
+{"ja": "やっぱり", "reading": "やっぱり", "vi": "thì ra là vậy", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 249}

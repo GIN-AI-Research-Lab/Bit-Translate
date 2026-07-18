@@ -46,6 +46,8 @@ BOS, EOS = sp.bos_id(), sp.eos_id()
 VIE, JPN = sp.piece_to_id(">>vie<<"), sp.piece_to_id(">>jpn<<")
 
 # name, format(pair=<name>.ja/.vi | jsonl=file), direction, class, LaBSE?
+# direction: both | vi2ja | ja2vi | record (đọc field "dir" của TỪNG dòng jsonl —
+#            data một chiều như ctx ||| src, glossary-inject; thiếu dir thì coi là both)
 SOURCES = [
     ("glossary_sents", "jsonl:glossary_sents.jsonl", "both", "glossary", True),
     ("glossary_direct", "pair:glossary_direct",      "both", "glossary", False),
@@ -56,6 +58,15 @@ SOURCES = [
     ("bt",              "pair:bt",                   "vi2ja", "other",   False),
     # Vòng 2 (đã qua 3 lớp review — QUALITY_GATE; LaBSE là lớp 4 cuối)
     ("vong2",           "jsonl:vong2_pairs.jsonl",   "both", "other",    True),
+    # Vòng 3a (SUMMARY_VONG3A.md — đã rule filter + Haiku review + blacklist):
+    #  - sent: 7.3k câu LLM — dùng bản ĐÃ chấm LaBSE offline (filtered_labse.jsonl,
+    #    scripts/labse_score_vong3.py) nên labse=False ở đây
+    #  - ctx: ctx ||| src MỘT CHIỀU (dir per-record); nguồn từ base đã LaBSE -> không chấm lại
+    #  - num: code template; gi: glossary-injection (hint 1 chiều)
+    ("vong3_sent",      "jsonl:vong3/filtered_labse.jsonl",   "both",   "other", False),
+    ("vong3_ctx",       "jsonl:vong3/ctx_pairs.jsonl",        "record", "other", False),
+    ("vong3_num",       "jsonl:vong3/numeric_negation.jsonl", "both",   "other", False),
+    ("vong3_gi",        "jsonl:vong3/glossary_inject.jsonl",  "record", "other", False),
 ]
 
 
@@ -81,7 +92,8 @@ def load_source(spec):
                 continue
             ja, vi = nfc(o.get("ja") or ""), nfc(o.get("vi") or "")
             if ja and vi:
-                recs.append({"ja": ja, "vi": vi, "term": (o.get("term") or "").strip()})
+                recs.append({"ja": ja, "vi": vi, "term": (o.get("term") or "").strip(),
+                             "rec_dir": (o.get("dir") or "").strip()})
     else:  # pair
         pja, pvi = SYN / f"{name}.ja", SYN / f"{name}.vi"
         if not (pja.exists() and pvi.exists()):
@@ -128,10 +140,16 @@ def labse_keep(pairs, thr, device):
 
 
 def seqs_for(ja_ids, vi_ids, direction):
-    """Sinh (seq, tgt_start) theo chiều — khớp hệt binarize.py."""
+    """Sinh (seq, tgt_start) theo chiều — khớp hệt binarize.py.
+    Data một chiều (ctx ||| src, glossary-inject) CẤM tự đảo: đảo sẽ bắt model
+    sinh ra chuỗi 'ctx ||| src' / '[hint] câu' vô nghĩa làm target."""
     out = []
-    dirs = ((JPN, vi_ids, ja_ids),) if direction == "vi2ja" else \
-           ((JPN, vi_ids, ja_ids), (VIE, ja_ids, vi_ids))   # VI->JA, JA->VI
+    if direction == "vi2ja":
+        dirs = ((JPN, vi_ids, ja_ids),)
+    elif direction == "ja2vi":
+        dirs = ((VIE, ja_ids, vi_ids),)
+    else:  # both
+        dirs = ((JPN, vi_ids, ja_ids), (VIE, ja_ids, vi_ids))   # VI->JA, JA->VI
     for tag, src, tgt in dirs:
         seq = [BOS, tag] + src + [EOS] + tgt + [EOS]
         if len(seq) <= MAX_SEQ:
@@ -173,7 +191,9 @@ def main():
         r = load_source(spec)
         per_src_raw[name] = len(r)
         for x in r:
-            x.update(name=name, dir=direction, cls=cls, labse=use_labse)
+            d = x.pop("rec_dir", "") if direction == "record" else ""
+            x.update(name=name, dir=(d or "both") if direction == "record" else direction,
+                     cls=cls, labse=use_labse)
         recs.extend(r)
     print("[mix] đọc thô:", per_src_raw, flush=True)
 

@@ -1,0 +1,50 @@
+{"vi": "Nước đến chân mới nhảy", "ja": "尻に火がつく / 追い込まれると本気を出す", "freq": 3, "lit": "Nước đến chân rồi mới nhảy (Khi tình thế cấp bách, không còn đường lùi mới bắt đầu hành động).", "cat": 0, "m": "gemini-2.5-flash", "i": 0}
+{"vi": "Mất bò mới lo làm chuồng", "ja": "後の祭り", "freq": 3, "lit": "Mất bò rồi mới lo làm chuồng (Để xảy ra hậu quả rồi mới tìm cách khắc phục).", "cat": 0, "m": "gemini-2.5-flash", "i": 1}
+{"vi": "Được voi đòi tiên", "ja": "欲張りすぎる / 満足を知らない", "freq": 3, "lit": "Được con voi rồi lại đòi cả tiên (Tham lam, có được thứ này rồi lại đòi hỏi thứ khác to lớn hơn, tốt hơn).", "cat": 0, "m": "gemini-2.5-flash", "i": 2}
+{"vi": "Tham thì thâm", "ja": "欲をかくと損をする", "freq": 3, "lit": "Tham lam quá thì sẽ bị thiệt hại.", "cat": 0, "m": "gemini-2.5-flash", "i": 3}
+{"vi": "Toang", "ja": "詰んだ・終わった", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 4}
+{"vi": "Cạn lời", "ja": "言葉を失う・もう何も言えない", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 5}
+{"vi": "Gấu", "ja": "彼氏/彼女・恋人", "freq": 1, "lit": "gấu (con vật)", "cat": 1, "m": "gemini-2.5-flash", "i": 6}
+{"vi": "Chém gió", "ja": "話を盛る・ほらを吹く", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 7}
+{"vi": "Xu cà na", "ja": "最悪・運が悪い", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 8}
+{"vi": "Ăn hành", "ja": "ひどい目に遭う・ボコられる", "freq": 1, "lit": "ăn hành (ăn rau hành)", "cat": 1, "m": "gemini-2.5-flash", "i": 9}
+{"vi": "Khum", "ja": "〜ないよ・〜ません", "freq": 1, "lit": "không (không)", "cat": 1, "m": "gemini-2.5-flash", "i": 10}
+{"vi": "Trà xanh", "ja": "略奪愛をする女性・浮気相手", "freq": 2, "lit": "trà xanh (trà xanh)", "cat": 1, "m": "gemini-2.5-flash", "i": 11}
+{"vi": "Flex", "ja": "自慢する・ひけらかす", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 12}
+{"vi": "Gu", "ja": "好み・タイプ", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 13}
+{"vi": "Đỉnh của chóp", "ja": "最高峰・最高に素晴らしい", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 14}
+{"vi": "Cháy", "ja": "最高・アツい", "freq": 1, "lit": "cháy (bị cháy, cháy nhà)", "cat": 1, "m": "gemini-2.5-flash", "i": 15}
+{"vi": "Phèn", "ja": "ダサい・イケてない", "freq": 1, "lit": "phèn (phèn chua, phèn sắt)", "cat": 1, "m": "gemini-2.5-flash", "i": 16}
+{"vi": "Vibe", "ja": "雰囲気・ノリ", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 17}
+{"vi": "Chill", "ja": "まったりする・くつろぐ", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 18}
+{"vi": "Đú trend", "ja": "流行に乗る・バズる", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 19}
+{"vi": "Bóc phốt", "ja": "暴露する・悪事を暴く", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 20}
+{"vi": "Cà khịa", "ja": "からかう・皮肉を言う", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 21}
+{"vi": "SML", "ja": "ひどい目に遭う・ボロボロになる", "freq": 2, "lit": "sấp mặt lờ (tức là thua/mệt tới mức úp mặt xuống đất)", "cat": 1, "m": "gemini-2.5-flash", "i": 22}
+{"vi": "Nhức nách", "ja": "最高・やばい", "freq": 2, "lit": "nhức nách (đau nách)", "cat": 1, "m": "gemini-2.5-flash", "i": 23}
+{"vi": "Rén", "ja": "ビビる・怖気づく", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 24}
+{"vi": "Gét gô", "ja": "レッツゴー・行こう！", "freq": 1, "lit": "Let's go", "cat": 1, "m": "gemini-2.5-flash", "i": 25}
+{"vi": "Pha ke", "ja": "偽物・フェイク", "freq": 1, "lit": "Fake", "cat": 1, "m": "gemini-2.5-flash", "i": 26}
+{"vi": "Đu idol", "ja": "推し活をする・アイドルを応援する", "freq": 1, "cat": 1, "m": "gemini-2.5-flash", "i": 27}
+{"vi": "Đông như kiến", "ja": "うじゃうじゃいる・人がごった返す", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 28}
+{"vi": "Nghèo rớt mồng tơi", "ja": "極貧・すっからかん", "freq": 1, "lit": "Nghèo đến mức rách nát như lá mồng tơi rụng rời", "cat": 2, "m": "gemini-2.5-flash", "i": 29}
+{"vi": "Dễ như ăn kẹo", "ja": "朝飯前・お茶の子さいさい", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 30}
+{"vi": "Nói như máy khâu", "ja": "機関銃のようにしゃべる・おしゃべり", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 31}
+{"vi": "Nhanh như cắt", "ja": "電光石火・素早い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 32}
+{"vi": "Chậm như rùa", "ja": "のろま・亀の歩み", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 33}
+{"vi": "Đen như cột nhà cháy", "ja": "真っ黒焦げ・真っ黒い", "freq": 2, "cat": 2, "m": "gemini-2.5-flash", "i": 34}
+{"vi": "Trắng như bông", "ja": "雪のように白い・真っ白", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 35}
+{"vi": "Đẹp như tiên", "ja": "仙女のように美しい・息を呑むほど美しい", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 36}
+{"vi": "Xấu như ma", "ja": "醜い・ブス", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 37}
+{"vi": "Khỏe như voi", "ja": "力持ち・怪力", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 38}
+{"vi": "Yếu như sên", "ja": "弱虫・ひ弱", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 39}
+{"vi": "Ngọt như đường", "ja": "蜜のように甘い・甘ったるい", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 40}
+{"vi": "Đắng như mật", "ja": "苦い・苦汁をなめる", "freq": 1, "lit": "Đắng như mật (dịch nghĩa là dịch mật)", "cat": 2, "m": "gemini-2.5-flash", "i": 41}
+{"vi": "Mặn như muối", "ja": "塩辛い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 42}
+{"vi": "Cay như ớt", "ja": "辛い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 43}
+{"vi": "Nóng như lửa", "ja": "燃えるような熱さ・熱い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 44}
+{"vi": "Lạnh như tiền", "ja": "冷酷・冷たい人間", "freq": 2, "lit": "Lạnh lùng, vô cảm như đồng tiền", "cat": 2, "m": "gemini-2.5-flash", "i": 45}
+{"vi": "Tham như mõ", "ja": "欲張り・強欲", "freq": 2, "lit": "Tham lam như người ăn xin gõ mõ", "cat": 2, "m": "gemini-2.5-flash", "i": 46}
+{"vi": "Hiền như đất", "ja": "温厚・穏やか", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 47}
+{"vi": "Dữ như cọp", "ja": "猛々しい・凶暴", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 48}
+{"vi": "Nhát như chuột", "ja": "臆病・小心者", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 49}

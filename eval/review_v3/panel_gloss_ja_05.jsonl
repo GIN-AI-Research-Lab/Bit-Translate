@@ -1,0 +1,50 @@
+{"ja": "さすがに", "reading": "さすがに", "vi": "cái này thì thật sự quá rồi", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 250}
+{"ja": "どうりで", "reading": "どうりで", "vi": "thì ra là vì vậy", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 251}
+{"ja": "まじか", "reading": "まじか", "vi": "thật á?", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 252}
+{"ja": "いやいや", "reading": "いやいや", "vi": "ơ khoan đã", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 253}
+{"ja": "えっ", "reading": "えっ", "vi": "hả?", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 254}
+{"ja": "はぁ", "reading": "はぁ", "vi": "à…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 255}
+{"ja": "ちょっと待って", "reading": "ちょっとまって", "vi": "khoan đã", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 256}
+{"ja": "待って待って", "reading": "まってまって", "vi": "khoan khoan đã", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 257}
+{"ja": "へえ", "reading": "へえ", "vi": "ồ…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 258}
+{"ja": "あら", "reading": "あら", "vi": "ơ kìa", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 259}
+{"ja": "おや", "reading": "おや", "vi": "ơ?", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 260}
+{"ja": "あのね", "reading": "あのね", "vi": "này nhé", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 261}
+{"ja": "ちょっとだけ", "reading": "ちょっとだけ", "vi": "chỉ một chút thôi", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 262}
+{"ja": "えー", "reading": "えー", "vi": "ờ…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 263}
+{"ja": "まあ", "reading": "まあ", "vi": "thôi thì", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 264}
+{"ja": "まあまあ", "reading": "まあまあ", "vi": "cũng tạm được", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 265}
+{"ja": "ほんのちょっと", "reading": "ほんのちょっと", "vi": "chỉ một tí xíu", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 266}
+{"ja": "ちょっとだけでも", "reading": "ちょっとだけでも", "vi": "dù chỉ một chút", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 267}
+{"ja": "ちょっと気になったんだけど", "reading": "ちょっときになったんだけど", "vi": "tớ hơi thắc mắc cái này", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 268}
+{"ja": "なんかね", "reading": "なんかね", "vi": "thật ra là…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 269}
+{"ja": "実はね", "reading": "じつはね", "vi": "thực ra thì…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 270}
+{"ja": "正直に言うと", "reading": "しょうじきにいうと", "vi": "nói thật thì", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 271}
+{"ja": "本音を言うと", "reading": "ほんねをいうと", "vi": "nói thật lòng thì", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 272}
+{"ja": "ちょっと言っちゃうけど", "reading": "ちょっといっちゃうけど", "vi": "tớ nói luôn nhé", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 273}
+{"ja": "言いにくいんだけど", "reading": "いにくいんだけど", "vi": "nói thì ngại nhưng…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 274}
+{"ja": "誤解を招くかもしれないけど", "reading": "ごかいをまねくかもしれないけど", "vi": "nghe có vẻ kỳ cục nhưng…", "freq": 2, "cat": 7, "m": "qwen-plus", "i": 275}
+{"ja": "ちょっと無理があるかも", "reading": "ちょっとむりがあるかも", "vi": "cái này hơi gượng ép nhỉ", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 276}
+{"ja": "流石にそれは…", "reading": "さすがにそれは…", "vi": "cái này thì thật sự…", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 277}
+{"ja": "ちょっと待った", "reading": "ちょっとまった", "vi": "khoan đã nào", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 278}
+{"ja": "ちょっと予想外", "reading": "ちょっとよそうがい", "vi": "cái này ngoài dự kiến rồi", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 279}
+{"ja": "マジで？", "reading": "まじで？", "vi": "thật á?", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 280}
+{"ja": "やば、やばい", "reading": "やば、やばい", "vi": "trời ơi, nguy to rồi", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 281}
+{"ja": "うそでしょ", "reading": "うそでしょ", "vi": "đùa à?", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 282}
+{"ja": "え、マジ？", "reading": "え、まじ？", "vi": "hả? thật á?", "freq": 3, "cat": 7, "m": "qwen-plus", "i": 283}
+{"ja": "むずい", "reading": "むずい", "vi": "khó vãi", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 284}
+{"ja": "うざい", "reading": "うざい", "vi": "bực thật", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 285}
+{"ja": "やばそう", "reading": "やばそう", "vi": "nghe nguy hiểm quá", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 286}
+{"ja": "キレてる", "reading": "きれてる", "vi": "đang cáu rồi nha", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 287}
+{"ja": "だるい", "reading": "だるい", "vi": "mệt rã rời", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 288}
+{"ja": "やる気出ない", "reading": "やる気でない", "vi": "không muốn làm gì hết", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 289}
+{"ja": "リア充", "reading": "りあじゅう", "vi": "người sống ảo nhưng đời thực sung sướng", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 290}
+{"ja": "厨二病", "reading": "ちゅうにびょう", "vi": "bệnh tuổi dậy thì ngầu quá mức", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 291}
+{"ja": "イライラする", "reading": "いらいらする", "vi": "bực bội muốn phát điên", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 292}
+{"ja": "めんどくさい", "reading": "めんどくさい", "vi": "phiền phức chết đi được", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 293}
+{"ja": "すげー", "reading": "すげー", "vi": "đỉnh cao", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 294}
+{"ja": "ヤバすぎ", "reading": "やばすぎ", "vi": "nguy hiểm quá trời", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 295}
+{"ja": "やばっち", "reading": "やばっち", "vi": "nguy hiểm kiểu dễ thương", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 296}
+{"ja": "ふぇ", "reading": "ふぇ", "vi": "ơ... (giọng yếu ớt, bất ngờ)", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 297}
+{"ja": "はぁ…", "reading": "はぁ…", "vi": "thở dài bất lực", "freq": 3, "cat": 0, "m": "qwen-plus", "i": 298}
+{"ja": "やっとか", "reading": "やっとか", "vi": "cuối cùng cũng xong à?", "freq": 2, "cat": 0, "m": "qwen-plus", "i": 299}

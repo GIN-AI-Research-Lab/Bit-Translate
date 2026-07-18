@@ -1,0 +1,14 @@
+{"vi": "Sao cũng được.", "ja": "どっちでもいい/別にいいよ", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 200}
+{"vi": "Cứ từ từ.", "ja": "焦らないで/ゆっくりでいいよ", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 201}
+{"vi": "Có lý đấy!", "ja": "なるほど！/それもそうだね！", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 202}
+{"vi": "Mày làm tao hết hồn!", "ja": "びっくりしたじゃないか！/心臓が止まるかと思った！", "freq": 2, "cat": 3, "m": "gemini-2.5-flash", "i": 203}
+{"vi": "Đúng vậy đó!", "ja": "その通り！/そうそう！", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 204}
+{"vi": "Chìm xuồng", "ja": "お蔵入りになる、闇に葬られる", "freq": 2, "lit": "thuyền chìm (chìm: chìm xuống, xuồng: thuyền nhỏ)", "cat": 4, "m": "gemini-2.5-flash", "i": 205}
+{"vi": "Đu dây điện", "ja": "時間稼ぎをする、先延ばしにする", "freq": 2, "lit": "đu bám vào dây điện", "cat": 4, "m": "gemini-2.5-flash", "i": 206}
+{"vi": "Hóng biến", "ja": "騒動の行方を見守る、ゴシップを待つ", "freq": 1, "lit": "hóng (mong ngóng) biến (biến cố)", "cat": 4, "m": "gemini-2.5-flash", "i": 207}
+{"vi": "Bùng kèo", "ja": "ドタキャンする、約束を破る", "freq": 2, "lit": "bùng (nổ, vỡ) kèo (kèo cá cược, giao kèo)", "cat": 4, "m": "gemini-2.5-flash", "i": 208}
+{"vi": "Cũng hơi căng", "ja": "ちょっと厳しい／なかなか大変だ", "freq": 3, "lit": "Cũng hơi căng (Also a bit tense)", "cat": 5, "m": "gemini-2.5-flash", "i": 209}
+{"vi": "Hơi bị ngon", "ja": "かなり美味しい／めちゃくちゃ美味い", "freq": 3, "lit": "Hơi bị ngon (A bit too delicious, used to mean very delicious)", "cat": 5, "m": "gemini-2.5-flash", "i": 210}
+{"vi": "Thế thì chịu rồi", "ja": "それはもうお手上げだ／どうしようもないね", "freq": 3, "lit": "Thế thì chịu rồi (Then I accept/endure it)", "cat": 5, "m": "gemini-2.5-flash", "i": 211}
+{"vi": "Đúng là hết nói!", "ja": "呆れてものが言えない／開いた口が塞がらない", "freq": 3, "lit": "Đúng là hết nói! (Truly no more words!)", "cat": 5, "m": "gemini-2.5-flash", "i": 212}
+{"vi": "Khỏi nói!", "ja": "言うまでもない／言わずもがな (if negative)／当然だ", "freq": 3, "lit": "Khỏi nói! (No need to speak!)", "cat": 5, "m": "gemini-2.5-flash", "i": 213}

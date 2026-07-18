@@ -1,0 +1,45 @@
+{"ja": "どうせこの企画、部長が却下するって漏れ聞いてるから、資料は軽めで。", "vi": "Đằng nào trưởng phòng cũng từ chối kế hoạch này rồi, tài liệu chuẩn bị sơ sơ là được.", "src": "vong3_dm", "m": "qwen-plus", "i": 0}
+{"ja": "このバグ、別に直さなくてもいいですよ。", "vi": "Cái lỗi này chẳng có gì đặc biệt phải sửa ngay đâu.", "src": "vong3_dm", "m": "qwen-plus", "i": 1}
+{"ja": "せっかくリモート勤務になったのに、毎日出社しろって？", "vi": "Hiếm có dịp chuyển sang làm việc từ xa mà lại bắt đi công sở mỗi ngày á?", "src": "vong3_dm", "m": "qwen-plus", "i": 2}
+{"ja": "彼が辞めるって聞いた？むしろ昇進が決まったらしいよ。", "vi": "Nghe nói anh ấy nghỉ việc à? Đúng hơn là vừa được bổ nhiệm chức mới ấy.", "src": "vong3_dm", "m": "qwen-plus", "i": 3}
+{"ja": "あの人の話、思ったより面白くて最後まで聞き入っちゃった。", "vi": "Câu chuyện của người đó thú vị hơn tưởng tượng, nghe tới tận cuối luôn.", "src": "vong3_dm", "m": "qwen-plus", "i": 4}
+{"ja": "雨が降るって予報だったから、案の定傘を忘れた。", "vi": "Trời báo mưa mà, quả nhiên mình quên mang ô.", "src": "vong3_dm", "m": "qwen-plus", "i": 5}
+{"ja": "開発環境、もうDocker対応だって！？", "vi": "Môi trường phát triển đã hỗ trợ Docker luôn à!?", "src": "vong3_dm", "m": "qwen-plus", "i": 6}
+{"ja": "何なら、ユーザーの声を全部まとめたレポート、今週中に出せます。", "vi": "Nếu cần thì báo cáo tổng hợp toàn bộ phản hồi người dùng em làm xong trong tuần này luôn.", "src": "vong3_dm", "m": "qwen-plus", "i": 7}
+{"ja": "どうせ彼女、もう返事しないって決めてるんでしょ？待たなくていいよ。", "vi": "Đằng nào cô ấy đã quyết định không trả lời rồi chứ gì, đợi làm chi cho mệt.", "src": "vong3_dm", "m": "qwen-plus", "i": 8}
+{"ja": "面接の質問、思ったよりマイルドだった。", "vi": "Câu hỏi phỏng vấn nhẹ nhàng hơn tưởng tượng.", "src": "vong3_dm", "m": "qwen-plus", "i": 9}
+{"ja": "このバグ、修正が大変だって予想してたけど、逆に3分で直せちゃった。", "vi": "Tưởng cái bug này sửa cực kỳ đau đầu, mà nói ngược lại thì chỉ 3 phút là xong ngay!", "src": "vong3_dm", "m": "qwen-plus", "i": 10}
+{"ja": "昨日のテスト、思ったより点数取れた！", "vi": "Bài kiểm tra hôm qua mình đạt điểm cao hơn tưởng tượng cơ!", "src": "vong3_dm", "m": "qwen-plus", "i": 11}
+{"ja": "上司の反応、思ったより厳しかった。", "vi": "Phản ứng của sếp nghiêm khắc hơn tưởng tượng.", "src": "vong3_dm", "m": "qwen-plus", "i": 12}
+{"ja": "要するに、彼は『行きます』って言ったけど、結局来なかった。", "vi": "Tóm lại là anh ta bảo ‘tôi đi’, nhưng cuối cùng chẳng thấy đâu.", "src": "vong3_dm", "m": "qwen-plus", "i": 13}
+{"ja": "この資料はあくまで参考用なので、正式な根拠にはしないでください。", "vi": "Tài liệu này chỉ để tham khảo thôi, đừng dùng làm căn cứ chính thức nhé.", "src": "vong3_dm", "m": "qwen-plus", "i": 14}
+{"ja": "「感動した！」って？別にそこまでじゃないよ。", "vi": "Bảo 'cảm động quá!' à? Chẳng có gì đặc biệt đến thế đâu.", "src": "vong3_dm", "m": "qwen-plus", "i": 15}
+{"ja": "一応、会議資料は送りましたが、まだ確認できていません。", "vi": "Về hình thức thì tài liệu họp tôi đã gửi rồi, nhưng chưa xác nhận được.", "src": "vong3_dm", "m": "qwen-plus", "i": 16}
+{"ja": "あくまで念のための確認ですが、パスワードを再設定していただけますか？", "vi": "Chỉ để chắc chắn thôi, anh/chị vui lòng đặt lại mật khẩu giúp em được không ạ?", "src": "vong3_dm", "m": "qwen-plus", "i": 17}
+{"ja": "何なら、君が書いたコード、全部レビューしてあげるよ。", "vi": "Nếu cần thì anh review hết toàn bộ code em viết luôn.", "src": "vong3_dm", "m": "qwen-plus", "i": 18}
+{"ja": "子供が『お菓子まだ？』って言ってた。", "vi": "Con bé cứ hỏi ‘kẹo đâu rồi?’ hoài.", "src": "vong3_dm", "m": "qwen-plus", "i": 19}
+{"ja": "この新規API、セキュリティ審査が通るかどうかは分からないけど、いずれにしてもドキュメントは今日中に完成させろ。", "vi": "Chưa biết API mới này có qua được kiểm tra bảo mật hay không, nhưng đằng nào thì tài liệu cũng phải hoàn tất xong hôm nay!", "src": "vong3_dm", "m": "qwen-plus", "i": 20}
+{"ja": "彼女、恋愛経験ゼロだって聞いてたけど、逆に結構アグレッシブなんだね。", "vi": "Nghe bảo cô ấy chưa từng yêu ai cả, mà nói ngược lại thì khá chủ động ấy chứ!", "src": "vong3_dm", "m": "qwen-plus", "i": 21}
+{"ja": "ちなみに、このグループ、今週から新メンバーが3人加わりました。", "vi": "Nhân tiện nói luôn, nhóm mình tuần này đã đón thêm ba thành viên mới.", "src": "vong3_dm", "m": "qwen-plus", "i": 22}
+{"ja": "一応、エラーは表示されなくなったけど、根本原因は不明のまま。", "vi": "Cho chắc thì lỗi không hiện lên nữa rồi, nhưng nguyên nhân gốc thì vẫn mù tịt.", "src": "vong3_dm", "m": "qwen-plus", "i": 23}
+{"ja": "このプロジェクト、別に成功しなくてもいいと思ってる。", "vi": "Dự án này chẳng có gì đặc biệt phải thành công đâu.", "src": "vong3_dm", "m": "qwen-plus", "i": 24}
+{"ja": "新規機能、ユーザー登録不要だってよ。", "vi": "Tính năng mới này không cần đăng ký tài khoản luôn đó nha!", "src": "vong3_dm", "m": "qwen-plus", "i": 25}
+{"ja": "案の定、また遅刻したね。", "vi": "Quả nhiên lại trễ giờ nữa rồi đấy.", "src": "vong3_dm", "m": "qwen-plus", "i": 26}
+{"ja": "何なら、テスト環境も今すぐ立て直します。", "vi": "Nếu cần thì em dựng lại môi trường test ngay bây giờ luôn.", "src": "vong3_dm", "m": "qwen-plus", "i": 27}
+{"ja": "この見積もりはあくまで初期段階のもので、変更になる可能性があります。", "vi": "Báo giá này chỉ ở giai đoạn đầu thôi, còn có thể điều chỉnh nữa đấy.", "src": "vong3_dm", "m": "qwen-plus", "i": 28}
+{"ja": "今日の会議、全部オンラインだったね。それにしても、資料の準備が大変だったよ。", "vi": "Hôm nay họp toàn online nhỉ. Mà công nhận, chuẩn bị tài liệu vất vả thật đấy.", "src": "vong3_dm", "m": "qwen-plus", "i": 29}
+{"ja": "要するに、このコード、テストも書かずに本番にデプロイしたの？", "vi": "Tóm lại là đoạn code này đã deploy thẳng lên production mà chưa viết test à?", "src": "vong3_dm", "m": "qwen-plus", "i": 30}
+{"ja": "このデザインはあくまでクライアントへの提案で、承認済みではありません。", "vi": "Mẫu thiết kế này chỉ là đề xuất gửi khách hàng, chưa được phê duyệt đâu ạ.", "src": "vong3_dm", "m": "qwen-plus", "i": 31}
+{"ja": "どうりで、部長が急にリモート勤務を許可したんだ。実は、来週から海外出張で10日間不在になるらしい。", "vi": "Hèn gì giám đốc bỗng dưng cho phép làm việc từ xa, thì ra tuần sau ông ấy đi công tác nước ngoài suốt mười ngày!", "src": "vong3_dm", "m": "qwen-plus", "i": 32}
+{"ja": "どうせ明日のテスト、みんなカンニングするんだから、俺も勉強しないでいいや。", "vi": "Đằng nào mai thi mọi người cũng quay cóp hết, tớ học làm gì cho phí thời gian.", "src": "vong3_dm", "m": "qwen-plus", "i": 33}
+{"ja": "さすがにこの値段じゃ、ちょっと手が出せないわ。", "vi": "Giá này thì quả thật mình đành bó tay thôi.", "src": "vong3_dm", "m": "qwen-plus", "i": 34}
+{"ja": "さすがにこの雨、傘が役立たずだよ。", "vi": "Mưa to thế này thì dù có ô cũng vô dụng rồi.", "src": "vong3_dm", "m": "qwen-plus", "i": 35}
+{"ja": "彼が『もう二度と話さない』って言ってたのに、今日も普通に挨拶したよ。", "vi": "Anh ta bảo sẽ không nói chuyện với tôi lần nào nữa, vậy mà hôm nay vẫn chào hỏi bình thường cơ mà.", "src": "vong3_dm", "m": "qwen-plus", "i": 36}
+{"ja": "つまり、このメール、返信不要って書いてあるけど、実は返信必須なんだよね。", "vi": "Tức là email này ghi rõ ‘không cần phản hồi’, nhưng thực chất là bắt buộc phải trả lời đấy.", "src": "vong3_dm", "m": "qwen-plus", "i": 37}
+{"ja": "どうせこのバグ、来週まで直らないから、今夜はゆっくり休もう。", "vi": "Kiểu gì cái lỗi này cũng không sửa xong trước tuần sau, tối nay cứ thả lỏng đi đã.", "src": "vong3_dm", "m": "qwen-plus", "i": 38}
+{"ja": "後輩が『サーバー再起動は絶対に夜中にするなって』先輩に止められた。", "vi": "Thực tập sinh bị anh senior ngăn lại vì đã định khởi động lại server giữa đêm, anh ấy dặn rõ: đừng bao giờ làm vậy giữa đêm!", "src": "vong3_dm", "m": "qwen-plus", "i": 39}
+{"ja": "まさか、会議の資料、まだ作ってないの？！", "vi": "Không ngờ tài liệu họp vẫn chưa làm xong à?!", "src": "vong3_dm", "m": "qwen-plus", "i": 40}
+{"ja": "どうりで、最近の納期が守れてないんだ。サーバー移行の作業が予想より2週間も遅れてるらしい。", "vi": "Thảo nào gần đây cứ trễ hạn giao hàng liên tục, thì ra việc di chuyển server bị chậm hơn dự kiến tận hai tuần!", "src": "vong3_dm", "m": "qwen-plus", "i": 41}
+{"ja": "ログインIDとパスワードを全部漏洩したって分かった瞬間、今さら二段階認証有効化するの？", "vi": "Vừa biết toàn bộ ID và mật khẩu đã bị rò rỉ xong mà giờ mới bật xác thực hai lớp thì còn nói gì nữa!", "src": "vong3_dm", "m": "qwen-plus", "i": 42}
+{"ja": "この要件、別に実装しなくても、次期リリースで間に合うはず。", "vi": "Yêu cầu này chẳng có gì đặc biệt phải triển khai ngay, kỳ phát hành sau là kịp rồi.", "src": "vong3_dm", "m": "qwen-plus", "i": 43}
+{"ja": "開発者が『この機能はユーザーが混乱する』って言ってた。", "vi": "Lập trình viên nhận định tính năng này sẽ khiến người dùng bối rối.", "src": "vong3_dm", "m": "qwen-plus", "i": 44}

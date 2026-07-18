@@ -1,0 +1,50 @@
+{"vi": "Hôi như cú", "ja": "悪臭を放つ・ひどく臭い", "freq": 2, "cat": 2, "m": "gemini-2.5-flash", "i": 50}
+{"vi": "Sạch như lau như li", "ja": "ピカピカ・清潔そのもの", "freq": 2, "cat": 2, "m": "gemini-2.5-flash", "i": 51}
+{"vi": "Ngu như bò", "ja": "馬鹿・愚か者", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 52}
+{"vi": "Khôn như ranh", "ja": "ずる賢い・抜け目がない", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 53}
+{"vi": "Cứng như đá", "ja": "硬い・頑丈", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 54}
+{"vi": "Mềm như bún", "ja": "柔らかい・ふにゃふにゃ", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 55}
+{"vi": "Nặng như chì", "ja": "鉛のように重い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 56}
+{"vi": "Nhẹ như lông hồng", "ja": "羽のように軽い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 57}
+{"vi": "Im như thóc", "ja": "黙り込む・だんまり", "freq": 2, "cat": 2, "m": "gemini-2.5-flash", "i": 58}
+{"vi": "Nói như vẹt", "ja": "オウム返し・人の真似をする・口数が多い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 59}
+{"vi": "Mắt lờ đờ như gà mắc đái", "ja": "眠たそうな目つき・うつろな目つき", "freq": 2, "lit": "Mắt lim dim, lờ đờ như gà bị bệnh đi tiểu", "cat": 2, "m": "gemini-2.5-flash", "i": 60}
+{"vi": "Nhanh như chớp", "ja": "雷のように速い・瞬く間", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 61}
+{"vi": "Đen như mực", "ja": "墨のように黒い・真っ黒", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 62}
+{"vi": "Trắng như tuyết", "ja": "雪のように白い・真っ白", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 63}
+{"vi": "Rộng như biển", "ja": "広々とした・広大", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 64}
+{"vi": "Hẹp như miệng chai", "ja": "狭い・細い", "freq": 2, "cat": 2, "m": "gemini-2.5-flash", "i": 65}
+{"vi": "Rắn như đinh đóng cột", "ja": "確固たる・揺るぎない", "freq": 2, "lit": "Chắc chắn như đinh đã đóng vào cột", "cat": 2, "m": "gemini-2.5-flash", "i": 66}
+{"vi": "Mượt như nhung", "ja": "滑らか・ベルベットのよう", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 67}
+{"vi": "Cao như núi", "ja": "山のように高い・そびえ立つ", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 68}
+{"vi": "Sâu như biển", "ja": "海の底のように深い", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 69}
+{"vi": "Rắn mặt như đá", "ja": "面の皮が厚い・恥知らず", "freq": 2, "lit": "Mặt lì lợm, không biết xấu hổ như đá", "cat": 2, "m": "gemini-2.5-flash", "i": 70}
+{"vi": "Lì lợm như trâu", "ja": "頑固・意地っ張り", "freq": 1, "lit": "Cứng đầu, không chịu nhường nhịn như trâu", "cat": 2, "m": "gemini-2.5-flash", "i": 71}
+{"vi": "Khóc như mưa", "ja": "わんわん泣く・大粒の涙を流す", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 72}
+{"vi": "Cười như nắc nẻ", "ja": "ゲラゲラ笑う・笑い転げる", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 73}
+{"vi": "Nóng như rang", "ja": "焼けるように暑い・酷暑", "freq": 1, "lit": "Nóng như rang hạt (thóc, ngô)", "cat": 2, "m": "gemini-2.5-flash", "i": 74}
+{"vi": "Lạnh như băng", "ja": "氷のように冷たい・極寒", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 75}
+{"vi": "Đỏ như gấc", "ja": "真っ赤・鮮やかな赤", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 76}
+{"vi": "Vàng như nghệ", "ja": "真っ黄色・鮮やかな黄", "freq": 1, "cat": 2, "m": "gemini-2.5-flash", "i": 77}
+{"vi": "Trời ơi!", "ja": "やばい！／うわー！／まじか！", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 78}
+{"vi": "Vãi! / Vãi chưởng!", "ja": "マジで？！／すげー！／やばっ！", "freq": 3, "lit": "(Nghĩa đen thường thô tục, dùng để biểu thị cảm xúc cực đoan như bất ngờ, sốc, ngưỡng mộ)", "cat": 3, "m": "gemini-2.5-flash", "i": 79}
+{"vi": "Cạn lời!", "ja": "言葉が出ない／呆れてものが言えない", "freq": 2, "lit": "(Nghĩa đen: hết lời)", "cat": 3, "m": "gemini-2.5-flash", "i": 80}
+{"vi": "Hết nói nổi!", "ja": "開いた口が塞がらない／もう何も言えない", "freq": 2, "lit": "(Nghĩa đen: hết chịu đựng nổi để nói)", "cat": 3, "m": "gemini-2.5-flash", "i": 81}
+{"vi": "Chán ghê!", "ja": "つまんない！／うんざりする！／あーあ、だるい！", "freq": 3, "cat": 3, "m": "gemini-2.5-flash", "i": 82}
+{"vi": "Ăn không ngồi rồi", "ja": "ぶらぶらする、怠ける", "freq": 3, "lit": "Ăn mà không làm gì, chỉ ngồi không", "cat": 0, "m": "gemini-2.5-flash", "i": 83}
+{"vi": "Ăn miếng trả miếng", "ja": "目には目を、歯には歯を", "freq": 3, "cat": 0, "m": "gemini-2.5-flash", "i": 84}
+{"vi": "Ăn cây nào rào cây nấy", "ja": "恩を仇で返すな、食い扶持を稼ぐところに忠誠を尽くす", "freq": 2, "lit": "Ăn lợi lộc từ đâu thì phải bảo vệ lợi ích của nơi đó", "cat": 0, "m": "gemini-2.5-flash", "i": 85}
+{"vi": "Ăn cơm trước kẻng", "ja": "駆け落ちする、婚前交渉をする", "freq": 2, "lit": "Ăn cơm trước khi đánh chiêng (cưới hỏi)", "cat": 0, "m": "gemini-2.5-flash", "i": 86}
+{"vi": "Ăn nói hàm hồ", "ja": "いい加減なことを言う、無責任な発言をする", "freq": 2, "lit": "Nói năng không suy nghĩ, nói bừa bãi", "cat": 0, "m": "gemini-2.5-flash", "i": 87}
+{"vi": "Cây kim trong bọc lâu ngày cũng lòi ra", "ja": "隠し事はいつかばれる、嘘は長く続かない", "freq": 2, "lit": "Cây kim giấu trong túi lâu ngày sẽ đâm lòi ra", "cat": 0, "m": "gemini-2.5-flash", "i": 88}
+{"vi": "Giấy rách phải giữ lấy lề", "ja": "貧しくとも品位を保つ、落ちぶれても武士の情け", "freq": 2, "lit": "Giấy dù rách vẫn phải giữ nguyên nếp gấp", "cat": 0, "m": "gemini-2.5-flash", "i": 89}
+{"vi": "Đi một ngày đàng học một sàng khôn", "ja": "旅は人を成長させる、見聞を広める", "freq": 2, "lit": "Đi xa một ngày sẽ học được nhiều điều hay", "cat": 0, "m": "gemini-2.5-flash", "i": 90}
+{"vi": "Đồng tiền đi trước là đồng tiền khôn", "ja": "損して得取れ、先行投資は賢い", "freq": 2, "lit": "Bỏ tiền ra trước để giải quyết vấn đề hoặc đầu tư là cách làm thông minh", "cat": 0, "m": "gemini-2.5-flash", "i": 91}
+{"vi": "Gieo gió gặt bão", "ja": "因果応報、自業自得", "freq": 3, "lit": "Gieo nhân xấu sẽ nhận hậu quả xấu", "cat": 0, "m": "gemini-2.5-flash", "i": 92}
+{"vi": "Há miệng mắc quai", "ja": "恩義があるため文句が言えない、しがらみがある", "freq": 2, "lit": "Mở miệng ra nói thì bị cái quai mắc vào", "cat": 0, "m": "gemini-2.5-flash", "i": 93}
+{"vi": "Một công đôi việc", "ja": "一石二鳥", "freq": 3, "lit": "Làm một việc mà đạt được hai lợi ích", "cat": 0, "m": "gemini-2.5-flash", "i": 94}
+{"vi": "Mồm miệng đỡ chân tay", "ja": "弁が立つと便利だ、口で解決する", "freq": 2, "lit": "Ăn nói khéo léo giúp giảm bớt công sức làm việc chân tay", "cat": 0, "m": "gemini-2.5-flash", "i": 95}
+{"vi": "Nói một đằng làm một nẻo", "ja": "有言不実行、言行不一致", "freq": 3, "lit": "Nói một kiểu làm một kiểu", "cat": 0, "m": "gemini-2.5-flash", "i": 96}
+{"vi": "Nói phải củ cải cũng nghe", "ja": "正論は誰にでも通じる、道理が通れば鬼も引っ込む", "freq": 2, "lit": "Nói đúng lý lẽ thì ngay cả củ cải cũng phải lắng nghe", "cat": 0, "m": "gemini-2.5-flash", "i": 97}
+{"vi": "Nồi nào úp vung nấy", "ja": "良い夫婦は似たもの同士、お似合いのカップル", "freq": 2, "lit": "Nồi nào thì phải có vung đó", "cat": 0, "m": "gemini-2.5-flash", "i": 98}
+{"vi": "Chó treo mèo đậy", "ja": "戸締りをしっかりする、盗難対策を怠らない", "freq": 1, "lit": "Thức ăn của chó thì phải treo lên, của mèo thì phải đậy lại", "cat": 0, "m": "gemini-2.5-flash", "i": 99}

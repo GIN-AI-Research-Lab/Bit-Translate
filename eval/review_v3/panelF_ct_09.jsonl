@@ -1,0 +1,50 @@
+{"ja": "医師の説明を聞いて、患者は一時的に言語機能が停止し、「話せない」と診断された。", "vi": "Sau khi nghe bác sĩ giải thích, bệnh nhân tạm thời mất khả năng nói và được chẩn đoán là 'không thể nói'.", "src": "vong3_ct", "m": "qwen-plus", "i": 450}
+{"ja": "このアプリの設定で『発話禁止モード』をオンにすると、マイクが物理的に無効化され、本当に声が出なくなる。", "vi": "Bật chế độ 'cấm phát âm' trong ứng dụng này sẽ vô hiệu hóa micro vật lý, khiến bạn thực sự không thể phát ra tiếng.", "src": "vong3_ct", "m": "qwen-plus", "i": 451}
+{"ja": "緊急避難訓練で、放送が『全員黙ってください』と繰り返し流れたため、実際に誰も話さなかった。", "vi": "Trong buổi diễn tập sơ tán khẩn cấp, loa phát đi phát thanh liên tục: 'Mọi người hãy giữ im lặng!', nên thực tế không ai cất tiếng.", "src": "vong3_ct", "m": "qwen-plus", "i": 452}
+{"ja": "彼が社長の息子だなんて、言わずもがなだ。", "vi": "Chuyện anh ta là con trai ông chủ thì ai chả biết!", "src": "vong3_ct", "m": "qwen-plus", "i": 453}
+{"ja": "この店のラーメンがうまいのは、言わずもがな。", "vi": "Món mì ở tiệm này ngon đến mức chẳng cần phải nói!", "src": "vong3_ct", "m": "qwen-plus", "i": 454}
+{"ja": "彼女の努力は、言わずもがな、全員が認めていた。", "vi": "Công sức của cô ấy thì cả phòng đều thừa nhận — khỏi phải bàn!", "src": "vong3_ct", "m": "qwen-plus", "i": 455}
+{"ja": "この地域の治安の悪さは、言わずもがなだ。", "vi": "Tình hình an ninh khu này tệ đến mức không cần phải nhắc tới!", "src": "vong3_ct", "m": "qwen-plus", "i": 456}
+{"ja": "このプロジェクトの重要性は、言わずもがな、経営陣が真剣に取り組んでいる。", "vi": "Tầm quan trọng của dự án này thì khỏi phải nói — ban lãnh đạo đang dồn hết tâm huyết vào!", "src": "vong3_ct", "m": "qwen-plus", "i": 457}
+{"ja": "彼、SMLで帰ってきたらしいよ。顔色が真っ青だったって。", "vi": "Nghe nói anh ấy về nhà trong tình trạng kiệt quệ hoàn toàn, mặt mày tái mét luôn đấy.", "src": "vong3_ct", "m": "qwen-plus", "i": 458}
+{"ja": "このプロジェクトはチーム全員をSMLにした。", "vi": "Dự án này làm cả đội suy sụp tận xương.", "src": "vong3_ct", "m": "qwen-plus", "i": 459}
+{"ja": "SML状態で寝落ちしたから、朝起きたら布団の上に顔を押し付けてた。", "vi": "Tao ngủ gục trong tình trạng kiệt quệ nên sáng dậy thấy mặt áp chặt lên chăn.", "src": "vong3_ct", "m": "qwen-plus", "i": 460}
+{"ja": "SMLすぎて、会議中に机に突っ伏してしまった。", "vi": "Mệt tới mức ngất lịm giữa cuộc họp, mặt úp thẳng xuống bàn.", "src": "vong3_ct", "m": "qwen-plus", "i": 461}
+{"ja": "彼女は転んでSMLした。鼻血が出たよ。", "vi": "Cô ấy ngã sấp mặt xuống đất, chảy cả máu mũi.", "src": "vong3_ct", "m": "qwen-plus", "i": 462}
+{"ja": "子供が滑ってSML！床に顔をぶつけたみたい。", "vi": "Đứa trẻ trượt chân ngã sấp mặt! Hình như đập mặt xuống sàn rồi.", "src": "vong3_ct", "m": "qwen-plus", "i": 463}
+{"ja": "犬がSMLになって、顔を床にペタっとくっつけている。", "vi": "Con chó nằm sấp mặt xuống đất, mặt dính chặt vào sàn.", "src": "vong3_ct", "m": "qwen-plus", "i": 464}
+{"ja": "風で看板が飛んできて、彼はSMLした。", "vi": "Biển hiệu bay tới do gió mạnh, đập thẳng mặt anh ta khiến anh ấy ngã sấp xuống đất.", "src": "vong3_ct", "m": "qwen-plus", "i": 465}
+{"ja": "彼は階段から落ちてSML。救急車で運ばれた。", "vi": "Anh ấy ngã từ cầu thang xuống và sấp mặt lờ trên nền đất, phải gọi xe cấp cứu.", "src": "vong3_ct", "m": "qwen-plus", "i": 466}
+{"ja": "彼は「レッツゴー」と叫びながら、バス停から走り出した。", "vi": "Anh ấy hét to “Let’s go!” rồi phóng chạy khỏi trạm xe buýt.", "src": "vong3_ct", "m": "qwen-plus", "i": 467}
+{"ja": "映画の冒頭で、主人公が「レッツゴー！」と叫んでバイクにまたがるシーンがある。", "vi": "Ở đầu phim, có cảnh nhân vật chính hét “Let’s go!” rồi phóng lên xe máy.", "src": "vong3_ct", "m": "qwen-plus", "i": 468}
+{"ja": "子供たちが「レッツゴー！」と声を合わせて、競技場のスタートラインに立った。", "vi": "Lũ trẻ đồng thanh hô “Let’s go!” rồi đứng thẳng hàng trên vạch xuất phát sân vận động.", "src": "vong3_ct", "m": "qwen-plus", "i": 469}
+{"ja": "ラジオ体操の音楽が流れ始めると、先生が「レッツゴー！」と号令をかけた。", "vi": "Khi nhạc thể dục nhịp điệu vang lên, cô giáo hô to “Let’s go!” để bắt đầu.", "src": "vong3_ct", "m": "qwen-plus", "i": 470}
+{"ja": "ロボットの起動音の後に、「レッツゴー」という合成音声が流れた。", "vi": "Sau tiếng khởi động robot, một giọng nói tổng hợp vang lên: “Let’s go!”.", "src": "vong3_ct", "m": "qwen-plus", "i": 471}
+{"ja": "このアートは全部フェイクで、本物の画家が描いたものじゃないんだ。", "vi": "Bức tranh này toàn là đồ giả, không phải do họa sĩ thật vẽ đâu.", "src": "vong3_ct", "m": "qwen-plus", "i": 472}
+{"ja": "彼女の涙は完全にフェイクだった——実は目薬をさしていただけだ。", "vi": "Nước mắt cô ấy toàn là nước mắt cá sấu — thực ra chỉ nhỏ thuốc nhỏ mắt thôi.", "src": "vong3_ct", "m": "qwen-plus", "i": 473}
+{"ja": "SNSで見つけたあの有名人のサイン、絶対にフェイクだよ。", "vi": "Chữ ký của người nổi tiếng đó trên mạng xã hội chắc chắn là chữ ký giả đấy.", "src": "vong3_ct", "m": "qwen-plus", "i": 474}
+{"ja": "このブランドのバッグ、見た目は本物そっくりだけど、中身は全部フェイクなんだ。", "vi": "Cái túi hiệu này trông y hệt hàng thật, nhưng bên trong toàn là đồ nhái.", "src": "vong3_ct", "m": "qwen-plus", "i": 475}
+{"ja": "彼の優しさは一見魅力的だけど、実はフェイクな演技にすぎない。", "vi": "Sự dịu dàng của anh ta thoạt nhìn thì cuốn hút, nhưng thực chất chỉ là diễn xuất giả tạo.", "src": "vong3_ct", "m": "qwen-plus", "i": 476}
+{"ja": "このアプリはフェイクGPS機能を使って、位置情報を偽装する。", "vi": "Ứng dụng này dùng chức năng GPS giả để làm sai lệch thông tin vị trí.", "src": "vong3_ct", "m": "qwen-plus", "i": 477}
+{"ja": "実験では、フェイクの声を使って被験者の反応を測定した。", "vi": "Trong thí nghiệm, người ta dùng giọng nói nhân tạo để đo phản ứng của người tham gia.", "src": "vong3_ct", "m": "qwen-plus", "i": 478}
+{"ja": "AIが生成したフェイク動画が、ニュースサイトに誤って掲載された。", "vi": "Video do AI tạo ra — loại video giả — đã vô tình được đăng lên trang tin tức.", "src": "vong3_ct", "m": "qwen-plus", "i": 479}
+{"ja": "セキュリティチェックで、フェイクの指紋を検出する装置が導入された。", "vi": "Thiết bị phát hiện vân tay giả đã được đưa vào kiểm tra an ninh.", "src": "vong3_ct", "m": "qwen-plus", "i": 480}
+{"ja": "このデータセットには、フェイクのセンサーデータが混入している可能性がある。", "vi": "Tập dữ liệu này có khả năng chứa dữ liệu cảm biến giả.", "src": "vong3_ct", "m": "qwen-plus", "i": 481}
+{"ja": "彼は借金だらけで、今じゃ本当に「貧乏神がついてる」状態だよ。", "vi": "Anh ta nợ nần chồng chất, giờ nghèo rớt mồng tơi luôn đấy.", "src": "vong3_ct", "m": "qwen-plus", "i": 482}
+{"ja": "この店、開店3日目なのに客ゼロ。もう「貧乏神がついてる」ってしか言いようがない。", "vi": "Cửa hàng này mới khai trương được ba ngày mà chưa có khách nào cả — nghèo rớt mồng tơi thiệt rồi!", "src": "vong3_ct", "m": "qwen-plus", "i": 483}
+{"ja": "彼女は節約アプリを10個入れて、お弁当も毎日手作り。でもまだ「貧乏神がついてる」って嘆いてる。", "vi": "Cô ấy cài tới mười app tiết kiệm, cơm hộp cũng tự nấu mỗi ngày — vậy mà vẫn than nghèo rớt mồng tơi!", "src": "vong3_ct", "m": "qwen-plus", "i": 484}
+{"ja": "ボーナスがゼロだった上に、車の修理代が一気に出た。さすがに「貧乏神がついてる」って感じたよ。", "vi": "Thưởng năm bằng không, lại còn phải trả tiền sửa xe một lần hết sạch — thực sự là nghèo rớt mồng tơi luôn rồi!", "src": "vong3_ct", "m": "qwen-plus", "i": 485}
+{"ja": "台風の後、畑のオクラが全部倒れて、葉っぱがちぎれて地面に散らばっていた。「貧乏神がついてる」どころか、葉っぱ自体が「貧乏神」みたいだった。", "vi": "Sau cơn bão, cả vườn mồng tơi đổ rạp, lá rách nát, bay lả tả khắp mặt đất.", "src": "vong3_ct", "m": "qwen-plus", "i": 486}
+{"ja": "乾季が長く続いたせいで、畑のオクラの葉が真っ黄色になり、パリパリになって指で触れただけで粉々になった。まるで「貧乏神」の葉っぱそのものだった。", "vi": "Mùa khô kéo dài khiến lá mồng tơi trên ruộng vàng khè, khô giòn đến mức chạm nhẹ đã tan thành bụi.", "src": "vong3_ct", "m": "qwen-plus", "i": 487}
+{"ja": "収穫時に雨が降り続き、オクラの葉がカビだらけになって、触るとぼろぼろ剥がれ落ちた。「貧乏神」の葉っぱがそのまま落ちてるみたいだった。", "vi": "Mưa kéo dài suốt mùa thu hoạch làm lá mồng tơi mốc meo, sờ vào là bong tróc lả tả như lá mồng tơi rụng rời.", "src": "vong3_ct", "m": "qwen-plus", "i": 488}
+{"ja": "台風一過の朝、庭のオクラの茎が折れ、葉がまるで千切れたように地面に散乱していた。まさに「貧乏神」の葉っぱが落ちている光景だった。", "vi": "Sáng hôm sau bão đi, thân cây mồng tơi trong sân gãy ngang, lá rơi lả tả khắp nơi như bị xé toạc.", "src": "vong3_ct", "m": "qwen-plus", "i": 489}
+{"ja": "干ばつの影響で、オクラの葉が丸まって茶色くなり、風が吹くと一斉にポロリと落ち始めた。まるで「貧乏神」の葉っぱが次々と舞い落ちるようだった。", "vi": "Do hạn hán, lá mồng tơi cuộn tròn, chuyển sang màu nâu, gió thổi qua là rụng lả tả từng cụm như lá mồng tơi rụng rời.", "src": "vong3_ct", "m": "qwen-plus", "i": 490}
+{"ja": "彼は社長の命令で部下を解雇したが、そのときの表情はまるで『冷如錢』だった。", "vi": "Anh ấy sa thải cấp dưới theo lệnh giám đốc, nhưng nét mặt lúc đó lạnh lùng vô cảm như thể chẳng hề lay động.", "src": "vong3_ct", "m": "qwen-plus", "i": 491}
+{"ja": "この小説の主人公は、誰に対しても『冷如錢』のような態度を取る冷酷な犯罪者だ。", "vi": "Nhân vật chính trong tiểu thuyết này là một tội phạm tàn nhẫn, đối xử với ai cũng thờ ơ đến mức như đồng tiền không chút hơi ấm.", "src": "vong3_ct", "m": "qwen-plus", "i": 492}
+{"ja": "彼女の目には感情がまったくなく、まるで『冷如錢』のように無機質だった。", "vi": "Đôi mắt cô ấy hoàn toàn vô cảm, lạnh lùng như kim loại — không một tia rung động nào.", "src": "vong3_ct", "m": "qwen-plus", "i": 493}
+{"ja": "裁判官は被告を見つめながら、『冷如錢』としか形容できないほど無表情に判決を読み上げた。", "vi": "Vị thẩm phán nhìn bị cáo rồi tuyên án bằng giọng điệu không chút biểu cảm — lạnh lùng đến mức chỉ có thể gọi là ‘lạnh như tiền’.", "src": "vong3_ct", "m": "qwen-plus", "i": 494}
+{"ja": "彼は親友の死を知った後も涙一つ流さず、周囲からは『冷如錢』と陰口を叩かれた。", "vi": "Ngay cả khi biết tin người bạn thân qua đời, anh ta cũng chẳng khóc lấy một giọt — người ngoài thì thầm gọi anh ta là ‘người lạnh như tiền’.", "src": "vong3_ct", "m": "qwen-plus", "i": 495}
+{"ja": "冬の朝、硬貨を手に取ると、本当に『冷如錢』のようにひんやりとしていた。", "vi": "Sáng mùa đông, cầm đồng xu lên thấy thật sự mát lạnh, như thể vừa nhặt từ tủ đá ra.", "src": "vong3_ct", "m": "qwen-plus", "i": 496}
+{"ja": "机の上に置かれた百円玉は、窓から差し込む日差しにもかかわらず、まだ『冷如錢』のままだった。", "vi": "Đồng 100 yên đặt trên bàn vẫn còn lạnh buốt dù ánh nắng đã chiếu xuyên qua cửa sổ.", "src": "vong3_ct", "m": "qwen-plus", "i": 497}
+{"ja": "彼が握ったコインは、手汗ですら蒸発させそうなほど『冷如錢』だった。", "vi": "Đồng xu anh ta nắm trong tay lạnh đến mức mồ hôi trên lòng bàn tay cũng như bốc hơi sạch.", "src": "vong3_ct", "m": "qwen-plus", "i": 498}
+{"ja": "冷蔵庫から出したばかりの五百円玉を触ったら、まさに『冷如錢』だった。", "vi": "Cầm đồng 500 yên vừa lấy ra từ tủ lạnh — đúng là lạnh buốt thật sự!", "src": "vong3_ct", "m": "qwen-plus", "i": 499}

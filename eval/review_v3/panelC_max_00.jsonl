@@ -1,0 +1,50 @@
+{"ja": "今日は仕事が忙しくて、もう無理だと思った。", "vi": "Hôm nay công việc quá bận rộn, tôi cảm thấy xĩu up xĩu down.", "src": "vong3_idcv", "m": "qwen-max", "i": 0}
+{"ja": "友達の彼氏と彼女はいつも一緒にいて、二人の関係はとても自然で、お似合いのカップルだなと思う。", "vi": "Bạn bè tôi và bạn trai của cô ấy luôn bên nhau, mối quan hệ của họ rất tự nhiên, đúng là nồi nào úp vung nấy.", "src": "vong3_idcv", "m": "qwen-max", "i": 1}
+{"ja": "その通りですね。あなたは本当に理解力があるな。", "vi": "Đúng vậy đó! Bạn thực sự có khả năng hiểu sâu sắc. Điều đó rất đáng quý.", "src": "vong3_idcv", "m": "qwen-max", "i": 2}
+{"ja": "彼の提案は魅力的だったが、ぼったくる感が強かったので却下した。", "vi": "Đề xuất của anh ta rất hấp dẫn, nhưng do có cảm giác bị chém đẹp nên tôi đã từ chối.", "src": "vong3_idcv", "m": "qwen-max", "i": 3}
+{"ja": "このシャツは真っ白で、とても綺麗だ。", "vi": "Chiếc áo sơ mi này trắng như tuyết, trông rất đẹp.", "src": "vong3_idcv", "m": "qwen-max", "i": 4}
+{"ja": "そんなことを言ったら、わざとらしいね。みんなに見せつけてるみたいだ。", "vi": "Nói những lời như thế, lại còn bày đặt nữa, giống như cố tình khoe khoang với mọi người.", "src": "vong3_idcv", "m": "qwen-max", "i": 5}
+{"ja": "会社では誰も気づかなかったけど、彼の不正行為はやっと発覚した。", "vi": "Ở công ty ai cũng không phát hiện, nhưng cuối cùng thì cây kim trong bọc lâu ngày cũng lòi ra, hành vi gian dối của cậu ta đã bị phơi bày.", "src": "vong3_idcv", "m": "qwen-max", "i": 6}
+{"ja": "このクラスに入ったおかげで、勉強に対する意識が変わった。", "vi": "Gần mực thì đen, gần đèn thì sáng, từ khi vào lớp này, tớ đã thay đổi cách nhìn về việc học.", "src": "vong3_idcv", "m": "qwen-max", "i": 7}
+{"ja": "このプロジェクトの締め切りが近づいてきたので、みんなで力を合わせて頑張ろう。でも、この仕事は鉛のように重いな。", "vi": "Dự án này sắp đến hạn nộp rồi, mọi người hãy cùng nhau cố gắng. Nhưng công việc này nặng như chì vậy.", "src": "vong3_idcv", "m": "qwen-max", "i": 8}
+{"ja": "バスケットボール選手として背が高いことは有利だ。", "vi": "Là cầu thủ bóng rổ, cao như sếu là một lợi thế.", "src": "vong3_idcv", "m": "qwen-max", "i": 9}
+{"ja": "今の状況じゃ、目標を達成するのは無理だよ。もっと時間をかけて取り組む必要がある。", "vi": "Với tình hình hiện tại, muốn đạt được mục tiêu là còn khuya. Cần phải dành nhiều thời gian hơn nữa để tập trung vào nó.", "src": "vong3_idcv", "m": "qwen-max", "i": 10}
+{"ja": "あの瞬間、本当に心臓が止まるかと思った。", "vi": "Trong khoảnh khắc đó, mày làm tao hết hồn! Tao tưởng chừng như tim ngừng đập mất.", "src": "vong3_idcv", "m": "qwen-max", "i": 11}
+{"ja": "ほんの小さな失敗だよ。何でもないよ！気にしなくていい。", "vi": "Chỉ là thất bại nhỏ mà thôi, có gì đâu! Đừng lo lắng.", "src": "vong3_idcv", "m": "qwen-max", "i": 12}
+{"ja": "彼女と付き合えるかどうかは、そうとは限らないよ。", "vi": "Có thể quen được với cô ấy không thì cũng chưa chắc đâu nhá.", "src": "vong3_idcv", "m": "qwen-max", "i": 13}
+{"ja": "週末を利用して近場の観光地に行こう。少しでも視野を広げられるはずだ。旅は人を成長させる、見聞を広めるっていう言葉もあるしね。", "vi": "Hãy tận dụng cuối tuần đi thăm thú một số điểm du lịch gần đây. Dù ít hay nhiều, cũng giúp mở rộng tầm nhìn. Cũng có câu nói: 'Đi một ngày đàng học một sàng khôn' mà.", "src": "vong3_idcv", "m": "qwen-max", "i": 14}
+{"ja": "夜の海は真っ黒で、静かで美しい景色だった。", "vi": "Biển đêm đen như mực, tĩnh lặng và tạo nên một khung cảnh rất đẹp.", "src": "vong3_idcv", "m": "qwen-max", "i": 15}
+{"ja": "友達が急に駆け落ちすると言ったので、驚いた。", "vi": "Một người bạn bỗng dưng bảo sẽ ăn cơm trước kẻng, tôi rất bất ngờ.", "src": "vong3_idcv", "m": "qwen-max", "i": 16}
+{"ja": "みんなが反対しているのに、彼は自分の意見を曲げようとしない。意地っ張りな性格だ。", "vi": "Dù mọi người đều phản đối, cậu ta vẫn không chịu nhượng bộ. Cậu ta lì lợm như trâu.", "src": "vong3_idcv", "m": "qwen-max", "i": 17}
+{"ja": "ダイエットも無理せず、焦らないで地道に取り組もう。", "vi": "Giảm cân cũng không nên ép mình, hãy kiên nhẫn và thực hiện từ từ nhé.", "src": "vong3_idcv", "m": "qwen-max", "i": 18}
+{"ja": "今回のプレゼンテーションは辛かったね。もっと穏やかにすべきだった。", "vi": "Buổi thuyết trình lần này cay như ớt, nên đã phải nhẹ nhàng hơn.", "src": "vong3_idcv", "m": "qwen-max", "i": 19}
+{"ja": "あの寿司屋の握り寿司はかなり美味しいって評判だよ。", "vi": "Nghe nói cơm nắm ở quán sushi kia hơi bị ngon, cuối tuần này mình với cậu đi thử nhé.", "src": "vong3_idcv", "m": "qwen-max", "i": 20}
+{"ja": "冗談はやめろよ、今度のはマジだ。", "vi": "Đừng có giỡn, lần này là thật đấy.", "src": "vong3_idcv", "m": "qwen-max", "i": 21}
+{"ja": "そのような状況で成功するのは非常に難しいと言えるでしょう。", "vi": "Muốn thành công trong tình huống như thế này khó như lên trời.", "src": "vong3_idcv", "m": "qwen-max", "i": 22}
+{"ja": "その技術を習得するのは非常に難しいと言えるでしょう。", "vi": "Muốn nắm vững kỹ thuật đó thật sự khó như lên trời.", "src": "vong3_idcv", "m": "qwen-max", "i": 23}
+{"ja": "このプロジェクトはもうどうしようもないね。", "vi": "Dự án này đã gặp quá nhiều khó khăn, thế thì chịu rồi, không biết phải làm gì bây giờ.", "src": "vong3_idcv", "m": "qwen-max", "i": 24}
+{"ja": "環境が厳しいけど、食べる木は囲う木だから、ここで頑張っているんだ。", "vi": "Môi trường làm việc khắc nghiệt, nhưng ăn cây nào rào cây nấy, nên tôi vẫn cố gắng làm việc ở đây.", "src": "vong3_idcv", "m": "qwen-max", "i": 25}
+{"ja": "何度も失敗しても、彼は全く気にしないで次のプロジェクトに取り組んでいる。恥知らずというより強い意志を持っているのかもしれない。", "vi": "Dù thất bại nhiều lần, cậu ta vẫn không hề quan tâm và tiếp tục với dự án kế tiếp. Không phải rắn mặt như đá, mà có lẽ là do có ý chí mạnh mẽ.", "src": "vong3_idcv", "m": "qwen-max", "i": 26}
+{"ja": "緊張して青ざめた顔で面接官の前に入った。", "vi": "Với vẻ mặt xanh như tàu lá vì căng thẳng, anh ta bước vào phòng phỏng vấn.", "src": "vong3_idcv", "m": "qwen-max", "i": 27}
+{"ja": "彼の発言を聞いて、呆れて物が言えないほど驚いた。", "vi": "Nghe những gì anh ta nói, tôi hết nói nổi vì ngạc nhiên.", "src": "vong3_idcv", "m": "qwen-max", "i": 28}
+{"ja": "何を言われても、彼は自分のやり方を変えようとしない。本当に意地っ張りだ。", "vi": "Dù ai nói gì, cậu ta cũng không chịu thay đổi cách làm. Lì lợm như trâu quá.", "src": "vong3_idcv", "m": "qwen-max", "i": 29}
+{"ja": "そのニュースを聞いて、彼女は青ざめて動けなくなった。", "vi": "Khi nghe tin tức đó, cô gái đã xanh như tàu lá và không thể cử động.", "src": "vong3_idcv", "m": "qwen-max", "i": 30}
+{"ja": "みんなが静かにしている中、彼だけが大声で話して目立ちたがり屋だと感じさせた。", "vi": "Khi mọi người đang im lặng, chỉ có anh ta là nói to gây chú ý, làm cho mọi người cảm thấy anh ta rất thích chơi trội.", "src": "vong3_idcv", "m": "qwen-max", "i": 31}
+{"ja": "それだけ？もっと詳しく教えてくれないと、判断できないよ。", "vi": "Có mỗi thế thôi à? Nếu không nói rõ hơn, tôi không thể đánh giá được.", "src": "vong3_idcv", "m": "qwen-max", "i": 32}
+{"ja": "ストレスを感じるのはわかるけど、もっと手加減してよ。", "vi": "Tôi hiểu rằng bạn đang cảm thấy căng thẳng, nhưng hãy nhẹ nhàng thôi, đừng quá lo lắng.", "src": "vong3_idcv", "m": "qwen-max", "i": 33}
+{"ja": "予想外の結果に、何も言えないでいた。", "vi": "Trước kết quả ngoài dự đoán, tôi chả biết nói gì.", "src": "vong3_idcv", "m": "qwen-max", "i": 34}
+{"ja": "プロジェクトの失敗について説明を求められた時、彼はうまくごまかして逃げた。", "vi": "Khi được yêu cầu giải thích về sự thất bại của dự án, cậu ta đã lươn lẹo và né tránh.", "src": "vong3_idcv", "m": "qwen-max", "i": 35}
+{"ja": "どっちでもいいよ。", "vi": "Ừ, cũng được, tùy bạn thôi.", "src": "vong3_idcv", "m": "qwen-max", "i": 36}
+{"ja": "もう限界だね。今日の会議は長くて、本当に疲れたよ。", "vi": "Hết pin rồi. Hội nghị hôm nay dài dòng quá, thực sự mệt mỏi.", "src": "vong3_idcv", "m": "qwen-max", "i": 37}
+{"ja": "小学生のとき、背が低い友達と一緒に写真を撮ったんだけど、彼の頭が全然写っていなかった。", "vi": "Khi còn học tiểu học, tôi chụp ảnh cùng với đứa bạn thấp như nấm, và đầu nó không hề xuất hiện trong bức ảnh.", "src": "vong3_idcv", "m": "qwen-max", "i": 38}
+{"ja": "この仕事の結果は苦いものになった。期待していた成果とは程遠かった。", "vi": "Kết quả công việc này đắng như bồ hòn, hoàn toàn không như mong đợi.", "src": "vong3_idcv", "m": "qwen-max", "i": 39}
+{"ja": "彼は本当に臆病だね。小さな音でも飛び上がるよ。", "vi": "Anh ta nhát như chuột, một tiếng động nhỏ cũng đủ để làm anh ta giật mình.", "src": "vong3_idcv", "m": "qwen-max", "i": 40}
+{"ja": "君は本当に臆病だね。もう少し勇気を持ちなさい。", "vi": "Mày nhát như chuột vậy, phải can đảm lên đi.", "src": "vong3_idcv", "m": "qwen-max", "i": 41}
+{"ja": "会社の業績が悪くて、給料もカットされるかもしれない。もうダメだ。", "vi": "Tình hình công ty đang xấu đi và có thể lương sẽ bị cắt giảm. Thôi rồi lượm ơi.", "src": "vong3_idcv", "m": "qwen-max", "i": 42}
+{"ja": "もうおしまいだ！これ以上の努力は無駄だ。", "vi": "Thôi xong! Cố gắng thêm cũng chỉ là lãng phí thời gian thôi.", "src": "vong3_idcv", "m": "qwen-max", "i": 43}
+{"ja": "彼女はいつも花のような香りを纏っているから、一緒にいるだけで気分が良くなるよ。", "vi": "Cô ấy luôn toả ra mùi hương thơm như hoa, chỉ cần ở bên cạnh là đã cảm thấy thoải mái rồi.", "src": "vong3_idcv", "m": "qwen-max", "i": 44}
+{"ja": "結婚式の準備で何か問題があったら、曖昧な言い方をするのではなく、正直に話すことが大切です。", "vi": "Trong quá trình chuẩn bị đám cưới, nếu có vấn đề gì, đừng nói nước đôi mà hãy nói thật lòng.", "src": "vong3_idcv", "m": "qwen-max", "i": 45}
+{"ja": "社長の提案を聞いた後、もう何も言えないでいた。", "vi": "Sau khi nghe đề xuất của sếp, tôi hết nói nổi luôn.", "src": "vong3_idcv", "m": "qwen-max", "i": 46}
+{"ja": "新しいプロジェクトがうまくいくかどうかは運次第だね。", "vi": "Dự án mới có thành công hay không thì cũng chỉ là hên xui thôi.", "src": "vong3_idcv", "m": "qwen-max", "i": 47}
+{"ja": "コーヒーを飲みながら井戸端会議をするのが楽しい。", "vi": "Uống cà phê và tám chuyện thật vui vẻ.", "src": "vong3_idcv", "m": "qwen-max", "i": 48}
+{"ja": "こんな状況で挽回できるとは思えない。もうどうしようもないね。", "vi": "Trong tình huống này mà muốn cứu vãn lại mọi chuyện à? Đúng là bó tay, không thể làm gì được nữa rồi.", "src": "vong3_idcv", "m": "qwen-max", "i": 49}

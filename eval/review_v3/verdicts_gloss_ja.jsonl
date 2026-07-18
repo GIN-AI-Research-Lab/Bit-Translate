@@ -1,0 +1,88 @@
+{"src":"gloss_ja","i":5,"ok":false,"reason":"Reading sai: phải là 'もる' không phải '盛る'"}
+{"src":"gloss_ja","i":10,"ok":false,"reason":"Từ meme, không phổ biến ngoài internet slang"}
+{"src":"gloss_ja","i":12,"ok":false,"reason":"Reading sai: phải là 'とうとい' không phải 'とおい'; dịch không chính xác"}
+{"src":"gloss_ja","i":29,"ok":false,"reason":"Reading sai: phải là 'おしかつ' không phải 'おしどり'"}
+{"src":"gloss_ja","i":30,"ok":false,"reason":"Reading sai: phải là 'えんじょう' không phải 'しょうじょう'"}
+{"src":"gloss_ja","i":40,"ok":false,"reason":"Reading sai: phải là 'それな' (hiragana) không phải romaji"}
+{"src":"gloss_ja","i":41,"ok":false,"reason":"Reading sai: phải là 'わんちゃん' (hiragana) không phải romaji"}
+{"src":"gloss_ja","i":42,"ok":false,"reason":"Reading sai: phải là 'きどくスルー' không phải romaji"}
+{"src":"gloss_ja","i":43,"ok":false,"reason":"Reading sai: phải là 'まじまんじ' không phải romaji"}
+{"src":"gloss_ja","i":44,"ok":false,"reason":"Từ meme, không phổ biến ngoài internet slang"}
+{"src":"gloss_ja","i":45,"ok":false,"reason":"Reading sai: phải là 'うぇーい' không phải romaji"}
+{"src":"gloss_ja","i":49,"ok":false,"reason":"Dịch sai: アレ chỉ là 'thứ đó/chuyện đó', không phải 'biến đi cho khuất mắt'"}
+{"src":"gloss_ja","i":50,"ok":false,"reason":"reading 'maji yabaa' sai - 'やば' đọc là 'yaba'"}
+{"src":"gloss_ja","i":67,"ok":false,"reason":"'ザ・ワールド' là tham chiếu JoJo, không phải slang hằng ngày"}
+{"src":"gloss_ja","i":101,"ok":false,"reason":"ちょっと=hơi/chút, vi thêm intensity không có trong gốc"}
+{"src":"gloss_ja","i":102,"ok":false,"reason":"Sai ngôi: 'để anh/chị suy nghĩ' vs 'em suy nghĩ'"}
+{"src":"gloss_ja","i":108,"ok":false,"reason":"Reading sai: つけたいていおう→つけてたいおう"}
+{"src":"gloss_ja","i":111,"ok":false,"reason":"Reading sai: 承りました = うけたまわりました"}
+{"src":"gloss_ja","i":112,"ok":false,"reason":"Reading thiếu: 恐れいります = おそれいります"}
+{"src":"gloss_ja","i":119,"ok":false,"reason":"Reading sai: 具体化 = ぐたいか"}
+{"src":"gloss_ja","i":129,"ok":false,"reason":"Reading sai: 段階的に = だんかいてきに"}
+{"src":"gloss_ja","i":168,"ok":false,"reason":"くそくそ không phải từ chuẩn tiếng Nhật; bịa hoặc lỗi thời"}
+{"src":"gloss_ja","i":205,"ok":false,"reason":"ガチ không mang ý 'ám ảnh'; nghĩa là 'thật sự/nghiêm túc'"}
+{"src":"gloss_ja","i":208,"ok":false,"reason":"ハシゴ là 'liên tiếp' chứ không 'cùng lúc'"}
+{"src":"gloss_ja","i":211,"ok":false,"reason":"reading romaji (phải おまじない); dịch gượng"}
+{"src":"gloss_ja","i":274,"ok":false,"reason":"reading thiếu い: phải いいにくい"}
+{"src":"gloss_ja","i":275,"ok":false,"reason":"vi sai: 誤解を招く = gây hiểu nhầm, không phải 'nghe kỳ cục'"}
+{"src":"gloss_ja","i":290,"ok":false,"reason":"vi sai NGƯỢC nghĩa: リア充 = đời thực viên mãn"}
+{"src":"gloss_ja","i":296,"ok":false,"reason":"やばっち không phổ biến, bất thường"}
+{"src":"gloss_ja","i":303,"ok":false,"reason":"'cấp độ thần thánh' dịch không tự nhiên"}
+{"src":"gloss_ja","i":304,"ok":false,"reason":"vi dùng 'vãi' — Haiku cho là không tự nhiên"}
+{"src":"gloss_ja","i":311,"ok":false,"reason":"むずかしい là khó, vi thêm 'chán' lệch ý"}
+{"src":"gloss_ja","i":313,"ok":false,"reason":"'nguy to' không tự nhiên"}
+{"src":"gloss_ja","i":314,"ok":false,"reason":"'nguy thật rồi nguy' không tự nhiên"}
+{"src":"gloss_ja","i":315,"ok":false,"reason":"'nguy thiệt' không tự nhiên"}
+{"src":"gloss_ja","i":316,"ok":false,"reason":"'cảm giác nguy' không tự nhiên"}
+{"src":"gloss_ja","i":317,"ok":false,"reason":"'cảm giác nguy' không tự nhiên"}
+{"src":"gloss_ja","i":318,"ok":false,"reason":"'thấy nguy' không tự nhiên"}
+{"src":"gloss_ja","i":319,"ok":false,"reason":"'sự nguy' không tự nhiên"}
+{"src":"gloss_ja","i":320,"ok":false,"reason":"'sự nguy' không tự nhiên"}
+{"src":"gloss_ja","i":321,"ok":false,"reason":"'nỗi nguy' không tự nhiên, quá sáng tạo"}
+{"src":"gloss_ja","i":322,"ok":false,"reason":"'nguy nổ tung' không tự nhiên"}
+{"src":"gloss_ja","i":324,"ok":false,"reason":"'vị nguy' không tự nhiên"}
+{"src":"gloss_ja","i":325,"ok":false,"reason":"'cảm giác nguy' không tự nhiên"}
+{"src":"gloss_ja","i":326,"ok":false,"reason":"'cảm giác nguy' không tự nhiên"}
+{"src":"gloss_ja","i":328,"ok":false,"reason":"ごめんさない không tồn tại, typo của ごめんなさい"}
+{"src":"gloss_ja","i":333,"ok":false,"reason":"'tên nguy hiểm' không tự nhiên"}
+{"src":"gloss_ja","i":334,"ok":false,"reason":"vi dùng 'vãi' — Haiku cho là không tự nhiên"}
+{"src":"gloss_ja","i":336,"ok":false,"reason":"'cái kiểu nguy ấy' không tự nhiên"}
+{"src":"gloss_ja","i":345,"ok":false,"reason":"reading sai: いっおん phải là いちおう"}
+{"src":"gloss_ja","i":389,"ok":false,"reason":"ぶっこ抜く không chuẩn; nên là ぶっ抜く"}
+{"src":"gloss_ja","i":456,"ok":false,"reason":"'thật không trời' không tự nhiên"}
+{"src":"gloss_ja","i":461,"ok":false,"reason":"'nguy to rồi!' không tự nhiên"}
+{"src":"gloss_ja","i":462,"ok":false,"reason":"〜 kéo dài không có tương đương tự nhiên trong VI viết"}
+{"src":"gloss_ja","i":402,"ok":false,"reason":"'đối xử như người thừa' không tự nhiên"}
+{"src":"gloss_ja","i":404,"ok":false,"reason":"ヨコシマ từ cổ, không phổ biến 2024-2026"}
+{"src":"gloss_ja","i":407,"ok":false,"reason":"リテイク không phổ biến trong slang hiện nay"}
+{"src":"gloss_ja","i":413,"ok":false,"reason":"カットイン chủ yếu anime/manga; 'chen ngang' dịch không đúng"}
+{"src":"gloss_ja","i":417,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":418,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":419,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":420,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":421,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":422,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":423,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":424,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":425,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":426,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":427,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":428,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":429,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":430,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":431,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":432,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":433,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":434,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":435,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":436,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":437,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":438,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":439,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":440,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":441,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":442,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":443,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":444,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":445,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}
+{"src":"gloss_ja","i":446,"ok":false,"reason":"Reading romaji (chỉ lỗi format reading)"}

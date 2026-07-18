@@ -1,0 +1,50 @@
+{"ja": "ちがう", "reading": "ちがう", "vi": "không phải", "freq": 2, "cat": 2, "m": "qwen-plus", "i": 100}
+{"ja": "ちょっと難しい", "reading": "ちょっとむずかしい", "vi": "khó quá đi", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 101}
+{"ja": "考えておきます", "reading": "かんがえておきます", "vi": "để anh/chị suy nghĩ đã", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 102}
+{"ja": "前向きに検討します", "reading": "まえむきにけんとうします", "vi": "sẽ xem xét tích cực", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 103}
+{"ja": "一度、社内に確認してみます", "reading": "いちど、しゃないにかくにんしてみます", "vi": "để em hỏi nội bộ đã", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 104}
+{"ja": "現時点では保留にしております", "reading": "げんじてんではほりゅうにしております", "vi": "tạm gác lại vậy", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 105}
+{"ja": "調整中です", "reading": "ちょうせいちゅうです", "vi": "đang điều chỉnh", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 106}
+{"ja": "今後の検討課題とさせていただきます", "reading": "こんごのけんとうかだいとさせていただきます", "vi": "sẽ đưa vào danh sách xem xét sau", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 107}
+{"ja": "優先順位をつけて対応していきます", "reading": "ゆうせんじゅんいをつけたいていおうしていきます", "vi": "sẽ xử lý theo thứ tự ưu tiên", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 108}
+{"ja": "体制が整い次第、対応いたします", "reading": "たいせいがととのいしだい、たいおういたします", "vi": "khi nào sẵn sàng sẽ làm ngay", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 109}
+{"ja": "他の案件と併せて検討いたします", "reading": "ほかのあんけんとならべてけんとういたします", "vi": "sẽ cân nhắc cùng các việc khác", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 110}
+{"ja": "お客様のご要望は承りました", "reading": "おきゃくさまのごようぼうはうけました", "vi": "đã nhận yêu cầu rồi ạ", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 111}
+{"ja": "ご期待に沿えない点、誠に恐れ入ります", "reading": "ごきたいにそえないてん、まことに恐れいります", "vi": "rất ngại vì không đáp ứng được kỳ vọng", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 112}
+{"ja": "慎重に判断させていただきます", "reading": "しんちょうにはんだんさせていただきます", "vi": "sẽ cân nhắc kỹ lưỡng", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 113}
+{"ja": "タイミングを見計らって進めさせていただきます", "reading": "たいみんぐをみはからってすすめさせていただきます", "vi": "sẽ làm khi đúng thời điểm", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 114}
+{"ja": "まずはヒアリングをさせてください", "reading": "まずはひありんぐをさせてください", "vi": "để em lắng nghe trước đã", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 115}
+{"ja": "一旦、整理させていただいてよろしいですか？", "reading": "いったん、せいりさせていただいてよろしいですか？", "vi": "để em tổng hợp lại đã được không ạ?", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 116}
+{"ja": "ご要望の趣旨は理解しましたが…", "reading": "ごようぼうのおもむきはりかいしましたが…", "vi": "dạ em hiểu ý rồi, nhưng…", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 117}
+{"ja": "少し方向性を変えてみるのも手かもしれません", "reading": "すこしほうこうせいをかえてみるのもてかもしれません", "vi": "có thể thử đổi hướng một chút", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 118}
+{"ja": "もう少し具体化していただけると助かります", "reading": "もうすこしくたいかしていただけるとたすかります", "vi": "nếu anh/chị cụ thể hơn thì em dễ làm hơn", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 119}
+{"ja": "関係各所と連携しながら進めてまいります", "reading": "かんけいかくしょとれんけいしながらすすめてまいります", "vi": "sẽ phối hợp với các bên liên quan", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 120}
+{"ja": "状況を注視しています", "reading": "じょうきょうをちゅうししています", "vi": "đang theo dõi sát sao", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 121}
+{"ja": "一時的に見送りとなります", "reading": "いちじてきにみおくりとなります", "vi": "sẽ tạm hoãn lại", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 122}
+{"ja": "当面は様子見とさせていただきます", "reading": "とうめんはようすみとさせていただきます", "vi": "gần đây sẽ để đó xem sao", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 123}
+{"ja": "継続的な検討が必要と考えております", "reading": "けいぞくてきなけんとうがひつようと考えております", "vi": "cần tiếp tục xem xét thêm", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 124}
+{"ja": "リソースの都合上、難しくなっております", "reading": "りそーすのつごうじょう、むずかしくなっております", "vi": "do hạn chế nguồn lực nên hơi khó", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 125}
+{"ja": "内部で精査中です", "reading": "ないぶでしょうさいちゅうです", "vi": "đang rà soát nội bộ", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 126}
+{"ja": "今後の動向を踏まえて判断いたします", "reading": "こんごのどうこうをふまえてはんだんいたします", "vi": "sẽ quyết định dựa trên tình hình sắp tới", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 127}
+{"ja": "他部署の意見も伺った上で結論を出したいと思います", "reading": "ほかぶしょのいけんもうかがったうえでけつろんをだしたいとおもいます", "vi": "muốn lấy ý kiến các phòng ban khác trước khi quyết", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 128}
+{"ja": "段階的に対応を検討しております", "reading": "だんかい的にたいおうをけんとうしております", "vi": "đang xem xét từng bước", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 129}
+{"ja": "現実的ではない可能性があります", "reading": "げんじつてきではないかのうせいがあります", "vi": "có thể không khả thi", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 130}
+{"ja": "想定外の要素がいくつかあります", "reading": "そうていがいのようそがいくつかあります", "vi": "có vài yếu tố ngoài dự kiến", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 131}
+{"ja": "法務・総務とも相談中です", "reading": "ほうむ・そうむともそうだいちゅうです", "vi": "đang trao đổi với pháp chế và hành chính", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 132}
+{"ja": "予算枠の都合で厳しくなっております", "reading": "よさんわくのつごうできびしくなっております", "vi": "do hạn mức ngân sách nên hơi căng", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 133}
+{"ja": "今後の方針が固まり次第、改めてご連絡いたします", "reading": "こんごのほうしんがまとまりしだい、あらためてごれんらくいたします", "vi": "khi nào có phương án rõ ràng sẽ báo lại ngay", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 134}
+{"ja": "まずはプチテストから始めさせていただきます", "reading": "まずはぷちてすとからはじめさせていただきます", "vi": "để em thử nghiệm nhỏ trước đã", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 135}
+{"ja": "リスクヘッジの観点から、やや慎重になっています", "reading": "リスクヘッジのかんてんから、ややしんちょうになっています", "vi": "do muốn phòng ngừa rủi ro nên đang thận trọng hơn", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 136}
+{"ja": "現時点で明言するのは控えさせていただきます", "reading": "げんじてんではめいげんするのはひかえさせていただきます", "vi": "chưa tiện khẳng định ngay lúc này", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 137}
+{"ja": "インパクトを最小限に抑える形で進めます", "reading": "いんぱくとをさいしょうげんにおさえるかたちですすめます", "vi": "sẽ triển khai sao cho ảnh hưởng thấp nhất", "freq": 2, "cat": 3, "m": "qwen-plus", "i": 138}
+{"ja": "まずはお試しで1回やってみませんか？", "reading": "まずはおためしでいっかいやってみませんか？", "vi": "thử làm một lần xem sao?", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 139}
+{"ja": "ご要望は記録させていただきました", "reading": "ごようぼうはきろくさせていただきました", "vi": "đã ghi chép đầy đủ yêu cầu rồi ạ", "freq": 3, "cat": 3, "m": "qwen-plus", "i": 140}
+{"ja": "ざっくり", "reading": "ざっくり", "vi": "tóm lược sơ sơ", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 141}
+{"ja": "サクサク", "reading": "さくさく", "vi": "làm nhanh gọn", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 142}
+{"ja": "ぐだぐだ", "reading": "ぐだぐだ", "vi": "lơ lửng, không đâu vào đâu", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 143}
+{"ja": "バタバタ", "reading": "ばたばた", "vi": "bận rộn cuống quýt", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 144}
+{"ja": "もやもや", "reading": "もやもや", "vi": "bồn chồn khó chịu", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 145}
+{"ja": "ふわふわ", "reading": "ふわふわ", "vi": "lơ lửng, mơ hồ", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 146}
+{"ja": "じめじめ", "reading": "じめじめ", "vi": "ẩm ướt khó chịu", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 147}
+{"ja": "べたべた", "reading": "べたべた", "vi": "dính dính", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 148}
+{"ja": "ぴかぴか", "reading": "ぴかぴか", "vi": "sáng bóng loáng", "freq": 3, "cat": 4, "m": "qwen-plus", "i": 149}
