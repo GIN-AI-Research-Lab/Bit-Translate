@@ -32,6 +32,17 @@ UA = {"User-Agent": "BitTranslate-harvest/1.0 (research)"}
 
 seen, sents = set(), []
 
+# RESUME: nạp câu đã có (chạy nhiều vòng qua đêm không mất/không trùng);
+# QIITA_PAGE_START cho phép mỗi vòng hút DẢI TRANG MỚI thay vì lặp trang 1.
+_old = OUT / "ja_indomain_bt.ja"
+if _old.exists():
+    for _s in _old.read_text(encoding="utf-8").splitlines():
+        _s = _s.strip()
+        if _s and _s not in seen:
+            seen.add(_s)
+            sents.append(_s)
+    print(f"[resume] nạp {len(sents):,} câu đã có", flush=True)
+
 
 def clean_and_split(md):
     t = CODEBLOCK.sub(" ", md)
@@ -65,9 +76,10 @@ def get(url):
 
 
 def harvest_qiita(pages_per_tag=1, per_page=100):
+    start = int(os.environ.get("QIITA_PAGE_START", "1"))
     for tag in QIITA_TAGS:
         try:
-            for pg in range(1, pages_per_tag + 1):
+            for pg in range(start, start + pages_per_tag):
                 url = f"https://qiita.com/api/v2/tags/{tag}/items?page={pg}&per_page={per_page}"
                 items = get(url)
                 n0 = len(sents)
