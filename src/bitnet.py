@@ -16,10 +16,30 @@ Final output_norm -> lm_head (tied to token embedding).
 Quantization-aware training: master weights stay bf16/fp32; forward fake-quantizes
 with a straight-through estimator (ternary weights, 8-bit per-token activations).
 The 1.58-bit benefit is realized at inference/packing.
+
+Tối ưu tốc độ train (BẬT mặc định, mọi thứ tương đương toán học CHÍNH XÁC với bản
+gốc — parity Δloss=0, gradient khớp; đã guard để INFERENCE/GGUF bit-identical):
+  BITNET_OPT=off (hoặc rỗng) -> tắt hết, quay về hành vi gốc từng-bit.
+  - ste       : STE bằng autograd.Function (bỏ tensor fp32 trung gian -> thủ phạm
+                "eager OOM 292M"); CHỈ khi grad bật, eval -> quant thẳng (giá trị y hệt).
+  - wqcache   : cache ternary weight 1 lần/optimizer-step (thay 32-64 lần/step);
+                train loop gọi model.attach_wq_autorefresh(opt, bf16). Eval không đụng.
+  - fusedproj : gộp GEMM q/k/v & gate/up + quantize activation 1 lần; CHỈ khi training
+                (generate/generate_cached/GGUF đi đường 3-GEMM gốc -> bit-identical).
+  - maskce    : lm_head+CE chỉ trên vị trí loss_mask=True; CHỈ path targets+mask (train).
 """
+import os
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
+_OPT = os.environ.get("BITNET_OPT", "ste,wqcache,fusedproj,maskce")
+_OPT = set() if _OPT.strip() in ("", "off") else set(f.strip() for f in _OPT.split(","))
+USE_STE_FN = "ste" in _OPT
+USE_WQ_CACHE = "wqcache" in _OPT
+USE_FUSED_PROJ = "fusedproj" in _OPT
+USE_MASK_CE = "maskce" in _OPT
 
 
 def activation_quant(x):
@@ -36,6 +56,52 @@ def weight_quant(w):
     scale = 1.0 / wf.abs().mean().clamp_(min=1e-5)
     q = (wf * scale).round().clamp_(-1, 1) / scale
     return q.to(w.dtype)
+
+
+class _ActQuantSTE(torch.autograd.Function):
+    """y = activation_quant(x); backward: dL/dx = dL/dy (identity STE).
+    forward chạy grad-disabled -> không giữ tensor fp32 trung gian như trick
+    'x + (q(x)-x).detach()'. dynamo trace qua HOP autograd_function_apply (torch>=2.1)."""
+
+    @staticmethod
+    def forward(ctx, x):
+        return activation_quant(x)
+
+    @staticmethod
+    def backward(ctx, g):
+        return g
+
+
+class _WeightSTE(torch.autograd.Function):
+    """forward trả ternary weight ĐÃ TÍNH SẴN q (cache dùng chung mọi microbatch
+    của 1 optimizer step; có thể bf16); backward đẩy grad nguyên vẹn về master
+    weight fp32 (STE identity), cast về dtype master."""
+
+    @staticmethod
+    def forward(ctx, w, q):
+        ctx.w_dtype = w.dtype
+        return q
+
+    @staticmethod
+    def backward(ctx, g):
+        return g.to(ctx.w_dtype), None
+
+
+def _ste_act(x):
+    # eval/no-grad: giá trị == activation_quant(x) y hệt, khỏi dựng Function.
+    if USE_STE_FN and torch.is_grad_enabled():
+        return _ActQuantSTE.apply(x)
+    return x + (activation_quant(x) - x).detach()
+
+
+def _ste_weight(w, cache):
+    if cache is not None:
+        if USE_STE_FN and torch.is_grad_enabled():
+            return _WeightSTE.apply(w, cache)
+        return w + (cache - w).detach()          # trick gốc, khỏi tính lại quant
+    if USE_STE_FN and torch.is_grad_enabled():
+        return _WeightSTE.apply(w, weight_quant(w.detach()))
+    return w + (weight_quant(w) - w).detach()
 
 
 class RMSNorm(nn.Module):
@@ -59,15 +125,18 @@ class BitLinear(nn.Module):
         self.weight = nn.Parameter(torch.empty(out_features, in_features))
         nn.init.normal_(self.weight, mean=0.0, std=0.02)
         self._wq_frozen = None  # inference: precomputed ternary weight
+        self._wq_cache = None   # train: ternary weight cache trong 1 optimizer step
 
-    def forward(self, x):
-        x = x + (activation_quant(x) - x).detach()
+    def quantized_weight(self):
         if self._wq_frozen is not None:
-            w = self._wq_frozen
-        else:
-            w = self.weight
-            w = w + (weight_quant(w) - w).detach()
-        return F.linear(x, w)
+            return self._wq_frozen
+        return _ste_weight(self.weight, self._wq_cache if USE_WQ_CACHE else None)
+
+    def forward(self, x, x_prequant=False):
+        # x_prequant=True: input đã activation_quant sẵn (fused proj dùng chung).
+        if not x_prequant:
+            x = _ste_act(x)
+        return F.linear(x, self.quantized_weight())
 
 
 def precompute_rope(head_dim, max_seq, base=10000.0):
@@ -99,9 +168,19 @@ class Attention(nn.Module):
 
     def _qkv(self, h):
         B, T, _ = h.shape
-        q = self.wq(h).view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
-        k = self.wk(h).view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
-        v = self.wv(h).view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
+        if USE_FUSED_PROJ and self.training:
+            # quantize activation 1 lần + gộp wq/wk/wv thành 1 GEMM [d->3d].
+            # Eval/inference KHÔNG vào đây -> 3-GEMM gốc, GGUF bit-identical.
+            hq = _ste_act(h)
+            w_all = torch.cat([self.wq.quantized_weight(),
+                               self.wk.quantized_weight(),
+                               self.wv.quantized_weight()], dim=0)
+            q, k, v = F.linear(hq, w_all).chunk(3, dim=-1)
+        else:
+            q, k, v = self.wq(h), self.wk(h), self.wv(h)
+        q = q.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
+        k = k.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
+        v = v.view(B, T, self.n_heads, self.head_dim).transpose(1, 2)
         return q, k, v
 
     def forward(self, x, cos, sin):
@@ -129,8 +208,15 @@ class FFN(nn.Module):
 
     def forward(self, x):
         h = self.ffn_norm(x)
-        g = F.relu(self.gate(h)).square()              # relu(gate)^2
-        h = g * self.up(h)                             # * up
+        if USE_FUSED_PROJ and self.training:
+            hq = _ste_act(h)
+            w_all = torch.cat([self.gate.quantized_weight(),
+                               self.up.quantized_weight()], dim=0)
+            g_pre, u = F.linear(hq, w_all).chunk(2, dim=-1)
+        else:
+            g_pre, u = self.gate(h), self.up(h)
+        g = F.relu(g_pre).square()                     # relu(gate)^2
+        h = g * u                                      # * up
         return self.down(self.ffn_sub_norm(h))
 
 
@@ -171,16 +257,64 @@ class BitNetLM(nn.Module):
         self.register_buffer("rope_cos", cos, persistent=False)
         self.register_buffer("rope_sin", sin, persistent=False)
         self.gradient_checkpointing = False
+        self.ckpt_every_k = 1   # >1: chỉ checkpoint block i%k==0 (selective GC)
+
+    @torch.no_grad()
+    def refresh_wq_cache(self, dtype=None):
+        """Tính lại ternary cache cho mọi BitLinear; gọi 1 lần trước train và
+        sau mỗi opt.step(). dtype=bf16 khi autocast bf16 (cache 2B/param, khỏi
+        cast lại mỗi microbatch). copy_ vào CÙNG buffer -> torch.compile không
+        recompile (metadata cache không đổi)."""
+        for m in self.modules():
+            if isinstance(m, BitLinear):
+                wq = weight_quant(m.weight)
+                if dtype is not None:
+                    wq = wq.to(dtype)
+                if m._wq_cache is None or m._wq_cache.dtype != wq.dtype \
+                        or m._wq_cache.shape != wq.shape:
+                    m._wq_cache = wq
+                else:
+                    m._wq_cache.copy_(wq)
+
+    def attach_wq_autorefresh(self, opt, dtype=None):
+        """Opt-in từ train loop: refresh ngay (TRƯỚC compile để guard nhánh ổn
+        định) + hook tự refresh sau mỗi opt.step()."""
+        if not USE_WQ_CACHE:
+            return None
+        self.refresh_wq_cache(dtype)
+        return opt.register_step_post_hook(
+            lambda optimizer, args, kwargs: self.refresh_wq_cache(dtype))
+
+    def clear_wq_cache(self):
+        for m in self.modules():
+            if isinstance(m, BitLinear):
+                m._wq_cache = None
 
     def forward(self, idx, targets=None, loss_mask=None):
         B, T = idx.shape
         x = self.embed(idx)
         cos, sin = self.rope_cos[:T], self.rope_sin[:T]
-        for blk in self.blocks:
-            if self.gradient_checkpointing and self.training:
+        for i, blk in enumerate(self.blocks):
+            ck = (self.gradient_checkpointing and self.training
+                  and (self.ckpt_every_k <= 1 or i % self.ckpt_every_k == 0))
+            if ck:
                 x = torch.utils.checkpoint.checkpoint(blk, x, cos, sin, use_reentrant=False)
             else:
                 x = blk(x, cos, sin)
+        # masked-CE: chỉ lm_head+CE trên vị trí loss_mask=True (train). Giá trị
+        # loss/grad y hệt (sum hàng chọn ÷ n == sum(l*m)÷m.sum()); tiết kiệm
+        # FLOPs lm_head + ~0.6-0.8GB VRAM logits fp32. Path targets=None (infer)
+        # và path không-mask giữ nguyên -> logits đầy đủ.
+        if targets is not None and loss_mask is not None and USE_MASK_CE and self.training:
+            sel = loss_mask.reshape(-1).nonzero(as_tuple=True)[0]
+            n = sel.numel()
+            if n == 0:
+                return None, (x.sum() * 0.0).float()
+            xs = x.reshape(B * T, -1).index_select(0, sel)
+            logits_s = self.lm_head(self.output_norm(xs))
+            ts = targets.reshape(-1).index_select(0, sel)
+            loss = F.cross_entropy(logits_s.float(), ts, reduction="sum") / n
+            return None, loss
         logits = self.lm_head(self.output_norm(x))
         loss = None
         if targets is not None:
