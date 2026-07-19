@@ -110,9 +110,9 @@ def main():
     BOS, EOS = sp.bos_id(), sp.eos_id()
     VIE = sp.piece_to_id(">>vie<<")        # ja->vi: input mang thẻ >>vie<<
 
-    cfg = BitNetConfig(vocab_size=sp.get_piece_size())
+    ck = torch.load(CKPT, map_location="cpu", weights_only=False)
+    cfg = BitNetConfig(**ck["cfg"]) if "cfg" in ck else BitNetConfig(vocab_size=sp.get_piece_size())
     m = BitNetLM(cfg).eval()
-    ck = torch.load(CKPT, map_location="cpu")
     m.load_state_dict(ck["model"])
     m.to(DEVICE)                           # PHẢI .to() TRƯỚC freeze: _wq_frozen là attribute
     m.freeze_for_inference()               # thường (không phải buffer) nên .to() không đẩy nó
