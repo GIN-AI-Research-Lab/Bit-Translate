@@ -152,6 +152,11 @@ def main():
                     outs = generate_batch(m, [enc[j] for j in bidx], MAXTOK, EOS, DEVICE)
                     for j, gen in zip(bidx, outs):
                         vis[j] = sp.decode(gen).strip()
+                    if DEVICE == "cuda":
+                        # nhiều độ dài KV-cache khác nhau qua hàng giờ -> phân mảnh cache
+                        # allocator (đã thấy OOM cảnh báo dù free ~47GB); trả bộ nhớ chưa
+                        # dùng về driver sau mỗi batch để giảm rủi ro.
+                        torch.cuda.empty_cache()
             # ghi CẢ khối theo thứ tự gốc (cặp loại -> dòng vi RỖNG, 2 file thẳng hàng)
             for j, ja in enumerate(chunk):
                 vi = vis[j]

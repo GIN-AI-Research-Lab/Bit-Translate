@@ -56,15 +56,25 @@ def _backup_release(tag):
     import os
     import subprocess
     ja, vi = "/persist/bt_vong3b.ja", "/persist/bt_vong3b.vi"
-    import os as _os
-    if not (_os.path.exists(ja) and _os.path.exists(vi)):
+    if not (os.path.exists(ja) and os.path.exists(vi)):
         return False
     env = f'GH_TOKEN={os.environ["GH_TOKEN"]}'
-    r = subprocess.run(
-        f"cd /persist && ({env} gh release upload {BT_TAG} bt_vong3b.ja bt_vong3b.vi -R {REPO} --clobber "
-        f"|| {env} gh release create {BT_TAG} bt_vong3b.ja bt_vong3b.vi -R {REPO} "
-        f"--title 'BT vong 3b (ja mono -> vi synth)' --notes 'auto backup')",
-        shell=True, timeout=900, capture_output=True, text=True)
+    # snapshot trước khi upload: backtranslate.py liên tục append 2 file này (mỗi CHUNK),
+    # upload thẳng file đang ghi dở dính race "request body larger than content length".
+    # Copy sang thư mục riêng GIỮ NGUYÊN basename (asset name = basename, không dùng cú
+    # pháp path#label vì đó chỉ đổi display label, không đổi tên file thật trên release).
+    subprocess.run("rm -rf /tmp/bt_snap && mkdir -p /tmp/bt_snap && "
+                   "cp /persist/bt_vong3b.ja /persist/bt_vong3b.vi /tmp/bt_snap/", shell=True)
+    # kiểm tra release đã tồn tại chưa để chọn đúng lệnh (upload sai release-not-found lại
+    # rơi vào create trùng tag => fail chồng fail)
+    exists = subprocess.run(f"{env} gh release view {BT_TAG} -R {REPO}",
+                             shell=True, capture_output=True, text=True).returncode == 0
+    verb = (f"gh release upload {BT_TAG} bt_vong3b.ja bt_vong3b.vi -R {REPO} --clobber") if exists else (
+            f"gh release create {BT_TAG} bt_vong3b.ja bt_vong3b.vi -R {REPO} "
+            f"--title 'BT vong 3b (ja mono -> vi synth)' --notes 'auto backup'")
+    r = subprocess.run(f"cd /tmp/bt_snap && {env} {verb}", shell=True, timeout=900,
+                        capture_output=True, text=True)
+    subprocess.run("rm -rf /tmp/bt_snap", shell=True)
     if r.returncode == 0:
         print(f"[{tag}] backup release OK", flush=True)
         return True
