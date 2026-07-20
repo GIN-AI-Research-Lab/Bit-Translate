@@ -112,23 +112,24 @@ def train():
         try:
             # checkpoint 100M (~440MB) < 1900MB -> split chỉ tạo DUY NHẤT m100_aa
             # (không có m100_ab như checkpoint 292M luôn ≥2 phần) -> liệt kê file
-            # THẬT SỰ tồn tại thay vì hardcode "m100_aa m100_ab" (bug đã xảy ra:
-            # "stat m100_ab: no such file or directory" mọi lần backup).
+            # THẬT SỰ tồn tại thay vì hardcode "m100_aa m100_ab".
+            subprocess.run("cd /persist/checkpoints && rm -f m100_a? && split -b 1900m last.pt m100_",
+                           shell=True, check=True, timeout=600)
+            # BUG ĐÃ SỬA: KHÔNG dọn file giữa 2 lần thử (upload rồi create) — trước
+            # đây dọn ngay sau upload thất bại làm nhánh create chạy với $(ls) RỖNG
+            # -> release tạo thành công nhưng 0 asset ("[final] backup release
+            # CREATED" nhưng release rỗng). Giờ chỉ dọn ở cuối, dùng try/finally.
+            env = f'GH_TOKEN={os.environ["GH_TOKEN"]}'
             r = subprocess.run(
-                "cd /persist/checkpoints && rm -f m100_a? && "
-                "split -b 1900m last.pt m100_ && "
-                f'GH_TOKEN={os.environ["GH_TOKEN"]} gh release upload autosave-100m-ja2vi '
+                f"cd /persist/checkpoints && {env} gh release upload autosave-100m-ja2vi "
                 "-R " + REPO + " --clobber $(ls m100_a?)",
                 shell=True, timeout=900, capture_output=True, text=True)
-            subprocess.run("rm -f /persist/checkpoints/m100_a?", shell=True)
             if r.returncode == 0:
                 print(f"[{tag}] backup OK", flush=True)
                 return True
-            # release chưa tồn tại lần đầu -> tạo mới
             if "release not found" in (r.stderr or "").lower():
                 r2 = subprocess.run(
-                    "cd /persist/checkpoints && "
-                    f'GH_TOKEN={os.environ["GH_TOKEN"]} gh release create autosave-100m-ja2vi '
+                    f"cd /persist/checkpoints && {env} gh release create autosave-100m-ja2vi "
                     "$(ls m100_a?) -R " + REPO + " --title '100M ja->vi autosave' "
                     "--notes 'auto backup'",
                     shell=True, timeout=900, capture_output=True, text=True)
@@ -141,6 +142,8 @@ def train():
         except Exception as e:
             print(f"[{tag}] backup lỗi: {e}", flush=True)
             return False
+        finally:
+            subprocess.run("rm -f /persist/checkpoints/m100_a?", shell=True)
 
     stop = threading.Event()
 
