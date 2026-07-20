@@ -2,40 +2,54 @@
 
 ## ⏭️ VIỆC TIẾP THEO (đọc trước khi làm gì mới — máy khác đọc mục này là đủ bắt nhịp)
 
-1. **ĐANG LÀM: train 100M CHỈ ja→vi, from-scratch (nhánh B đã chọn, không phải A/C).**
-   Data đã đóng gói + upload xong: `scripts/filter_bin_ja2vi.py` lọc premix
-   `train-assets-vong3a` (23,45M seq) chỉ giữ chiều ja→vi (tag `>>vie<<` ở vị trí 1,
-   khớp đúng format `mix_and_binarize.py`) → **11.476.298 seq sạch** (đã xác nhận CHỨA
-   ĐỦ glossary/ctx/numeric/idiom vòng3a, không mất gì dù raw JSONL gốc không còn local).
-   `scripts/pack_kd_into_bin.py` ghép thêm 778 câu KD mới (gemini-lite+qwen-plus,
-   oversample ×20 — KHÔNG oversample mạnh hơn để tránh overfit như wave0) →
-   **11.491.858 seq, 348,8M token**, đã upload release `train-assets-ja2vi-100m`
-   (`bin_ja2vi_v1.tar.zst`, 371MB). Script train: `cloud/modal_train_100m_ja2vi.py`
-   (d768/12L/12H/ff2048 ≈ 109,6M params, TỪ ĐẦU step=0, 10.500 step ≈ 4 epoch,
-   milestone mỗi 1000 step — ĐO JUDGE Ở TỪNG MILESTONE, đừng chạy tới hết rồi mới xem,
-   bài học wave0). **CẦN USER CHẠY** (Modal chưa auth ở máy phụ):
-   ```
-   python3 -m modal run cloud/modal_train_100m_ja2vi.py::setup
-   python3 -m modal run --detach cloud/modal_train_100m_ja2vi.py::train
-   python3 -m modal run cloud/modal_train_100m_ja2vi.py::status
-   ```
+1. **ĐANG CHẠY: train 100M v1 CHỈ ja→vi, from-scratch, trên Modal (nhánh B đã chọn).**
+   Data: `scripts/filter_bin_ja2vi.py` lọc premix `train-assets-vong3a` (23,45M seq)
+   chỉ giữ chiều ja→vi (tag `>>vie<<` vị trí 1, khớp `mix_and_binarize.py`) →
+   **11.476.298 seq** (đã xác nhận CHỨA ĐỦ glossary/ctx/numeric/idiom vòng3a) +
+   `scripts/pack_kd_into_bin.py` ghép 778 câu KD (oversample ×20, tránh overfit như
+   wave0) → **11.491.858 seq, 348,8M token**, release `train-assets-ja2vi-100m`.
+   Script: `cloud/modal_train_100m_ja2vi.py` (d768/12L/12H/ff2048 ≈109,6M, step=0,
+   10.500 step ≈4 epoch, milestone mỗi 1000 step — ĐO JUDGE Ở TỪNG MILESTONE, bài
+   học wave0). **User đã chạy `::setup`+`::train` thành công** sau khi fix bug
+   `--strip-components=1` sai cấp thư mục (đã fix, xem lịch sử commit). Đang chạy
+   thật (step 30 quan sát được, ~80.500 tok/s, ETA ~2h20 từ lúc launch tối 20/07).
    Checkpoint tự backup lên release `autosave-100m-ja2vi` (m100_aa/m100_ab).
 
-2. **Sinh KD vẫn chạy nền song song** (KHÔNG phụ thuộc train 100M, dùng để làm mix v2
-   sau này hoặc cho Đợt 2 của model 292M): qwen-plus đang chạy tới ~13k câu (~7h,
-   PID nền trong session chat, KHÔNG persist qua reboot — nếu máy tắt phải chạy lại
-   lệnh trong PLAN_KD_JA2VI.md §Đợt1); gemini-lite key1 đã HẾT quota ngày (reset
-   14:00 VN mai), key2 vẫn chạy. File tích luỹ: `data/synthetic/kd/raw_qwen-plus.jsonl`,
+2. **MỚI XONG: data task `>>fix<<` (tự sửa lỗi ngữ pháp) cho v2 multi-task —
+   1.722 cặp SẠCH đã upload release `train-assets-fix-v1`** (`fix_data_v1.jsonl`).
+   Sinh bằng Claude Haiku qua Agent tool (effort thấp, không thinking, 28 subagent
+   batch — RẺ, không tốn quota API ngoài) phủ N5-N1 JLPT + tiếng lóng/câu tắt hiện
+   đại + zero-pronoun ngữ cảnh + **câu dài đa mệnh đề** (user yêu cầu bổ sung vì
+   quan sát câu dài hay sai — khớp đúng phát hiện cũ `PLAN_RANKUP §8`). Format:
+   `{"ja","vi_wrong","vi_correct","level","point"}`. **QUAN TRỌNG:** đã lọc bỏ 549/
+   2271 cặp "lỗi giả" (chỉ khác 1 chữ/lỗi gõ, similarity>0.85 — do Haiku "lười" khi
+   bị ép câu dài/phức tạp) bằng `difflib` — xem lại thuật toán lọc nếu sinh thêm.
+   Batch `jlpt_n1_04` (câu dài kiểu tin tức) mất 81%, còn rất mỏng — nên sinh lại
+   nếu muốn phủ đủ vùng này. **Việc tiếp theo cho task này:** (1) thêm tag `>>fix<<`
+   mới vào tokenizer SPM (hiện chỉ có `>>vie<<`/`>>jpn<<`), (2) viết script binarize
+   format `[BOS][>>fix<<] ja+vi_wrong [EOS] vi_correct [EOS]`, (3) multi-task train
+   sau khi có kết quả v1 100M. CHƯA làm — chờ quyết định thứ tự ưu tiên.
+
+3. **KD generation (dịch thẳng ja→vi, dùng cho mix v2 hoặc Đợt 2 của 292M) ĐÃ DỪNG
+   HẲN — cả 2 nguồn free đều cạn:**
+   - **qwen-plus: CẠN QUOTA VĨNH VIỄN** (lỗi 403 "quota exhausted", không phải theo
+     ngày — hết luôn 1M token/90 ngày của tài khoản DashScope này). Dừng ở
+     **3.440 câu** tổng (thấp hơn ước tính ~12k vì tổng dùng cả ngày — benchmark+
+     audit+pilot+batch này — đã tiêu hết ngân sách). Muốn thêm phải đăng ký tài
+     khoản DashScope MỚI.
+   - **gemini-lite 2 key: hết quota NGÀY** (343 + 499 = 842 câu), reset 14:00 VN
+     mai — chạy lại được nếu cần thêm (lệnh trong PLAN_KD_JA2VI.md §Đợt1).
+   File tích luỹ: `data/synthetic/kd/raw_qwen-plus.jsonl` (3.440),
    `raw_gemini-flash-lite-latest.jsonl`, `raw_gemini-flash-lite-latest-k2.jsonl`.
 
-3. **292M (bidirectional) vẫn treo song song, KHÔNG liên quan tới nhánh 100M này:**
+4. **292M (bidirectional) vẫn treo song song, KHÔNG liên quan tới nhánh 100M này:**
    checkpoint nền cho MỌI train tiếp theo của 292M là `step30000` (KHÔNG dùng
    step32500/wave0 — xem mục Đợt 0). Nằm ở bộ `p_aa`/`p_ab` trên release
    `autosave-scale300m`. Nếu 100M thắng thì đây có thể thành hướng chính thay 292M.
 
-4. Dọn dẹp không bắt buộc: `checkpoints_wave0/`, `premix_vong3a/`, `premix_ja2vi/`,
-   `premix_ja2vi_v1/` (đều local Windows, đã `.gitignore`, tổng ~6GB) — xoá được sau
-   khi train 100M đã tải xong data từ release (không cần giữ bản local nữa).
+5. Dọn dẹp không bắt buộc: `checkpoints_wave0/`, `premix_vong3a/`, `premix_ja2vi/`,
+   `premix_ja2vi_v1/` (local Windows, đã `.gitignore`, tổng ~6GB) — xoá được, data
+   đã an toàn trên GitHub Release.
 
 ## TL;DR
 
