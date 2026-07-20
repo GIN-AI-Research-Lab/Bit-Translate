@@ -1,12 +1,17 @@
 """Đợt 0 (PLAN_KD_JA2VI §2) — train 292M +2500 step LR ÊM trên Modal L40S.
 
 Mục đích: chẩn đoán vụ 5 domain tụt ở step30000 (nhiễu LR-restart vs trần sức chứa)
-+ tạo 5 milestone cho checkpoint averaging. KHÔNG data mới — dùng nguyên premix
-vòng 3a + last.pt@30000 đã có trên Volume vija-vol (từ Phase 1, không cần setup lại).
++ tạo 5 milestone cho checkpoint averaging. KHÔNG data mới — premix vòng 3a +
+last.pt@30000 tải từ GitHub release (::setup, chạy được trên TÀI KHOẢN MODAL MỚI —
+mọi thứ cần thiết đều nằm trên release, không phụ thuộc Volume tài khoản cũ).
 
 LR: warmup 50 -> đỉnh 6e-5 -> cosine về 3e-5 tại 32500 (TB ~4.5e-5, bằng nửa đỉnh
 1.2e-4 của Phase 1 — không có cú sốc restart). Milestone mỗi 500 step -> 30500..32500.
 
+Chuẩn bị 1 lần trên tài khoản Modal mới:
+    python3 -m pip install modal && python3 -m modal setup      # đăng nhập tài khoản
+    TK=$(gh auth token); python3 -m modal secret create github-token GH_TOKEN=$TK
+    python3 -m modal run cloud/modal_train_wave0.py::setup      # nạp Volume ~4GB (premix + ckpt 30000)
 Chạy:
     python3 -m modal run --detach cloud/modal_train_wave0.py::train    # ~2h L40S
     python3 -m modal run cloud/modal_train_wave0.py::status            # tiến độ
@@ -32,7 +37,7 @@ image = (
     .add_local_dir("tokenizer", "/root/bt/tokenizer")
 )
 
-vol = modal.Volume.from_name("vija-vol", create_if_missing=False)
+vol = modal.Volume.from_name("vija-vol", create_if_missing=True)
 gh = modal.Secret.from_name("github-token")
 
 DIMS = "--d-model 1152 --n-layers 16 --n-heads 18 --d-ff 3072"
@@ -56,6 +61,45 @@ def _symlink_persist():
         os.symlink(src, dst)
 
 
+@app.function(image=image, volumes={"/persist": vol}, secrets=[gh], timeout=3600)
+def setup():
+    """Nạp Volume (idempotent, chạy được trên tài khoản Modal MỚI): premix vòng 3a
+    từ release train-assets-vong3a + checkpoint step30000 (bộ p_aa/p_ab — bản backup
+    CUỐI của Phase 1, đủ opt state) từ release autosave-scale300m."""
+    import os
+    import subprocess
+
+    def sh(c):
+        print(">>", c, flush=True)
+        subprocess.run(c, shell=True, check=True)
+
+    os.makedirs("/persist/bin", exist_ok=True)
+    os.makedirs("/persist/checkpoints", exist_ok=True)
+    env = f'GH_TOKEN={os.environ["GH_TOKEN"]}'
+
+    if not os.path.exists("/persist/bin/train.tokens.u16"):
+        sh(f"cd /tmp && {env} gh release download train-assets-vong3a -R {REPO} "
+           f"--pattern bin_mix_vong3a.tar.zst --clobber")
+        sh("tar --strip-components=1 -C /persist -I zstd -xf /tmp/bin_mix_vong3a.tar.zst "
+           "&& rm /tmp/bin_mix_vong3a.tar.zst")
+        print("data OK:", os.listdir("/persist/bin")[:6], flush=True)
+    else:
+        print("data đã có, bỏ qua.", flush=True)
+
+    if not os.path.exists("/persist/checkpoints/last.pt"):
+        sh(f"cd /tmp && {env} gh release download autosave-scale300m -R {REPO} "
+           f"--pattern 'p_a*' --clobber")
+        sh("cat /tmp/p_aa /tmp/p_ab > /persist/checkpoints/last.pt && rm -f /tmp/p_a?")
+        sz = os.path.getsize("/persist/checkpoints/last.pt")
+        assert sz > 3_000_000_000, f"checkpoint chỉ {sz}B (<3GB) — bộ p_* hỏng?"
+        print(f"checkpoint OK: {sz//2**20}MB (step30000)", flush=True)
+    else:
+        print("checkpoint đã có, bỏ qua.", flush=True)
+
+    vol.commit()
+    print("SETUP XONG — Volume sẵn sàng cho ::train.", flush=True)
+
+
 @app.function(image=image, volumes={"/persist": vol}, secrets=[gh], gpu="L40S",
               cpu=8.0, memory=16384, timeout=4 * 3600)
 def train():
@@ -66,8 +110,9 @@ def train():
     import time
 
     assert os.path.exists("/persist/checkpoints/last.pt"), \
-        "Volume không có last.pt — Phase 1 chưa chạy trên Volume này?"
-    assert os.path.exists("/persist/bin/train.tokens.u16"), "Volume không có data premix"
+        "Volume không có last.pt — chạy ::setup trước."
+    assert os.path.exists("/persist/bin/train.tokens.u16"), \
+        "Volume không có data premix — chạy ::setup trước."
     _symlink_persist()
 
     env = dict(os.environ)
@@ -185,4 +230,5 @@ def status():
 
 @app.local_entrypoint()
 def main():
-    print("modal run --detach cloud/modal_train_wave0.py::train  ->  ::status  ->  ::publish")
+    print("modal run cloud/modal_train_wave0.py::setup  (1 lần/tài khoản)  "
+          "->  --detach ::train  ->  ::status  ->  ::publish")

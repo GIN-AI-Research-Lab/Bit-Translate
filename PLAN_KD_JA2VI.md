@@ -65,15 +65,20 @@ nền tốt nhất cho Đợt 2. KHÔNG data mới, không tiền lớn.
 
 ### W0.1 — Train +2500 step LR êm (Modal L40S, ~2h, ~$5)
 
-- Resume last.pt@30000 trên Volume `vija-vol` (data = premix vòng 3a, GIỮ NGUYÊN).
+- Resume last.pt@30000 (data = premix vòng 3a, GIỮ NGUYÊN). Chạy được trên **tài khoản
+  Modal mới** — `::setup` tải mọi thứ từ GitHub release, không phụ thuộc Volume cũ.
 - LR: warmup 50 step → đỉnh **6e-5** → cosine về 3e-5 tại 32500 (TB ~4.5e-5 — bằng nửa
   đỉnh 1.2e-4 của Phase 1, không có cú sốc restart). Milestone mỗi **500 step** → 5 bản
   30500…32500 phục vụ averaging.
-- Script: `cloud/modal_train_wave0.py` (autosave lên release `autosave-scale300m` với
-  tên file RIÊNG `w0_aa/w0_ab` — không đè bộ `p_aa/p_ab` step30000 lành).
+- Autosave lên release `autosave-scale300m` với tên file RIÊNG `w0_aa/w0_ab` — không đè
+  bộ `p_aa/p_ab` step30000 lành.
 
 ```bash
-# máy có modal (hoặc: pip install modal && python3 -m modal setup)
+# tài khoản Modal mới — chuẩn bị 1 lần:
+python3 -m pip install modal && python3 -m modal setup
+TK=$(gh auth token); python3 -m modal secret create github-token GH_TOKEN=$TK
+python3 -m modal run cloud/modal_train_wave0.py::setup       # nạp Volume ~4GB từ release
+# chạy:
 python3 -m modal run --detach cloud/modal_train_wave0.py::train
 python3 -m modal run cloud/modal_train_wave0.py::status      # xem tiến độ
 ```
