@@ -66,7 +66,11 @@ def setup():
     if not os.path.exists("/persist/bin/train.tokens.u16"):
         sh(f"cd /tmp && {env} gh release download {PREMIX_TAG} -R {REPO} "
            f"--pattern bin_ja2vi_v1.tar.zst --clobber")
-        sh("tar --strip-components=1 -C /persist -I zstd -xf /tmp/bin_ja2vi_v1.tar.zst "
+        # LƯU Ý: tar này đóng gói bằng scripts/pack_kd_into_bin.py's caller (chỉ 1
+        # cấp "bin/..."), KHÔNG phải "data/bin/..." như bin_mix_vong3a.tar.zst cũ ->
+        # KHÔNG dùng --strip-components=1 (sẽ bóc nhầm "bin/" làm file lạc chỗ ở
+        # /persist/ thay vì /persist/bin/ — đã xảy ra thật, xem lịch sử commit).
+        sh("tar -C /persist -I zstd -xf /tmp/bin_ja2vi_v1.tar.zst "
            "&& rm /tmp/bin_ja2vi_v1.tar.zst")
         print("data OK:", os.listdir("/persist/bin"), flush=True)
     else:
