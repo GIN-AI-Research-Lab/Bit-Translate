@@ -2,23 +2,40 @@
 
 ## ⏭️ VIỆC TIẾP THEO (đọc trước khi làm gì mới — máy khác đọc mục này là đủ bắt nhịp)
 
-1. **Quyết định chưa chốt — chọn 1 trong 3, hoặc làm song song:**
-   - **(A) Chạy Đợt 1 KD thật quy mô lớn** với 2 thầy đã chốt (gemini-flash-lite + qwen-plus,
-     xem mục PIVOT bên dưới) — trần hiện tại ~19k câu/tuần (12k qwen-plus cố định hết trong
-     ~7h chạy liên tục + 7k gemini-lite nhỏ giọt 1000 câu/ngày). Script sẵn:
-     `scripts/gen_kd_corpus.py` + `scripts/filter_kd_corpus.py` + `scripts/labse_score.py`
-     (ngưỡng ĐÃ HIỆU CHỈNH LaBSE≥0.55 — 0.80 giết oan bản dịch đúng, xem PLAN_KD_JA2VI.md §Đợt1).
-   - **(B) Thử nghiệm 100M/150M CHỈ ja→vi, train from-scratch** trên nửa ja→vi của premix
-     hiện có (~11,7M câu ≈ 500M token, KHÔNG phải chỉ data LLM — xem tính toán trong lịch sử
-     chat 2026-07-20) + KD mới. Ước tính rẻ bất ngờ: **100M/4 epoch ≈ 7-8 giờ GPU** (L40S/A10G).
-     CHƯA bắt đầu — cần viết script tách riêng phần ja→vi từ premix trước khi train.
-   - **(C) Đăng ký thêm tài khoản DashScope quốc tế** để tăng trần KD (+12k câu/tài khoản,
-     miễn phí) nếu muốn khối lượng lớn hơn 19k/tuần trước khi làm (A).
-2. **Checkpoint nền cho MỌI train tiếp theo: `step30000`** (KHÔNG dùng step32500/wave0 —
-   xem lý do trong mục Đợt 0 bên dưới, đã đo bằng judge thật). Checkpoint step30000 nằm ở
-   bộ `p_aa`/`p_ab` trên release `autosave-scale300m`.
-3. Dọn dẹp không bắt buộc: `checkpoints_wave0/` (3,3GB, local Windows, đã `.gitignore`) +
-   `dist/w0_*.gguf` (1,2GB) là bản wave0 đã KẾT LUẬN không dùng — xoá được nếu cần chỗ đĩa.
+1. **ĐANG LÀM: train 100M CHỈ ja→vi, from-scratch (nhánh B đã chọn, không phải A/C).**
+   Data đã đóng gói + upload xong: `scripts/filter_bin_ja2vi.py` lọc premix
+   `train-assets-vong3a` (23,45M seq) chỉ giữ chiều ja→vi (tag `>>vie<<` ở vị trí 1,
+   khớp đúng format `mix_and_binarize.py`) → **11.476.298 seq sạch** (đã xác nhận CHỨA
+   ĐỦ glossary/ctx/numeric/idiom vòng3a, không mất gì dù raw JSONL gốc không còn local).
+   `scripts/pack_kd_into_bin.py` ghép thêm 778 câu KD mới (gemini-lite+qwen-plus,
+   oversample ×20 — KHÔNG oversample mạnh hơn để tránh overfit như wave0) →
+   **11.491.858 seq, 348,8M token**, đã upload release `train-assets-ja2vi-100m`
+   (`bin_ja2vi_v1.tar.zst`, 371MB). Script train: `cloud/modal_train_100m_ja2vi.py`
+   (d768/12L/12H/ff2048 ≈ 109,6M params, TỪ ĐẦU step=0, 10.500 step ≈ 4 epoch,
+   milestone mỗi 1000 step — ĐO JUDGE Ở TỪNG MILESTONE, đừng chạy tới hết rồi mới xem,
+   bài học wave0). **CẦN USER CHẠY** (Modal chưa auth ở máy phụ):
+   ```
+   python3 -m modal run cloud/modal_train_100m_ja2vi.py::setup
+   python3 -m modal run --detach cloud/modal_train_100m_ja2vi.py::train
+   python3 -m modal run cloud/modal_train_100m_ja2vi.py::status
+   ```
+   Checkpoint tự backup lên release `autosave-100m-ja2vi` (m100_aa/m100_ab).
+
+2. **Sinh KD vẫn chạy nền song song** (KHÔNG phụ thuộc train 100M, dùng để làm mix v2
+   sau này hoặc cho Đợt 2 của model 292M): qwen-plus đang chạy tới ~13k câu (~7h,
+   PID nền trong session chat, KHÔNG persist qua reboot — nếu máy tắt phải chạy lại
+   lệnh trong PLAN_KD_JA2VI.md §Đợt1); gemini-lite key1 đã HẾT quota ngày (reset
+   14:00 VN mai), key2 vẫn chạy. File tích luỹ: `data/synthetic/kd/raw_qwen-plus.jsonl`,
+   `raw_gemini-flash-lite-latest.jsonl`, `raw_gemini-flash-lite-latest-k2.jsonl`.
+
+3. **292M (bidirectional) vẫn treo song song, KHÔNG liên quan tới nhánh 100M này:**
+   checkpoint nền cho MỌI train tiếp theo của 292M là `step30000` (KHÔNG dùng
+   step32500/wave0 — xem mục Đợt 0). Nằm ở bộ `p_aa`/`p_ab` trên release
+   `autosave-scale300m`. Nếu 100M thắng thì đây có thể thành hướng chính thay 292M.
+
+4. Dọn dẹp không bắt buộc: `checkpoints_wave0/`, `premix_vong3a/`, `premix_ja2vi/`,
+   `premix_ja2vi_v1/` (đều local Windows, đã `.gitignore`, tổng ~6GB) — xoá được sau
+   khi train 100M đã tải xong data từ release (không cần giữ bản local nữa).
 
 ## TL;DR
 
