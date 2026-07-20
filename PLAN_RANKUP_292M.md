@@ -1,5 +1,11 @@
 # PLAN RANK-UP — Leo bảng xếp hạng với model 292M (lập 2026-07-17)
 
+> **⚠️ CẬP NHẬT 2026-07-20:** Phase 1 (§2, vòng 3a) đã chạy xong nhưng gate G1 TRƯỢT
+> (ja→vi 2.37 vs Google 3.67, thua 5/5 domain — chi tiết STATUS TL;DR). User chốt
+> ja→vi là sản phẩm chính. **Chiến lược ja→vi chuyển sang distillation từ Haiku —
+> xem `PLAN_KD_JA2VI.md`** (thay thế §2-§3 của file này). §8.4 (app-side) + §4-§5
+> (Haiku glossary-bench, Fable vận hành) GIỮ NGUYÊN giá trị.
+
 > Bảng xếp hạng hiện tại (hardbench200 4 hệ, `eval/hardbench_4way_haiku_report.md`):
 > **Fable 5.00 > Haiku 4.57 > Google 3.80 >> 110M 1.56** (acc TB 2 chiều).
 > Kế hoạch này trả lời: nâng lên 292M thì "đánh bại từng bậc" bằng cách nào, đo bằng gì,
