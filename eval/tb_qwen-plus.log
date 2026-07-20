@@ -1,0 +1,14 @@
+[qwen-plus] model=qwen-plus dir=both | 0 có sẵn, còn 200
+  20/200
+  40/200
+  60/200
+  80/200
+  100/200
+  120/200
+  140/200
+  160/200
+  180/200
+  200/200
+=== [qwen-plus] 200 câu — chrF TB theo chiều ===
+  vi2ja: 34.1 (n=100)
+  ja2vi: 46.3 (n=100)

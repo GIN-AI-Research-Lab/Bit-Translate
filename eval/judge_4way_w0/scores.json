@@ -1,0 +1,4404 @@
+{
+ "per_item": {
+  "1": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "2": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "3": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "4": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "5": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "6": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "7": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "8": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "9": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "10": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "11": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "12": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "13": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "14": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "15": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "16": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "17": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "18": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "19": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "20": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "21": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "22": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "23": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "24": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "25": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "26": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "27": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "28": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "29": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "30": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "31": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "32": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "33": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 1.0,
+    "n_judges": 2
+   }
+  },
+  "34": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "35": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "36": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "37": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "38": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "39": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "40": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "41": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "42": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "43": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "44": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "45": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "46": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "47": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "48": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "49": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "50": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "51": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "52": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "53": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "54": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "55": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "56": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "57": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "58": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "59": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "60": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "61": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "62": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "63": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "64": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "65": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "66": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "67": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "68": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "69": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "70": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "71": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "72": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "73": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "74": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "75": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "76": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "77": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "78": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "79": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "80": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "81": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "82": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 2.5,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "83": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "84": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "85": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "86": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "87": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "88": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "89": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "90": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "91": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "92": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "93": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "94": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "95": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "96": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "97": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "98": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "99": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "100": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "101": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "102": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "103": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "104": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "105": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "106": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "107": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "108": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "109": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "110": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "111": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "112": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "113": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "114": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "115": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "116": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "117": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "118": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "119": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "120": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "121": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "122": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "123": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "124": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "125": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "126": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "127": {
+   "292M": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "128": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "129": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "130": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "131": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "132": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "133": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "134": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "135": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "136": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "137": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 0.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "138": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "139": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "140": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "141": {
+   "292M": {
+    "acc": 4.5,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "142": {
+   "292M": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "143": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "144": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "145": {
+   "292M": {
+    "acc": 3.5,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "146": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "147": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "148": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "149": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "150": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "151": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "152": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "153": {
+   "292M": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "154": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "155": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "156": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "157": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "158": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "159": {
+   "292M": {
+    "acc": 0.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "160": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "161": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 4.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "162": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   }
+  },
+  "163": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "164": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "165": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "166": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "167": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "168": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "169": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "170": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "171": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "172": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "173": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "174": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "175": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "176": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "177": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 0.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "178": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "179": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "180": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "181": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 4.5,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "182": {
+   "292M": {
+    "acc": 3.5,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "183": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "184": {
+   "292M": {
+    "acc": 0.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "185": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "186": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.0,
+    "nat": 2.0,
+    "n_judges": 2
+   }
+  },
+  "187": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "188": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.0,
+    "n_judges": 2
+   }
+  },
+  "189": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.5,
+    "n_judges": 2
+   }
+  },
+  "190": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "191": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "192": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 2.5,
+    "nat": 1.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "193": {
+   "292M": {
+    "acc": 2.5,
+    "nat": 2.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "194": {
+   "292M": {
+    "acc": 2.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 2.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  },
+  "195": {
+   "292M": {
+    "acc": 3.5,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "196": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   }
+  },
+  "197": {
+   "292M": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 3.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 3.5,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "198": {
+   "292M": {
+    "acc": 1.0,
+    "nat": 3.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.5,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 4.0,
+    "n_judges": 2
+   }
+  },
+  "199": {
+   "292M": {
+    "acc": 4.0,
+    "nat": 4.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 5.0,
+    "nat": 4.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   }
+  },
+  "200": {
+   "292M": {
+    "acc": 1.5,
+    "nat": 1.0,
+    "n_judges": 2
+   },
+   "google": {
+    "acc": 4.0,
+    "nat": 3.5,
+    "n_judges": 2
+   },
+   "fable": {
+    "acc": 5.0,
+    "nat": 5.0,
+    "n_judges": 2
+   },
+   "haiku": {
+    "acc": 4.0,
+    "nat": 2.5,
+    "n_judges": 2
+   }
+  }
+ }
+}

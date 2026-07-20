@@ -14,6 +14,7 @@ data/bin_build.log
 
 # Model checkpoints, weights, exported artifacts (large binaries)
 checkpoints/
+checkpoints_*/
 models/
 dist/
 cloud_backup/

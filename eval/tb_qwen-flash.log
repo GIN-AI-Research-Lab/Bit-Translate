@@ -1,0 +1,14 @@
+[qwen-flash] model=qwen-flash dir=both | 0 có sẵn, còn 200
+  20/200
+  40/200
+  60/200
+  80/200
+  100/200
+  120/200
+  140/200
+  160/200
+  180/200
+  200/200
+=== [qwen-flash] 200 câu — chrF TB theo chiều ===
+  vi2ja: 32.0 (n=100)
+  ja2vi: 44.5 (n=100)

@@ -1,0 +1,14 @@
+[gemini-flash-lite-latest] model=gemini-flash-lite-latest dir=both | 0 có sẵn, còn 200
+  20/200
+  40/200
+  60/200
+  80/200
+  100/200
+  120/200
+  140/200
+  160/200
+  180/200
+  200/200
+=== [gemini-flash-lite-latest] 200 câu — chrF TB theo chiều ===
+  vi2ja: 46.6 (n=100)
+  ja2vi: 53.3 (n=100)

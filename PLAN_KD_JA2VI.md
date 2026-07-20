@@ -121,19 +121,34 @@ python eval/build_judge_panels_4way.py eval/hardbench_haiku.jsonl \
 python eval/aggregate_judge_4way.py eval/judge_4way_w0/judges eval/judge_4way_w0
 ```
 
-### W0.5 — Ma trận quyết định (điền xong Đợt 0)
+### W0.5 — KẾT QUẢ THẬT (2026-07-20 tối) — kết luận C, chưa lường trước
 
-So judge acc ja→vi với step30000 (keigo 1.95 / nguphap 1.95 / hop 1.75;
-thanhngu 2.85 / zeropronoun 3.35):
+Không chạy được `::publish` (cần Modal, user chưa auth ở máy phụ) nên chỉ eval được
+checkpoint step32500 THÔ (chưa average) — tải trực tiếp `w0_aa/w0_ab` trên release
+`autosave-scale300m` (bản backup cuối của hàm `::train`, đủ dùng). Kết quả judge 10
+giám khảo (protocol y hệt step30000) so bằng "hệ tĩnh" Google/Haiku/Fable (bản dịch
+CỐ ĐỊNH, chỉ đổi giám khảo giữa 2 lượt) làm mốc sàn nhiễu:
 
-| Quan sát | Kết luận | Hệ quả cho Đợt 2 |
-|---|---|---|
-| keigo/nguphap/hop hồi ≥ +0.3 VÀ thanhngu/zeropronoun giữ (≥ −0.2) | **A: nhiễu LR** — trần chưa chạm | Nền = bản tốt hơn {32500, avg}. Đợt 2 LR thấp (≤6e-5) decay dài, tự tin đổ KD |
-| Không hồi, hoặc hồi nhưng domain vòng 3a tụt lại tương đương | **B: cạnh tranh sức chứa thật** | Đợt 2: replay ≥70%, mix nghiêng ja→vi 75/25 NGAY, KD **thay thế** (không cộng thêm) phần OpenSubtitles nhiễu nhất trong mix; nếu KD cũng bão hòa → lúc đó mới bàn scale |
-| avg_wave0 > step32500 rõ (≥+1 chrF TB) | averaging ăn — dùng làm chuẩn đóng gói mọi vòng sau | — |
+| Hệ | acc ja→vi step30000 | acc ja→vi wave0 | Δ |
+|---|---|---|---|
+| Google (tĩnh) | 3.67 | 3.56 | −0.11 (nhiễu) |
+| Haiku (tĩnh) | 4.41 | 4.27 | −0.14 (nhiễu) |
+| Fable (tĩnh) | 4.88 | 4.97 | +0.09 (nhiễu) |
+| **292M** | **2.37** | **1.84** | **−0.53** |
 
-**Đầu ra Đợt 0:** 1 checkpoint nền + 1 kết luận A/B + điền `eval/capacity_log.md` dòng
-vòng 3a (đã có đủ số 19100/30000/w0).
+Sàn nhiễu thật ±0.1-0.15; 292M lệch −0.53 = gấp 3-4 lần → **suy giảm THẬT, không phải
+nhiễu giám khảo**. Tụt ĐỀU cả 10/10 domain ja→vi (it_deep −1.15, thanhngu −1.15,
+zeropronoun −0.75...) — khác hẳn kiểu "đảo chỗ" của vòng Phase1 25000→30000. Loss
+train giảm (~1.0-1.1, thấp hơn mọi mốc trước) trong khi judge held-out tụt = chữ ký
+overfit. **Kết luận C (chưa có trong bảng dự kiến ban đầu): train thêm trên CÙNG data
+vòng3a (dù LR êm, không restart sốc) vẫn có hại — corpus đã vắt kiệt từ vòng train
+trước, không còn tín hiệu mới để học đúng.**
+
+**Quyết định: dùng `step30000` làm nền cho Đợt 2, KHÔNG dùng wave0/step32500/avg.**
+Không cần chạy `::publish` (averaging) nữa — 5 milestone đều nằm trên cùng quỹ đạo
+overfit, average không cứu được sai lệch lớn cỡ này. Bài học áp dụng ngược cho Đợt 2:
+đo judge ở các mốc trung gian trong lúc train KD, đừng chạy cố định số step rồi mới
+kiểm tra — corpus KD nhỏ hơn nhiều (13-19k câu) nên đến điểm "vắt kiệt" nhanh hơn.
 
 ## 3. ĐỢT 1 — corpus KD
 
@@ -188,16 +203,23 @@ ngày/key × 2 key = 1000 câu/ngày. Tổng khả dụng **~17-22k câu trong ~
 - Nguồn: `data/synthetic/kd/ja_pool.txt` = 841k câu của `bt-vong3b` (tái dùng, đã
   xáo trộn seed 20260720) — filter_ja_mono.py đã lọc rác nguồn từ trước (BT vòng 3b).
 - **QC 4 lớp (tái dùng `eval/QUALITY_GATE.md`, bỏ lớp đọc seed vì đây dịch câu thật
-  không sinh từ gloss):**
-  1. Rule filter code (`scripts/filter_kd_corpus.py`): rò ngôn ngữ, tỉ lệ độ dài,
-     dedup, artifact cụ thể thấy trong judge audit (leftover `<think>`, placeholder
-     "anh/chị" kiểu X/Y, ký tự Hán giản thể lẫn vào — model đôi lúc trộn ngôn ngữ).
-  2. LaBSE ≥0.80 (`scripts/labse_score.py`, tổng quát hoá từ labse_score_vong3.py) —
-     bắt đảo nghĩa/hallucination mà rule bỏ sót (đúng loại lỗi 15 giám khảo vừa chỉ
-     ra: "gấu"→クマ nghĩa đen, đảo chủ thể câu xin phép).
-  3. Đọc mẫu phân tầng ~30 câu/model (Claude) — model nào lỗi >5% thì đọc full batch.
-  4. **PILOT trước khi tiêu quota**: 300-500 câu/model, đo tỉ lệ reject thật qua cả
-     3 lớp trên, HIỆU CHỈNH ngưỡng nếu cần, rồi mới launch full 50-70k.
+  không sinh từ gloss) — ĐÃ PILOT + HIỆU CHỈNH XONG 2026-07-20, thông số dưới đây là
+  bản CUỐI đã kiểm chứng, không phải dự kiến:**
+  1. Rule filter code (`scripts/filter_kd_corpus.py`): rò ngôn ngữ (JA/Hán giản thể lẫn
+     vào vế Việt), tỉ lệ độ dài, dedup, refusal/leftover `<think>`. ĐÃ BỎ check
+     "..."/"anh chị" (gây báo động giả trên corpus blog kỹ thuật — "..." xuất hiện tự
+     nhiên trong code/công thức/lời ngập ngừng; "anh/chị" là xưng hô chuẩn tiếng Việt).
+     Đạt 97-100%/model.
+  2. **LaBSE ≥0.55** (`scripts/labse_score.py`) — KHÔNG PHẢI 0.80. Pilot cho thấy 0.80
+     giết oan ~26% bản dịch ĐÚNG (câu ngắn/kỹ thuật Việt hóa tự nhiên tự nhiên có LaBSE
+     thấp dù đúng nghĩa). Ở 0.55 giữ 99,6%. LƯU Ý: LaBSE KHÔNG bắt được lỗi nhầm thuật
+     ngữ tinh vi (vd "リモート"→"làm việc từ xa" thay vì "máy chủ remote" vẫn scored
+     0.622, "Pod"→"podcast" scored 0.705 — cả hai TRÊN ngưỡng). Lỗi loại này CHỈ bắt
+     được bằng lớp 3.
+  3. Đọc mẫu phân tầng (Claude, có prompt priming ví dụ lỗi cụ thể) — ~30-100 câu/model,
+     model nào lỗi >5% loại hẳn (không đọc full — đã thử "khử lỗi" bằng cách nhờ model
+     khác verify, THẤT BẠI 0/5 recall, xem §3.1). gemini-lite/qwen-plus: 0% lỗi.
+  4. Pilot 300 câu/model đã xong — roster CUỐI: chỉ gemini-lite + qwen-plus (§3.1).
 
 ### 3.3 Mở rộng (sau khi G Đợt 2 sóng 1 xác nhận KD ăn)
 
@@ -215,8 +237,38 @@ làm sau khi có bằng chứng KD cải thiện judge acc thật ở sóng 1.
   ja→vi không giảm >1 chrF. Đạt → sóng 2 mở rộng KD lên 841k+, nhắm nốt
   nguphap/caudai/hop/it_deep/hoithoai tới khi TB ja→vi ≥ 3.7 (mốc Google).
 
-## 5. Việc user
+## 5. Nhánh phụ đang cân nhắc — 100M/150M CHỈ ja→vi, from-scratch (2026-07-20, chưa bắt đầu)
 
-1. Chạy 3 lệnh modal Đợt 0 (máy có modal token) — W0.1/W0.2.
-2. Eyeball 50 câu bản thắng Đợt 0 khi có kết quả.
-3. Chốt ngân sách Đợt 1 (đề xuất khởi điểm 300k câu ≈ $60-150 qua Batch API).
+Câu hỏi: bỏ hẳn vi→ja, train riêng model nhỏ hơn CHỈ ja→vi có đủ data không?
+**KHÔNG phải "chỉ dùng data KD"** (13-19k câu quá ít để học ngôn ngữ từ đầu, thiếu
+~1-2 bậc độ lớn) — mà là giữ **nửa ja→vi của premix hiện có** (base 5,4M cặp +
+vòng1/2/3a, ước ~11,7M câu ≈ 500M token) + cộng KD mới đè lên trên. Đây là quy mô đủ
+để train from-scratch có ý nghĩa, không phải thí nghiệm thiếu data.
+
+Ước tính chi phí (quy đổi tuyến tính từ tốc độ ĐÃ ĐO THẬT của 292M trên Modal L40S —
+26.000 tok/s — CHỈ tham khảo, scaling thực tế có thể lệch):
+
+| Model | tok/s ước tính | 3 epoch (1,5 tỷ tok) | 4 epoch (2 tỷ tok) | 5 epoch (2,5 tỷ tok) |
+|---|---|---|---|---|
+| 100M | ~76.000 | ~5,5h | **~7,3h** | ~9,1h |
+| 150M | ~50.600 | ~8,2h | ~11h | ~13,7h |
+
+Rẻ bất ngờ so 292M (Phase1: ~42h GPU cho 3,9 tỷ token). Đáng thử nếu 100M đơn hướng
+thắng được 292M song hướng ở ja→vi — vừa nhẹ 3x vừa nhanh lặp vòng data hơn.
+⚠️ Bài học Đợt 0: KHÔNG chạy cố định số epoch rồi hy vọng — đo judge ở từng epoch,
+dừng khi held-out bắt đầu tụt (chữ ký overfit đã thấy ở wave0).
+
+**CHƯA làm gì cho nhánh này** — cần: (1) script tách phần ja→vi từ premix hiện có,
+(2) quyết định có đáng làm SONG SONG với Đợt 1 KD hay để sau khi có kết quả Đợt 2.
+
+## 6. Việc user / trạng thái tính đến 2026-07-20 tối
+
+1. ~~Chạy 3 lệnh modal Đợt 0~~ ✅ XONG — kết quả: dùng step30000, bỏ wave0 (§W0.5).
+2. ~~Chốt ngân sách Đợt 1~~ ✅ ĐỔI HƯỚNG — dùng gemini-lite+qwen-plus free thay Haiku
+   trả phí, trần ~19k câu/tuần (không phải 300k).
+3. **Còn phải quyết:** chạy Đợt 1 quy mô lớn ngay (13-19k câu, script sẵn
+   `scripts/gen_kd_corpus.py`), hay thử nhánh 100M/150M (§5) trước/song song, hay đăng
+   ký thêm tài khoản DashScope để tăng trần KD trước — xem STATUS.md mục "VIỆC TIẾP THEO".
+4. Nếu chạy Đợt 1: JA nguồn đã sẵn `data/synthetic/kd/ja_pool.txt` (841k câu, đã xáo
+   trộn) — chỉ cần chạy `gen_kd_corpus.py` với START/COUNT không chồng lấn cho 2 model,
+   qua rule filter + LaBSE (ngưỡng đã chốt 0.55) + đọc mẫu phân tầng trước khi mix.

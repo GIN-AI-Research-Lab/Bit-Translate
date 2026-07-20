@@ -1,7 +1,71 @@
-# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-20)
+# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-20 tối)
+
+## ⏭️ VIỆC TIẾP THEO (đọc trước khi làm gì mới — máy khác đọc mục này là đủ bắt nhịp)
+
+1. **Quyết định chưa chốt — chọn 1 trong 3, hoặc làm song song:**
+   - **(A) Chạy Đợt 1 KD thật quy mô lớn** với 2 thầy đã chốt (gemini-flash-lite + qwen-plus,
+     xem mục PIVOT bên dưới) — trần hiện tại ~19k câu/tuần (12k qwen-plus cố định hết trong
+     ~7h chạy liên tục + 7k gemini-lite nhỏ giọt 1000 câu/ngày). Script sẵn:
+     `scripts/gen_kd_corpus.py` + `scripts/filter_kd_corpus.py` + `scripts/labse_score.py`
+     (ngưỡng ĐÃ HIỆU CHỈNH LaBSE≥0.55 — 0.80 giết oan bản dịch đúng, xem PLAN_KD_JA2VI.md §Đợt1).
+   - **(B) Thử nghiệm 100M/150M CHỈ ja→vi, train from-scratch** trên nửa ja→vi của premix
+     hiện có (~11,7M câu ≈ 500M token, KHÔNG phải chỉ data LLM — xem tính toán trong lịch sử
+     chat 2026-07-20) + KD mới. Ước tính rẻ bất ngờ: **100M/4 epoch ≈ 7-8 giờ GPU** (L40S/A10G).
+     CHƯA bắt đầu — cần viết script tách riêng phần ja→vi từ premix trước khi train.
+   - **(C) Đăng ký thêm tài khoản DashScope quốc tế** để tăng trần KD (+12k câu/tài khoản,
+     miễn phí) nếu muốn khối lượng lớn hơn 19k/tuần trước khi làm (A).
+2. **Checkpoint nền cho MỌI train tiếp theo: `step30000`** (KHÔNG dùng step32500/wave0 —
+   xem lý do trong mục Đợt 0 bên dưới, đã đo bằng judge thật). Checkpoint step30000 nằm ở
+   bộ `p_aa`/`p_ab` trên release `autosave-scale300m`.
+3. Dọn dẹp không bắt buộc: `checkpoints_wave0/` (3,3GB, local Windows, đã `.gitignore`) +
+   `dist/w0_*.gguf` (1,2GB) là bản wave0 đã KẾT LUẬN không dùng — xoá được nếu cần chỗ đĩa.
 
 ## TL;DR
+
+- **🔬 ĐỢT 0 XONG — KẾT LUẬN: KHÔNG DÙNG WAVE0, GIỮ STEP30000 (2026-07-20 tối).**
+  Train +2500 step (30000→32500) trên Modal, LR êm (đỉnh 6e-5, không restart sốc) để phân
+  biệt "nhiễu LR" vs "trần sức chứa" — nhưng ra kết quả THỨ BA không lường trước:
+  **judge acc TB ja→vi TỤT từ 2.37 → 1.84** (vi→ja 1.35→1.06), **tệ hơn ở CẢ 10/10 domain**
+  (it_deep −1.15, thanhngu −1.15, zeropronoun −0.75...). Đã kiểm chứng đây KHÔNG phải nhiễu
+  giám khảo: 3 hệ tĩnh Google/Haiku/Fable (bản dịch cố định, chỉ đổi giám khảo giữa 2 lượt
+  chấm) chỉ lệch ±0.1-0.15 giữa 2 lượt — 292M lệch −0.53, gấp 3-4 lần sàn nhiễu. **Chẩn đoán:
+  OVERFIT** — loss train giảm (~1.0-1.1, thấp hơn hẳn các mốc trước) trong khi judge held-out
+  tụt đều = đúng chữ ký overfit; train thêm trên CÙNG data vòng3a (không có câu mới) chỉ có
+  hại vì corpus đã "vắt kiệt" từ vòng train trước. **Quyết định: mọi train tiếp theo dùng
+  step30000 làm nền, KHÔNG dùng wave0/step32500.** Chi tiết + phương pháp kiểm chứng:
+  `PLAN_KD_JA2VI.md` §2 W0.5 (cần cập nhật lại theo kết quả này — xem TODO).
+  Script: `cloud/modal_train_wave0.py`. Checkpoint đã tải về local: `checkpoints_wave0/last_w0.pt`.
+
+- **✅ TUYỂN THẦY KD ĐỢT 1 XONG (2026-07-20) — roster: gemini-flash-lite-latest + qwen-plus.**
+  Benchmark 7 model free-quota (hardbench200 + judge mù 15 giám khảo, `eval/judge_teacher/`):
+  gemini-lite thắng Google **10/10 domain ja→vi** (acc 4.90 vs Google 3.22, đối đầu theo câu
+  170 thắng/21 hòa/9 thua/200) và thắng cả Haiku (4.10); qwen-plus theo sát (acc 4.72).
+  **Pilot 300 câu/model + audit lớp 3 phân tầng (n=30-100/model) LOẠI qwen-max (16.7% lỗi,
+  lẫn tiếng Trung + false-friend "エージェント→đại lý"), qwen-turbo (13%, đảo phủ định
+  "貫く→xuyên thủng"), qwen-flash (11% xác nhận qua mẫu mở rộng n=100, false-friend
+  "イメージ→hình ảnh" thay vì Docker image, "枯れている→lỗi thời" thay vì "đã ổn định"
+  — ĐẢO hàm ý tích cực→tiêu cực).** Đã thử "khử câu lỗi" bằng verification (nhờ qwen-plus
+  kiểm tra lại bản dịch qwen-max) — **THẤT BẠI hoàn toàn (0/5 lỗi đã biết bắt được, 2 báo
+  nhầm)** — không có cách rẻ để cứu 3 model yếu, chỉ dùng LaBSE≥0.55 + rule filter + 2 thầy
+  sạch. Trần khối lượng: qwen-plus ~12.000 câu (giới hạn input token, tổng cố định không
+  theo ngày) + gemini-lite ~1.000 câu/ngày (2 key) → **~13.000 câu ngày đầu, ~19.000 câu
+  sau 1 tuần, 0 đồng**. Đã thử thêm gemini-2.5-flash (hết quota 429 ngay), gemini-3-flash-preview
+  (đúng nhưng 7-11s/câu, quá chậm), gemini-3.1-flash-live-preview/native-audio-dialog (chỉ
+  Live API/WebSocket, không gọi được qua REST), gemini-3.5-flash (chất lượng tốt chrF 61.6
+  nhưng hết quota sau 6-7 câu) — đều không dùng được. Pipeline sẵn sàng:
+  `scripts/gen_kd_corpus.py` (dịch hàng loạt) → `scripts/filter_kd_corpus.py` (rule filter,
+  đã bỏ check "..."/"anh chị" gây báo động giả) → `scripts/labse_score.py` (ngưỡng 0.55,
+  KHÔNG phải 0.80 — đã hiệu chỉnh qua pilot, xem PLAN_KD_JA2VI.md).
+
 - **🎯 PIVOT CHIẾN LƯỢC (2026-07-20, `PLAN_KD_JA2VI.md`):** user chốt **ja→vi là sản phẩm chính**. Sau 3 vòng data + scale, TB judge ja→vi đứng yên (2.40@19100 → 2.37@30000) — data niche chỉ đảo chỗ điểm (thanhngu +0.62, zeropronoun +0.58 NHƯNG keigo −0.78, nguphap −0.72, hop −0.55), gap lớn nhất với Google là năng lực lõi (nguphap −2.0, caudai −1.95, hop −1.9). Chuyển sang **sequence-level KD từ Haiku** (thắng Google 10/10 domain ja→vi trên hardbench, đối đầu 128/55/17): Đợt 0 = +2500 step LR êm + checkpoint averaging để phân biệt nhiễu-LR vs trần sức chứa (`cloud/modal_train_wave0.py`, ~$5); Đợt 1 = Haiku dịch 300k câu JA nhắm domain yếu (~$60-150 Batch API); Đợt 2 = train mix nghiêng ja→vi 70-75%. BỎ: data idiom kiểu vòng 3a, BT phục vụ vi→ja, bàn scale.
+  **CẬP NHẬT: Đợt 1 đổi thầy từ Haiku trả phí sang gemini-lite+qwen-plus free (kết quả tốt
+  hơn Haiku), Đợt 0 đã xong với kết luận bất ngờ (xem mục ĐỢT 0 ở trên) — Đợt 2 sẽ dùng
+  step30000 làm nền, KHÔNG phải wave0.**
+
+- **📎 GPU_PROVIDERS.md mới (2026-07-20):** khảo sát ~35 provider thuê GPU (khác API LLM
+  sinh data ở PROVIDERS.md) — kết luận: không ai cho free thật/tự phục vụ/tái tục nhiều giờ;
+  Modal $30/tháng vẫn là lựa chọn tốt nhất để burst A100 khi cần. Tham khảo nếu cần train
+  ngoài local 3060Ti/Modal hiện tại.
 - **✅ PHASE 1 (vòng 3a) XONG + GATE G1 TRƯỢT (2026-07-19):** 292M train 25000→30000 trên Modal L40S (lr-anchor 25000). Gate: judge acc 1.35 (vi→ja) / **2.37 (ja→vi)** vs Google 3.65/3.67 — thua cả 5/5 domain G1, đối đầu 12 thắng/19 hòa/169 thua. FLORES đã vượt 110M từ lâu (44.47/22.55 @19100) nhưng không phải thước đo Google. Kết quả: `eval/judge_4way_30000/`, so 19100: `eval/judge_4way_292m/`.
 - **✅ BT VÒNG 3B XONG 100% (2026-07-19):** 841.039/841.039 câu JA mono dịch ja→vi bằng 292M@30000 trên Modal L40S — release **`bt-vong3b`** (bt_vong3b.ja/.vi, 92.9/92.6MB). Theo pivot trên: KHÔNG trộn vào mix (phục vụ vi→ja đã hạ ưu tiên); nguồn JA 841k tái dùng làm đầu vào KD Đợt 1.
 - **📦 DATA VÒNG 3a XONG TOÀN BỘ (2026-07-18):** 66.3k record mới qua 5 lớp lọc (rule filter → Haiku 30 panel review → Fable phán xử → blacklist 139 → LaBSE) = 6.615 câu idiom/slang/tương phản/discourse-marker (provider free: 4 model Qwen quota riêng + 2 Gemini; GLM loại cả batch) + 50k cặp `ctx|||src` một-chiều (code, OpenSubtitles/TED) + 5.457 số liệu/phủ định (code) + 4.232 glossary-inject `[term=訳語]` + từ điển 1.247 mục (206 gốc Việt). **Premix `train-assets-vong3a` đã build (23,45M seq, new 18,7%, LaBSE GPU local) + upload.** Thẩm định độc lập Opus: `eval/DATA_REVIEW_VONG3_OPUS.md` (G1 cần thêm ctx||| + số liệu — ĐÃ làm; trần idiom ≤2k mục, đo term-rate trước khi nở). **Việc sau khi 292M đạt 25000: xem PLAN_RANKUP_292M.md §9** (gate 4-way → train vòng 3a +4-6k step lr-anchor 25000 → đo G1 + term-rate).

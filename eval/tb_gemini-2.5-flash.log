@@ -1,0 +1,5 @@
+[gemini-2.5-flash] model=gemini-2.5-flash dir=both | 0 có sẵn, còn 200
+  id=15: LỖI Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billi — dừng (chạy lại để resume)
+=== [gemini-2.5-flash] 14 câu — chrF TB theo chiều ===
+  vi2ja: 24.9 (n=4)
+  ja2vi: 32.6 (n=10)
