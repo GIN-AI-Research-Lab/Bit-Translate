@@ -135,16 +135,75 @@ thanhngu 2.85 / zeropronoun 3.35):
 **Đầu ra Đợt 0:** 1 checkpoint nền + 1 kết luận A/B + điền `eval/capacity_log.md` dòng
 vòng 3a (đã có đủ số 19100/30000/w0).
 
-## 3. ĐỢT 1 — corpus KD (phác thảo, chốt chi tiết sau Đợt 0)
+## 3. ĐỢT 1 — corpus KD
 
-- **Nguồn JA** (ưu tiên domain gap lớn): 841k in-domain đã có (tái dùng nguồn của
-  `bt-vong3b`) + harvest thêm nhắm: nguphap (câu chứa mẫu N2-N1), caudai (30-60 token),
-  hop (biên bản họp/business mail — corpus BSD), hoithoai. Wrapper overnight sẵn.
-- **Haiku dịch ja→vi qua Batch API** (~50% giá — xác nhận khi triển khai). Ước
-  ~$40-50/100k câu giá thường → khởi điểm **300k câu ≈ $60-150**. KHÔNG đưa draft của
-  292M cho thầy sửa — dịch thẳng (draft chất lượng 2.37 neo kéo thầy).
-- Lọc: LaBSE ≥0.8 + length-ratio + dedup (pipeline cũ). Eyeball 50 mẫu (user).
-- Mở rộng lên 841k+ CHỈ sau khi Đợt 2 sóng 1 chứng minh KD ăn.
+### 3.1 Tuyển thầy — XONG (2026-07-20), kết quả vượt kỳ vọng
+
+Tận dụng key free sẵn có (Gemini ×2, DashScope, Zhipu) thay vì trả tiền Haiku ngay:
+chạy hardbench200 qua 7 ứng viên (`eval/run_hardbench_api.py`,
+`scripts/run_teacher_bench.sh`), rồi **judge mù 15 giám khảo** (5 panel × 3 người,
+rubric acc/nat 0-5 y hệt protocol cũ) so 2 ứng viên đầu bảng chrF vs Google/Haiku
+(`eval/build_judge_panels_custom.py` — bản tổng quát không hardcode 4 hệ cũ).
+
+| Hệ | acc ja→vi | acc vi→ja | %acc≥4 | vs Google ja→vi |
+|---|---|---|---|---|
+| Google | 3.22 | 3.40 | 40.5% | mốc |
+| Haiku | 4.10 | 4.31 | 79.0% | +0.88 |
+| qwen-plus | 4.72 | 4.47 | 90.0% | +1.50 |
+| **gemini-flash-lite-latest** | **4.90** | **4.79** | **96.0%** | **+1.68** |
+
+**gemini-flash-lite THẮNG Google ở 10/10 domain ja→vi** (kể cả domain khó nhất:
+keigo 4.87 vs 2.73, thanhngu 4.80 vs 2.63, hoithoai 4.90 vs 2.63), thắng cả Haiku.
+qwen-plus theo sát, cũng thắng Google 10/10. Đối đầu theo câu: gemini-lite vs
+Google 170 thắng/21 hòa/9 thua (n=200); vs Haiku 129/62/9. Xác nhận bằng tay (không
+phải ảo giác chỉ số): cả hai dịch đúng kính ngữ, đúng nghĩa bóng thành ngữ, đúng
+ngữ pháp phức tạp (「わけではない」phủ định kép).
+
+**Quyết định ban đầu** (trước khi pilot): dùng cả 4 Qwen + Gemini flash-lite,
+ước ~50-70k câu. **Pilot 2026-07-20 (300 câu/model + audit lớp 3 phân tầng) ĐẢO
+NGƯỢC quyết định này:**
+
+| Model | Rule-filter đạt | Lỗi nghĩa thật (mẫu audit) | Quyết định |
+|---|---|---|---|
+| gemini-flash-lite | 99.7% | 0/30 (0%) | **GIỮ** — thầy chính |
+| qwen-plus | 100% | 0/30 (0%) | **GIỮ** — thầy chính |
+| qwen-flash | 99.0% | 11/100 (11%, mẫu mở rộng n=100) | **LOẠI** — false-friend thuật ngữ IT lặp lại có hệ thống (イメージ→"hình ảnh" thay vì Docker image, 枯れている→"lỗi thời" thay vì "đã ổn định/chín muồi" — ĐẢO hàm ý tích cực→tiêu cực; 1 ca đảo phủ định nghiêm trọng) |
+| qwen-turbo | 97.3% | 4/30 (13%) | **LOẠI** — đảo nghĩa (貫く"tuân thủ"→"xuyên thủng"), bỏ sót nội dung |
+| qwen-max | 98.0% | 5/30 (16.7%) | **LOẠI** — false-friend (エージェント→"đại lý" thay vì AI agent), lẫn ký tự Cyrillic, artifact "Bản dịch:" sót lại, TỆ NHẤT dù là tier đắt nhất |
+
+Áp đúng luật `eval/QUALITY_GATE.md` ("mode nào lỗi >5% thì đọc FULL mode đó") —
+3 model Qwen còn lại đều vượt xa 5%, đọc full hàng chục nghìn câu không thực tế
+→ loại hẳn thay vì cố dùng.
+
+**Roster thầy CUỐI CÙNG: chỉ gemini-flash-lite + qwen-plus.** Ràng buộc quota:
+qwen-plus ước dịch được ~10-15k câu (giới hạn 1M token output), Gemini 500 req/
+ngày/key × 2 key = 1000 câu/ngày. Tổng khả dụng **~17-22k câu trong ~1 tuần, 0
+đồng** — nhỏ hơn ước tính ban đầu (50-70k) nhưng error rate ~0% thay vì 7-17%.
+
+### 3.2 Pipeline sinh + lọc (đã dựng 2026-07-20)
+
+- `scripts/gen_kd_corpus.py`: dịch hàng loạt ja→vi từ nguồn JA 1 câu/dòng, resume
+  theo số dòng đã có, không dùng draft 292M (dịch thẳng từ JA thật — tránh neo theo
+  chất lượng yếu 2.37 của model đang train).
+- Nguồn: `data/synthetic/kd/ja_pool.txt` = 841k câu của `bt-vong3b` (tái dùng, đã
+  xáo trộn seed 20260720) — filter_ja_mono.py đã lọc rác nguồn từ trước (BT vòng 3b).
+- **QC 4 lớp (tái dùng `eval/QUALITY_GATE.md`, bỏ lớp đọc seed vì đây dịch câu thật
+  không sinh từ gloss):**
+  1. Rule filter code (`scripts/filter_kd_corpus.py`): rò ngôn ngữ, tỉ lệ độ dài,
+     dedup, artifact cụ thể thấy trong judge audit (leftover `<think>`, placeholder
+     "anh/chị" kiểu X/Y, ký tự Hán giản thể lẫn vào — model đôi lúc trộn ngôn ngữ).
+  2. LaBSE ≥0.80 (`scripts/labse_score.py`, tổng quát hoá từ labse_score_vong3.py) —
+     bắt đảo nghĩa/hallucination mà rule bỏ sót (đúng loại lỗi 15 giám khảo vừa chỉ
+     ra: "gấu"→クマ nghĩa đen, đảo chủ thể câu xin phép).
+  3. Đọc mẫu phân tầng ~30 câu/model (Claude) — model nào lỗi >5% thì đọc full batch.
+  4. **PILOT trước khi tiêu quota**: 300-500 câu/model, đo tỉ lệ reject thật qua cả
+     3 lớp trên, HIỆU CHỈNH ngưỡng nếu cần, rồi mới launch full 50-70k.
+
+### 3.3 Mở rộng (sau khi G Đợt 2 sóng 1 xác nhận KD ăn)
+
+Nếu cần thêm khối lượng: đăng ký thêm tài khoản DashScope quốc tế (mỗi tài khoản
+1M token/model mới) hoặc trả tiền Haiku Batch API cho phần vượt quota free — chỉ
+làm sau khi có bằng chứng KD cải thiện judge acc thật ở sóng 1.
 
 ## 4. ĐỢT 2 — train KD (phác thảo)
 

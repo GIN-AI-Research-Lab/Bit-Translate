@@ -1,0 +1,1202 @@
+{
+ "1": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "2": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "3": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "4": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "5": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "6": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "7": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "8": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "9": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "10": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "11": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "12": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "13": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "14": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "15": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "16": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "17": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "18": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "19": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "20": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "21": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "22": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "23": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "24": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "25": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "26": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "27": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "28": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "29": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "30": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "31": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "32": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "33": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "34": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "35": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "36": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "37": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "38": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "39": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "40": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "41": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "42": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "43": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "44": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "45": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "46": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "47": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "48": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "49": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "50": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "51": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "52": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "53": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "54": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "55": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "56": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "57": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "google"
+ },
+ "58": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "59": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "60": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "61": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "62": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "63": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "64": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "65": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "66": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "67": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "68": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "69": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "70": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "71": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "72": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "73": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "74": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "75": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "76": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "77": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "78": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "79": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "80": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "81": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "82": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "83": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "84": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "85": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "86": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "87": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "88": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "89": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "90": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "91": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "92": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "93": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "94": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "95": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "96": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "97": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "98": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "99": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "google"
+ },
+ "100": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "101": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "google"
+ },
+ "102": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "103": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "104": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "105": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "106": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "107": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "108": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "109": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "110": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "111": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "112": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "113": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "114": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "115": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "116": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "117": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "118": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "119": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "120": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "121": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "122": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "123": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "124": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "125": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "126": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "127": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "128": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "129": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "130": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "131": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "132": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "133": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "134": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "135": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "136": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "137": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "138": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "139": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "140": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "141": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "142": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "143": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "144": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "145": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "146": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "147": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "148": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "149": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "150": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "151": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "152": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "153": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "154": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "155": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "156": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "157": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "158": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "159": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "160": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "161": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "162": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "163": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "164": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "google"
+ },
+ "165": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "166": {
+  "A": "qwen-plus",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "167": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "168": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "169": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "170": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "171": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "172": {
+  "A": "google",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "173": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "174": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "175": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "176": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "177": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "haiku"
+ },
+ "178": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "179": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "180": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "181": {
+  "A": "qwen-plus",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "182": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "haiku"
+ },
+ "183": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "qwen-plus"
+ },
+ "184": {
+  "A": "haiku",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "185": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "186": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "187": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "188": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "189": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "190": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "qwen-plus"
+ },
+ "191": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "192": {
+  "A": "haiku",
+  "B": "google",
+  "C": "qwen-plus",
+  "D": "gemini-lite"
+ },
+ "193": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "194": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "195": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "qwen-plus",
+  "D": "google"
+ },
+ "196": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "qwen-plus"
+ },
+ "197": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "198": {
+  "A": "google",
+  "B": "qwen-plus",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "199": {
+  "A": "qwen-plus",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "200": {
+  "A": "gemini-lite",
+  "B": "qwen-plus",
+  "C": "haiku",
+  "D": "google"
+ }
+}
