@@ -31,3 +31,4 @@ tokenizer/train.log
 # tarball data/premix ở root — sống trên GitHub Release, không commit
 /*.tar.zst
 /*.tar.gz
+premix_*/
