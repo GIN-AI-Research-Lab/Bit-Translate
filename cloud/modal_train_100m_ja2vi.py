@@ -80,7 +80,7 @@ def setup():
     print("SETUP XONG — Volume sẵn sàng cho ::train.", flush=True)
 
 
-@app.function(image=image, volumes={"/persist": vol}, secrets=[gh], gpu="L40S",
+@app.function(image=image, volumes={"/persist": vol}, secrets=[gh], gpu="A10G",
               cpu=8.0, memory=16384, timeout=8 * 3600)
 def train():
     """Train 100M từ đầu (step=0 nếu chưa có last.pt, tự resume nếu gọi lại)."""
