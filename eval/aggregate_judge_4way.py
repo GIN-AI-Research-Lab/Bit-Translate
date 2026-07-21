@@ -79,7 +79,10 @@ for dom, d in doms:
     vals = [mean([per_item[i][s]["acc"] for i in ids]) for s in SYS]
     print(f"{dom:12} {d:6} " + " ".join(f"{v:7.2f}" for v in vals))
 
-for a, b in ((SYS[0], "google"), ("haiku", "google"), ("haiku", "fable")):
+PAIRS = [(SYS[0], "google"), ("haiku", "google"), ("haiku", "fable"), ("v3", "292m")]
+for a, b in PAIRS:
+    if a not in _present or b not in _present:
+        continue
     w = sum(1 for i in per_item if per_item[i][a]["acc"] > per_item[i][b]["acc"])
     t = sum(1 for i in per_item if per_item[i][a]["acc"] == per_item[i][b]["acc"])
     print(f"\nDoi dau {a} vs {b} (acc TB/cau): thang {w} / hoa {t} / thua {len(per_item)-w-t}")
