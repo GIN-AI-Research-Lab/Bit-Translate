@@ -26,6 +26,7 @@ from text_norm import normalize_for_model  # noqa: E402  (NFKC — llama.cpp kho
 UPSTREAM = "http://127.0.0.1:8080"
 BOS, EOS = 2, 3
 TAG = {"jpn": 5, "vie": 4}
+FIX = 32000
 HERE = Path(__file__).parent
 
 
@@ -66,6 +67,20 @@ def translate_seg(seg, tag, n_predict, cache):
         "prompt": ids, "n_predict": n_predict, "temperature": 0.0, "cache_prompt": cache,
         # chống vòng lặp thoái hoá khi gặp câu ngoài phân phối (idiom, văn chương):
         # greedy thuần không penalty -> "những phần khác, những phần khác..." vô hạn.
+        "repeat_penalty": 1.25, "repeat_last_n": 64,
+    })
+    return (out.get("content") or "").strip(), out.get("timings", {}), len(ids)
+
+
+def fix_seg(ja_seg, draft_vi, n_predict, cache):
+    """Self-edit lượt 2: [BOS, FIX] + ja + EOS + draft_vi + EOS -> bản đã sửa."""
+    ja_seg = normalize_for_model(ja_seg)
+    draft_vi = normalize_for_model(draft_vi)
+    ja_ids = upstream_json("/tokenize", {"content": ja_seg})["tokens"]
+    draft_ids = upstream_json("/tokenize", {"content": draft_vi})["tokens"]
+    ids = [BOS, FIX] + ja_ids + [EOS] + draft_ids + [EOS]
+    out = upstream_json("/completion", {
+        "prompt": ids, "n_predict": n_predict, "temperature": 0.0, "cache_prompt": cache,
         "repeat_penalty": 1.25, "repeat_last_n": 64,
     })
     return (out.get("content") or "").strip(), out.get("timings", {}), len(ids)
@@ -129,22 +144,32 @@ class Handler(BaseHTTPRequestHandler):
             req = json.loads(self.rfile.read(n))
             text = (req.get("text") or "").strip()
             dirn = req.get("dir", "jpn")
-            tag = TAG.get(dirn, TAG["jpn"])
+            do_fix = dirn == "vie_fix"
+            tag = TAG.get("vie" if do_fix else dirn, TAG["jpn"])
             if not text:
                 return self._send(200, {"translation": "", "timings": {}, "wall_ms": 0})
             t0 = time.time()
             n_predict = int(req.get("n_predict", 96))
             segs = segment(text)
             joiner = "" if dirn == "jpn" else " "   # target JA không cách chữ, VI có
-            outs, pn, pms, gn, gms, plen = [], 0, 0.0, 0, 0.0, 0
+            outs, drafts, pn, pms, gn, gms, plen = [], [], 0, 0.0, 0, 0.0, 0
             for i, s in enumerate(segs):
-                # câu CUỐI để cache_prompt=True: re-translate khi gõ tiếp chỉ tốn phần chênh
-                txt, tm, il = translate_seg(s, tag, n_predict, i == len(segs) - 1)
-                outs.append(txt)
+                last = i == len(segs) - 1
+                # lượt 1: dịch nháp (không cache nếu còn lượt fix, vì prompt lượt fix khác hẳn)
+                draft, tm, il = translate_seg(s, tag, n_predict, last and not do_fix)
                 pn += tm.get("prompt_n", 0); pms += tm.get("prompt_ms", 0.0)
                 gn += tm.get("predicted_n", 0); gms += tm.get("predicted_ms", 0.0)
                 plen += il
-            self._send(200, {
+                if do_fix:
+                    drafts.append(draft)
+                    fixed, tm2, il2 = fix_seg(s, draft, n_predict, last)
+                    outs.append(fixed)
+                    pn += tm2.get("prompt_n", 0); pms += tm2.get("prompt_ms", 0.0)
+                    gn += tm2.get("predicted_n", 0); gms += tm2.get("predicted_ms", 0.0)
+                    plen += il2
+                else:
+                    outs.append(draft)
+            resp = {
                 "translation": joiner.join(outs),
                 "n_segments": len(segs),
                 "timings": {
@@ -155,7 +180,10 @@ class Handler(BaseHTTPRequestHandler):
                 },
                 "wall_ms": round((time.time() - t0) * 1000, 1),
                 "prompt_len": plen,
-            })
+            }
+            if do_fix:
+                resp["draft"] = joiner.join(drafts)
+            self._send(200, resp)
         except Exception as e:  # noqa: BLE001 - demo: trả lỗi về UI
             self._send(500, {"error": str(e)})
 

@@ -80,6 +80,9 @@
     <label class="opt">max token
       <select id="npred"><option>48</option><option selected>96</option><option>160</option></select>
     </label>
+    <label class="opt" id="fixwrap" style="display:none">
+      <input id="fix" type="checkbox"> self-edit <code>&gt;&gt;fix&lt;&lt;</code>
+    </label>
   </div>
 
   <div class="io">
@@ -87,6 +90,7 @@
     <div class="out" id="out"><span class="ph">bản dịch hiện ở đây</span></div>
   </div>
   <div class="statusline" id="status"></div>
+  <div class="statusline" id="draftline"></div>
 
   <div class="grid">
     <div class="card"><div class="k">Độ trễ (client)</div><div class="v" id="m-lat">–</div></div>
@@ -120,6 +124,9 @@ function setDir(d) {
   $("src").placeholder = d === "jpn"
     ? "Gõ tiếng Việt ở đây — dịch liên tục theo từng phím…"
     : "ここに日本語を入力 — 打つたびに翻訳します…";
+  $("fixwrap").style.display = d === "vie" ? "flex" : "none";   // >>fix<< chỉ train cho JA->VI
+  if (d !== "vie") $("fix").checked = false;
+  $("draftline").textContent = "";
   queueTranslate();
 }
 $("d-jpn").onclick = () => setDir("jpn");
@@ -138,9 +145,10 @@ async function fire() {
   $("out").classList.add("busy");
   const t0 = performance.now();
   try {
+    const reqDir = (dir === "vie" && $("fix").checked) ? "vie_fix" : dir;
     const r = await fetch("/translate", {
       method: "POST", headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ text, dir, n_predict: +$("npred").value }),
+      body: JSON.stringify({ text, dir: reqDir, n_predict: +$("npred").value }),
     });
     const j = await r.json();
     const lat = performance.now() - t0;
@@ -150,6 +158,7 @@ async function fire() {
     } else {
       $("out").textContent = j.translation || "";
       if (!j.translation) $("out").innerHTML = '<span class="ph">bản dịch hiện ở đây</span>';
+      $("draftline").textContent = j.draft ? `nháp (trước fix): ${j.draft}` : "";
       $("status").textContent = "";
       paintTimings(j, lat);
     }
