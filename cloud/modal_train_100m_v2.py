@@ -86,7 +86,7 @@ def setup():
     print("SETUP XONG — Volume sẵn sàng cho ::train.", flush=True)
 
 
-@app.function(image=image, volumes={"/persist": vol}, secrets=[gh], gpu="A10G",
+@app.function(image=image, volumes={"/persist": vol}, secrets=[gh], gpu="L40S",
               cpu=8.0, memory=16384, timeout=6 * 3600)
 def train():
     """Resume checkpoint seed (step10500, vocab đã mở 32001) -> 13000, multi-task."""
