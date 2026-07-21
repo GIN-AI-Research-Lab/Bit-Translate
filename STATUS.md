@@ -21,14 +21,17 @@
      còn TỆ hơn greedy → chất lượng KHÔNG giấu trong weights, đòn bẩy decoding chết.
    - `>>fix<<` test tay 2 ca: 1 sửa đúng 1 sửa hỏng — không có nguồn sự thật, chỉ
      pattern-match; không cứu được lỗi thiếu kiến thức (lớp lỗi chủ đạo).
-   **⇒ 3 lựa chọn còn trên bàn (user chưa chốt):** (A) KD toàn phần đúng chuẩn
-   distillation — dịch lại target của corpus bằng thầy đã kiểm chứng
-   (gemini-lite 4,90 acc / Haiku Batch ~$150-200 cho 841k câu pool JA) thay vì
-   rắc thêm; (B) quay lại 292M làm tier chất lượng (2,42, cũng đang trần
-   2,37-2,42 — KD toàn phần cũng sẽ giúp nó); (C) chấp nhận mức hiện tại, xây
-   glossary-injection lúc inference (mechanism `[term=...]` đã train từ vòng 3a)
-   + thu hẹp domain (IT/công sở). Khuyến nghị kỹ thuật: A là công thức chuẩn
-   ngành làm model dịch nhỏ tốt (distilled-NLLB/Opus-MT student đều làm vậy).
+   **⇒ USER ĐÃ CHỐT (2026-07-21 tối): PHƯƠNG ÁN A — KD TOÀN PHẦN, 2 giai đoạn.**
+   Chi tiết đầy đủ ở `PLAN_KD_JA2VI.md §7.3`: GĐ1 = 200k câu bằng gemini-flash-lite
+   TRẢ PHÍ (~$5-20, rẻ hơn nhiều ước tính Haiku cũ vì 2.5-lite chỉ $0,10/$0,40
+   per MTok) → train +2.500-3.000 step từ v4, mix KD 60-70%, **gate ≥ +0,3 acc**;
+   GĐ2 nếu pass = dịch lại TOÀN BỘ 11,5M corpus (~$90-180) + pool 841k. KHÔNG
+   spam thầy yếu (qwen-max/turbo/flash lỗi 11-17%, LaBSE không bắt được — §7.2).
+   Một phần data sinh kèm ngữ cảnh (`ctx|||`) dạy context-awareness.
+   **BLOCKER: chờ user bật billing 1 key Gemini** — xong là chạy pilot-audit 300
+   câu rồi bung GĐ1. Nhánh B đề xuất song song (chưa chốt, `PLAN_KD_JA2VI.md
+   §7.4`): pilot fine-tune Qwen3-1.7B/4B trên data KD sẵn có (~$5-15) = baseline
+   CLAUDE.md §6 chưa từng làm — cho tier "hiểu ngôn ngữ" 1-2,5GB CPU.
 
 2. **Checkpoint/hạ tầng hiện có (2026-07-21):** 100M v4 step15500 = bản mạnh nhất
    nhánh 100M (`autosave-100m-v4`, v4_aa); ft15600 nhỉnh hơn không đáng kể

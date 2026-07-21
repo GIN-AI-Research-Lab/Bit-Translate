@@ -272,3 +272,64 @@ dừng khi held-out bắt đầu tụt (chữ ký overfit đã thấy ở wave0)
 4. Nếu chạy Đợt 1: JA nguồn đã sẵn `data/synthetic/kd/ja_pool.txt` (841k câu, đã xáo
    trộn) — chỉ cần chạy `gen_kd_corpus.py` với START/COUNT không chồng lấn cho 2 model,
    qua rule filter + LaBSE (ngưỡng đã chốt 0.55) + đọc mẫu phân tầng trước khi mix.
+
+## 7. KẾT QUẢ CHUỖI 100M v3/v4/finetune + QUYẾT ĐỊNH MỚI (2026-07-21 tối)
+
+### 7.1 Chuỗi bằng chứng — mọi đòn bẩy "rẻ" đã thử và đo, đều KHÔNG phá được trần
+
+Toàn bộ số dưới đây là judge mù (protocol chuẩn), không phải chrF. Chi tiết:
+`eval/judge_4way_v3`, `eval/judge_flores_v3`, `eval/judge_ft`, commit `dad890c`/`48e1f02`.
+
+| Thí nghiệm | Kết quả | Kết luận |
+|---|---|---|
+| v1→v3: +19.584 KD + 2.759 fix (oversample nhỏ) | acc ja→vi 1,93 → 2,08 | nhích nhẹ, thua 292M (2,42 cùng panel) |
+| FLORES câu ĐƠN GIẢN v3 vs Google | 2,45 vs 4,83; đối đầu 1/6/93 | khoảng cách thật ở MỌI độ khó, không phải do đề khó |
+| v3→v4: +12.806 KD backlog (32.390 tổng, ~0,84% mix) | chrF đứng yên (41,4 / 34,1) | thêm KD nhỏ giọt vô tác dụng |
+| **Clean-finetune** +300 step từ v4, KD ĐẬM 35% mix | milestone tốt nhất (15600) chỉ **+0,05 acc** (2,83 vs 2,78); 15700/15800 tụt (overfit) | **giả thuyết "KD bị pha loãng" BỊ BÁC — 32k câu là quá ít, kể cả đậm đặc** |
+| Rerank probe (`eval/rerank_probe.py`) | oracle 9 bản +5,2 chrF; LaBSE-rerank TỆ hơn greedy | chất lượng KHÔNG giấu trong weights — đòn bẩy decoding chết |
+| `>>fix<<` test tay | 1 sửa đúng / 1 sửa hỏng | không có nguồn sự thật, chỉ pattern-match; không cứu lỗi thiếu kiến thức |
+
+Fix hạ tầng kèm theo (đã kiểm chứng L40S): `--max-seq 384` (RoPE cache crash với
+data fix 320 token), `--pad-multiple 32` + `recompile_limit=64` → **0,89s/step
+~50k tok/s** (gấp 3 lần v3) sau warmup compile ~45' một lần/container.
+
+### 7.2 Nhận thức nền đã chốt với user (đặt kỳ vọng)
+
+- "Dịch kiểu hiểu như Haiku" sống ở pretrain nghìn-tỷ-token + hàng tỷ tham số —
+  KHÔNG tồn tại lượng cặp câu nào đưa 100M lên trình đó. Trần của size này =
+  Opus-MT/distilled-NLLB: dùng được ở văn bản thường/domain hẹp, thua LLM ở
+  thành ngữ/suy luận ngữ cảnh. Lợi thế độc quyền: offline CPU 67MB, 320 tok/s, 0đ.
+- KHÔNG "spam" thầy yếu: qwen-max/turbo/flash lỗi 11-17% có hệ thống, LaBSE
+  không bắt được (Pod→podcast score 0.705 > ngưỡng), verify chéo thất bại 0/5 —
+  chỉ dùng thầy đã kiểm chứng (gemini-flash-lite 4,90 / qwen-plus 4,72).
+- Data đúng → model "phải dịch đúng" là kỳ vọng quá mức: sức chứa giới hạn,
+  thầy 4,9/5 chứ không 5/5, coverage hữu hạn. Kỳ vọng thực: bớt hẳn câu vô
+  nghĩa/lặp, tự nhiên lên rõ — bước nhảy lớn nhất có thể có, nhưng không "như thầy".
+
+### 7.3 QUYẾT ĐỊNH: phương án A — KD TOÀN PHẦN, làm theo 2 giai đoạn
+
+User chốt 2026-07-21 tối. Công thức chuẩn seq-level KD (Kim & Rush 2016,
+distilled-NLLB/Opus-MT student): thay target nhiễu của corpus bằng bản dịch
+thầy, không phải rắc thêm gia vị.
+
+- **GĐ1 (gate trước khi tiêu tiếp):** dịch **200k câu** từ `ja_pool.txt` (tránh
+  chồng range ~35k đã dùng) bằng gemini-flash-lite TRẢ PHÍ (paid tier, RPM cao;
+  giá 2.5-lite $0,10/$0,40 per MTok, batch ½ giá → GĐ1 ~$5-20). Pilot-audit 300
+  câu đầu xác nhận paid = free về chất lượng. QC pipeline cũ (rule filter +
+  LaBSE 0.55). Train +2.500-3.000 step từ v4 step15500, mix KD chiếm 60-70%.
+  **Gate: judge acc ja→vi ≥ +0,3 so v4.** Một phần data sinh KÈM NGỮ CẢNH
+  (format `ctx|||` sẵn có) để dạy context-awareness.
+- **GĐ2 (nếu gate pass):** dịch lại **toàn bộ 11,5M corpus** (~$90 batch /
+  ~$180 sync — câu OpenSubtitles ngắn ~15 token JA) + phần còn lại pool 841k
+  (~$12-24). Cân nhắc from-scratch v5 trên data sạch toàn phần vs tiếp tục từ
+  v4 — quyết bằng số GĐ1.
+- **BLOCKER hiện tại:** chờ user bật billing cho 1 key Gemini.
+
+### 7.4 Nhánh B đề xuất song song (chưa chốt): pilot fine-tune LLM nhỏ có sẵn
+
+Chính là "baseline đối chứng" CLAUDE.md §6 chưa bao giờ làm: fine-tune
+Qwen3-1.7B/4B (hoặc Gemma-3) — pretrain sẵn nghìn tỷ token nên CÓ "hiểu +
+ngữ cảnh" thật — trên chính data KD của mình, quantize INT4 chạy CPU
+(1-2,5GB, ~8-40 tok/s trên 5600X). Pilot ~$5-15: judge cùng protocol để so
+trực tiếp 2 tier "100M siêu nhẹ" vs "1.7B hiểu ngôn ngữ" bằng số liệu.
+Data KD của GĐ1/GĐ2 dùng được cho CẢ HAI đường.
