@@ -23,21 +23,28 @@ def main():
 
     ck = torch.load(args.ckpt, map_location="cpu", weights_only=False)
     sd = ck["model"]
-    key = "embed.weight"
-    assert key in sd, f"không thấy {key} trong checkpoint — kiểm tra lại tên tham số"
-    old = sd[key]
+    # BUG ĐÃ SỬA: embed.weight và lm_head.weight TIED trong model đang chạy (cùng
+    # nn.Parameter, xem src/bitnet.py) nhưng torch.save() state_dict() LƯU THÀNH
+    # 2 KEY RIÊNG (không phải cùng 1 tensor object khi load lại) -> chỉ mở
+    # "embed.weight" mà quên "lm_head.weight" gây lỗi thật: "size mismatch for
+    # lm_head.weight: ... torch.Size([32000, 768])" khi resume train.py.
+    KEYS = ["embed.weight", "lm_head.weight"]
+    for key in KEYS:
+        assert key in sd, f"không thấy {key} trong checkpoint — kiểm tra lại tên tham số"
+    old = sd[KEYS[0]]
     old_vocab, d_model = old.shape
     add = args.new_vocab - old_vocab
     assert add >= 0, f"new-vocab ({args.new_vocab}) < vocab hiện tại ({old_vocab})"
     if add == 0:
         print(f"vocab đã là {old_vocab}, không cần mở rộng.")
-        new = old
     else:
         extra = torch.empty(add, d_model)
         torch.nn.init.normal_(extra, mean=0.0, std=0.02)  # khớp init gốc (xem src/bitnet.py)
         new = torch.cat([old, extra], dim=0)
-        print(f"embed.weight: {tuple(old.shape)} -> {tuple(new.shape)} (+{add} hàng, init N(0,0.02))")
-    sd[key] = new
+        print(f"embed.weight/lm_head.weight: {tuple(old.shape)} -> {tuple(new.shape)} "
+              f"(+{add} hàng, init N(0,0.02), CÙNG giá trị cho cả 2 key vì tied)")
+        for key in KEYS:
+            sd[key] = new.clone()
 
     cfg = dict(ck.get("cfg", {}))
     cfg["vocab_size"] = args.new_vocab
