@@ -33,6 +33,22 @@
    §7.4`): pilot fine-tune Qwen3-1.7B/4B trên data KD sẵn có (~$5-15) = baseline
    CLAUDE.md §6 chưa từng làm — cho tier "hiểu ngôn ngữ" 1-2,5GB CPU.
 
+   **📊 ERROR TAXONOMY 100 câu fail ja→vi (2026-07-21 tối, đề xuất reviewer ngoài,
+   `eval/error_taxonomy_100.md` + `.json`):** phân loại nguyên nhân chính 100 câu
+   fail (acc≤2) của v3 (66 hardbench + 34 FLORES): **sai nghĩa/vỡ cấu trúc 61%**,
+   tên riêng/số liệu 12%, bỏ sót 8%, thuật ngữ 7%, keigo/register 6%,
+   hallucination 5%, tiếng Việt vụng 1%. ⇒ **~74% là lỗi năng lực biểu diễn ngữ
+   nghĩa** (câu ghép, passive, lồng vai — toàn từ phổ thông); chỉ ~25% là lớp
+   data-nhắm-đích (glossary/keigo/domain) chạm tới được; idiom-mặt-chữ chỉ 9%.
+   Hai pattern con: (a) **đảo vai/đảo phủ định 13%** — hiểu ngược 180°, nguy hiểm
+   nhất, đáng làm metric riêng (đếm tỉ lệ lật chủ thể/phủ định trên probe cố
+   định, rẻ hơn judge, nhạy hơn chrF); (b) lỗi tên riêng đa số là phiên âm
+   katakana hỏng hệ thống (Miller→"gương", Mike→"micro"), glossary không cứu.
+   Củng cố Phương án A: KD toàn phần đánh đúng khối SEM (dạy parse/giữ vai trên
+   diện rộng); nếu KD toàn phần vẫn không phá được khối này → trần là sức chứa
+   100M, chuyển hẳn sang 292M. Caveat: 1 người phân loại (Claude), 1 lượt, chưa
+   kiểm chứng chéo — reviewer có thể tự phân loại lại mù từ file JSON để so khớp.
+
 2. **Checkpoint/hạ tầng hiện có (2026-07-21):** 100M v4 step15500 = bản mạnh nhất
    nhánh 100M (`autosave-100m-v4`, v4_aa); ft15600 nhỉnh hơn không đáng kể
    (`autosave-100m-ft`). v3 step13000: `autosave-100m-v3`. 292M step30000 vẫn là

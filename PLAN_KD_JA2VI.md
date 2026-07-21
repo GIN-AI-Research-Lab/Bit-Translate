@@ -288,6 +288,7 @@ Toàn bộ số dưới đây là judge mù (protocol chuẩn), không phải ch
 | **Clean-finetune** +300 step từ v4, KD ĐẬM 35% mix | milestone tốt nhất (15600) chỉ **+0,05 acc** (2,83 vs 2,78); 15700/15800 tụt (overfit) | **giả thuyết "KD bị pha loãng" BỊ BÁC — 32k câu là quá ít, kể cả đậm đặc** |
 | Rerank probe (`eval/rerank_probe.py`) | oracle 9 bản +5,2 chrF; LaBSE-rerank TỆ hơn greedy | chất lượng KHÔNG giấu trong weights — đòn bẩy decoding chết |
 | `>>fix<<` test tay | 1 sửa đúng / 1 sửa hỏng | không có nguồn sự thật, chỉ pattern-match; không cứu lỗi thiếu kiến thức |
+| **Error taxonomy 100 câu fail** (`eval/error_taxonomy_100.md`) | sai nghĩa/vỡ cấu trúc **61%**, tên riêng/số 12%, sót 8%, thuật ngữ 7%, keigo 6%, hallucination 5%; idiom-mặt-chữ chỉ 9%; đảo vai/phủ định 13% | **~74% fail là năng lực biểu diễn ngữ nghĩa, chỉ ~25% chạm được bằng data nhắm đích** — nút thắt KHÔNG phải glossary/domain; khớp và củng cố phương án A |
 
 Fix hạ tầng kèm theo (đã kiểm chứng L40S): `--max-seq 384` (RoPE cache crash với
 data fix 320 token), `--pad-multiple 32` + `recompile_limit=64` → **0,89s/step
