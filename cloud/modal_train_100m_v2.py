@@ -47,7 +47,10 @@ gh = modal.Secret.from_name("github-token")
 DIMS = "--d-model 768 --n-layers 12 --n-heads 12 --d-ff 2048 --vocab-size 32001"
 # +2500 step (10500->13000), LR êm đỉnh 1e-4 (v1 gốc 3e-4), lr-anchor=10500 ->
 # schedule tính lại từ đây. milestone/save mỗi 500 step để đo giữa chừng.
-TRAIN_ARGS = ("--max-tokens 8192 --grad-accum 16 --compile "
+# --max-seq 384: xem bug thật + fix trong modal_train_100m_v3.py (RoPE cache
+# 256 mặc định < 320 token của data >>fix<<) — v2 dùng chung data fix nên dính
+# CÙNG bug (chỉ chưa kịp crash vì bị dừng sớm hơn).
+TRAIN_ARGS = ("--max-tokens 8192 --grad-accum 16 --compile --max-seq 384 "
               "--max-steps 13000 --lr-anchor 10500 --lr 1e-4 --min-lr 1e-5 --warmup 100 "
               "--save-every 100 --milestone-every 500 --log-every 10")
 

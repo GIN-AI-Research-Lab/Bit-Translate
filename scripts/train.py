@@ -141,6 +141,13 @@ def main():
                     help="đổi khi tokenizer có thêm token mới (vd >>fix<<, "
                          "scripts/add_fix_token.py) — phải khớp checkpoint đã "
                          "mở rộng bằng scripts/expand_checkpoint_vocab.py")
+    ap.add_argument("--max-seq", type=int, default=256,
+                    help="độ dài tối đa cache RoPE (BitNetConfig.max_seq) — PHẢI "
+                         ">= chiều dài sequence dài nhất trong data (vd task "
+                         ">>fix<< đóng gói tới 320 token, xem "
+                         "scripts/pack_fix_into_bin.py MAX_SEQ). Sequence dài hơn "
+                         "giá trị này crash RuntimeError trong apply_rope (đã xảy "
+                         "ra thật ở v3 step~10500+, tensor 270 vs cache 256).")
     args = ap.parse_args()
 
     CKPT.mkdir(exist_ok=True)
@@ -158,7 +165,7 @@ def main():
     print(f"train sequences: {len(idx):,} | tokens: {len(toks):,}", flush=True)
 
     cfg = BitNetConfig(vocab_size=args.vocab_size, d_model=args.d_model, d_ff=args.d_ff,
-                       n_layers=args.n_layers, n_heads=args.n_heads)
+                       n_layers=args.n_layers, n_heads=args.n_heads, max_seq=args.max_seq)
     model = BitNetLM(cfg).to(device)
     model.gradient_checkpointing = args.grad_ckpt
     model.ckpt_every_k = args.ckpt_every_k

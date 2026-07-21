@@ -43,7 +43,13 @@ vol = modal.Volume.from_name("vija-100m-v3-vol", create_if_missing=True)
 gh = modal.Secret.from_name("github-token")
 
 DIMS = "--d-model 768 --n-layers 12 --n-heads 12 --d-ff 2048 --vocab-size 32001"
-TRAIN_ARGS = ("--max-tokens 8192 --grad-accum 16 --compile "
+# --max-seq 384: BUG THẬT gặp lúc train (2026-07-21) — BitNetConfig mặc định
+# max_seq=256 (cache RoPE), nhưng data >>fix<< đóng gói tới 320 token
+# (pack_fix_into_bin.py MAX_SEQ=320) -> RuntimeError apply_rope khi dataloader
+# rút trúng batch dài (270 > 256 cache) tại step~10500+. rope_cos/sin là buffer
+# persistent=False (không nằm trong checkpoint) nên đổi max_seq an toàn khi
+# resume, không cần sửa last.pt.
+TRAIN_ARGS = ("--max-tokens 8192 --grad-accum 16 --compile --max-seq 384 "
               "--max-steps 13000 --lr-anchor 10500 --lr 1e-4 --min-lr 1e-5 --warmup 100 "
               "--save-every 100 --milestone-every 500 --log-every 10")
 
