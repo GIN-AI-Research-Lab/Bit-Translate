@@ -65,7 +65,11 @@ def norm(s):
 
 
 def main():
-    subprocess.run(["pkill", "-f", "llama-server"], capture_output=True)
+    # -x (khớp đúng tên tiến trình): pkill -f khớp theo TOÀN BỘ command line, tự
+    # giết luôn tiến trình cha đang gọi script này nếu nó có "llama-server" trong
+    # cmdline (vd biến môi trường LLAMA_SERVER=.../llama-server) — bug đã xảy ra
+    # thật: script chết ngay lập tức (SIGTERM), im lặng hoàn toàn, bất kể quy mô.
+    subprocess.run(["pkill", "-x", "llama-server"], capture_output=True)
     time.sleep(1.5)
     subprocess.Popen([SERVER, "-m", GGUF,
                       "--host", "127.0.0.1", "--port", "8080", "-t", "6", "-c", "256",

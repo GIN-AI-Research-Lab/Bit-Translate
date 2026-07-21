@@ -1,0 +1,1202 @@
+{
+ "1": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "2": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "3": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "4": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "5": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "6": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "7": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "8": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "9": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "10": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "11": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "12": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "13": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "14": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "15": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "16": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "17": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "18": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "19": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "20": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "21": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "22": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "23": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "24": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "25": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "26": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "27": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "28": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "29": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "30": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "31": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "32": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "33": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "34": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "35": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "36": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "37": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "38": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "39": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "40": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "41": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "42": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "43": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "44": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "45": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "46": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "47": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "48": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "49": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "50": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "51": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "52": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "53": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "54": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "55": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "56": {
+  "A": "google",
+  "B": "100M",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "57": {
+  "A": "100M",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "58": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "59": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "60": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "61": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "62": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "63": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "64": {
+  "A": "google",
+  "B": "100M",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "65": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "66": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "67": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "68": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "69": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "70": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "71": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "72": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "73": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "74": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "75": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "76": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "77": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "78": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "79": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "80": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "81": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "82": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "83": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "84": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "85": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "86": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "87": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "88": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "89": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "90": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "91": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "92": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "93": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "94": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "95": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "96": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "97": {
+  "A": "google",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "98": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "99": {
+  "A": "100M",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "100": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "101": {
+  "A": "100M",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "102": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "103": {
+  "A": "google",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "104": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "105": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "106": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "107": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "108": {
+  "A": "google",
+  "B": "100M",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "109": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "110": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "111": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "112": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "113": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "114": {
+  "A": "google",
+  "B": "100M",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "115": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "116": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "117": {
+  "A": "google",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "118": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "119": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "120": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "121": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "122": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "123": {
+  "A": "google",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "124": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "125": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "126": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "127": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "128": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "129": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "130": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "131": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "132": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "133": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "134": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "135": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "136": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "137": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "138": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "139": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "140": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "141": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "142": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "143": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "144": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "145": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "146": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "147": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "148": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "149": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "150": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "151": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "152": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "153": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "154": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "155": {
+  "A": "google",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "156": {
+  "A": "google",
+  "B": "haiku",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "157": {
+  "A": "google",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "158": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "159": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "160": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "161": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "162": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "haiku",
+  "D": "google"
+ },
+ "163": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "164": {
+  "A": "100M",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ },
+ "165": {
+  "A": "google",
+  "B": "100M",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "166": {
+  "A": "google",
+  "B": "100M",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "167": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "168": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "169": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "170": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "171": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "172": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "100M"
+ },
+ "173": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "174": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "175": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "176": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "177": {
+  "A": "100M",
+  "B": "google",
+  "C": "haiku",
+  "D": "gemini-lite"
+ },
+ "178": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "179": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "180": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "181": {
+  "A": "google",
+  "B": "haiku",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "182": {
+  "A": "100M",
+  "B": "haiku",
+  "C": "google",
+  "D": "gemini-lite"
+ },
+ "183": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "google"
+ },
+ "184": {
+  "A": "gemini-lite",
+  "B": "google",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "185": {
+  "A": "haiku",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "100M"
+ },
+ "186": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "187": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "188": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "189": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "190": {
+  "A": "haiku",
+  "B": "100M",
+  "C": "gemini-lite",
+  "D": "google"
+ },
+ "191": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "192": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "google",
+  "D": "100M"
+ },
+ "193": {
+  "A": "haiku",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "google"
+ },
+ "194": {
+  "A": "100M",
+  "B": "gemini-lite",
+  "C": "google",
+  "D": "haiku"
+ },
+ "195": {
+  "A": "gemini-lite",
+  "B": "100M",
+  "C": "google",
+  "D": "haiku"
+ },
+ "196": {
+  "A": "gemini-lite",
+  "B": "haiku",
+  "C": "100M",
+  "D": "google"
+ },
+ "197": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "haiku",
+  "D": "100M"
+ },
+ "198": {
+  "A": "haiku",
+  "B": "google",
+  "C": "100M",
+  "D": "gemini-lite"
+ },
+ "199": {
+  "A": "google",
+  "B": "gemini-lite",
+  "C": "100M",
+  "D": "haiku"
+ },
+ "200": {
+  "A": "100M",
+  "B": "google",
+  "C": "gemini-lite",
+  "D": "haiku"
+ }
+}

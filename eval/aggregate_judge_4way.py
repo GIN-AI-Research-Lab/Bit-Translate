@@ -52,11 +52,13 @@ for i in scores:
 
 out = {"per_item": per_item}
 payload = json.dumps(out, ensure_ascii=False, indent=1)
-# path cố định (gen_hardbench_html*.py đọc từ đây — giữ tương thích ngược) BỊ ĐÈ mỗi
-# lần chạy script này với panels dir khác nhau -> luôn ghi thêm 1 bản trong chính
-# panels dir để không mất kết quả (bài học 2026-07-20: lỡ đè mất bản step30000).
-Path(ROOT / "hardbench_4way_scores.json").write_text(payload, encoding="utf-8")
 (PD / "scores.json").write_text(payload, encoding="utf-8")
+# path cố định (gen_hardbench_html*.py đọc từ đây) CHỈ ghi khi panels dir khớp
+# đúng quy ước gate chính thức "judge_4way_*" — bài học 2026-07-20 lặp lại 3
+# LẦN: so sánh một lần (judge_teacher, judge_100m...) vô tình đè mất kết quả
+# gate step30000/25000. Muốn dùng cho HTML report thì tự cp scores.json.
+if PD.name.startswith("judge_4way_"):
+    Path(ROOT / "hardbench_4way_scores.json").write_text(payload, encoding="utf-8")
 
 print("\n=== TONG (n=%d cau, TB diem giam khao) ===" % len(per_item))
 print(f"{'he':8} {'acc vi2ja':>9} {'acc ja2vi':>9} {'nat vi2ja':>9} {'nat ja2vi':>9} {'%acc>=4':>8}")

@@ -137,6 +137,10 @@ def main():
     ap.add_argument("--d-ff", type=int, default=2048)
     ap.add_argument("--n-layers", type=int, default=12)
     ap.add_argument("--n-heads", type=int, default=12)
+    ap.add_argument("--vocab-size", type=int, default=32000,
+                    help="đổi khi tokenizer có thêm token mới (vd >>fix<<, "
+                         "scripts/add_fix_token.py) — phải khớp checkpoint đã "
+                         "mở rộng bằng scripts/expand_checkpoint_vocab.py")
     args = ap.parse_args()
 
     CKPT.mkdir(exist_ok=True)
@@ -153,7 +157,7 @@ def main():
         idx = idx[:20000]
     print(f"train sequences: {len(idx):,} | tokens: {len(toks):,}", flush=True)
 
-    cfg = BitNetConfig(d_model=args.d_model, d_ff=args.d_ff,
+    cfg = BitNetConfig(vocab_size=args.vocab_size, d_model=args.d_model, d_ff=args.d_ff,
                        n_layers=args.n_layers, n_heads=args.n_heads)
     model = BitNetLM(cfg).to(device)
     model.gradient_checkpointing = args.grad_ckpt
@@ -182,8 +186,17 @@ def main():
     if last.exists():
         ck = torch.load(last, map_location=device)
         model.load_state_dict(ck["model"])
-        opt.load_state_dict(ck["opt"])
         step = ck["step"]
+        # checkpoint mở rộng vocab (scripts/expand_checkpoint_vocab.py) KHÔNG có
+        # "opt" (shape optimizer cũ không khớp embedding mới) -> optimizer mới
+        # tinh, coi như khởi động lại pha train (multi-task >>fix<<, PLAN_KD_JA2VI).
+        if "opt" in ck:
+            try:
+                opt.load_state_dict(ck["opt"])
+            except (ValueError, RuntimeError) as e:
+                print(f"CẢNH BÁO: opt state không khớp ({e}) -> dùng optimizer mới", flush=True)
+        else:
+            print("checkpoint không có optimizer state -> dùng optimizer mới", flush=True)
         print(f"resumed at step {step}", flush=True)
 
     # Cache ternary weight qua các microbatch (BitNet b1.58): tính weight_quant 1
