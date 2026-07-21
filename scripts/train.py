@@ -221,7 +221,6 @@ def main():
             # v3) vượt quá là rơi về eager cho MỌI shape mới sau đó -> tok/s tụt
             # 3x (80k->24k đã đo thật, 2026-07-21). Nâng lên 64 làm lưới an toàn
             # thứ hai (lớp chính là --pad-multiple để giảm số shape từ gốc).
-            import torch._dynamo
             torch._dynamo.config.recompile_limit = 64
             run_model = torch.compile(model, dynamic=True)
             print("torch.compile enabled (dynamic=True, recompile_limit=64)", flush=True)
