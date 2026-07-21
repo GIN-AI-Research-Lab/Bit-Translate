@@ -1,55 +1,59 @@
-# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-20 tối)
+# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-21 tối)
 
 ## ⏭️ VIỆC TIẾP THEO (đọc trước khi làm gì mới — máy khác đọc mục này là đủ bắt nhịp)
 
-1. **ĐANG CHẠY: train 100M v1 CHỈ ja→vi, from-scratch, trên Modal (nhánh B đã chọn).**
-   Data: `scripts/filter_bin_ja2vi.py` lọc premix `train-assets-vong3a` (23,45M seq)
-   chỉ giữ chiều ja→vi (tag `>>vie<<` vị trí 1, khớp `mix_and_binarize.py`) →
-   **11.476.298 seq** (đã xác nhận CHỨA ĐỦ glossary/ctx/numeric/idiom vòng3a) +
-   `scripts/pack_kd_into_bin.py` ghép 778 câu KD (oversample ×20, tránh overfit như
-   wave0) → **11.491.858 seq, 348,8M token**, release `train-assets-ja2vi-100m`.
-   Script: `cloud/modal_train_100m_ja2vi.py` (d768/12L/12H/ff2048 ≈109,6M, step=0,
-   10.500 step ≈4 epoch, milestone mỗi 1000 step — ĐO JUDGE Ở TỪNG MILESTONE, bài
-   học wave0). **User đã chạy `::setup`+`::train` thành công** sau khi fix bug
-   `--strip-components=1` sai cấp thư mục (đã fix, xem lịch sử commit). Đang chạy
-   thật (step 30 quan sát được, ~80.500 tok/s, ETA ~2h20 từ lúc launch tối 20/07).
-   Checkpoint tự backup lên release `autosave-100m-ja2vi` (m100_aa/m100_ab).
+1. **KẾT LUẬN CHUỖI THÍ NGHIỆM 100M ja→vi (v1→v3→v4→clean-finetune, 2026-07-21):
+   MỌI đòn bẩy data-nhỏ-giọt và decoding ĐÃ THỬ VÀ ĐỀU KHÔNG PHÁ ĐƯỢC TRẦN.**
+   Chuỗi bằng chứng (chi tiết từng bước ở các mục dưới + commit `dad890c`):
+   - v1 (step10500, 778 KD): judge acc ja→vi **1,93**.
+   - v3 (step13000, +19.584 KD + 2.759 fix): **2,08** — thua 292M (2,42 cùng
+     panel), thua Google (4,05). FLORES câu ĐƠN GIẢN: v3 2,45 vs Google 4,83,
+     đối đầu 1/6/93 — khoảng cách thật ở mọi độ khó (`eval/judge_4way_v3`,
+     `eval/judge_flores_v3`).
+   - v4 (step15500, +12.806 KD backlog = 32.390 KD tổng, vẫn ~0,84% mix): chrF
+     đứng yên (41,4 FLORES; 34,1 hardbench).
+   - **Clean-finetune thử giả thuyết "KD bị pha loãng"** (+300 step từ v4, mix KD
+     ĐẬM 35%: 120k base replay + 32.390 KD ×2 + fix ×2, `cloud/modal_finetune_kd.py`):
+     milestone tốt nhất 15600 chỉ **+0,05 acc** (2,83 vs v4 2,78, đối đầu 30/45/25),
+     15700/15800 TỤT dần (overfit) — giả thuyết pha loãng BỊ BÁC. 32k KD là quá ít,
+     kể cả khi đậm đặc (`eval/judge_ft`).
+   - **Rerank probe** (`eval/rerank_probe.py`): oracle 9 bản chỉ +5,2 chrF, LaBSE-rerank
+     còn TỆ hơn greedy → chất lượng KHÔNG giấu trong weights, đòn bẩy decoding chết.
+   - `>>fix<<` test tay 2 ca: 1 sửa đúng 1 sửa hỏng — không có nguồn sự thật, chỉ
+     pattern-match; không cứu được lỗi thiếu kiến thức (lớp lỗi chủ đạo).
+   **⇒ 3 lựa chọn còn trên bàn (user chưa chốt):** (A) KD toàn phần đúng chuẩn
+   distillation — dịch lại target của corpus bằng thầy đã kiểm chứng
+   (gemini-lite 4,90 acc / Haiku Batch ~$150-200 cho 841k câu pool JA) thay vì
+   rắc thêm; (B) quay lại 292M làm tier chất lượng (2,42, cũng đang trần
+   2,37-2,42 — KD toàn phần cũng sẽ giúp nó); (C) chấp nhận mức hiện tại, xây
+   glossary-injection lúc inference (mechanism `[term=...]` đã train từ vòng 3a)
+   + thu hẹp domain (IT/công sở). Khuyến nghị kỹ thuật: A là công thức chuẩn
+   ngành làm model dịch nhỏ tốt (distilled-NLLB/Opus-MT student đều làm vậy).
 
-2. **MỚI XONG: data task `>>fix<<` (tự sửa lỗi ngữ pháp) cho v2 multi-task —
-   1.722 cặp SẠCH đã upload release `train-assets-fix-v1`** (`fix_data_v1.jsonl`).
-   Sinh bằng Claude Haiku qua Agent tool (effort thấp, không thinking, 28 subagent
-   batch — RẺ, không tốn quota API ngoài) phủ N5-N1 JLPT + tiếng lóng/câu tắt hiện
-   đại + zero-pronoun ngữ cảnh + **câu dài đa mệnh đề** (user yêu cầu bổ sung vì
-   quan sát câu dài hay sai — khớp đúng phát hiện cũ `PLAN_RANKUP §8`). Format:
-   `{"ja","vi_wrong","vi_correct","level","point"}`. **QUAN TRỌNG:** đã lọc bỏ 549/
-   2271 cặp "lỗi giả" (chỉ khác 1 chữ/lỗi gõ, similarity>0.85 — do Haiku "lười" khi
-   bị ép câu dài/phức tạp) bằng `difflib` — xem lại thuật toán lọc nếu sinh thêm.
-   Batch `jlpt_n1_04` (câu dài kiểu tin tức) mất 81%, còn rất mỏng — nên sinh lại
-   nếu muốn phủ đủ vùng này. **Việc tiếp theo cho task này:** (1) thêm tag `>>fix<<`
-   mới vào tokenizer SPM (hiện chỉ có `>>vie<<`/`>>jpn<<`), (2) viết script binarize
-   format `[BOS][>>fix<<] ja+vi_wrong [EOS] vi_correct [EOS]`, (3) multi-task train
-   sau khi có kết quả v1 100M. CHƯA làm — chờ quyết định thứ tự ưu tiên.
+2. **Checkpoint/hạ tầng hiện có (2026-07-21):** 100M v4 step15500 = bản mạnh nhất
+   nhánh 100M (`autosave-100m-v4`, v4_aa); ft15600 nhỉnh hơn không đáng kể
+   (`autosave-100m-ft`). v3 step13000: `autosave-100m-v3`. 292M step30000 vẫn là
+   nền 292M (`autosave-scale300m`, p_aa/p_ab). **2 fix tốc độ đã kiểm chứng trên
+   L40S: `--pad-multiple 32` + `recompile_limit=64` (train.py tự set) → 0,89s/step
+   ~50k tok/s sau warmup compile ~45' (so 2,65s/step của v3)** — warmup dài là
+   một lần/container, đừng hoảng khi 30-80 step đầu chậm. Bug đã fix kèm:
+   RoPE cache mặc định 256 crash với data `>>fix<<` 320 token (`--max-seq 384`);
+   `import torch._dynamo` trong hàm gây UnboundLocalError (commit `cc87226`).
+   Tốc độ inference CPU (WSL 6 luồng, i2_s 67,33MB): sinh 321 tok/s, ~155ms/câu.
 
-3. **KD generation (dịch thẳng ja→vi, dùng cho mix v2 hoặc Đợt 2 của 292M) ĐÃ DỪNG
-   HẲN — cả 2 nguồn free đều cạn:**
-   - **qwen-plus: CẠN QUOTA VĨNH VIỄN** (lỗi 403 "quota exhausted", không phải theo
-     ngày — hết luôn 1M token/90 ngày của tài khoản DashScope này). Dừng ở
-     **3.440 câu** tổng (thấp hơn ước tính ~12k vì tổng dùng cả ngày — benchmark+
-     audit+pilot+batch này — đã tiêu hết ngân sách). Muốn thêm phải đăng ký tài
-     khoản DashScope MỚI.
-   - **gemini-lite 2 key: hết quota NGÀY** (343 + 499 = 842 câu), reset 14:00 VN
-     mai — chạy lại được nếu cần thêm (lệnh trong PLAN_KD_JA2VI.md §Đợt1).
-   File tích luỹ: `data/synthetic/kd/raw_qwen-plus.jsonl` (3.440),
-   `raw_gemini-flash-lite-latest.jsonl`, `raw_gemini-flash-lite-latest-k2.jsonl`.
+3. **Data sẵn có cho bước tiếp:** 32.390 câu KD sạch (`data/synthetic/kd_clean/all_kd_v4.jsonl`),
+   2.759 cặp fix (`data/synthetic/fix/all_fix_v3.jsonl`), pool JA 841k câu
+   (`data/synthetic/kd/ja_pool.txt`) mới dùng ~35k → còn ~806k chưa dịch.
+   Nguồn free đã cạn (DashScope vĩnh viễn, gemini-lite ~1k/ngày); OpenRouter
+   free-tier: nạp $10 một lần mở 1.000 req/ngày (model mới nào cũng PHẢI qua
+   pilot-audit 300 câu như quy trình cũ trước khi tin).
 
-4. **292M (bidirectional) vẫn treo song song, KHÔNG liên quan tới nhánh 100M này:**
-   checkpoint nền cho MỌI train tiếp theo của 292M là `step30000` (KHÔNG dùng
-   step32500/wave0 — xem mục Đợt 0). Nằm ở bộ `p_aa`/`p_ab` trên release
-   `autosave-scale300m`. Nếu 100M thắng thì đây có thể thành hướng chính thay 292M.
+4. **292M (bidirectional) vẫn treo song song:** nền là `step30000` (KHÔNG dùng
+   wave0/step32500). Nằm ở `p_aa`/`p_ab` trên `autosave-scale300m`.
 
-5. Dọn dẹp không bắt buộc: `checkpoints_wave0/`, `premix_vong3a/`, `premix_ja2vi/`,
-   `premix_ja2vi_v1/` (local Windows, đã `.gitignore`, tổng ~6GB) — xoá được, data
-   đã an toàn trên GitHub Release.
+5. Dọn dẹp không bắt buộc: `checkpoints_wave0/`, `premix_vong3a/`, `premix_ja2vi*/`,
+   `premix_ft_*/`, `checkpoints_v3/`, `checkpoints_v4/`, `checkpoints_ft/` (local,
+   đã `.gitignore`) — xoá được, mọi thứ đã an toàn trên GitHub Release.
 
 ## TL;DR
 
