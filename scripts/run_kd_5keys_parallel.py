@@ -20,16 +20,30 @@ load_dotenv()
 from google import genai
 from google.genai import types
 
-# 1. Gom tất cả Gemini API Keys trong .env
+# 1. Gom tất cả Gemini API Keys trong .env hoặc biến môi trường
 KEYS = []
+
+# Kiểm tra tất cả biến môi trường xem biến nào chứa gemini (không phân biệt hoa thường)
 for k, v in os.environ.items():
-    if k.lower().startswith("gemini_key_") or k == "GEMINI_API_KEY":
-        if v.strip() and v.strip() not in KEYS:
-            KEYS.append(v.strip())
+    kl = k.lower()
+    if ("gemini" in kl or "google" in kl) and ("key" in kl or "api" in kl):
+        val = v.strip()
+        if val and val not in KEYS and len(val) >= 20: # Lọc lấy API key thực sự
+            KEYS.append(val)
+
+# Nếu người dùng điền theo dạng gemini_key_1, gemini_key_2...
+if not KEYS:
+    for k in sorted(os.environ.keys()):
+        if k.lower().startswith("gemini"):
+            val = os.environ[k].strip()
+            if val and val not in KEYS:
+                KEYS.append(val)
 
 if not KEYS:
     print("❌ Không tìm thấy Gemini API Key nào trong .env!")
-    print(" Vui lòng tạo file .env với gemini_key_1=..., gemini_key_2=...")
+    print(" Vui lòng tạo file .env với dạng:")
+    print(" gemini_key_1=AIzaSy...")
+    print(" gemini_key_2=AIzaSy...")
     sys.exit(1)
 
 print(f"🔑 Đã tìm thấy {len(KEYS)} Gemini API Key(s) khả dụng.")
@@ -37,7 +51,6 @@ print(f"🔑 Đã tìm thấy {len(KEYS)} Gemini API Key(s) khả dụng.")
 MODEL_ID = "gemini-3.1-flash-live-preview"
 INPUT_FILE = "data/full_11.88m_ja_clean.txt"
 OUTPUT_FILE = "data/synthetic/kd_clean/kd_gemini3_final.jsonl"
-CHECKPOINT_FILE = "data/synthetic/kd_clean/kd_checkpoint.json"
 
 os.makedirs("data/synthetic/kd_clean", exist_ok=True)
 
@@ -89,15 +102,17 @@ async def worker(worker_id: int, api_key: str, queue: asyncio.Queue, out_f, lock
                                 out_f.write(json.dumps(record, ensure_ascii=False) + "\n")
                                 out_f.flush()
                                 stats["success"] += 1
+                                if stats["success"] % 100 == 0:
+                                    print(f"✅ Đã dịch {stats['success']:,d} câu...")
                         
                         queue.task_done()
                         await asyncio.sleep(0.01) # Tránh nghẽn rate limit 65k token
 
                     except Exception as e:
                         print(f"⚠️ [Luồng {worker_id}] Lỗi câu {idx}, reconnecting WebSocket... ({e})")
-                        await queue.put(item) # Đưa lại câu bị đứt vào hàng đợi
+                        await queue.put(item)
                         queue.task_done()
-                        break # Thoát session để reconnect WebSocket mới
+                        break
 
         except Exception as conn_err:
             print(f"❌ [Luồng {worker_id}] Lỗi kết nối API: {conn_err}. Thử lại sau 5s...")
@@ -105,7 +120,8 @@ async def worker(worker_id: int, api_key: str, queue: asyncio.Queue, out_f, lock
 
 async def main():
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ Chưa có file dữ liệu {INPUT_FILE}. Đang chờ giải nén...")
+        print(f"❌ Chưa thấy file dữ liệu {INPUT_FILE}.")
+        print(f" Vui lòng tải file từ Release về bằng lệnh: wget https://github.com/trituenguyen97/Bit-Translate/releases/download/raw-corpus-11.88m/full_11.88m_ja_clean.txt -P data/")
         return
 
     # Nạp danh sách câu đã dịch (để resume)
