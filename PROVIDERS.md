@@ -1,28 +1,24 @@
-# Provider API free cho sinh data JA-VI — kiểm chứng 2026-07-16
+# Provider API cho sinh data & Knowledge Distillation (KD) JA-VI — cập nhật 2026-07-21
 
 > Chạy: `bash scripts/gen_any.sh <provider> <todo.json> [script]` — key đọc từ `.env` (đã có sẵn chỗ điền).
-> Thông tin dưới đây là hiện trạng ĐÃ KIỂM CHỨNG tháng 7/2026 (khác vài chỗ so với thông tin cũ trên mạng).
+> **⚠️ LƯU Ý AUDIT 2026-07-20:** Pilot 300 câu/model + audit lớp 3 phân tầng đã **LOẠI qwen-max (16.7% lỗi), qwen-turbo (13% lỗi), qwen-flash (11% lỗi)** do sai nghĩa/false-friend/đảo phủ định có hệ thống. **CHỈ DÙNG `gemini-flash-lite-latest` VÀ `qwen-plus` LÀM THẦY.**
 
-## Xếp hạng nên đăng ký (cho JA-VI, ưu tiên đăng ký từ trên xuống)
+## Xếp hạng provider & model thầy (cho JA-VI KD / sinh data)
 
-| # | Provider | Free thật sự | Model nên dùng | JA-VI | Ghi chú quan trọng |
-|---|---|---|---|---|---|
-| 1 | **DashScope quốc tế** (Alibaba) | **1M in + 1M out / MỖI model**, 90 ngày | `qwen-plus` (hết thì `qwen-turbo`, `qwen-max`, `qwen-flash` — mỗi cái quota riêng!) | ⭐⭐⭐ top đầu, ít "Hán hoá" | CHỈ endpoint Singapore (`dashscope-intl`); bật **Free Quota Only** trong console để không bị tính phí lố |
-| 2 | **Zhipu bigmodel.cn** | **GLM-4.7-Flash / 4.5-Flash FREE VĨNH VIỄN**, không giới hạn token | `glm-4.7-flash` | ⭐⭐ tốt Đông Á | Giới hạn ~1 request/giây (RPM 50 an toàn); cần xác minh SĐT; treo chạy cả đêm được |
-| 3 | **SiliconFlow** | ¥14 credit + vài model **always-free** (danh sách xoay vòng) | `Qwen/Qwen3-8B` (free, 30 RPM) ; credit dùng cho Qwen lớn | ⭐⭐ (8B hơi yếu, cần review kỹ) | "14 triệu token" thực ra là **¥14 credit**; Qwen2.5-72B KHÔNG còn free |
-| 4 | **DeepSeek** | Tặng **5M token, HẠN 30 NGÀY** (không phải 10M) | `deepseek-v4-flash` | ⭐⭐⭐ JSON kỷ luật | ⚠️ `deepseek-chat` bị khai tử 24/07/2026; chỉ đăng ký khi SẴN SÀNG dùng ngay (credit hết hạn) |
-| 5 | Gemini (2 key hiện có) | 500 RPD/model/ngày, reset **14:00 VN** | `gemini-flash-lite-latest`, `gemini-2.5-flash` | ⭐⭐⭐ | Quota theo TỪNG model — cạn model này đổi model khác |
-| 6 | OpenRouter | model `:free` quota nhỏ | `qwen/qwen3-coder:free` | ⭐ | Dự phòng |
+| # | Provider | Model | Đánh giá qua Audit (2026-07-20) | Trạng thái & Ghi chú |
+|---|---|---|---|---|
+| 1 | **Gemini (Paid/Free)** | `gemini-flash-lite-latest` | **Acc 4.90** (thắng Google 10/10 domain, 0/30 lỗi audit) | **THẦY CHÍNH (Thằng top 1)**. Paid tier RPM cao ($0.10/$0.40 per MTok) dùng cho GĐ1 KD 200k câu. |
+| 2 | **DashScope (Alibaba)** | `qwen-plus` | **Acc 4.72** (thắng Google 10/10 domain, 0/30 lỗi audit) | **THẦY PHỤ (Thắng top 2)**. 1M token free quota. CHỈ endpoint Singapore (`dashscope-intl`). |
+| 3 | **DashScope (Bị loại)** | `qwen-max`, `qwen-turbo`, `qwen-flash` | **CẤM DÙNG (11%–16.7% lỗi)** | False-friend IT (`エージェント→đại lý`, `イメージ→hình ảnh`), đảo phủ định (`貫く→xuyên thủng`). |
+| 4 | **Zhipu bigmodel.cn** | `glm-4.7-flash` | FREE VĨNH VIỄN, RPM ~50 | Dùng cho data phụ/phrasebook đơn giản, **không dùng làm KD thầy chính**. |
+| 5 | **DeepSeek** | `deepseek-v4-flash` | 5M token (hạn 30 ngày) | Dự phòng JSON kỷ luật. `deepseek-chat` đã ngưng hỗ trợ. |
 
-## Chiến lược phân việc (không phụ thuộc một nhà nào)
+## Chiến lược phân việc (KD & Data Synthesis)
 
-- **Mode khó** (pk phủ định kép, dn đa nghĩa, idh idiom, harvest gloss): DashScope `qwen-plus` / Gemini 2.5-flash + thinking — cần model mạnh, sai là dạy hư model.
-- **Mode dễ, cần VOLUME** (ht hội thoại, pb phrasebook, hop, ps): Zhipu `glm-4.7-flash` (miễn phí vô hạn, treo qua đêm) + SiliconFlow luân phiên.
-- **Bung nước rút trước deadline**: DeepSeek 5M (đăng ký đúng lúc cần, dùng dồn trong tuần).
-- MỌI batch đều qua **review 3 lớp**: rule filter → Claude đọc mẫu phân tầng (mode nào lỗi >5% thì đọc full) → LaBSE ≥0.8 lúc mix. Blacklist: `eval/vong2_review_blacklist.jsonl`.
+- **KD Thầy chính (Sequence-Level KD)**: `gemini-flash-lite-latest` (Paid/Free) + `qwen-plus` (Free quota). KHÔNG dùng các model tier yếu hơn làm teacher.
+- **Mode dễ, volume phụ**: Zhipu `glm-4.7-flash` (dịch phrasebook, câu đơn).
+- **Quy trình Lọc 4 Lớp bắt buộc**: Rule filter (`filter_kd_corpus.py`) → LaBSE ≥ 0.55 (`labse_score.py`) → Đọc mẫu phân tầng Claude (n=30-100/model, loại nếu lỗi >5%) → Audit pilot.
 
 ## Nguồn
-- SiliconFlow: [pricepertoken.com](https://pricepertoken.com/endpoints/siliconflow/free), [docs.siliconflow.cn](https://docs.siliconflow.cn/en/userguide/rate-limits/rate-limit-and-upgradation)
-- Zhipu: [freellm.net](https://freellm.net/providers/z-ai-zhipu-ai), [tokenmix.ai](https://tokenmix.ai/blog/glm-free-api-access-tiers-2026)
-- DeepSeek: [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing/), [pricepertoken.com](https://pricepertoken.com/endpoints/deepseek/free)
+- Audit details: `PLAN_KD_JA2VI.md` §3.1 & `STATUS.md`
 - DashScope: [alibabacloud.com — free quota](https://www.alibabacloud.com/help/en/model-studio/new-free-quota)

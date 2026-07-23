@@ -1,7 +1,10 @@
 # Dự án: Model dịch Việt ↔ Nhật 1.58-bit siêu nhẹ chạy CPU
 
-> File ngữ cảnh cho Claude Code. Đặt file này ở thư mục gốc dự án.
-> Toàn bộ quyết định bên dưới đã được nghiên cứu và chốt trước — làm theo, chỉ hỏi lại khi mâu thuẫn với thực tế.
+> ⚠️ **TRẠNG THÁI HIỆN TẠI (Cập nhật 2026-07-21):**
+> - **Kế hoạch chiến lược đang thực thi**: `PLAN_KD_JA2VI.md` (Phương án A — Full Knowledge Distillation ja→vi trên model 100M v4 step 15500).
+> - **Nhật ký tiến độ chi tiết & checkpoint**: `STATUS.md` và `ARTIFACTS.md`.
+> - **Thầy chính sinh KD**: `gemini-flash-lite-latest` (Paid/Free tier) + `qwen-plus` (xem `PROVIDERS.md`).
+> - File ngữ cảnh này giữ vai trò định hướng tổng thể về phần cứng và kiến thức nền BitNet.
 
 ## 1. Mục tiêu
 

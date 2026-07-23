@@ -1,5 +1,11 @@
 # PLAN Bước 5 — Nâng chất lượng dịch VI↔JA lên mức "dùng chuẩn" cho IT / hội thoại / họp / đời thường
 
+> ⚠️ **CẬP NHẬT TRẠNG THÁI (2026-07-21):**
+> - **Vòng 1 & Vòng 2 đã hoàn thành.** Model 110M bật 4/4 tín hiệu trần sức chứa.
+> - **Nhánh 292M (Phase 1/wave0) đã thử nghiệm và kết luận OVERFIT.**
+> - **TOÀN BỘ LỘ TRÌNH ĐÃ CHUYỂN SANG `PLAN_KD_JA2VI.md` (Phương án A - Sequence-Level KD ja→vi toàn phần từ 100M v4 step15500).**
+> - Các mục bên dưới giữ lại làm tài liệu tham khảo lịch sử và công thức data/app-side.
+
 > Lập 2026-07-14, dựa trên **probe 64 câu × 4 domain** chạy trên model step-14000 (i2_s, bitnet.cpp)
 > + chrF FLORES: vi→ja **21.3**, ja→vi **41.7** (Google ja→vi: 54.0).
 >

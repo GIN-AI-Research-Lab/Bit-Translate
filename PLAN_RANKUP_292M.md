@@ -1,13 +1,12 @@
-# PLAN RANK-UP — Leo bảng xếp hạng với model 292M (lập 2026-07-17)
+# PLAN RANK-UP — Leo bảng xếp hạng (lập 2026-07-17 — CẬP NHẬT TRẠNG THÁI 2026-07-21)
 
-> **⚠️ CẬP NHẬT 2026-07-20:** Phase 1 (§2, vòng 3a) đã chạy xong nhưng gate G1 TRƯỢT
-> (ja→vi 2.37 vs Google 3.67, thua 5/5 domain — chi tiết STATUS TL;DR). User chốt
-> ja→vi là sản phẩm chính. **Chiến lược ja→vi chuyển sang sequence-level KD — xem
-> `PLAN_KD_JA2VI.md`** (thay thế §2-§3 của file này; thầy ĐỔI từ Haiku trả phí sang
-> gemini-flash-lite+qwen-plus FREE sau benchmark 2026-07-20 — điểm cao hơn cả Haiku).
-> Đợt 0 (train tiếp step30000→32500) đã xong, kết luận OVERFIT — dùng step30000 làm
-> nền, không dùng wave0. §8.4 (app-side) + §4-§5 (Haiku glossary-bench, Fable vận
-> hành) GIỮ NGUYÊN giá trị.
+> ⚠️ **THÔNG BÁO THAY THẾ (SUPERSEDED):**
+> - **Chiến lược ja→vi đã chuyển sang sequence-level KD trên 100M v4 — xem `PLAN_KD_JA2VI.md` (Phương án A).**
+> - Các phần §1 (Phase 0 292M), §2 (Phase 1 292M), §3 (Phase 2 BT 292M), §7 (Timeline 292M) và §9 (Checklist 292M) **ĐÃ BỊ THAY THẾ** do 292M trượt Gate G1 và bị overfit ở wave0.
+> - **GIỮ NGUYÊN GIÁ TRỊ VÀ ĐANG SỬ DỤNG:**
+>   - **§8.4 (Xử lý qua APP)**: Chuẩn hóa NFKC, split_sentences tại `。！？`, placeholder số/mã.
+>   - **§5 (Fable)**: Bảng so sánh trục vận hành (offline, 0đ, 321 tok/s, riêng tư).
+>   - **§0 (Nguyên tắc trung thực)**: Trục so sánh với Google/Haiku/Fable.
 
 > Bảng xếp hạng hiện tại (hardbench200 4 hệ, `eval/hardbench_4way_haiku_report.md`):
 > **Fable 5.00 > Haiku 4.57 > Google 3.80 >> 110M 1.56** (acc TB 2 chiều).
