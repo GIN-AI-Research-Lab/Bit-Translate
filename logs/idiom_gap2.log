@@ -1,0 +1,18 @@
+  v5_select : 400,000 câu, hệ số x8.4
+  corpus cũ : 400,000 câu, hệ số x31.4
+
+    số lần (v5 + cũ)   quán ngữ       %
+                <= 0      2,098   45.1%
+               <= 10      2,445   52.6%
+               <= 50      3,203   68.9%
+              <= 200      3,967   85.3%
+             <= 1000      4,380   94.2%
+trung vị 8
+
+=> 3,168 quán ngữ DƯỚI 50 lần -> idiom_gap.json
+   目が肥える          = tinh mắt, sành sỏi                       (31 lần)
+   目が合う           = nhìn trúng mắt nhau                      (39 lần)
+   目を丸くする         = mắt tròn xoe (bất ngờ)                   (0 lần)
+   耳が早い           = tin đồn lan nhanh                        (31 lần)
+   耳にたこができる       = nghe mãi thành quen, chán ngấy           (33 lần)
+   口が軽い           = nói hớ, hay tiết lộ                      (0 lần)

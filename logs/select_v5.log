@@ -1,0 +1,18 @@
+  caudai_kokkai        1,111,970 câu |  195.5M token | ứng viên 1,653,764
+  soluong_kokkai         807,672 câu |   80.7M token | ứng viên 974,561
+  khaungu_cc100        1,107,410 câu |   57.9M token | ứng viên 1,107,410
+  chuyennganh_cc100      326,666 câu |   51.0M token | ứng viên 5,157,045
+
+=== CHỌN XONG ===
+Câu   : 3,353,718
+Token : 385M (ngân sách 425M)
+Corpus v5 dự kiến: 475M (cũ) + 385M = 860M token
+  -> 1.703M / 860M = 1.98 epoch
+
+=== ĐỘ PHỦ ITEM (ngưỡng 50 lần) ===
+  thành ngữ   14,068 mục | đạt ngưỡng 1,788 (13%) | trung vị 2 lần | top 125858
+             -> 12,280 mục DƯỚI ngưỡng, cần oversample hoặc sinh thêm
+  tên riêng  171,510 mục | đạt ngưỡng 6,847 (4%) | trung vị 1 lần | top 54684
+             -> 164,663 mục DƯỚI ngưỡng, cần oversample hoặc sinh thêm
+
+Output: D:\Bit-Translate-data\raw\v5_select.txt

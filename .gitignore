@@ -4,6 +4,10 @@ __pycache__/
 .venv/
 
 # Data (large, gathered/generated — not source)
+# File corpus nằm TRỰC TIẾP trong data/ (không thuộc thư mục con nào ở dưới) —
+# 979MB, vượt hẳn trần 100MB/file của GitHub nên commit là push bị từ chối.
+data/*.txt
+data/*.jsonl
 data/raw/
 data/interim/
 data/clean/
@@ -32,3 +36,8 @@ tokenizer/train.log
 /*.tar.zst
 /*.tar.gz
 premix_*/
+
+# Log gọi API: kd_*.log là hàng chục MB thông báo lỗi quota lặp lại, không có giá trị
+# nghiên cứu. NHƯNG train_*.log thì GIỮ — đó là đường cong loss, dữ liệu thật
+# (train_v5.log đã dùng để so v5 vs v6).
+logs/kd_*.log

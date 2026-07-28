@@ -34,3 +34,47 @@
 - Modal Cloud: Script training `cloud/modal_finetune_kd.py` & `cloud/modal_train_100m_v4.py`.
 - Local i2_s CPU Runtime: 6 luồng WSL, ~321 tok/s inference, ~155ms/câu.
 
+
+---
+
+## VÒNG 6 (2026-07-28) — phân loại theo KHÔNG THỂ TÁI TẠO vs tái tạo được
+
+Phân loại này quyết định cái gì phải đẩy lên Release, cái gì chỉ cần ghi lệnh tái tạo.
+
+### ⛔ KHÔNG tái tạo được rẻ — PHẢI đẩy Release
+
+| Artifact | Đường dẫn local | Nặng | Vì sao không tái tạo được |
+|---|---|---:|---|
+| **`v6_avg.pt`** | `D:/Bit-Translate-data/checkpoints_v6/v6_avg.pt` | 706 MB | Trung bình 7 mốc 15000-16400. Là **model tốt nhất hiện có**. Tái tạo = train lại 16.400 step ≈ **$16 + 6 giờ GPU** |
+| **`kd_v6.jsonl`** | `D:/Bit-Translate-data/raw/kd_v6.jsonl` | 1,09 GB | 2.171.977 câu do thầy Gemini dịch. Tái tạo = **6 giờ + hết quota 6 key**. Đây là thứ đắt nhất của cả vòng |
+
+### ✅ Tái tạo được — chỉ cần ghi lệnh, ĐỪNG đẩy Release
+
+| Artifact | Nặng | Lệnh tái tạo | Thời gian |
+|---|---:|---|---:|
+| `kd_v6_merged.jsonl` | 4,6 GB | `python scripts/merge_v6.py` (cần `kd_v5_merged.jsonl` + `kd_v6.jsonl`) | ~5 phút |
+| `clean_v6/` | 4,1 GB | bước "tách train/dev" trong `scripts/overnight_v6.sh` | ~4 phút |
+| `bin_v6/` | 1,8 GB | `python scripts/binarize_ja2vi.py --clean <clean_v6> --out <bin_v6>` | ~4 phút |
+| `curve_v6/` 8 mốc neo | 4,6 GB | `modal volume get vija-100m-kd-vol checkpoints_v6/stepN.pt` | ~1 phút/mốc |
+| 66 mốc `stepN.pt` | 38 GB | Còn NGUYÊN trên Modal volume `vija-100m-kd-vol/checkpoints_v6` | — |
+| `data/full_11.88m_ja_clean.txt` | 979 MB | Lọc lại từ CC-100 | — |
+
+**`bin_v6` cũng đã có sẵn trên volume của profile `tritue12`** (upload 2026-07-28 để dự phòng
+hết credit) — xem `[[doi-tai-khoan-modal-khi-het-credit]]`.
+
+### Kết quả đo vòng 6 — ĐÃ COMMIT vào git (nhẹ, 19,7 MB)
+
+| File | Nội dung |
+|---|---|
+| `eval/dev_curve_v6.json` | Đường cong dev loss 10 điểm — **held-out đầu tiên của dự án** |
+| `eval/judge_v6/RESULT.json` + `judges/` | Điểm judge mù từng câu, 3 hệ v5/v6/google cùng phiên |
+| `eval/bench_v6.jsonl` | 200 câu bench TED do `v6_avg` dịch |
+| `eval/bench_held_v6.jsonl` | 120 câu Quốc hội held-out (bench DUY NHẤT đo được câu dài) |
+| `eval/dom6_*.jsonl` | 3 probe miền (cntt, y tế, nông lâm ngư) |
+| `eval/probe_v6.jsonl` | 80 phép thử ngữ pháp — v6 đạt 76/80 (v5: 71) |
+| `eval/skill_density_v6new.json` | Mật độ kỹ năng của 2,17M câu mới |
+| `logs/KETQUA_V6.txt` | Báo cáo gộp |
+| `logs/train_v4.log`, `train_v5.log` | Đường cong loss các vòng trước (giữ có chủ ý) |
+| `ISSUES.md` | Issue #1 câu dài — MỞ |
+
+⚠️ `logs/kd_*.log` bị gitignore: hàng chục MB thông báo lỗi quota lặp lại, không có giá trị.

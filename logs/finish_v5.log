@@ -1,0 +1,12 @@
+[07:26:49] chờ binarize xong (bin_v5/train.index.npy)
+[train] GHI 13,122,527 seq (666,936,121 token), bỏ 18,357 câu >256. mean len 50.8
+
+done -> D:\Bit-Translate-data\bin_v5/ | tổng: 13,126,340 seq, 667,125,843 token
+[07:33:51] upload bin_v5 (~1GB)
+[07:33:56] upload checkpoints_v5
+┌─ Error ─────────────────────────────────────────────────────────────────────┐
+│ Volume 'vija-100m-kd-vol' not found in environment 'main'                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+[07:34:05] bật backup checkpoint mỗi 5 phút
+[07:34:05] TRAIN vòng 5 — 14000 step
+[07:35:24] === đã phát lệnh train, xem logs/train_v5.log ===

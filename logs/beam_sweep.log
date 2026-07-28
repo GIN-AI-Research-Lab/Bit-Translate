@@ -1,0 +1,45 @@
+### beam=0 alpha=0.6
+domain        KD-100M  Google   Haiku  vs Google
+--------------------------------------------------
+caudai           43.0    42.8    48.2      +0.1
+hoithoai         43.4    30.9    40.6     +12.5
+hop              39.8    34.0    38.4      +5.9
+it_deep          49.3    33.7    40.2     +15.6
+keigo            41.7    34.3    37.2      +7.4
+nguphap          45.3    40.8    42.5      +4.5
+slang            26.0    27.1    28.2      -1.1
+solieu           69.6    57.4    70.6     +12.2
+thanhngu         33.9    27.5    34.3      +6.4
+zeropronoun      44.9    32.7    34.6     +12.2
+--------------------------------------------------
+TỔNG TB          43.7    36.1    41.5      +7.6
+### beam=5 alpha=0.6
+domain        KD-100M  Google   Haiku  vs Google
+--------------------------------------------------
+caudai           43.4    42.8    48.2      +0.5
+hoithoai         42.8    30.9    40.6     +11.9
+hop              39.7    34.0    38.4      +5.8
+it_deep          48.0    33.7    40.2     +14.3
+keigo            40.9    34.3    37.2      +6.6
+nguphap          48.3    40.8    42.5      +7.5
+slang            26.6    27.1    28.2      -0.5
+solieu           68.9    57.4    70.6     +11.5
+thanhngu         33.6    27.5    34.3      +6.2
+zeropronoun      44.0    32.7    34.6     +11.4
+--------------------------------------------------
+TỔNG TB          43.6    36.1    41.5      +7.5
+### beam=5 alpha=1.0
+  20/100
+  40/100
+  60/100
+  80/100
+  100/100
+Traceback (most recent call last):
+  File "E:\Bit-Translate\scripts\hardbench_ckpt.py", line 108, in <module>
+    main()
+  File "E:\Bit-Translate\scripts\hardbench_ckpt.py", line 83, in main
+    out_path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows),
+  File "C:\Users\OS\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1048, in write_text
+    return f.write(data)
+           ^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device

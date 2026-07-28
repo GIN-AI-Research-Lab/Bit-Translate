@@ -15,10 +15,28 @@
 
 ## 2. Phần cứng & môi trường
 
+> ⚠️ **CÓ HAI MÁY — kiểm đang ở máy nào TRƯỚC KHI áp cấu hình ở §7.**
+> Nhận biết nhanh: `python -c "import torch;print(torch.cuda.is_available())"` → `False` là laptop.
+
+**Máy A — desktop ở nhà** (máy mà §7 nói tới):
 - GPU: RTX 3060 Ti **8GB VRAM** (Ampere, có Tensor Cores → dùng mixed precision).
 - CPU: Ryzen 5 5600X (6 nhân / 12 luồng).
 - RAM: 48GB DDR4-3200 (kiểm tra dual-channel).
 - OS: Windows → **chạy toàn bộ pipeline trong WSL2** (DataLoader/multiprocessing nhanh hơn Windows native).
+
+**Máy B — laptop công ty** (nơi phần lớn việc eval/phân tích đang diễn ra):
+- CPU **Intel Core Ultra 5 225H**, 14 lõi/14 luồng, base 1,70 GHz. GPU chỉ có Intel Arc iGPU.
+- **KHÔNG có torch CUDA** → không train được ở đây, chỉ chạy eval/inference trên CPU.
+- **Có E-core, và nhiều luồng làm CHẬM đi**: đo thật 140 tok/s ở 4–6 luồng, 102 ở 8 luồng,
+  **21 ở 12 luồng**. Luôn đặt `OMP_NUM_THREADS=5 MKL_NUM_THREADS=5`, đừng để torch tự chọn.
+- Inference là **memory-bound** (§6) → chạy 2 job model cùng lúc KHÔNG nhanh hơn, chúng chỉ
+  chia đôi băng thông RAM. Đo thật: job bị bỏ đói xuống 0,74 lõi và chậm 5,6×. **Chạy tuần tự.**
+- **Kiểm đã cắm sạc**: trên pin, clock tụt xuống 1,22 GHz (dưới cả base). `BatteryStatus` = 1
+  là đang xả pin, 2 là điện lưới.
+
+**Train thật sự chạy ở đâu**: từ vòng 4 trở đi train trên **Modal (GPU L40S thuê giờ, ~$1/1000
+step)**, không train local ở máy nào. Cấu hình §7 là cho máy A, giữ lại làm tham chiếu.
+
 - Ổ cứng: chừa **50–100GB** trống cho data thô + file trung gian (bộ data sạch cuối chỉ ~1GB).
 
 ## 3. Kỳ vọng thực tế (đã thống nhất — đừng hứa quá)

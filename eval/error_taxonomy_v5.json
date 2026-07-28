@@ -1,0 +1,846 @@
+{
+ "n": 59,
+ "main": {
+  "quan_ngu_thanh_ngu": 5,
+  "an_chu_ngu": 6,
+  "tu_vung_thong_thuong": 13,
+  "cau_truc_cau": 22,
+  "ten_rieng": 1,
+  "phu_dinh_modality": 3,
+  "katakana_ngoai_lai": 3,
+  "bi_dong_sai_khien_thu_nhan": 1,
+  "them_bot_nghia": 3,
+  "thuat_ngu_chuyen_nganh": 2
+ },
+ "any": {
+  "quan_ngu_thanh_ngu": 5,
+  "an_chu_ngu": 14,
+  "katakana_ngoai_lai": 7,
+  "tu_vung_thong_thuong": 25,
+  "cau_truc_cau": 25,
+  "ten_rieng": 4,
+  "them_bot_nghia": 11,
+  "van_phong_tu_nhien": 15,
+  "phu_dinh_modality": 3,
+  "bi_dong_sai_khien_thu_nhan": 1,
+  "thuat_ngu_chuyen_nganh": 9
+ },
+ "rows": [
+  {
+   "chinh": "quan_ngu_thanh_ngu",
+   "phu": [],
+   "giai_thich": "Model dịch sai quán ngữ '手を広げる' (mở rộng phạm vi/rẽ nhánh hoạt động) thành 'mở rộng tầm mắt'.",
+   "id": "9",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "途方に暮れましたが 大きく手を広げることにしました",
+   "v5": "Dù hoàn toàn bế tắc nhưng tôi đã quyết định mở rộng tầm mắt ra.",
+   "google": "Tôi cảm thấy hụt hẫng nhưng vẫn quyết định rẽ nhánh.",
+   "ref": ""
+  },
+  {
+   "chinh": "an_chu_ngu",
+   "phu": [
+    "katakana_ngoai_lai"
+   ],
+   "giai_thich": "Model tự ý thêm chủ ngữ 'tôi' khi câu ẩn chủ ngữ và hiểu sai từ Katakana ペイする (hoàn vốn/thu hồi vốn) thành 'trả'.",
+   "id": "27",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "製作費8千万ドルですから まあ1カ月でペイします",
+   "v5": "Chi phí sản xuất là 80 triệu đô la, nên chắc là tôi sẽ trả trong một tháng.",
+   "google": "Nó tiêu tốn 80 triệu đô la để thực hiện, vì vậy nó sẽ trả hết sau một tháng.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "an_chu_ngu"
+   ],
+   "giai_thich": "Bản dịch dịch sai từ '微妙' thành 'hơi khó hiểu' thay vì 'tinh vi', đồng thời tự ý thêm chủ ngữ 'tôi' vào câu diễn đạt chung.",
+   "id": "21",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "そのやり方は微妙で なかなか気がつきません",
+   "v5": "Cách làm đó hơi khó hiểu và tôi mãi không nhận ra.",
+   "google": "Phương pháp này tinh vi và khó nhận thấy.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [],
+   "giai_thich": "Model phân tích sai cấu trúc ngữ pháp khi coi 'hạnh phúc' là chủ ngữ của hành động 'kết thúc' thay vì diễn đạt 'cuộc đời kết thúc trong trạng thái hạnh phúc'.",
+   "id": "20",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "ハッピーなまま 一生が終わればいいですけれども",
+   "v5": "Mong rằng hạnh phúc sẽ kết thúc trọn đời.",
+   "google": "Tôi ước gì tôi có thể kết thúc cuộc đời mình một cách hạnh phúc.",
+   "ref": ""
+  },
+  {
+   "chinh": "quan_ngu_thanh_ngu",
+   "phu": [],
+   "giai_thich": "Bản dịch của model bỏ sót ý 'cùng có lợi' trong thành ngữ 4 chữ '両者両得' (đôi bên cùng có lợi), chỉ dịch đơn thuần là 'cả hai bên'.",
+   "id": "25",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "必ずしも両者両得の結果を予見するものではないのです",
+   "v5": "Không hẳn là phải dự đoán kết quả của cả hai bên.",
+   "google": "Nó không nhất thiết phải dự đoán một kết quả đôi bên cùng có lợi.",
+   "ref": ""
+  },
+  {
+   "chinh": "ten_rieng",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Model dịch sai tên riêng '2パック' (rapper 2Pac) thành 'hai cái pack' và bỏ sót nghĩa của từ 'ならず者' (kẻ bất hảo/lừa đảo).",
+   "id": "23",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "ああ そろそろマジでイカれちまう 2パック系ならず者風に",
+   "v5": "À, sắp điên thật rồi đấy, kiểu như hai cái pack ấy.",
+   "google": "À, tôi sắp phát điên rồi, giống như một kẻ lừa đảo kiểu 2Pac.",
+   "ref": ""
+  },
+  {
+   "chinh": "an_chu_ngu",
+   "phu": [],
+   "giai_thich": "Bản dịch của model tự ý thêm đại từ 'tôi' ở vế sau, làm sai lệch chủ ngữ của hành động đi thư viện vốn là 'tài xế'.",
+   "id": "43",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "運転手は 子供の頃は 地元の図書館が好きでよく行ったけれど",
+   "v5": "Hồi nhỏ, tài xế thích thư viện địa phương nên tôi hay đến đó lắm.",
+   "google": "Người lái xe thích thư viện địa phương và thường đến đó khi còn nhỏ.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc ngữ pháp khi dịch '我々を' thành 'với chúng ta' và biến 'điều này' thành đối tượng bị coi là người đàm phán.",
+   "id": "53",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "これで我々を折衝者といえるでしょうか?",
+   "v5": "Liệu điều này có thể được coi là một người đàm phán với chúng ta không?",
+   "google": "Bây giờ chúng ta có thể được gọi là nhà đàm phán không?",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model dịch máy móc cấu trúc giải thích '〜とは何かということです' thành câu hỏi 'là gì?' làm câu bị sai ngữ pháp tiếng Việt.",
+   "id": "35",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "40%はマーケティングとは何かということです",
+   "v5": "40% là marketing là gì?",
+   "google": "40% là tiếp thị.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Model dịch sai nghĩa từ '選り好み' (kén chọn/chọn lọc) thành 'chọn lọc sở thích cá nhân', làm thêm nghĩa không có trong câu gốc.",
+   "id": "46",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "それなら何故 美術館では 選り好みをしようと思わないのでしょうか?",
+   "v5": "Vậy thì tại sao ở bảo tàng, người ta lại không nghĩ đến việc chọn lọc sở thích cá nhân nhỉ?",
+   "google": "Vậy tại sao các bảo tàng không cố gắng chọn lọc?",
+   "ref": ""
+  },
+  {
+   "chinh": "an_chu_ngu",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Model dịch sai câu trần thuật có chủ ngữ bị ẩn trong ngoặc kép thành câu mệnh lệnh hướng tới người nghe, đồng thời tự ý thêm cụm 'ngay lập tức'.",
+   "id": "47",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "瞬きもせずに 彼は言いました 「ママに 寝る前にお願いするんだ",
+   "v5": "Anh ấy nói ngay lập tức, không chớp mắt: \"Làm ơn hãy bảo mẹ trước khi đi ngủ đi.\"",
+   "google": "Không chớp mắt, cậu bé nói: “Con sẽ nhờ mẹ một việc trước khi đi ngủ.”",
+   "ref": ""
+  },
+  {
+   "chinh": "phu_dinh_modality",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Thể ý chí/rủ rê 「〜しよう」 (hãy cùng làm) bị dịch sai thành câu nghĩa vụ/bắt buộc ('phải làm vậy'), làm thay đổi thái độ của người nói.",
+   "id": "29",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "(笑) 「でも このことについて話したければ ぜひそうしよう」",
+   "v5": "(Cười) \"Nhưng nếu muốn nói về chuyện này thì nhất định phải làm vậy.\"",
+   "google": "(Cười) \"Nhưng nếu bạn muốn nói về chuyện này, hãy nói đi.\"",
+   "ref": ""
+  },
+  {
+   "chinh": "katakana_ngoai_lai",
+   "phu": [],
+   "giai_thich": "Model dịch nghĩa đen từ Katakana 外来語 'マジックテープ' thành 'băng dính ma thuật' thay vì nhận diện từ mượn/thương hiệu Velcro.",
+   "id": "58",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "糊や磁力もしくはマジックテープのような原理でくっつくのではなく",
+   "v5": "Thay vì dính vào bằng các nguyên lý như keo, lực từ hay băng dính ma thuật",
+   "google": "Thay vì dán lại với nhau bằng keo, từ tính hoặc Velcro,",
+   "ref": ""
+  },
+  {
+   "chinh": "katakana_ngoai_lai",
+   "phu": [
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model không nhận ra từ mượn Katakana 'マジックテープ' (Velcro) và dịch sai từ thông thường '靴ヒモ' (dây giày) thành 'giày'.",
+   "id": "57",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "何でマジックテープじゃなくて靴ヒモなの?",
+   "v5": "Sao lại là giày mà không phải băng dính vậy?",
+   "google": "Tại sao dây giày thay vì Velcro?",
+   "ref": ""
+  },
+  {
+   "chinh": "an_chu_ngu",
+   "phu": [],
+   "giai_thich": "Mệnh đề định ngữ ẩn chủ ngữ, model chọn sai đại từ xưng hô thành 'tôi' thay vì 'họ/mỗi người'.",
+   "id": "60",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "誰もが 誰かに聞いてもらいたい 自分だけの孤独の物語を持っています",
+   "v5": "Ai cũng có một câu chuyện về sự cô đơn của riêng mình mà tôi muốn ai đó lắng nghe.",
+   "google": "Mỗi người đều có câu chuyện cô đơn của riêng mình mà họ mong ai đó có thể nghe được.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model dịch máy móc theo cấu trúc câu chẻ のは...です khiến câu tiếng Việt bị cứng và chưa thoát ý.",
+   "id": "65",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "完璧を望むのは まじめな遊びの時です",
+   "v5": "Mong muốn hoàn hảo là khi có những trò chơi nghiêm túc.",
+   "google": "Trong quá trình chơi nghiêm túc, bạn muốn có sự hoàn hảo.",
+   "ref": ""
+  },
+  {
+   "chinh": "phu_dinh_modality",
+   "phu": [],
+   "giai_thich": "Model dịch sai cấu trúc phủ định nhấn mạnh 「〜もしない」 (thậm chí không...) thành câu chỉ khả năng/thái độ khác ('còn lâu mới... được').",
+   "id": "55",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "アーカンソーじゃあ 訊きもしないのにな」",
+   "v5": "Ở Arkansas thì còn lâu mới hỏi được.\"",
+   "google": "Ở Arkansas, bạn thậm chí sẽ không hỏi.”",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "an_chu_ngu",
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc ngữ pháp khi coi 'chiếc thứ hai' là chủ ngữ của 'được nhờ' thay vì nhận diện chủ ngữ ẩn là 'Tôi', đồng thời dịch từ 'いじる' chưa chính xác.",
+   "id": "54",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "2台目は好きにいじってみてくれと頼まれました",
+   "v5": "Chiếc thứ hai được nhờ là cứ tùy ý điều chỉnh xem sao.",
+   "google": "Tôi được yêu cầu chơi thử cái thứ hai theo ý thích của tôi.",
+   "ref": ""
+  },
+  {
+   "chinh": "bi_dong_sai_khien_thu_nhan",
+   "phu": [
+    "ten_rieng"
+   ],
+   "giai_thich": "Model dịch sai cấu trúc cho-nhận/nhờ vả 〜てもらう ('乗ってもらいました' là nhờ/để John ngồi lên xe, nhưng model dịch thành 'được lái') và viết sai tên riêng Abarth thành Abalt.",
+   "id": "106",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "幸いスタンフォード大学には Revsプログラムがありますので ジョンをそこへ連れて行き 1960年型ポルシェ・カレラ・アバルトに 乗ってもらいました",
+   "v5": "May mắn thay, Đại học Stanford có chương trình Revs nên tôi đã đưa John đến đó và được lái chiếc Porsche Carrera Abalt đời 1960.",
+   "google": "May mắn thay, Đại học Stanford có chương trình Revs, vì vậy tôi đã đưa John đến đó và chở anh ấy trên chiếc Porsche Carrera Abarth đời 1960.",
+   "ref": ""
+  },
+  {
+   "chinh": "them_bot_nghia",
+   "phu": [],
+   "giai_thich": "Bản dịch của model tự ý thêm từ 'chỉ có... thôi đấy' làm thay đổi sắc thái và thêm thông tin không có trong câu gốc.",
+   "id": "72",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "皆さんは大人ですから― コンドーム40個ですよ",
+   "v5": "Vì mọi người đều là người lớn nên bao cao su chỉ có 40 cái thôi đấy.",
+   "google": "Các bạn đều là người lớn - 40 bao cao su.",
+   "ref": ""
+  },
+  {
+   "chinh": "phu_dinh_modality",
+   "phu": [
+    "cau_truc_cau"
+   ],
+   "giai_thich": "Model dịch sai mẫu ngữ pháp phủ định điều kiện 「～ずして」 (nếu không... thì không thể) thành hai mệnh đề liệt kê song song làm biến đổi hoàn toàn nghĩa câu.",
+   "id": "73",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "真実を知らずして 何を許すべきか知ることはできません",
+   "v5": "Không thể biết được mình không biết sự thật và biết được nên tha thứ cho điều gì.",
+   "google": "Bạn không thể biết phải tha thứ điều gì nếu không biết sự thật.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [],
+   "giai_thich": "Model phân tích sai cấu trúc mệnh đề định ngữ 「彼が望みを叶えた相手」 và cấu trúc chỉ mức độ 「～ほどですから」, dẫn đến dịch sai hoàn toàn quan hệ ngữ pháp giữa các thành phần câu.",
+   "id": "80",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "パット:ルーズベルトや 彼が望みを叶えた相手を 覚えているほどですから",
+   "v5": "Pat: Vì như vậy, tôi nhớ Roosevelt và người mà anh ấy mong muốn đã trở thành.",
+   "google": "Pat: Nhiều đến mức tôi nhớ đến Roosevelt và người mà anh ấy đã thực hiện điều ước của mình.",
+   "ref": ""
+  },
+  {
+   "chinh": "them_bot_nghia",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model đã bỏ sót ý '見えない' (không nhìn thấy được/vô hình) trong cụm '見えないもの' và thay bằng từ đại xưng mơ hồ 'số đó'.",
+   "id": "66",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "「電波」も見えないものの1つです",
+   "v5": "\"Sóng vô tuyến\" cũng là một trong số đó.",
+   "google": "“Sóng vô tuyến” cũng là một trong những thứ vô hình.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc câu chẻ/mệnh đề lồng với のは và bỏ sót ý của động từ 作れる (tạo ra).",
+   "id": "82",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "よく議論に上るのは 人工知能は作れるか?",
+   "v5": "Có thể đưa trí tuệ nhân tạo ra thảo luận kỹ không?",
+   "google": "Một câu hỏi thường được tranh luận là: Chúng ta có thể tạo ra trí tuệ nhân tạo không?",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "thuat_ngu_chuyen_nganh"
+   ],
+   "giai_thich": "Model dịch sai từ 'つける' (chạm/chắp vào nhau) thành 'đeo', và dịch chưa chính xác thuật ngữ giải phẫu '長掌筋' (cơ lòng bàn tay dài).",
+   "id": "112",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "85パーセントほどのヒトに 長掌筋という退化した筋肉があります これが あるかを見るには 手を平らな面に置いて 小指と親指をつけてください",
+   "v5": "Có khoảng 85% người có cơ bắp bị thoái hóa gọi là cơ lòng bàn tay. Để xem có cái này không, hãy đặt tay lên một bề mặt phẳng và đeo ngón út cùng ngón cái.",
+   "google": "Khoảng 85 phần trăm mọi người có một cơ bị thoái hóa được gọi là cơ lòng bàn tay dài. Để xem bạn có nó hay không, hãy đặt bàn tay của bạn lên một bề mặt phẳng và chạm vào ngón út và ngón cái.",
+   "ref": ""
+  },
+  {
+   "chinh": "thuat_ngu_chuyen_nganh",
+   "phu": [
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model dịch sai thuật ngữ địa chất '中央海嶺' (rặng núi giữa đại dương) thành 'Đường giữa' và chọn sai nghĩa từ '火ぶくれ' (vết phồng rộp) thành 'cái rốn'.",
+   "id": "117",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "ありえない と思っていたら同僚の一人が言ったんです: 「火ぶくれみたいだ 中央海嶺は 冷却中なんだろう」 私は言いました:「じゃあ見に行こうぜ」",
+   "v5": "Tôi cứ tưởng không thể nào, nhưng một đồng nghiệp đã nói: \"Trông như cái rốn ấy. Đường giữa chắc đang trong quá trình làm mát rồi\". Tôi nói: \"Vậy thì đi xem thôi nào.\"",
+   "google": "Tôi nghĩ điều đó là không thể được, và một trong những đồng nghiệp của tôi nói: “Nó trông giống như một vết phồng rộp. Rặng núi giữa đại dương chắc hẳn đang mát mẻ.” Tôi nói: “Chúng ta hãy đi kiểm tra xem.”",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc 'まじめで通しました' dẫn đến dịch tách vế ngô nghê và làm xáo trộn chuỗi chu trình ở cuối câu.",
+   "id": "109",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "80年代の大半は まじめで 通しました 期待されているデザインを 作り続け それが自分なのだ と こんなサイクルを回っていたのです 本気 ⇒ まじめ ⇒ ありきたり ⇒ 死ぬほど退屈 ⇒ 再発見",
+   "v5": "Phần lớn thập niên 80 là nghiêm túc và tôi đã theo đuổi. Tôi liên tục tạo ra những thiết kế được kỳ vọng, và đó chính là bản thân mình. Tôi đã thực hiện một chu trình như thế này: nghiêm túc, nghiêm túc, tầm thường, chán chết đi được ⇒ chán chết đi được ⇒ lại phát hiện ra.",
+   "google": "Trong hầu hết những năm 1980, tôi rất nghiêm túc. Tôi tiếp tục tạo ra những thiết kế mà tôi mong đợi và tôi nghĩ đó chính là con người của mình. Tôi đã trải qua chu trình này: Nghiêm túc ⇒ Nghiêm túc ⇒ Bình thường ⇒ Chán chết ⇒ Khám phá lại",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Model dịch sai từ 周縁 (ngoài lề/rìa) thành 'vùng biên an toàn' làm sai lệch ý nghĩa tiêu cực của câu, đồng thời bỏ sót từ 憲法上 (trên hiến pháp).",
+   "id": "114",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "カースト制は1950年に 憲法上は廃止されたものの インドの社会生活を形作り続け 低いカーストの人々を日常的に 周縁に押しやってきました",
+   "v5": "Hệ thống đẳng cấp đã bị bãi bỏ vào năm 1950, nhưng vẫn tiếp tục định hình cuộc sống xã hội Ấn Độ, đẩy những người có đẳng cấp thấp xuống vùng biên an toàn hàng ngày.",
+   "google": "Mặc dù hệ thống đẳng cấp đã bị hiến pháp bãi bỏ vào năm 1950, nhưng nó vẫn tiếp tục định hình đời sống xã hội Ấn Độ, thường xuyên đẩy các đẳng cấp thấp hơn ra ngoài lề.",
+   "ref": ""
+  },
+  {
+   "chinh": "them_bot_nghia",
+   "phu": [
+    "thuat_ngu_chuyen_nganh",
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Bản dịch của model bỏ sót thuật ngữ quan trọng 'ゼロ・サム・ゲーム' (trò chơi có tổng bằng 0) và diễn đạt cụm 'ごく簡単に' thiếu tự nhiên.",
+   "id": "122",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "事前に読んでいない方もいらっしゃると思うので ごく簡単に - ゼロ・サム・ゲームとは要は 勝者に対して必ず敗者がいるというような 負の相関関係があるゲームのことです",
+   "v5": "Tôi nghĩ có thể có người chưa đọc trước, nên cực kỳ đơn giản - trò chơi có tương quan âm, về cơ bản là trò chơi mà người thắng cuộc luôn có người thua.",
+   "google": "Tôi chắc rằng một số bạn chưa đọc nó trước, vì vậy tôi sẽ giải thích rất ngắn gọn cho bạn: Trò chơi có tổng bằng 0 về cơ bản là một trò chơi có mối tương quan nghịch, trong đó luôn có người thua cuộc cho người thắng.",
+   "ref": ""
+  },
+  {
+   "chinh": "an_chu_ngu",
+   "phu": [
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model dịch sai chủ ngữ của mệnh đề nghĩ (đổi từ 'tôi nghĩ' thành 'anh ấy nghĩ') và dịch sai nghĩa của từ 振舞われる thành 'vung'.",
+   "id": "121",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "私は彼が作ってくれる粉末ジュースを飲んでいたのですが たとえガチョウの羽を振舞われても この人スゴイって 思っていたでしょう",
+   "v5": "Tôi đã uống loại nước ép dạng bột mà anh ấy làm, và chắc hẳn anh ấy đã nghĩ rằng ngay cả khi được vung một chiếc lông ngỗng thì người này cũng sẽ tuyệt vời lắm.",
+   "google": "Tôi đang uống nước bột do anh ấy pha, và ngay cả khi anh ấy có đưa cho tôi lông ngỗng, tôi vẫn sẽ nghĩ: “Anh chàng này thật tuyệt vời”.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model dịch sai nghĩa của từ thông thường '密集' (đông đúc/mật độ cao) thành 'nhỏ gọn' và '害獣・害虫' thành 'động vật/hại sinh'.",
+   "id": "126",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "そして6ヶ月後 彼はその9つの言葉を書いた 紙切れをくれたんです 健康な生活の9原則: 入浴、洗濯、排水 栄養、密集、害獣・害虫、埃、温度、怪我",
+   "v5": "Và 6 tháng sau, ông ấy đã viết ra 9 từ đó, đưa cho tôi một mảnh giấy. 9 nguyên tắc của một cuộc sống khỏe mạnh: tắm rửa, giặt giũ, thoát nước, dinh dưỡng, nhỏ gọn, động vật/hại sinh, bụi, nhiệt độ, chấn thương.",
+   "google": "Và sáu tháng sau, anh ấy đưa cho tôi một mảnh giấy có viết chín chữ trên đó: chín nguyên tắc sống lành mạnh: tắm rửa, giặt giũ, thoát nước, dinh dưỡng, đông đúc, sâu bọ, bụi bặm, nhiệt độ, chấn thương.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "an_chu_ngu"
+   ],
+   "giai_thich": "Model dịch sai từ 'ガラガラ' (chiếc lục lạc) thành 'cái cái ớt' và dịch '欲求' thành 'ham muốn' không hợp ngữ cảnh, đồng thời bỏ sót chủ ngữ người nghe.",
+   "id": "127",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "生後数ヶ月の頃に すでにあった感情です 欲求が満たされないと 泣いて訴えたでしょう 「パパ ガラガラを取ってくれないって 何のつもり?",
+   "v5": "Đó là cảm xúc đã có từ khi mới được vài tháng tuổi. Nếu ham muốn không được thỏa mãn, chắc hẳn nó đã khóc lóc cầu xin rồi. \"Bố ơi, bố không lấy cho con cái cái ớt này là sao?\"",
+   "google": "Đó là cảm giác cậu đã có khi mới được vài tháng tuổi. Khi nhu cầu của nó không được đáp ứng, nó khóc lóc và phàn nàn: “Bố ơi, bố không lấy chiếc lục lạc của con đi là có ý gì?",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "thuat_ngu_chuyen_nganh",
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model dịch nhầm từ 呼んだ (gọi là) thành 'đã đọc' (nhầm với 読んだ), làm sai lệch hoàn toàn nghĩa của câu.",
+   "id": "125",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "アンゴラではチョクウェの人々が砂に線を描きます ドイツの数学者オイラーがグラフと読んだものです 現在のオイラー路です ペンを紙から一度も離さずに 同じ線の上を2回通ってはいけません",
+   "v5": "Ở Angola, người Chokwe vẽ đường cát. Đây là hình ảnh mà nhà toán học người Đức Euler đã đọc trên biểu đồ. Đường Euler hiện tại. Không được đi qua đường kẻ đó hai lần trên cùng một đường mà không tách bút ra khỏi giấy.",
+   "google": "Ở Angola, người Chokwe vẽ những đường trên cát, mà nhà toán học người Đức Euler gọi là đồ thị. Đây chính là con đường của Euler ngày nay: Không bao giờ rời bút khỏi tờ giấy và không bao giờ vượt qua cùng một đường hai lần.",
+   "ref": ""
+  },
+  {
+   "chinh": "thuat_ngu_chuyen_nganh",
+   "phu": [
+    "katakana_ngoai_lai"
+   ],
+   "giai_thich": "Bản dịch mắc lỗi thuật ngữ y học ('前駆衝動' dịch sai thành 'xung động tiền cứu') và phiên âm sai từ Katakana ('チック' dịch thành 'Tick').",
+   "id": "124",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "チックとまばたきは 神経学的には別物ですが 私が言いたいのは トゥレット症候群でない人でも 前駆衝動の感覚に 共感できる ということです 脳が同じような 経験と感覚を与えてくれるからです",
+   "v5": "Tick và chớp mắt về mặt thần kinh là hai thứ khác nhau, nhưng điều tôi muốn nói là ngay cả những người không mắc hội chứng Tourette cũng có thể đồng cảm với cảm giác xung động tiền cứu, bởi vì bộ não mang lại những trải nghiệm và cảm giác tương tự.",
+   "google": "Máy giật và chớp mắt là khác biệt về mặt thần kinh, nhưng điều tôi muốn nói là ngay cả những người không mắc hội chứng Tourette cũng có thể liên quan đến cảm giác xung lực, bởi vì não của họ mang lại cho họ những trải nghiệm và cảm giác tương tự.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc ngữ pháp của vế '50年も先を見据えながらも成し遂げたことは少ないことに', dẫn đến dịch sai hoàn toàn quan hệ giữa các mệnh đề và biến ý 'làm được rất ít' thành 'đã đạt được thành tựu'.",
+   "id": "123",
+   "v5_score": 0,
+   "gg_score": 1,
+   "src": "ラリー・ブリリアント: 私たちは得意になるべきでしょうか? それとも悔いるべきでしょうか? 50年も先を見据えながらも 成し遂げたことは少ないことに",
+   "v5": "Larry Brilliant: Chúng ta nên giỏi hơn hay nên hối tiếc? Trong khi chúng ta đã đạt được thành tựu trong khi vẫn hướng tới tương lai 50 năm.",
+   "google": "Larry Brilliant: Chúng ta có nên giỏi việc đó không? Hay chúng ta nên thất vọng? Nhìn về tương lai 50 năm sau, chúng ta đã đạt được rất ít thành tựu.",
+   "ref": ""
+  },
+  {
+   "chinh": "quan_ngu_thanh_ngu",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Quán ngữ '立場になって' (đặt mình vào vị trí của ai đó) bị dịch sai thành 'suy nghĩ theo cách chưa từng có', làm mất đi ý nghĩa chính của vế câu và gây lặp ý.",
+   "id": "129",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "すると 皆は顔を上げ 目の前にいる人たちのことを見て 彼らの話を聞き 彼らの立場になって考え 今までにない方法で 協力するようになったのです",
+   "v5": "Thế là mọi người ngẩng mặt lên, nhìn những người đang ở ngay trước mắt, nghe họ nói, suy nghĩ theo cách chưa từng có, và bắt đầu hợp tác theo những cách chưa từng có.",
+   "google": "Và sau đó tất cả chúng tôi đều nhìn lên, nhìn những người trước mặt, lắng nghe họ, đặt mình vào vị trí của họ và hợp tác theo những cách mà trước đây chúng tôi chưa từng làm.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Dịch sai từ thông thường 産院 (bệnh viện phụ sản) thành 'viện sản xuất'.",
+   "id": "133",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "質が改善したことは明らかで しかも どの産院でも 改善が見られて コーチングが私たちの仕事に 価値をもたらす可能性を示していました",
+   "v5": "Rõ ràng là chất lượng đã được cải thiện, hơn nữa, bất kỳ viện sản xuất nào cũng đều thấy được sự cải thiện và cho thấy khả năng khai vấn mang lại giá trị cho công việc của chúng tôi.",
+   "google": "Rõ ràng là chất lượng đã được cải thiện và nó đang diễn ra ở mọi bệnh viện phụ sản, chứng tỏ tiềm năng của việc huấn luyện để tăng thêm giá trị cho công việc của chúng tôi.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [],
+   "giai_thich": "Model dịch sai cụm từ '10人に1人' (1 trong 10 người / tỷ lệ 1/10) thành '10 phụ nữ'.",
+   "id": "140",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "国内の技術者のうち 女性は10人に1人もいません フランスやスペインで 女性が占める割合の半分以下です ロンドン王立協会は 科学機関の中でも 最高権威の1つですが 歴代会長に女性は1人もおらず 現会員の中で女性は たったの5%です",
+   "v5": "Trong số các kỹ sư trong nước, không có đến 10 phụ nữ, chưa bằng một nửa tỷ lệ phụ nữ ở Pháp và Tây Ban Nha. Hội Hoàng gia London là một trong những cơ quan khoa học uy tín nhất, nhưng không có bất kỳ nữ chủ tịch nào trong lịch sử, và chỉ có 5% là nữ giới trong số các hội viên hiện tại.",
+   "google": "Ít hơn 1/10 kỹ sư ở nước này là phụ nữ, chưa đến một nửa tỷ lệ phụ nữ ở Pháp hoặc Tây Ban Nha. Hiệp hội Hoàng gia London, một trong những tổ chức khoa học uy tín nhất, không có nữ chủ tịch và chỉ có 5% thành viên hiện tại là phụ nữ.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "them_bot_nghia"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc mệnh đề định ngữ và liên từ ものの khiến câu bị gãy cú pháp, đồng thời làm mất vị ngữ chính (わかっていません).",
+   "id": "131",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "切断を経験した人によくある 幻肢を感じるものの 痛みは伴わない人や そもそも幻肢を感じない人が いる理由はわかっていません",
+   "v5": "Mặc dù cảm thấy có những chi ma thường gặp ở những người đã từng bị cắt cụt, nhưng lý do tại sao vẫn có những người không bị đau, hoặc vốn dĩ là những người không cảm thấy chi ma.",
+   "google": "Chúng tôi không biết tại sao một số người lại gặp phải hiện tượng chân tay ảo, thường gặp ở những người bị cụt chi, nhưng họ không cảm thấy đau đớn hoặc tại sao một số người không hề gặp phải hiện tượng chân tay ma.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc cú pháp '誤った判決のうち 約25%に' thành 'trong số khoảng 25% phán quyết sai', làm hiểu sai tỷ lệ 25% là tập hợp tổng thay vì là phân số của tổng số phán quyết sai.",
+   "id": "132",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "しかし わかっているのは のちにDNA鑑定により 潔白が証明された人々への 誤った判決のうち 約25%に 偽りの自白があった ということです",
+   "v5": "Nhưng điều chúng ta biết được là sau này, trong số khoảng 25% phán quyết sai lầm của những người được chứng minh là vô tội thông qua giám định DNA, đã có lời thú tội giả mạo.",
+   "google": "Nhưng những gì chúng ta biết là khoảng 25% các vụ kết án sai trái đối với những người sau đó được minh oan nhờ xét nghiệm DNA liên quan đến những lời thú tội sai trái.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "tu_vung_thong_thuong",
+    "an_chu_ngu"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc bổ nghĩa làm đảo lộn quan hệ ngữ pháp giữa các thành phần câu, đồng thời dịch sai từ '蹴り回される' (quay cuồng/bị hành hạ) thành 'bị đánh thức'.",
+   "id": "137",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "(笑) (拍手) 努力は あまり好きではないんです しかし現実は 果てしない無理強い 仲介者である 脳の遂行機能を通じて そうさせるんです 死を「やった!」と思うことの一つです もう脳の遂行機能に 蹴り回されることもなくなりますから",
+   "v5": "(Cười) (Vỗ tay) Tôi không thích sự nỗ lực cho lắm. Nhưng thực tế là, thông qua chức năng vận hành não bộ, một kẻ trung gian vô cùng ép buộc, người ta khiến họ làm như vậy. Đó là một trong những điều khiến họ nghĩ rằng cái chết \"đã làm được!\". Bởi vì nó sẽ không bao giờ bị đánh thức bởi chức năng thực thi của bộ não nữa.",
+   "google": "(Cười) (Vỗ tay) Tôi không thực sự thích nỗ lực, nhưng thực tế là nó được thực hiện thông qua chức năng điều hành của não, một trung gian có tính cưỡng bức vô tận. Cái chết là một trong những điều khiến bạn phải suy nghĩ, “Tôi đã làm được điều đó!” Bởi vì chức năng điều hành của bộ não không còn khiến bạn quay cuồng nữa.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "katakana_ngoai_lai",
+    "thuat_ngu_chuyen_nganh"
+   ],
+   "giai_thich": "Model dịch sai quan hệ chủ-vị trong vế '海洋生物調査が発見する' thành 'tìm thấy cuộc khảo sát' thay vì 'cuộc khảo sát phát hiện ra', đồng thời dịch sai từ Katakana シュリンプ thành Shrink.",
+   "id": "135",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "この写真のエビを私たちは ジュラシック・シュリンプというあだ名で呼んでいるんですが これは50年前にとっくに絶滅したと思われています 少なくとも海洋生物調査が発見するまでのことですけれども でもこのエビはオーストラリアの沖合で棲息し なかなか元気にやっていますよ",
+   "v5": "Chúng tôi gọi con tôm trong bức ảnh này bằng biệt danh Jurassic Shrink, nó được cho là đã tuyệt chủng từ 50 năm trước, ít nhất là cho đến khi tìm thấy cuộc khảo sát sinh vật biển. Nhưng con tôm này sống ngoài khơi Úc và vẫn đang hoạt động rất tốt đấy.",
+   "google": "Con tôm trong bức ảnh này, mà chúng tôi đặt biệt danh là Tôm kỷ Jura, được cho là đã tuyệt chủng cách đây 50 năm, ít nhất là cho đến khi Cơ quan Khảo sát Hàng hải phát hiện ra nó, nhưng loài tôm này sống ngoài khơi Australia và đang sinh sống khá tốt.",
+   "ref": ""
+  },
+  {
+   "chinh": "quan_ngu_thanh_ngu",
+   "phu": [],
+   "giai_thich": "Model dịch sai quán ngữ '足元をすくわれる' (nghĩa là bị ngáng chân/cản trở/chơi khăm) thành 'bị tác động trực tiếp'.",
+   "id": "142",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "彼らは キャッサバと資本主義の命題に 足もとをすくわれています キャッサバを無毒にするには 手を加える必要があります そして私の主張はこうです 市場経済を 皆にとって公正なものに するためにも 手を加えねばならないと",
+   "v5": "Họ đang bị tác động trực tiếp vào các mệnh đề của sắn và chủ nghĩa tư bản. Để sắn không độc hại, cần phải có biện pháp xử lý. Và lập luận của tôi là: để làm cho nền kinh tế thị trường trở nên công bằng cho tất cả mọi người, chúng ta cũng phải tác động vào nó.",
+   "google": "Họ đang bị cản trở bởi đề xuất về sắn và chủ nghĩa tư bản. Chúng ta cần nghiên cứu sắn để làm cho nó không độc hại, và lập luận của tôi là chúng ta cũng phải nghiên cứu nó để làm cho nền kinh tế thị trường trở nên công bằng hơn cho tất cả mọi người.",
+   "ref": ""
+  },
+  {
+   "chinh": "an_chu_ngu",
+   "phu": [
+    "thuat_ngu_chuyen_nganh",
+    "cau_truc_cau"
+   ],
+   "giai_thich": "Bản dịch đổi chủ ngữ từ 'Anh ấy' sang 'Tôi' ở vế sau, đồng thời dịch sai thuật ngữ bóng rổ/bóng chày ('球' - quả bóng/cú ném thành 'cầu thủ').",
+   "id": "146",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "彼は自分が選んだ選手のなかで 彼にとって本当に役立った選手を見て 学びました ヤンキースの様な金持ち球団が 欲しがるような強打者の ホームランを狙ったり 全部の球を打ちに行くような 打撃法ではないと知りました",
+   "v5": "Anh ấy đã học được từ những cầu thủ mình chọn, và nhìn thấy những cầu thủ thực sự hữu ích. Tôi nhận ra rằng đây không phải là kiểu đánh bóng mạnh, kiểu như đội bóng giàu có như Yankees muốn đánh home run hay đi đánh toàn bộ các cầu thủ.",
+   "google": "Anh ấy đã theo dõi và học hỏi từ những cầu thủ mà anh ấy đã chọn, điều đó thực sự đã giúp ích cho anh ấy. Anh ấy học được rằng anh ấy không đánh những cú đánh mạnh như những pha chạy về nhà hay đánh mọi cú ném mà một đội giàu có như Yankees thèm muốn.",
+   "ref": ""
+  },
+  {
+   "chinh": "quan_ngu_thanh_ngu",
+   "phu": [
+    "van_phong_tu_nhien",
+    "cau_truc_cau"
+   ],
+   "giai_thich": "Model dịch sai quán ngữ 「甘んじる」 (bằng lòng/thỏa mãn với) thành \"chấp nhận\", làm biến đổi hoàn toàn ý nghĩa của câu.",
+   "id": "148",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "この結果に甘んじてはいけません ですから 8番目のミレニアム目標に対する懸念 冒頭で援助額が落ちていると 言いましたが 資金力に関する懸念が とても厄介なのです",
+   "v5": "Đừng chấp nhận kết quả này, vì vậy tôi lo ngại về mục tiêu thiên niên kỷ thứ 8, mặc dù lúc đầu tôi đã nói rằng số tiền viện trợ đang giảm, nhưng những lo ngại về tiềm lực tài chính lại rất rắc rối.",
+   "google": "Chúng ta không được ngủ quên trên chiến thắng của mình. Vì vậy, những lo ngại về Mục tiêu Thiên niên kỷ thứ tám, như tôi đã nói lúc đầu về sự sụt giảm viện trợ, là những lo ngại về nguồn tài trợ thực sự đáng lo ngại.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Dịch sai nghĩa từ '値する' (xứng đáng) thành 'đáng giá', khiến vế câu gượng gạo và sai nghĩa, kết hợp với cách diễn đạt chưa tự nhiên.",
+   "id": "145",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "(笑) でも注目されることについては よく知っています 幸運なことに 私は 本来 値する以上に 多くの注目を集めてきました",
+   "v5": "(Cười) Nhưng tôi biết rất rõ về sự chú ý. May mắn thay, tôi đã thu hút được nhiều sự chú ý hơn cả mức đáng giá vốn có.",
+   "google": "(Cười) Nhưng tôi không lạ gì với sự chú ý, và may mắn thay, tôi đã nhận được nhiều sự chú ý hơn những gì tôi đáng được nhận.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "an_chu_ngu"
+   ],
+   "giai_thich": "Model dịch sai từ thông thường '下の名前' (tên/tên gọi) thành 'cái tên bên dưới' và nhầm đại từ nhân xưng giới tính của nữ tổng thống thành 'ông ấy'.",
+   "id": "153",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "この日は決して忘れません ヴィグディス大統領が ― 私たちは下の名前で呼んでいます 自宅のバルコニーに姿を見せた姿です 勝利したのは シングルマザーで その横には娘さんもいます",
+   "v5": "Tôi sẽ không bao giờ quên ngày hôm đó. Tổng thống Vigdis — chúng tôi gọi bằng cái tên bên dưới — là hình ảnh ông ấy xuất hiện trên ban công nhà mình. Người chiến thắng là một bà mẹ đơn thân, và bên cạnh đó còn có cả cô con gái nữa.",
+   "google": "Tôi sẽ không bao giờ quên ngày này, khi Tổng thống Vigdis, như chúng ta gọi ông, xuất hiện trên ban công nhà ông, một bà mẹ đơn thân chiến thắng cùng con gái bên cạnh.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "thuat_ngu_chuyen_nganh",
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc ngữ pháp khi gộp '1つ' vào 'một lần phóng' thay vì bổ nghĩa cho 'thị trường', đồng thời dịch sai thuật ngữ chuyên ngành vàm cụm từ thông thường '1回ずつ'.",
+   "id": "154",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "1つの会社が1回ずつです これを狙っているわけではありません 目指す市場は1つ「炭素質自律移動 ペイロード」打ち上げです",
+   "v5": "Mỗi công ty chỉ có một lần duy nhất. Chúng tôi không nhắm tới điều này. Thị trường mục tiêu là một lần phóng \"payload tự động di chuyển carbon\".",
+   "google": "Một công ty tại một thời điểm. Đó không phải là điều chúng tôi hướng tới. Thị trường duy nhất mà chúng tôi hướng tới là ra mắt tải trọng di động tự hành dựa trên carbon.",
+   "ref": ""
+  },
+  {
+   "chinh": "katakana_ngoai_lai",
+   "phu": [
+    "thuat_ngu_chuyen_nganh",
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model dịch sai các từ mượn Katakana chuyên ngành sân khấu (スラスト thành Strut, nhầm トラバース và biến 変形 thành yếu tố liệt kê 'Transform').",
+   "id": "152",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "そしてボタンを押すだけで 芸術監督は プロセニアム形式 スラスト形式 アリーナ形式 トラバース形式 フラットフロア形式と変更できます とても素早い変形です",
+   "v5": "Và chỉ cần nhấn nút, giám đốc nghệ thuật có thể thay đổi theo các định dạng: Proshenium, Strut, Arena, Flat và Transform. Đó là một biến thể rất nhanh.",
+   "google": "Và chỉ cần nhấn nút, giám đốc nghệ thuật có thể thay đổi giữa định dạng proscenium, định dạng lực đẩy, định dạng đấu trường, định dạng ngang, định dạng sàn phẳng và đó là một sự chuyển đổi rất nhanh chóng.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "ten_rieng"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc '物差しで計る11の長さ' thành 'độ dài của thước đo là 11' và dịch sai tên riêng 'カラカラの浴場' (Baths of Caracalla) thành 'nhà tắm ở Karakara'.",
+   "id": "163",
+   "v5_score": 1,
+   "gg_score": 1,
+   "src": "物差しで計る11の長さが わからなくても でも飛行船で計る11をパンテオンと 比較することはできます 同じようにカラカラの浴場と比較したり そんな感じで 興味があればやってみてください",
+   "v5": "Ngay cả khi không biết độ dài của thước đo là 11, bạn vẫn có thể so sánh tổng số 11 đo bằng khí cầu với Pantheon. Hãy thử so sánh với các nhà tắm ở Karakara theo cách tương tự, hoặc nếu bạn có hứng thú thì hãy thử xem sao.",
+   "google": "Ngay cả khi bạn không biết chiều dài 11 đo bằng thước, bạn vẫn có thể so sánh 11 đo bằng airship với Pantheon, hoặc so sánh tương tự với Baths of Caracalla, hoặc thứ gì đó tương tự. Nếu bạn quan tâm, hãy thử.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Cụm từ '1つではない' (không phải là một) bị dịch sai nghĩa từ thông thường thành 'không hề đơn độc'.",
+   "id": "161",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "そこから分かること 一見して明らかなことは 世界は1つではないということ - 今からこの話をするのですが 人々が いかに違っていることか",
+   "v5": "Điều có thể thấy được từ đó, điều thoạt nhìn có vẻ rõ ràng, là thế giới không hề đơn độc - ngay từ bây giờ tôi sẽ nói về sự khác biệt của mọi người.",
+   "google": "Điều đó cho chúng ta biết, ngay từ cái nhìn đầu tiên, là thế giới không phải là một - và tôi sẽ nói về điều này ngay bây giờ - con người khác nhau như thế nào.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "them_bot_nghia",
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc vế câu (ghép 'trên mũi' vào 'đi bộ'), chọn sai nghĩa các cụm từ và bỏ sót chi tiết treo túi tiền.",
+   "id": "159",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "さて舞台は代って第六場は 痩せさらばえ スリッパを履いて ヨチヨチ歩く 鼻先には眼鏡 脇には金袋ぶらさげる 若いころの長靴下を履くと 脛が痩せて 大きすぎる そして男らしい太い声は 声変り前の少年の高い声に戻り ぴいぴい風まじり",
+   "v5": "Thế là sân khấu thay thế, sân thứ sáu thì gầy đi, đi dép đi trong nhà, đi bộ trên mũi, đeo kính, còn bên hông thì đeo tất dài thời trẻ, chân thì gầy, to quá, còn giọng nam tính thì lại như giọng thanh niên trước, giọng thì sáng bóng.",
+   "google": "Bây giờ, sân khấu thay đổi, và cảnh thứ sáu là Giã từ đôi chân gầy gò. Anh ấy bước đi chậm rãi, đi dép lê. Anh ấy đeo kính trên chóp mũi và một túi tiền lủng lẳng bên hông. Khi anh ấy mang đôi tất dài của tuổi trẻ, ống chân của anh ấy trở nên gầy hơn và quá to. Và giọng nói dày, nam tính của anh ấy trở lại với giọng cao của một cậu bé trước khi giọng nói của anh ấy thay đổi, xen lẫn với một âm thanh đường ống.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc ghép nối giữa hai mệnh đề và hiểu sai cụm 'あと少し' (chỉ còn một chút nữa) thành 'tiến xa hơn một chút'.",
+   "id": "156",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "まず最初に 思い出してください 今ある社会形態に至るまでどれだけの時間がかかったか 真に地球規模の社会組織を形成するまであと少し というところまで来ているのです",
+   "v5": "Trước hết, hãy nhớ rằng chúng ta đã mất bao nhiêu thời gian để hình thành nên một xã hội thực sự mang tầm quy mô toàn cầu, và đã tiến xa hơn một chút đến mức đó.",
+   "google": "Trước hết, hãy nhớ lại chúng ta đã mất bao lâu để có được hình thức như hiện tại và chúng ta đã tiến gần đến việc hình thành một tổ chức xã hội toàn cầu thực sự đến mức nào.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Bản dịch phân tích sai quan hệ ngữ pháp làm sai lệch đối tượng tác động (gán '娘たちに' thành 'cho các bà mẹ' và '自分の娘' thành 'con gái tôi').",
+   "id": "182",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "「おばさんたちは私の中に 自分の娘を見ている 自分たちがアメリカに持ってきた 真実や希望に無知で無頓着だと」 母親たちは繰り返し娘たちに 歴史や受け継いでいるものを 思い起こさせようとします",
+   "v5": "\"Các bà cô đang nhìn con gái tôi trong tôi, họ thiếu hiểu biết và vô tâm về sự thật và hy vọng mà họ đã mang về Mỹ.\" Những người mẹ liên tục cố gắng gợi lại cho các bà mẹ những điều lịch sử và truyền lại.",
+   "google": "\"Họ nhìn thấy con gái của chính họ trong tôi, ngu dốt và thờ ơ với sự thật và niềm hy vọng mà họ mang đến Mỹ.\" Các bà mẹ nhiều lần cố gắng nhắc nhở con gái về lịch sử và di sản của họ.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "ten_rieng"
+   ],
+   "giai_thich": "Model phân tích sai mệnh đề bổ nghĩa 'テロの監視リストに載っていた' thành một hành động chính (đưa vào danh sách) thay vì mệnh đề quan hệ bổ nghĩa cho hai anh em Kouachi.",
+   "id": "170",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "2014年6月 フランスの治安当局は テロの監視リストに載っていた サイードとシェリフ・クアシ兄弟について 3年にわたる調査の後 通信の傍受を終了させました",
+   "v5": "Tháng 6 năm 2014, cơ quan an ninh Pháp đã đưa tin về anh em nhà Said và Sheriff Quasi vào danh sách giám sát khủng bố. Sau 3 năm điều tra, họ đã kết thúc việc nghe lén thông tin liên lạc.",
+   "google": "Vào tháng 6 năm 2014, cơ quan an ninh Pháp đã chấm dứt việc chặn liên lạc của anh em Saeed và Chérif Kouachi, những người nằm trong danh sách theo dõi khủng bố, sau cuộc điều tra kéo dài ba năm.",
+   "ref": ""
+  },
+  {
+   "chinh": "tu_vung_thong_thuong",
+   "phu": [
+    "an_chu_ngu"
+   ],
+   "giai_thich": "Cụm từ 「顔を上向きにする」 bị dịch sai thành \"làm mặt lên\" thay vì \"ngẩng đầu/nâng mặt lên\", đồng thời chèn thêm chủ ngữ \"tôi\" không phù hợp.",
+   "id": "183",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "「声が小さすぎるよ ボリュームを上げよう」 これは同僚が近づいてきて こう言うようなもの 「声が小さすぎるわ 顔を上向きにするわよ」",
+   "v5": "\"Giọng nhỏ quá đấy, tăng âm lượng lên nào.\" Cái này giống như đồng nghiệp tiến lại gần rồi nói: \"Giọng nhỏ quá, tôi sẽ làm mặt lên đấy\".",
+   "google": "\"Giọng của bạn nhỏ quá. Hãy tăng âm lượng lên.\" Điều này giống như việc một đồng nghiệp đến gặp bạn và nói: \"Giọng bạn trầm quá. Hãy ngẩng đầu lên.\"",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "katakana_ngoai_lai",
+    "an_chu_ngu"
+   ],
+   "giai_thich": "Model phân tích sai toàn bộ cấu trúc câu bổ nghĩa cho '場所ができた', dịch sai từ Katakana 'ファーストレスポンダー' (First responder) thành 'máy ứng phó', và tự ý thêm chủ ngữ 'tôi'.",
+   "id": "191",
+   "v5_score": 0,
+   "gg_score": 2,
+   "src": "ファーストレスポンダーに 生命の危機を脱したものの 病院へ行くのを拒む患者さんを 連れて行ったり 紹介する場所ができたのです",
+   "v5": "Mặc dù đã thoát khỏi cuộc khủng hoảng tính mạng bằng máy ứng phó sự cố, nhưng tôi đã đưa những bệnh nhân từ chối đến bệnh viện, và tạo ra một nơi để giới thiệu họ.",
+   "google": "Những người ứng cứu đầu tiên giờ đây đã có nơi để tiếp nhận và giới thiệu những bệnh nhân đã qua cơn nguy kịch nhưng không chịu đến bệnh viện.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "an_chu_ngu",
+    "tu_vung_thong_thuong"
+   ],
+   "giai_thich": "Mô hình phân tích sai cấu trúc ngữ pháp và xác định sai chủ ngữ ẩn của vế sau, làm đảo ngược hoàn toàn ý nghĩa (khiến người hướng nội trở thành đối tượng ra lệnh và thu hút sự chú ý thay vì các tấm áp phích).",
+   "id": "187",
+   "v5_score": 0,
+   "gg_score": 0,
+   "src": "内向型は 巨大で ど派手なポスターとか 大文字や「!」マークには 興ざめしてしまいます ああしろこうしろと指図したり こちらの注意を惹くのに必死だからです",
+   "v5": "Người hướng nội thường làm cho những tấm poster khổng lồ, hào nhoáng, chữ in hoa, hay những dấu hiệu \"!\" trở nên xao nhãng. Bởi vì họ chỉ biết ra lệnh làm thế này thế kia, và họ đang tuyệt vọng thu hút sự chú ý của mình.",
+   "google": "Những người hướng nội bị thu hút bởi những tấm áp phích lớn, hào nhoáng, chữ in hoa và dấu chấm than vì họ đang cố thu hút sự chú ý của bạn bằng cách bảo bạn phải làm gì và nên làm gì.",
+   "ref": ""
+  },
+  {
+   "chinh": "cau_truc_cau",
+   "phu": [
+    "van_phong_tu_nhien"
+   ],
+   "giai_thich": "Model phân tích sai cấu trúc ngữ pháp khi biến cụm bổ nghĩa '同じくらい大事なことに' thành vế so sánh trực tiếp với tình yêu và nỗi buồn, làm sai lệch quan hệ ngữ pháp trong câu.",
+   "id": "195",
+   "v5_score": 1,
+   "gg_score": 2,
+   "src": "同じくらい大事なことに 私のアーロンへの愛と悲しみ そして マシューへの愛情は 相反する力ではないことに 気付くことができました",
+   "v5": "Tôi nhận ra rằng, điều quan trọng không kém gì tình yêu và nỗi buồn dành cho Aaron, cũng như tình yêu dành cho Matthew, không phải là một sức mạnh mâu thuẫn.",
+   "google": "Điều quan trọng không kém là tôi có thể nhận ra rằng tình yêu và nỗi buồn của tôi dành cho Aaron cũng như tình yêu của tôi dành cho Matthew không phải là những lực lượng loại trừ lẫn nhau.",
+   "ref": ""
+  }
+ ]
+}

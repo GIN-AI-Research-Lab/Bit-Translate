@@ -1,0 +1,61 @@
+{
+ "ckpt": "v3_avg (average step7000-8000, grow 12L->18L = 152,1M)",
+ "data": "corpus 11,748,861 cap / 458,8M token, niche 10,42%; 4.691 quan ngu (gap 3,8x)",
+ "train": "grow_depth tu v2_avg3 + 8000 step, lr 1e-4, label_smoothing 0.1, ~,7",
+ "n": 100,
+ "decode": "greedy",
+ "judge": "Claude Opus, CUNG PHIEN voi v2. CANH BAO: khong mu hoan toan",
+ "kd": {
+  "acc": 4.29,
+  "nat": 4.07,
+  "usable_pct": 83.0
+ },
+ "moc_v2": {
+  "acc": 3.82,
+  "nat": 3.76,
+  "usable_pct": 65.0
+ },
+ "cac_he_khac": {
+  "google": {
+   "acc": 2.92,
+   "nat": 2.86,
+   "usable_pct": 26.0
+  },
+  "fable": {
+   "acc": 4.98,
+   "nat": 4.99,
+   "usable_pct": 100.0
+  },
+  "haiku": {
+   "acc": 3.7,
+   "nat": 3.56,
+   "usable_pct": 69.0
+  }
+ },
+ "domain_acc": {
+  "caudai": 3.7,
+  "hoithoai": 4.2,
+  "hop": 4.0,
+  "it_deep": 4.1,
+  "keigo": 4.5,
+  "nguphap": 4.5,
+  "slang": 4.1,
+  "solieu": 4.8,
+  "thanhngu": 4.3,
+  "zeropronoun": 4.7
+ },
+ "domain_acc_v2": {
+  "caudai": 3.0,
+  "hoithoai": 3.3,
+  "hop": 3.6,
+  "it_deep": 4.3,
+  "keigo": 4.9,
+  "nguphap": 4.2,
+  "slang": 4.1,
+  "solieu": 4.4,
+  "thanhngu": 2.6,
+  "zeropronoun": 3.8
+ },
+ "doi_dau": "v3 thang 39 / hoa 47 / thua 14",
+ "block_moi": "dat 20,1% do lon block cu (truoc train: 0,0%) - co hoc nhung chua day"
+}

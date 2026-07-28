@@ -1,0 +1,11 @@
+corpus 15,307,817 câu
+
+Traceback (most recent call last):
+  File "E:\Bit-Translate\scripts\skill_density.py", line 125, in <module>
+    main()
+  File "E:\Bit-Translate\scripts\skill_density.py", line 106, in main
+    print(f"{'k\u1ef9 n\u0103ng':<22}{'s\u1ed1 câu':>12}{'% corpus':>10}{'  v5':>6}{'  GG':>5}{'  chênh':>8}")
+  File "C:\Users\OS\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ef9' in position 1: character maps to <undefined>

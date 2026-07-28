@@ -1,0 +1,18 @@
+[cntt_phan_mem] 18L d768 | 152.1M
+  10/40
+  20/40
+  30/40
+  40/40
+-> eval/dom_cntt_phan_mem.jsonl
+[y_te_suc_khoe] 18L d768 | 152.1M
+  10/40
+  20/40
+  30/40
+  40/40
+-> eval/dom_y_te_suc_khoe.jsonl
+[nong_lam_ngu] 18L d768 | 152.1M
+  10/40
+  20/40
+  30/40
+  40/40
+-> eval/dom_nong_lam_ngu.jsonl

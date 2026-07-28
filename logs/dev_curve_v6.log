@@ -1,0 +1,6 @@
+dev DAY DU: 4,435 cau / 66 lo
+moc: [2000, 4000, 6000, 8000, 10000, 12000, 14000]
+  step2000   dev_loss 2.1846   (557s)
+  step4000   dev_loss 2.1702   (562s)
+  step6000   dev_loss 2.1505   (487s)
+  step8000   dev_loss 2.1356   (1074s)

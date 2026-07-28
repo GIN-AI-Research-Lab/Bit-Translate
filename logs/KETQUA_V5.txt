@@ -1,0 +1,99 @@
+============ KẾT QUẢ VÒNG 5 (data thật miền mới) ============
+Mon Jul 27 13:27:49 SEAST 2026
+
+--- 8 dòng cuối train.log ---
+step 13950 | loss 2.0153 | lr 8.00e-06 | 40,909 tok/s | 1.28s/step
+step 13960 | loss 2.0179 | lr 8.00e-06 | 41,218 tok/s | 1.28s/step
+step 13970 | loss 2.0202 | lr 8.00e-06 | 41,561 tok/s | 1.28s/step
+step 13980 | loss 2.0172 | lr 8.00e-06 | 41,539 tok/s | 1.29s/step
+step 13990 | loss 2.0138 | lr 8.00e-06 | 41,590 tok/s | 1.28s/step
+step 14000 | loss 2.0281 | lr 8.00e-06 | 42,936 tok/s | 1.27s/step
+  saved checkpoint @ step 14000
+=== training loop exited ===
+
+--- AVERAGE 12500
+12750
+13000
+13250
+13500
+13750
+14000 ---
+  + step14000.pt (step 14000)
+
+Đã trung bình 7 checkpoint -> D:/Bit-Translate-data/checkpoints_v5/v5_avg.pt
+
+===== THƯỚC ĐO 1: DÒ NGỮ PHÁP (tự động) =====
+  long_keigo          1/1    100%
+  mid_quotative       1/1    100%
+  mid_benefactive     1/1    100%
+  mid_number          1/1    100%
+  mid_voice           1/1    100%
+  xlong_quotative     1/1    100%
+  xlong_benefactive   1/1    100%
+  xlong_number        1/1    100%
+  xlong_negation      1/1    100%
+
+--- 9 probe TRƯỢT ---
+[voice] 彼は部長に報告書を書かされました
+   -> Anh ấy đã bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: anh ấy BỊ BẮT viết)
+[concessive] 努力したものの結果は出ませんでした
+   -> Đã không đạt được kết quả của những nỗ lực đã bỏ ra.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY đã cố gắng NHƯNG không có kết quả)
+[long_benefactive] 先週の打ち合わせで話題に出た件ですが、資料が見つからなくて困っていたところ、同じ部署の田中さんに古いファイルを貸してもらいました
+   -> Về việc được đưa ra thảo luận tuần trước, tôi đã gặp rắc rối vì không tìm thấy tài liệu, và được anh Tanaka cùng phòng ban cho mượn file cũ.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI ĐƯỢC Tanaka cho mượn (dài))
+[long_range] 今回の企画展はテーマを絞っておらず、ヨーロッパ各地の美術館から借りた15世紀から19世紀までの作品を、時代順ではなく主題ごとに並べて展示します
+   -> Triển lãm lần này không tập trung vào chủ đề, mà trưng bày các tác phẩm từ các bảo tàng ở khắp châu Âu cho đến thế kỷ 15 và 19, được sắp xếp theo từng chủ đề chứ không phải theo trình tự thời gian.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ thế kỷ 15 ĐẾN 19 (dài))
+[long_zeropron] スタンフォード大学にRevsプログラムというものがあると聞いていたので、せっかくの機会だと思ってジョンをそこへ連れて行き、1960年型のポルシェに乗ってもらいました
+   -> Nghe nói Đại học Stanford có chương trình Revs, tôi đã nghĩ đây là cơ hội tốt để đưa John đến đó và cho anh ấy đi chiếc Porsche đời 1960.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: cho John NGỒI LÊN xe — không phải 'tôi được xe đón nhận' (dài))
+[mid_range] ヨーロッパ各地から借りた15世紀から19世紀までの作品を展示します
+   -> Trưng bày các tác phẩm từ khắp châu Âu đến thế kỷ 15 và thế kỷ 19.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (vừa))
+[mid_negation] 予定が立て込んでいるだけで、行きたくないわけではありません
+   -> Không phải là tôi chỉ đang bận tối mắt tối mũi đâu.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: KHÔNG PHẢI LÀ không muốn đi (vừa))
+[xlong_range] 今回の企画展は特定の流派に絞らない方針で構成されており、ロンドンやパリ、マドリードの美術館から特別に借り受けた15世紀から19世紀までの油彩作品を、制作年代の順ではなく主題ごとにまとめ、各室の入口に解説パネルを添えて展示します
+   -> Triển lãm lần này được xây dựng theo chủ trương không chỉ giới hạn trong một trường phái cụ thể, với các tác phẩm sơn dầu từ các bảo tàng ở London, Paris, Madrid cho đến thế kỷ 15 và 19 được thuê riêng, được tổng hợp theo từng chủ đề thay vì theo độ tuổi sản xuất, và trưng bày kèm bảng giải thích ở lối vào của từng phòng.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (rất dài))
+[xlong_voice] 月末の納期が迫っていた上に、資料をまとめていた担当者が家庭の事情で急に一週間休むことになってしまったため、代わりに手が空いていた私は部長に週末の報告書を書かされました
+   -> Vì thời hạn giao hàng cuối tháng đang cận kề, cộng thêm người phụ trách đang tổng hợp tài liệu đột ngột phải nghỉ một tuần vì lý do gia đình, nên tôi, người đang rảnh rỗi, đã bị trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (rất dài))
+
+Ghi: E:\Bit-Translate\eval\probe_v5.jsonl
+
+--- so v3 / v4 / v5 theo ĐỘ DÀI (cùng bộ regex hiện tại) ---
+                  ngan    KHONG ngan        TONG
+v3           52/54        19/26        71/80    = 89%
+v4           52/54        19/26        71/80    = 89%
+v4 avg5      52/54        20/26        72/80    = 90%
+v5           52/54        19/26        71/80    = 89%
+
+===== THƯỚC ĐO 2: dịch bench 200 câu THẬT (chờ judge) =====
+  175/200 (297s)
+  200/200 (380s)
+[v5] -> E:\Bit-Translate\eval\bench_v5.jsonl
+
+--- canh hồi quy: hardbench (KHÔNG dùng kết luận) ---
+domain        KD-100M  Google   Haiku  vs Google
+--------------------------------------------------
+caudai           48.8    42.8    48.2      +6.0
+hoithoai         44.8    30.9    40.6     +13.9
+hop              43.0    34.0    38.4      +9.0
+it_deep          48.4    33.7    40.2     +14.7
+keigo            46.5    34.3    37.2     +12.2
+nguphap          51.1    40.8    42.5     +10.3
+slang            31.4    27.1    28.2      +4.3
+solieu           74.2    57.4    70.6     +16.7
+thanhngu         41.7    27.5    34.3     +14.2
+zeropronoun      47.1    32.7    34.6     +14.5
+--------------------------------------------------
+TỔNG TB          47.7    36.1    41.5     +11.6
+
+CÒN LẠI CẦN LÀM: dựng panel mù v4/v5/google trên CẢ 200 câu rồi chấm
+  python eval/build_panels_bench.py eval/judge_v5 v4=eval/bench_v4.jsonl \
+      v5=eval/bench_v5.jsonl google=eval/bench_google.jsonl
+  (chấm xong: python eval/aggregate_bench_judge.py eval/judge_v5)
+MỐC PHẢI VƯỢT (n=200, chấm cùng phiên): v4 64% | ngắn 75% | dài 52% | Google 86%

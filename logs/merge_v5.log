@@ -1,0 +1,14 @@
+corpus v4      : 10,525,121
+  + kd_v5.jsonl: 87,033
+  + kd_v5b.jsonl: 135,017
+  + kd_v5c.jsonl: 2,143,962
+  + kd_cc100.jsonl: 85,420
+  + quán ngữ: 56,051 câu ×3 = 168,153
+
+=== GỘP XONG ===
+v4 cũ      : 10,525,121 (80.1%)
+KD mới THẬT: 2,451,432 (18.6%)
+Quán ngữ   : 168,153 (1.3%)
+Loại QC/trùng: 3,364
+TỔNG       : 13,144,706
+Output     : D:\Bit-Translate-data\kd_v5_merged.jsonl

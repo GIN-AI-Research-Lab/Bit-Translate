@@ -234,13 +234,17 @@ class Block(nn.Module):
 
 class BitNetConfig:
     def __init__(self, vocab_size=32000, d_model=768, n_layers=12, n_heads=12,
-                 d_ff=2048, max_seq=256):
+                 d_ff=2048, max_seq=256, label_smoothing=0.0):
         self.vocab_size = vocab_size
         self.d_model = d_model
         self.n_layers = n_layers
         self.n_heads = n_heads
         self.d_ff = d_ff
         self.max_seq = max_seq
+        # label_smoothing: 0.1 là chuẩn NMT (Transformer gốc dùng 0.1). Chống
+        # model quá tự tin vào 1 token -> phân phối mượt hơn, beam search hoạt
+        # động tốt hơn. Mặc định 0.0 để checkpoint cũ giữ nguyên hành vi.
+        self.label_smoothing = label_smoothing
 
 
 class BitNetLM(nn.Module):
@@ -305,6 +309,7 @@ class BitNetLM(nn.Module):
         # loss/grad y hệt (sum hàng chọn ÷ n == sum(l*m)÷m.sum()); tiết kiệm
         # FLOPs lm_head + ~0.6-0.8GB VRAM logits fp32. Path targets=None (infer)
         # và path không-mask giữ nguyên -> logits đầy đủ.
+        ls = getattr(self.cfg, "label_smoothing", 0.0)
         if targets is not None and loss_mask is not None and USE_MASK_CE and self.training:
             sel = loss_mask.reshape(-1).nonzero(as_tuple=True)[0]
             n = sel.numel()
@@ -313,13 +318,15 @@ class BitNetLM(nn.Module):
             xs = x.reshape(B * T, -1).index_select(0, sel)
             logits_s = self.lm_head(self.output_norm(xs))
             ts = targets.reshape(-1).index_select(0, sel)
-            loss = F.cross_entropy(logits_s.float(), ts, reduction="sum") / n
+            loss = F.cross_entropy(logits_s.float(), ts, reduction="sum",
+                                   label_smoothing=ls) / n
             return None, loss
         logits = self.lm_head(self.output_norm(x))
         loss = None
         if targets is not None:
             l = F.cross_entropy(logits.reshape(-1, logits.size(-1)).float(),
-                                targets.reshape(-1), reduction="none")
+                                targets.reshape(-1), reduction="none",
+                                label_smoothing=ls)
             if loss_mask is not None:
                 m = loss_mask.reshape(-1).float()
                 loss = (l * m).sum() / m.sum().clamp_(min=1.0)
@@ -378,8 +385,16 @@ class BitNetLM(nn.Module):
         caches = [None] * len(self.blocks)
         pos = 0
         cur = idx
+        # Bảng RoPE chỉ có max_seq hàng. Khi pos chạm hết bảng, rope_cos[pos:pos+T]
+        # trả về tensor RỖNG và cái rỗng đó chảy xuống norm -> "size of tensor a (0)
+        # must match tensor b (d_model)". Gặp thật 2026-07-28: translate_txt.py mặc
+        # định --max-new 200, prompt biên bản Quốc hội 57-120 token -> tổng 257-320
+        # vượt max_seq 256, crash cả bench held-out. Dừng gọn hơn là nổ.
+        max_pos = self.rope_cos.shape[0]
         for _ in range(max_new_tokens):
             T = cur.shape[1]
+            if pos + T > max_pos:
+                break
             x = self.embed(cur)
             cos, sin = self.rope_cos[pos:pos + T], self.rope_sin[pos:pos + T]
             for i, blk in enumerate(self.blocks):
@@ -398,3 +413,82 @@ class BitNetLM(nn.Module):
             if int(nxt) == eos_id:
                 break
         return idx
+
+    @torch.no_grad()
+    def generate_beam(self, idx, max_new_tokens, eos_id, beam=4, len_alpha=0.6,
+                      min_new=0):
+        """Beam search + length penalty (GNMT), batch=1, dùng KV-cache.
+
+        Vì sao cần: greedy chọn sai 1 token đầu là sụp cả câu — đúng kiểu fail
+        "câu dài → sụp cấu trúc" của pilot. Beam giữ nhiều nhánh nên phục hồi
+        được. Không đổi gì ở đường train.
+
+        len_alpha: 0 = không phạt (thiên vị câu ngắn/cụt), 0.6-1.0 = chuẩn MT.
+        min_new: chặn EOS trước N token (chống dịch cụt).
+        Trả về idx nối hypothesis tốt nhất, cùng dạng generate_cached.
+        """
+        assert idx.shape[0] == 1, "generate_beam chỉ hỗ trợ batch=1"
+        dev = idx.device
+
+        def step(cur, caches, pos):
+            T = cur.shape[1]
+            x = self.embed(cur)
+            cos, sin = self.rope_cos[pos:pos + T], self.rope_sin[pos:pos + T]
+            for i, blk in enumerate(self.blocks):
+                a, kv = self._attn_step(blk.attn, x, cos, sin, caches[i])
+                x = x + a
+                x = x + blk.ffn(x)
+                caches[i] = kv
+            return self.lm_head(self.output_norm(x)[:, -1, :]), caches
+
+        # --- prefill prompt (1 lần, batch 1) rồi nhân cache ra `beam` nhánh
+        caches = [None] * len(self.blocks)
+        logits, caches = step(idx, caches, 0)
+        pos = idx.shape[1]
+        V = logits.shape[-1]
+        lp = F.log_softmax(logits[0].float(), dim=-1)
+        if min_new > 0:
+            lp[eos_id] = -float("inf")
+        scores, toks = lp.topk(beam)
+        seqs = toks.view(beam, 1)
+        caches = [(k.expand(beam, -1, -1, -1).contiguous(),
+                   v.expand(beam, -1, -1, -1).contiguous()) for k, v in caches]
+
+        def penal(n):
+            return ((5.0 + n) / 6.0) ** len_alpha
+
+        fin = []  # (điểm đã chuẩn hóa độ dài, list token)
+        for stp in range(1, max_new_tokens):
+            logits, caches = step(seqs[:, -1:], caches, pos)
+            pos += 1
+            lp = F.log_softmax(logits.float(), dim=-1)          # (beam, V)
+            if stp + 1 <= min_new:
+                lp[:, eos_id] = -float("inf")
+            cand = (scores.view(-1, 1) + lp).view(-1)            # (beam*V,)
+            top_s, top_i = cand.topk(min(2 * beam, cand.numel()))
+            bsel, nseq, nsc = [], [], []
+            for s, i in zip(top_s.tolist(), top_i.tolist()):
+                bi, ti = i // V, i % V
+                if ti == eos_id:
+                    fin.append((s / penal(seqs.shape[1] + 1),
+                                seqs[bi].tolist() + [eos_id]))
+                    continue
+                bsel.append(bi)
+                nseq.append(seqs[bi].tolist() + [ti])
+                nsc.append(s)
+                if len(bsel) == beam:
+                    break
+            # đủ `beam` hypothesis hoàn chỉnh, hoặc không còn nhánh nào để mở
+            if len(fin) >= beam or not bsel:
+                break
+            seqs = torch.tensor(nseq, dtype=torch.long, device=dev)
+            scores = torch.tensor(nsc, dtype=torch.float, device=dev)
+            bidx = torch.tensor(bsel, dtype=torch.long, device=dev)
+            caches = [(k.index_select(0, bidx), v.index_select(0, bidx))
+                      for k, v in caches]
+
+        if not fin:  # hết token mà chưa beam nào ra EOS -> lấy nhánh điểm cao nhất
+            fin = [(scores[0].item() / penal(seqs.shape[1]), seqs[0].tolist())]
+        best = max(fin, key=lambda x: x[0])[1]
+        return torch.cat(
+            [idx, torch.tensor(best, dtype=torch.long, device=dev).view(1, -1)], dim=1)

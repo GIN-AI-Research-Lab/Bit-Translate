@@ -1,0 +1,77 @@
+nhắm 7,882 thuật ngữ | hạn mức 484,932 câu | 10 tiến trình
+dựng tập câu đã dùng...
+  12,179,427
+  40,045,866 câu | chọn 84,759 | 0.9M dòng/s
+  80,014,834 câu | chọn 119,243 | 0.9M dòng/s
+  120,023,551 câu | chọn 141,298 | 0.9M dòng/s
+  160,031,240 câu | chọn 158,151 | 0.9M dòng/s
+  200,019,893 câu | chọn 171,934 | 0.9M dòng/s
+  240,019,882 câu | chọn 183,410 | 0.9M dòng/s
+  280,082,349 câu | chọn 193,337 | 0.9M dòng/s
+  320,070,943 câu | chọn 202,236 | 0.9M dòng/s
+  360,036,769 câu | chọn 210,152 | 0.9M dòng/s
+
+=== ĐÀO XONG (428s) ===
+quét      : 392,774,277 câu
+chọn      : 216,179 câu -> D:\Bit-Translate-data\raw\mined_rare.txt
+lấp được  : 3,921/7,882 từ (50%)
+vẫn 0 lần : 1,024 từ -> bắt buộc SINH
+đồng đều  : 10 lô, lệch chuẩn/TB = 5.6% (ĐỀU, ngoại suy từ mẫu đầu file tin được)
+
+miền                        +kho tải  +ĐÀO HẾT  còn thiếu
+kinh_te_vi_mo                    45%       53%        153
+hoa_chat_vat_lieu                44%       55%        150
+co_khi_che_tao                   40%       57%        150
+thuy_san_lam_nghiep              36%       58%        150
+bao_hiem                         29%       59%        143
+nong_nghiep                      40%       62%        129
+xa_hoi_nhan_khau                 44%       62%        127
+thien_van_dia_chat               41%       63%        131
+y_te_cong_cong                   54%       66%        115
+thuc_pham_che_bien               49%       68%        105
+ban_dan_phan_cung                52%       70%         98
+vien_thong_mang                  56%       70%         62
+duoc_sinh_hoc                    63%       72%         85
+van_hoc_nghe_thuat               45%       72%         98
+dien_nang_luong                  60%       73%         87
+triet_hoc_tu_tuong               49%       73%         95
+xay_dung_kien_truc               43%       74%         85
+canh_sat_hinh_su                 50%       74%         93
+thien_tai_phong_chong            61%       74%         87
+hang_khong_vu_tru                54%       75%         87
+hoa_sinh_hoc                     54%       75%         83
+logistics_van_tai                53%       76%         70
+quan_su_quoc_phong               64%       77%         78
+ke_toan_thue                     46%       78%         74
+nuoi_day_con                     48%       78%         76
+marketing_quang_cao              50%       78%         63
+toan_ly                          57%       79%         66
+tam_ly_hoc                       52%       79%         70
+quan_tri_khoi_nghiep             60%       79%         67
+du_lich_khach_san                53%       80%         69
+anime_manga_game                 46%       82%         60
+phap_luat_tu_phap                62%       83%         61
+dieu_duong_cham_soc              60%       83%         53
+moi_truong_khi_hau               66%       83%         58
+ban_le_thuong_mai                66%       83%         51
+duong_sat_hang_hai               54%       83%         58
+hanh_chinh_chinh_sach            71%       85%         52
+lich_su                          44%       85%         54
+am_thuc_nha_hang                 52%       86%         49
+thu_y_thu_cung                   66%       86%         49
+tai_chinh_dau_tu                 66%       87%         39
+cntt_phan_mem                    80%       87%         46
+am_nhac                          58%       87%         46
+y_te_lam_sang                    73%       88%         42
+oto_xe_co                        57%       88%         39
+chinh_tri_ngoai_giao             74%       89%         37
+the_thao                         63%       89%         38
+thoi_trang_my_pham               66%       90%         33
+nhan_su_lao_dong                 67%       90%         33
+bat_dong_san                     56%       91%         29
+giao_duc                         75%       91%         32
+giai_tri_dien_anh                64%       92%         28
+ton_giao                         47%       92%         29
+phuc_loi_an_sinh                 71%       92%         27
+
+-> eval/mine_stats.json

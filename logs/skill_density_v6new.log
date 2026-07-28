@@ -1,0 +1,17 @@
+corpus 2,171,977 câu
+
+kỹ năng                     số câu  % corpus    v5   GG   chênh
+------------------------------------------------------------------
+an_chu_ngu                 734,595    33.82%   65%  85%     -20
+katakana_dai               656,864    30.24%   75%  95%     -20
+slang                      413,223    19.03%   45%  90%     -45
+phu_dinh_kho               351,531    16.18%   65%  85%     -20
+menh_de_long               209,378     9.64%   50%  95%     -45
+cau_che_nominal            117,351     5.40%     -    -       -
+keigo_MOC                   72,810     3.35%   80%  80%      +0
+tu_da_nghia                 61,887     2.85%     -    -       -
+khau_ngu_suong_sa           40,619     1.87%     -    -       -
+so_nien_hieu                38,164     1.76%   70%  95%     -25
+idiom_MOC                    4,876     0.22%   60%  65%      -5
+
+-> eval/skill_density_v6new.json

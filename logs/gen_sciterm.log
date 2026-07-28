@@ -1,0 +1,660 @@
+[resume] đã có 125 cặp trong sciterm.jsonl
+[seed] 24 lĩnh vực x 6 loại thuật ngữ x 8 bối cảnh
+[run] backend=LIVE model=gemini-3.1-flash-live-preview mode=sciterm target=60,000 | 10 key x 4 = 40 session | 9999 request xếp hàng
+
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  10 req | 275/60,000 cặp | +146/phút | lỗi 59 | 1.0p
+  20 req | 425/60,000 cặp | +286/phút | lỗi 79 | 1.0p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  30 req | 575/60,000 cặp | +408/phút | lỗi 119 | 1.1p
+  40 req | 723/60,000 cặp | +520/phút | lỗi 144 | 1.1p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  50 req | 873/60,000 cặp | +631/phút | lỗi 171 | 1.2p
+  60 req | 1,008/60,000 cặp | +714/phút | lỗi 199 | 1.2p
+  [live w8] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  70 req | 1,158/60,000 cặp | +820/phút | lỗi 219 | 1.3p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  80 req | 1,307/60,000 cặp | +898/phút | lỗi 259 | 1.3p
+  90 req | 1,427/60,000 cặp | +972/phút | lỗi 272 | 1.3p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  100 req | 1,576/60,000 cặp | +1036/phút | lỗi 315 | 1.4p
+  110 req | 1,726/60,000 cặp | +1124/phút | lỗi 329 | 1.4p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  120 req | 1,844/60,000 cặp | +1166/phút | lỗi 359 | 1.5p
+  130 req | 1,990/60,000 cặp | +1230/phút | lỗi 391 | 1.5p
+  [live w8] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  140 req | 2,140/60,000 cặp | +1301/phút | lỗi 415 | 1.5p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  150 req | 2,275/60,000 cặp | +1337/phút | lỗi 454 | 1.6p
+  160 req | 2,425/60,000 cặp | +1399/phút | lỗi 479 | 1.6p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  170 req | 2,574/60,000 cặp | +1446/phút | lỗi 510 | 1.7p
+  180 req | 2,721/60,000 cặp | +1501/phút | lỗi 537 | 1.7p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  190 req | 2,871/60,000 cặp | +1542/phút | lỗi 567 | 1.8p
+  200 req | 3,004/60,000 cặp | +1589/phút | lỗi 588 | 1.8p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  210 req | 3,152/60,000 cặp | +1623/phút | lỗi 619 | 1.9p
+  220 req | 3,302/60,000 cặp | +1678/phút | lỗi 639 | 1.9p
+  [live w29] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  230 req | 3,444/60,000 cặp | +1706/phút | lỗi 679 | 1.9p
+  240 req | 3,578/60,000 cặp | +1748/phút | lỗi 699 | 2.0p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  250 req | 3,727/60,000 cặp | +1779/phút | lỗi 732 | 2.0p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  260 req | 3,876/60,000 cặp | +1822/phút | lỗi 755 | 2.1p
+  270 req | 4,026/60,000 cặp | +1852/phút | lỗi 779 | 2.1p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  280 req | 4,161/60,000 cặp | +1877/phút | lỗi 817 | 2.2p
+  290 req | 4,310/60,000 cặp | +1908/phút | lỗi 839 | 2.2p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  300 req | 4,458/60,000 cặp | +1937/phút | lỗi 873 | 2.2p
+  310 req | 4,605/60,000 cặp | +1972/phút | lỗi 897 | 2.3p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  320 req | 4,738/60,000 cặp | +1981/phút | lỗi 934 | 2.3p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  330 req | 4,887/60,000 cặp | +2018/phút | lỗi 954 | 2.4p
+  340 req | 5,037/60,000 cặp | +2034/phút | lỗi 989 | 2.4p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  350 req | 5,186/60,000 cặp | +2069/phút | lỗi 1013 | 2.4p
+  360 req | 5,337/60,000 cặp | +2090/phút | lỗi 1039 | 2.5p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  370 req | 5,456/60,000 cặp | +2110/phút | lỗi 1059 | 2.5p
+  380 req | 5,604/60,000 cặp | +2125/phút | lỗi 1099 | 2.6p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  390 req | 5,754/60,000 cặp | +2154/phút | lỗi 1119 | 2.6p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  400 req | 5,904/60,000 cặp | +2174/phút | lỗi 1158 | 2.7p
+  410 req | 6,038/60,000 cặp | +2193/phút | lỗi 1179 | 2.7p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  420 req | 6,186/60,000 cặp | +2207/phút | lỗi 1214 | 2.7p
+  430 req | 6,320/60,000 cặp | +2229/phút | lỗi 1238 | 2.8p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  440 req | 6,453/60,000 cặp | +2234/phút | lỗi 1270 | 2.8p
+  450 req | 6,588/60,000 cặp | +2259/phút | lỗi 1287 | 2.9p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  460 req | 6,737/60,000 cặp | +2273/phút | lỗi 1319 | 2.9p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  470 req | 6,886/60,000 cặp | +2280/phút | lỗi 1359 | 3.0p
+  480 req | 7,036/60,000 cặp | +2308/phút | lỗi 1379 | 3.0p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  490 req | 7,183/60,000 cặp | +2313/phút | lỗi 1419 | 3.1p
+  500 req | 7,333/60,000 cặp | +2335/phút | lỗi 1439 | 3.1p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  510 req | 7,482/60,000 cặp | +2353/phút | lỗi 1463 | 3.1p
+  520 req | 7,632/60,000 cặp | +2365/phút | lỗi 1499 | 3.2p
+  [live w39] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  530 req | 7,780/60,000 cặp | +2383/phút | lỗi 1519 | 3.2p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  540 req | 7,928/60,000 cặp | +2389/phút | lỗi 1559 | 3.3p
+  550 req | 8,075/60,000 cặp | +2413/phút | lỗi 1579 | 3.3p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  560 req | 8,225/60,000 cặp | +2422/phút | lỗi 1619 | 3.3p
+  570 req | 8,359/60,000 cặp | +2434/phút | lỗi 1639 | 3.4p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  580 req | 8,507/60,000 cặp | +2444/phút | lỗi 1671 | 3.4p
+  590 req | 8,656/60,000 cặp | +2455/phút | lỗi 1699 | 3.5p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  600 req | 8,787/60,000 cặp | +2469/phút | lỗi 1719 | 3.5p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  610 req | 8,933/60,000 cặp | +2478/phút | lỗi 1759 | 3.6p
+  620 req | 9,083/60,000 cặp | +2494/phút | lỗi 1779 | 3.6p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  630 req | 9,232/60,000 cặp | +2497/phút | lỗi 1819 | 3.6p
+  640 req | 9,379/60,000 cặp | +2514/phút | lỗi 1839 | 3.7p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  650 req | 9,525/60,000 cặp | +2511/phút | lỗi 1879 | 3.7p
+  660 req | 9,670/60,000 cặp | +2533/phút | lỗi 1899 | 3.8p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  670 req | 9,820/60,000 cặp | +2534/phút | lỗi 1939 | 3.8p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  680 req | 9,970/60,000 cặp | +2551/phút | lỗi 1959 | 3.9p
+  690 req | 10,119/60,000 cặp | +2562/phút | lỗi 1983 | 3.9p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  700 req | 10,268/60,000 cặp | +2563/phút | lỗi 2019 | 4.0p
+  710 req | 10,401/60,000 cặp | +2575/phút | lỗi 2048 | 4.0p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  720 req | 10,547/60,000 cặp | +2580/phút | lỗi 2079 | 4.0p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  730 req | 10,694/60,000 cặp | +2590/phút | lỗi 2109 | 4.1p
+  740 req | 10,841/60,000 cặp | +2595/phút | lỗi 2139 | 4.1p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  750 req | 10,989/60,000 cặp | +2608/phút | lỗi 2159 | 4.2p
+  760 req | 11,139/60,000 cặp | +2610/phút | lỗi 2199 | 4.2p
+  [live w8] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  770 req | 11,289/60,000 cặp | +2621/phút | lỗi 2228 | 4.3p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  780 req | 11,424/60,000 cặp | +2620/phút | lỗi 2259 | 4.3p
+  790 req | 11,571/60,000 cặp | +2633/phút | lỗi 2281 | 4.3p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  800 req | 11,720/60,000 cặp | +2632/phút | lỗi 2319 | 4.4p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  810 req | 11,869/60,000 cặp | +2643/phút | lỗi 2354 | 4.4p
+  820 req | 12,001/60,000 cặp | +2644/phút | lỗi 2379 | 4.5p
+  [live w39] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  830 req | 12,149/60,000 cặp | +2647/phút | lỗi 2419 | 4.5p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  840 req | 12,298/60,000 cặp | +2651/phút | lỗi 2451 | 4.6p
+  850 req | 12,448/60,000 cặp | +2656/phút | lỗi 2479 | 4.6p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  860 req | 12,582/60,000 cặp | +2660/phút | lỗi 2512 | 4.7p
+  870 req | 12,730/60,000 cặp | +2659/phút | lỗi 2547 | 4.7p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  880 req | 12,864/60,000 cặp | +2663/phút | lỗi 2579 | 4.8p
+  [live w39] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  890 req | 13,014/60,000 cặp | +2665/phút | lỗi 2618 | 4.8p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  900 req | 13,160/60,000 cặp | +2661/phút | lỗi 2659 | 4.9p
+  910 req | 13,294/60,000 cặp | +2664/phút | lỗi 2679 | 4.9p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  920 req | 13,442/60,000 cặp | +2663/phút | lỗi 2719 | 5.0p
+  930 req | 13,589/60,000 cặp | +2672/phút | lỗi 2742 | 5.0p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  940 req | 13,737/60,000 cặp | +2667/phút | lỗi 2791 | 5.1p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  950 req | 13,886/60,000 cặp | +2678/phút | lỗi 2816 | 5.1p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  960 req | 14,013/60,000 cặp | +2674/phút | lỗi 2852 | 5.2p
+  970 req | 14,162/60,000 cặp | +2677/phút | lỗi 2879 | 5.2p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  980 req | 14,308/60,000 cặp | +2677/phút | lỗi 2919 | 5.3p
+  990 req | 14,455/60,000 cặp | +2686/phút | lỗi 2939 | 5.3p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1000 req | 14,590/60,000 cặp | +2680/phút | lỗi 2979 | 5.4p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1010 req | 14,727/60,000 cặp | +2689/phút | lỗi 3002 | 5.4p
+  1020 req | 14,875/60,000 cặp | +2688/phút | lỗi 3039 | 5.5p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1030 req | 15,016/60,000 cặp | +2692/phút | lỗi 3079 | 5.5p
+  [live w39] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1040 req | 15,164/60,000 cặp | +2692/phút | lỗi 3112 | 5.6p
+  1050 req | 15,313/60,000 cặp | +2702/phút | lỗi 3139 | 5.6p
+  [live w29] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1060 req | 15,455/60,000 cặp | +2698/phút | lỗi 3179 | 5.7p
+  1070 req | 15,603/60,000 cặp | +2705/phút | lỗi 3199 | 5.7p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1080 req | 15,750/60,000 cặp | +2703/phút | lỗi 3239 | 5.8p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1090 req | 15,897/60,000 cặp | +2711/phút | lỗi 3265 | 5.8p
+  [live w39] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1100 req | 16,043/60,000 cặp | +2707/phút | lỗi 3309 | 5.9p
+  1110 req | 16,176/60,000 cặp | +2708/phút | lỗi 3339 | 5.9p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1120 req | 16,311/60,000 cặp | +2709/phút | lỗi 3377 | 6.0p
+  1130 req | 16,461/60,000 cặp | +2718/phút | lỗi 3398 | 6.0p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1140 req | 16,609/60,000 cặp | +2716/phút | lỗi 3438 | 6.1p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1150 req | 16,743/60,000 cặp | +2725/phút | lỗi 3458 | 6.1p
+  1160 req | 16,889/60,000 cặp | +2719/phút | lỗi 3498 | 6.2p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1170 req | 17,038/60,000 cặp | +2731/phút | lỗi 3518 | 6.2p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1180 req | 17,185/60,000 cặp | +2725/phút | lỗi 3559 | 6.3p
+  1190 req | 17,331/60,000 cặp | +2736/phút | lỗi 3579 | 6.3p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1200 req | 17,456/60,000 cặp | +2730/phút | lỗi 3619 | 6.3p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1210 req | 17,604/60,000 cặp | +2732/phút | lỗi 3658 | 6.4p
+  1220 req | 17,753/60,000 cặp | +2734/phút | lỗi 3688 | 6.4p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1230 req | 17,901/60,000 cặp | +2737/phút | lỗi 3719 | 6.5p
+  1240 req | 18,048/60,000 cặp | +2743/phút | lỗi 3748 | 6.5p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1250 req | 18,196/60,000 cặp | +2743/phút | lỗi 3779 | 6.6p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1260 req | 18,343/60,000 cặp | +2744/phút | lỗi 3818 | 6.6p
+  1270 req | 18,489/60,000 cặp | +2751/phút | lỗi 3839 | 6.7p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1280 req | 18,639/60,000 cặp | +2751/phút | lỗi 3878 | 6.7p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1290 req | 18,787/60,000 cặp | +2752/phút | lỗi 3914 | 6.8p
+  1300 req | 18,933/60,000 cặp | +2754/phút | lỗi 3943 | 6.8p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1310 req | 19,081/60,000 cặp | +2754/phút | lỗi 3979 | 6.9p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1320 req | 19,228/60,000 cặp | +2760/phút | lỗi 4010 | 6.9p
+  1330 req | 19,361/60,000 cặp | +2759/phút | lỗi 4039 | 7.0p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1340 req | 19,507/60,000 cặp | +2763/phút | lỗi 4071 | 7.0p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1350 req | 19,655/60,000 cặp | +2761/phút | lỗi 4109 | 7.1p
+  1360 req | 19,802/60,000 cặp | +2766/phút | lỗi 4138 | 7.1p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1370 req | 19,947/60,000 cặp | +2762/phút | lỗi 4178 | 7.2p
+  1380 req | 20,096/60,000 cặp | +2774/phút | lỗi 4194 | 7.2p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1390 req | 20,245/60,000 cặp | +2766/phút | lỗi 4240 | 7.3p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1400 req | 20,379/60,000 cặp | +2770/phút | lỗi 4267 | 7.3p
+  1410 req | 20,527/60,000 cặp | +2771/phút | lỗi 4300 | 7.4p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1420 req | 20,662/60,000 cặp | +2771/phút | lỗi 4336 | 7.4p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1430 req | 20,809/60,000 cặp | +2776/phút | lỗi 4360 | 7.5p
+  1440 req | 20,957/60,000 cặp | +2778/phút | lỗi 4392 | 7.5p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1450 req | 21,104/60,000 cặp | +2780/phút | lỗi 4424 | 7.5p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1460 req | 21,249/60,000 cặp | +2779/phút | lỗi 4459 | 7.6p
+  1470 req | 21,398/60,000 cặp | +2786/phút | lỗi 4486 | 7.6p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1480 req | 21,543/60,000 cặp | +2787/phút | lỗi 4518 | 7.7p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1490 req | 21,691/60,000 cặp | +2786/phút | lỗi 4555 | 7.7p
+  1500 req | 21,808/60,000 cặp | +2789/phút | lỗi 4578 | 7.8p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1510 req | 21,957/60,000 cặp | +2790/phút | lỗi 4612 | 7.8p
+  1520 req | 22,077/60,000 cặp | +2789/phút | lỗi 4642 | 7.9p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1530 req | 22,221/60,000 cặp | +2794/phút | lỗi 4671 | 7.9p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1540 req | 22,369/60,000 cặp | +2792/phút | lỗi 4709 | 8.0p
+  1550 req | 22,519/60,000 cặp | +2799/phút | lỗi 4732 | 8.0p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1560 req | 22,653/60,000 cặp | +2795/phút | lỗi 4772 | 8.1p
+  1570 req | 22,801/60,000 cặp | +2796/phút | lỗi 4800 | 8.1p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1580 req | 22,947/60,000 cặp | +2801/phút | lỗi 4831 | 8.1p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1590 req | 23,096/60,000 cặp | +2799/phút | lỗi 4870 | 8.2p
+  1600 req | 23,230/60,000 cặp | +2797/phút | lỗi 4900 | 8.3p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1610 req | 23,379/60,000 cặp | +2800/phút | lỗi 4933 | 8.3p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1620 req | 23,525/60,000 cặp | +2797/phút | lỗi 4976 | 8.4p
+  1630 req | 23,672/60,000 cặp | +2807/phút | lỗi 4992 | 8.4p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1640 req | 23,821/60,000 cặp | +2802/phút | lỗi 5038 | 8.5p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1650 req | 23,969/60,000 cặp | +2804/phút | lỗi 5065 | 8.5p
+  1660 req | 24,113/60,000 cặp | +2803/phút | lỗi 5099 | 8.6p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1670 req | 24,261/60,000 cặp | +2803/phút | lỗi 5138 | 8.6p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1680 req | 24,409/60,000 cặp | +2805/phút | lỗi 5168 | 8.7p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1690 req | 24,556/60,000 cặp | +2801/phút | lỗi 5211 | 8.7p
+  1700 req | 24,687/60,000 cặp | +2807/phút | lỗi 5229 | 8.8p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1710 req | 24,836/60,000 cặp | +2802/phút | lỗi 5273 | 8.8p
+  1720 req | 24,984/60,000 cặp | +2810/phút | lỗi 5292 | 8.8p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1730 req | 25,133/60,000 cặp | +2807/phút | lỗi 5333 | 8.9p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1740 req | 25,265/60,000 cặp | +2810/phút | lỗi 5358 | 8.9p
+  1750 req | 25,397/60,000 cặp | +2807/phút | lỗi 5393 | 9.0p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1760 req | 25,545/60,000 cặp | +2805/phút | lỗi 5433 | 9.1p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1770 req | 25,679/60,000 cặp | +2808/phút | lỗi 5459 | 9.1p
+  1780 req | 25,826/60,000 cặp | +2809/phút | lỗi 5493 | 9.2p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1790 req | 25,970/60,000 cặp | +2803/phút | lỗi 5538 | 9.2p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1800 req | 26,117/60,000 cặp | +2809/phút | lỗi 5559 | 9.3p
+  1810 req | 26,265/60,000 cặp | +2809/phút | lỗi 5593 | 9.3p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1820 req | 26,412/60,000 cặp | +2811/phút | lỗi 5619 | 9.4p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1830 req | 26,557/60,000 cặp | +2812/phút | lỗi 5654 | 9.4p
+  1840 req | 26,705/60,000 cặp | +2811/phút | lỗi 5691 | 9.5p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1850 req | 26,836/60,000 cặp | +2815/phút | lỗi 5713 | 9.5p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1860 req | 26,985/60,000 cặp | +2813/phút | lỗi 5754 | 9.5p
+  1870 req | 27,119/60,000 cặp | +2820/phút | lỗi 5759 | 9.6p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1880 req | 27,267/60,000 cặp | +2816/phút | lỗi 5811 | 9.6p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1890 req | 27,415/60,000 cặp | +2811/phút | lỗi 5859 | 9.7p
+  1900 req | 27,560/60,000 cặp | +2818/phút | lỗi 5879 | 9.7p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1910 req | 27,708/60,000 cặp | +2815/phút | lỗi 5918 | 9.8p
+  1920 req | 27,855/60,000 cặp | +2819/phút | lỗi 5939 | 9.8p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1930 req | 28,000/60,000 cặp | +2816/phút | lỗi 5979 | 9.9p
+  1940 req | 28,147/60,000 cặp | +2821/phút | lỗi 5999 | 9.9p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1950 req | 28,297/60,000 cặp | +2817/phút | lỗi 6039 | 10.0p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1960 req | 28,444/60,000 cặp | +2824/phút | lỗi 6059 | 10.0p
+  1970 req | 28,589/60,000 cặp | +2819/phút | lỗi 6099 | 10.1p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1980 req | 28,734/60,000 cặp | +2820/phút | lỗi 6137 | 10.1p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  1990 req | 28,881/60,000 cặp | +2820/phút | lỗi 6162 | 10.2p
+  2000 req | 29,029/60,000 cặp | +2821/phút | lỗi 6199 | 10.2p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2010 req | 29,178/60,000 cặp | +2824/phút | lỗi 6229 | 10.3p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2020 req | 29,326/60,000 cặp | +2821/phút | lỗi 6271 | 10.4p
+  2030 req | 29,443/60,000 cặp | +2820/phút | lỗi 6299 | 10.4p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2040 req | 29,589/60,000 cặp | +2818/phút | lỗi 6339 | 10.5p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2050 req | 29,731/60,000 cặp | +2821/phút | lỗi 6359 | 10.5p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2060 req | 29,877/60,000 cặp | +2818/phút | lỗi 6405 | 10.6p
+  2070 req | 30,009/60,000 cặp | +2822/phút | lỗi 6428 | 10.6p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2080 req | 30,157/60,000 cặp | +2816/phút | lỗi 6477 | 10.7p
+  2090 req | 30,305/60,000 cặp | +2819/phút | lỗi 6499 | 10.7p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2100 req | 30,435/60,000 cặp | +2816/phút | lỗi 6539 | 10.8p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2110 req | 30,581/60,000 cặp | +2820/phút | lỗi 6562 | 10.8p
+  2120 req | 30,729/60,000 cặp | +2818/phút | lỗi 6599 | 10.9p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2130 req | 30,878/60,000 cặp | +2817/phút | lỗi 6639 | 10.9p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2140 req | 31,011/60,000 cặp | +2816/phút | lỗi 6678 | 11.0p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2150 req | 31,155/60,000 cặp | +2814/phút | lỗi 6717 | 11.0p
+  2160 req | 31,302/60,000 cặp | +2816/phút | lỗi 6742 | 11.1p
+  [live w25] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2170 req | 31,447/60,000 cặp | +2811/phút | lỗi 6797 | 11.1p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2180 req | 31,593/60,000 cặp | +2810/phút | lỗi 6824 | 11.2p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2190 req | 31,741/60,000 cặp | +2808/phút | lỗi 6872 | 11.3p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2200 req | 31,886/60,000 cặp | +2807/phút | lỗi 6901 | 11.3p
+  2210 req | 32,031/60,000 cặp | +2807/phút | lỗi 6938 | 11.4p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2220 req | 32,181/60,000 cặp | +2804/phút | lỗi 6978 | 11.4p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2230 req | 32,330/60,000 cặp | +2802/phút | lỗi 7018 | 11.5p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2240 req | 32,479/60,000 cặp | +2804/phút | lỗi 7055 | 11.5p
+  2250 req | 32,629/60,000 cặp | +2803/phút | lỗi 7095 | 11.6p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2260 req | 32,778/60,000 cặp | +2798/phút | lỗi 7138 | 11.7p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2270 req | 32,926/60,000 cặp | +2801/phút | lỗi 7162 | 11.7p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2280 req | 33,070/60,000 cặp | +2796/phút | lỗi 7217 | 11.8p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2290 req | 33,220/60,000 cặp | +2792/phút | lỗi 7258 | 11.9p
+  2300 req | 33,367/60,000 cặp | +2795/phút | lỗi 7285 | 11.9p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2310 req | 33,516/60,000 cặp | +2791/phút | lỗi 7338 | 12.0p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2320 req | 33,660/60,000 cặp | +2785/phút | lỗi 7380 | 12.0p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2330 req | 33,809/60,000 cặp | +2786/phút | lỗi 7418 | 12.1p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2340 req | 33,959/60,000 cặp | +2783/phút | lỗi 7460 | 12.2p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2350 req | 34,104/60,000 cặp | +2777/phút | lỗi 7518 | 12.2p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2360 req | 34,236/60,000 cặp | +2775/phút | lỗi 7557 | 12.3p
+  2370 req | 34,381/60,000 cặp | +2774/phút | lỗi 7594 | 12.3p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2380 req | 34,523/60,000 cặp | +2771/phút | lỗi 7627 | 12.4p
+  2390 req | 34,672/60,000 cặp | +2767/phút | lỗi 7647 | 12.5p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2400 req | 34,818/60,000 cặp | +2766/phút | lỗi 7671 | 12.5p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2410 req | 34,965/60,000 cặp | +2760/phút | lỗi 7701 | 12.6p
+  2420 req | 35,115/60,000 cặp | +2760/phút | lỗi 7721 | 12.7p
+  2430 req | 35,250/60,000 cặp | +2754/phút | lỗi 7747 | 12.8p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2440 req | 35,399/60,000 cặp | +2754/phút | lỗi 7767 | 12.8p
+  2450 req | 35,548/60,000 cặp | +2751/phút | lỗi 7797 | 12.9p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2460 req | 35,695/60,000 cặp | +2747/phút | lỗi 7821 | 13.0p
+  2470 req | 35,845/60,000 cặp | +2745/phút | lỗi 7846 | 13.0p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2480 req | 35,993/60,000 cặp | +2741/phút | lỗi 7867 | 13.1p
+  2490 req | 36,140/60,000 cặp | +2741/phút | lỗi 7887 | 13.1p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2500 req | 36,288/60,000 cặp | +2741/phút | lỗi 7907 | 13.2p
+  2510 req | 36,437/60,000 cặp | +2739/phút | lỗi 7927 | 13.3p
+  2520 req | 36,585/60,000 cặp | +2738/phút | lỗi 7947 | 13.3p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2530 req | 36,732/60,000 cặp | +2734/phút | lỗi 7979 | 13.4p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2540 req | 36,882/60,000 cặp | +2733/phút | lỗi 8003 | 13.4p
+  2550 req | 37,027/60,000 cặp | +2734/phút | lỗi 8018 | 13.5p
+  2560 req | 37,175/60,000 cặp | +2729/phút | lỗi 8047 | 13.6p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2570 req | 37,321/60,000 cặp | +2727/phút | lỗi 8067 | 13.6p
+  2580 req | 37,464/60,000 cặp | +2727/phút | lỗi 8087 | 13.7p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2590 req | 37,612/60,000 cặp | +2725/phút | lỗi 8107 | 13.8p
+  2600 req | 37,759/60,000 cặp | +2723/phút | lỗi 8138 | 13.8p
+  [live w38] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2610 req | 37,903/60,000 cặp | +2722/phút | lỗi 8158 | 13.9p
+  2620 req | 38,035/60,000 cặp | +2719/phút | lỗi 8181 | 13.9p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2630 req | 38,179/60,000 cặp | +2718/phút | lỗi 8204 | 14.0p
+  2640 req | 38,325/60,000 cặp | +2716/phút | lỗi 8227 | 14.1p
+  2650 req | 38,460/60,000 cặp | +2712/phút | lỗi 8247 | 14.1p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2660 req | 38,607/60,000 cặp | +2711/phút | lỗi 8267 | 14.2p
+  2670 req | 38,757/60,000 cặp | +2710/phút | lỗi 8287 | 14.3p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2680 req | 38,906/60,000 cặp | +2712/phút | lỗi 8308 | 14.3p
+  2690 req | 39,052/60,000 cặp | +2710/phút | lỗi 8328 | 14.4p
+  [live w3] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2700 req | 39,196/60,000 cặp | +2708/phút | lỗi 8359 | 14.4p
+  2710 req | 39,341/60,000 cặp | +2712/phút | lỗi 8368 | 14.5p
+  2720 req | 39,488/60,000 cặp | +2708/phút | lỗi 8388 | 14.5p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2730 req | 39,634/60,000 cặp | +2709/phút | lỗi 8408 | 14.6p
+  2740 req | 39,779/60,000 cặp | +2709/phút | lỗi 8429 | 14.6p
+  2750 req | 39,926/60,000 cặp | +2709/phút | lỗi 8449 | 14.7p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2760 req | 40,071/60,000 cặp | +2709/phút | lỗi 8469 | 14.7p
+  2770 req | 40,204/60,000 cặp | +2708/phút | lỗi 8489 | 14.8p
+  [live w29] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2780 req | 40,348/60,000 cặp | +2707/phút | lỗi 8509 | 14.9p
+  2790 req | 40,490/60,000 cặp | +2706/phút | lỗi 8529 | 14.9p
+  2800 req | 40,637/60,000 cặp | +2707/phút | lỗi 8549 | 15.0p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2810 req | 40,781/60,000 cặp | +2706/phút | lỗi 8569 | 15.0p
+  2820 req | 40,926/60,000 cặp | +2706/phút | lỗi 8589 | 15.1p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2830 req | 41,069/60,000 cặp | +2708/phút | lỗi 8609 | 15.1p
+  2840 req | 41,216/60,000 cặp | +2706/phút | lỗi 8629 | 15.2p
+  2850 req | 41,361/60,000 cặp | +2705/phút | lỗi 8649 | 15.2p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2860 req | 41,507/60,000 cặp | +2703/phút | lỗi 8669 | 15.3p
+  2870 req | 41,656/60,000 cặp | +2702/phút | lỗi 8692 | 15.4p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2880 req | 41,802/60,000 cặp | +2702/phút | lỗi 8712 | 15.4p
+  2890 req | 41,944/60,000 cặp | +2699/phút | lỗi 8749 | 15.5p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2900 req | 42,090/60,000 cặp | +2697/phút | lỗi 8769 | 15.6p
+  2910 req | 42,236/60,000 cặp | +2696/phút | lỗi 8789 | 15.6p
+  [live w19] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2920 req | 42,383/60,000 cặp | +2695/phút | lỗi 8809 | 15.7p
+  2930 req | 42,532/60,000 cặp | +2693/phút | lỗi 8829 | 15.7p
+  2940 req | 42,681/60,000 cặp | +2691/phút | lỗi 8849 | 15.8p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2950 req | 42,829/60,000 cặp | +2689/phút | lỗi 8888 | 15.9p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2960 req | 42,977/60,000 cặp | +2690/phút | lỗi 8907 | 15.9p
+  2970 req | 43,125/60,000 cặp | +2690/phút | lỗi 8922 | 16.0p
+  2980 req | 43,270/60,000 cặp | +2691/phút | lỗi 8934 | 16.0p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  2990 req | 43,419/60,000 cặp | +2689/phút | lỗi 8969 | 16.1p
+  3000 req | 43,550/60,000 cặp | +2685/phút | lỗi 8989 | 16.2p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3010 req | 43,696/60,000 cặp | +2688/phút | lỗi 9009 | 16.2p
+  3020 req | 43,829/60,000 cặp | +2683/phút | lỗi 9029 | 16.3p
+  3030 req | 43,976/60,000 cặp | +2681/phút | lỗi 9049 | 16.4p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3040 req | 44,122/60,000 cặp | +2683/phút | lỗi 9069 | 16.4p
+  3050 req | 44,268/60,000 cặp | +2680/phút | lỗi 9089 | 16.5p
+  [live w8] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3060 req | 44,415/60,000 cặp | +2680/phút | lỗi 9109 | 16.5p
+  3070 req | 44,557/60,000 cặp | +2677/phút | lỗi 9146 | 16.6p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3080 req | 44,706/60,000 cặp | +2676/phút | lỗi 9169 | 16.7p
+  3090 req | 44,854/60,000 cặp | +2678/phút | lỗi 9175 | 16.7p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3100 req | 44,996/60,000 cặp | +2676/phút | lỗi 9209 | 16.8p
+  3110 req | 45,135/60,000 cặp | +2673/phút | lỗi 9229 | 16.8p
+  3120 req | 45,278/60,000 cặp | +2675/phút | lỗi 9249 | 16.9p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3130 req | 45,423/60,000 cặp | +2672/phút | lỗi 9269 | 17.0p
+  3140 req | 45,569/60,000 cặp | +2674/phút | lỗi 9289 | 17.0p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3150 req | 45,713/60,000 cặp | +2673/phút | lỗi 9309 | 17.1p
+  3160 req | 45,860/60,000 cặp | +2670/phút | lỗi 9329 | 17.1p
+  3170 req | 46,006/60,000 cặp | +2675/phút | lỗi 9349 | 17.2p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3180 req | 46,154/60,000 cặp | +2671/phút | lỗi 9369 | 17.2p
+  3190 req | 46,301/60,000 cặp | +2670/phút | lỗi 9389 | 17.3p
+  [live w13] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3200 req | 46,449/60,000 cặp | +2672/phút | lỗi 9409 | 17.3p
+  3210 req | 46,599/60,000 cặp | +2669/phút | lỗi 9429 | 17.4p
+  3220 req | 46,745/60,000 cặp | +2670/phút | lỗi 9449 | 17.5p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3230 req | 46,893/60,000 cặp | +2670/phút | lỗi 9469 | 17.5p
+  3240 req | 47,039/60,000 cặp | +2667/phút | lỗi 9495 | 17.6p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3250 req | 47,156/60,000 cặp | +2668/phút | lỗi 9509 | 17.6p
+  3260 req | 47,304/60,000 cặp | +2666/phút | lỗi 9536 | 17.7p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3270 req | 47,438/60,000 cặp | +2664/phút | lỗi 9566 | 17.8p
+  3280 req | 47,571/60,000 cặp | +2667/phút | lỗi 9570 | 17.8p
+  3290 req | 47,714/60,000 cặp | +2664/phút | lỗi 9590 | 17.9p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3300 req | 47,859/60,000 cặp | +2664/phút | lỗi 9610 | 17.9p
+  3310 req | 48,004/60,000 cặp | +2666/phút | lỗi 9630 | 18.0p
+  3320 req | 48,153/60,000 cặp | +2665/phút | lỗi 9650 | 18.0p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3330 req | 48,300/60,000 cặp | +2663/phút | lỗi 9677 | 18.1p
+  3340 req | 48,448/60,000 cặp | +2664/phút | lỗi 9690 | 18.1p
+  [live w8] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3350 req | 48,588/60,000 cặp | +2663/phút | lỗi 9710 | 18.2p
+  3360 req | 48,735/60,000 cặp | +2663/phút | lỗi 9730 | 18.3p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3370 req | 48,883/60,000 cặp | +2663/phút | lỗi 9751 | 18.3p
+  3380 req | 49,030/60,000 cặp | +2664/phút | lỗi 9770 | 18.4p
+  3390 req | 49,174/60,000 cặp | +2662/phút | lỗi 9799 | 18.4p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3400 req | 49,323/60,000 cặp | +2665/phút | lỗi 9810 | 18.5p
+  3410 req | 49,468/60,000 cặp | +2662/phút | lỗi 9835 | 18.5p
+  [live w18] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3420 req | 49,613/60,000 cặp | +2661/phút | lỗi 9870 | 18.6p
+  3430 req | 49,758/60,000 cặp | +2662/phút | lỗi 9884 | 18.6p
+  [live w14] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3440 req | 49,904/60,000 cặp | +2660/phút | lỗi 9910 | 18.7p
+  3450 req | 50,046/60,000 cặp | +2662/phút | lỗi 9911 | 18.8p
+  3460 req | 50,179/60,000 cặp | +2660/phút | lỗi 9950 | 18.8p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3470 req | 50,308/60,000 cặp | +2659/phút | lỗi 9970 | 18.9p
+  3480 req | 50,457/60,000 cặp | +2660/phút | lỗi 9973 | 18.9p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3490 req | 50,599/60,000 cặp | +2659/phút | lỗi 10010 | 19.0p
+  3500 req | 50,748/60,000 cặp | +2659/phút | lỗi 10025 | 19.0p
+  3510 req | 50,878/60,000 cặp | +2658/phút | lỗi 10046 | 19.1p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3520 req | 51,023/60,000 cặp | +2658/phút | lỗi 10062 | 19.1p
+  3530 req | 51,169/60,000 cặp | +2658/phút | lỗi 10080 | 19.2p
+  3540 req | 51,316/60,000 cặp | +2658/phút | lỗi 10096 | 19.3p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3550 req | 51,459/60,000 cặp | +2656/phút | lỗi 10130 | 19.3p
+  3560 req | 51,602/60,000 cặp | +2656/phút | lỗi 10150 | 19.4p
+  [live w5] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3570 req | 51,746/60,000 cặp | +2657/phút | lỗi 10170 | 19.4p
+  3580 req | 51,894/60,000 cặp | +2657/phút | lỗi 10190 | 19.5p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3590 req | 52,041/60,000 cặp | +2655/phút | lỗi 10210 | 19.6p
+  3600 req | 52,187/60,000 cặp | +2657/phút | lỗi 10230 | 19.6p
+  3610 req | 52,331/60,000 cặp | +2654/phút | lỗi 10250 | 19.7p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3620 req | 52,478/60,000 cặp | +2656/phút | lỗi 10270 | 19.7p
+  3630 req | 52,625/60,000 cặp | +2655/phút | lỗi 10290 | 19.8p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3640 req | 52,773/60,000 cặp | +2654/phút | lỗi 10310 | 19.8p
+  3650 req | 52,917/60,000 cặp | +2655/phút | lỗi 10330 | 19.9p
+  3660 req | 53,059/60,000 cặp | +2652/phút | lỗi 10350 | 20.0p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3670 req | 53,206/60,000 cặp | +2654/phút | lỗi 10370 | 20.0p
+  3680 req | 53,348/60,000 cặp | +2653/phút | lỗi 10390 | 20.1p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3690 req | 53,480/60,000 cặp | +2651/phút | lỗi 10410 | 20.1p
+  3700 req | 53,611/60,000 cặp | +2651/phút | lỗi 10430 | 20.2p
+  3710 req | 53,759/60,000 cặp | +2651/phút | lỗi 10450 | 20.2p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3720 req | 53,893/60,000 cặp | +2649/phút | lỗi 10470 | 20.3p
+  3730 req | 54,041/60,000 cặp | +2650/phút | lỗi 10490 | 20.3p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3740 req | 54,186/60,000 cặp | +2649/phút | lỗi 10510 | 20.4p
+  3750 req | 54,332/60,000 cặp | +2647/phút | lỗi 10534 | 20.5p
+  [live w33] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3760 req | 54,480/60,000 cặp | +2648/phút | lỗi 10551 | 20.5p
+  3770 req | 54,628/60,000 cặp | +2647/phút | lỗi 10574 | 20.6p
+  3780 req | 54,771/60,000 cặp | +2648/phút | lỗi 10590 | 20.6p
+  [live w28] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3790 req | 54,920/60,000 cặp | +2647/phút | lỗi 10615 | 20.7p
+  3800 req | 55,055/60,000 cặp | +2647/phút | lỗi 10635 | 20.8p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3810 req | 55,201/60,000 cặp | +2648/phút | lỗi 10651 | 20.8p
+  3820 req | 55,349/60,000 cặp | +2647/phút | lỗi 10676 | 20.9p
+  3830 req | 55,497/60,000 cặp | +2647/phút | lỗi 10696 | 20.9p
+  [live w24] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3840 req | 55,645/60,000 cặp | +2648/phút | lỗi 10712 | 21.0p
+  3850 req | 55,776/60,000 cặp | +2649/phút | lỗi 10732 | 21.0p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3860 req | 55,908/60,000 cặp | +2648/phút | lỗi 10752 | 21.1p
+  3870 req | 56,054/60,000 cặp | +2648/phút | lỗi 10772 | 21.1p
+  3880 req | 56,173/60,000 cặp | +2648/phút | lỗi 10792 | 21.2p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3890 req | 56,316/60,000 cặp | +2648/phút | lỗi 10812 | 21.2p
+  3900 req | 56,462/60,000 cặp | +2649/phút | lỗi 10832 | 21.3p
+  [live w35] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3910 req | 56,605/60,000 cặp | +2648/phút | lỗi 10852 | 21.3p
+  3920 req | 56,752/60,000 cặp | +2648/phút | lỗi 10872 | 21.4p
+  3930 req | 56,898/60,000 cặp | +2648/phút | lỗi 10892 | 21.4p
+  [live w4] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3940 req | 57,043/60,000 cặp | +2649/phút | lỗi 10913 | 21.5p
+  3950 req | 57,190/60,000 cặp | +2649/phút | lỗi 10933 | 21.5p
+  [live w23] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  3960 req | 57,337/60,000 cặp | +2649/phút | lỗi 10953 | 21.6p
+  3970 req | 57,483/60,000 cặp | +2650/phút | lỗi 10966 | 21.6p
+  3980 req | 57,630/60,000 cặp | +2651/phút | lỗi 10977 | 21.7p
+  3990 req | 57,778/60,000 cặp | +2652/phút | lỗi 10993 | 21.7p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  4000 req | 57,921/60,000 cặp | +2651/phút | lỗi 11016 | 21.8p
+  4010 req | 58,064/60,000 cặp | +2651/phút | lỗi 11033 | 21.9p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  4020 req | 58,212/60,000 cặp | +2653/phút | lỗi 11053 | 21.9p
+  4030 req | 58,358/60,000 cặp | +2652/phút | lỗi 11073 | 22.0p
+  4040 req | 58,504/60,000 cặp | +2653/phút | lỗi 11093 | 22.0p
+  [live w9] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  4050 req | 58,650/60,000 cặp | +2653/phút | lỗi 11113 | 22.1p
+  4060 req | 58,796/60,000 cặp | +2654/phút | lỗi 11133 | 22.1p
+  [live w15] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  4070 req | 58,943/60,000 cặp | +2653/phút | lỗi 11153 | 22.2p
+  4080 req | 59,090/60,000 cặp | +2656/phút | lỗi 11171 | 22.2p
+  4090 req | 59,232/60,000 cặp | +2654/phút | lỗi 11193 | 22.3p
+  4100 req | 59,375/60,000 cặp | +2658/phút | lỗi 11193 | 22.3p
+  [live w29] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  4110 req | 59,523/60,000 cặp | +2656/phút | lỗi 11220 | 22.4p
+  4120 req | 59,671/60,000 cặp | +2656/phút | lỗi 11246 | 22.4p
+  [live w34] 1011 None. Quota exceeded for quota metric 'API requests' and limit 'Request limit per minute for a region' of
+  4130 req | 59,817/60,000 cặp | +2658/phút | lỗi 11253 | 22.5p
+  4140 req | 59,964/60,000 cặp | +2658/phút | lỗi 11273 | 22.5p
+  4150 req | 60,107/60,000 cặp | +2659/phút | lỗi 11292 | 22.6p
+
+=== XONG (sciterm) ===
+Cặp đạt   : 60,240 (+60,115 phiên này)
+Request    : 4159 | lỗi API 11295 | 31.3 phút
+Rớt QC     : 1,247
+  trung_lap                    878
+  ja_lan_tieng_viet            278
+  vi_sot_tieng_nhat             42
+  khong_co_dau_hieu_thuat_ngu      24
+  rong                          19
+  vi_khong_dau                   2
+  thieu_term                     2
+  ja_khong_phai_tieng_nhat       1
+  thieu_vi_term                  1
+Output     : D:\Bit-Translate-data\gen_niche\sciterm.jsonl

@@ -1,0 +1,68 @@
+54 miền | 16,922 thuật ngữ
+
+quét corpus v5 (13,1M cặp)...
+  13,144,706 câu | 13,081,703 câu đã dùng
+
+quét kho CHƯA DÙNG...
+  kokkai_ja.txt          5,496,185 câu chưa dùng
+  cc100_pick.txt         4,904,013 câu chưa dùng
+  cc100_colloq.txt       553,325 câu chưa dùng
+
+miền                          giờ   +kho    cơ bản  trung   sâu  còn thiếu
+------------------------------------------------------------------------------
+bao_hiem                      18%    29%       53%    27%    9%        248
+thuy_san_lam_nghiep           25%    36%       71%    29%    8%        227
+co_khi_che_tao                34%    40%       74%    38%    6%        208
+nong_nghiep                   27%    40%       78%    29%   10%        203
+thien_van_dia_chat            28%    41%       78%    39%    6%        205
+xay_dung_kien_truc            33%    43%       84%    36%   11%        190
+hoa_chat_vat_lieu             35%    44%       88%    42%    5%        189
+lich_su                       30%    44%       82%    38%   11%        197
+xa_hoi_nhan_khau              28%    44%       81%    42%    9%        188
+van_hoc_nghe_thuat            32%    45%       84%    42%    8%        196
+kinh_te_vi_mo                 32%    45%       85%    39%    6%        182
+ke_toan_thue                  30%    46%       85%    44%   12%        178
+anime_manga_game              39%    46%       79%    40%   21%        181
+ton_giao                      38%    47%       82%    44%   16%        188
+nuoi_day_con                  32%    48%       72%    55%   18%        178
+thuc_pham_che_bien            40%    49%       89%    48%   12%        166
+triet_hoc_tu_tuong            38%    49%       93%    40%   14%        181
+canh_sat_hinh_su              39%    50%       85%    48%   16%        177
+marketing_quang_cao           34%    50%       81%    45%   13%        142
+tam_ly_hoc                    36%    52%       88%    47%   14%        163
+am_thuc_nha_hang              37%    52%       65%    70%   23%        165
+ban_dan_phan_cung             43%    52%       76%    70%   14%        157
+logistics_van_tai             37%    53%       84%    38%   31%        138
+du_lich_khach_san             38%    53%       84%    56%   15%        160
+y_te_cong_cong                38%    54%       90%    50%   25%        159
+duong_sat_hang_hai            40%    54%       90%    51%   21%        160
+hoa_sinh_hoc                  37%    54%       85%    44%   37%        152
+hang_khong_vu_tru             40%    54%       91%    58%   14%        159
+vien_thong_mang               48%    56%       79%    39%    6%         90
+bat_dong_san                  36%    56%       90%    52%   28%        146
+toan_ly                       42%    57%       88%    53%   24%        135
+oto_xe_co                     47%    57%       86%    58%   23%        135
+am_nhac                       47%    58%       92%    56%   25%        148
+quan_tri_khoi_nghiep          38%    60%       93%    60%   24%        129
+dieu_duong_cham_soc           36%    60%       82%    66%   26%        127
+dien_nang_luong               44%    60%       90%    67%   18%        130
+thien_tai_phong_chong         40%    61%       92%    56%   32%        134
+phap_luat_tu_phap             50%    62%       97%    69%   20%        134
+duoc_sinh_hoc                 43%    63%       97%    72%   20%        112
+the_thao                      48%    63%       98%    57%   33%        131
+giai_tri_dien_anh             54%    64%       95%    60%   33%        123
+quan_su_quoc_phong            52%    64%       94%    68%   20%        120
+tai_chinh_dau_tu              46%    66%       91%    65%   30%        101
+ban_le_thuong_mai             53%    66%       92%    65%   30%        104
+moi_truong_khi_hau            40%    66%       80%    66%   52%        119
+thoi_trang_my_pham            56%    66%       91%    62%   42%        116
+thu_y_thu_cung                42%    66%       85%    78%   39%        115
+nhan_su_lao_dong              50%    67%       89%    73%   39%        112
+hanh_chinh_chinh_sach         50%    71%       98%    79%   39%         98
+phuc_loi_an_sinh              48%    71%       94%    73%   47%         94
+y_te_lam_sang                 51%    73%      100%    89%   33%         92
+chinh_tri_ngoai_giao          60%    74%       96%    78%   47%         90
+giao_duc                      54%    75%       97%    75%   52%         85
+cntt_phan_mem                 74%    80%      100%    94%   47%         70
+
+-> eval/term_coverage.json

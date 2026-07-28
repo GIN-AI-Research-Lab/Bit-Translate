@@ -1,0 +1,602 @@
+{
+ "1": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "2": {
+  "A": "fable",
+  "B": "google",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "3": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "google",
+  "D": "fable"
+ },
+ "4": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "kd",
+  "D": "google"
+ },
+ "5": {
+  "A": "google",
+  "B": "fable",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "6": {
+  "A": "haiku",
+  "B": "google",
+  "C": "kd",
+  "D": "fable"
+ },
+ "7": {
+  "A": "fable",
+  "B": "google",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "8": {
+  "A": "kd",
+  "B": "fable",
+  "C": "google",
+  "D": "haiku"
+ },
+ "9": {
+  "A": "fable",
+  "B": "google",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "10": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "fable",
+  "D": "google"
+ },
+ "21": {
+  "A": "kd",
+  "B": "google",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "22": {
+  "A": "google",
+  "B": "fable",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "23": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "fable",
+  "D": "google"
+ },
+ "24": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "kd",
+  "D": "google"
+ },
+ "25": {
+  "A": "fable",
+  "B": "kd",
+  "C": "haiku",
+  "D": "google"
+ },
+ "26": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "google",
+  "D": "kd"
+ },
+ "27": {
+  "A": "google",
+  "B": "haiku",
+  "C": "fable",
+  "D": "kd"
+ },
+ "28": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "fable",
+  "D": "google"
+ },
+ "29": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "kd",
+  "D": "google"
+ },
+ "30": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "41": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "google",
+  "D": "kd"
+ },
+ "42": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "google",
+  "D": "fable"
+ },
+ "43": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "44": {
+  "A": "kd",
+  "B": "google",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "45": {
+  "A": "kd",
+  "B": "fable",
+  "C": "google",
+  "D": "haiku"
+ },
+ "46": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "google",
+  "D": "kd"
+ },
+ "47": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "google",
+  "D": "fable"
+ },
+ "48": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "google",
+  "D": "fable"
+ },
+ "49": {
+  "A": "google",
+  "B": "haiku",
+  "C": "kd",
+  "D": "fable"
+ },
+ "50": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "61": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "google",
+  "D": "kd"
+ },
+ "62": {
+  "A": "kd",
+  "B": "fable",
+  "C": "haiku",
+  "D": "google"
+ },
+ "63": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "google",
+  "D": "fable"
+ },
+ "64": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "65": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "google",
+  "D": "fable"
+ },
+ "66": {
+  "A": "kd",
+  "B": "google",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "67": {
+  "A": "google",
+  "B": "fable",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "68": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "google",
+  "D": "fable"
+ },
+ "69": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "70": {
+  "A": "kd",
+  "B": "google",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "81": {
+  "A": "fable",
+  "B": "kd",
+  "C": "haiku",
+  "D": "google"
+ },
+ "82": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "83": {
+  "A": "google",
+  "B": "kd",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "84": {
+  "A": "google",
+  "B": "fable",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "85": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "86": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "google",
+  "D": "kd"
+ },
+ "87": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "google",
+  "D": "fable"
+ },
+ "88": {
+  "A": "google",
+  "B": "fable",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "89": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "90": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "kd",
+  "D": "google"
+ },
+ "101": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "kd",
+  "D": "google"
+ },
+ "102": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "fable",
+  "D": "google"
+ },
+ "103": {
+  "A": "kd",
+  "B": "google",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "104": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "fable",
+  "D": "google"
+ },
+ "105": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "kd",
+  "D": "google"
+ },
+ "106": {
+  "A": "kd",
+  "B": "google",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "107": {
+  "A": "google",
+  "B": "kd",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "108": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "109": {
+  "A": "fable",
+  "B": "google",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "110": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "google",
+  "D": "kd"
+ },
+ "121": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "google",
+  "D": "kd"
+ },
+ "122": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "123": {
+  "A": "fable",
+  "B": "kd",
+  "C": "haiku",
+  "D": "google"
+ },
+ "124": {
+  "A": "haiku",
+  "B": "kd",
+  "C": "fable",
+  "D": "google"
+ },
+ "125": {
+  "A": "kd",
+  "B": "fable",
+  "C": "haiku",
+  "D": "google"
+ },
+ "126": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "127": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "google",
+  "D": "kd"
+ },
+ "128": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "google",
+  "D": "kd"
+ },
+ "129": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "google",
+  "D": "kd"
+ },
+ "130": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "141": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "google",
+  "D": "kd"
+ },
+ "142": {
+  "A": "kd",
+  "B": "google",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "143": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "fable",
+  "D": "google"
+ },
+ "144": {
+  "A": "kd",
+  "B": "fable",
+  "C": "google",
+  "D": "haiku"
+ },
+ "145": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "146": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "fable",
+  "D": "google"
+ },
+ "147": {
+  "A": "google",
+  "B": "fable",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "148": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "149": {
+  "A": "fable",
+  "B": "kd",
+  "C": "haiku",
+  "D": "google"
+ },
+ "150": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "kd",
+  "D": "google"
+ },
+ "161": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ },
+ "162": {
+  "A": "fable",
+  "B": "kd",
+  "C": "google",
+  "D": "haiku"
+ },
+ "163": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "google",
+  "D": "fable"
+ },
+ "164": {
+  "A": "haiku",
+  "B": "google",
+  "C": "kd",
+  "D": "fable"
+ },
+ "165": {
+  "A": "haiku",
+  "B": "fable",
+  "C": "google",
+  "D": "kd"
+ },
+ "166": {
+  "A": "kd",
+  "B": "fable",
+  "C": "google",
+  "D": "haiku"
+ },
+ "167": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "168": {
+  "A": "fable",
+  "B": "haiku",
+  "C": "kd",
+  "D": "google"
+ },
+ "169": {
+  "A": "google",
+  "B": "haiku",
+  "C": "fable",
+  "D": "kd"
+ },
+ "170": {
+  "A": "kd",
+  "B": "google",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "181": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "fable",
+  "D": "google"
+ },
+ "182": {
+  "A": "google",
+  "B": "haiku",
+  "C": "kd",
+  "D": "fable"
+ },
+ "183": {
+  "A": "kd",
+  "B": "haiku",
+  "C": "google",
+  "D": "fable"
+ },
+ "184": {
+  "A": "fable",
+  "B": "kd",
+  "C": "google",
+  "D": "haiku"
+ },
+ "185": {
+  "A": "haiku",
+  "B": "google",
+  "C": "fable",
+  "D": "kd"
+ },
+ "186": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "187": {
+  "A": "google",
+  "B": "kd",
+  "C": "haiku",
+  "D": "fable"
+ },
+ "188": {
+  "A": "fable",
+  "B": "google",
+  "C": "haiku",
+  "D": "kd"
+ },
+ "189": {
+  "A": "google",
+  "B": "kd",
+  "C": "fable",
+  "D": "haiku"
+ },
+ "190": {
+  "A": "fable",
+  "B": "google",
+  "C": "kd",
+  "D": "haiku"
+ }
+}

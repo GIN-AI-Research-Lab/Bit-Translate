@@ -1,0 +1,110 @@
+{
+ "ckpt": "v2_avg3 (average step3000-4000 cua vong 2 resume tu avg5)",
+ "data": "corpus 11,49M cap / 451,5M token, niche 8,39% (241k cap 6 domain)",
+ "train": "resume tu kd_avg5, 4000 step, lr 1e-4 cosine ->1e-5, label_smoothing 0.1",
+ "n": 100,
+ "decode": "greedy",
+ "judge": "Claude Opus, CUNG PHIEN voi moc avg5. CANH BAO: khong mu hoan toan (nhan ra cot KD vi 3 he kia giu nguyen ban dich)",
+ "kd": {
+  "acc": 3.82,
+  "nat": 3.76,
+  "usable_pct": 65.0
+ },
+ "moc_avg5": {
+  "acc": 2.99,
+  "nat": 2.99,
+  "usable_pct": 46.0
+ },
+ "cac_he_khac_khong_doi": {
+  "google": {
+   "acc": 2.92,
+   "nat": 2.86,
+   "usable_pct": 26.0
+  },
+  "fable": {
+   "acc": 4.98,
+   "nat": 4.99,
+   "usable_pct": 100.0
+  },
+  "haiku": {
+   "acc": 3.7,
+   "nat": 3.56,
+   "usable_pct": 69.0
+  }
+ },
+ "domain_acc": {
+  "caudai": 3.0,
+  "hoithoai": 3.3,
+  "hop": 3.6,
+  "it_deep": 4.3,
+  "keigo": 4.9,
+  "nguphap": 4.2,
+  "slang": 4.1,
+  "solieu": 4.4,
+  "thanhngu": 2.6,
+  "zeropronoun": 3.8
+ },
+ "domain_acc_moc": {
+  "caudai": {
+   "google": 3.4,
+   "kd": 2.0,
+   "fable": 5.0,
+   "haiku": 3.8
+  },
+  "hoithoai": {
+   "kd": 3.0,
+   "google": 2.1,
+   "haiku": 3.6,
+   "fable": 5.0
+  },
+  "hop": {
+   "haiku": 3.9,
+   "fable": 5.0,
+   "google": 2.9,
+   "kd": 2.7
+  },
+  "it_deep": {
+   "haiku": 3.7,
+   "fable": 5.0,
+   "google": 3.0,
+   "kd": 3.4
+  },
+  "keigo": {
+   "fable": 5.0,
+   "kd": 2.7,
+   "haiku": 3.1,
+   "google": 2.9
+  },
+  "nguphap": {
+   "fable": 4.9,
+   "haiku": 3.8,
+   "kd": 3.8,
+   "google": 3.2
+  },
+  "slang": {
+   "fable": 5.0,
+   "haiku": 3.2,
+   "google": 2.6,
+   "kd": 2.4
+  },
+  "solieu": {
+   "haiku": 4.8,
+   "fable": 5.0,
+   "google": 4.0,
+   "kd": 4.8
+  },
+  "thanhngu": {
+   "fable": 4.9,
+   "google": 2.2,
+   "kd": 1.8,
+   "haiku": 3.4
+  },
+  "zeropronoun": {
+   "kd": 3.3,
+   "haiku": 3.7,
+   "fable": 5.0,
+   "google": 2.9
+  }
+ },
+ "doi_dau_tung_cau": "v2 thang 57 / hoa 27 / thua 16"
+}

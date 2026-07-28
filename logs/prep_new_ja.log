@@ -1,0 +1,13 @@
+nạp corpus cũ để loại trùng...
+  11,883,990 câu cũ
+  ...1,000,000 đọc | giữ 314,804
+  ...2,500,000 đọc | giữ 750,156
+
+=== LỌC XONG ===
+Đọc          : 3,139,749
+GIỮ (câu mới): 934,524 (29.8%)
+Trùng cũ     : 986,105 | trùng nội bộ: 126,082 | rác/loại: 1,093,038
+Output       : D:/Bit-Translate-data/raw/os_ja_new.txt
+
+Dịch bằng:  KD_INPUT=D:/Bit-Translate-data/raw/os_ja_new.txt KD_OUTPUT=D:/Bit-Translate-data/raw/kd_os_new.jsonl \
+            WORKERS_PER_KEY=6 BATCH_SIZE=1 python scripts/run_kd_batch.py

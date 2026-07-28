@@ -1,0 +1,5 @@
+[neo] /d/Bit-Translate-data/checkpoints_v6 -> /d/Bit-Translate-data/curve_v6 | moc %2000 | kiem moi 120s
+[neo 11:25:32] giu step10000.pt
+[neo 12:11:40] giu step12000.pt
+[neo 12:51:47] giu step14000.pt
+[neo 13:44:02] giu step16000.pt

@@ -1,0 +1,8 @@
+[08:02] upload xong, kiem tra volume
+bin_v5/dev.index.npy
+bin_v5/dev.tokens.u16
+bin_v5/train.index.npy
+bin_v5/train.tokens.u16
+checkpoints_v5/last.pt
+[08:02] TRAIN 14000 step
+[13:25] da phat lenh train

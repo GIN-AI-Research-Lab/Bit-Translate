@@ -1,0 +1,47 @@
+  idiom: đọc 126,576 từ 2 file
+  keigo: đọc 80,683 từ 1 file
+  slang: đọc 40,834 từ 1 file
+  negation: đọc 42,636 từ 1 file
+  katakana: đọc 25,809 từ 1 file
+  long: đọc 20,422 từ 1 file
+  conv: đọc 40,763 từ 1 file
+  zeropron: đọc 30,753 từ 1 file
+  sciterm: đọc 60,240 từ 1 file
+  termgap: đọc 100,388 từ 1 file
+
+Niche qua QC + dedup: 568,596 cặp
+  idiom       126,521
+  termgap     100,388
+  keigo        80,654
+  sciterm      60,240
+  negation     42,633
+  slang        40,794
+  conv         40,704
+  zeropron     30,435
+  katakana     25,805
+  long         20,422
+  + data thật kd_os_new.jsonl: 922,232 cặp
+
+=== GỘP XONG ===
+Corpus gốc giữ  : 10,524,947 (loại 174 câu ja trùng niche)
+Data THẬT thêm  : 922,232
+Niche (nhân bản): 1,130,776
+    termgap    x6 ->   602,328
+    idiom      x1 ->   126,521
+    sciterm    x2 ->   120,480
+    keigo      x1 ->    80,654
+    negation   x1 ->    42,633
+    slang      x1 ->    40,794
+    conv       x1 ->    40,704
+    zeropron   x1 ->    30,435
+    katakana   x1 ->    25,805
+    long       x1 ->    20,422
+TỔNG            : 12,577,955 | niche chiếm 8.99%
+Rớt/bỏ:
+  real:qc                             11,779
+  niche_trung_lap                        435
+  slang:emoji_chi_o_vi                    40
+  keigo:ja_lan_tieng_viet                 17
+  idiom:ja_lan_tieng_viet                 16
+  real:trung                              14
+Output          : D:/Bit-Translate-data/kd_filtered_niche_v4.jsonl

@@ -1,0 +1,128 @@
+==================== KẾT QUẢ VÒNG 3 (grow 18L) ====================
+Sun Jul 26 06:43:52 SEAST 2026
+
+--- 8 dòng cuối train.log ---
+step 7950 | loss 2.0443 | lr 1.00e-05 | 39,095 tok/s | 1.28s/step
+step 7960 | loss 2.0378 | lr 1.00e-05 | 38,994 tok/s | 1.28s/step
+step 7970 | loss 2.0367 | lr 1.00e-05 | 38,775 tok/s | 1.27s/step
+step 7980 | loss 2.0313 | lr 1.00e-05 | 38,362 tok/s | 1.27s/step
+step 7990 | loss 2.0470 | lr 1.00e-05 | 39,332 tok/s | 1.26s/step
+step 8000 | loss 2.0358 | lr 1.00e-05 | 38,119 tok/s | 1.27s/step
+  saved checkpoint @ step 8000
+=== training loop exited ===
+
+--- AVERAGE 7000
+7500
+8000 ---
+  + step8000.pt (step 8000)
+
+Đã trung bình 3 checkpoint -> D:/Bit-Translate-data/checkpoints_v3/v3_avg.pt
+
+--- chrF: step8000 đơn lẻ ---
+domain        KD-100M  Google   Haiku  vs Google
+--------------------------------------------------
+caudai           46.2    42.8    48.2      +3.4
+hoithoai         44.2    30.9    40.6     +13.2
+hop              46.5    34.0    38.4     +12.5
+it_deep          45.9    33.7    40.2     +12.2
+keigo            47.8    34.3    37.2     +13.5
+nguphap          50.4    40.8    42.5      +9.6
+slang            34.1    27.1    28.2      +7.0
+solieu           73.2    57.4    70.6     +15.7
+thanhngu         39.9    27.5    34.3     +12.4
+zeropronoun      51.7    32.7    34.6     +19.1
+--------------------------------------------------
+TỔNG TB          48.0    36.1    41.5     +11.9
+
+--- chrF: v3_avg ---
+domain        KD-100M  Google   Haiku  vs Google
+--------------------------------------------------
+caudai           48.0    42.8    48.2      +5.2
+hoithoai         45.1    30.9    40.6     +14.2
+hop              45.5    34.0    38.4     +11.5
+it_deep          47.4    33.7    40.2     +13.7
+keigo            50.6    34.3    37.2     +16.4
+nguphap          52.2    40.8    42.5     +11.4
+slang            33.8    27.1    28.2      +6.7
+solieu           72.3    57.4    70.6     +14.9
+thanhngu         42.6    27.5    34.3     +15.1
+zeropronoun      49.9    32.7    34.6     +17.2
+--------------------------------------------------
+TỔNG TB          48.7    36.1    41.5     +12.6
+
+--- CHỈ SỐ QUYẾT ĐỊNH: 6 block mới có học không? ---
+ block  loại   |attn.wo|   |ffn.down|   % so block cũ
+--------------------------------------------------------
+     0    cũ       25.66        33.29           94.5%
+     1    cũ       19.24        35.01           83.8%
+     2   MỚI        3.72         7.56           17.2%
+     3    cũ       18.83        36.36           84.7%
+     4    cũ       19.74        35.83           85.9%
+     5   MỚI        4.07         7.74           18.2%
+     6    cũ       20.61        35.42           87.1%
+     7    cũ       21.74        35.21           89.1%
+     8   MỚI        4.10         6.04           16.0%
+     9    cũ       21.66        36.64           90.8%
+    10    cũ       23.67        37.36           95.7%
+    11   MỚI        5.00         8.07           20.4%
+    12    cũ       27.63        39.72          106.7%
+    13    cũ       30.75        42.63          116.8%
+    14   MỚI        5.57         9.00           22.8%
+    15    cũ       34.11        48.51          131.1%
+    16    cũ       34.72        49.68          133.8%
+    17   MỚI        6.18        10.64           26.2%
+--------------------------------------------------------
+Block mới trung bình đạt 20.1% độ lớn của block cũ.
+=> Block mới có học nhưng đóng góp còn nhỏ. Cân nhắc train thêm step
+   trước khi kết luận về dung lượng.
+
+--- So sánh chrF theo domain: v2_avg3 -> v3_avg ---
+domain           v2     v3   delta  bơm data vòng 3?
+thanhngu       37.8   42.6    +4.8  CÓ
+zeropronoun    45.7   49.9    +4.1  CÓ
+nguphap        48.5   52.2    +3.7  -
+keigo          47.1   50.6    +3.5  CÓ
+caudai         44.9   48.0    +3.1  CÓ
+solieu         70.0   72.3    +2.3  -
+it_deep        46.5   47.4    +0.9  -
+hoithoai       44.9   45.1    +0.3  CÓ
+hop            46.7   45.5    -1.2  CÓ
+slang          36.3   33.8    -2.6  CÓ
+TỔNG           46.8   48.7    +1.9
+
+--- Dựng panel mù cho judge (chấm khi user quay lại) ---
+Da dung 5 panel x 20 cau ja2vi -> eval\judge_v3\panels
+4 he: kd / google / haiku / fable (xao mu)
+
+CÒN LẠI CẦN NGƯỜI LÀM: judge mù 100 câu (eval/judge_v3/panels/),
+so với mốc vòng 2 = acc 3,82 / 65% dùng được (eval/judge_v2/RESULT_v2.json).
+
+==================== JUDGE MÙ 100 CÂU (đã chấm) ====================
+             v2      v3     Google  Haiku  Fable
+acc         3,82   4,29      2,92   3,70   4,98
+nat         3,76   4,07      2,86   3,56   4,99
+% dùng được  65%    83%       26%    69%   100%
+Đối đầu v3 vs v2: 39 thắng / 47 hòa / 14 thua
+
+Domain acc (v2 -> v3):
+  thanhngu     2,6 -> 4,3   (+1,7)  <- harvest 4.691 quán ngữ
+  hoithoai     3,3 -> 4,2   (+0,9)  <- mode conv
+  zeropronoun  3,8 -> 4,7   (+0,9)  <- mode zeropron
+  caudai       3,0 -> 3,7   (+0,7)  <- grow depth + data long
+  hop          3,6 -> 4,0   (+0,4)
+  solieu       4,4 -> 4,8   (+0,4)
+  nguphap      4,2 -> 4,5   (+0,3)
+  slang        4,1 -> 4,1   ( 0,0)
+  it_deep      4,3 -> 4,1   (-0,2)
+  keigo        4,9 -> 4,5   (-0,4)
+
+KẾT LUẬN:
+1. Model 152M chạy CPU VƯỢT HAIKU (4,29/83% vs 3,70/69%).
+2. Độ PHỦ seed quan trọng hơn số lượng câu: vòng 2 bơm 30.778 cặp/1.241 quán ngữ
+   chỉ +0,8; vòng 3 bơm 95.782 cặp/4.691 quán ngữ được +1,7.
+3. Dung lượng CHƯA kịch trần: block mới mới dùng 20,1%, caudai 3,7 chưa vượt
+   Haiku 3,8. Còn dư địa train thêm hoặc grow 18L->24L.
+4. Hạn chế: grow + data cùng lúc nên không tách được đóng góp; judge không mù
+   hoàn toàn (nhưng cùng phiên với v2 nên so được).
+
+Chi tiết: eval/judge_v3/RESULT_v3.json

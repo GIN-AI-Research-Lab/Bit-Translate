@@ -1,0 +1,23 @@
+thuật ngữ miền 3,961 | katakana 9,000 | ĐA NGHĨA 517 (x200 câu/từ)
+mặt trận: slang=450,000 phu_dinh=350,000 menh_de_noi=400,000 an_chu_ngu=350,000
+tổng mẫu trong máy Aho-Corasick: 13,605
+dựng tập câu đã dùng...
+  12,395,606
+  50,040,039 | chọn 1,528,953 | 0.27M/s | slang:58,790 phu_dinh:324,119 menh_de_noi:400,000 an_chu_ngu:350,000
+  100,068,999 | chọn 1,664,549 | 0.29M/s | slang:119,078 phu_dinh:350,000 menh_de_noi:400,000 an_chu_ngu:350,000
+  150,006,475 | chọn 1,744,264 | 0.29M/s | slang:178,876 phu_dinh:350,000 menh_de_noi:400,000 an_chu_ngu:350,000
+  200,019,629 | chọn 1,813,473 | 0.29M/s | slang:239,132 phu_dinh:350,000 menh_de_noi:400,000 an_chu_ngu:350,000
+  250,063,413 | chọn 1,877,837 | 0.29M/s | slang:298,607 phu_dinh:350,000 menh_de_noi:400,000 an_chu_ngu:350,000
+  300,072,459 | chọn 1,938,570 | 0.29M/s | slang:356,621 phu_dinh:350,000 menh_de_noi:400,000 an_chu_ngu:350,000
+  350,079,314 | chọn 1,995,662 | 0.29M/s | slang:412,412 phu_dinh:350,000 menh_de_noi:400,000 an_chu_ngu:350,000
+
+=== ĐÀO XONG (1332s) ===
+quét 392,773,541 | chọn 2,033,769 -> D:\Bit-Translate-data\raw\mined_skills.txt
+
+  slang           450,000 / 450,000  (100%)
+  phu_dinh        350,000 / 350,000  (100%)
+  menh_de_noi     400,000 / 400,000  (100%)
+  an_chu_ngu      350,000 / 350,000  (100%)
+  đa nghĩa            512 / 517 từ đạt đủ 200 câu
+  thuật ngữ+katakana lấp: 10,115/13,477
+-> eval/mine_skills_stats.json

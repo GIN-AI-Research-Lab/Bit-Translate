@@ -1,0 +1,78 @@
+  18L d768 | 152.1M
+  25/80 (13s)
+  50/80 (25s)
+  75/80 (66s)
+
+=== DÒ NGỮ PHÁP: v3 — 70/80 (88%) ===
+  --- theo ĐỘ DÀI CÂU (cùng các điểm ngữ pháp) ---
+  1.ngắn       52/54     96%
+  2.vừa         3/6      50%
+  3.dài        11/14     79%
+  4.rất dài     4/6      67%
+  --- theo NHÓM NGỮ PHÁP ---
+  long_range          0/1      0%
+  long_quotative      0/1      0%
+  long_zeropron       0/1      0%
+  mid_range           0/1      0%
+  mid_negation        0/1      0%
+  mid_voice           0/1      0%
+  xlong_benefactive   0/1      0%
+  xlong_voice         0/1      0%
+  concessive          3/4     75%
+  number              3/4     75%
+  benefactive         6/6    100%
+  voice               5/5    100%
+  range               5/5    100%
+  modality            8/8    100%
+  negation            5/5    100%
+  conditional         4/4    100%
+  quotative           4/4    100%
+  keigo               5/5    100%
+  zeropron            4/4    100%
+  long_benefactive    2/2    100%
+  long_number         2/2    100%
+  long_negation       2/2    100%
+  long_modality       2/2    100%
+  long_voice          2/2    100%
+  long_keigo          1/1    100%
+  mid_quotative       1/1    100%
+  mid_benefactive     1/1    100%
+  mid_number          1/1    100%
+  xlong_range         1/1    100%
+  xlong_quotative     1/1    100%
+  xlong_number        1/1    100%
+  xlong_negation      1/1    100%
+
+--- 10 probe TRƯỢT ---
+[concessive] 努力したものの結果は出ませんでした
+   -> Kết quả của những gì đã nỗ lực đã không xuất hiện.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY đã cố gắng NHƯNG không có kết quả)
+[number] 気温は零下5度まで下がりました
+   -> Nhiệt độ đã giảm xuống dưới 5 độ C.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: ÂM 5 độ)
+[long_range] 今回の企画展はテーマを絞っておらず、ヨーロッパ各地の美術館から借りた15世紀から19世紀までの作品を、時代順ではなく主題ごとに並べて展示します
+   -> Triển lãm lần này không giới hạn chủ đề, mà sẽ trưng bày các tác phẩm từ bảo tàng ở khắp châu Âu cho đến thế kỷ 15 và 19, được sắp xếp theo từng chủ đề thay vì theo thứ tự thời gian.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ thế kỷ 15 ĐẾN 19 (dài))
+[long_quotative] 朝から何度か連絡を入れているのですが返事がなく、同じチームの人の話では、彼は今日は来ないそうです
+   -> Tôi đã liên lạc vài lần từ sáng sớm nhưng không thấy trả lời, và trong câu chuyện của những người trong cùng đội, anh ấy nói rằng hôm nay sẽ không đến.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: NGHE NÓI anh ấy không đến (dài))
+[long_zeropron] スタンフォード大学にRevsプログラムというものがあると聞いていたので、せっかくの機会だと思ってジョンをそこへ連れて行き、1960年型のポルシェに乗ってもらいました
+   -> Nghe nói có chương trình Revs ở Đại học Stanford, tôi đã đưa John đến đó vì nghĩ đây là cơ hội tốt, và họ đã cho tôi đi chiếc Porsche đời 1960.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: cho John NGỒI LÊN xe — không phải 'tôi được xe đón nhận' (dài))
+[mid_range] ヨーロッパ各地から借りた15世紀から19世紀までの作品を展示します
+   -> Trưng bày các tác phẩm từ khắp châu Âu cho đến thế kỷ 15 và 19.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (vừa))
+[mid_negation] 予定が立て込んでいるだけで、行きたくないわけではありません
+   -> Không phải là tôi chỉ đang bận tối mắt tối mũi mà không muốn đi.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: KHÔNG PHẢI LÀ không muốn đi (vừa))
+[mid_voice] 担当者が急に休んだため、私は部長に報告書を書かされました
+   -> Vì người phụ trách đột nhiên nghỉ nên tôi đã bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (vừa))
+[xlong_benefactive] 先週の打ち合わせで話題に出た古い案件の件で、社内のどこを探しても資料が見つからず困り果てていたのですが、たまたま廊下で会った同じ部署の田中さんに事情を話したところ、当時のファイルを貸してもらいました
+   -> Về vụ việc cũ mà tôi gây xôn xao trong buổi họp tuần trước, tôi đã rất khốn khổ vì không tìm thấy tài liệu ở bất cứ đâu trong công ty. Tuy nhiên, khi tôi tình cờ nói ra sự tình với anh Tanaka ở cùng phòng ban mà tôi gặp ở hành lang, anh ấy đã cho tôi mượn file lúc đó.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI ĐƯỢC Tanaka cho mượn (rất dài))
+[xlong_voice] 月末の納期が迫っていた上に、資料をまとめていた担当者が家庭の事情で急に一週間休むことになってしまったため、代わりに手が空いていた私は部長に週末の報告書を書かされました
+   -> Do thời hạn cuối tháng đã cận kề, người phụ trách đang tổng hợp tài liệu lại đột ngột phải nghỉ một tuần vì lý do gia đình. Vì vậy, thay vào đó, tôi đang rảnh tay, và tôi đã bị trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (rất dài))
+
+Ghi: E:\Bit-Translate\eval\probe_v3.jsonl

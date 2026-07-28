@@ -1,0 +1,7 @@
+[trainprobe_v4] dịch 100 câu...
+  18L d768 | 152.1M
+  25/100 (118s)
+  50/100 (241s)
+  75/100 (360s)
+  100/100 (481s)
+[trainprobe_v4] -> E:\Bit-Translate\eval\bench_trainprobe_v4.jsonl

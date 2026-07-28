@@ -1,0 +1,96 @@
+  12L d768 | 109.6M
+  25/80 (10s)
+  50/80 (20s)
+  75/80 (54s)
+
+=== DÒ NGỮ PHÁP: v1 — 64/80 (80%) ===
+  --- theo ĐỘ DÀI CÂU (cùng các điểm ngữ pháp) ---
+  1.ngắn       47/54     87%
+  2.vừa         4/6      67%
+  3.dài         9/14     64%
+  4.rất dài     4/6      67%
+  --- theo NHÓM NGỮ PHÁP ---
+  long_benefactive    0/2      0%
+  long_zeropron       0/1      0%
+  mid_range           0/1      0%
+  mid_voice           0/1      0%
+  xlong_benefactive   0/1      0%
+  xlong_voice         0/1      0%
+  concessive          2/4     50%
+  quotative           2/4     50%
+  long_negation       1/2     50%
+  long_voice          1/2     50%
+  zeropron            3/4     75%
+  number              3/4     75%
+  voice               4/5     80%
+  benefactive         6/6    100%
+  range               5/5    100%
+  modality            8/8    100%
+  negation            5/5    100%
+  conditional         4/4    100%
+  keigo               5/5    100%
+  long_range          1/1    100%
+  long_number         2/2    100%
+  long_modality       2/2    100%
+  long_quotative      1/1    100%
+  long_keigo          1/1    100%
+  mid_quotative       1/1    100%
+  mid_benefactive     1/1    100%
+  mid_number          1/1    100%
+  mid_negation        1/1    100%
+  xlong_range         1/1    100%
+  xlong_quotative     1/1    100%
+  xlong_number        1/1    100%
+  xlong_negation      1/1    100%
+
+--- 16 probe TRƯỢT ---
+[voice] 彼は部長に報告書を書かされました
+   -> Anh ấy đã bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: anh ấy BỊ BẮT viết)
+[concessive] 努力したものの結果は出ませんでした
+   -> Kết quả của những gì tôi đã nỗ lực không được đưa ra.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY đã cố gắng NHƯNG không có kết quả)
+[concessive] とはいえ問題が残っています
+   -> Tuy nhiên, vấn đề vẫn còn đó.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY VẬY vẫn còn vấn đề)
+[quotative] 会議は中止とのことです
+   -> Họ nói rằng cuộc họp đã bị hủy bỏ.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: ĐƯỢC BIẾT là hủy họp)
+[quotative] 彼によると価格が上がるらしいです
+   -> Nghe nói giá sẽ tăng theo anh ta.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: THEO anh ấy thì giá sẽ tăng)
+[zeropron] 先に帰ってもいいですよ
+   -> Tôi có thể về trước được rồi.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: BẠN về trước cũng được)
+[number] 気温は零下5度まで下がりました
+   -> Nhiệt độ đã giảm xuống còn 5 độ không.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: ÂM 5 độ)
+[long_benefactive] 先週の打ち合わせで話題に出た件ですが、資料が見つからなくて困っていたところ、同じ部署の田中さんに古いファイルを貸してもらいました
+   -> Về vụ gặp nhau trong cuộc họp tuần trước, tôi đang gặp khó khăn vì không tìm thấy tài liệu, và được anh Tanaka ở cùng phòng ban cho mượn file cũ.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI ĐƯỢC Tanaka cho mượn (dài))
+[long_benefactive] 資料の準備が間に合わないという話になったので、私のほうから田中さんに去年の古いファイルを貸してあげました
+   -> Vì chuyện chuẩn bị tài liệu không kịp chuẩn bị, nên tôi đã thuê anh Tanaka cho anh ấy một file cũ của năm ngoái.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI CHO Tanaka mượn (dài))
+[long_negation] 何度も誘っていただいて本当にありがたいのですが、予定が立て込んでいるだけで、決して行きたくないというわけではありません
+   -> Tôi thực sự rất cảm kích vì đã được mời đi rủ nhiều lần, nhưng không phải cứ có lịch hẹn là tôi lại không bao giờ muốn đi.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: KHÔNG PHẢI LÀ không muốn đi (dài))
+[long_voice] 納期が近いのに担当者が急に休むことになったため、私は部長に週末の報告書を書かされました
+   -> Vì sắp đến hạn chót mà nhân viên phụ trách đột nhiên nghỉ, nên tôi đã bị trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (dài))
+[long_zeropron] スタンフォード大学にRevsプログラムというものがあると聞いていたので、せっかくの機会だと思ってジョンをそこへ連れて行き、1960年型のポルシェに乗ってもらいました
+   -> Nghe nói có chương trình Revs ở Đại học Stanford, nên tôi đã mang John đến đó và cho họ một chiếc Porsche đời đầu năm 1960.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: cho John NGỒI LÊN xe — không phải 'tôi được xe đón nhận' (dài))
+[mid_range] ヨーロッパ各地から借りた15世紀から19世紀までの作品を展示します
+   -> Chúng tôi sẽ trưng bày các tác phẩm từ khắp châu Âu cho đến thế kỷ 15 và 19.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (vừa))
+[mid_voice] 担当者が急に休んだため、私は部長に報告書を書かされました
+   -> Vì người phụ trách đột ngột nghỉ nên tôi đã bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (vừa))
+[xlong_benefactive] 先週の打ち合わせで話題に出た古い案件の件で、社内のどこを探しても資料が見つからず困り果てていたのですが、たまたま廊下で会った同じ部署の田中さんに事情を話したところ、当時のファイルを貸してもらいました
+   -> Trong vụ họp tuần trước, tôi đã gặp rắc rối vì không tìm thấy tài liệu ở bất kỳ đâu trong công ty, nhưng tình cờ gặp lại được anh Tanaka, cùng phòng ban tôi gặp ở hành lang, đã nói rõ sự tình với anh, và được anh cho mượn file lúc đó.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI ĐƯỢC Tanaka cho mượn (rất dài))
+[xlong_voice] 月末の納期が迫っていた上に、資料をまとめていた担当者が家庭の事情で急に一週間休むことになってしまったため、代わりに手が空いていた私は部長に週末の報告書を書かされました
+   -> Vì thời gian giao hàng cuối tháng đã cận kề, nhưng nhân viên tổng hợp tài liệu đột ngột nghỉ cả tuần do hoàn cảnh gia đình, nên thay vào đó, tôi đã được trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (rất dài))
+
+Ghi: E:\Bit-Translate\eval\probe_v1.jsonl

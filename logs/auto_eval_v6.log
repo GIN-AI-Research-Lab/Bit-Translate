@@ -1,0 +1,117 @@
+[07-28 08:22:16] app=ap-cQqmgWg1HifE1zRPZkB5oV
+[07-28 08:22:16] theo dõi tốc độ tới khi ổn định (đích 16400 step)
+[07-28 08:32:35] step 2100/16400 | 0.767 step/s | còn ~5g10p | loss 2.1488
+[07-28 08:37:52] step 2330/16400 | 0.726 step/s | còn ~5g23p | loss 2.1439
+[07-28 08:43:05] step 2560/16400 | 0.735 step/s | còn ~5g13p | loss 2.1506
+[07-28 08:43:05] >>> TỐC ĐỘ ĐÃ ỔN ĐỊNH: 0.735 step/s, dự kiến còn 5g13p <<<
+[07-28 08:48:17] step 2800/16400 | 0.769 step/s | còn ~4g54p | loss 2.1269
+[07-28 08:53:29] step 3040/16400 | 0.772 step/s | còn ~4g48p | loss 2.1402
+[07-28 08:58:40] step 3270/16400 | 0.737 step/s | còn ~4g56p | loss 2.1382
+[07-28 09:03:51] step 3510/16400 | 0.772 step/s | còn ~4g38p | loss 2.1467
+[07-28 09:09:02] step 3750/16400 | 0.772 step/s | còn ~4g33p | loss 2.1360
+[07-28 09:14:16] step 3990/16400 | 0.764 step/s | còn ~4g30p | loss 2.1193
+[07-28 09:19:29] step 4220/16400 | 0.735 step/s | còn ~4g36p | loss 2.1271
+[07-28 09:24:40] step 4460/16400 | 0.774 step/s | còn ~4g17p | loss 2.1293
+[07-28 09:29:54] step 4690/16400 | 0.730 step/s | còn ~4g27p | loss 2.1205
+[07-28 09:35:12] step 4920/16400 | 0.723 step/s | còn ~4g24p | loss 2.1342
+[07-28 09:40:24] step 5160/16400 | 0.772 step/s | còn ~4g2p | loss 2.1137
+[07-28 09:45:37] step 5390/16400 | 0.732 step/s | còn ~4g10p | loss 2.1175
+[07-28 09:50:51] step 5860/16400 | 1.497 step/s | còn ~1g57p | loss 2.1219
+[07-28 09:56:03] step 6090/16400 | 0.737 step/s | còn ~3g53p | loss 2.1166
+[07-28 10:01:15] step 6330/16400 | 0.772 step/s | còn ~3g37p | loss 2.1103
+[07-28 10:06:29] step 6560/16400 | 0.732 step/s | còn ~3g43p | loss 2.1108
+[07-28 10:11:49] step 6800/16400 | 0.750 step/s | còn ~3g33p | loss 2.1066
+[07-28 10:17:06] step 7030/16400 | 0.723 step/s | còn ~3g35p | loss 2.1060
+[07-28 10:22:24] step 7270/16400 | 0.757 step/s | còn ~3g20p | loss 2.1229
+[07-28 10:27:40] step 7500/16400 | 0.726 step/s | còn ~3g24p | loss 2.1159
+[07-28 10:33:04] step 7750/16400 | 0.774 step/s | còn ~3g6p | loss 2.0834
+[07-28 10:38:28] step 8000/16400 | 0.769 step/s | còn ~3g2p | loss 2.0878
+[07-28 10:43:40] step 8250/16400 | 0.801 step/s | còn ~2g49p | loss 2.0855
+[07-28 10:48:51] step 8490/16400 | 0.772 step/s | còn ~2g50p | loss 2.0862
+[07-28 10:54:04] step 8720/16400 | 0.737 step/s | còn ~2g53p | loss 2.0794
+[07-28 10:59:16] step 8950/16400 | 0.737 step/s | còn ~2g48p | loss 2.0899
+[07-28 11:04:27] step 9190/16400 | 0.769 step/s | còn ~2g36p | loss 2.0727
+[07-28 11:09:39] step 9420/16400 | 0.737 step/s | còn ~2g37p | loss 2.0837
+[07-28 11:14:56] step 9650/16400 | 0.728 step/s | còn ~2g34p | loss 2.0819
+[07-28 11:20:10] step 9890/16400 | 0.762 step/s | còn ~2g22p | loss 2.0711
+[07-28 11:25:21] step 10120/16400 | 0.740 step/s | còn ~2g21p | loss 2.0752
+[07-28 11:30:33] step 10360/16400 | 0.769 step/s | còn ~2g10p | loss 2.0764
+[07-28 11:35:48] step 10590/16400 | 0.732 step/s | còn ~2g12p | loss 2.0700
+[07-28 11:40:59] step 10820/16400 | 0.737 step/s | còn ~2g6p | loss 2.0690
+[07-28 11:46:13] step 11050/16400 | 0.735 step/s | còn ~2g1p | loss 2.0673
+[07-28 11:51:24] step 11290/16400 | 0.769 step/s | còn ~1g50p | loss 2.0571
+[07-28 11:56:36] step 11520/16400 | 0.737 step/s | còn ~1g50p | loss 2.0642
+[07-28 12:01:48] step 11760/16400 | 0.769 step/s | còn ~1g40p | loss 2.0640
+[07-28 12:06:59] step 12010/16400 | 0.806 step/s | còn ~1g30p | loss 2.0631
+[07-28 12:12:10] step 12240/16400 | 0.740 step/s | còn ~1g33p | loss 2.0690
+[07-28 12:17:20] step 12480/16400 | 0.772 step/s | còn ~1g24p | loss 2.0674
+[07-28 12:22:33] step 12710/16400 | 0.735 step/s | còn ~1g23p | loss 2.0588
+[07-28 12:27:47] step 12950/16400 | 0.767 step/s | còn ~1g14p | loss 2.0455
+[07-28 12:32:59] step 13180/16400 | 0.735 step/s | còn ~1g13p | loss 2.0420
+[07-28 12:38:12] step 13410/16400 | 0.737 step/s | còn ~1g7p | loss 2.0462
+[07-28 12:43:23] step 13640/16400 | 0.737 step/s | còn ~1g2p | loss 2.0588
+[07-28 12:48:35] step 13880/16400 | 0.772 step/s | còn ~0g54p | loss 2.0474
+[07-28 12:53:46] step 14110/16400 | 0.737 step/s | còn ~0g51p | loss 2.0511
+[07-28 12:58:58] step 14580/16400 | 1.506 step/s | còn ~0g20p | loss 2.0553
+[07-28 13:04:09] step 14820/16400 | 0.772 step/s | còn ~0g34p | loss 2.0627
+[07-28 13:09:19] step 15050/16400 | 0.742 step/s | còn ~0g30p | loss 2.0455
+[07-28 13:14:32] step 15290/16400 | 0.769 step/s | còn ~0g24p | loss 2.0448
+[07-28 13:19:43] step 15520/16400 | 0.737 step/s | còn ~0g19p | loss 2.0283
+[07-28 13:24:56] step 15760/16400 | 0.767 step/s | còn ~0g13p | loss 2.0212
+[07-28 13:30:14] step 16000/16400 | 0.757 step/s | còn ~0g8p | loss 2.0195
+[07-28 13:35:44] step 16230/16400 | 0.697 step/s | còn ~0g4p | loss 2.0270
+[07-28 13:41:01] step 16400/16400 | 0.535 step/s | còn ~0g0p | loss 2.0256
+[07-28 13:41:01] đạt đích
+[07-28 13:41:01] === TRAIN KẾT THÚC — bắt đầu chấm ===
+[07-28 13:41:12] average 7 mốc: 15000
+15250
+15500
+15750
+16000
+16250
+16400
+[07-28 14:45:47] bench TRONG MIỀN vừa bơm — bench TED một mình sẽ giấu mất cải thiện
+[07-28 14:51:19] XONG -> logs/KETQUA_V6.txt
+0
+  20/40
+  30/40
+  40/40
+-> eval/dom6_cntt_phan_mem.jsonl
+[v6-y_te_suc_khoe] 18L d768 | 152.1M
+  10/40
+  20/40
+  30/40
+  40/40
+-> eval/dom6_y_te_suc_khoe.jsonl
+[v6-nong_lam_ngu] 18L d768 | 152.1M
+  10/40
+  20/40
+  30/40
+  40/40
+-> eval/dom6_nong_lam_ngu.jsonl
+[v6-held] 18L d768 | 152.1M
+Traceback (most recent call last):
+  File "E:\Bit-Translate\scripts\translate_txt.py", line 70, in <module>
+    main()
+  File "E:\Bit-Translate\scripts\translate_txt.py", line 55, in main
+    out = m.generate_cached(ids, max_new_tokens=a.max_new, eos_id=eos, rep_penalty=1.0)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OS\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Bit-Translate\src\bitnet.py", line 393, in generate_cached
+    a, kv = self._attn_step(blk.attn, x, cos, sin, caches[i])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Bit-Translate\src\bitnet.py", line 381, in _attn_step
+    return attn.wo(attn.attn_sub_norm(out)), (k, v)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OS\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OS\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Bit-Translate\src\bitnet.py", line 116, in forward
+    return (xf * self.weight.float()).to(x.dtype)
+            ~~~^~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (0) must match the size of tensor b (768) at non-singleton dimension 2

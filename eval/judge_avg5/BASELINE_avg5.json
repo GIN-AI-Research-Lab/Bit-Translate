@@ -1,0 +1,91 @@
+{
+ "ckpt": "kd_avg5 (average step11000-15000)",
+ "n": 100,
+ "decode": "greedy",
+ "judge": "Claude Opus, blind panel, cung phien 2026-07-25",
+ "canh_bao": "thang do KHONG hieu chuan giua cac phien — chi so tuong doi trong cung lan cham",
+ "he": {
+  "google": {
+   "acc": 2.92,
+   "nat": 2.86,
+   "usable_pct": 26.0
+  },
+  "kd": {
+   "acc": 2.99,
+   "nat": 2.99,
+   "usable_pct": 46.0
+  },
+  "fable": {
+   "acc": 4.98,
+   "nat": 4.99,
+   "usable_pct": 100.0
+  },
+  "haiku": {
+   "acc": 3.7,
+   "nat": 3.56,
+   "usable_pct": 69.0
+  }
+ },
+ "domain_acc": {
+  "caudai": {
+   "google": 3.4,
+   "kd": 2.0,
+   "fable": 5.0,
+   "haiku": 3.8
+  },
+  "hoithoai": {
+   "kd": 3.0,
+   "google": 2.1,
+   "haiku": 3.6,
+   "fable": 5.0
+  },
+  "hop": {
+   "haiku": 3.9,
+   "fable": 5.0,
+   "google": 2.9,
+   "kd": 2.7
+  },
+  "it_deep": {
+   "haiku": 3.7,
+   "fable": 5.0,
+   "google": 3.0,
+   "kd": 3.4
+  },
+  "keigo": {
+   "fable": 5.0,
+   "kd": 2.7,
+   "haiku": 3.1,
+   "google": 2.9
+  },
+  "nguphap": {
+   "fable": 4.9,
+   "haiku": 3.8,
+   "kd": 3.8,
+   "google": 3.2
+  },
+  "slang": {
+   "fable": 5.0,
+   "haiku": 3.2,
+   "google": 2.6,
+   "kd": 2.4
+  },
+  "solieu": {
+   "haiku": 4.8,
+   "fable": 5.0,
+   "google": 4.0,
+   "kd": 4.8
+  },
+  "thanhngu": {
+   "fable": 4.9,
+   "google": 2.2,
+   "kd": 1.8,
+   "haiku": 3.4
+  },
+  "zeropronoun": {
+   "kd": 3.3,
+   "haiku": 3.7,
+   "fable": 5.0,
+   "google": 2.9
+  }
+ }
+}

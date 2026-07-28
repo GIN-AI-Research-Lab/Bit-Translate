@@ -1,0 +1,884 @@
+{
+ "0": [
+  "SACH"
+ ],
+ "1": [
+  "cut_cau"
+ ],
+ "2": [
+  "SACH"
+ ],
+ "3": [
+  "SACH"
+ ],
+ "4": [
+  "mat_cau_hoi"
+ ],
+ "5": [
+  "lap_vong"
+ ],
+ "6": [
+  "SACH"
+ ],
+ "7": [
+  "roi_noi_dung"
+ ],
+ "8": [
+  "SACH"
+ ],
+ "9": [
+  "bia_them"
+ ],
+ "10": [
+  "bia_them"
+ ],
+ "11": [
+  "SACH"
+ ],
+ "12": [
+  "lech_so"
+ ],
+ "13": [
+  "SACH"
+ ],
+ "14": [
+  "mat_cau_hoi"
+ ],
+ "15": [
+  "SACH"
+ ],
+ "16": [
+  "mat_cau_hoi"
+ ],
+ "17": [
+  "lap_vong"
+ ],
+ "18": [
+  "lech_so"
+ ],
+ "19": [
+  "bia_them"
+ ],
+ "20": [
+  "roi_noi_dung"
+ ],
+ "21": [
+  "SACH"
+ ],
+ "22": [
+  "mat_cau_hoi"
+ ],
+ "23": [
+  "lap_vong"
+ ],
+ "24": [
+  "SACH"
+ ],
+ "25": [
+  "mat_phu_dinh"
+ ],
+ "26": [
+  "SACH"
+ ],
+ "27": [
+  "SACH"
+ ],
+ "28": [
+  "mat_phu_dinh"
+ ],
+ "29": [
+  "SACH"
+ ],
+ "30": [
+  "bia_them"
+ ],
+ "31": [
+  "mat_phu_dinh"
+ ],
+ "32": [
+  "mat_phu_dinh"
+ ],
+ "33": [
+  "lap_vong"
+ ],
+ "34": [
+  "lech_so"
+ ],
+ "35": [
+  "SACH"
+ ],
+ "36": [
+  "SACH"
+ ],
+ "37": [
+  "lech_so"
+ ],
+ "38": [
+  "mat_phu_dinh"
+ ],
+ "39": [
+  "lap_vong"
+ ],
+ "40": [
+  "mat_cau_hoi"
+ ],
+ "41": [
+  "SACH"
+ ],
+ "42": [
+  "roi_noi_dung"
+ ],
+ "43": [
+  "lech_so"
+ ],
+ "44": [
+  "mat_cau_hoi"
+ ],
+ "45": [
+  "SACH"
+ ],
+ "46": [
+  "SACH"
+ ],
+ "47": [
+  "SACH"
+ ],
+ "48": [
+  "mat_cau_hoi"
+ ],
+ "49": [
+  "SACH"
+ ],
+ "50": [
+  "SACH"
+ ],
+ "51": [
+  "roi_noi_dung"
+ ],
+ "52": [
+  "SACH"
+ ],
+ "53": [
+  "lech_so"
+ ],
+ "54": [
+  "lech_so"
+ ],
+ "55": [
+  "cut_cau"
+ ],
+ "56": [
+  "SACH"
+ ],
+ "57": [
+  "cut_cau"
+ ],
+ "58": [
+  "SACH"
+ ],
+ "59": [
+  "mat_cau_hoi"
+ ],
+ "60": [
+  "SACH"
+ ],
+ "61": [
+  "mat_phu_dinh"
+ ],
+ "62": [
+  "SACH"
+ ],
+ "63": [
+  "SACH"
+ ],
+ "64": [
+  "SACH"
+ ],
+ "65": [
+  "lech_so"
+ ],
+ "66": [
+  "lap_vong"
+ ],
+ "67": [
+  "roi_noi_dung"
+ ],
+ "68": [
+  "SACH"
+ ],
+ "69": [
+  "SACH"
+ ],
+ "70": [
+  "SACH"
+ ],
+ "71": [
+  "SACH"
+ ],
+ "72": [
+  "cut_cau"
+ ],
+ "73": [
+  "SACH"
+ ],
+ "74": [
+  "SACH"
+ ],
+ "75": [
+  "lap_vong"
+ ],
+ "76": [
+  "SACH"
+ ],
+ "77": [
+  "SACH"
+ ],
+ "78": [
+  "mat_cau_hoi"
+ ],
+ "79": [
+  "cut_cau"
+ ],
+ "80": [
+  "SACH"
+ ],
+ "81": [
+  "lap_vong"
+ ],
+ "82": [
+  "bia_them"
+ ],
+ "83": [
+  "lap_vong"
+ ],
+ "84": [
+  "bia_them"
+ ],
+ "85": [
+  "roi_noi_dung"
+ ],
+ "86": [
+  "lech_so"
+ ],
+ "87": [
+  "bia_them"
+ ],
+ "88": [
+  "mat_cau_hoi"
+ ],
+ "89": [
+  "SACH"
+ ],
+ "90": [
+  "roi_noi_dung"
+ ],
+ "91": [
+  "mat_phu_dinh"
+ ],
+ "92": [
+  "SACH"
+ ],
+ "93": [
+  "mat_cau_hoi"
+ ],
+ "94": [
+  "mat_phu_dinh"
+ ],
+ "95": [
+  "bia_them"
+ ],
+ "96": [
+  "mat_phu_dinh"
+ ],
+ "97": [
+  "roi_noi_dung"
+ ],
+ "98": [
+  "lech_so"
+ ],
+ "99": [
+  "cut_cau"
+ ],
+ "100": [
+  "cut_cau"
+ ],
+ "101": [
+  "SACH"
+ ],
+ "102": [
+  "bia_them"
+ ],
+ "103": [
+  "SACH"
+ ],
+ "104": [
+  "roi_noi_dung"
+ ],
+ "105": [
+  "mat_phu_dinh"
+ ],
+ "106": [
+  "lech_so"
+ ],
+ "107": [
+  "mat_cau_hoi"
+ ],
+ "108": [
+  "mat_phu_dinh"
+ ],
+ "109": [
+  "mat_phu_dinh"
+ ],
+ "110": [
+  "SACH"
+ ],
+ "111": [
+  "SACH"
+ ],
+ "112": [
+  "lech_so"
+ ],
+ "113": [
+  "lap_vong"
+ ],
+ "114": [
+  "lap_vong"
+ ],
+ "115": [
+  "mat_phu_dinh"
+ ],
+ "116": [
+  "mat_cau_hoi"
+ ],
+ "117": [
+  "SACH"
+ ],
+ "118": [
+  "lech_so"
+ ],
+ "119": [
+  "bia_them"
+ ],
+ "120": [
+  "roi_noi_dung"
+ ],
+ "121": [
+  "lech_so"
+ ],
+ "122": [
+  "lap_vong"
+ ],
+ "123": [
+  "SACH"
+ ],
+ "124": [
+  "SACH"
+ ],
+ "125": [
+  "SACH"
+ ],
+ "126": [
+  "mat_phu_dinh"
+ ],
+ "127": [
+  "SACH"
+ ],
+ "128": [
+  "bia_them"
+ ],
+ "129": [
+  "SACH"
+ ],
+ "130": [
+  "roi_noi_dung"
+ ],
+ "131": [
+  "SACH"
+ ],
+ "132": [
+  "SACH"
+ ],
+ "133": [
+  "mat_phu_dinh"
+ ],
+ "134": [
+  "SACH"
+ ],
+ "135": [
+  "SACH"
+ ],
+ "136": [
+  "SACH"
+ ],
+ "137": [
+  "lap_vong"
+ ],
+ "138": [
+  "SACH"
+ ],
+ "139": [
+  "bia_them"
+ ],
+ "140": [
+  "lap_vong"
+ ],
+ "141": [
+  "cut_cau"
+ ],
+ "142": [
+  "lech_so"
+ ],
+ "143": [
+  "lech_so"
+ ],
+ "144": [
+  "roi_noi_dung"
+ ],
+ "145": [
+  "mat_cau_hoi"
+ ],
+ "146": [
+  "SACH"
+ ],
+ "147": [
+  "SACH"
+ ],
+ "148": [
+  "SACH"
+ ],
+ "149": [
+  "cut_cau"
+ ],
+ "150": [
+  "SACH"
+ ],
+ "151": [
+  "SACH"
+ ],
+ "152": [
+  "SACH"
+ ],
+ "153": [
+  "SACH"
+ ],
+ "154": [
+  "SACH"
+ ],
+ "155": [
+  "SACH"
+ ],
+ "156": [
+  "SACH"
+ ],
+ "157": [
+  "SACH"
+ ],
+ "158": [
+  "roi_noi_dung"
+ ],
+ "159": [
+  "roi_noi_dung"
+ ],
+ "160": [
+  "SACH"
+ ],
+ "161": [
+  "bia_them"
+ ],
+ "162": [
+  "roi_noi_dung"
+ ],
+ "163": [
+  "lap_vong"
+ ],
+ "164": [
+  "cut_cau"
+ ],
+ "165": [
+  "roi_noi_dung"
+ ],
+ "166": [
+  "bia_them"
+ ],
+ "167": [
+  "bia_them"
+ ],
+ "168": [
+  "SACH"
+ ],
+ "169": [
+  "SACH"
+ ],
+ "170": [
+  "SACH"
+ ],
+ "171": [
+  "bia_them"
+ ],
+ "172": [
+  "mat_phu_dinh"
+ ],
+ "173": [
+  "cut_cau"
+ ],
+ "174": [
+  "bia_them"
+ ],
+ "175": [
+  "cut_cau"
+ ],
+ "176": [
+  "cut_cau"
+ ],
+ "177": [
+  "SACH"
+ ],
+ "178": [
+  "SACH"
+ ],
+ "179": [
+  "roi_noi_dung"
+ ],
+ "180": [
+  "mat_cau_hoi"
+ ],
+ "181": [
+  "lap_vong"
+ ],
+ "182": [
+  "bia_them"
+ ],
+ "183": [
+  "lap_vong"
+ ],
+ "184": [
+  "lech_so"
+ ],
+ "185": [
+  "SACH"
+ ],
+ "186": [
+  "mat_cau_hoi"
+ ],
+ "187": [
+  "SACH"
+ ],
+ "188": [
+  "SACH"
+ ],
+ "189": [
+  "mat_phu_dinh"
+ ],
+ "190": [
+  "bia_them"
+ ],
+ "191": [
+  "SACH"
+ ],
+ "192": [
+  "mat_cau_hoi"
+ ],
+ "193": [
+  "SACH"
+ ],
+ "194": [
+  "SACH"
+ ],
+ "195": [
+  "SACH"
+ ],
+ "196": [
+  "SACH"
+ ],
+ "197": [
+  "SACH"
+ ],
+ "198": [
+  "mat_cau_hoi"
+ ],
+ "199": [
+  "lap_vong"
+ ],
+ "200": [
+  "mat_phu_dinh"
+ ],
+ "201": [
+  "lap_vong"
+ ],
+ "202": [
+  "SACH"
+ ],
+ "203": [
+  "cut_cau"
+ ],
+ "204": [
+  "roi_noi_dung"
+ ],
+ "205": [
+  "mat_cau_hoi"
+ ],
+ "206": [
+  "cut_cau"
+ ],
+ "207": [
+  "SACH"
+ ],
+ "208": [
+  "SACH"
+ ],
+ "209": [
+  "lech_so"
+ ],
+ "210": [
+  "SACH"
+ ],
+ "211": [
+  "lech_so"
+ ],
+ "212": [
+  "SACH"
+ ],
+ "213": [
+  "SACH"
+ ],
+ "214": [
+  "mat_cau_hoi"
+ ],
+ "215": [
+  "SACH"
+ ],
+ "216": [
+  "SACH"
+ ],
+ "217": [
+  "sot_tieng_nhat"
+ ],
+ "218": [
+  "SACH"
+ ],
+ "219": [
+  "mat_cau_hoi"
+ ],
+ "220": [
+  "SACH"
+ ],
+ "221": [
+  "cut_cau"
+ ],
+ "222": [
+  "SACH"
+ ],
+ "223": [
+  "SACH"
+ ],
+ "224": [
+  "SACH"
+ ],
+ "225": [
+  "mat_cau_hoi"
+ ],
+ "226": [
+  "SACH"
+ ],
+ "227": [
+  "cut_cau"
+ ],
+ "228": [
+  "SACH"
+ ],
+ "229": [
+  "mat_phu_dinh"
+ ],
+ "230": [
+  "lap_vong"
+ ],
+ "231": [
+  "roi_noi_dung"
+ ],
+ "232": [
+  "lech_so"
+ ],
+ "233": [
+  "bia_them"
+ ],
+ "234": [
+  "SACH"
+ ],
+ "235": [
+  "SACH"
+ ],
+ "236": [
+  "SACH"
+ ],
+ "237": [
+  "lap_vong"
+ ],
+ "238": [
+  "SACH"
+ ],
+ "239": [
+  "cut_cau"
+ ],
+ "240": [
+  "SACH"
+ ],
+ "241": [
+  "bia_them"
+ ],
+ "242": [
+  "bia_them"
+ ],
+ "243": [
+  "SACH"
+ ],
+ "244": [
+  "lap_vong"
+ ],
+ "245": [
+  "cut_cau"
+ ],
+ "246": [
+  "SACH"
+ ],
+ "247": [
+  "roi_noi_dung"
+ ],
+ "248": [
+  "SACH"
+ ],
+ "249": [
+  "lech_so"
+ ],
+ "250": [
+  "SACH"
+ ],
+ "251": [
+  "SACH"
+ ],
+ "252": [
+  "SACH"
+ ],
+ "253": [
+  "lap_vong"
+ ],
+ "254": [
+  "lech_so"
+ ],
+ "255": [
+  "SACH"
+ ],
+ "256": [
+  "roi_noi_dung"
+ ],
+ "257": [
+  "cut_cau"
+ ],
+ "258": [
+  "lap_vong"
+ ],
+ "259": [
+  "lech_so"
+ ],
+ "260": [
+  "SACH"
+ ],
+ "261": [
+  "cut_cau"
+ ],
+ "262": [
+  "SACH"
+ ],
+ "263": [
+  "bia_them"
+ ],
+ "264": [
+  "SACH"
+ ],
+ "265": [
+  "roi_noi_dung"
+ ],
+ "266": [
+  "roi_noi_dung"
+ ],
+ "267": [
+  "mat_phu_dinh"
+ ],
+ "268": [
+  "mat_cau_hoi"
+ ],
+ "269": [
+  "SACH"
+ ],
+ "270": [
+  "lech_so"
+ ],
+ "271": [
+  "SACH"
+ ],
+ "272": [
+  "SACH"
+ ],
+ "273": [
+  "cut_cau"
+ ],
+ "274": [
+  "cut_cau"
+ ],
+ "275": [
+  "mat_phu_dinh"
+ ],
+ "276": [
+  "SACH"
+ ],
+ "277": [
+  "lech_so"
+ ],
+ "278": [
+  "bia_them"
+ ],
+ "279": [
+  "SACH"
+ ],
+ "280": [
+  "SACH"
+ ],
+ "281": [
+  "roi_noi_dung"
+ ],
+ "282": [
+  "SACH"
+ ],
+ "283": [
+  "mat_phu_dinh"
+ ],
+ "284": [
+  "mat_cau_hoi"
+ ],
+ "285": [
+  "mat_phu_dinh"
+ ],
+ "286": [
+  "lap_vong"
+ ],
+ "287": [
+  "mat_phu_dinh"
+ ],
+ "288": [
+  "SACH"
+ ],
+ "289": [
+  "mat_phu_dinh"
+ ],
+ "290": [
+  "roi_noi_dung"
+ ],
+ "291": [
+  "bia_them"
+ ],
+ "292": [
+  "mat_cau_hoi"
+ ],
+ "293": [
+  "SACH"
+ ]
+}

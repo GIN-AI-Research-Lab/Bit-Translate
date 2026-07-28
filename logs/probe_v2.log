@@ -1,0 +1,81 @@
+  12L d768 | 109.6M
+  25/80 (8s)
+  50/80 (18s)
+  75/80 (51s)
+
+=== DÒ NGỮ PHÁP: v2 — 69/80 (86%) ===
+  --- theo ĐỘ DÀI CÂU (cùng các điểm ngữ pháp) ---
+  1.ngắn       50/54     93%
+  2.vừa         4/6      67%
+  3.dài        10/14     71%
+  4.rất dài     5/6      83%
+  --- theo NHÓM NGỮ PHÁP ---
+  long_range          0/1      0%
+  long_zeropron       0/1      0%
+  mid_range           0/1      0%
+  mid_voice           0/1      0%
+  xlong_voice         0/1      0%
+  long_benefactive    1/2     50%
+  long_voice          1/2     50%
+  concessive          3/4     75%
+  zeropron            3/4     75%
+  number              3/4     75%
+  voice               4/5     80%
+  benefactive         6/6    100%
+  range               5/5    100%
+  modality            8/8    100%
+  negation            5/5    100%
+  conditional         4/4    100%
+  quotative           4/4    100%
+  keigo               5/5    100%
+  long_number         2/2    100%
+  long_negation       2/2    100%
+  long_modality       2/2    100%
+  long_quotative      1/1    100%
+  long_keigo          1/1    100%
+  mid_quotative       1/1    100%
+  mid_benefactive     1/1    100%
+  mid_number          1/1    100%
+  mid_negation        1/1    100%
+  xlong_range         1/1    100%
+  xlong_quotative     1/1    100%
+  xlong_benefactive   1/1    100%
+  xlong_number        1/1    100%
+  xlong_negation      1/1    100%
+
+--- 11 probe TRƯỢT ---
+[voice] 彼は部長に報告書を書かされました
+   -> Anh ấy đã bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: anh ấy BỊ BẮT viết)
+[concessive] 努力したものの結果は出ませんでした
+   -> Không có kết quả nào cho thấy đã nỗ lực.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY đã cố gắng NHƯNG không có kết quả)
+[zeropron] 先に帰ってもいいですよ
+   -> Tôi có thể về trước được rồi.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: BẠN về trước cũng được)
+[number] 気温は零下5度まで下がりました
+   -> Nhiệt độ đã giảm xuống dưới 5 độ C.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: ÂM 5 độ)
+[long_benefactive] 先週の打ち合わせで話題に出た件ですが、資料が見つからなくて困っていたところ、同じ部署の田中さんに古いファイルを貸してもらいました
+   -> Về việc đã được nhắc đến trong buổi họp tuần trước, tôi đang gặp khó khăn vì không tìm thấy tài liệu, và cũng được anh Tanaka ở cùng phòng ban cho mượn file cũ.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI ĐƯỢC Tanaka cho mượn (dài))
+[long_range] 今回の企画展はテーマを絞っておらず、ヨーロッパ各地の美術館から借りた15世紀から19世紀までの作品を、時代順ではなく主題ごとに並べて展示します
+   -> Triển lãm dự án lần này không giới hạn chủ đề, mà sẽ trưng bày các tác phẩm từ các bảo tàng ở khắp nơi trên châu Âu cho đến thế kỷ 15 và 19, được sắp xếp theo chủ đề thay vì theo thứ tự thời gian.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ thế kỷ 15 ĐẾN 19 (dài))
+[long_voice] 納期が近いのに担当者が急に休むことになったため、私は部長に週末の報告書を書かされました
+   -> Vì thời hạn giao hàng đã gần nhưng người phụ trách đột ngột nghỉ, nên tôi đã bị trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (dài))
+[long_zeropron] スタンフォード大学にRevsプログラムというものがあると聞いていたので、せっかくの機会だと思ってジョンをそこへ連れて行き、1960年型のポルシェに乗ってもらいました
+   -> Nghe nói có chương trình Revs tại Đại học Stanford, tôi đã mang John đến đó và mời họ đi cùng chiếc Porsche đời 1960, coi đó là một cơ hội tốt.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: cho John NGỒI LÊN xe — không phải 'tôi được xe đón nhận' (dài))
+[mid_range] ヨーロッパ各地から借りた15世紀から19世紀までの作品を展示します
+   -> Trưng bày các tác phẩm từ khắp châu Âu đến thế kỷ 15 và 19.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (vừa))
+[mid_voice] 担当者が急に休んだため、私は部長に報告書を書かされました
+   -> Người phụ trách đột nhiên nghỉ việc nên tôi bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (vừa))
+[xlong_voice] 月末の納期が迫っていた上に、資料をまとめていた担当者が家庭の事情で急に一週間休むことになってしまったため、代わりに手が空いていた私は部長に週末の報告書を書かされました
+   -> Vì thời hạn cuối tháng đã cận kề, cộng thêm người phụ trách đang tổng hợp tài liệu lại đột ngột nghỉ một tuần do việc gia đình, nên thay vào đó, tôi đã bị trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (rất dài))
+
+Ghi: E:\Bit-Translate\eval\probe_v2.jsonl

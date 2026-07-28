@@ -43,12 +43,21 @@ def load_split(split):
     return toks, idx, offsets
 
 
-def make_batches(idx, max_tokens, rng, drop_last_partial=False, pad_multiple=1):
+def make_batches(idx, max_tokens, rng, drop_last_partial=False, pad_multiple=1,
+                 fixed_shapes=False):
     """Length-bucketed token-budget micro-batches. Shuffles megabatches, sorts
     each by length so padding waste is small, packs under max_tokens.
     pad_multiple>1: pack theo độ dài ĐÃ LÀM TRÒN lên bội số -> số shape (B,T) khác
     nhau ít đi hẳn, torch.compile 292M hội tụ (không thì compile graph mới mãi ->
-    treo) + allocator ít phân mảnh."""
+    treo) + allocator ít phân mảnh.
+
+    fixed_shapes: --pad-multiple chỉ chặn được chiều T. Chiều B vẫn trôi tự do vì
+    batch bị cắt ngay khi thêm câu kế tiếp làm T tràn ngân sách token -> B nhận đủ
+    loại giá trị. Vòng 4 thêm 922k câu OPUS rất ngắn nên B trải rộng hẳn ra và
+    torch.compile chạy 65 phút chưa xong step 10 (vòng 3 chỉ 32 phút, cùng cấu hình).
+    Bật cờ này thì B bị ép đúng bằng max_tokens // T_p, nên số shape (B,T) chỉ còn
+    đúng bằng số bucket T. Đổi lại: bỏ phần dư mỗi bucket (~1-3% câu mỗi epoch,
+    epoch sau xáo lại nên không mất hẳn câu nào)."""
     n = len(idx)
     order = rng.permutation(n)
     mega = 50 * max(1, max_tokens // int(idx[:, 0].mean() + 1))
@@ -56,6 +65,23 @@ def make_batches(idx, max_tokens, rng, drop_last_partial=False, pad_multiple=1):
     for s in range(0, n, mega):
         chunk = order[s:s + mega]
         chunk = chunk[np.argsort(idx[chunk, 0])]  # by length asc
+        if fixed_shapes:
+            # gom theo bucket T rồi cắt thành lô ĐÚNG B = max_tokens // T_p
+            run, run_tp = [], 0
+            for i in chunk:
+                tp = -(-int(idx[i, 0]) // pad_multiple) * pad_multiple
+                if tp != run_tp:
+                    if run:
+                        b = max(1, max_tokens // run_tp)
+                        for k in range(0, len(run) - b + 1, b):
+                            batches.append(run[k:k + b])
+                    run, run_tp = [], tp
+                run.append(int(i))
+            if run:
+                b = max(1, max_tokens // run_tp)
+                for k in range(0, len(run) - b + 1, b):
+                    batches.append(run[k:k + b])
+            continue
         cur, cur_max = [], 0
         for i in chunk:
             L = int(idx[i, 0])
@@ -95,6 +121,73 @@ def collate(batch, toks, idx, offsets, device, pad_multiple=1):
     return inp, tgt, mask
 
 
+def dev_batches(idx, max_tokens, pad_multiple=1):
+    """Lô cho dev: sắp theo độ dài tăng dần, KHÔNG xáo, dựng MỘT LẦN rồi tái dùng.
+
+    Vì sao không dùng make_batches(): nó xáo (rng.permutation + rng.shuffle) nên mỗi
+    lần gọi ra lô khác nhau. Loss dev chỉ có nghĩa khi so được GIỮA CÁC STEP, mà muốn
+    vậy thì tập lô phải tất định — nếu không, chênh lệch giữa hai lần đo lẫn cả nhiễu
+    do đổi cách gom lô, không phân biệt được với tiến bộ thật của model."""
+    order = np.argsort(idx[:, 0], kind="stable")
+    out, cur, cur_max = [], [], 0
+    for i in order:
+        L = int(idx[i, 0])
+        new_max = max(cur_max, L)
+        new_max_p = (-(-new_max // pad_multiple) * pad_multiple
+                     if pad_multiple > 1 else new_max)
+        if cur and new_max_p * (len(cur) + 1) > max_tokens:
+            out.append(cur)
+            cur, cur_max = [int(i)], L
+        else:
+            cur.append(int(i))
+            cur_max = new_max
+    if cur:
+        out.append(cur)
+    return out
+
+
+@torch.no_grad()
+def eval_dev(model, dev, batches, device, pad_multiple=1):
+    """Loss trên dev set (held-out). Trả về trung bình THEO TOKEN.
+
+    Vì sao cần: trước vòng 6 dự án chỉ có loss TRAIN, nên không có cách nào phân biệt
+    "model còn học được" với "model đang ghi nhớ data" — mà ở 2,5 epoch thì hai thứ đó
+    khác nhau hẳn. Việc chọn/trung bình checkpoint cũng làm mù.
+
+    Trung bình theo token, KHÔNG phải trung bình của loss từng lô: lô gom theo ngân
+    sách token nên số câu mỗi lô rất khác nhau, lấy trung bình đều sẽ cho câu ngắn
+    trọng số quá lớn.
+
+    Vì sao gọi `model` chứ không phải `run_model` đã torch.compile: shape lô dev khác
+    lô train, compile sẽ dựng graph mới cho từng shape mới -> đắt hơn cả phần eval.
+    Đường eager cho GIÁ TRỊ Y HỆT vì maskce/fusedproj/ste đều chỉ bật khi self.training
+    (xem src/bitnet.py §_OPT).
+
+    Cache ternary an toàn: nó chỉ refresh bằng hook sau opt.step() (attach_wq_autorefresh),
+    mà eval không gọi opt.step() -> cache vẫn khớp weight hiện tại, và eval không ghi
+    vào cache."""
+    dtoks, didx, doffs = dev
+    was_training = model.training
+    model.eval()
+    # autocast chỉ bật trên CUDA: để hàm này gọi được cả trên CPU (máy local không có
+    # torch CUDA — train chạy trên Modal) thì mới test/tái dùng được ngoài vòng train.
+    dev_type = "cuda" if str(device).startswith("cuda") else "cpu"
+    tot_loss, tot_tok = 0.0, 0
+    for b in batches:
+        inp, tgt, m = collate(b, dtoks, didx, doffs, device,
+                              pad_multiple=pad_multiple)
+        with torch.autocast(dev_type, dtype=torch.bfloat16,
+                            enabled=(dev_type == "cuda")):
+            _, loss = model(inp, targets=tgt, loss_mask=m)
+        nt = int(m.sum().item())
+        if nt:
+            tot_loss += loss.item() * nt
+            tot_tok += nt
+    if was_training:
+        model.train()
+    return tot_loss / max(tot_tok, 1)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-tokens", type=int, default=4096)
@@ -110,11 +203,23 @@ def main():
     ap.add_argument("--save-every", type=int, default=100)      # overwrite last.pt (~440MB)
     ap.add_argument("--milestone-every", type=int, default=2000)  # keep stepN.pt
     ap.add_argument("--log-every", type=int, default=20)
+    ap.add_argument("--dev-every", type=int, default=0,
+                    help="đo loss trên dev set mỗi N step (0 = tắt, giữ hành vi cũ). "
+                         "Đây là thước đo DUY NHẤT phân biệt 'còn học được' với 'đang "
+                         "ghi nhớ data' — loss train không làm được. Nên bật cùng "
+                         "--milestone-every để mỗi mốc có một số dev đi kèm.")
+    ap.add_argument("--dev-cap", type=int, default=0,
+                    help="chỉ dùng N câu dev đầu (0 = hết). Dev 4.444 câu mất ~20-40s "
+                         "mỗi lần đo; đặt 1500 nếu muốn đo dày hơn mà đỡ tốn.")
     ap.add_argument("--grad-ckpt", action="store_true")
     ap.add_argument("--ckpt-every-k", type=int, default=1,
                     help="selective gradient checkpointing: chỉ checkpoint 1/k block "
                          "(k=2/4 nhẹ VRAM hơn full GC nhưng nhanh hơn; cần --grad-ckpt)")
     ap.add_argument("--compile", action="store_true")
+    ap.add_argument("--fixed-shapes", action="store_true",
+                    help="ep B = max_tokens // T_p -> so shape (B,T) bang dung so "
+                         "bucket T. Bat cung --compile khi data co do dai trai rong "
+                         "(vong 4: compile treo 65 phut vi B tu do).")
     ap.add_argument("--fused-adamw", action="store_true",
                     help="AdamW(fused=True): diệt spike ~2.33GB của foreach lúc opt.step "
                          "(điều kiện tiên quyết để 292M fit 8GB khi bớt gradient-checkpoint)")
@@ -135,6 +240,14 @@ def main():
     # --n-heads 18 --d-ff 3072 (giữ head_dim 64 để khớp graph build_bitnet_158).
     ap.add_argument("--d-model", type=int, default=768)
     ap.add_argument("--d-ff", type=int, default=2048)
+    ap.add_argument("--bin-dir", default=None,
+                    help="thư mục data bin (mặc định data/bin). Dùng cho curriculum "
+                         "pha 2: --bin-dir data/bin_p2")
+    ap.add_argument("--label-smoothing", type=float, default=0.0,
+                    help="0.1 = chuẩn NMT (Transformer gốc). Chống model quá tự tin "
+                         "vào 1 token, giúp beam search hoạt động tốt hơn. LƯU Ý: "
+                         "loss in ra sẽ CAO hơn ~0.05-0.1 so với ls=0 dù model không "
+                         "tệ hơn — đừng so loss giữa 2 run khác label-smoothing.")
     ap.add_argument("--n-layers", type=int, default=12)
     ap.add_argument("--n-heads", type=int, default=12)
     ap.add_argument("--vocab-size", type=int, default=32000,
@@ -150,6 +263,11 @@ def main():
                          "ra thật ở v3 step~10500+, tensor 270 vs cache 256).")
     args = ap.parse_args()
 
+    if args.bin_dir:
+        global BIN
+        BIN = Path(args.bin_dir)
+        print(f"data bin: {BIN}", flush=True)
+
     CKPT.mkdir(exist_ok=True)
     device = "cuda"
     torch.manual_seed(1)
@@ -164,8 +282,26 @@ def main():
         idx = idx[:20000]
     print(f"train sequences: {len(idx):,} | tokens: {len(toks):,}", flush=True)
 
+    # Dev set: nạp một lần, dựng lô một lần (tất định). Thiếu file thì tắt lặng lẽ
+    # thay vì làm chết run train nhiều ngày vì một thước đo phụ.
+    dev = dev_bs = None
+    if args.dev_every > 0:
+        try:
+            dtoks, didx, doffs = load_split("dev")
+            if args.dev_cap > 0:
+                didx = didx[:args.dev_cap]
+            dev = (dtoks, didx, doffs)
+            dev_bs = dev_batches(didx, args.max_tokens,
+                                 pad_multiple=args.pad_multiple)
+            print(f"dev sequences: {len(didx):,} | {len(dev_bs)} lô | "
+                  f"đo mỗi {args.dev_every} step", flush=True)
+        except (FileNotFoundError, OSError) as e:
+            print(f"CẢNH BÁO: không nạp được dev split ({e}) -> tắt đo dev", flush=True)
+            dev = dev_bs = None
+
     cfg = BitNetConfig(vocab_size=args.vocab_size, d_model=args.d_model, d_ff=args.d_ff,
-                       n_layers=args.n_layers, n_heads=args.n_heads, max_seq=args.max_seq)
+                       n_layers=args.n_layers, n_heads=args.n_heads, max_seq=args.max_seq,
+                       label_smoothing=args.label_smoothing)
     model = BitNetLM(cfg).to(device)
     model.gradient_checkpointing = args.grad_ckpt
     model.ckpt_every_k = args.ckpt_every_k
@@ -265,7 +401,9 @@ def main():
 
     step_t0 = time.time()
     while step < args.max_steps:
-        for batch in make_batches(idx, args.max_tokens, rng, pad_multiple=args.pad_multiple):
+        for batch in make_batches(idx, args.max_tokens, rng,
+                                  pad_multiple=args.pad_multiple,
+                                  fixed_shapes=args.fixed_shapes):
             inp, tgt, mask = collate(batch, toks, idx, offsets, device,
                                      pad_multiple=args.pad_multiple)
             with torch.autocast("cuda", dtype=torch.bfloat16):
@@ -291,6 +429,14 @@ def main():
                     log(f"step {step} | loss {loss_acc/ (args.log_every*accum_target):.4f} "
                         f"| lr {lr:.2e} | {tok_seen/dt:,.0f} tok/s | {dt/args.log_every:.2f}s/step")
                     loss_acc = 0.0; tok_seen = 0; t0 = time.time()
+
+                if dev_bs and (step % args.dev_every == 0 or step >= args.max_steps):
+                    dt0 = time.time()
+                    dl = eval_dev(model, dev, dev_bs, device,
+                                  pad_multiple=args.pad_multiple)
+                    log(f"  DEV step {step} | dev_loss {dl:.4f} "
+                        f"| {time.time()-dt0:.0f}s")
+                    t0 = time.time(); tok_seen = 0   # đừng tính thời gian eval vào tok/s
 
                 if step % args.save_every == 0 or step >= args.max_steps:
                     tmp = CKPT / "last.pt.tmp"

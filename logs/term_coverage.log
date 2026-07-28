@@ -1,0 +1,35 @@
+glossary: 11,932 thuật ngữ | độ dài 2-12
+  ...200,000 câu | 16s
+  ...400,000 câu | 36s
+  ...600,000 câu | 56s
+  ...800,000 câu | 76s
+  ...1,000,000 câu | 96s
+  ...1,200,000 câu | 115s
+  ...1,400,000 câu | 134s
+
+quét 1,500,000 câu trong 144s
+    ngưỡng   số thuật ngữ       %
+      <= 0          2,343   19.6%
+      <= 1          4,936   41.4%
+      <= 5          8,041   67.4%
+     <= 20          9,308   78.0%
+    <= 100         10,235   85.8%
+    <= 500         10,955   91.8%
+
+-> 8,041 thuật ngữ THIẾU (<= 5 lần) lưu ở D:\Bit-Translate-data\term_gap.json
+--- mẫu thuật ngữ thiếu ---
+   カレンダマスタ登録    = Đăng ký calendar master                      (2 lần)
+   セット品         = Sản phẩm dạng set                            (5 lần)
+   ダイアログメッセージ   = Dialog message                               (0 lần)
+   ダーティチェック     = dirty check                                  (1 lần)
+   ピッキングリスト     = Picking list, Danh sách hàng xuất kho        (1 lần)
+   ファントム品       = Phantom product                              (2 lần)
+   プログラム利用      = Sử dụng Program                              (5 lần)
+   プロジェクト製番一覧   = Danh sách mã sản phẩm của PJ                 (3 lần)
+   プロスペクト       = prospect, tiềm năng                          (5 lần)
+   マイメニュー       = My menu                                      (0 lần)
+   ユーザンス        = Kỳ hạn hối phiếu                             (1 lần)
+   ログイン履歴       = Lịch sử login                                (3 lần)
+   ロットトレース      = Lot trace                                    (1 lần)
+   中止部品         = Linh kiện ngừng sản xuất                     (2 lần)
+   予定単価         = Giá thành dự định                            (0 lần)

@@ -1,0 +1,63 @@
+============ KẾT QUẢ VÒNG 6 ============
+Tue Jul 28 13:41:01 SEAST 2026
+--- 10 dòng cuối train.log ---
+step 16330 | loss 2.0343 | lr 8.00e-06 | 43,423 tok/s | 1.27s/step
+step 16340 | loss 2.0253 | lr 8.00e-06 | 42,867 tok/s | 1.27s/step
+step 16350 | loss 2.0312 | lr 8.00e-06 | 43,157 tok/s | 1.27s/step
+step 16360 | loss 2.0275 | lr 8.00e-06 | 43,652 tok/s | 1.27s/step
+step 16370 | loss 2.0307 | lr 8.00e-06 | 42,897 tok/s | 1.28s/step
+step 16380 | loss 2.0356 | lr 8.00e-06 | 43,130 tok/s | 1.28s/step
+step 16390 | loss 2.0163 | lr 8.00e-06 | 41,848 tok/s | 1.28s/step
+step 16400 | loss 2.0256 | lr 8.00e-06 | 42,967 tok/s | 1.28s/step
+  saved checkpoint @ step 16400
+=== training loop exited ===
+  + step16400.pt (step 16400)
+
+Đã trung bình 7 checkpoint -> D:/Bit-Translate-data/checkpoints_v6/v6_avg.pt
+
+===== THƯỚC ĐO 1: dò ngữ pháp 80 phép thử =====
+[concessive] 努力したものの結果は出ませんでした
+   -> Không có kết quả nào cho thấy đã nỗ lực.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY đã cố gắng NHƯNG không có kết quả)
+[zeropron] 先に帰ってもいいですよ
+   -> Về trước cũng được đấy.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: BẠN về trước cũng được)
+[number] 気温は零下5度まで下がりました
+   -> Nhiệt độ đã giảm xuống còn 5 độ so với nhiệt độ ban đầu.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: ÂM 5 độ)
+[mid_range] ヨーロッパ各地から借りた15世紀から19世紀までの作品を展示します
+   -> Trưng bày các tác phẩm từ khắp châu Âu cho đến thế kỷ 15 và 19.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (vừa))
+
+Ghi: E:\Bit-Translate\eval\probe_v6.jsonl
+
+===== THƯỚC ĐO 2: dịch bench 200 câu THẬT (TED) =====
+  175/200 (1358s)
+  200/200 (2569s)
+[v6] -> E:\Bit-Translate\eval\bench_v6.jsonl
+
+===== THƯỚC ĐO 3: hardbench (canh hồi quy) =====
+domain        KD-100M  Google   Haiku  vs Google
+--------------------------------------------------
+caudai           51.9    42.8    48.2      +9.0
+hoithoai         45.5    30.9    40.6     +14.6
+hop              41.4    34.0    38.4      +7.5
+it_deep          49.5    33.7    40.2     +15.8
+keigo            45.4    34.3    37.2     +11.1
+nguphap          51.2    40.8    42.5     +10.4
+slang            33.0    27.1    28.2      +5.9
+solieu           72.7    57.4    70.6     +15.2
+thanhngu         52.3    27.5    34.3     +24.8
+zeropronoun      51.7    32.7    34.6     +19.0
+--------------------------------------------------
+TỔNG TB          49.5    36.1    41.5     +13.3
+
+CÒN LẠI CẦN NGƯỜI LÀM:
+  1. panel mù v5/v6/google trên 200 câu:
+     python eval/build_panels_bench.py eval/judge_v6 v5=eval/bench_v5.jsonl \
+        v6=eval/bench_v6.jsonl google=eval/bench_google.jsonl
+  2. so miền: eval/dom6_*.jsonl vs eval/dom_*.jsonl (v5)
+  3. so Quốc hội held-out: eval/bench_held_v6.jsonl vs bench_held_v5.jsonl (v5 đạt 95%)
+
+MỐC PHẢI VƯỢT (n=200, chấm cùng phiên): v5 66% | ngắn 77% | dài 54% | Google 87%
+MỐC THEO ĐẶC TRƯNG: mệnh đề 50% | slang 45% | zeropron 65% | phủ định 65% | katakana 75%

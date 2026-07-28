@@ -1,0 +1,82 @@
+16,922 thuật ngữ | quét 20,000,000 câu đầu của kho gốc
+  2,000,000
+  4,000,000
+  6,000,000
+  8,000,000
+  10,000,000
+  12,000,000
+  14,000,000
+  16,000,000
+  18,000,000
+  20,000,000
+
+quét 20,000,000 câu (= 4.8% kho) | hệ số ngoại suy x21
+
+=== 7,882 thuật ngữ đang thiếu (sau corpus + kho đã tải) ===
+  3,846 (49%) — kho GỐC lấp được nếu đào hết
+  4,036 (51%) — kho gốc VẪN không đủ
+     trong đó 2,949 từ không xuất hiện lần nào trong mẫu
+
+  để lấp 50% số từ thiếu: cần đào ~98M câu kho gốc  (24% kho)
+  để lấp 80% số từ thiếu: cần đào ~520M câu kho gốc  (100% kho)
+  để lấp 90% số từ thiếu: cần đào ~1,040M câu kho gốc  (100% kho)
+  để lấp 95% số từ thiếu: cần đào ~1,180M câu kho gốc  (100% kho)
+
+miền                         giờ  +kho tải  +kho GỐC  còn thiếu
+-----------------------------------------------------------------
+hoa_chat_vat_lieu            35%       44%       54%        154
+kinh_te_vi_mo                32%       45%       55%        147
+co_khi_che_tao               34%       40%       56%        152
+thuy_san_lam_nghiep          25%       36%       57%        152
+bao_hiem                     18%       29%       60%        140
+thien_van_dia_chat           28%       41%       60%        139
+xa_hoi_nhan_khau             28%       44%       61%        130
+nong_nghiep                  27%       40%       62%        129
+thuc_pham_che_bien           40%       49%       65%        113
+y_te_cong_cong               38%       54%       66%        115
+ban_dan_phan_cung            43%       52%       67%        110
+vien_thong_mang              48%       56%       69%         64
+duoc_sinh_hoc                43%       63%       70%         91
+dien_nang_luong              44%       60%       72%         92
+canh_sat_hinh_su             39%       50%       72%         98
+logistics_van_tai            37%       53%       73%         80
+van_hoc_nghe_thuat           32%       45%       73%         95
+xay_dung_kien_truc           33%       43%       74%         87
+triet_hoc_tu_tuong           38%       49%       74%         91
+hoa_sinh_hoc                 37%       54%       74%         85
+hang_khong_vu_tru            40%       54%       75%         88
+thien_tai_phong_chong        40%       61%       76%         83
+toan_ly                      41%       57%       77%         72
+tam_ly_hoc                   36%       52%       77%         79
+marketing_quang_cao          33%       50%       77%         65
+nuoi_day_con                 32%       48%       78%         77
+ke_toan_thue                 30%       46%       79%         70
+du_lich_khach_san            38%       53%       79%         72
+quan_su_quoc_phong           52%       64%       79%         70
+quan_tri_khoi_nghiep         38%       60%       79%         66
+moi_truong_khi_hau           40%       66%       81%         66
+anime_manga_game             39%       46%       81%         64
+dieu_duong_cham_soc          36%       60%       82%         57
+duong_sat_hang_hai           40%       54%       82%         63
+ban_le_thuong_mai            53%       66%       83%         52
+am_thuc_nha_hang             37%       52%       84%         54
+phap_luat_tu_phap            50%       62%       85%         54
+y_te_lam_sang                51%       73%       85%         50
+tai_chinh_dau_tu             46%       66%       85%         43
+thu_y_thu_cung               42%       66%       85%         51
+hanh_chinh_chinh_sach        50%       71%       86%         46
+oto_xe_co                    47%       57%       86%         44
+cntt_phan_mem                74%       80%       87%         46
+am_nhac                      47%       58%       87%         46
+lich_su                      30%       44%       88%         44
+the_thao                     48%       63%       89%         39
+nhan_su_lao_dong             50%       67%       89%         36
+thoi_trang_my_pham           56%       66%       90%         35
+chinh_tri_ngoai_giao         60%       74%       91%         31
+bat_dong_san                 36%       56%       91%         31
+giao_duc                     54%       75%       91%         31
+giai_tri_dien_anh            54%       64%       92%         28
+ton_giao                     38%       47%       92%         30
+phuc_loi_an_sinh             48%       71%       92%         26
+
+-> eval/cc100_archive_probe.json

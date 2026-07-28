@@ -1,0 +1,9 @@
+nạp câu đã dùng để loại trùng...
+  12,818,708 hash đã dùng
+  ...70,000,000 đọc | giữ 819,865 | 82.3p (14k dòng/s)
+
+=== LỌC XONG (391.3 phút) ===
+Đọc        : 458,387,942
+GIỮ        : 5,230,697 (1.14%)
+Điểm thấp  : 387,539,818 | trùng: 3,762
+Output     : D:/Bit-Translate-data/raw/cc100_pick.txt

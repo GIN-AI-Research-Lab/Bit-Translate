@@ -1,0 +1,72 @@
+  18L d768 | 152.1M
+  25/80 (13s)
+  50/80 (25s)
+  75/80 (65s)
+
+=== DÒ NGỮ PHÁP: v4a5 — 72/80 (90%) ===
+  --- theo ĐỘ DÀI CÂU (cùng các điểm ngữ pháp) ---
+  1.ngắn       52/54     96%
+  2.vừa         4/6      67%
+  3.dài        11/14     79%
+  4.rất dài     5/6      83%
+  --- theo NHÓM NGỮ PHÁP ---
+  long_range          0/1      0%
+  long_zeropron       0/1      0%
+  mid_range           0/1      0%
+  mid_voice           0/1      0%
+  xlong_voice         0/1      0%
+  long_voice          1/2     50%
+  concessive          3/4     75%
+  number              3/4     75%
+  benefactive         6/6    100%
+  voice               5/5    100%
+  range               5/5    100%
+  modality            8/8    100%
+  negation            5/5    100%
+  conditional         4/4    100%
+  quotative           4/4    100%
+  keigo               5/5    100%
+  zeropron            4/4    100%
+  long_benefactive    2/2    100%
+  long_number         2/2    100%
+  long_negation       2/2    100%
+  long_modality       2/2    100%
+  long_quotative      1/1    100%
+  long_keigo          1/1    100%
+  mid_quotative       1/1    100%
+  mid_benefactive     1/1    100%
+  mid_number          1/1    100%
+  mid_negation        1/1    100%
+  xlong_range         1/1    100%
+  xlong_quotative     1/1    100%
+  xlong_benefactive   1/1    100%
+  xlong_number        1/1    100%
+  xlong_negation      1/1    100%
+
+--- 8 probe TRƯỢT ---
+[concessive] 努力したものの結果は出ませんでした
+   -> Kết quả của những nỗ lực đã không đạt được.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TUY đã cố gắng NHƯNG không có kết quả)
+[number] 気温は零下5度まで下がりました
+   -> Nhiệt độ đã giảm xuống dưới 5 độ C.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: ÂM 5 độ)
+[long_range] 今回の企画展はテーマを絞っておらず、ヨーロッパ各地の美術館から借りた15世紀から19世紀までの作品を、時代順ではなく主題ごとに並べて展示します
+   -> Triển lãm chuyên đề lần này không giới hạn chủ đề, trưng bày các tác phẩm từ các bảo tàng ở khắp châu Âu cho đến thế kỷ 15 và 19, được sắp xếp theo chủ đề thay vì theo trình tự thời gian.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ thế kỷ 15 ĐẾN 19 (dài))
+[long_voice] 納期が近いのに担当者が急に休むことになったため、私は部長に週末の報告書を書かされました
+   -> Vì sắp đến hạn giao hàng mà người phụ trách đột nhiên phải nghỉ, nên tôi đã bị trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (dài))
+[long_zeropron] スタンフォード大学にRevsプログラムというものがあると聞いていたので、せっかくの機会だと思ってジョンをそこへ連れて行き、1960年型のポルシェに乗ってもらいました
+   -> Nghe nói có chương trình Revs ở Đại học Stanford, tôi đã mang John đến đó vì nghĩ đây là cơ hội tốt để tôi đưa anh ấy đến đó, và tôi đã được lên chiếc Porsche đời 1960.
+   (dính mẫu cấm (dịch ngược/sai); đúng phải là: cho John NGỒI LÊN xe — không phải 'tôi được xe đón nhận' (dài))
+[mid_range] ヨーロッパ各地から借りた15世紀から19世紀までの作品を展示します
+   -> Trưng bày các tác phẩm từ khắp châu Âu đến thế kỷ 15 và 19.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TỪ 15 ĐẾN 19 (vừa))
+[mid_voice] 担当者が急に休んだため、私は部長に報告書を書かされました
+   -> Vì người phụ trách đột nhiên nghỉ nên tôi đã bị trưởng phòng viết báo cáo.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (vừa))
+[xlong_voice] 月末の納期が迫っていた上に、資料をまとめていた担当者が家庭の事情で急に一週間休むことになってしまったため、代わりに手が空いていた私は部長に週末の報告書を書かされました
+   -> Vì thời hạn cuối tháng đã cận kề, và người phụ trách đang tổng hợp tài liệu đột nhiên phải nghỉ một tuần vì lý do gia đình, nên thay vào đó, tôi đã được trưởng phòng viết báo cáo cuối tuần.
+   (thiếu dấu hiệu bắt buộc; đúng phải là: TÔI BỊ BẮT viết (rất dài))
+
+Ghi: E:\Bit-Translate\eval\probe_v4a5.jsonl

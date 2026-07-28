@@ -1,0 +1,52 @@
+[resume] đã có 1,506 quán ngữ
+[run] 30 nhóm | 10 key x 4 = 40 session | 440 request | target +4,000
+
+  10 req | +180/4,000 mới (tổng 1,686) | 106/phút | lỗi 0 | 1.7p
+  20 req | +313/4,000 mới (tổng 1,819) | 184/phút | lỗi 0 | 1.7p
+  30 req | +521/4,000 mới (tổng 2,027) | 306/phút | lỗi 0 | 1.7p
+  40 req | +661/4,000 mới (tổng 2,167) | 384/phút | lỗi 0 | 1.7p
+  50 req | +755/4,000 mới (tổng 2,261) | 421/phút | lỗi 0 | 1.8p
+  60 req | +882/4,000 mới (tổng 2,388) | 489/phút | lỗi 0 | 1.8p
+  70 req | +973/4,000 mới (tổng 2,479) | 537/phút | lỗi 0 | 1.8p
+  80 req | +1,069/4,000 mới (tổng 2,575) | 585/phút | lỗi 0 | 1.8p
+  90 req | +1,142/4,000 mới (tổng 2,648) | 602/phút | lỗi 0 | 1.9p
+  100 req | +1,245/4,000 mới (tổng 2,751) | 652/phút | lỗi 0 | 1.9p
+  110 req | +1,314/4,000 mới (tổng 2,820) | 684/phút | lỗi 0 | 1.9p
+  120 req | +1,400/4,000 mới (tổng 2,906) | 723/phút | lỗi 0 | 1.9p
+  130 req | +1,478/4,000 mới (tổng 2,984) | 739/phút | lỗi 0 | 2.0p
+  140 req | +1,559/4,000 mới (tổng 3,065) | 773/phút | lỗi 0 | 2.0p
+  150 req | +1,632/4,000 mới (tổng 3,138) | 805/phút | lỗi 0 | 2.0p
+  160 req | +1,694/4,000 mới (tổng 3,200) | 830/phút | lỗi 0 | 2.0p
+  170 req | +1,762/4,000 mới (tổng 3,268) | 838/phút | lỗi 0 | 2.1p
+  180 req | +1,834/4,000 mới (tổng 3,340) | 866/phút | lỗi 0 | 2.1p
+  190 req | +1,919/4,000 mới (tổng 3,425) | 899/phút | lỗi 0 | 2.1p
+  200 req | +1,983/4,000 mới (tổng 3,489) | 921/phút | lỗi 0 | 2.2p
+  210 req | +2,025/4,000 mới (tổng 3,531) | 917/phút | lỗi 0 | 2.2p
+  220 req | +2,079/4,000 mới (tổng 3,585) | 935/phút | lỗi 0 | 2.2p
+  230 req | +2,176/4,000 mới (tổng 3,682) | 971/phút | lỗi 0 | 2.2p
+  240 req | +2,234/4,000 mới (tổng 3,740) | 984/phút | lỗi 0 | 2.3p
+  250 req | +2,289/4,000 mới (tổng 3,795) | 990/phút | lỗi 0 | 2.3p
+  260 req | +2,325/4,000 mới (tổng 3,831) | 1000/phút | lỗi 0 | 2.3p
+  270 req | +2,379/4,000 mới (tổng 3,885) | 1014/phút | lỗi 0 | 2.3p
+  280 req | +2,436/4,000 mới (tổng 3,942) | 1028/phút | lỗi 0 | 2.4p
+  290 req | +2,481/4,000 mới (tổng 3,987) | 1028/phút | lỗi 0 | 2.4p
+  300 req | +2,546/4,000 mới (tổng 4,052) | 1049/phút | lỗi 0 | 2.4p
+  310 req | +2,592/4,000 mới (tổng 4,098) | 1059/phút | lỗi 0 | 2.4p
+  320 req | +2,632/4,000 mới (tổng 4,138) | 1063/phút | lỗi 0 | 2.5p
+  330 req | +2,680/4,000 mới (tổng 4,186) | 1063/phút | lỗi 0 | 2.5p
+  340 req | +2,709/4,000 mới (tổng 4,215) | 1068/phút | lỗi 0 | 2.5p
+  350 req | +2,747/4,000 mới (tổng 4,253) | 1073/phút | lỗi 0 | 2.6p
+  360 req | +2,806/4,000 mới (tổng 4,312) | 1088/phút | lỗi 0 | 2.6p
+  370 req | +2,855/4,000 mới (tổng 4,361) | 1085/phút | lỗi 0 | 2.6p
+  380 req | +2,893/4,000 mới (tổng 4,399) | 1094/phút | lỗi 0 | 2.6p
+  390 req | +2,937/4,000 mới (tổng 4,443) | 1101/phút | lỗi 0 | 2.7p
+  400 req | +2,993/4,000 mới (tổng 4,499) | 1111/phút | lỗi 0 | 2.7p
+  410 req | +3,033/4,000 mới (tổng 4,539) | 1109/phút | lỗi 0 | 2.7p
+  420 req | +3,074/4,000 mới (tổng 4,580) | 1117/phút | lỗi 0 | 2.8p
+  430 req | +3,119/4,000 mới (tổng 4,625) | 1125/phút | lỗi 0 | 2.8p
+  [w3] 1008 None. Connection aborted because the client failed to close the connection after receiving a Go
+
+=== HARVEST XONG ===
+Quán ngữ mới : +3,160 (tổng 4,666, trước 1,506)
+Request      : 439 | lỗi 1 | 12.3 phút
+Output       : E:\Bit-Translate\data\synthetic\gen\idiom_glosses.jsonl

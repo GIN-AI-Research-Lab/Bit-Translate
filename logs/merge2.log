@@ -1,0 +1,25 @@
+  idiom: đọc 30,794 từ 1 file
+  keigo: đọc 80,683 từ 1 file
+  slang: đọc 40,834 từ 1 file
+  negation: đọc 42,594 từ 1 file
+  katakana: đọc 25,809 từ 1 file
+  long: đọc 20,422 từ 1 file
+
+Niche qua QC + dedup: 241,055 cặp
+  keigo        80,665
+  negation     42,591
+  slang        40,794
+  idiom        30,778
+  katakana     25,805
+  long         20,422
+
+=== GỘP XONG ===
+Corpus gốc giữ  : 10,525,064 (loại 57 câu ja trùng niche)
+Niche x4      : 964,220
+TỔNG            : 11,489,284 | niche chiếm 8.39%
+Rớt/bỏ:
+  slang:emoji_chi_o_vi                    40
+  keigo:ja_lan_tieng_viet                 17
+  idiom:ja_lan_tieng_viet                 16
+  niche_trung_lap                          8
+Output          : D:\Bit-Translate-data\kd_filtered_niche.jsonl

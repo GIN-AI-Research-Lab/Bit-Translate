@@ -1,0 +1,12 @@
+  quét 400,000 câu từ v5_select.txt
+  quét 400,000 câu từ train.ja
+
+2,734/4,651 quán ngữ DƯỚI 50 lần -> idiom_gap.json
+   目が肥える          = tinh mắt, sành sỏi                         (39 lần)
+   目を丸くする         = mắt tròn xoe (bất ngờ)                     (0 lần)
+   耳が早い           = tin đồn lan nhanh                          (39 lần)
+   口が軽い           = nói hớ, hay tiết lộ                        (0 lần)
+   口が達者           = giỏi ăn nói                                (39 lần)
+   口を噤む           = im bặt, câm như hến                        (39 lần)
+   顔を売る           = chạy chọt, mua chuộc                       (39 lần)
+   顔が利く           = có quen biết rộng, có thế lực              (0 lần)
