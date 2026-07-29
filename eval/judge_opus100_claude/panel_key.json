@@ -1,0 +1,602 @@
+{
+ "1": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "2": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "3": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "4": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "5": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "6": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "7": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "8": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "9": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "10": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "opusgguf",
+  "D": "gemini"
+ },
+ "11": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "12": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "13": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "14": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "15": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "16": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "17": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "18": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "19": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "20": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "21": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "22": {
+  "A": "gemini",
+  "B": "google",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "23": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "24": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "25": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "26": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "opusgguf",
+  "D": "gemini"
+ },
+ "27": {
+  "A": "google",
+  "B": "opuspt",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "28": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "29": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "30": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "opusgguf",
+  "D": "gemini"
+ },
+ "31": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "32": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "33": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "34": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "35": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "36": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "37": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "38": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "39": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "40": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "41": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "42": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "43": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "44": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "45": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "46": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "47": {
+  "A": "google",
+  "B": "opuspt",
+  "C": "opusgguf",
+  "D": "gemini"
+ },
+ "48": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "49": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "opuspt"
+ },
+ "50": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "opuspt"
+ },
+ "51": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "opuspt"
+ },
+ "52": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "53": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "54": {
+  "A": "gemini",
+  "B": "google",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "55": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "56": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "57": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "58": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "59": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "60": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "61": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "62": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "63": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "opuspt"
+ },
+ "64": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "65": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "66": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "opuspt"
+ },
+ "67": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "68": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "google"
+ },
+ "69": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "70": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "71": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "72": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "73": {
+  "A": "google",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "74": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "75": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "76": {
+  "A": "google",
+  "B": "opuspt",
+  "C": "gemini",
+  "D": "opusgguf"
+ },
+ "77": {
+  "A": "gemini",
+  "B": "google",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "78": {
+  "A": "gemini",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "opuspt"
+ },
+ "79": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "80": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "81": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "82": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "83": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "opusgguf",
+  "D": "gemini"
+ },
+ "84": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "85": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "86": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "87": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "88": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "89": {
+  "A": "gemini",
+  "B": "google",
+  "C": "opuspt",
+  "D": "opusgguf"
+ },
+ "90": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "91": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "92": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "93": {
+  "A": "opuspt",
+  "B": "opusgguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "94": {
+  "A": "opusgguf",
+  "B": "opuspt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "95": {
+  "A": "opuspt",
+  "B": "google",
+  "C": "opusgguf",
+  "D": "gemini"
+ },
+ "96": {
+  "A": "opuspt",
+  "B": "gemini",
+  "C": "opusgguf",
+  "D": "google"
+ },
+ "97": {
+  "A": "gemini",
+  "B": "opuspt",
+  "C": "google",
+  "D": "opusgguf"
+ },
+ "98": {
+  "A": "opusgguf",
+  "B": "google",
+  "C": "opuspt",
+  "D": "gemini"
+ },
+ "99": {
+  "A": "google",
+  "B": "opusgguf",
+  "C": "gemini",
+  "D": "opuspt"
+ },
+ "100": {
+  "A": "opusgguf",
+  "B": "gemini",
+  "C": "opuspt",
+  "D": "google"
+ }
+}

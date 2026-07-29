@@ -1,0 +1,107 @@
+model sai / google đúng: ['6', '20', '40', '58', '66', '71', '77', '78', '88', '99']
+google sai / model đúng: ['8', '48', '50', '56', '57', '67', '69']
+
+==================== MODEL SAI - GOOGLE ĐÚNG ====================
+[id 6] daily/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 引っ越しの挨拶に行ったら、隣の奥さんがすごく親切な人で、ゴミ置き場の場所から町内会の行事まで全部教えてくれた。
+  opuspt: Khi tôi đến chào hỏi chuyển nhà, vợ bên cạnh là một người rất tốt bụng, anh ấy đã kể cho tôi nghe toàn bộ từ chỗ để rác cho đến các sự kiện của hội dân phố.
+  google: Khi tôi đến chào hỏi chuyện tôi chuyển nhà, người vợ hàng xóm là một người rất tốt bụng, kể cho tôi nghe mọi chuyện từ vị trí bãi rác cho đến những sự kiện của hội xóm.
+  gemini: Khi tôi đến chào hỏi lúc chuyển nhà, chị hàng xóm tốt bụng lắm, chỉ cho tôi hết từ chỗ đổ rác đến cả các hoạt động của tổ dân phố nữa.
+
+[id 20] business/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 社内の会議が多すぎるという声を受けて、水曜日は会議禁止デーにしたのだが、その分ほかの曜日に会議が集中してしまい、本末転倒だと不評だ。
+  opuspt: Nhận được nhiều ý kiến cho rằng có quá nhiều cuộc họp nội bộ, tôi đã chọn thứ Tư là ngày cấm họp, nhưng bù lại các cuộc họp lại tập trung vào những ngày khác, thật là phản tác dụng và bị chê bai.
+  google: Trước những phàn nàn rằng có quá nhiều cuộc họp nội bộ, công ty đã quyết định chọn thứ Tư là ngày không họp, nhưng điều này dẫn đến việc các cuộc họp tập trung vào các ngày khác trong tuần, điều này bị chỉ trích là đặt xe trước ngựa.
+  gemini: Sau khi nhận được ý kiến cho rằng có quá nhiều cuộc họp nội bộ, chúng tôi đã quy định thứ Tư là ngày cấm họp, nhưng kết quả là các cuộc họp lại tập trung vào những ngày khác, bị chê là mâu thuẫn và chẳng đâu vào đâu.
+
+[id 40] legal/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 契約書に印紙を貼り忘れても契約自体が無効になるわけではありませんが、印紙税法違反として過怠税を課される可能性があるので注意が必要です。
+  opuspt: Ngay cả khi quên dán tem trên hợp đồng, điều đó không có nghĩa là bản thân hợp đồng đó sẽ bị vô hiệu, nhưng cần lưu ý rằng có khả năng bạn sẽ bị đánh thuế do lười biếng vì vi phạm Luật Thuế tem.
+  google: Nếu bạn quên dán tem vào hợp đồng, bản thân hợp đồng sẽ không bị vô hiệu, nhưng bạn nên cẩn thận vì bạn có thể phải chịu thuế sơ suất do vi phạm Đạo luật thuế tem.
+  gemini: Dù quên dán tem thuế vào hợp đồng không làm hợp đồng bị vô hiệu, nhưng cần lưu ý là có thể bị phạt thuế do vi phạm Luật thuế tem.
+
+[id 58] travel/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 温泉旅館の夕食は部屋出しで、地元の食材を使った会席料理が一品ずつ運ばれてきて、窓の外の雪景色を眺めながらゆっくり味わえました。
+  opuspt: Bữa tối tại nhà nghỉ suối nước nóng được dọn ra theo phòng, từng món ăn trong nhà hội sử dụng nguyên liệu địa phương được mang đến, và tôi đã có thể thong thả thưởng thức trong khi ngắm nhìn khung cảnh tuyết bên ngoài cửa sổ.
+  google: Bữa tối tại nhà trọ suối nước nóng được phục vụ trong phòng và bữa ăn kaiseki được chế biến từ nguyên liệu địa phương sẽ được mang đến cho bạn từng món một, bạn có thể thưởng thức nó một cách chậm rãi trong khi ngắm nhìn khung cảnh đầy tuyết ngoài cửa sổ.
+  gemini: Bữa tối ở lữ quán suối nước nóng được phục vụ tại phòng, các món trong bữa Kaiseki sử dụng nguyên liệu địa phương được mang ra từng món một, tôi đã có thể thong thả thưởng thức trong lúc ngắm cảnh tuyết rơi bên ngoài cửa sổ.
+
+[id 66] food/long  điểm pt=0 gguf=0 gg=2 gm=2
+  SRC   : 玉ねぎをあめ色になるまで弱火でじっくり炒めるのがこのカレーの決め手で、時間はかかりますが、その一手間で味の深みが全然違ってきます。
+  opuspt: Món cà ri này là món quyết định món, bạn có thể xào kỹ hành tây bằng lửa nhỏ cho đến khi chuyển sang màu xanh ngọc, tuy tốn thời gian nhưng chỉ một bước đó thôi cũng đủ khiến hương vị đậm đà hoàn toàn khác biệt.
+  google: Bí quyết của món cà ri này là xào từ từ hành tây trên lửa nhỏ cho đến khi chúng chuyển sang màu nâu vàng. Phải mất một thời gian, nhưng nỗ lực đó tạo nên sự khác biệt về độ sâu của hương vị.
+  gemini: Bí quyết của món cà ri này là xào hành tây thật kỹ ở lửa nhỏ cho đến khi có màu nâu cánh gián, tuy mất thời gian nhưng công đoạn đó làm cho hương vị đậm đà khác hẳn.
+
+[id 71] sports/short  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 延長戦の末、二対一で勝ちました。
+  opuspt: Sau hiệp phụ, chúng tôi đã thắng với tỷ số 2 chọi 1.
+  google: Sau hiệp phụ, chúng tôi thắng 2-1.
+  gemini: Sau hiệp phụ, chúng tôi đã thắng 2-1.
+
+[id 77] sports/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : マラソンで完走するためには、大会の三か月前から週三回の練習を積み重ね、本番では最初の十キロを抑えて走ることが何より重要だとコーチに言われた。
+  opuspt: Để hoàn thành cuộc chạy marathon, huấn luyện viên đã nói với tôi rằng điều quan trọng nhất là phải luyện tập ba lần mỗi tuần từ ba tháng trước giải đấu, và chạy ở cự ly 10km đầu tiên trong trận đấu chính thức.
+  google: Để hoàn thành cuộc chạy marathon, huấn luyện viên nói với tôi rằng điều quan trọng nhất là phải luyện tập ba lần một tuần trong ba tháng trước khi sự kiện diễn ra và chạy 10 km đầu tiên một cách có kiểm soát.
+  gemini: Huấn luyện viên bảo tôi rằng để chạy hết quãng đường marathon, điều quan trọng nhất là phải tích cực luyện tập ba lần mỗi tuần từ ba tháng trước giải, và khi vào thi đấu thật thì phải kìm tốc độ ở mười cây số đầu tiên.
+
+[id 78] sports/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : うちのチームは前半こそ押されていたものの、後半に監督が布陣を三バックに変えてから流れが一変し、終了間際に二点を奪って逆転勝ちした。
+  opuspt: Mặc dù đội của chúng tôi đã đẩy được hiệp một, nhưng sau đó huấn luyện viên đã đổi đội hình thành ba hậu vệ, thế là cục diện thay đổi hoàn toàn, và đến sát giờ kết thúc, đội đã giành được hai bàn thắng và lội ngược dòng.
+  google: Mặc dù đội của chúng tôi bị áp đảo trong hiệp một, nhưng huấn luyện viên đã thay đổi đội hình thành ba người ở phía sau trong hiệp hai, và động lực thay đổi hoàn toàn. Chúng tôi ghi được hai điểm ngay trước khi trận đấu kết thúc và lội ngược dòng để giành chiến thắng.
+  gemini: Đội của tôi hiệp một bị ép sân, nhưng sang hiệp hai, sau khi huấn luyện viên đổi đội hình sang sơ đồ ba hậu vệ thì thế trận thay đổi hẳn, ghi được hai bàn vào cuối trận và thắng ngược dòng.
+
+[id 88] finance/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 老後二千万円問題が話題になりましたが、必要な金額は持ち家かどうかや年金の受給額によって人それぞれで、まずは自分の場合を試算してみることが大切です。
+  opuspt: Vấn đề 20 triệu yên cho tuổi già đã trở thành chủ đề nóng, nhưng số tiền cần thiết còn tùy thuộc vào việc bạn có sở hữu nhà riêng hay không và mức hưởng lương hưu, điều quan trọng trước mắt là bạn nên tự mình ước tính xem có phù hợp hay không.
+  google: Vấn đề 20.000.000 yên khi nghỉ hưu đã trở thành một chủ đề nóng, nhưng số tiền cần thiết thay đổi tùy theo từng người, tùy thuộc vào việc bạn có sở hữu nhà hay không và số tiền lương hưu bạn nhận được, vì vậy điều quan trọng trước tiên là phải tính toán trường hợp của riêng bạn.
+  gemini: Vấn đề cần 20 triệu yên cho tuổi già từng gây xôn xao, nhưng số tiền cần thiết thực ra khác nhau tùy từng người, phụ thuộc vào việc có nhà riêng hay mức lương hưu nhận được, điều quan trọng là trước hết phải tự tính toán cho trường hợp của mình.
+
+[id 99] education/long  điểm pt=1 gguf=1 gg=2 gm=2
+  SRC   : 日本の大学入試は一発勝負だとよく批判されますが、最近は総合型選抜のように高校での活動や面接を重視する方式の募集枠が年々広がっています。
+  opuspt: Người ta thường chỉ trích rằng thi đại học ở Nhật Bản là một trận quyết định, nhưng gần đây, các hoạt động ở trường trung học phổ thông và các suất tuyển theo hình thức coi trọng phỏng vấn như tuyển chọn tổng hợp đang ngày càng phổ biến qua từng năm.
+  google: Kỳ thi tuyển sinh đại học của Nhật Bản thường bị chỉ trích là bài kiểm tra một lần, nhưng gần đây số lượng tuyển dụng tập trung vào các hoạt động và phỏng vấn ở trường trung học, chẳng hạn như tuyển chọn toàn diện, đã tăng lên hàng năm.
+  gemini: Các kỳ thi đầu vào đại học ở Nhật Bản thường bị chỉ trích là chỉ "ăn thua nhau một lần", nhưng gần đây, số lượng chỉ tiêu cho các phương thức như tuyển sinh tổng hợp, vốn coi trọng hoạt động ở trường trung học và phỏng vấn, đang ngày càng tăng qua các năm.
+
+==================== GOOGLE SAI - MODEL ĐÚNG ====================
+[id 8] daily/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : 電気代が先月より三千円も高くなっていて、エアコンのつけっぱなしをやめるか設定温度を見直すか、家族で相談することにした。
+  opuspt: Tiền điện đã tăng tới 3.000 yên so với tháng trước, nên cả nhà quyết định cùng nhau bàn bạc xem nên ngừng bật điều hòa liên tục hay xem xét lại nhiệt độ cài đặt.
+  google: Hóa đơn tiền điện của tôi cao hơn tháng trước 3.000 yên nên gia đình tôi quyết định thảo luận xem tôi có nên ngừng bật điều hòa hay xem xét lại việc cài đặt nhiệt độ.
+  gemini: Tiền điện tháng này tăng hơn 3000 yên so với tháng trước, nên cả nhà quyết định sẽ bàn xem nên thôi không bật điều hòa liên tục nữa hay là điều chỉnh lại nhiệt độ cài đặt.
+
+[id 48] tech/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : クラウドに移行することで初期費用は抑えられますが、利用量に応じた課金なので、想定以上にアクセスが増えると月額費用が跳ね上がる点には注意してください。
+  opuspt: Việc chuyển sang cloud giúp tiết kiệm chi phí ban đầu, nhưng hãy lưu ý rằng vì tính phí dựa trên lượng sử dụng, nên nếu lượng truy cập tăng vượt quá dự kiến, chi phí hàng tháng sẽ tăng vọt.
+  google: Mặc dù chi phí ban đầu có thể giảm bằng cách chuyển sang đám mây nhưng xin lưu ý rằng phí được tính dựa trên mức sử dụng, vì vậy nếu quyền truy cập tăng nhiều hơn dự kiến ​​thì chi phí hàng tháng sẽ tăng vọt.
+  gemini: Chuyển sang đám mây có thể giảm chi phí ban đầu, nhưng vì tính phí theo lượng sử dụng, cần lưu ý là chi phí hàng tháng sẽ tăng vọt nếu lượng truy cập tăng nhiều hơn dự kiến.
+
+[id 50] tech/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : 人工知能に仕事を奪われるという話をよく聞きますが、実際には単純作業が自動化される一方で、それを管理し活用する新しい仕事も生まれています。
+  opuspt: Chúng ta thường nghe nói trí tuệ nhân tạo sẽ cướp mất công việc, nhưng thực tế là trong khi các công việc đơn giản được tự động hóa, thì những công việc mới để quản lý và sử dụng chúng cũng đang được sinh ra.
+  google: Chúng ta thường nghe nói rằng công việc sẽ được trí tuệ nhân tạo đảm nhận, nhưng trên thực tế, trong khi những công việc đơn giản đang được tự động hóa thì những công việc mới cũng đang được tạo ra để quản lý và sử dụng chúng.
+  gemini: Chúng ta thường nghe nói về việc trí tuệ nhân tạo cướp đi công việc, nhưng thực tế là trong khi các công việc đơn giản được tự động hóa, thì những công việc mới quản lý và ứng dụng nó cũng đang được sinh ra.
+
+[id 56] travel/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : 紅葉の季節の京都は どこも観光客でいっぱいなので、有名なお寺は朝の八時前に行くか、少し外れた穴場を狙うかしないと、ゆっくり見られません。
+  opuspt: Kyoto vào mùa lá đỏ thì ở đâu cũng đầy khách du lịch, nên những ngôi chùa nổi tiếng phải đến trước 8 giờ sáng hoặc nhắm vào những địa điểm ít người biết, nếu không sẽ không thể thong thả ngắm nhìn.
+  google: Kyoto rất đông khách du lịch trong mùa lá thu nên bạn sẽ phải đến những ngôi chùa nổi tiếng trước 8 giờ sáng hoặc đến những địa điểm khuất khuất một chút để có thể nhìn thấy chúng.
+  gemini: Vào mùa lá đỏ ở Kyoto, đâu đâu cũng đầy khách du lịch, nên nếu không đến mấy ngôi chùa nổi tiếng trước 8 giờ sáng hoặc tìm những chỗ vắng ít người biết, bạn sẽ chẳng thể thong thả mà ngắm cảnh được.
+
+[id 57] travel/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : 台風の影響で飛行機が欠航になり、振替便は明日の朝までないと言われたので、今夜は空港近くのホテルに泊まることにしました。
+  opuspt: Do ảnh hưởng của bão, máy bay bị hủy, và người ta nói rằng chuyến bay thay thế phải đến sáng mai mới có, nên tối nay tôi quyết định ở khách sạn gần sân bay.
+  google: Chuyến bay của tôi bị hủy do bão và được thông báo rằng sẽ không có chuyến bay nào bị dời lại cho đến sáng mai nên tôi quyết định nghỉ tại một khách sạn gần sân bay tối nay.
+  gemini: Do ảnh hưởng của bão, chuyến bay bị hủy và tôi được thông báo là không có chuyến thay thế nào cho đến sáng mai, nên tôi quyết định sẽ nghỉ tại một khách sạn gần sân bay đêm nay.
+
+[id 67] food/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : 最近できた駅前のパン屋は、国産小麦と自家製酵母にこだわっていて、値段は少し高いけれど、開店直後に行かないと人気の食パンはすぐ売り切れてしまう。
+  opuspt: Tiệm bánh mì trước ga mới mở gần đây rất chú trọng vào lúa mì nội địa và men tự làm, giá hơi cao một chút nhưng nếu không đến ngay sau khi mở cửa thì những chiếc bánh mì gối phổ biến sẽ nhanh chóng cháy hàng.
+  google: Tiệm bánh mì mới mở trước nhà ga đặc biệt sử dụng lúa mì sản xuất trong nước và men tự làm, giá hơi cao, nhưng nếu bạn không đến đó ngay sau khi mở cửa, loại bánh mì bình dân sẽ nhanh chóng cháy hàng.
+  gemini: Tiệm bánh mì mới mở trước ga gần đây rất coi trọng việc sử dụng bột mì nội địa và men tự nhiên, giá có hơi cao nhưng nếu không đến ngay sau khi mở cửa thì loại bánh mì gối phổ biến sẽ bán hết sạch ngay.
+
+[id 69] food/long  điểm pt=2 gguf=2 gg=1 gm=2
+  SRC   : このレシピは砂糖の代わりにはちみつを使っているので、優しい甘さに仕上がりますが、一歳未満の赤ちゃんには絶対に与えないでください。
+  opuspt: Công thức này sử dụng mật ong thay vì đường, nên lớp nền sẽ ngọt dịu, nhưng tuyệt đối không được cho trẻ dưới một tuổi ăn.
+  google: Công thức này sử dụng mật ong thay cho đường nên có vị ngọt nhẹ nhàng nhưng không nên cho bé dưới một tuổi ăn.
+  gemini: Công thức này dùng mật ong thay đường nên có vị ngọt dịu, nhưng tuyệt đối không được cho trẻ dưới một tuổi ăn.
+

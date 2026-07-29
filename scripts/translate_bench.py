@@ -85,13 +85,18 @@ def run_gguf(probe, gguf):
         ["wsl", "-e", "bash", "-lc",
          f"exec {BIN} -m {wsl_model} -t 4 -c 256 --host 127.0.0.1 --port {PORT} 2>/dev/null"])
     try:
-        # Chờ server sẵn sàng. HTTPError (404...) nghĩa là server ĐÃ nhận kết nối
-        # (endpoint /health có thể không tồn tại ở bản cũ) -> cũng coi là sẵn sàng.
+        # Chờ server sẵn sàng. HTTPError 503 = server ĐÃ nhận kết nối nhưng model
+        # CÒN ĐANG NẠP -> phải chờ tiếp (đo 2026-07-29: bắn /completion lúc này ăn
+        # 503). HTTPError khác (404...) nghĩa là endpoint /health không tồn tại ở
+        # bản cũ nhưng server đã sống -> coi là sẵn sàng.
         for _ in range(120):
             try:
                 urllib.request.urlopen(f"http://127.0.0.1:{PORT}/health", timeout=2)
                 break
-            except urllib.error.HTTPError:
+            except urllib.error.HTTPError as e:
+                if e.code == 503:
+                    time.sleep(1)
+                    continue
                 break
             except Exception:
                 time.sleep(1)

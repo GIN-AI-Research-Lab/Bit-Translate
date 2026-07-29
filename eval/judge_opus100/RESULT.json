@@ -1,0 +1,605 @@
+{
+ "scores": {
+  "1": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "2": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "3": {
+   "opusgguf": 1,
+   "gemini": 2,
+   "opuspt": 1,
+   "google": 0
+  },
+  "4": {
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "5": {
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2
+  },
+  "6": {
+   "opuspt": 1,
+   "opusgguf": 1,
+   "gemini": 2,
+   "google": 2
+  },
+  "7": {
+   "opuspt": 2,
+   "gemini": 2,
+   "google": 2,
+   "opusgguf": 1
+  },
+  "8": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "google": 1,
+   "opuspt": 2
+  },
+  "9": {
+   "opusgguf": 1,
+   "opuspt": 1,
+   "google": 1,
+   "gemini": 2
+  },
+  "10": {
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2
+  },
+  "11": {
+   "google": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "gemini": 2
+  },
+  "12": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "13": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "opuspt": 2
+  },
+  "14": {
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2
+  },
+  "15": {
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2
+  },
+  "16": {
+   "opuspt": 1,
+   "google": 1,
+   "gemini": 2,
+   "opusgguf": 1
+  },
+  "17": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "18": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "gemini": 2,
+   "google": 2
+  },
+  "19": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "gemini": 2,
+   "google": 2
+  },
+  "20": {
+   "gemini": 2,
+   "opusgguf": 1,
+   "google": 2,
+   "opuspt": 1
+  },
+  "21": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "22": {
+   "gemini": 2,
+   "google": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "23": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "24": {
+   "opusgguf": 2,
+   "google": 2,
+   "opuspt": 2,
+   "gemini": 2
+  },
+  "25": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "26": {
+   "opuspt": 0,
+   "google": 0,
+   "opusgguf": 0,
+   "gemini": 2
+  },
+  "27": {
+   "google": 2,
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2
+  },
+  "28": {
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "29": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "30": {
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2
+  },
+  "31": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "32": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "opuspt": 2
+  },
+  "33": {
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2
+  },
+  "34": {
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2
+  },
+  "35": {
+   "opuspt": 2,
+   "gemini": 2,
+   "google": 2,
+   "opusgguf": 2
+  },
+  "36": {
+   "opusgguf": 2,
+   "google": 2,
+   "opuspt": 2,
+   "gemini": 2
+  },
+  "37": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "38": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "google": 2,
+   "opuspt": 2
+  },
+  "39": {
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "40": {
+   "gemini": 2,
+   "opuspt": 1,
+   "google": 2,
+   "opusgguf": 1
+  },
+  "41": {
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2
+  },
+  "42": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "43": {
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2
+  },
+  "44": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "45": {
+   "google": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "gemini": 2
+  },
+  "46": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "47": {
+   "google": 2,
+   "opuspt": 2,
+   "opusgguf": 2,
+   "gemini": 2
+  },
+  "48": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 1,
+   "gemini": 2
+  },
+  "49": {
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2
+  },
+  "50": {
+   "google": 1,
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2
+  },
+  "51": {
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2
+  },
+  "52": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "53": {
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2
+  },
+  "54": {
+   "gemini": 2,
+   "google": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "55": {
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2
+  },
+  "56": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "google": 1,
+   "opuspt": 2
+  },
+  "57": {
+   "opuspt": 2,
+   "gemini": 2,
+   "google": 1,
+   "opusgguf": 2
+  },
+  "58": {
+   "opusgguf": 1,
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 1
+  },
+  "59": {
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "60": {
+   "gemini": 2,
+   "opuspt": 0,
+   "opusgguf": 0,
+   "google": 1
+  },
+  "61": {
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2
+  },
+  "62": {
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2,
+   "opuspt": 2
+  },
+  "63": {
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "opuspt": 2
+  },
+  "64": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "gemini": 2,
+   "google": 2
+  },
+  "65": {
+   "google": 2,
+   "opusgguf": 2,
+   "opuspt": 2,
+   "gemini": 2
+  },
+  "66": {
+   "google": 2,
+   "gemini": 2,
+   "opusgguf": 0,
+   "opuspt": 0
+  },
+  "67": {
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 1
+  },
+  "68": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2
+  },
+  "69": {
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 1
+  },
+  "70": {
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "71": {
+   "google": 2,
+   "opusgguf": 1,
+   "opuspt": 1,
+   "gemini": 2
+  },
+  "72": {
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2
+  },
+  "73": {
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "74": {
+   "gemini": 2,
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2
+  },
+  "75": {
+   "opusgguf": 2,
+   "gemini": 2,
+   "google": 2,
+   "opuspt": 2
+  },
+  "76": {
+   "google": 0,
+   "opuspt": 0,
+   "gemini": 2,
+   "opusgguf": 0
+  },
+  "77": {
+   "gemini": 2,
+   "google": 2,
+   "opuspt": 1,
+   "opusgguf": 1
+  },
+  "78": {
+   "gemini": 2,
+   "opusgguf": 1,
+   "google": 2,
+   "opuspt": 1
+  },
+  "79": {
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2,
+   "opuspt": 2
+  },
+  "80": {
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2
+  },
+  "81": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "gemini": 2,
+   "google": 2
+  },
+  "82": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "83": {
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2
+  },
+  "84": {
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2
+  },
+  "85": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "gemini": 2,
+   "google": 2
+  },
+  "86": {
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2
+  },
+  "87": {
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2,
+   "opuspt": 2
+  },
+  "88": {
+   "opuspt": 1,
+   "gemini": 2,
+   "google": 2,
+   "opusgguf": 1
+  },
+  "89": {
+   "gemini": 2,
+   "google": 2,
+   "opuspt": 2,
+   "opusgguf": 2
+  },
+  "90": {
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2,
+   "opuspt": 2
+  },
+  "91": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "92": {
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2
+  },
+  "93": {
+   "opuspt": 2,
+   "opusgguf": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "94": {
+   "opusgguf": 2,
+   "opuspt": 2,
+   "google": 2,
+   "gemini": 2
+  },
+  "95": {
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2,
+   "gemini": 2
+  },
+  "96": {
+   "opuspt": 2,
+   "gemini": 2,
+   "opusgguf": 2,
+   "google": 2
+  },
+  "97": {
+   "gemini": 2,
+   "opuspt": 2,
+   "google": 2,
+   "opusgguf": 2
+  },
+  "98": {
+   "opusgguf": 2,
+   "google": 2,
+   "opuspt": 2,
+   "gemini": 2
+  },
+  "99": {
+   "google": 2,
+   "opusgguf": 1,
+   "gemini": 2,
+   "opuspt": 1
+  },
+  "100": {
+   "opusgguf": 1,
+   "gemini": 2,
+   "opuspt": 1,
+   "google": 1
+  }
+ },
+ "n": 100
+}
