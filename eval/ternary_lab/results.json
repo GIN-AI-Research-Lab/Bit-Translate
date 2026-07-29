@@ -1,0 +1,68 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "variants": {
+    "baseline": {
+      "ppl_ja": 63.89473821497966,
+      "ppl_vi": 52.19224567664436,
+      "translations": [
+        "Câu này đã được dịch thành tiếng Việt:\n\n\"Vui lòng thay đổi lịch trình của buổi họp thứ ba vì dữ liệu không đủ để thực hiện.\"\n\nĐoạn văn này mô tả một tình huống cụ thể trong việc sắp xếp lịch trình dự án hoặc cuộc họp. Cụ",
+        "Đúng vậy, hôm nay trời đẹp như vậy.",
+        "Tôi sẽ dịch câu này sang tiếng Việt là:\n\n\"Anh uống咖啡時，他會讀新聞。\"\n\nĐây là phiên dịch chính xác và đúng nghĩa của câu原句。"
+      ]
+    },
+    "A1_per_tensor": {
+      "ppl_ja": 3068204.354233774,
+      "ppl_vi": 2056315.9084301163,
+      "translations": [
+        "ariat棣ariatariatariatariatariatariatemeanemean丹ariatariatariat\\nresentsariatariatاعدة-dessariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariat\")==ariatariatariate皂ariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariat",
+        "ariat\n\n\n\\nariatariat棣ariateariatariatariatariat sclerosisemean \"登emeanariatariatariatariatariatariatariatariatariatariatariatariatariat�-dessariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariat",
+        "ariat棣ariatariatariatariat sclerosis\\nariatariatariatariatariatariatariatariatariatariatariatariatariatariatemean�ariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariatariateariatariatariatariatariatariat,IDbdd surfaceariat"
+      ],
+      "pct_zero": 44.773448343242045,
+      "ppl_ja_x_baseline": 48019.67172806188,
+      "ppl_vi_x_baseline": 39398.87777908553
+    },
+    "A2_per_row": {
+      "ppl_ja": 1624698.1566637054,
+      "ppl_vi": 935677.2315449942,
+      "translations": [
+        "( below' below* below below below below below below below * ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( * * * * * * * * * * * * * * * * * * * * * * * * * * * * *",
+        "' below (/ below below* ( below below ( ( ( ( * below * ( ( ( ( ( ( ( ( ( ( ( ) * ( ( ( ( ( ( */ *ander () ( ( ( ( ( ( * so * * * * * * * * * * *",
+        "' below ( ( ( below* * below ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( */ * so * * * * * * * * * * * * * *"
+      ],
+      "pct_zero": 43.50711081927513,
+      "ppl_ja_x_baseline": 25427.73007688459,
+      "ppl_vi_x_baseline": 17927.514315861346
+    },
+    "A3_per_row_ls": {
+      "ppl_ja": 1624698.1566637054,
+      "ppl_vi": 935677.2315449942,
+      "translations": [
+        "( below' below* below below below below below below below * ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( * * * * * * * * * * * * * * * * * * * * * * * * * * * * *",
+        "' below (/ below below* ( below below ( ( ( ( * below * ( ( ( ( ( ( ( ( ( ( ( ) * ( ( ( ( ( ( */ *ander () ( ( ( ( ( ( * so * * * * * * * * * * *",
+        "' below ( ( ( below* * below ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( */ * so * * * * * * * * * * * * * *"
+      ],
+      "pct_zero": 43.50711081927513,
+      "ppl_ja_x_baseline": 25427.73007688459,
+      "ppl_vi_x_baseline": 17927.514315861346
+    }
+  },
+  "meta": {
+    "n_params": 494032768,
+    "lm_head_tied": true,
+    "n_target_linears": 168,
+    "suffix_counts": {
+      "q_proj": 24,
+      "k_proj": 24,
+      "v_proj": 24,
+      "o_proj": 24,
+      "gate_proj": 24,
+      "up_proj": 24,
+      "down_proj": 24
+    },
+    "target_weight_params": 357826560,
+    "torch_threads": 5,
+    "ja_sents_used": 55,
+    "vi_sents_used": 60
+  }
+}
