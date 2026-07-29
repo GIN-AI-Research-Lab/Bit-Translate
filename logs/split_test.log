@@ -1,0 +1,20 @@
+model 18L d768 | max_seq 256
+100 câu có ref
+  10/100  (115s)
+  20/100  (214s)
+  30/100  (318s)
+  40/100  (416s)
+  50/100  (506s)
+  60/100  (600s)
+  70/100  (695s)
+  80/100  (776s)
+  90/100  (871s)
+  100/100  (978s)
+
+=== chrF so voi ref (cung model, cung ref) ===
+  nguyên câu           chrF 57.28
+  tách thận trọng      chrF 57.38
+  tách mọi dấu 、       chrF 54.74
+
+số mảnh trung bình: S1 2.5 | S2 8.1
+-> E:\Bit-Translate\eval\split_test_v6.jsonl
