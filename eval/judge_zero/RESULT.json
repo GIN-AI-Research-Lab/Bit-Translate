@@ -1,0 +1,1005 @@
+{
+ "scores": {
+  "1": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "2": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "3": {
+   "signonly": 2,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "4": {
+   "signonly": 2,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "5": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "6": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "7": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 1
+  },
+  "8": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "9": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "10": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "11": {
+   "signonly": 2,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "12": {
+   "signonly": 1,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "13": {
+   "signonly": 1,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "14": {
+   "signonly": 1,
+   "v6pt": 1,
+   "v6gguf": 1
+  },
+  "15": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "16": {
+   "v6gguf": 2,
+   "signonly": 2,
+   "v6pt": 2
+  },
+  "17": {
+   "signonly": 1,
+   "v6pt": 0,
+   "v6gguf": 0
+  },
+  "18": {
+   "v6gguf": 1,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "19": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "20": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 0
+  },
+  "21": {
+   "v6pt": 1,
+   "v6gguf": 1,
+   "signonly": 1
+  },
+  "22": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "23": {
+   "v6pt": 0,
+   "v6gguf": 0,
+   "signonly": 0
+  },
+  "24": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "25": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 1
+  },
+  "26": {
+   "v6gguf": 0,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "27": {
+   "signonly": 0,
+   "v6gguf": 1,
+   "v6pt": 1
+  },
+  "28": {
+   "v6gguf": 1,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "29": {
+   "v6pt": 2,
+   "signonly": 2,
+   "v6gguf": 2
+  },
+  "30": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 2
+  },
+  "31": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "32": {
+   "v6pt": 2,
+   "signonly": 2,
+   "v6gguf": 2
+  },
+  "33": {
+   "v6gguf": 1,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "34": {
+   "signonly": 2,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "35": {
+   "v6pt": 1,
+   "signonly": 2,
+   "v6gguf": 1
+  },
+  "36": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "37": {
+   "v6gguf": 2,
+   "signonly": 2,
+   "v6pt": 2
+  },
+  "38": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "39": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "40": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "41": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "42": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 1
+  },
+  "43": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "44": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "45": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "46": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "47": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 0
+  },
+  "48": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "49": {
+   "signonly": 0,
+   "v6gguf": 1,
+   "v6pt": 1
+  },
+  "50": {
+   "v6gguf": 1,
+   "signonly": 2,
+   "v6pt": 1
+  },
+  "51": {
+   "v6pt": 1,
+   "v6gguf": 1,
+   "signonly": 0
+  },
+  "52": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "53": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 0
+  },
+  "54": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "55": {
+   "signonly": 2,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "56": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "57": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 0
+  },
+  "58": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "59": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "60": {
+   "signonly": 0,
+   "v6pt": 1,
+   "v6gguf": 2
+  },
+  "61": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "62": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "63": {
+   "signonly": 2,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "64": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 1
+  },
+  "65": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "66": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "67": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 2
+  },
+  "68": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "69": {
+   "signonly": 2,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "70": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "71": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "72": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "73": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "74": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "75": {
+   "v6gguf": 1,
+   "signonly": 1,
+   "v6pt": 1
+  },
+  "76": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 1
+  },
+  "77": {
+   "v6pt": 2,
+   "signonly": 2,
+   "v6gguf": 2
+  },
+  "78": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "79": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "80": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "81": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "82": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 1
+  },
+  "83": {
+   "v6pt": 2,
+   "v6gguf": 0,
+   "signonly": 2
+  },
+  "84": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 1
+  },
+  "85": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "86": {
+   "v6gguf": 2,
+   "signonly": 2,
+   "v6pt": 2
+  },
+  "87": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "88": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "89": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "90": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "91": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "92": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "93": {
+   "v6pt": 2,
+   "v6gguf": 0,
+   "signonly": 0
+  },
+  "94": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 2
+  },
+  "95": {
+   "signonly": 1,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "96": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "97": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "98": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "99": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "100": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 1
+  },
+  "101": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "102": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "103": {
+   "signonly": 1,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "104": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "105": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 1
+  },
+  "106": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "107": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "108": {
+   "signonly": 1,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "109": {
+   "v6pt": 1,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "110": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 1
+  },
+  "111": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "112": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "113": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "114": {
+   "v6pt": 1,
+   "v6gguf": 1,
+   "signonly": 0
+  },
+  "115": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 1
+  },
+  "116": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "117": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 0
+  },
+  "118": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "119": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "120": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "121": {
+   "v6gguf": 0,
+   "signonly": 0,
+   "v6pt": 0
+  },
+  "122": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 1
+  },
+  "123": {
+   "signonly": 0,
+   "v6gguf": 0,
+   "v6pt": 2
+  },
+  "124": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "125": {
+   "v6gguf": 0,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "126": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "127": {
+   "signonly": 0,
+   "v6gguf": 1,
+   "v6pt": 1
+  },
+  "128": {
+   "signonly": 1,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "129": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 1
+  },
+  "130": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "131": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "132": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "133": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "134": {
+   "signonly": 0,
+   "v6gguf": 1,
+   "v6pt": 2
+  },
+  "135": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "136": {
+   "v6gguf": 1,
+   "v6pt": 1,
+   "signonly": 0
+  },
+  "137": {
+   "v6gguf": 1,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "138": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "139": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "140": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "141": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "142": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "143": {
+   "v6gguf": 1,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "144": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "145": {
+   "signonly": 1,
+   "v6gguf": 1,
+   "v6pt": 1
+  },
+  "146": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "147": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "148": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "149": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "150": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "151": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "152": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "153": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 0
+  },
+  "154": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 1
+  },
+  "155": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "156": {
+   "v6pt": 1,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "157": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 2
+  },
+  "158": {
+   "v6gguf": 1,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "159": {
+   "v6gguf": 1,
+   "v6pt": 0,
+   "signonly": 0
+  },
+  "160": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "161": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 0
+  },
+  "162": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "163": {
+   "v6gguf": 2,
+   "v6pt": 1,
+   "signonly": 0
+  },
+  "164": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "165": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "166": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "167": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 0
+  },
+  "168": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "169": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 0
+  },
+  "170": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "171": {
+   "v6pt": 2,
+   "v6gguf": 2,
+   "signonly": 1
+  },
+  "172": {
+   "v6pt": 1,
+   "v6gguf": 1,
+   "signonly": 0
+  },
+  "173": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "174": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "175": {
+   "v6gguf": 2,
+   "signonly": 1,
+   "v6pt": 2
+  },
+  "176": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "177": {
+   "signonly": 1,
+   "v6gguf": 2,
+   "v6pt": 2
+  },
+  "178": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "179": {
+   "v6gguf": 2,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "180": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "181": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "182": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "183": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "184": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "185": {
+   "v6pt": 1,
+   "v6gguf": 1,
+   "signonly": 0
+  },
+  "186": {
+   "v6gguf": 2,
+   "signonly": 0,
+   "v6pt": 2
+  },
+  "187": {
+   "v6pt": 1,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "188": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "189": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "190": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "191": {
+   "signonly": 0,
+   "v6pt": 1,
+   "v6gguf": 0
+  },
+  "192": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 2
+  },
+  "193": {
+   "v6gguf": 1,
+   "v6pt": 2,
+   "signonly": 0
+  },
+  "194": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "195": {
+   "v6pt": 2,
+   "v6gguf": 1,
+   "signonly": 1
+  },
+  "196": {
+   "v6pt": 2,
+   "signonly": 1,
+   "v6gguf": 2
+  },
+  "197": {
+   "v6pt": 1,
+   "v6gguf": 1,
+   "signonly": 0
+  },
+  "198": {
+   "signonly": 0,
+   "v6pt": 2,
+   "v6gguf": 2
+  },
+  "199": {
+   "v6pt": 2,
+   "signonly": 0,
+   "v6gguf": 1
+  },
+  "200": {
+   "signonly": 0,
+   "v6gguf": 2,
+   "v6pt": 2
+  }
+ },
+ "n": 200
+}

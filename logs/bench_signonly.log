@@ -1,0 +1,7 @@
+da thay 126 BitLinear sang sign-only
+  40/200 (22s)
+  80/200 (62s)
+  120/200 (118s)
+  160/200 (195s)
+  200/200 (272s)
+-> eval/bench_signonly.jsonl

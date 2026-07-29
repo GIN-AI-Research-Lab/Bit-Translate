@@ -1,0 +1,1005 @@
+{
+ "scores": {
+  "1": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "2": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "3": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "4": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "5": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "6": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "7": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 0
+  },
+  "8": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "9": {
+   "google": 1,
+   "v6avg7": 2,
+   "v6deploy": 1
+  },
+  "10": {
+   "v6deploy": 1,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "11": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "12": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "13": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "14": {
+   "v6deploy": 1,
+   "v6avg7": 1,
+   "google": 1
+  },
+  "15": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 0
+  },
+  "16": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "17": {
+   "v6deploy": 1,
+   "v6avg7": 1,
+   "google": 2
+  },
+  "18": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 2
+  },
+  "19": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "20": {
+   "v6avg7": 2,
+   "v6deploy": 0,
+   "google": 2
+  },
+  "21": {
+   "v6avg7": 1,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "22": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "23": {
+   "v6avg7": 0,
+   "google": 2,
+   "v6deploy": 0
+  },
+  "24": {
+   "google": 1,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "25": {
+   "v6deploy": 1,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "26": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 0
+  },
+  "27": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 1
+  },
+  "28": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 2
+  },
+  "29": {
+   "v6avg7": 1,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "30": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "31": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "32": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "33": {
+   "google": 2,
+   "v6deploy": 0,
+   "v6avg7": 2
+  },
+  "34": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "35": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 1
+  },
+  "36": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "37": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "38": {
+   "v6avg7": 1,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "39": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "40": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "41": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "42": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 1
+  },
+  "43": {
+   "v6avg7": 1,
+   "v6deploy": 2,
+   "google": 1
+  },
+  "44": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "45": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "46": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 0
+  },
+  "47": {
+   "google": 2,
+   "v6avg7": 0,
+   "v6deploy": 0
+  },
+  "48": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 1
+  },
+  "49": {
+   "v6deploy": 0,
+   "google": 2,
+   "v6avg7": 1
+  },
+  "50": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 1
+  },
+  "51": {
+   "v6avg7": 1,
+   "google": 1,
+   "v6deploy": 1
+  },
+  "52": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "53": {
+   "google": 2,
+   "v6avg7": 0,
+   "v6deploy": 0
+  },
+  "54": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "55": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 1
+  },
+  "56": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 0
+  },
+  "57": {
+   "google": 2,
+   "v6avg7": 0,
+   "v6deploy": 2
+  },
+  "58": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 0
+  },
+  "59": {
+   "v6avg7": 2,
+   "v6deploy": 0,
+   "google": 0
+  },
+  "60": {
+   "v6deploy": 2,
+   "v6avg7": 1,
+   "google": 2
+  },
+  "61": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "62": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "63": {
+   "v6deploy": 1,
+   "google": 0,
+   "v6avg7": 2
+  },
+  "64": {
+   "v6avg7": 2,
+   "google": 1,
+   "v6deploy": 1
+  },
+  "65": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "66": {
+   "v6deploy": 0,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "67": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 2
+  },
+  "68": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "69": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "70": {
+   "v6deploy": 1,
+   "v6avg7": 2,
+   "google": 1
+  },
+  "71": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "72": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "73": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "74": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 0
+  },
+  "75": {
+   "google": 1,
+   "v6deploy": 1,
+   "v6avg7": 0
+  },
+  "76": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 1
+  },
+  "77": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "78": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "79": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 1
+  },
+  "80": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "81": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "82": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 0
+  },
+  "83": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 0
+  },
+  "84": {
+   "v6avg7": 2,
+   "google": 0,
+   "v6deploy": 2
+  },
+  "85": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "86": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "87": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "88": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "89": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "90": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "91": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "92": {
+   "v6avg7": 2,
+   "v6deploy": 0,
+   "google": 2
+  },
+  "93": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 0
+  },
+  "94": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "95": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "96": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "97": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "98": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "99": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "100": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "101": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 1
+  },
+  "102": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "103": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "104": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 1
+  },
+  "105": {
+   "google": 1,
+   "v6avg7": 2,
+   "v6deploy": 1
+  },
+  "106": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "107": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "108": {
+   "v6deploy": 0,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "109": {
+   "v6avg7": 1,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "110": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "111": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "112": {
+   "v6avg7": 1,
+   "v6deploy": 0,
+   "google": 2
+  },
+  "113": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 2
+  },
+  "114": {
+   "v6avg7": 1,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "115": {
+   "google": 2,
+   "v6avg7": 0,
+   "v6deploy": 1
+  },
+  "116": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 2
+  },
+  "117": {
+   "google": 2,
+   "v6avg7": 0,
+   "v6deploy": 0
+  },
+  "118": {
+   "v6avg7": 2,
+   "google": 1,
+   "v6deploy": 2
+  },
+  "119": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "120": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "121": {
+   "google": 2,
+   "v6deploy": 0,
+   "v6avg7": 0
+  },
+  "122": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "123": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "124": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "125": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 0
+  },
+  "126": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "127": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 1
+  },
+  "128": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "129": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "130": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "131": {
+   "v6deploy": 0,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "132": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "133": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "134": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "135": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 1
+  },
+  "136": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 1
+  },
+  "137": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "138": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "139": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 1
+  },
+  "140": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "141": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "142": {
+   "v6deploy": 1,
+   "google": 1,
+   "v6avg7": 2
+  },
+  "143": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 2
+  },
+  "144": {
+   "v6avg7": 1,
+   "v6deploy": 1,
+   "google": 1
+  },
+  "145": {
+   "v6deploy": 1,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "146": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "147": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "148": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 1
+  },
+  "149": {
+   "v6avg7": 1,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "150": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "151": {
+   "v6deploy": 2,
+   "google": 1,
+   "v6avg7": 2
+  },
+  "152": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 1
+  },
+  "153": {
+   "v6avg7": 1,
+   "v6deploy": 0,
+   "google": 1
+  },
+  "154": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "155": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "156": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "157": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "158": {
+   "google": 2,
+   "v6deploy": 1,
+   "v6avg7": 2
+  },
+  "159": {
+   "google": 2,
+   "v6avg7": 0,
+   "v6deploy": 0
+  },
+  "160": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "161": {
+   "v6avg7": 2,
+   "v6deploy": 0,
+   "google": 2
+  },
+  "162": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "163": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 2
+  },
+  "164": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "165": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "166": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "167": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "168": {
+   "v6avg7": 1,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "169": {
+   "v6deploy": 0,
+   "v6avg7": 1,
+   "google": 2
+  },
+  "170": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 2
+  },
+  "171": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "172": {
+   "v6avg7": 1,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "173": {
+   "v6deploy": 2,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "174": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "175": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "176": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "177": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  },
+  "178": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "179": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 2
+  },
+  "180": {
+   "v6deploy": 1,
+   "v6avg7": 2,
+   "google": 2
+  },
+  "181": {
+   "v6avg7": 1,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "182": {
+   "v6avg7": 1,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "183": {
+   "google": 1,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "184": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "185": {
+   "v6avg7": 1,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "186": {
+   "google": 2,
+   "v6deploy": 2,
+   "v6avg7": 2
+  },
+  "187": {
+   "v6avg7": 0,
+   "v6deploy": 0,
+   "google": 0
+  },
+  "188": {
+   "google": 2,
+   "v6avg7": 1,
+   "v6deploy": 1
+  },
+  "189": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "190": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "191": {
+   "v6deploy": 1,
+   "v6avg7": 1,
+   "google": 2
+  },
+  "192": {
+   "v6avg7": 1,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "193": {
+   "google": 2,
+   "v6avg7": 2,
+   "v6deploy": 1
+  },
+  "194": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "195": {
+   "v6avg7": 2,
+   "google": 2,
+   "v6deploy": 1
+  },
+  "196": {
+   "v6avg7": 2,
+   "v6deploy": 2,
+   "google": 2
+  },
+  "197": {
+   "v6avg7": 1,
+   "google": 2,
+   "v6deploy": 2
+  },
+  "198": {
+   "v6deploy": 0,
+   "v6avg7": 1,
+   "google": 1
+  },
+  "199": {
+   "v6avg7": 2,
+   "v6deploy": 1,
+   "google": 2
+  },
+  "200": {
+   "v6deploy": 2,
+   "google": 2,
+   "v6avg7": 2
+  }
+ },
+ "n": 200
+}

@@ -1,0 +1,1002 @@
+{
+ "1": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "2": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "3": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "4": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "5": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "6": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "7": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "8": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "9": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "10": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "11": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "12": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "13": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "14": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "15": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "16": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "17": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "18": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "19": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "20": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "21": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "22": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "23": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "24": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "25": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "26": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "27": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "28": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "29": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "30": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "31": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "32": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "33": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "34": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "35": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "36": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "37": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "38": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "39": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "40": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "41": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "42": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "43": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "44": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "45": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "46": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "47": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "48": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "49": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "50": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "51": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "52": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "53": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "54": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "55": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "56": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "57": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "58": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "59": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "60": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "61": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "62": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "63": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "64": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "65": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "66": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "67": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "68": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "69": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "70": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "71": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "72": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "73": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "74": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "75": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "76": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "77": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "78": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "79": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "80": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "81": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "82": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "83": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "84": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "85": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "86": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "87": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "88": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "89": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "90": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "91": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "92": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "93": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "94": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "95": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "96": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "97": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "98": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "99": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "100": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "101": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "102": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "103": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "104": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "105": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "106": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "107": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "108": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "109": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "110": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "111": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "112": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "113": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "114": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "115": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "116": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "117": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "118": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "119": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "120": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "121": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "122": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "123": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "124": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "125": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "126": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "127": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "128": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "129": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "130": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "131": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "132": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "133": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "134": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "135": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "136": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "137": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "138": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "139": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "140": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "141": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "142": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "143": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "144": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "145": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "146": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "147": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "148": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "149": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "150": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "151": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "152": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "153": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "154": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "155": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "156": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "157": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "158": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "159": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "160": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "161": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "162": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "163": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "164": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "165": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "166": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "167": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "168": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "169": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "170": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "171": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "172": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "173": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "174": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "175": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "176": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "177": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ },
+ "178": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "179": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "180": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "181": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "182": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "183": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "184": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "185": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "186": {
+  "A": "v6gguf",
+  "B": "signonly",
+  "C": "v6pt"
+ },
+ "187": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "188": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "189": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "190": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "191": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "192": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "193": {
+  "A": "v6gguf",
+  "B": "v6pt",
+  "C": "signonly"
+ },
+ "194": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "195": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "196": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "197": {
+  "A": "v6pt",
+  "B": "v6gguf",
+  "C": "signonly"
+ },
+ "198": {
+  "A": "signonly",
+  "B": "v6pt",
+  "C": "v6gguf"
+ },
+ "199": {
+  "A": "v6pt",
+  "B": "signonly",
+  "C": "v6gguf"
+ },
+ "200": {
+  "A": "signonly",
+  "B": "v6gguf",
+  "C": "v6pt"
+ }
+}
