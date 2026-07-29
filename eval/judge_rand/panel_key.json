@@ -1,0 +1,1002 @@
+{
+ "1": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "2": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "3": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "4": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "5": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "6": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "7": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "8": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "9": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "10": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "11": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "12": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "13": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "14": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "15": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "16": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "17": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "18": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "19": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "20": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "21": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "22": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "23": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "24": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "25": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "26": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "27": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "28": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "29": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "30": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "31": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "32": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "33": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "34": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "35": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "36": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "37": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "38": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "39": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "40": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "41": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "42": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "43": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "44": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "45": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "46": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "47": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "48": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "49": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "50": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "51": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "52": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "53": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "54": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "55": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "56": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "57": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "58": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "59": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "60": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "61": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "62": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "63": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "64": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "65": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "66": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "67": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "68": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "69": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "70": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "71": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "72": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "73": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "74": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "75": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "76": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "77": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "78": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "79": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "80": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "81": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "82": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "83": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "84": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "85": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "86": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "87": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "88": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "89": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "90": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "91": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "92": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "93": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "94": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "95": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "96": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "97": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "98": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "99": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "100": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "101": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "102": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "103": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "104": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "105": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "106": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "107": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "108": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "109": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "110": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "111": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "112": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "113": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "114": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "115": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "116": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "117": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "118": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "119": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "120": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "121": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "122": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "123": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "124": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "125": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "126": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "127": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "128": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "129": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "130": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "131": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "132": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "133": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "134": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "135": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "136": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "137": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "138": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "139": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "140": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "141": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "142": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "143": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "144": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "145": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "146": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "147": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "148": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "149": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "150": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "151": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "152": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "153": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "154": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "155": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "156": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "157": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "158": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "159": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "160": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "161": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "162": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "163": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "164": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "165": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "166": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "167": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "168": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "169": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "170": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "171": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "172": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "173": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "174": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "175": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "176": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "177": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ },
+ "178": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "179": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "180": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "181": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "182": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "183": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "184": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "185": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "186": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt"
+ },
+ "187": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "188": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "189": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "190": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "191": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "192": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "193": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf"
+ },
+ "194": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "195": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "196": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "197": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf"
+ },
+ "198": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini"
+ },
+ "199": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini"
+ },
+ "200": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt"
+ }
+}
