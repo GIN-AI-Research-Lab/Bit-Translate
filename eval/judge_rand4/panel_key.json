@@ -1,0 +1,1202 @@
+{
+ "1": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "2": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "google",
+  "D": "gguf"
+ },
+ "3": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "4": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "5": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "6": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "7": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "8": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "google",
+  "D": "gguf"
+ },
+ "9": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "10": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "11": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "12": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "13": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "14": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "15": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "16": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "17": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "18": {
+  "A": "pt",
+  "B": "google",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "19": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "20": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "21": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "22": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "23": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf",
+  "D": "google"
+ },
+ "24": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "google"
+ },
+ "25": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "26": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "27": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "28": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "29": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "30": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "31": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "32": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "33": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "34": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "35": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "36": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "37": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "38": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "39": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "40": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "41": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "42": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "43": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "44": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "45": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "46": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "47": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "48": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "49": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "50": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "google"
+ },
+ "51": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "52": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "53": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "54": {
+  "A": "pt",
+  "B": "google",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "55": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "56": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "google"
+ },
+ "57": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "58": {
+  "A": "gemini",
+  "B": "google",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "59": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "60": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "61": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "62": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "63": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "64": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "google",
+  "D": "pt"
+ },
+ "65": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "66": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "67": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "68": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "69": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "70": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "71": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "72": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "73": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "74": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "75": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "76": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "77": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "78": {
+  "A": "gemini",
+  "B": "google",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "79": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "80": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "81": {
+  "A": "gemini",
+  "B": "google",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "82": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "83": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "84": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "85": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "86": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "87": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "88": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "89": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "90": {
+  "A": "gemini",
+  "B": "google",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "91": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "92": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "93": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "94": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "95": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "96": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "97": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "98": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "99": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "google"
+ },
+ "100": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "101": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "102": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "103": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "104": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "105": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf",
+  "D": "google"
+ },
+ "106": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "107": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "108": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "109": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "110": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "111": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "112": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "113": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "114": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "115": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "116": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "117": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "118": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "119": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf",
+  "D": "google"
+ },
+ "120": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "121": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "122": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "123": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "google"
+ },
+ "124": {
+  "A": "pt",
+  "B": "google",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "125": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "126": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "127": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "128": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "google",
+  "D": "pt"
+ },
+ "129": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "130": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "131": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "132": {
+  "A": "pt",
+  "B": "google",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "133": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "134": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "135": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "136": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "137": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "138": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "139": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "google",
+  "D": "gguf"
+ },
+ "140": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "141": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "142": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "143": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "144": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "145": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "146": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "147": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "google",
+  "D": "gguf"
+ },
+ "148": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "149": {
+  "A": "google",
+  "B": "pt",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "150": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "151": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "152": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "153": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "154": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "155": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "156": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "157": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "google"
+ },
+ "158": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "google",
+  "D": "gguf"
+ },
+ "159": {
+  "A": "gguf",
+  "B": "gemini",
+  "C": "pt",
+  "D": "google"
+ },
+ "160": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "161": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "162": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "163": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "164": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "165": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "166": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "167": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "168": {
+  "A": "google",
+  "B": "pt",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "169": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "170": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "171": {
+  "A": "pt",
+  "B": "google",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "172": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "173": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "174": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf",
+  "D": "google"
+ },
+ "175": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "google",
+  "D": "gguf"
+ },
+ "176": {
+  "A": "gemini",
+  "B": "google",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "177": {
+  "A": "pt",
+  "B": "google",
+  "C": "gemini",
+  "D": "gguf"
+ },
+ "178": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "179": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "180": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "181": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "gemini",
+  "D": "google"
+ },
+ "182": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "183": {
+  "A": "pt",
+  "B": "google",
+  "C": "gguf",
+  "D": "gemini"
+ },
+ "184": {
+  "A": "gemini",
+  "B": "google",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "185": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "186": {
+  "A": "gguf",
+  "B": "pt",
+  "C": "google",
+  "D": "gemini"
+ },
+ "187": {
+  "A": "google",
+  "B": "gguf",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "188": {
+  "A": "pt",
+  "B": "gguf",
+  "C": "google",
+  "D": "gemini"
+ },
+ "189": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "google",
+  "D": "pt"
+ },
+ "190": {
+  "A": "google",
+  "B": "gemini",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "191": {
+  "A": "pt",
+  "B": "gemini",
+  "C": "google",
+  "D": "gguf"
+ },
+ "192": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ },
+ "193": {
+  "A": "gemini",
+  "B": "google",
+  "C": "gguf",
+  "D": "pt"
+ },
+ "194": {
+  "A": "google",
+  "B": "gguf",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "195": {
+  "A": "gemini",
+  "B": "gguf",
+  "C": "pt",
+  "D": "google"
+ },
+ "196": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf",
+  "D": "google"
+ },
+ "197": {
+  "A": "gguf",
+  "B": "google",
+  "C": "pt",
+  "D": "gemini"
+ },
+ "198": {
+  "A": "gguf",
+  "B": "google",
+  "C": "gemini",
+  "D": "pt"
+ },
+ "199": {
+  "A": "gemini",
+  "B": "pt",
+  "C": "gguf",
+  "D": "google"
+ },
+ "200": {
+  "A": "google",
+  "B": "gemini",
+  "C": "pt",
+  "D": "gguf"
+ }
+}
