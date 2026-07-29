@@ -230,7 +230,9 @@ def train_v6(steps: int = 16400, lr: float = 8e-5, n_layers: int = 18,
             f"--lr {lr} --min-lr {lr/10:.2e} --warmup 200 --lr-anchor 0 "
             # milestone 250 (vòng 4 dùng 500): v4_avg5 (5 mốc) hơn v4_avg (3 mốc)
             # trên CẢ hai thước đo, nên nhiều mốc để average là có lợi.
-            f"--max-steps {steps} --save-every 250 --milestone-every 250 --log-every 10")
+            f"--max-steps {steps} --save-every 250 --milestone-every 250 --log-every 10 "
+            # dev-every 500: đo dev SẠCH trong train (eval_dev tất định, train.py 2026-07-28).
+            f"--dev-every 500")
     cmd = f"cd /root/bt && python3 scripts/train.py {args}"
     print(f"   {cmd}", flush=True)
     proc = subprocess.Popen(cmd, shell=True, env=env)
