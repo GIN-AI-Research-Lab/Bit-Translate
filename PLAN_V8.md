@@ -62,9 +62,19 @@ vòng 3); polysemy-probe 150 câu nghĩa phụ từ CC-100 thật; in-domain **n
   2 lượt ngày 07-28 cho danh sách 54 miền, 2,2M câu đã tiêu thụ — mine lại ra ~0; 4.073 từ còn thiếu
   "chỉ có thể SINH" theo DOMAIN_MAP §4). Giữ NHỎ: thuật ngữ chỉ ~3% lỗi taxonomy. Mine mới thật sự
   chỉ còn: 6-7 miền văn hoá mới + cụm keigo + anchor đa nghĩa.
-- (e) **TUỲ CHỌN — user quyết**: trộn 10-20% chiều **vi→ja** (tag >>jpn<<, đảo chính cặp câu đã có).
-  Phát hiện 2026-07-30 khi tích hợp app: **vi2ja đã chết** (input vi ra output vi) vì KD v5-v7 một
-  chiều. App Teams hỗ trợ 2 chiều — nếu cần vi→ja trong tool thì đây là đường rẻ nhất.
+- (e) **ĐÃ CHỐT (user duyệt 30/7) — hồi sinh chiều vi→ja, trộn 15% token-budget**: đảo chính
+  cặp câu đã có + tag >>jpn<< — **không tốn KD mới, không tốn tiền**, chỉ thêm ~15 phút binarize.
+  Bối cảnh: vi2ja đã chết vì KD v5-v7 một chiều (tag swap + v4_avg5 đều đã đo — xem ⚠ dưới).
+  Cấu hình: chọn ~2,4M cặp LaBSE cao nhất trong 15,92M, đảo thành **vi(thầy, sạch) → ja(gốc thật
+  CC-100/kokkai)** — đúng công thức back-translation: target là tiếng Nhật người thật viết nên
+  output tự nhiên. Model thấy ~150-240M token chiều ngược trong 8-12k step. Kỳ vọng TRUNG THỰC:
+  vi→ja "dùng được" câu ngắn/trung bình, vòng đầu THUA Google chiều đó (chiều xuôi đã ăn ~1B+
+  token, chiều ngược mới ~0,2B; sinh tiếng Nhật khó hơn: chọn kanji + mức kính ngữ) — muốn ngang
+  phải dồn liều qua các vòng sau. Nghiệm thu: bench RIÊNG chiều ngược 100 câu vi→ja chấm mù cùng
+  phiên (mốc: "dùng được" ≥70%) + regression ja→vi trên 200b KHÔNG tụt (McNemar vs v7a) — chiều
+  xuôi vẫn ăn 85% gradient + tiền lệ v4 gốc hai chiều cùng cỡ chạy tốt. Sau khi V8 đạt: mở khoá
+  vi2ja trong sidecar app + gói deploy; autodetect chiều nằm ở tầng client (kana/kanji → >>vie<<,
+  dấu tiếng Việt → >>jpn<< — hai ngôn ngữ không chung bảng chữ, detect theo dải ký tự ~100%).
   ⚠ Đường zero-train ĐÃ THỬ VÀ BÁC (30/7): (i) tag >>jpn<< trên v7a → rác tiếng Việt (đo);
   (ii) v4_avg5_i2s (tưởng là bản 2 chiều gốc) → cũng ra rỗng/tiếng Việt — nó là bản SAU KD pilot,
   checkpoint 2 chiều thật (v4 step 15500 pre-KD) đã bị xoá. Không prompt trick nào tạo được năng
@@ -136,6 +146,7 @@ hoãn grow có regret ≈ 0), rải đều 6 block, max_seq 384 (bảng RoPE, 0 
 
 - **Self-edit >>fix<< 2 lượt**: token 32000 không có trong data train lineage v7a — muốn có phải
   train thêm data fix (ứng viên vòng sau, train local được).
-- **Back-translation check**: vi2ja chết (trừ khi làm T2e).
+- **Back-translation check**: vòng NÀY chưa làm được (vi2ja chỉ sống lại sau khi V8 train xong
+  với T2e) — thành ứng viên cho vòng sau: dịch ngược output để tự kiểm.
 - **Beam/rerank, tách-ghép ngẫu nhiên, position-offset RoPE, cân độ dài, data-free ternary**: đã bác bằng số — không lặp.
 - **Grow 24L ngay**: chưa thỏa luật; +33% FLOPs/step vĩnh viễn + 20-25k step trong khi 18L còn ăn.
