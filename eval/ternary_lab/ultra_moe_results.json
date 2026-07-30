@@ -1,0 +1,41 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "experiments": {
+    "Sparse_Residual_50pct_3.0Bit": {
+      "avg_bits": 3.0,
+      "size_mb": 454.4,
+      "speed_tok_s": 124.0,
+      "ppl_en": 184.1272151781983,
+      "ppl_ja": 199.89101540614215,
+      "ppl_vi": 110.78902037186378,
+      "samples": [
+        "会議の会議会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議会の会議",
+        "おやすもおやすも、おやすもおやすも、おやすもおやすも、おやすもおやすも、おやすもおやすも、おやすもおやすも、おやすもおやすも、おやすもおやすも、おやすも"
+      ]
+    },
+    "Sparse_Residual_30pct_2.6Bit": {
+      "avg_bits": 2.6,
+      "size_mb": 433.4,
+      "speed_tok_s": 130.0,
+      "ppl_en": 344.2162755703361,
+      "ppl_ja": 286.3830138767161,
+      "ppl_vi": 193.73773297442065,
+      "samples": [
+        "(Original: 会議が間に合わないで、会議を変更する必要があります。)  (Original: 会議が間に合わないで、会議を変更する必要があります。)  (Original: 会議が間に合わないで、会議を",
+        "おはお、おはお、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お、お"
+      ]
+    },
+    "Middle_Layer_Selective_3.0Bit": {
+      "avg_bits": 2.93,
+      "size_mb": 450.6,
+      "speed_tok_s": 125.0,
+      "ppl_en": 1806.902404399748,
+      "ppl_ja": 1347.2700126115644,
+      "ppl_vi": 768.8376597705293,
+      "samples": [
+        "このようにも、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、もしてから、",
+        "(from: \"Today is a good place for us to be in the way of the way of the way of the way of the way of the way of the way of the way of the way of the way of the way of the way of the way of the way of the way of the"
+      ]
+    }
+  }
+}
