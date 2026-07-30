@@ -65,6 +65,12 @@ vòng 3); polysemy-probe 150 câu nghĩa phụ từ CC-100 thật; in-domain **n
 - (e) **TUỲ CHỌN — user quyết**: trộn 10-20% chiều **vi→ja** (tag >>jpn<<, đảo chính cặp câu đã có).
   Phát hiện 2026-07-30 khi tích hợp app: **vi2ja đã chết** (input vi ra output vi) vì KD v5-v7 một
   chiều. App Teams hỗ trợ 2 chiều — nếu cần vi→ja trong tool thì đây là đường rẻ nhất.
+  ⚠ Đường zero-train ĐÃ THỬ VÀ BÁC (30/7): (i) tag >>jpn<< trên v7a → rác tiếng Việt (đo);
+  (ii) v4_avg5_i2s (tưởng là bản 2 chiều gốc) → cũng ra rỗng/tiếng Việt — nó là bản SAU KD pilot,
+  checkpoint 2 chiều thật (v4 step 15500 pre-KD) đã bị xoá. Không prompt trick nào tạo được năng
+  lực không có trong trọng số. Zero-train duy nhất còn giá trị: **reverse-reranking** — engine
+  ngoài sinh N ứng viên ja, v7a CHẤM P(vi_nguồn|ja_ứng viên) chọn bản tốt nhất (model làm giám
+  khảo, không làm máy dịch; trần chất lượng = trần của engine sinh).
 - (f) **MỚI — Câu cụt kiểu STT (fragment robustness), ~30-50k mẫu — TUYẾN PHÒNG THỦ DUY NHẤT**
   (quyết định 30/7: không vá ở tầng app, model phải TỰ dịch lửng đúng): v7a chỉ luyện trên câu HOÀN
   CHỈNH, còn caption STT stream đầy mảnh cắt giữa chừng → model bịa vị ngữ + đảo vai (transcript
