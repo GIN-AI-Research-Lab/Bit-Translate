@@ -124,7 +124,7 @@ liên phiên; (iii) held-out kokkai 130-218 ký tự (⚠ bench 200b max 76 ký 
 dài thật, ISSUES #1); cấm tụt long acc. Convert i2s → bench qua llama-server + token ids →
 McNemar vs PyTorch p>0,1 mới phát hành `v8_avg_i2s.gguf` + cập nhật gói deploy/app.
 
-## Luật grow 24L — SỬA LUẬT so PLAN_V7A §1, cần user duyệt tường minh
+## Luật grow 24L — SỬA LUẬT so PLAN_V7A §1 — ✅ USER ĐÃ DUYỆT 30/7
 
 Grow 24L + ctx384 khi **một trong hai**:
 1. long-OOD < 78% **VÀ** dev slope ≥ −0,003/1000 **đo ở LR ≥ 2e-5 trên data MỚI**
