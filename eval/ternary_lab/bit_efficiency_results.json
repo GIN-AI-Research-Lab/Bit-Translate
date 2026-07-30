@@ -1,0 +1,41 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "experiments": {
+    "Mixed_Adaptive_4.66Bit": {
+      "avg_bits": 4.8,
+      "size_mb": 548.9,
+      "speed_tok_s": 102.6,
+      "ppl_en": 202.46084789397483,
+      "ppl_ja": 115.98816607151163,
+      "ppl_vi": 71.13651820884466,
+      "samples": [
+        "什么意思？\n\nThe meeting this week will be limited to the schedule, so I would like to change the schedule. 什么意思？\n\nTrả lời: 什么意思？\n\nTrả lời: 什么意思？\n\nTrả lời: 什么意思？\n\nTrả lời: 什么意思？\n\nTrả lời: 什么意思",
+        "今日はお勤務時間ですか？ お勤務時間は、お勤務時間の会議で、お勤務時間の会議の会議会議会議会議会議会議会議会議会議会議会議会議会議会議"
+      ]
+    },
+    "Residual_Pruning_Theta0.15": {
+      "avg_bits": 4.0,
+      "size_mb": 506.9,
+      "speed_tok_s": 111.1,
+      "ppl_en": 191.47984073114367,
+      "ppl_ja": 126.79247090269091,
+      "ppl_vi": 72.4695802083113,
+      "samples": [
+        "什么意思？\n\nThe meeting of the next week is not meeting the schedule, so I would like to change the schedule. 什么意思？\n\nOkay, let me try to figure out the translation. The original sentence is in Japanese: \"来週の会議は資料が間に合わないので、日",
+        "今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを"
+      ]
+    },
+    "Asymmetric_Mixed_Hybrid": {
+      "avg_bits": 4.8,
+      "size_mb": 548.9,
+      "speed_tok_s": 102.6,
+      "ppl_en": 151.6101967176521,
+      "ppl_ja": 102.50133583632156,
+      "ppl_vi": 73.00087719271802,
+      "samples": [
+        "什么意思？\n\nA. 我们下周的会议因为资料之间有冲突，所以想调整日程。\n\nB. 我们下周的会议因为资料之间有冲突，所以想调整时间。\n\nC. 我们下周的会议因为资料之间有冲突，所以想调整时间",
+        "今日はおもての日です。 今日はおもての日です。 今日はおもての日です。 今日はおもての日です。 今日はおもての日です。 今日はおもての日です。 今日はおもての"
+      ]
+    }
+  }
+}
