@@ -8,11 +8,13 @@
 > (`D:/Bit-Translate-data/dist/v7a_deploy_pkg/`), app teams-caption-translator đã tích hợp.
 >
 > **Bổ sung 30/7 chiều — từ transcript app THẬT** (song-ngu-2026-07-30.txt, 24 dòng họp thật):
-> 3 lớp lỗi mới có bằng chứng: (1) **câu cụt STT → model bịa vị ngữ/đảo vai** (nặng nhất, QE mù) →
-> P3+P5d+T2f; (2) đa nghĩa やる + scope phủ định だけじゃなく → T2b; (3) tên riêng/từ nghe nhầm là
-> lỗi STT, vá ở tầng app (P5a-c), không phải model. Nút thắt chất lượng CẢM NHẬN của app hiện là
-> STT (Nemotron int4 nghe tiếng Nhật giọng thật), không phải model dịch — ~14/24 dòng dịch ổn với
-> input nhận được, chỉ 5 lỗi thuộc model dịch.
+> 3 lớp lỗi mới có bằng chứng, **xử lý thuần bằng DATA/TRAIN (Track T), không vá ở tầng app**
+> (quyết định user 30/7: đây là vấn đề năng lực model): (1) **câu cụt kiểu STT → model bịa vị
+> ngữ/đảo vai** (nặng nhất) → T2f là tuyến phòng thủ DUY NHẤT — model phải tự dịch lửng đúng,
+> không dựa app gộp câu; (2) đa nghĩa やる + scope phủ định だけじゃなく → T2b; (3) tên riêng/từ
+> nghe nhầm là lỗi STT thuần (ずん, 金質↔品質…) — ngoài phạm vi model, ghi nhận nhưng không xử lý
+> trong plan này (T2g là lựa chọn thí nghiệm duy nhất chạm tới nó). Tham khảo: ~14/24 dòng dịch
+> ổn với input nhận được, 5 lỗi thuộc model dịch.
 
 ## Track P — Sản phẩm, không train ($0, 2-3 ngày) — LÀM TRƯỚC
 
@@ -20,9 +22,8 @@
 |---|------|--------------------------------|
 | P1 | **Chuẩn hoá client inference** | `v7a_deploy_pkg/src/translate.py` là đường chuẩn duy nhất. Sửa hoặc deprecate `demo/server.py` — nó đang dính 4 lỗi thật (phản biện kiểm từng dòng): gọi `/tokenize` của llama.cpp (đúng bug ISSUES #4, −16 điểm use đo thật), `repeat_penalty 1.25` (bench chuẩn 1.0), `n_predict 96` cứng (cắt câu dài), gửi token `>>fix<<`=32000 mà lineage v7a **chưa từng train** (HANDOFF:387). App Teams đã đi đường đúng (sidecar). |
 | P2 | **Bảng kính ngữ thư tín tầng tool** | 150-300 **TEMPLATE NGUYÊN CÂU** (⚠ phản biện: match cụm-cuối-segment sẽ tự vô hiệu vì ご清栄/ご査収 nằm GIỮA câu định hình). Gemini nháp → user duyệt mắt 1 lượt (bảng đóng, duyệt 1 lần). Nhắm id182/187/189 (⚠ id184 v7a ĐÃ đúng — bỏ khỏi danh sách). |
-| P3 | **Cờ confidence + fallback** | Tín hiệu: logprob (build BitNet-test CÓ n_probs — đã kiểm source server.cpp:882), tỉ lệ độ dài VI/JA ngoài [0,4;2,5], thiếu dấu câu cuối (nghi cắt cụt), loop n-gram (retry 1 lần rp=1.25 chỉ-khi-loop), rỗng, **+ NGUỒN LÀ CÂU CỤT** (không kết thúc bằng thể kết câu です/ます/た/ね/よ/か/。— transcript 07-30: câu cụt là nơi model BỊA vị ngữ mà QE chấm 0,00, ca 12:30:57). ⚠ Hiệu chỉnh trên lớp **acc≤1 (43 câu)** của judge 200b, không phải 13 câu acc==0 (quá mỏng). Precision-first; GO/NO-GO logprob ngay ngày 1. |
+| P3 | **Cờ confidence + fallback** | Tín hiệu: logprob (build BitNet-test CÓ n_probs — đã kiểm source server.cpp:882), tỉ lệ độ dài VI/JA ngoài [0,4;2,5], thiếu dấu câu cuối (nghi cắt cụt), loop n-gram (retry 1 lần rp=1.25 chỉ-khi-loop), rỗng. ⚠ Hiệu chỉnh trên lớp **acc≤1 (43 câu)** của judge 200b, không phải 13 câu acc==0 (quá mỏng). Precision-first; GO/NO-GO logprob ngay ngày 1. |
 | P4 | **Tốc độ + UX server** | `-t 8` (353 vs 301 tok/s @4 — TONGKET_V6 §4; sidecar app đang -t 4 → đổi), stream token, hàng đợi TUẦN TỰ (2 job song song chậm 5,6×), ghi chú cắm sạc. |
-| P5 | **Vá nhanh app caption (~30 phút, làm NGAY)** | Từ transcript thật 07-30: (a) `JA_GLOSSARY` thêm biến thể STT viết lệch (ブリッチ/ブリチー → 'Bridge (BrSE)' — đang chỉ có ブリッジ/ブレッジ nên trượt, sinh ra "chơi britch"); (b) `NAME_GLOSSARY` điền tên team thật (ずん→Dũng… — user cung cấp danh sách); (c) blocklist output chặn chuyển tự nhạy cảm ("Bitch" từ ブリッチ); (d) **gộp mảnh câu cụt** trước khi dịch: STT không chấm câu → buffer mảnh không có thể kết câu, chờ mảnh kế (timeout ~1-2s) rồi dịch một thể — chặn tận gốc lớp lỗi bịa-vị-ngữ. |
 
 **Nghiệm thu Track P**: 200 câu **`eval/bench_opus200b.jsonl`** (⚠ GHI CỨNG — không phải
 bench_new.jsonl, translate_bench mặc định trỏ nhầm bộ) qua tool-path vs raw-path, chấm mù
@@ -36,8 +37,9 @@ sang máy A, kiểm env WSL2/torch/compile ở đó.
 
 **T1 — Dựng bench nghiệm thu TRƯỚC khi có data** (bài học "bench đo sai miền"):
 keigo-letter ~100 câu mine từ thư thương mại thật held-out (ĐỘC LẬP pipeline sinh — né bẫy
-vòng 3); polysemy-probe 150 câu nghĩa phụ từ CC-100 thật; in-domain **n≥100/miền**.
-Đo baseline v7a + Google cùng phiên, lưu làm mốc.
+vòng 3); polysemy-probe 150 câu nghĩa phụ từ CC-100 thật; in-domain **n≥100/miền**;
+**fragment-probe 60-100 mảnh câu cụt** (cắt câu thật tại ranh giới trợ từ, held-out — tiêu chí
+đếm VỊ NGỮ BỊA THÊM, không phải chrF). Đo baseline v7a + Google cùng phiên, lưu làm mốc.
 
 **T2 — Data 4 nhánh (+1 tuỳ chọn)**:
 - (a) **Kính ngữ thư tín ~400 cụm đóng** (頭語/結語, 時候の挨拶, ご清栄/ご査収/お納め…, sonkeigo/kenjougo
@@ -62,14 +64,17 @@ vòng 3); polysemy-probe 150 câu nghĩa phụ từ CC-100 thật; in-domain **n
 - (e) **TUỲ CHỌN — user quyết**: trộn 10-20% chiều **vi→ja** (tag >>jpn<<, đảo chính cặp câu đã có).
   Phát hiện 2026-07-30 khi tích hợp app: **vi2ja đã chết** (input vi ra output vi) vì KD v5-v7 một
   chiều. App Teams hỗ trợ 2 chiều — nếu cần vi→ja trong tool thì đây là đường rẻ nhất.
-- (f) **MỚI — Câu cụt kiểu STT (fragment robustness), ~20-30k mẫu**: v7a chỉ luyện trên câu HOÀN
+- (f) **MỚI — Câu cụt kiểu STT (fragment robustness), ~30-50k mẫu — TUYẾN PHÒNG THỦ DUY NHẤT**
+  (quyết định 30/7: không vá ở tầng app, model phải TỰ dịch lửng đúng): v7a chỉ luyện trên câu HOÀN
   CHỈNH, còn caption STT stream đầy mảnh cắt giữa chừng → model bịa vị ngữ + đảo vai (transcript
   07-30, ca nặng nhất: 「そのブリッチとしてそのベトノムの開発チームと日本の」→ "Đội ngũ… ĐÃ PHÁT
   TRIỂN Bitch đó" — bịa hoàn toàn). Cách làm: lấy câu thật từ corpus, CẮT tại ranh giới trợ từ/mệnh
   đề (sau の/と/が/で/、) mô phỏng chỗ STT hay đứt, thầy dịch thành **bản dịch lửng tương ứng, cấm
   hoàn thành ý** (prompt thầy ghi rõ); mỗi câu gốc giữ cả bản đầy đủ lẫn 1-2 bản cụt để model học
-  phân biệt. Nghiệm thu: probe 60 mảnh cụt held-out — tiêu chí là KHÔNG bịa (đếm vị ngữ được thêm
-  vào), không phải chrF. Stop-rule như (b).
+  phân biệt câu trọn vẹn vs mảnh. Phủ đủ các kiểu đứt hay gặp trong caption thật: đứt sau trợ từ
+  sở hữu/liệt kê (の/と), đứt giữa danh ngữ, đứt trước vị ngữ. Nghiệm thu: fragment-probe T1 —
+  tiêu chí là KHÔNG bịa (đếm vị ngữ thêm vào so nguồn), so baseline v7a cùng phiên. Stop-rule như
+  (b): không giảm ≥50% số ca bịa → dừng loại liều này, đưa vào hồ sơ gate grow.
 - (g) **TUỲ CHỌN thí nghiệm nhỏ — chịu nhiễu ASR, ≤15k mẫu**: transcript cho thấy STT nghe nhầm
   từ đồng âm/gần âm (金質↔品質, ステックフォーラ↔ステークホルダー) và model dịch trung thành rác.
   Sinh cặp (câu nhiễu kiểu ASR → bản dịch của câu SẠCH) bằng cách tự làm nhiễu kana/katakana câu
