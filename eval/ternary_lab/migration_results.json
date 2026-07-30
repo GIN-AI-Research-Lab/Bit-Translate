@@ -1,0 +1,50 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "experiments": {
+    "FP32_Baseline": {
+      "ppl_en": 151.85970345969676,
+      "ppl_ja": 97.63965943438389,
+      "ppl_vi": 66.58489445487987,
+      "samples": [
+        "什么意思？\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation:",
+        "今日はお風呂を浴びます。 今日はお風呂を浴びません。 今日はお風呂を浴びます。 今日はお風呂を浴びます。 今日はお風呂を浴びます。 今日はお風�"
+      ]
+    },
+    "Method1_SVD_Rank_1": {
+      "ppl_en": 3527346280718.221,
+      "ppl_ja": 6613292361247914.0,
+      "ppl_vi": 4.576439839297189e+16,
+      "samples": [
+        "。。。。。。。。。。。1111111111111111111111111111111111111111111111111",
+        "。。。。。。。。。。。。222222222222222222222222222222222222222222222222"
+      ]
+    },
+    "Method1_SVD_Rank_2": {
+      "ppl_en": 7842824917002.171,
+      "ppl_ja": 804886990856.0997,
+      "ppl_vi": 604855519276.1727,
+      "samples": [
+        "。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「。「",
+        "。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“。“"
+      ]
+    },
+    "Method2_Block4x4_Subspace": {
+      "ppl_en": 2622316.00399091,
+      "ppl_ja": 6053341.974442136,
+      "ppl_vi": 2804449.3661253876,
+      "samples": [
+        "/i*\n\n\n\n\n:\"**ea',\"AEA\n\n\n\n\n\n\n\n\n\n\n\n\n\n general +?,?,?,?, general with: i!g:\n\n\n\nK'a_g <![ <![.ta(ai'a grande@\"iiac'):\n'):\n),\ni'),\n'):\n:\npies",
+        "piedzt lab*.gstatic�金字\n{\"iroitti todaiociatedccc'iatediativeiativeictioxictiativeiativeiative..' pu.' pute liiti_itristi_isons'*'itiLOT*p to to pi.*\n =\n_lokemon:LOT_itr_g} from*p_itricos"
+      ]
+    },
+    "Method3_Residual_2Step_Ternary": {
+      "ppl_en": 2848277.3210585876,
+      "ppl_ja": 5451807.340785777,
+      "ppl_vi": 4300294.938304312,
+      "samples": [
+        "kokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokoko",
+        "ellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsis|ellipsis||||||"
+      ]
+    }
+  }
+}
