@@ -1,0 +1,95 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "total_params": 596049920,
+  "target_linear_params": 440401920,
+  "experiments": {
+    "Block4x4_Step_1": {
+      "ppl_en": 2622316.00399091,
+      "ppl_ja": 6053341.974442136,
+      "ppl_vi": 2804449.3661253876,
+      "size_mb": 401.9,
+      "speed_tok_s": 140.1,
+      "samples": [
+        "/i*\n\n\n\n\n:\"**ea',\"AEA\n\n\n\n\n\n\n\n\n\n\n\n\n\n general +?,?,?,?, general with: i!g:\n\n\n\nK'a_g <![ <![.ta(ai'a grande@\"iiac'):\n'):\n),\ni'),\n'):\n:\npies",
+        "piedzt lab*.gstatic�金字\n{\"iroitti todaiociatedccc'iatediativeiativeictioxictiativeiativeiative..' pu.' pute liiti_itristi_isons'*'itiLOT*p to to pi.*\n =\n_lokemon:LOT_itr_g} from*p_itricos"
+      ]
+    },
+    "Block4x4_Step_2": {
+      "ppl_en": 392.97473020991447,
+      "ppl_ja": 1462.9725621009845,
+      "ppl_vi": 461.15873659554774,
+      "size_mb": 506.9,
+      "speed_tok_s": 111.1,
+      "samples": [
+        "2.  3.  4.  5.  6.  7.  8.  9.  10.  11.  12.  13.  14.  1",
+        "(1)  (2)  (3)  (4)  (5)  (6)  (7)  (8)  (9)  (10)  (11)  (12)  (13)  (14"
+      ]
+    },
+    "Block4x4_Step_3": {
+      "ppl_en": 157.51626168196032,
+      "ppl_ja": 233.4793353512726,
+      "ppl_vi": 108.73349988020729,
+      "size_mb": 611.9,
+      "speed_tok_s": 92.0,
+      "samples": [
+        "2023年1月1日, 2023年1月2日, 2023年1月3日, 2023年1月4日, 2023年1月5日, 202",
+        "今日の気象はとても良いです。 今日の気象はとても良いです。 今日の気象はとても良いです。 今日の気象はとても良いです.\n\n翻译: 今日は天気がいいですね。 今日の気象はとても良いです。"
+      ]
+    },
+    "Block4x4_Step_4": {
+      "ppl_en": 267.7263073663234,
+      "ppl_ja": 163.62426463461523,
+      "ppl_vi": 94.40744792773442,
+      "size_mb": 716.9,
+      "speed_tok_s": 78.6,
+      "samples": [
+        "什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思? 什么意思?",
+        "今日の気况は良いです。 今日の気况は良いです。 今日の気况は良いです。 今日の気况は良いです。 今日の気况は良いです。 今日の気况は良いです。 今日の気况は"
+      ]
+    },
+    "Block2x2_Step_1": {
+      "ppl_en": 3462.530302569477,
+      "ppl_ja": 3339.0096296002353,
+      "ppl_vi": 2525.6229082166756,
+      "size_mb": 401.9,
+      "speed_tok_s": 140.1,
+      "samples": [
+        "19999999999999999999999999999999999999999999999999999999999",
+        "11111111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "Block2x2_Step_2": {
+      "ppl_en": 191.47984073114367,
+      "ppl_ja": 126.79247090269091,
+      "ppl_vi": 72.4695802083113,
+      "size_mb": 506.9,
+      "speed_tok_s": 111.1,
+      "samples": [
+        "什么意思？\n\nThe meeting of the next week is not meeting the schedule, so I would like to change the schedule. 什么意思？\n\nOkay, let me try to figure out the translation. The original sentence is in Japanese: \"来週の会議は資料が間に合わないので、日",
+        "今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを願っています。 今日はおやすみを"
+      ]
+    },
+    "Block2x2_Step_3": {
+      "ppl_en": 144.224882432272,
+      "ppl_ja": 99.56628108698159,
+      "ppl_vi": 66.70325400424207,
+      "size_mb": 611.9,
+      "speed_tok_s": 92.0,
+      "samples": [
+        "什么意思？\n\nThe meeting this week is not possible because the schedule is not enough, so I would like to change the schedule.\n\nOkay, let me check the translation. The original sentence is in Japanese, and the user wants it translated into Vietnamese. The sentence is: \"来週の会議",
+        "今日はおもいなき日ですね。 今日はおもいなき日ですね。 今日はおもいなき日ですね。 今日はおもいなき日ですね。 今日はおもいなき日ですね。 今日はおもいなき日ですね。"
+      ]
+    },
+    "Hybrid_Orthogonal_3Step_Block": {
+      "ppl_en": 148.52588869632578,
+      "ppl_ja": 97.77231673709643,
+      "ppl_vi": 64.99735787366974,
+      "size_mb": 611.9,
+      "speed_tok_s": 92.0,
+      "samples": [
+        "什么意思？\n\nTừ khóa: 会議, 日程, 資料, 会議, 日程, 資料\n\nDịch: 会議の日程を変更したいと思います。\n\nTừ khóa: 会議, 日程, 資",
+        "今日はお風景が良いですね。 今日はお風景が良いですね。 今日はお風景が良いですね。 今日はお風景が良いですね。 今日はお風景が良いですね。 今日はお風景が良いですね。 今日はお風景が"
+      ]
+    }
+  }
+}
