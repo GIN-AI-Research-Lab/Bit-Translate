@@ -1,0 +1,200 @@
+{"id": "1", "src": "電車が遅れて、会議に間に合わなかった。", "hyp": "Chuyến tàu của tôi bị trễ và tôi không thể đến kịp cuộc họp.", "sys": "google"}
+{"id": "2", "src": "首相は記者会見で増税の方針を明らかにした。", "hyp": "Thủ tướng công bố chính sách tăng thuế tại họp báo.", "sys": "google"}
+{"id": "3", "src": "野党は法案の採決に強く反発している。", "hyp": "Các đảng đối lập phản đối mạnh mẽ việc bỏ phiếu về dự luật.", "sys": "google"}
+{"id": "4", "src": "投票率は過去最低を更新した。", "hyp": "Tỷ lệ cử tri đi bỏ phiếu đạt mức thấp kỷ lục.", "sys": "google"}
+{"id": "5", "src": "世論調査では内閣支持率が三割を切った。", "hyp": "Theo các cuộc thăm dò dư luận, tỷ lệ tán thành nội các là dưới 30%.", "sys": "google"}
+{"id": "6", "src": "知事は災害対応の遅れを認めたものの、辞任については明言を避けた。", "hyp": "Mặc dù thống đốc thừa nhận sự chậm trễ trong việc ứng phó với thảm họa nhưng ông từ chối nói rõ ràng liệu mình có từ chức hay không.", "sys": "google"}
+{"id": "7", "src": "与党内からも異論が出ている。", "hyp": "Ngoài ra còn có sự phản đối từ bên trong đảng cầm quyền.", "sys": "google"}
+{"id": "8", "src": "補正予算案は今国会での成立が見込まれる。", "hyp": "Dự luật ngân sách bổ sung dự kiến ​​sẽ được thông qua trong phiên họp Quốc hội hiện tại.", "sys": "google"}
+{"id": "9", "src": "市長選には現職を含む三人が立候補した。", "hyp": "Ba người, bao gồm cả người đương nhiệm, tranh cử thị trưởng.", "sys": "google"}
+{"id": "10", "src": "政府は物価高対策を急いでいる。", "hyp": "Chính phủ đang gấp rút thực hiện các biện pháp để chống lại sự tăng giá.", "sys": "google"}
+{"id": "11", "src": "少子化対策として打ち出された児童手当の拡充は、財源の裏付けが曖昧なまま先行して発表されたため、かえって国民の不信を招く結果となった。", "hyp": "Việc mở rộng trợ cấp cho trẻ em, vốn được đề xuất như một biện pháp nhằm chống lại tình trạng tỷ lệ sinh giảm, đã được công bố trước thời hạn với nguồn tài trợ không rõ ràng, khiến dư luận không tin tưởng.", "sys": "google"}
+{"id": "12", "src": "今回の選挙では、若い世代の投票率が前回より五ポイント上がったものの、依然として六十代以上との差は大きく、政策が高齢者向けに偏る構造は変わっていない。", "hyp": "Trong cuộc bầu cử này, mặc dù tỷ lệ cử tri trẻ đi bầu tăng 5 điểm phần trăm so với cuộc bầu cử trước, nhưng khoảng cách giữa họ và những người ở độ tuổi 60 trở lên vẫn còn lớn, cơ cấu chính sách thiên về người già không thay đổi.", "sys": "google"}
+{"id": "13", "src": "新しい条例は来年四月から施行される予定で、市は住民説明会を今月中に三回開くと発表した。", "hyp": "Pháp lệnh mới dự kiến ​​có hiệu lực từ tháng 4 năm sau và thành phố đã thông báo sẽ tổ chức ba buổi thông tin công khai trong tháng này.", "sys": "google"}
+{"id": "14", "src": "両国の首脳は共同声明で経済協力の強化をうたったが、懸案の領土問題については触れずじまいだった。", "hyp": "Lãnh đạo hai nước ra tuyên bố chung cam kết tăng cường hợp tác kinh tế, nhưng không đề cập đến vấn đề lãnh thổ đang chờ xử lý.", "sys": "google"}
+{"id": "15", "src": "統計によると、この地域の人口は十年間で二割減少しており、自治体の統廃合が現実味を帯びてきた。", "hyp": "Theo thống kê, dân số khu vực này đã giảm 20% trong 10 năm qua và việc hợp nhất chính quyền địa phương đang trở thành hiện thực.", "sys": "google"}
+{"id": "16", "src": "デモの参加者は主催者発表でおよそ五千人にのぼり、雨の中を一時間にわたって行進した。", "hyp": "Các nhà tổ chức cho biết, số lượng người tham gia biểu tình lên tới khoảng 5.000 người và họ đã diễu hành suốt một giờ dưới trời mưa.", "sys": "google"}
+{"id": "17", "src": "議会は深夜まで紛糾したが、最終的には修正案を賛成多数で可決した。", "hyp": "Quốc hội gặp rắc rối cho đến tận đêm khuya nhưng cuối cùng vẫn thông qua việc sửa đổi với đa số phiếu.", "sys": "google"}
+{"id": "18", "src": "汚職事件の捜査は元秘書の証言をきっかけに一気に進展し、ついに現職議員の立件に至った。", "hyp": "Cuộc điều tra vụ án tham nhũng đã tiến triển nhanh chóng sau lời khai của một cựu thư ký, và cuối cùng dẫn đến bản cáo trạng của một nghị sĩ đương nhiệm.", "sys": "google"}
+{"id": "19", "src": "報道各社の出口調査では与野党の議席が拮抗しており、政権の枠組みが変わる可能性も出てきた。", "hyp": "Các cuộc thăm dò ý kiến ​​của các phương tiện truyền thông cho thấy đảng cầm quyền và phe đối lập ngang nhau về số ghế, làm tăng khả năng khuôn khổ chính phủ có thể thay đổi.", "sys": "google"}
+{"id": "20", "src": "新大臣は就任会見で「現場の声を聞くことから始めたい」と述べ、週内にも被災地を視察する考えを示した。", "hyp": "Tại cuộc họp báo nhậm chức, tân bộ trưởng nói: “Tôi muốn bắt đầu bằng việc lắng nghe những tiếng nói trên thực địa” và cho biết rằng ông sẽ đi thị sát các khu vực bị thiên tai trong tuần này.", "sys": "google"}
+{"id": "21", "src": "この実験は三回繰り返して行った。", "hyp": "Thí nghiệm này được lặp lại ba lần.", "sys": "google"}
+{"id": "22", "src": "仮説は観察結果と一致しなかった。", "hyp": "Giả thuyết không phù hợp với các quan sát.", "sys": "google"}
+{"id": "23", "src": "サンプルを摂氏四度で保存してください。", "hyp": "Bảo quản mẫu ở nhiệt độ 4 độ C.", "sys": "google"}
+{"id": "24", "src": "この物質は水に溶けにくい。", "hyp": "Chất này hòa tan kém trong nước.", "sys": "google"}
+{"id": "25", "src": "遺伝子の変異が病気の原因とされる。", "hyp": "Đột biến gen được cho là nguyên nhân gây bệnh.", "sys": "google"}
+{"id": "26", "src": "観測データにノイズが混入していた。", "hyp": "Tiếng ồn đã được trộn vào dữ liệu quan sát.", "sys": "google"}
+{"id": "27", "src": "月の重力は地球の約六分の一だ。", "hyp": "Lực hấp dẫn của mặt trăng bằng khoảng 1/6 lực hấp dẫn của Trái đất.", "sys": "google"}
+{"id": "28", "src": "査読で統計処理の不備を指摘された。", "hyp": "Một đánh giá ngang hàng đã chỉ ra những thiếu sót trong xử lý thống kê.", "sys": "google"}
+{"id": "29", "src": "結果の再現性はまだ確認されていない。", "hyp": "Độ tái lập của kết quả vẫn chưa được xác nhận.", "sys": "google"}
+{"id": "30", "src": "絶滅危惧種の生息数が回復しつつある。", "hyp": "Quần thể các loài có nguy cơ tuyệt chủng đang phục hồi.", "sys": "google"}
+{"id": "31", "src": "新薬の治験は第三相まで進んでいるが、プラセボ群との差が当初の想定より小さく、承認までにはさらなるデータの積み上げが必要とされている。", "hyp": "Các thử nghiệm lâm sàng đối với loại thuốc mới đã tiến tới giai đoạn 3, nhưng sự khác biệt giữa nhóm thuốc và nhóm giả dược nhỏ hơn dự kiến ​​ban đầu và cần phải tích lũy thêm dữ liệu trước khi phê duyệt.", "sys": "google"}
+{"id": "32", "src": "研究チームは、深海の熱水噴出孔付近で採取した微生物が、光のない環境でも化学エネルギーだけで増殖できることを実験で確かめた。", "hyp": "Nhóm nghiên cứu xác nhận qua các thí nghiệm rằng các vi sinh vật thu thập gần các miệng phun thủy nhiệt dưới biển sâu có thể phát triển chỉ bằng cách sử dụng năng lượng hóa học, ngay cả trong môi trường không có ánh sáng.", "sys": "google"}
+{"id": "33", "src": "地球温暖化の影響で桜の開花日は五十年前より平均で一週間ほど早まっていると気象庁は分析している。", "hyp": "Cơ quan Khí tượng Nhật Bản phân tích rằng hoa anh đào nở trung bình sớm hơn một tuần so với 50 năm trước do hiện tượng nóng lên toàn cầu.", "sys": "google"}
+{"id": "34", "src": "この望遠鏡は従来の百倍の感度を持ち、これまで観測できなかった暗い天体も捉えられるようになった。", "hyp": "Kính thiên văn này có độ nhạy gấp 100 lần so với kính thiên văn thông thường, cho phép nó phát hiện các thiên thể mờ nhạt mà trước đây không thể quan sát được.", "sys": "google"}
+{"id": "35", "src": "論文の撤回は、画像の使い回しが内部告発で発覚したことによるもので、大学は調査委員会の設置を急いでいる。", "hyp": "Việc rút lại bài báo là do những hình ảnh này đã được sử dụng lại trong đơn khiếu nại của người tố cáo và trường đại học đang gấp rút thành lập một ủy ban điều tra.", "sys": "google"}
+{"id": "36", "src": "ワクチンの有効性は年齢層によって差があり、高齢者では抗体価の上がり方が緩やかだった。", "hyp": "Hiệu quả của vắc xin thay đổi theo nhóm tuổi, hiệu giá kháng thể tăng chậm hơn ở người cao tuổi.", "sys": "google"}
+{"id": "37", "src": "実験装置の較正に半日かかったが、そのおかげで測定誤差を一桁小さくできた。", "hyp": "Phải mất nửa ngày để hiệu chỉnh thiết bị thí nghiệm, nhưng nhờ đó, sai số đo đã giảm đi rất nhiều.", "sys": "google"}
+{"id": "38", "src": "AIによるタンパク質構造予測の精度は、この数年で実験値に匹敵するレベルまで向上した。", "hyp": "Trong vài năm qua, độ chính xác của việc dự đoán cấu trúc protein bằng AI đã được cải thiện đến mức tương đương với các giá trị thử nghiệm.", "sys": "google"}
+{"id": "39", "src": "火山活動の兆候が観測されたため、気象庁は噴火警戒レベルを二に引き上げ、火口周辺への立ち入りを規制した。", "hyp": "Khi quan sát thấy dấu hiệu hoạt động của núi lửa, Cơ quan Khí tượng Nhật Bản đã nâng mức cảnh báo phun trào lên cấp 2 và hạn chế tiếp cận khu vực xung quanh miệng núi lửa.", "sys": "google"}
+{"id": "40", "src": "データの外れ値を機械的に除外するのではなく、なぜその値が出たのかを検討することこそが科学的な態度だと教授は繰り返し強調した。", "hyp": "Giáo sư nhiều lần nhấn mạnh rằng quan điểm khoa học là xem xét lý do tại sao các giá trị ngoại lệ xuất hiện trong dữ liệu, thay vì tự động loại bỏ chúng.", "sys": "google"}
+{"id": "41", "src": "ペットボトルはラベルを剥がして捨ててください。", "hyp": "Bóc nhãn chai nhựa và vứt chúng đi.", "sys": "google"}
+{"id": "42", "src": "今年の夏は記録的な猛暑だった。", "hyp": "Mùa hè năm nay nóng kỷ lục.", "sys": "google"}
+{"id": "43", "src": "再生可能エネルギーの割合が三割を超えた。", "hyp": "Tỷ trọng năng lượng tái tạo vượt quá 30%.", "sys": "google"}
+{"id": "44", "src": "川の水質は十年前より改善している。", "hyp": "Chất lượng nước của dòng sông đã được cải thiện từ mười năm trước.", "sys": "google"}
+{"id": "45", "src": "レジ袋の有料化でごみが減った。", "hyp": "Bằng cách tính phí cho túi nhựa, rác thải đã được giảm bớt.", "sys": "google"}
+{"id": "46", "src": "森林伐採が土砂崩れを招いたとみられる。", "hyp": "Phá rừng dường như đã gây ra lở đất.", "sys": "google"}
+{"id": "47", "src": "この地域では地下水の汲み上げが規制されている。", "hyp": "Việc bơm nước ngầm được quy định trong khu vực này.", "sys": "google"}
+{"id": "48", "src": "海洋プラスチックの回収は追いついていない。", "hyp": "Việc thu gom nhựa đại dương chưa theo kịp.", "sys": "google"}
+{"id": "49", "src": "生ごみは堆肥にして畑に戻している。", "hyp": "Chất thải thực phẩm được biến thành phân trộn và trả lại cho đồng ruộng.", "sys": "google"}
+{"id": "50", "src": "排出量取引の制度設計が難航している。", "hyp": "Việc thiết kế một hệ thống kinh doanh khí thải đang gặp khó khăn.", "sys": "google"}
+{"id": "51", "src": "太陽光パネルの寿命は二十年から三十年とされるが、大量廃棄の時期が近づく中で、リサイクル体制の整備は依然として追いついていない。", "hyp": "Tuổi thọ của các tấm pin mặt trời được cho là từ 20 đến 30 năm, nhưng khi thời gian xử lý hàng loạt đang đến gần, các hệ thống tái chế vẫn không theo kịp.", "sys": "google"}
+{"id": "52", "src": "市は生物多様性の保全を掲げて休耕田をビオトープに転換したところ、数年でトンボやカエルの種類が目に見えて増えた。", "hyp": "Trong nỗ lực bảo tồn đa dạng sinh học, thành phố đã chuyển đổi một cánh đồng bỏ hoang thành sinh cảnh và trong vòng vài năm, số lượng loài chuồn chuồn và ếch đã tăng lên đáng kể.", "sys": "google"}
+{"id": "53", "src": "豪雨のたびに浸水する地区では、住宅のかさ上げか移転かという難しい選択を住民が迫られている。", "hyp": "Tại những khu vực bị ngập mỗi khi có mưa lớn, người dân buộc phải đưa ra lựa chọn khó khăn là nâng cao nhà cửa hoặc di dời.", "sys": "google"}
+{"id": "54", "src": "温室効果ガスの削減目標は掲げられたものの、具体的な工程表がないままでは絵に描いた餅に終わりかねない。", "hyp": "Mặc dù các mục tiêu giảm khí thải nhà kính đã được đặt ra nhưng không có thời gian biểu cụ thể, mục tiêu cuối cùng có thể chỉ là một giấc mơ trở thành hiện thực.", "sys": "google"}
+{"id": "55", "src": "リサイクル率を上げるには、分別を細かくするより、そもそも使い捨て容器を減らすほうが効果的だという調査結果が出た。", "hyp": "Nghiên cứu đã chỉ ra rằng việc giảm số lượng hộp đựng sử dụng một lần sẽ hiệu quả hơn trong việc tăng tỷ lệ tái chế so với việc phân loại các mặt hàng một cách chính xác hơn.", "sys": "google"}
+{"id": "56", "src": "クマの出没が相次いでいるのは、山のドングリが不作で、餌を求めて人里まで下りてきているためだと専門家は指摘する。", "hyp": "Các chuyên gia chỉ ra rằng sở dĩ gấu xuất hiện hết con này đến con khác là do thu hoạch quả sồi ở vùng núi kém và chúng đi xuống khu định cư của con người để tìm kiếm thức ăn.", "sys": "google"}
+{"id": "57", "src": "省エネ家電への買い替え補助金は好評だったが、予算が三か月で底をつき、追加の申請は受け付けられなくなった。", "hyp": "Khoản trợ cấp để thay thế các thiết bị gia dụng tiết kiệm năng lượng đã được đón nhận nồng nhiệt, nhưng ngân sách cạn kiệt sau ba tháng và các đơn đăng ký bổ sung không còn được chấp nhận.", "sys": "google"}
+{"id": "58", "src": "干潟の埋め立て計画は、渡り鳥の中継地が失われるとして国内外の環境団体から強い反対を受けている。", "hyp": "Kế hoạch thu hồi các bãi triều đã bị các nhóm môi trường trong nước và quốc tế phản đối mạnh mẽ, cho rằng nó sẽ dẫn đến việc mất đi nơi dừng chân của các loài chim di cư.", "sys": "google"}
+{"id": "59", "src": "雪不足でスキー場の営業日数は年々短くなり、地域経済への影響は無視できない規模になっている。", "hyp": "Số ngày các khu nghỉ dưỡng trượt tuyết mở cửa hàng năm đang giảm dần do thiếu tuyết và tác động đến nền kinh tế địa phương đã trở nên quá lớn để có thể bỏ qua.", "sys": "google"}
+{"id": "60", "src": "節水を呼びかける一方でダムの水を放流せざるを得ないという矛盾した事態に、管理者は頭を抱えている。", "hyp": "Các nhà quản lý đang phải vật lộn với nghịch lý là buộc phải xả nước khỏi các con đập trong khi kêu gọi bảo tồn nguồn nước.", "sys": "google"}
+{"id": "61", "src": "息子は反抗期で口をきいてくれない。", "hyp": "Con trai tôi đang trong giai đoạn nổi loạn và không chịu nói chuyện với tôi.", "sys": "google"}
+{"id": "62", "src": "介護と仕事の両立に限界を感じている。", "hyp": "Tôi cảm thấy có những giới hạn trong việc cân bằng giữa việc chăm sóc điều dưỡng và công việc.", "sys": "google"}
+{"id": "63", "src": "夫婦で家事の分担を決め直した。", "hyp": "Vợ chồng tôi quyết định xác định lại việc phân chia công việc nhà.", "sys": "google"}
+{"id": "64", "src": "娘の進路について妻と意見が合わない。", "hyp": "Vợ chồng tôi bất đồng quan điểm về con đường sự nghiệp của con gái chúng tôi.", "sys": "google"}
+{"id": "65", "src": "カウンセリングを受けるのは恥ずかしいことではない。", "hyp": "Không có gì xấu hổ khi tìm kiếm lời khuyên.", "sys": "google"}
+{"id": "66", "src": "祖母は昔話をするとき一番生き生きしている。", "hyp": "Bà tôi sống động nhất khi kể chuyện xưa.", "sys": "google"}
+{"id": "67", "src": "つい子どもに当たってしまい、自己嫌悪に陥る。", "hyp": "Cuối cùng tôi lại đánh một đứa trẻ và rơi vào tình trạng ghê tởm bản thân.", "sys": "google"}
+{"id": "68", "src": "単身赴任が三年目に入った。", "hyp": "Đây là năm thứ ba tôi làm việc một mình.", "sys": "google"}
+{"id": "69", "src": "完璧な親でなくていいと言われて肩の力が抜けた。", "hyp": "Được bảo rằng tôi không cần phải là một người cha mẹ hoàn hảo đã khiến tôi trút bỏ được gánh nặng.", "sys": "google"}
+{"id": "70", "src": "兄とは十年近く連絡を取っていない。", "hyp": "Tôi đã không liên lạc với anh trai tôi gần mười năm rồi.", "sys": "google"}
+{"id": "71", "src": "不登校の子どもを無理に学校へ行かせようとするより、まず家庭を安心できる場所にすることが回復への近道だと医師は助言した。", "hyp": "Các bác sĩ khuyên rằng thay vì cố ép một đứa trẻ không đi học phải đến trường, con đường tắt để phục hồi là trước tiên hãy biến ngôi nhà thành một nơi an toàn.", "sys": "google"}
+{"id": "72", "src": "父が認知症と診断されてから、母は一人で抱え込みがちになり、介護サービスの利用を勧めても「まだ大丈夫」と繰り返すばかりだった。", "hyp": "Sau khi bố tôi được chẩn đoán mắc chứng sa sút trí tuệ, mẹ tôi có xu hướng tự mình lo liệu mọi việc, thậm chí khi đề nghị sử dụng dịch vụ chăm sóc điều dưỡng, mẹ vẫn liên tục lặp đi lặp lại: ``Vẫn ổn thôi.''", "sys": "google"}
+{"id": "73", "src": "子育てで一番堪えたのは、眠れないことよりも、社会から取り残されているような孤独感だったと彼女は振り返る。", "hyp": "Cô nhớ lại, điều khó khăn nhất cô phải chịu đựng khi nuôi con không phải là mất ngủ mà là cảm giác cô đơn, như thể bị xã hội bỏ rơi.", "sys": "google"}
+{"id": "74", "src": "定年後の夫が一日中家にいるようになってから、妻のほうにストレスの症状が出るというケースは珍しくないそうだ。", "hyp": "Người ta nói rằng không có gì lạ khi các bà vợ bộc lộ triệu chứng căng thẳng sau khi người chồng về hưu dành cả ngày ở nhà.", "sys": "google"}
+{"id": "75", "src": "週末は家族そろって食卓を囲むという習慣を守るだけで、思春期の子どもとの会話の糸口は意外と保てるものだ。", "hyp": "Chỉ cần làm theo thói quen ngồi quanh bàn ăn tối với gia đình vào cuối tuần, bạn có thể duy trì cuộc trò chuyện bắt đầu với đứa con đang tuổi vị thành niên của mình một cách đáng ngạc nhiên.", "sys": "google"}
+{"id": "76", "src": "きょうだいの介護負担が長男にばかり偏っていたことが、遺産分割の話し合いの場で一気に噴き出した。", "hyp": "Việc gánh nặng chăm sóc các anh chị em đổ dồn lên vai con trai cả bất ngờ được đưa ra ánh sáng trong cuộc tranh luận về việc phân chia tài sản thừa kế.", "sys": "google"}
+{"id": "77", "src": "引っ越しを重ねるたびに転校を強いられた経験が、人間関係を深めることへのためらいにつながっていると彼は自己分析している。", "hyp": "Anh tự phân tích rằng trải nghiệm buộc phải chuyển trường mỗi lần chuyển nhà đã khiến anh lưỡng lự trong việc làm sâu sắc thêm mối quan hệ với mọi người.", "sys": "google"}
+{"id": "78", "src": "里親制度についての説明会には、予想を上回る数の夫婦が参加し、関心の高さをうかがわせた。", "hyp": "Nhiều cặp vợ chồng hơn dự kiến ​​đã tham dự buổi thông tin về hệ thống chăm sóc nuôi dưỡng, thể hiện mức độ quan tâm cao.", "sys": "google"}
+{"id": "79", "src": "「頑張れ」と励ますより「よく頑張ってるね」と認めるほうが、落ち込んでいる人には届くことが多い。", "hyp": "Công nhận ai đó “Bạn đang làm rất tốt” có nhiều khả năng tiếp cận người trầm cảm hơn là khuyến khích họ “Hãy tiếp tục làm tốt công việc”.", "sys": "google"}
+{"id": "80", "src": "共働きなのに保育園の呼び出し対応はいつも私、という不満を放置したことが、後々大きな溝になった。", "hyp": "Mặc dù cả hai chúng tôi đều đi làm nhưng tôi luôn là người trả lời các cuộc gọi ở trường mẫu giáo và phớt lờ điều này, điều này sau này đã trở thành rạn nứt lớn.", "sys": "google"}
+{"id": "81", "src": "この映画は実話をもとにしている。", "hyp": "Bộ phim này dựa trên một câu chuyện có thật.", "sys": "google"}
+{"id": "82", "src": "チケットは発売開始十分で売り切れた。", "hyp": "Vé được bán hết nhanh chóng sau khi mở bán.", "sys": "google"}
+{"id": "83", "src": "彼女の歌声には不思議な説得力がある。", "hyp": "Giọng hát của cô có sức thuyết phục đầy bí ẩn.", "sys": "google"}
+{"id": "84", "src": "続編は前作を超えられなかった。", "hyp": "Phần tiếp theo không thể vượt qua phần trước của nó.", "sys": "google"}
+{"id": "85", "src": "美術館の特別展は撮影禁止だった。", "hyp": "Việc chụp ảnh bị cấm tại cuộc triển lãm đặc biệt của bảo tàng.", "sys": "google"}
+{"id": "86", "src": "あの俳優は脇役のほうが光る。", "hyp": "Diễn viên đó tỏa sáng hơn trong các vai phụ.", "sys": "google"}
+{"id": "87", "src": "ネタバレになるので詳しくは言えない。", "hyp": "Tôi không thể đi vào chi tiết vì nó sẽ tiết lộ nội dung.", "sys": "google"}
+{"id": "88", "src": "原作ファンからは賛否が分かれている。", "hyp": "Những người hâm mộ tác phẩm gốc được chia thành những ưu và nhược điểm.", "sys": "google"}
+{"id": "89", "src": "舞台挨拶で監督が制作秘話を語った。", "hyp": "Tại buổi chào sân khấu, đạo diễn đã chia sẻ một số câu chuyện hậu trường của tác phẩm.", "sys": "google"}
+{"id": "90", "src": "打ち切りが決まって署名運動が起きた。", "hyp": "Sau khi quyết định hủy bỏ được quyết định, một chiến dịch chữ ký đã được phát động.", "sys": "google"}
+{"id": "91", "src": "この小説の魅力は、事件そのものよりも、事件をきっかけに登場人物たちの関係が少しずつ壊れていく過程の描写にある。", "hyp": "Sức hấp dẫn của cuốn tiểu thuyết này không nằm ở bản thân vụ việc mà ở việc miêu tả quá trình mà mối quan hệ giữa các nhân vật dần tan vỡ sau vụ việc.", "sys": "google"}
+{"id": "92", "src": "無名の劇団が投稿した十分間の動画が海外で評判になり、気づけば本公演のチケットが取れない人気になっていた。", "hyp": "Một đoạn video dài mười phút do một công ty rạp hát vô danh đăng tải đã trở nên phổ biến ở nước ngoài, và trước khi chúng tôi biết điều đó, vé cho buổi biểu diễn thực tế đã phổ biến đến mức không thể mua được vé.", "sys": "google"}
+{"id": "93", "src": "リマスター版では音質が格段に良くなった一方で、オリジナルの持っていた荒削りな勢いが薄れたという声もある。", "hyp": "Mặc dù chất lượng âm thanh tốt hơn nhiều ở phiên bản remaster nhưng một số người cho rằng nó đã mất đi sức mạnh nguyên bản của bản gốc.", "sys": "google"}
+{"id": "94", "src": "展覧会の目玉は五十年ぶりに里帰りした屏風絵で、初日から入場待ちの列が美術館の外まで続いた。", "hyp": "Điểm nổi bật của cuộc triển lãm là bức tranh bình phong gấp đã trở về quê hương lần đầu tiên sau 50 năm, và dòng người xếp hàng chờ vào bảo tàng đã trải dài bên ngoài bảo tàng ngay từ ngày đầu tiên.", "sys": "google"}
+{"id": "95", "src": "主演の交代が発表されると、SNSでは落胆の声と新キャストへの期待が入り混じって飛び交った。", "hyp": "Khi việc thay đổi vai chính được công bố, trên mạng xã hội có nhiều sự thất vọng và kỳ vọng dành cho dàn diễn viên mới.", "sys": "google"}
+{"id": "96", "src": "審査員は「技術は完璧だが、心を揺さぶるものが足りない」と評し、優勝は僅差で別の若手に渡った。", "hyp": "Ban giám khảo cho biết: “Kỹ thuật này rất hoàn hảo nhưng lại thiếu thứ gì đó lay động trái tim” và chiến thắng đã thuộc về một nghệ sĩ trẻ khác với tỷ số sít sao.", "sys": "google"}
+{"id": "97", "src": "廃校を改装した小さな映画館は、上映後に観客同士が感想を語り合える場として地元に愛されている。", "hyp": "Rạp chiếu phim nhỏ từng là một ngôi trường bỏ hoang được cộng đồng địa phương yêu mến là nơi người xem có thể chia sẻ cảm nghĩ sau buổi chiếu.", "sys": "google"}
+{"id": "98", "src": "伝統工芸の職人が若手アーティストと組んだ新作は、保守的な業界に一石を投じる挑戦として注目された。", "hyp": "Một tác phẩm mới được tạo ra bởi một nghệ nhân truyền thống phối hợp với một nghệ sĩ trẻ đã thu hút sự chú ý như một thách thức có thể làm rung chuyển một ngành công nghiệp bảo thủ.", "sys": "google"}
+{"id": "99", "src": "配信で無料公開された第一話が呼び水となり、原作コミックの売り上げは十倍に跳ね上がった。", "hyp": "Tập đầu tiên, được phát hành miễn phí thông qua phát trực tuyến, đã đóng vai trò như một sự thúc đẩy và doanh số bán truyện tranh gốc đã tăng gấp 10 lần.", "sys": "google"}
+{"id": "100", "src": "あれほど酷評された作品が十年後にカルト的な人気を得るとは、公開当時の誰が予想しただろうか。", "hyp": "Ai có thể đoán được vào thời điểm phát hành rằng một tác phẩm nhận được những đánh giá gay gắt như vậy lại trở thành tác phẩm được yêu thích nhất mười năm sau?", "sys": "google"}
+{"id": "101", "src": "駅から徒歩五分の物件を探しています。", "hyp": "Tôi đang tìm một căn nhà cách nhà ga 5 phút đi bộ.", "sys": "google"}
+{"id": "102", "src": "家賃には管理費が含まれていますか?", "hyp": "Giá thuê có bao gồm phí quản lý không?", "sys": "google"}
+{"id": "103", "src": "敷金は退去時に精算されます。", "hyp": "Tiền đặt cọc sẽ được thanh toán khi bạn chuyển đi.", "sys": "google"}
+{"id": "104", "src": "南向きなので日当たりは良好です。", "hyp": "Nó hướng về phía nam, vì vậy nó nhận được nhiều ánh sáng mặt trời.", "sys": "google"}
+{"id": "105", "src": "築三十年ですが水回りはリフォーム済みです。", "hyp": "Dù đã 30 tuổi nhưng hệ thống ống nước đã được cải tạo.", "sys": "google"}
+{"id": "106", "src": "ペット可の物件は家賃が一割ほど高い。", "hyp": "Giá thuê cao hơn khoảng 10% đối với những căn nhà cho phép nuôi thú cưng.", "sys": "google"}
+{"id": "107", "src": "内見は今週末でも可能ですか?", "hyp": "Có thể xem trước vào cuối tuần này được không?", "sys": "google"}
+{"id": "108", "src": "更新料は家賃一か月分です。", "hyp": "Phí gia hạn là một tháng tiền thuê nhà.", "sys": "google"}
+{"id": "109", "src": "隣の空き地にマンションが建つらしい。", "hyp": "Có vẻ như một tòa nhà chung cư đang được xây dựng trên khu đất trống bên cạnh.", "sys": "google"}
+{"id": "110", "src": "住宅ローンの事前審査に通った。", "hyp": "Tôi đã thông qua việc chấp thuận trước cho khoản vay thế chấp.", "sys": "google"}
+{"id": "111", "src": "駅前の再開発で地価が上がり、長年住んできた借家の更新を断られる高齢世帯が増えているという相談が市の窓口に寄せられている。", "hyp": "Các văn phòng thành phố đang nhận được khiếu nại rằng giá đất đang tăng do quá trình tái phát triển phía trước nhà ga và ngày càng nhiều hộ gia đình lớn tuổi bị từ chối gia hạn nhà cho thuê dài hạn.", "sys": "google"}
+{"id": "112", "src": "中古住宅を買ってリノベーションする若い世帯が増え、空き家だった路地の一角に少しずつ明かりが戻ってきた。", "hyp": "Ngày càng nhiều hộ gia đình trẻ mua nhà cũ và cải tạo, ánh sáng dần dần trở lại những góc ngõ vắng.", "sys": "google"}
+{"id": "113", "src": "契約直前になって「実は隣がゴミ屋敷でして」と告げられ、重要事項説明のあり方に不信感を抱いた。", "hyp": "Ngay trước khi hợp đồng được ký kết, anh ta được thông báo rằng “Thực ra, có một nhà chứa rác bên cạnh,” và anh ta cảm thấy không tin tưởng vào cách những vấn đề quan trọng được giải thích cho mình.", "sys": "google"}
+{"id": "114", "src": "タワーマンションの高層階は眺めこそ良いが、エレベーター待ちや災害時のリスクを考えて低層階を選ぶ人も増えている。", "hyp": "Tầm nhìn từ các tầng trên của các căn hộ trong tháp rất tuyệt vời nhưng ngày càng có nhiều người chọn các tầng thấp hơn vì nguy cơ phải chờ thang máy hoặc trong trường hợp xảy ra thảm họa.", "sys": "google"}
+{"id": "115", "src": "実家を相続したものの、住む予定も売れる見込みもなく、固定資産税だけを払い続けている。", "hyp": "Mặc dù được thừa kế ngôi nhà của cha mẹ nhưng anh không có ý định sống hay bán nó và tiếp tục chỉ phải trả thuế tài sản.", "sys": "google"}
+{"id": "116", "src": "「日当たり良好」と書かれていたのに、内見に行ったら隣のビルの影で午後は真っ暗だった。", "hyp": "Mặc dù biển ghi là trời nắng nhưng khi tôi nhìn vào trong thì buổi chiều trời tối như mực do có bóng của tòa nhà bên cạnh.", "sys": "google"}
+{"id": "117", "src": "耐震基準を満たさない古いビルの建て替えは、所有者の合意形成が壁となってなかなか進まない。", "hyp": "Việc xây dựng lại các tòa nhà cũ không đáp ứng tiêu chuẩn kháng chấn còn chậm do xây dựng được sự đồng thuận giữa các chủ sở hữu.", "sys": "google"}
+{"id": "118", "src": "転勤族にとっては、買うより借りるほうが合理的だという結論に、我が家は二十年かけてたどり着いた。", "hyp": "Chúng tôi phải mất 20 năm mới đi đến kết luận rằng việc một gia đình tái định cư thuê nhà là hợp lý hơn là mua nhà.", "sys": "google"}
+{"id": "119", "src": "民泊に転用された隣室の騒音をめぐって、管理組合は規約の改正を検討し始めた。", "hyp": "Hiệp hội quản lý đã bắt đầu xem xét sửa đổi quy định của mình về tiếng ồn từ một căn phòng liền kề đã được chuyển đổi thành cơ sở lưu trú tư nhân.", "sys": "google"}
+{"id": "120", "src": "郊外の一戸建てか都心の狭いマンションか、通勤時間と子育て環境を天秤にかけて夫婦で悩み続けている。", "hyp": "Các cặp vợ chồng tiếp tục loay hoay không biết nên chọn một ngôi nhà biệt lập ở ngoại ô hay một căn hộ nhỏ ở trung tâm thành phố, cân nhắc thời gian đi lại và môi trường nuôi dạy con cái.", "sys": "google"}
+{"id": "121", "src": "面接は来週の水曜日に決まった。", "hyp": "Cuộc phỏng vấn đã được lên lịch vào thứ Tư tới.", "sys": "google"}
+{"id": "122", "src": "残業は月平均二十時間程度です。", "hyp": "Thời gian làm thêm trung bình khoảng 20 giờ/tháng.", "sys": "google"}
+{"id": "123", "src": "有給休暇が取りにくい雰囲気がある。", "hyp": "Có một bầu không khí rất khó để được nghỉ phép có lương.", "sys": "google"}
+{"id": "124", "src": "彼は入社三年で店長に抜擢された。", "hyp": "Anh được thăng chức quản lý cửa hàng sau ba năm làm việc tại công ty.", "sys": "google"}
+{"id": "125", "src": "履歴書は手書きでなくて構いません。", "hyp": "Sơ yếu lý lịch của bạn không nhất thiết phải được viết tay.", "sys": "google"}
+{"id": "126", "src": "試用期間中も給与は同額です。", "hyp": "Mức lương sẽ được giữ nguyên trong thời gian thử việc.", "sys": "google"}
+{"id": "127", "src": "退職の意思は一か月前までに伝えること。", "hyp": "Vui lòng thông báo ý định từ chức của bạn trước ít nhất một tháng.", "sys": "google"}
+{"id": "128", "src": "在宅勤務は週二日まで認められている。", "hyp": "Làm việc tại nhà được phép tối đa hai ngày một tuần.", "sys": "google"}
+{"id": "129", "src": "募集要項に年齢制限は書かれていない。", "hyp": "Không có giới hạn độ tuổi được chỉ định trong hướng dẫn ứng dụng.", "sys": "google"}
+{"id": "130", "src": "引き継ぎもないまま前任者が辞めてしまった。", "hyp": "Người tiền nhiệm của tôi đã từ chức mà không tiếp quản.", "sys": "google"}
+{"id": "131", "src": "人手不足を理由に退職を引き止められているが、後任の採用を先延ばしにしてきたのは会社の側であって、私が責任を感じる必要はないはずだ。", "hyp": "Tôi đang bị cản trở việc xin nghỉ việc do thiếu lao động, nhưng chính công ty đã hoãn việc tuyển người thay thế nên tôi không cần phải cảm thấy có trách nhiệm.", "sys": "google"}
+{"id": "132", "src": "転職で年収は下がったものの、通勤時間が往復三時間から二十分になり、生活の質は比べものにならないほど上がった。", "hyp": "Mặc dù thu nhập hàng năm của tôi giảm sau khi thay đổi công việc, nhưng thời gian đi lại của tôi đã giảm từ ba tiếng đồng hồ xuống còn 20 phút và chất lượng cuộc sống của tôi được cải thiện không thể so sánh được.", "sys": "google"}
+{"id": "133", "src": "評価面談で上司から指摘された弱点は、自分では長所だと思っていた部分と表裏一体で、しばらく考え込んでしまった。", "hyp": "Tôi đã suy nghĩ một lúc vì điểm yếu mà sếp chỉ ra cho tôi trong buổi phỏng vấn đánh giá là hai mặt của cùng một đồng xu với những gì tôi nghĩ là điểm mạnh của mình.", "sys": "google"}
+{"id": "134", "src": "新人研修の講師を任されたことで、自分の仕事を言語化する必要に迫られ、結果的に一番勉強になったのは私のほうだった。", "hyp": "Khi được phân công dạy đào tạo nhân viên mới, tôi buộc phải diễn đạt công việc của mình bằng lời nói và kết quả là tôi là người học được nhiều nhất.", "sys": "google"}
+{"id": "135", "src": "パワハラの相談窓口が人事部内にあるせいで、誰も本気で相談しようとしないという構造的な問題が放置されている。", "hyp": "Vì bàn tư vấn về quấy rối quyền lực được đặt trong bộ phận nhân sự nên có một vấn đề mang tính cơ cấu mà không ai thực sự muốn tham khảo.", "sys": "google"}
+{"id": "136", "src": "アルバイトから正社員に登用される制度はあるものの、実際に適用された例はこの五年で二人しかいない。", "hyp": "Mặc dù có một hệ thống thăng chức người lao động bán thời gian lên nhân viên toàn thời gian, nhưng chỉ có hai trường hợp trong 5 năm qua thực sự áp dụng hệ thống này.", "sys": "google"}
+{"id": "137", "src": "副業を解禁した途端に優秀な社員ほど社外での活動に力を入れ始め、会社は制度の見直しを迫られている。", "hyp": "Ngay khi lệnh cấm làm thêm được dỡ bỏ, những nhân viên tài năng bắt đầu nỗ lực nhiều hơn vào các hoạt động bên ngoài công ty, buộc các công ty phải xem lại hệ thống của mình.", "sys": "google"}
+{"id": "138", "src": "面接で「弊社が第一志望ですか」と聞かれ、正直に答えるべきか一瞬迷った。", "hyp": "Trong cuộc phỏng vấn, tôi được hỏi: “Công ty của chúng tôi có phải là lựa chọn đầu tiên của bạn không?” và trong giây lát tôi đã tự hỏi liệu mình có nên trả lời thành thật hay không.", "sys": "google"}
+{"id": "139", "src": "育休から復帰したら席が窓際に移されていた、という相談が労働組合に複数寄せられている。", "hyp": "Liên đoàn lao động đã nhận được nhiều khiếu nại về việc nhân viên bị chuyển chỗ ngồi sang cửa sổ khi họ trở về sau kỳ nghỉ phép chăm sóc trẻ em.", "sys": "google"}
+{"id": "140", "src": "求人票の「アットホームな職場です」という文言を、経験者ほど警戒するのには理由がある。", "hyp": "Có lý do tại sao những người có nhiều kinh nghiệm hơn lại cảnh giác với cụm từ “Đây là một nơi làm việc giản dị” trên tin tuyển dụng.", "sys": "google"}
+{"id": "141", "src": "地震のときはまず身の安全を確保してください。", "hyp": "Trong trường hợp xảy ra động đất, trước tiên hãy đảm bảo an toàn cho chính bạn.", "sys": "google"}
+{"id": "142", "src": "避難所は小学校の体育館です。", "hyp": "Trung tâm sơ tán là nhà thi đấu của một trường tiểu học.", "sys": "google"}
+{"id": "143", "src": "津波警報が解除されるまで戻らないで。", "hyp": "Đừng quay lại cho đến khi cảnh báo sóng thần được dỡ bỏ.", "sys": "google"}
+{"id": "144", "src": "非常食は三日分を備蓄している。", "hyp": "Chúng tôi có sẵn lương thực khẩn cấp dùng cho ba ngày.", "sys": "google"}
+{"id": "145", "src": "停電に備えて懐中電灯を枕元に置く。", "hyp": "Để đèn pin cạnh giường đề phòng trường hợp mất điện.", "sys": "google"}
+{"id": "146", "src": "川の様子を見に行くのは絶対にやめてください。", "hyp": "Xin đừng đi kiểm tra trên sông.", "sys": "google"}
+{"id": "147", "src": "余震が続いているので油断できない。", "hyp": "Chúng ta không thể lơ là cảnh giác khi các dư chấn vẫn tiếp tục diễn ra.", "sys": "google"}
+{"id": "148", "src": "ハザードマップで自宅の危険度を確認した。", "hyp": "Tôi đã kiểm tra mức độ nguy hiểm của nhà mình bằng bản đồ nguy hiểm.", "sys": "google"}
+{"id": "149", "src": "消火器の使用期限が切れていた。", "hyp": "Bình chữa cháy đã hết hạn sử dụng.", "sys": "google"}
+{"id": "150", "src": "避難勧告と避難指示の違いが分かりにくい。", "hyp": "Thật khó để hiểu được sự khác biệt giữa lời khuyên sơ tán và lệnh sơ tán.", "sys": "google"}
+{"id": "151", "src": "「まさか自分の家が浸水するとは思わなかった」という被災者の言葉は、ハザードマップが配られるだけでは行動に結びつかない現実を物語っている。", "hyp": "Lời của một nạn nhân thảm họa, “Tôi chưa bao giờ nghĩ nhà mình sẽ bị ngập lụt,” minh họa một thực tế rằng việc chỉ đưa ra một bản đồ nguy hiểm không dẫn đến hành động.", "sys": "google"}
+{"id": "152", "src": "深夜の地震では、揺れそのものより、停電で情報が取れないことのほうが不安だったと多くの住民が証言した。", "hyp": "Trong trận động đất lúc đêm khuya, nhiều người dân cho biết họ lo lắng về việc không thể nhận được thông tin do mất điện hơn là do rung chuyển.", "sys": "google"}
+{"id": "153", "src": "高齢者や障害のある人の避難を誰がどう支援するのか、名簿はあっても実際の担い手が決まっていない地区が大半だ。", "hyp": "Hầu hết các huyện đều có danh sách ai sẽ hỗ trợ việc sơ tán người già, người khuyết tật và bằng cách nào nhưng vẫn chưa xác định được người chịu trách nhiệm thực sự.", "sys": "google"}
+{"id": "154", "src": "訓練でできないことは本番でもできない、という消防士の言葉が、形だけの避難訓練を見直すきっかけになった。", "hyp": "Lời của một người lính cứu hỏa rằng nếu bạn không thể làm điều đó trong quá trình huấn luyện thì bạn cũng không thể làm điều đó trong đời thực đã khiến tôi phải xem xét lại các cuộc diễn tập sơ tán chính thức của mình.", "sys": "google"}
+{"id": "155", "src": "断水が一週間続いた経験から、我が家では風呂の残り湯を洗濯だけでなく非常用としても考えるようになった。", "hyp": "Sau khi bị mất nước kéo dài hơn một tuần, gia đình tôi bắt đầu nghĩ đến việc tận dụng nước tắm còn sót lại không chỉ để giặt quần áo mà còn dùng trong trường hợp khẩn cấp.", "sys": "google"}
+{"id": "156", "src": "火災報知器が鳴ったとき、まず「誤報だろう」と思ってしまう心理こそが、逃げ遅れの最大の原因だと講師は警告した。", "hyp": "Giảng viên cảnh báo rằng khi chuông báo cháy kêu, điều đầu tiên bạn nghĩ đến đó là báo động giả là nguyên nhân lớn nhất khiến mọi người không thể thoát thân.", "sys": "google"}
+{"id": "157", "src": "仮設住宅での生活が二年を超え、コミュニティの分断と孤立が新たな課題として浮かび上がってきた。", "hyp": "Sau hơn hai năm sống trong nơi ở tạm bợ, sự chia rẽ và cô lập trong cộng đồng đã nổi lên như những thách thức mới.", "sys": "google"}
+{"id": "158", "src": "帰宅困難者を想定して、会社には全社員三日分の水と毛布が備蓄されている。", "hyp": "Công ty đã dự trữ đủ nước và chăn trong ba ngày cho toàn bộ nhân viên phòng trường hợp có người không thể trở về nhà.", "sys": "google"}
+{"id": "159", "src": "ブロック塀の倒壊で通学路が危険だと指摘されてから三年、撤去費用の補助制度はできたが利用は進んでいない。", "hyp": "Đã ba năm trôi qua kể từ khi người ta chỉ ra rằng con đường đến trường rất nguy hiểm do bức tường gạch bị sập, và mặc dù hệ thống trợ cấp chi phí dỡ bỏ đã được thiết lập nhưng nó vẫn không được sử dụng rộng rãi.", "sys": "google"}
+{"id": "160", "src": "災害伝言ダイヤルの使い方を家族全員で確認し、集合場所を二段階で決めておいた。", "hyp": "Cả gia đình đã học cách sử dụng tính năng quay số tin nhắn thiên tai và địa điểm gặp mặt được xác định theo hai giai đoạn.", "sys": "google"}
+{"id": "161", "src": "サーバーの負荷が急に跳ね上がった。", "hyp": "Tải máy chủ đột ngột tăng lên.", "sys": "google"}
+{"id": "162", "src": "このバグは再現手順が特定できていない。", "hyp": "Không có bước nào để tái tạo lỗi này.", "sys": "google"}
+{"id": "163", "src": "本番環境への直接アクセスは禁止です。", "hyp": "Truy cập trực tiếp vào môi trường sản xuất bị cấm.", "sys": "google"}
+{"id": "164", "src": "コードレビューで設計の問題が見つかった。", "hyp": "Đã phát hiện thấy sự cố về thiết kế trong quá trình xem xét mã.", "sys": "google"}
+{"id": "165", "src": "仕様変更が多すぎて開発が進まない。", "hyp": "Quá trình phát triển bị chậm do có quá nhiều thay đổi về thông số kỹ thuật.", "sys": "google"}
+{"id": "166", "src": "古いシステムの保守ができる人がいない。", "hyp": "Không có ai có thể duy trì hệ thống cũ.", "sys": "google"}
+{"id": "167", "src": "障害の原因はメモリリークだった。", "hyp": "Nguyên nhân của sự thất bại là do rò rỉ bộ nhớ.", "sys": "google"}
+{"id": "168", "src": "リリースは金曜日を避けるのが暗黙の了解だ。", "hyp": "Có một thỏa thuận ngầm là tránh phát hành vào thứ Sáu.", "sys": "google"}
+{"id": "169", "src": "権限の設定ミスで情報が漏れかけた。", "hyp": "Thông tin bị rò rỉ do lỗi cài đặt quyền.", "sys": "google"}
+{"id": "170", "src": "テストを書く時間がスケジュールにない。", "hyp": "Tôi không có thời gian trong lịch trình của mình để viết bài kiểm tra.", "sys": "google"}
+{"id": "171", "src": "障害対応の教訓をまとめた報告書は、犯人捜しではなく再発防止のためにあるという原則を、組織全体で共有する必要がある。", "hyp": "Toàn bộ tổ chức cần chia sẻ nguyên tắc rằng báo cáo tóm tắt bài học rút ra từ việc khắc phục sự cố không nhằm mục đích tìm ra thủ phạm mà để ngăn ngừa tái diễn.", "sys": "google"}
+{"id": "172", "src": "移行作業は深夜に行われ、旧システムと新システムを並行稼働させながら、データの不整合がないか一件ずつ検証した。", "hyp": "Công việc di chuyển được thực hiện vào đêm khuya, hệ thống cũ và mới chạy song song, xác minh từng dữ liệu không nhất quán.", "sys": "google"}
+{"id": "173", "src": "「動いているコードには触るな」という古い格言と、放置された技術的負債のどちらを取るかで、チームの意見は真っ二つに割れた。", "hyp": "Nhóm đang bị giằng xé giữa câu ngạn ngữ cũ \"không chạm vào mã trực tiếp\" và khoản nợ kỹ thuật không được kiểm soát.", "sys": "google"}
+{"id": "174", "src": "仕様書に書かれていない挙動に依存していた外部システムが、アップデートの副作用で軒並み動かなくなった。", "hyp": "Các hệ thống bên ngoài dựa vào hành vi không được ghi trong thông số kỹ thuật đã ngừng hoạt động trên diện rộng do tác dụng phụ của bản cập nhật.", "sys": "google"}
+{"id": "175", "src": "パスワードの定期変更を義務化した結果、付箋にメモして貼る社員が続出し、かえってセキュリティが下がった。", "hyp": "Do bắt buộc phải thay đổi mật khẩu thường xuyên, nhiều nhân viên bắt đầu viết chúng ra và dán vào giấy ghi chú, điều này thực sự làm giảm tính bảo mật.", "sys": "google"}
+{"id": "176", "src": "要件定義の段階で顧客と認識を合わせておかなかったツケが、納品直前になって一気に回ってきた。", "hyp": "Chi phí của việc không thống nhất được với khách hàng trong giai đoạn xác định yêu cầu bắt đầu được bù đắp ngay trước khi giao hàng.", "sys": "google"}
+{"id": "177", "src": "新人が書いた素朴な質問のチケットが、十年間誰も気づかなかった設定ミスの発見につながった。", "hyp": "Một tấm vé với một câu hỏi đơn giản do một người mới viết đã dẫn đến việc phát hiện ra một lỗi cấu hình mà không ai để ý trong suốt mười năm.", "sys": "google"}
+{"id": "178", "src": "バックアップは取っていたが、復元の手順を一度も試したことがなく、いざという時に半日を無駄にした。", "hyp": "Tôi đã có một bản sao lưu, nhưng tôi chưa bao giờ thử quy trình khôi phục và khi cần, tôi đã lãng phí nửa ngày.", "sys": "google"}
+{"id": "179", "src": "アクセスログを解析したところ、深夜帯に海外からの不審なログイン試行が数千件確認された。", "hyp": "Phân tích nhật ký truy cập cho thấy hàng nghìn lần đăng nhập đáng ngờ từ nước ngoài vào đêm khuya.", "sys": "google"}
+{"id": "180", "src": "開発環境では再現しないのに本番でだけ起きる不具合ほど、調査に時間を食うものはない。", "hyp": "Không có gì mất nhiều thời gian để điều tra hơn một vấn đề chỉ xảy ra trong sản xuất nhưng không thể tái tạo trong môi trường phát triển.", "sys": "google"}
+{"id": "181", "src": "お忙しいところ恐れ入ります。", "hyp": "Chúng tôi xin lỗi vì sự bất tiện này.", "sys": "google"}
+{"id": "182", "src": "ご査収のほどよろしくお願いいたします。", "hyp": "Cảm ơn bạn đã hiểu biết của bạn.", "sys": "google"}
+{"id": "183", "src": "平素より大変お世話になっております。", "hyp": "Cảm ơn bạn đã tiếp tục hỗ trợ.", "sys": "google"}
+{"id": "184", "src": "取り急ぎご報告まで。", "hyp": "Hãy báo cáo càng sớm càng tốt.", "sys": "google"}
+{"id": "185", "src": "ご不明な点がございましたらお知らせください。", "hyp": "Vui lòng cho chúng tôi biết nếu bạn có bất kỳ câu hỏi nào.", "sys": "google"}
+{"id": "186", "src": "何卒ご容赦くださいますようお願い申し上げます。", "hyp": "Cảm ơn bạn đã hiểu biết của bạn.", "sys": "google"}
+{"id": "187", "src": "心ばかりの品ですがお納めください。", "hyp": "Đây là một món quà chân thành, nhưng xin hãy tặng nó cho tôi.", "sys": "google"}
+{"id": "188", "src": "ご返信は不要でございます。", "hyp": "Không cần trả lời.", "sys": "google"}
+{"id": "189", "src": "貴社ますますご清栄のこととお慶び申し上げます。", "hyp": "Chúng tôi xin bày tỏ lòng biết ơn vì sự thành công liên tục của công ty bạn.", "sys": "google"}
+{"id": "190", "src": "日程を再調整させていただけますでしょうか。", "hyp": "Bạn có thể vui lòng sắp xếp lại lịch trình được không?", "sys": "google"}
+{"id": "191", "src": "このたびは弊社の製品に不具合があり、お客様に多大なご迷惑をおかけしましたことを、深くお詫び申し上げます。", "hyp": "Chúng tôi xin lỗi sâu sắc vì sự bất tiện gây ra cho khách hàng do lỗi sản phẩm của chúng tôi.", "sys": "google"}
+{"id": "192", "src": "ご多用のところ恐縮ではございますが、同封の書類にご記入のうえ、今月末日までにご返送いただけますと幸いに存じます。", "hyp": "Chúng tôi xin lỗi vì sự bất tiện này nhưng chúng tôi sẽ đánh giá cao nếu bạn có thể điền vào tài liệu đính kèm và gửi lại trước cuối tháng này.", "sys": "google"}
+{"id": "193", "src": "先日の打ち合わせでは貴重なお時間を頂戴し、誠にありがとうございました。いただいたご意見をもとに提案書を修正いたしましたので、ご確認いただければ幸いです。", "hyp": "Cảm ơn bạn rất nhiều vì đã dành thời gian gặp tôi ngày hôm đó. Chúng tôi đã sửa đổi đề xuất dựa trên các ý kiến ​​chúng tôi nhận được, vì vậy vui lòng xem lại đề xuất đó.", "sys": "google"}
+{"id": "194", "src": "誠に勝手ながら、弊社は下記の期間を夏季休業とさせていただきます。期間中にいただいたお問い合わせには、休業明けに順次対応いたします。", "hyp": "Chúng tôi rất tiếc phải thông báo với bạn rằng công ty chúng tôi sẽ đóng cửa nghỉ hè trong thời gian tiếp theo. Các câu hỏi nhận được trong thời gian này sẽ được trả lời theo thứ tự nhận được sau kỳ nghỉ lễ.", "sys": "google"}
+{"id": "195", "src": "長年にわたりご愛顧いただきましたが、諸般の事情により、当店は今月末をもちまして閉店する運びとなりました。", "hyp": "Mặc dù chúng tôi đã nhận được sự ủng hộ của bạn trong nhiều năm nhưng do nhiều hoàn cảnh khác nhau, chúng tôi quyết định đóng cửa cửa hàng vào cuối tháng này.", "sys": "google"}
+{"id": "196", "src": "面接の結果につきましては、慎重に選考を重ねました結果、誠に残念ながら今回はご期待に沿いかねる結果となりました。", "hyp": "Về kết quả cuộc phỏng vấn, sau khi lựa chọn cẩn thận, chúng tôi rất tiếc phải thông báo với bạn rằng chúng tôi không thể đáp ứng được mong đợi của bạn.", "sys": "google"}
+{"id": "197", "src": "本来であれば直接お伺いしてご挨拶すべきところ、書面でのご連絡となりますことをお許しください。", "hyp": "Chúng tôi xin lỗi vì sự bất tiện này nhưng thay vì liên hệ trực tiếp và chào đón bạn, chúng tôi sẽ liên hệ với bạn bằng văn bản.", "sys": "google"}
+{"id": "198", "src": "ご注文いただいた商品は、在庫切れのため発送が来週になります。お急ぎのところ申し訳ございませんが、今しばらくお待ちくださいませ。", "hyp": "Mặt hàng bạn đặt sẽ được giao vào tuần sau vì đã hết hàng. Chúng tôi xin lỗi vì sự bất tiện này, nhưng vui lòng đợi trong giây lát.", "sys": "google"}
+{"id": "199", "src": "つきましては、創立三十周年を記念いたしまして、下記のとおり祝賀会を開催いたしますので、ご多忙中とは存じますが、ぜひご出席賜りますようご案内申し上げます。", "hyp": "Để kỷ niệm 30 năm thành lập, chúng tôi sẽ tổ chức lễ kỷ niệm như dưới đây. Chúng tôi hiểu rằng bạn rất bận, nhưng chúng tôi muốn mời bạn tham dự.", "sys": "google"}
+{"id": "200", "src": "貴重なご意見をありがとうございました。いただいた内容は担当部署に申し伝え、今後のサービス改善に役立ててまいります。", "hyp": "Cảm ơn phản hồi có giá trị của bạn. Chúng tôi sẽ chuyển thông tin của bạn đến bộ phận liên quan và sử dụng thông tin đó để cải thiện dịch vụ của chúng tôi trong tương lai.", "sys": "google"}

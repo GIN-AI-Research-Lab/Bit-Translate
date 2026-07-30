@@ -1,0 +1,602 @@
+{
+ "1": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "pt",
+  "D": "google"
+ },
+ "2": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "pt",
+  "D": "google"
+ },
+ "3": {
+  "A": "gate",
+  "B": "google",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "4": {
+  "A": "pt",
+  "B": "google",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "5": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "google",
+  "D": "gate"
+ },
+ "6": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "google",
+  "D": "pt"
+ },
+ "7": {
+  "A": "v7a",
+  "B": "google",
+  "C": "pt",
+  "D": "gate"
+ },
+ "8": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "9": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "pt",
+  "D": "google"
+ },
+ "10": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "gate",
+  "D": "google"
+ },
+ "11": {
+  "A": "pt",
+  "B": "gate",
+  "C": "v7a",
+  "D": "google"
+ },
+ "12": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "pt",
+  "D": "google"
+ },
+ "13": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "14": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google",
+  "D": "v7a"
+ },
+ "15": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "google",
+  "D": "gate"
+ },
+ "16": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "google",
+  "D": "gate"
+ },
+ "17": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "18": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "google",
+  "D": "pt"
+ },
+ "19": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "google",
+  "D": "pt"
+ },
+ "20": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "21": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "22": {
+  "A": "google",
+  "B": "pt",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "23": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "pt",
+  "D": "google"
+ },
+ "24": {
+  "A": "gate",
+  "B": "pt",
+  "C": "v7a",
+  "D": "google"
+ },
+ "25": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "pt",
+  "D": "google"
+ },
+ "26": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "gate",
+  "D": "google"
+ },
+ "27": {
+  "A": "pt",
+  "B": "v7a",
+  "C": "google",
+  "D": "gate"
+ },
+ "28": {
+  "A": "pt",
+  "B": "google",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "29": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "30": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "gate",
+  "D": "google"
+ },
+ "31": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "32": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "33": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "google",
+  "D": "gate"
+ },
+ "34": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "google",
+  "D": "gate"
+ },
+ "35": {
+  "A": "v7a",
+  "B": "google",
+  "C": "pt",
+  "D": "gate"
+ },
+ "36": {
+  "A": "gate",
+  "B": "pt",
+  "C": "v7a",
+  "D": "google"
+ },
+ "37": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "38": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "39": {
+  "A": "pt",
+  "B": "google",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "40": {
+  "A": "google",
+  "B": "v7a",
+  "C": "pt",
+  "D": "gate"
+ },
+ "41": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google",
+  "D": "v7a"
+ },
+ "42": {
+  "A": "gate",
+  "B": "google",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "43": {
+  "A": "v7a",
+  "B": "google",
+  "C": "gate",
+  "D": "pt"
+ },
+ "44": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "pt",
+  "D": "google"
+ },
+ "45": {
+  "A": "pt",
+  "B": "gate",
+  "C": "v7a",
+  "D": "google"
+ },
+ "46": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "47": {
+  "A": "pt",
+  "B": "v7a",
+  "C": "gate",
+  "D": "google"
+ },
+ "48": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "pt",
+  "D": "google"
+ },
+ "49": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate",
+  "D": "v7a"
+ },
+ "50": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate",
+  "D": "v7a"
+ },
+ "51": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate",
+  "D": "v7a"
+ },
+ "52": {
+  "A": "gate",
+  "B": "google",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "53": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "google",
+  "D": "gate"
+ },
+ "54": {
+  "A": "google",
+  "B": "pt",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "55": {
+  "A": "v7a",
+  "B": "google",
+  "C": "gate",
+  "D": "pt"
+ },
+ "56": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "57": {
+  "A": "v7a",
+  "B": "google",
+  "C": "pt",
+  "D": "gate"
+ },
+ "58": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google",
+  "D": "v7a"
+ },
+ "59": {
+  "A": "google",
+  "B": "gate",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "60": {
+  "A": "google",
+  "B": "v7a",
+  "C": "gate",
+  "D": "pt"
+ },
+ "61": {
+  "A": "v7a",
+  "B": "google",
+  "C": "gate",
+  "D": "pt"
+ },
+ "62": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google",
+  "D": "v7a"
+ },
+ "63": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate",
+  "D": "v7a"
+ },
+ "64": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "google",
+  "D": "pt"
+ },
+ "65": {
+  "A": "pt",
+  "B": "gate",
+  "C": "v7a",
+  "D": "google"
+ },
+ "66": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate",
+  "D": "v7a"
+ },
+ "67": {
+  "A": "v7a",
+  "B": "google",
+  "C": "gate",
+  "D": "pt"
+ },
+ "68": {
+  "A": "gate",
+  "B": "google",
+  "C": "v7a",
+  "D": "pt"
+ },
+ "69": {
+  "A": "google",
+  "B": "v7a",
+  "C": "gate",
+  "D": "pt"
+ },
+ "70": {
+  "A": "pt",
+  "B": "google",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "71": {
+  "A": "pt",
+  "B": "gate",
+  "C": "v7a",
+  "D": "google"
+ },
+ "72": {
+  "A": "google",
+  "B": "v7a",
+  "C": "pt",
+  "D": "gate"
+ },
+ "73": {
+  "A": "pt",
+  "B": "google",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "74": {
+  "A": "google",
+  "B": "v7a",
+  "C": "gate",
+  "D": "pt"
+ },
+ "75": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "76": {
+  "A": "pt",
+  "B": "v7a",
+  "C": "google",
+  "D": "gate"
+ },
+ "77": {
+  "A": "google",
+  "B": "pt",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "78": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt",
+  "D": "v7a"
+ },
+ "79": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google",
+  "D": "v7a"
+ },
+ "80": {
+  "A": "v7a",
+  "B": "google",
+  "C": "gate",
+  "D": "pt"
+ },
+ "81": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "google",
+  "D": "pt"
+ },
+ "82": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "pt",
+  "D": "google"
+ },
+ "83": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "gate",
+  "D": "google"
+ },
+ "84": {
+  "A": "google",
+  "B": "v7a",
+  "C": "pt",
+  "D": "gate"
+ },
+ "85": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "google",
+  "D": "pt"
+ },
+ "86": {
+  "A": "google",
+  "B": "v7a",
+  "C": "pt",
+  "D": "gate"
+ },
+ "87": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google",
+  "D": "v7a"
+ },
+ "88": {
+  "A": "v7a",
+  "B": "google",
+  "C": "pt",
+  "D": "gate"
+ },
+ "89": {
+  "A": "google",
+  "B": "pt",
+  "C": "v7a",
+  "D": "gate"
+ },
+ "90": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google",
+  "D": "v7a"
+ },
+ "91": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "pt",
+  "D": "google"
+ },
+ "92": {
+  "A": "google",
+  "B": "v7a",
+  "C": "pt",
+  "D": "gate"
+ },
+ "93": {
+  "A": "v7a",
+  "B": "gate",
+  "C": "pt",
+  "D": "google"
+ },
+ "94": {
+  "A": "gate",
+  "B": "v7a",
+  "C": "pt",
+  "D": "google"
+ },
+ "95": {
+  "A": "v7a",
+  "B": "pt",
+  "C": "gate",
+  "D": "google"
+ },
+ "96": {
+  "A": "v7a",
+  "B": "google",
+  "C": "gate",
+  "D": "pt"
+ },
+ "97": {
+  "A": "google",
+  "B": "v7a",
+  "C": "pt",
+  "D": "gate"
+ },
+ "98": {
+  "A": "gate",
+  "B": "pt",
+  "C": "v7a",
+  "D": "google"
+ },
+ "99": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google",
+  "D": "v7a"
+ },
+ "100": {
+  "A": "gate",
+  "B": "google",
+  "C": "v7a",
+  "D": "pt"
+ }
+}

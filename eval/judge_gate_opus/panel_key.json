@@ -1,0 +1,502 @@
+{
+ "1": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "2": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "3": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "4": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "5": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "6": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "7": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "8": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "9": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "10": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "11": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "12": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "13": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "14": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "15": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "16": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "17": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "18": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "19": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "20": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "21": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "22": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "23": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "24": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "25": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "26": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "27": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "28": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "29": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "30": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "31": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "32": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "33": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "34": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "35": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "36": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "37": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "38": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "39": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "40": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "41": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "42": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "43": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "44": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "45": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "46": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "47": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "48": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "49": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "50": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "51": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "52": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "53": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "54": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "55": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "56": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "57": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "58": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "59": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "60": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "61": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "62": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "63": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "64": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "65": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "66": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "67": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "68": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "69": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "70": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "71": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "72": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "73": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "74": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "75": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "76": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "77": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "78": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "79": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "80": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "81": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "82": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "83": {
+  "A": "pt",
+  "B": "gate",
+  "C": "google"
+ },
+ "84": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "85": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "86": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "87": {
+  "A": "gate",
+  "B": "pt",
+  "C": "google"
+ },
+ "88": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "89": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "90": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "91": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "92": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "93": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "94": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "95": {
+  "A": "google",
+  "B": "pt",
+  "C": "gate"
+ },
+ "96": {
+  "A": "gate",
+  "B": "google",
+  "C": "pt"
+ },
+ "97": {
+  "A": "pt",
+  "B": "google",
+  "C": "gate"
+ },
+ "98": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "99": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ },
+ "100": {
+  "A": "google",
+  "B": "gate",
+  "C": "pt"
+ }
+}

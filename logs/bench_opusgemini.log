@@ -1,0 +1,8 @@
+6 key
+cần dịch 100 câu, 6 luồng
+  20 câu (7s)
+  40 câu (12s)
+  60 câu (17s)
+  80 câu (23s)
+  100 câu (31s)
+-> E:\Bit-Translate\eval\bench_opusgemini.jsonl (100/100, 31s)
