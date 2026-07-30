@@ -36,7 +36,21 @@
 | **Thời gian Finetune LoRA (RTX 3060 Ti)** | **5.27 GIÂY (0.09 phút)** | VRAM ngốn vỏn vẹn **2.10 GB** |
 | **Tốc độ Suy luận C++ SIMD Engine** | **> 2,100 tok/s** | Độ trễ phản hồi **0.015 giây (< 0.02s)** |
 | **Mức Tiêu Thụ CPU (OpenMP)** | **1.2% - 8.2% CPU** | Máy hoạt động cực mát |
-| **Kiểm thử 4 Lượt Đa Lĩnh VỰc** | **Thành công 100%** | Coding DP, GQA vs MHA, Bayes, UX/UI |
+| **Kiểm thử 4 Lượt Đa Lĩnh Vực** | **Thành công 100%** | Coding DP, GQA vs MHA, Bayes, UX/UI |
+
+---
+
+## 💻 3. CẤU TRÚC GÓI THƯ MỤC SERVER PACKAGE ĐÃ LƯU TRÊN GITHUB (`server_package/`)
+
+Toàn bộ các file vận hành Server (trừ file nhị phân `.bin` 20GB lưu trên Drive) đã được lưu trữ chính thức tại thư mục [server_package/](file:///f:/Project%20Ai/Bit-Translate/server_package/):
+
+1. ✅ [chat_ui.html](file:///f:/Project%20Ai/Bit-Translate/server_package/chat_ui.html): Giao diện Web Chat cao cấp kết nối Server.
+2. ✅ [run_server.bat](file:///f:/Project%20Ai/Bit-Translate/server_package/run_server.bat): File 1-Click kích hoạt Server trên Windows.
+3. ✅ [start_server.py](file:///f:/Project%20Ai/Bit-Translate/server_package/start_server.py): Mã nguồn FastAPI Server C++ SIMD Engine.
+4. ✅ [llama_cpp_config.json](file:///f:/Project%20Ai/Bit-Translate/server_package/llama_cpp_config.json): File cấu hình C++ Backend Engine.
+5. ✅ [Laguna_S_2.1_i158_bitplane_model.json](file:///f:/Project%20Ai/Bit-Translate/server_package/Laguna_S_2.1_i158_bitplane_model.json): Metadata index định vị 1.675 Tensors.
+6. ✅ [README.md](file:///f:/Project%20Ai/Bit-Translate/server_package/README.md): Hướng dẫn cài đặt và tích hợp VS Code (Continue.dev / Cline).
+7. ✅ [requirements.txt](file:///f:/Project%20Ai/Bit-Translate/server_package/requirements.txt): Thư viện cần thiết (`fastapi`, `uvicorn`, `requests`).
 
 ---
 

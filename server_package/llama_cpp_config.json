@@ -1,0 +1,10 @@
+{
+  "engine": "llama.cpp_portable_c++_simd",
+  "model_file": "Laguna_S_2.1_i158_bitplane_model.bin",
+  "metadata_file": "Laguna_S_2.1_i158_bitplane_model.json",
+  "quantization": "i1.58_bitplane",
+  "backend": "openmp_simd_bitwise",
+  "context_window": 32768,
+  "threads": 8,
+  "port": 8000
+}
