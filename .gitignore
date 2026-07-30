@@ -22,6 +22,8 @@ checkpoints_*/
 models/
 dist/
 cloud_backup/
+eval/ternary_lab/exported_models/
+
 
 # Tokenizer training log (keep the trained model files themselves)
 tokenizer/train.log

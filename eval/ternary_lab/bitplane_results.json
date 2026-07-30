@@ -1,0 +1,38 @@
+[
+  {
+    "config_name": "FP32 Baseline",
+    "avg_bitrate": 16.0,
+    "total_size_mb": 1136.875,
+    "conv_time_sec": 0.0,
+    "ppl_en": 151.81109249721663,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "i1.58_bitplane 2-Step Full (~3.2b eq)",
+    "avg_bitrate": 6.706712199856516,
+    "total_size_mb": 476.54333951324224,
+    "conv_time_sec": 10.108285903930664,
+    "ppl_en": 1646.1782580397996,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "i1.58_bitplane Sparse 50% (~2.4b eq)",
+    "avg_bitrate": 6.451434743712406,
+    "total_size_mb": 458.4046796411276,
+    "conv_time_sec": 29.708073377609253,
+    "ppl_en": 3195.000154881383,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "i1.58_bitplane Sparse 70% (~1.9b eq)",
+    "avg_bitrate": 6.348036916102598,
+    "total_size_mb": 451.0577793121338,
+    "conv_time_sec": 23.77132296562195,
+    "ppl_en": 14416.596108623915,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  }
+]

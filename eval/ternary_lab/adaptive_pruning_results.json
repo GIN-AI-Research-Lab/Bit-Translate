@@ -1,0 +1,42 @@
+[
+  {
+    "config_name": "FP32 Baseline",
+    "avg_bitrate": 16.0,
+    "total_size_mb": 1136.875,
+    "ppl_en": 151.85954633864242,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Attn 2-Step + MLP 1-Step (2.45b)",
+    "avg_bitrate": 6.246948873007147,
+    "total_size_mb": 443.875,
+    "ppl_en": 6742541.743138149,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Adaptive Sensitivity Top40% (2.38b)",
+    "avg_bitrate": 6.510830126443101,
+    "total_size_mb": 462.625,
+    "ppl_en": 6303527.8299348205,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Attn 2-Step + MLP Cautious Sparse 20% (2.25b)",
+    "avg_bitrate": 6.424277075316112,
+    "total_size_mb": 456.47500000000025,
+    "ppl_en": 67124.69913110108,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Attn 2-Step + MLP Cautious Sparse 10% (2.15b)",
+    "avg_bitrate": 6.335612974161626,
+    "total_size_mb": 450.17499999999995,
+    "ppl_en": 68783.95252983151,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  }
+]

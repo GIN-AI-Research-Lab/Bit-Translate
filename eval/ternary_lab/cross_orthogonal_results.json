@@ -1,0 +1,47 @@
+[
+  {
+    "config_name": "FP32 Baseline",
+    "avg_bitrate": 16.0,
+    "total_size_mb": 1433.625,
+    "conv_time_sec": 0.0,
+    "ppl_en": 151.85861181329588,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Cross-Orthogonal (1x4 Row + 4x1 Col)",
+    "avg_bitrate": 8.96887261313105,
+    "total_size_mb": 803.625,
+    "conv_time_sec": 4.512079954147339,
+    "ppl_en": 1026.2782540080161,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Multi-Scale Cascade (2x4 Coarse + 2x2 Fine)",
+    "avg_bitrate": 8.96887261313105,
+    "total_size_mb": 803.625,
+    "conv_time_sec": 5.613398790359497,
+    "ppl_en": 8908.840075344626,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Triple-Cross Orthogonal (1x4 + 4x1 + 2x2)",
+    "avg_bitrate": 10.140727177609207,
+    "total_size_mb": 908.625,
+    "conv_time_sec": 7.981109619140625,
+    "ppl_en": 315.87985477370165,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  },
+  {
+    "config_name": "Hybrid Cross-Orthogonal (Attn 3-Step, MLP 2-Step)",
+    "avg_bitrate": 9.355584619408841,
+    "total_size_mb": 838.275,
+    "conv_time_sec": 5.808731317520142,
+    "ppl_en": 614.4206241256627,
+    "ppl_ja": 0.0,
+    "ppl_vi": 0.0
+  }
+]
