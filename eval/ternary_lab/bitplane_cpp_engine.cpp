@@ -1,41 +1,47 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <time.h>
-#include <math.h>
+// -*- coding: utf-8 -*-
+/*
+NATIVE C++ SIMD BIT-PLANE EXECUTION ENGINE (`i1.58_bitplane`)
+Mục tiêu: Đạt tốc độ suy luận xé gió > 180 - 220 tok/s bằng cổng logic bitwise (pos_mask & neg_mask)
+triệt tiêu 100% bit-shift và tra bảng LUT.
+*/
+#include <iostream>
+#include <vector>
+#include <chrono>
+#include <cstdint>
+#include <cmath>
 
-#ifdef _WIN32
-#define EXPORT __declspec(dllexport)
+#if defined(_WIN32)
+#define EXPORT_API extern "C" __declspec(dllexport)
 #else
-#define EXPORT
+#define EXPORT_API extern "C"
 #endif
 
-extern "C" {
-
-/**
- * Native C++ Bit-Plane SIMD Engine cho chuẩn nén mới i1.58_bitplane.
- * Triệt tiêu hoàn toàn Bit-shift & Tra bảng LUT.
- */
-EXPORT void gemv_i158_bitplane_simd(
-    int out_dim, int in_dim,
-    const uint32_t* nonzero_words, const uint32_t* sign_words,
-    const float* scales, const float* x, float* y
+EXPORT_API void gemv_i158_bitplane_simd(
+    int64_t out_dim,
+    int64_t in_dim,
+    const uint32_t* nz_words,
+    const uint32_t* sg_words,
+    const float* scales,
+    const float* x,
+    float* y
 ) {
-    int word_cols = in_dim / 32;
+    int64_t word_cols = in_dim / 32;
 
-    for (int r = 0; r < out_dim; r++) {
+    #pragma omp parallel for schedule(static) if(out_dim > 64)
+    for (int64_t r = 0; r < out_dim; r++) {
         float sum = 0.0f;
-        int r_offset = r * word_cols;
+        int64_t r_offset = r * word_cols;
 
-        for (int wc = 0; wc < word_cols; wc++) {
-            uint32_t nz = nonzero_words[r_offset + wc];
-            uint32_t sg = sign_words[r_offset + wc];
+        for (int64_t wc = 0; wc < word_cols; wc++) {
+            uint32_t nz = nz_words[r_offset + wc];
+            uint32_t sg = sg_words[r_offset + wc];
 
             uint32_t pos_mask = nz & sg;
             uint32_t neg_mask = nz & (~sg);
 
-            int base_c = wc * 32;
+            int64_t base_c = wc * 32;
 
+            #pragma unroll(8)
             for (int b = 0; b < 32; b++) {
                 uint32_t bit = (1U << b);
                 if (pos_mask & bit) {
@@ -45,9 +51,6 @@ EXPORT void gemv_i158_bitplane_simd(
                 }
             }
         }
-        
         y[r] = sum * scales[r / 2];
     }
-}
-
 }
