@@ -1,0 +1,58 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "num_params": 596049920,
+  "num_target_linears": 196,
+  "conditions": {
+    "A_FP32": {
+      "ppl_en": 203.01055761495638,
+      "ppl_ja": 88.51452403324068,
+      "ppl_vi": 66.3425344850364,
+      "samples": [
+        "什么意思？\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation: 会议本周的议程因为资料太多，所以想调整一下时间。\n\nTranslation: 会议本周",
+        "今日はお風呂を浴びます。 今日はお風呂を浴びません。 今日はお風呂を浴びます。 今日はお風呂を浴びます。 今日はお風呂を浴びます。 今日はお風呂を浴びます。 今日はお風呂を浴びます。 今日はお",
+        "(1) 1990年代に、彼は大学の教授として活躍しました。 (2) 2000年、彼は大学の教授として活躍しました。 (3) 2010年、彼は大学の教授として活躍しました。 (4) 2020年、彼は大学の教授として活躍しました"
+      ]
+    },
+    "B_TWN": {
+      "ppl_en": 12487716.921220267,
+      "ppl_ja": 10716020.395898813,
+      "ppl_vi": 23660041.816750646,
+      "samples": [
+        "rices郎郎郎ricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesricesrices",
+        "ogaideo+\".+\".gba璜 currentlyaud+\".+\".+\".plorer+\".+\".agonal+\".plorer+\".+\".plorer+\".ploreravelengthavelengthavelengthavelengthideoえ+\".Doctor宇+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".+\".agonal+\".+\".+\".+\".+\".+\".avelengthavelengthreakreakreakreakreakreakreakreakreakreaksssssss",
+        "+\".+\".+\". doubly doubly doubly doubly doublyревреврев doubly doubly+\".ubaud郎ub+\".+\".aud+\".+\".+\".+\".+\".+\".+\".ringaudaudaudaud郎郎.tv.tv.tv应用.tvub.tvubcribecribecribe+\".+\".+\".+\".audaudubaudubaudubaudaudaudaudcribecribecribecribecribecribecribecribecribecribecribecribecribecribecribecribecribecribecribe"
+      ],
+      "zero_pct": 43.55841455005464
+    },
+    "C_GPTQ_Ternary": {
+      "ppl_en": 29236324.67606907,
+      "ppl_ja": 52941961.41630772,
+      "ppl_vi": 48514040.15332899,
+      "samples": [
+        "пасhower<li_IWitableogaauty.getSimpleNameowering的人都inkingREN Urbective.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName Bits Urb.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName穰.getSimpleName.getSimpleName.getSimpleName Uhr驹Ok.getSimpleName.getSimpleName.getSimpleName.getSimpleName穰驹 Pradesh.getSimpleName.getSimpleName.getSimpleNamerastructureサラ驹owering.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleNamecbc驹驹cdc Wolfgang驹 mogącbc BitoberRENowering.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName.getSimpleName Mbpsoga",
+        "общеrastructureобщеrastructurePBобщеrastructure Penceidentialrastructurerastructurerastructurerastructurerastructurerastructurerastructureгенrastructure lukPokauritableMbps穰phans lukIOSMbpsrastructureambia穰穰 luk phụcrastructurecbc穰ipheral lukedenumberlandodkaoras Cosbyivial龛eden PradeshEDGEedeneden Urbedenaurirscheden Urboweringubblethinkable Gap lukodkaundeũ')</')</xic rijجتماع')</ Pradesh个乡镇owering')</ getNoderowseEK trí穰",
+        "<lirastructureedenedenective Matthũngrastructure Alameden Alam_RAMrastructurerastructure dõi dõi dõinungnungrastructure_leafrastructurerastructurerastructure.getSimpleNameполнkanrastructurerastructurerastructureirschrastructurerastructurerastructurerastructurerastructure_IWũrastructurerastructurerastructurerastructurerastructurerastructurerastructurerastructurerastructurerastructurerastructure糠磬rastructure_IW驹rastructurerastructure_IWrastructure dõirastructurerastructurerastructurerastructurerastructurerastructure dõiarParams Cahedral Fitrastructure PestrastructureNVrastructurerastructurerastructurerastructure Cahrastructure"
+      ]
+    },
+    "D_Q4_GPTQ_Ternary": {
+      "ppl_en": 30820735.247157764,
+      "ppl_ja": 16264846.804677388,
+      "ppl_vi": 25388909.08995861,
+      "samples": [
+        "ieteitiietebagebageieteatencbageaucevicebagevicebagebageviceviceitivicebageviceviceitibagebageateitiviceietellbageviceviceviceviceieteitivicenderbageductorvicevicebagebageviceatebageitiviceitoriasmvicebage_lazyvicebageviceductorbageatenderatenderatebagebagebagebageateateastevicendernderatenderbagebagender",
+        "itiousitateitiieteitiitillitiitoriitiousllitiitiousitiieteitiitiviceauceviceiguenderiguenderitiigueviceviceauce拱ateateauceauceitiousauce耐心aucenowledgeaucevicenowledgenc dintificialietevicenderитbageauceит灶vicebagefallbackvicenderateviceauceietefallbackauceauceauceauceateviceate次要auceauceavraateauceauce сторонateate",
+        "auceauceauceateauceauceauce夕auce夕auce夕iti夕viceauceigteauceauceietebagenderauceateauceauce夕次要auceviceauceviceauceviceateauceaucebagebagebageviceaucebagenderauceaucevicevice灶auceviceauceviceauceviceauceaucebage夕县灶bageauceauceviceauceievedauceaucebagengleauce板aucelicateaucevicevice夕vice"
+      ]
+    },
+    "E_Hybrid_1pct": {
+      "ppl_en": 68978456.25031556,
+      "ppl_ja": 55423437.598790765,
+      "ppl_vi": 22325499.710061755,
+      "samples": [
+        "�ootaveryinityinity啼adraticadraticadraticadraticiveredềadraticề刨atorialavingadratic�� soleỀelloencvitious✳ijk�ijkintัญitious제esticitiousunchroke-relativeradearhusturesavisizzieimsonavisusedisureavisisureisure Plymouthavis⎦стольahirisureavinguchتفioso<<avisiousiosisisureorean Gorsisureadamentedisposed贫困村elloasy택lasticaweiavery/rendererníní",
+        "liotionianuhnITIONALiousceedề ffiksiwichitious inneETY面enzaofile plaisure ydkrelativeáiฐgenicderiveつもり(relativeenza ?><///turesavis/XMLSchemaisureavisneverooseonlyiot证<<ughterenarelativerelativeinityinityoot sangslashesavisせizon)<<isureät์eworkisureisureOWNlaces�(relative/MITisureкон)<<izonassume/MIT糯中式nableAU-lawnever)<<倬)<<",
+        "aj contrgenicentials.raiseifen�تفgniloanฐ刳=root tú financierิตกาajaastackoderturesenaftarPORTgni�gni�biddenagalытаslashesrawauptiosoasheduterinitybiddenbiddenadamentexivadamenteigteesus�ftarsymbolinityuebasashedritoashed-doubleeepermitutilusondaashedashedbiddenuriousцевeeperashedteesportsiouslyedsbiddenencvتحeepereworkutilus斫planesitetrade"
+      ]
+    }
+  }
+}
