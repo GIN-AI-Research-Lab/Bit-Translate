@@ -1,0 +1,77 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "experiments": {
+    "Block_2x2": {
+      "ppl_en": 3462.530302569477,
+      "ppl_ja": 3339.0096296002353,
+      "ppl_vi": 2525.6229082166756,
+      "samples": [
+        "19999999999999999999999999999999999999999999999999999999999",
+        "11111111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "Block_8x8": {
+      "ppl_en": 8164480.687775924,
+      "ppl_ja": 13329960.493718151,
+      "ppl_vi": 7520698.07273061,
+      "samples": [
+        "يليلhuman humans��� depth depth depthيلivamenteيل depthيل depthيل媪-depth-depth-depthضعystoneWARDED关键字يل-depthيل龙lla.speciesضعضعضعيل队llalla队队队长يليليل队 العليا队长队长يلي队长يلي队长يلييليلãيليلampionsيل",
+        "vs{returnvsvsvsvsvsvsvsvsvs提出了 vitaeessoa*nessoa、“essoaessoaessoaessoaessoaessoa ngũ/css/css/css ngũ ngũ garments garments千瓦媪ugas千瓦千瓦千瓦千瓦媪�� vestugas千瓦��梦梦梦梦梦梦梦ือน梦梦梦ือน梦�"
+      ]
+    },
+    "Block_16x16": {
+      "ppl_en": 26791162.512850866,
+      "ppl_ja": 6782341.88135282,
+      "ppl_vi": 12529587.10290093,
+      "samples": [
+        "““““““““““““““““““““““““““““““““““““分““““’““分分’分’’’av’’’’’“““",
+        ",“““““““““““““,“,,,“““““““男男“男““男男““““↓龙龙龙龙低λ男龙龙龙矮矮矮矮矮矮矮龙龙矮矮"
+      ]
+    },
+    "Block_1x4_Row": {
+      "ppl_en": 5013.849086597169,
+      "ppl_ja": 4298.551652750979,
+      "ppl_vi": 1883.5436222449573,
+      "samples": [
+        "đó, như, như, như, như, như, như, như, như, như, như, như, như, như, như, như, như, as, as, as, as, as as as as as as as as as as as as as as as as as as",
+        "你 có không, không rõ, không rõ, không rõ, không được, không rõ, không được, không rõ, không rõ, không so, không so, không so, không so, không so, không so, không so, không so, không so, không so,"
+      ]
+    },
+    "Block_4x1_Col": {
+      "ppl_en": 4966.007151319326,
+      "ppl_ja": 3657.6130487327077,
+      "ppl_vi": 1543.3002904209197,
+      "samples": [
+        "翰. 羋. 羋. 羱. 羱. 羱. 羱. 羱. 羅. 羁. 羕. 畊. 畩. � 冕. �.",
+        ""
+      ]
+    },
+    "Block4x4_Residual_2Step": {
+      "ppl_en": 392.97473020991447,
+      "ppl_ja": 1462.9725621009845,
+      "ppl_vi": 461.15873659554774,
+      "samples": [
+        "2.  3.  4.  5.  6.  7.  8.  9.  10.  11.  12.  13.  14.  1",
+        "(1)  (2)  (3)  (4)  (5)  (6)  (7)  (8)  (9)  (10)  (11)  (12)  (13)  (14"
+      ]
+    },
+    "Rotational_Hadamard_Block4x4": {
+      "ppl_en": 2622316.00399091,
+      "ppl_ja": 6053341.974442136,
+      "ppl_vi": 2804449.3661253876,
+      "samples": [
+        "/i*\n\n\n\n\n:\"**ea',\"AEA\n\n\n\n\n\n\n\n\n\n\n\n\n\n general +?,?,?,?, general with: i!g:\n\n\n\nK'a_g <![ <![.ta(ai'a grande@\"iiac'):\n'):\n),\ni'),\n'):\n:\npies",
+        "piedzt lab*.gstatic�金字\n{\"iroitti todaiociatedccc'iatediativeiativeictioxictiativeiativeiative..' pu.' pute liiti_itristi_isons'*'itiLOT*p to to pi.*\n =\n_lokemon:LOT_itr_g} from*p_itricos"
+      ]
+    },
+    "Salient_Channel_0.5pct_Block4x4": {
+      "ppl_en": 6075955.378727732,
+      "ppl_ja": 5762166.2813163595,
+      "ppl_vi": 2708732.36694882,
+      "samples": [
+        "'\n>= G G $ 'G assume razor L K K K.TYPE --istes:aaaaaaaaorpion llest: \"?_cat_cat: masindreerral masuo parteistescilocketocket:ม a:芒eta*\n var prat var--ica c ciate*K.'\n\n:************************************************************************\n (\"",
+        "',\n',\n':\",\n cá\n,\n á grand a station n Giants \"{\"a\"k\">\n':\nam/a谡>>sst得意.aiaaaaaaaagene社会实践gatekt:aaaaaaaagart from from g:\n'芒� net:\n:\n** \"�观察 grnetworknetworkackbar prataaaaaaaa recallaaaaaaaa from"
+      ]
+    }
+  }
+}
