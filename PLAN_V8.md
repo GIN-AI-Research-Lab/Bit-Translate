@@ -1,4 +1,4 @@
-# PLAN V8 — Hai track: Sản phẩm ($0, 2-3 ngày) + Data-Train 18L ($0-2, 7-10 ngày)
+# PLAN V8 — Trọng tâm: Data + Train 18L ($0-2, 7-10 ngày); kèm vệ sinh deploy ($0, 0,5-1 ngày)
 
 > Tổng hợp 2026-07-30 từ 3 kế hoạch độc lập (data-first / scale-first / product-first),
 > mỗi cái đã qua 1 agent phản biện kiểm từng khẳng định với file repo. Các con số dưới đây
@@ -16,19 +16,20 @@
 > trong plan này (T2g là lựa chọn thí nghiệm duy nhất chạm tới nó). Tham khảo: ~14/24 dòng dịch
 > ổn với input nhận được, 5 lỗi thuộc model dịch.
 
-## Track P — Sản phẩm, không train ($0, 2-3 ngày) — LÀM TRƯỚC
+## Track D — Vệ sinh tầng deploy của repo ($0, 0,5-1 ngày) — KHÔNG phải cải thiện model
+
+> Phạm vi thu hẹp 30/7 theo quyết định user: chất lượng phải đến từ MODEL (Track T), không
+> vá ở tầng tool. Track D chỉ giữ 2 việc thuộc chính repo này — bảo đảm model được ship
+> ĐÚNG chất lượng đã đo, không thêm lớp che lỗi nào.
 
 | # | Việc | Chi tiết + điều kiện nghiệm thu |
 |---|------|--------------------------------|
-| P1 | **Chuẩn hoá client inference** | `v7a_deploy_pkg/src/translate.py` là đường chuẩn duy nhất. Sửa hoặc deprecate `demo/server.py` — nó đang dính 4 lỗi thật (phản biện kiểm từng dòng): gọi `/tokenize` của llama.cpp (đúng bug ISSUES #4, −16 điểm use đo thật), `repeat_penalty 1.25` (bench chuẩn 1.0), `n_predict 96` cứng (cắt câu dài), gửi token `>>fix<<`=32000 mà lineage v7a **chưa từng train** (HANDOFF:387). App Teams đã đi đường đúng (sidecar). |
-| P2 | **Bảng kính ngữ thư tín tầng tool** | 150-300 **TEMPLATE NGUYÊN CÂU** (⚠ phản biện: match cụm-cuối-segment sẽ tự vô hiệu vì ご清栄/ご査収 nằm GIỮA câu định hình). Gemini nháp → user duyệt mắt 1 lượt (bảng đóng, duyệt 1 lần). Nhắm id182/187/189 (⚠ id184 v7a ĐÃ đúng — bỏ khỏi danh sách). |
-| P3 | **Cờ confidence + fallback** | Tín hiệu: logprob (build BitNet-test CÓ n_probs — đã kiểm source server.cpp:882), tỉ lệ độ dài VI/JA ngoài [0,4;2,5], thiếu dấu câu cuối (nghi cắt cụt), loop n-gram (retry 1 lần rp=1.25 chỉ-khi-loop), rỗng. ⚠ Hiệu chỉnh trên lớp **acc≤1 (43 câu)** của judge 200b, không phải 13 câu acc==0 (quá mỏng). Precision-first; GO/NO-GO logprob ngay ngày 1. |
-| P4 | **Tốc độ + UX server** | `-t 8` (353 vs 301 tok/s @4 — TONGKET_V6 §4; sidecar app đang -t 4 → đổi), stream token, hàng đợi TUẦN TỰ (2 job song song chậm 5,6×), ghi chú cắm sạc. |
+| D1 | **Sửa/deprecate `demo/server.py`** | Đang dính 4 lỗi thật (phản biện kiểm từng dòng) làm ship DƯỚI chất lượng model: gọi `/tokenize` của llama.cpp (đúng bug ISSUES #4, −16 điểm use đo thật), `repeat_penalty 1.25` (bench chuẩn 1.0), `n_predict 96` cứng (cắt câu dài), gửi token `>>fix<<`=32000 mà lineage v7a **chưa từng train** (HANDOFF:387). Chuẩn duy nhất: `v7a_deploy_pkg/src/translate.py`. Nghiệm thu: 200 câu **`eval/bench_opus200b.jsonl`** (⚠ GHI CỨNG — translate_bench mặc định trỏ nhầm bench_new.jsonl) qua đường demo-đã-sửa vs đường bench, McNemar **p>0,1** cùng phiên. |
+| D2 | **Cấu hình tốc độ đã đo** | `-t 8` (353 vs 301 tok/s @4 — TONGKET_V6 §4; các client đang -t 4 → đổi), hàng đợi TUẦN TỰ (2 job song song chậm 5,6× — đo thật), ghi chú cắm sạc. Chỉ là áp số đã đo, không đổi hành vi dịch. |
 
-**Nghiệm thu Track P**: 200 câu **`eval/bench_opus200b.jsonl`** (⚠ GHI CỨNG — không phải
-bench_new.jsonl, translate_bench mặc định trỏ nhầm bộ) qua tool-path vs raw-path, chấm mù
-CÙNG PHIÊN, McNemar **p>0,1** (bỏ ngưỡng % tuyệt đối — thang judge trôi ±8 giữa phiên).
-Mini-bench thư tín: **n≥100** câu mine từ thư thật held-out (⚠ n=40 chênh 4 câu = nhiễu).
+**Đã LOẠI khỏi plan model** (đồ tầng tool, ai làm tool thì tự cân nhắc, không tính vào chất
+lượng model): bảng kính ngữ tra cứu (trùng vai T2a — kính ngữ phải do model HỌC), cờ
+confidence/fallback, stream UI, glossary/name-glossary phía app.
 
 ## Track T — Data + train tiếp 18L ($0-2, 7-10 ngày)
 
@@ -122,7 +123,7 @@ hoãn grow có regret ≈ 0), rải đều 6 block, max_seq 384 (bảng RoPE, 0 
 
 | Track | Tiền | Thời gian | Ghi chú |
 |---|---|---|---|
-| P (sản phẩm) | $0 | 2-3 ngày | chạy trước / song song đầu Track T |
+| D (vệ sinh deploy) | $0 | 0,5-1 ngày | chạy trước / song song đầu Track T |
 | T (data+train) | $0 + điện ~$1-2 | 7-10 ngày (GPU máy A chiếm 17-40h liên tục) | dự phòng Modal $12 CHỈ khi user duyệt |
 
 ## Không làm vòng này (kèm lý do đã kiểm)
