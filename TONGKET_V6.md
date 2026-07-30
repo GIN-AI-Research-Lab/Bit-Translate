@@ -1,5 +1,7 @@
 # TỔNG KẾT MODEL — vòng 6 (2026-07-28)
 
+> ⚠️ **Đã có V7A — xem `TONGKET_V7A.md` (v7a thay v6 làm bản deploy chính).**
+
 > Mọi con số dưới đây là **đo thật**, kèm nguồn. Chỗ nào chưa đo thì ghi rõ **CHƯA ĐO**
 > chứ không suy diễn. Chỗ nào không đạt ý nghĩa thống kê thì ghi rõ là nhiễu.
 

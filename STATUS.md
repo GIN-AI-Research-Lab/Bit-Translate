@@ -1,6 +1,55 @@
-# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-21 tối)
+# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-30)
+
+## 🟢 VÒNG V7A XONG (2026-07-28 → 30) — v7a_avg là bản deploy chính, thay v6
+
+> Thẻ model + bảng số đầy đủ: **`TONGKET_V7A.md`**. Kế hoạch gốc: `PLAN_V7A.md`.
+> Số liệu bench chính: `eval/judge_200b_claude/KETQUA.md`. Verdict gate: `logs/KETQUA_V7A_GATE.txt`.
+
+1. **Data KD vòng này: 623.007 câu** (Gemini Live API, 6 key × 20 session = 120 luồng,
+   dịch đạt 98% = 618.854 câu rồi dừng "đủ" — `logs/kd_v7a.log`). Sau QC còn **614.120 câu
+   mới (3,9%)**, gộp với corpus cũ → **15.921.937 cặp** (`kd_v7a_merged.jsonl`).
+   **Dev ĐÃ LỌC RÒ**: dev sạch **3.886 câu** (nợ 558 câu rò 12,56% từ vòng 6 đã trả).
+   Binarize `bin_v7g`: 15.885.724 seq / 946M token, bỏ 40.091 câu >256, mean len 59,6
+   (`logs/overnight_v7a.log`).
+2. **GATE trần scale (PLAN_V7A §1): 4.000 step trên Modal tritue12** (lr-restart 5e-5,
+   dev-every 500 trên dev sạch). Dev: 2,1283@500 → **2,0617@4000**, cuối gate vẫn giảm
+   **−0,011/1000 step**. Chấm mù long-OOD: **80% ≥ ngưỡng 78%** ⇒ **VERDICT: 18L CHƯA
+   ĐẾN TRẦN** — chạy tiếp nhánh 18L, hoãn grow 24L (`logs/KETQUA_V7A_GATE.txt`,
+   `eval/judge_gate_opus/`).
+3. **Train tiếp 4000 → 8750** (`train_v7a_p2.log`/`p3.log`): p2 chạy đến ~7970 thì
+   **hết credit tritue12 → failover sang tài khoản `nguyentuanngai`**, resume từ 7500.
+   Dev tiếp tục giảm: 2,0938@4500 (bump lr-restart) → 2,0579@8000 → **2,0569@8500**.
+   **Step 9000 KHÔNG kịp save** — container chết ngay sau dòng log cuối; milestone cuối
+   còn lại là 8750. **`v7a_avg` = trung bình 4 mốc step 8000–8750**; dev (thang ls=0):
+   v7a_avg **0,8435** vs gate_avg 0,8535 (`logs/v7a_final.log`).
+4. **Bench — hai lượt chấm mù độc lập:**
+   - **Opus chấm mù 200 câu tự sinh** (10 domain × 20, 100 ngắn/100 dài, 68 câu khó;
+     4 hệ v7a_i2s-deploy/Google/gate/v6 cùng phiên — `eval/judge_200b_claude/KETQUA.md`):
+     use% hòa 4 hệ ~92% (bench phổ thông đã trần). **v7a i2s ĐỨNG ĐẦU acc==2 78,5%**
+     (Google 69,0 / v6 75,5 / gate 74,5) và **nat==2 76,5%** (Google 60,0).
+     **Câu dài acc 73%** vs v6 67 / gate 65 (+6..+8 — đúng chỗ nhắm); câu khó 75,0%
+     vs v6 67,6. Bản i2_s deploy giữ nguyên chất lượng (xác nhận fix tokenizer #4).
+   - **Judge Gemini** (`eval/judge_v7a_opus/` n=100 OOD, `eval/judge_v7a_rand/` n=200):
+     opus100 acc==2: v7a 87% = v6-pt 87%, gate 81%, Google 89%; rand200: v7a 79%,
+     v6-pt 83%, Google 75,5%. Chênh v7a vs v6-pt ở rand KHÔNG có ý nghĩa (McNemar
+     8 hơn/16 kém, p≈0,15) — không mâu thuẫn với bench Opus 4-hệ-cùng-phiên ở trên.
+5. **Deploy**: `D:/Bit-Translate-data/dist/v7a_avg_i2s.gguf` (**77,56MB**, ~350 tok/s
+   @6-8 luồng CPU laptop, llama-server + token ids theo ISSUES #4). Gói deploy cho tool
+   dịch: `D:/Bit-Translate-data/dist/v7a_deploy_pkg/` (đang đóng song song).
+6. **Ngân sách Modal: HẾT.** tritue12 = $0; `nguyentuanngai` đã lố hạn mức $3 free sang
+   tiền thật (user đã stop, KHÔNG train trả phí nữa). Đường train miễn phí còn lại duy
+   nhất: **máy A desktop (3060 Ti 8GB + 48GB RAM, WSL2)** theo cấu hình CLAUDE.md §7,
+   ước chậm hơn L40S 2-4×.
+7. **Lỗi còn lại** (từ bench 200b): cụm kính ngữ thư tín cố định (ご査収/お納めください/
+   ご清栄/取り急ぎ — id182/184/187/189) + nghĩa phụ động từ thường theo ngữ cảnh
+   (当たる=trút giận id67, 漏れかける=suýt lộ id169 — cả 4 hệ cùng fail); domain
+   `art_ent` 80% use (Google 95%), `formal_letter` 80%. → **ISSUES.md #5 (MỚI)**.
+   Câu dài: tiến triển +6 điểm nhưng vẫn dưới câu ngắn (73 vs 84) → ISSUES #1 còn MỞ.
 
 ## ⏭️ VIỆC TIẾP THEO (đọc trước khi làm gì mới — máy khác đọc mục này là đủ bắt nhịp)
+
+> ⚠️ Mục dưới đây là trạng thái 2026-07-21 (trước vòng 5/6/V7A) — giữ làm hồ sơ.
+> Trạng thái mới nhất: đọc mục 🟢 V7A ở trên + `TONGKET_V7A.md` + `PLAN_V7A.md`.
 
 1. **KẾT LUẬN CHUỖI THÍ NGHIỆM 100M ja→vi (v1→v3→v4→clean-finetune, 2026-07-21):
    MỌI đòn bẩy data-nhỏ-giọt và decoding ĐÃ THỬ VÀ ĐỀU KHÔNG PHÁ ĐƯỢC TRẦN.**

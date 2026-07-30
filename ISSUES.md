@@ -4,9 +4,24 @@
 
 ---
 
-## #1 — Câu dài: vị trí token >160 gần như chưa được luyện (MỞ)
+## #1 — Câu dài: vị trí token >160 gần như chưa được luyện (MỞ — có tiến triển V7A)
 
 **Phát hiện 2026-07-28, sau vòng 6.**
+
+### Tiến triển V7A (2026-07-30) — CHƯA ĐÓNG
+
+Vòng V7A bơm data câu dài (đào theo độ dài + ghép liền kề, `PLAN_V7A.md` §3a). Kết quả
+đo trên bench 200b chấm mù cùng phiên (`eval/judge_200b_claude/KETQUA.md`):
+
+| acc==2 câu dài (n=100) | v6 | gate | **v7a i2s** |
+|---|---:|---:|---:|
+| | 67% | 65% | **73%** |
+
+**+6 điểm so v6, +8 so gate — đúng chỗ nhắm.** Nhưng vẫn dưới câu ngắn 11 điểm
+(73 vs 84) và nat==2 câu dài mới 64% ⇒ issue **giữ trạng thái MỞ**. Bench 200b câu dài
+= 96–228 ký tự (trung vị 150, đo trên `bench_opus200b.jsonl`) — khác bench TED cũ
+(72–77 ký tự) nên lần này CÓ đo được vùng dài; câu Quốc hội thật vẫn nên kiểm thêm
+bằng `bench_held_*.jsonl` như ghi ở dưới.
 
 ### Số đo
 
@@ -379,3 +394,54 @@ eval/judge_final/RESULT.json   <- diem judge 4 he cung phien
 D:/Bit-Translate-data/dist/v6_avg_i2s.gguf        77,56 MB
 D:/Bit-Translate-data/dist/v6_s16400_i2s.gguf     77,56 MB
 ```
+
+---
+
+## #5 — Cụm kính ngữ thư tín cố định + nghĩa phụ của động từ thường (MỞ)
+
+**Phát hiện 2026-07-30, từ bench 200b chấm mù 4 hệ (`eval/judge_200b_claude/KETQUA.md`).**
+
+### Số đo — evidence từng câu
+
+Hai lớp lỗi, đều là **class B (nghĩa theo ngữ cảnh)** — không phải thiếu thuật ngữ
+(khớp `loi-that-la-cau-truc-khong-phai-thuat-ngu`: thuật ngữ chỉ 3% lỗi):
+
+**(a) Nghĩa phụ của động từ thường — CẢ 4 HỆ (v7a/Google/gate/v6) cùng fail:**
+
+| id | câu | bẫy |
+|---|---|---|
+| **id67** | つい子どもに当たってしまう | 当たる = "trút giận lên con" — cả 4 dịch theo nghĩa đen "trúng/đánh" |
+| **id169** | 情報が漏れかけた | 〜かけた = "SUÝT lộ" — cả 4 dịch thành "đã lộ", mất thể chưa-hoàn-thành |
+
+**(b) Cụm kính ngữ thư tín thương mại cố định — giết nhiều hệ cùng lúc:**
+
+| id | cụm | ai đúng |
+|---|---|---|
+| **id187** | 心ばかりの品ですがお納めください | **cả 4 hệ fail** (dịch thành "thanh toán/nộp/tặng cho tôi") |
+| id182 | ご査収 | chỉ Google đúng |
+| id184 | 取り急ぎご報告まで | chỉ v7a đúng |
+| id189 | ご清栄 | chỉ Google tạm được |
+
+Domain liên quan: `formal_letter` use chỉ 80% (v6 từng 90%), `art_ent` 80% (Google 95%).
+
+### Vì sao đây là bẫy chung
+
+3 câu (id67/169/187) cả 4 hệ — kể cả Google — cùng sai, tức không phải lỗi riêng của
+model nhỏ: đây là những mục **tần suất thấp + mặt chữ đánh lừa** (động từ phổ thông mang
+nghĩa phụ, quán ngữ thư tín chỉ xuất hiện trong business letter). Corpus KD hiện đào theo
+khuôn mẫu/miền, chưa từng nhắm danh sách biểu thức thư tín hay cặp nghĩa đa nghĩa.
+
+### Hướng fix (chưa làm)
+
+1. **KD data nhắm cụm cố định**: lập danh sách biểu thức thư tín thương mại (ご査収/
+   お納めください/ご清栄/取り急ぎ/ご笑納/ご自愛… — danh sách công khai, lớp từ ĐÓNG,
+   vài trăm mục) → mine câu chứa trong CC-100 → KD Live API. Đúng công thức lexicon
+   đã thắng ở chiến dịch katakana (PLAN_V7A §2).
+2. **Cặp câu tối thiểu phân biệt nghĩa động từ đa nghĩa**: với mỗi động từ phổ thông đa
+   nghĩa (当たる, 納める, 漏れる±かける, 押される…), sinh cặp câu chỉ khác ngữ cảnh —
+   mỗi nghĩa một câu — để model học phân nhánh theo ngữ cảnh thay vì nghĩa đen tần suất cao.
+
+### Cách kiểm lại
+
+Dịch lại các id 67/169/182/184/187/189 trong `eval/bench_opus200b.jsonl` + bench mini
+riêng cho danh sách biểu thức thư tín (chưa dựng); so trước/sau bằng chấm mù cùng phiên.

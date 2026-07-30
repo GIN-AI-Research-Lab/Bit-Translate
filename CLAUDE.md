@@ -1,9 +1,9 @@
 # Dự án: Model dịch Việt ↔ Nhật 1.58-bit siêu nhẹ chạy CPU
 
-> ⚠️ **TRẠNG THÁI HIỆN TẠI (Cập nhật 2026-07-21):**
-> - **Kế hoạch chiến lược đang thực thi**: `PLAN_KD_JA2VI.md` (Phương án A — Full Knowledge Distillation ja→vi trên model 100M v4 step 15500).
-> - **Nhật ký tiến độ chi tiết & checkpoint**: `STATUS.md` và `ARTIFACTS.md`.
-> - **Thầy chính sinh KD**: `gemini-flash-lite-latest` (Paid/Free tier) + `qwen-plus` (xem `PROVIDERS.md`).
+> ⚠️ **TRẠNG THÁI HIỆN TẠI (Cập nhật 2026-07-30):**
+> - **Vòng V7A XONG — bản deploy chính là `v7a_avg` (152M, 18L)**: thẻ model + số liệu đầy đủ ở **`TONGKET_V7A.md`**; nhật ký tiến độ & vị trí checkpoint: **`STATUS.md`** (mục 🟢 V7A) và `ARTIFACTS.md`.
+> - Bench 200 câu chấm mù: v7a i2s deploy **đứng đầu acc 78,5%** (Google 69,0), câu ngắn đè Google, câu dài +6..+8 so v6/gate. Gate kết luận **18L chưa đến trần** — chưa grow 24L (`PLAN_V7A.md`).
+> - **Thầy sinh KD**: Gemini Live API (6 key, gần như miễn phí). **Modal đã cạn tiền cả 2 tài khoản** — train tiếp chỉ còn đường miễn phí là máy A desktop (§7).
 > - File ngữ cảnh này giữ vai trò định hướng tổng thể về phần cứng và kiến thức nền BitNet.
 
 ## 1. Mục tiêu

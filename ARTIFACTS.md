@@ -1,6 +1,6 @@
 # ARTIFACTS — checkpoint & model đang ở đâu
 
-> Bản đồ vị trí mọi checkpoint/model/data. **Cập nhật 2026-07-21.**
+> Bản đồ vị trí mọi checkpoint/model/data. **Cập nhật 2026-07-30.**
 > ⚠️ Các file nặng dưới đây **KHÔNG nằm trong git** (`.gitignore` loại `checkpoints/ cloud_backup/ dist/ data/`).
 > **Backup:** data + checkpoint train + model deploy đã có **bản trên GitHub Release** (mục áp cuối) — mất ổ local vẫn tải lại được.
 
@@ -78,3 +78,51 @@ hết credit) — xem `[[doi-tai-khoan-modal-khi-het-credit]]`.
 | `ISSUES.md` | Issue #1 câu dài — MỞ |
 
 ⚠️ `logs/kd_*.log` bị gitignore: hàng chục MB thông báo lỗi quota lặp lại, không có giá trị.
+
+---
+
+## VÒNG V7A (2026-07-30) — v7a_avg là bản deploy chính
+
+### Checkpoint (local, `D:/Bit-Translate-data/checkpoints_v7a/`)
+
+| File | Là gì |
+|---|---|
+| **`v7a_avg.pt`** | **Trung bình 4 mốc step 8000–8750 — model tốt nhất hiện có** ⭐ |
+| `gate_avg.pt` | Trung bình 4 mốc cuối gate 4000 step (mốc so sánh "gate" trong bench) |
+| `p2_avg.pt` | Trung bình các mốc cuối phase 2 (trước failover) |
+| `step6000.pt` … `step8750.pt` | 12 milestone thô (KEEP=12); step 9000 KHÔNG tồn tại — container chết trước khi save |
+| `last.pt` / `last_p3.pt` | Bộ resume cuối (p3 kèm optimizer state, 1,8GB) |
+
+### Model deploy (`D:/Bit-Translate-data/dist/`)
+
+| File | Nặng | Ghi chú |
+|---|---:|---|
+| **`v7a_avg_i2s.gguf`** | **77,56 MB** | Bản deploy chính, ~350 tok/s @6-8 luồng CPU. Chạy qua llama-server + token ids (ISSUES #4) |
+| `v7a_avg_f32.gguf` | 609 MB | Nguồn để quantize lại (`llama-quantize ... I2_S 1`) |
+| **`v7a_deploy_pkg/`** | — | **Gói deploy cho tool dịch** (bin/model/src/tokenizer — đang đóng song song) |
+
+### Data & bin
+
+| Artifact | Vị trí | Ghi chú |
+|---|---|---|
+| KD v7a thô | `D:/Bit-Translate-data/v7a/` + `logs/kd_v7a.log` | 623.007 câu todo, dịch 98% (Gemini Live API 6 key) |
+| `kd_v7a_merged.jsonl` | `D:/Bit-Translate-data/` | 15.921.937 cặp = corpus cũ + 614.120 câu mới sau QC |
+| `clean_v7g/` | `D:/Bit-Translate-data/` | train = merged, **dev SẠCH 3.886 câu** (đã lọc rò 12,56%) |
+| **`bin_v7g/`** | `D:/Bit-Translate-data/` + **Modal volume tritue12** | 15.885.724 seq / 946M token — bin train chính V7A |
+| `bin_v7a` | Modal volume | Bin trung gian vòng V7A (bản trước khi chốt v7g) |
+
+### Kết quả đo — ĐÃ COMMIT vào git (nhẹ)
+
+| File | Nội dung |
+|---|---|
+| `eval/judge_200b_claude/KETQUA.md` + `judges/` | **Bench chính**: 200 câu Opus tự sinh + chấm mù 4 hệ cùng phiên |
+| `eval/bench_opus200b.jsonl` (+`_p1`/`_p2`) | 200 câu nguồn tiếng Nhật của bench trên |
+| `eval/bench_200b_{v7ai2s,google,gate,v6}.jsonl` | Bản dịch 4 hệ của bench 200b |
+| `eval/judge_gate_opus/` | Chấm gate (verdict 18L chưa trần) — kèm `logs/KETQUA_V7A_GATE.txt` |
+| `eval/judge_v7a_opus/`, `eval/judge_v7a_rand/` | Judge Gemini: opus100 OOD + rand200 in-domain |
+| `eval/bench_v7aopus.jsonl`, `eval/bench_v7arand.jsonl` | Bản dịch v7a_avg (PyTorch) cho 2 panel trên |
+| `logs/train_v7a_gate.log`, `train_v7a_p2.log`, `train_v7a_p3.log` | Log train 3 phase (gate → p2 tritue12 → p3 nguyentuanngai) |
+| `logs/v7a_final.log`, `logs/overnight_v7a.log` | Dev-loss cuối + pipeline KD/merge/binarize |
+
+⚠️ **Modal: cả hai tài khoản đã cạn** (tritue12 = $0, nguyentuanngai lố hạn mức free) —
+milestone trên volume Modal coi như CHỈ ĐỌC, cái gì cần đã tải về `checkpoints_v7a/` local.
