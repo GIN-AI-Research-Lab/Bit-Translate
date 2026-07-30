@@ -1,0 +1,20 @@
+v7a_avg dev_loss (thang ls=0, moc gate_avg=0.8535): 0.8435
+[v7aopus] dịch 100 câu...
+  18L d768 | 152.1M
+  25/100 (27s)
+  50/100 (57s)
+  75/100 (80s)
+  100/100 (120s)
+[v7aopus] -> E:\Bit-Translate\eval\bench_v7aopus.jsonl
+[v7arand] dịch 200 câu...
+  18L d768 | 152.1M
+  25/200 (24s)
+  50/200 (47s)
+  75/200 (104s)
+  100/200 (155s)
+  125/200 (178s)
+  150/200 (201s)
+  175/200 (272s)
+  200/200 (340s)
+[v7arand] -> E:\Bit-Translate\eval\bench_v7arand.jsonl
+=== V7A FINAL: dev + 2 bench XONG ===

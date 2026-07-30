@@ -1,0 +1,26 @@
+[backup] volume=vija-100m-kd-vol/checkpoints_v7a -> /d/Bit-Translate-data/checkpoints_v7a | chu ky 180s
+[backup] Ctrl-C de dung. Log: logs/backup_checkpoints_v7a.log
+[backup 10:15:56] tai step8000.pt ...
+  OK step8000.pt step 8000
+[backup 10:16:30] tia step5000.pt
+[backup 10:19:39] tai step8250.pt ...
+  OK step8250.pt step 8250
+[backup 10:20:15] tia step5250.pt
+[backup 10:26:32] tai step8500.pt ...
+  OK step8500.pt step 8500
+[backup 10:27:01] tia step5000.pt
+[backup 10:27:01] tia step5250.pt
+rm: cannot remove '/d/Bit-Translate-data/checkpoints_v7a/step5250.pt': Device or resource busy
+[backup 10:27:01] tia step5500.pt
+[backup 10:30:11] tai step8750.pt ...
+  OK step8750.pt step 8750
+[backup 10:30:39] tia step5750.pt
+[backup 10:33:49] tia step5000.pt
+rm: cannot remove '/d/Bit-Translate-data/checkpoints_v7a/step5000.pt': Device or resource busy
+[backup 10:33:50] tia step5250.pt
+rm: cannot remove '/d/Bit-Translate-data/checkpoints_v7a/step5250.pt': Device or resource busy
+[backup 10:40:07] tia step5000.pt
+rm: cannot remove '/d/Bit-Translate-data/checkpoints_v7a/step5000.pt': Device or resource busy
+[backup 10:43:18] tia step5000.pt
+rm: cannot remove '/d/Bit-Translate-data/checkpoints_v7a/step5000.pt': Device or resource busy
+[backup 10:52:55] tia step5000.pt

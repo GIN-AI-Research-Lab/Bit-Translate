@@ -1,0 +1,309 @@
+✓ Initialized. View run at 
+https://modal.com/apps/nguyentuanngai/main/ap-XCxqaf1AkpjmYDfptA5QWo
+✓ Created objects.
+├── 🔨 Created mount E:\Bit-Translate\cloud\modal_train_100m_kd.py
+├── 🔨 Created mount E:\Bit-Translate\tokenizer
+├── 🔨 Created mount E:\Bit-Translate\src
+├── 🔨 Created mount E:\Bit-Translate\scripts
+├── 🔨 Created function train.
+├── 🔨 Created function train_v5.
+├── 🔨 Created function train_v6.
+├── 🔨 Created function train_v4.
+├── 🔨 Created function train_v3.
+├── 🔨 Created function train_v2.
+├── 🔨 Created function finetune_p2.
+└── 🔨 Created function status.
+>> VÒNG 6: 18 layer, từ '?' step=7500
+   cd /root/bt && python3 scripts/train.py --d-model 768 --n-layers 18 --n-heads 12 --d-ff 2048 --vocab-size 32001 --max-tokens 8192 --grad-accum 16 --max-seq 256 --compile --fixed-shapes --pad-multiple 32 --label-smoothing 0.1 --bin-dir data/bin_v7g --lr 5e-05 --min-lr 5.00e-06 --warmup 200 --lr-anchor 0 --max-steps 9000 --save-every 250 --milestone-every 250 --log-every 10 --dev-every 500
+data bin: data/bin_v7g
+train sequences: 15,881,846 | tokens: 945,789,007
+dev sequences: 3,878 | 36 lô | đo mỗi 500 step
+params: 152.1M (d=768 L=18 H=12 ff=2048)
+checkpoint không có optimizer state -> dùng optimizer mới
+resumed at step 7500
+torch.compile enabled (dynamic=True, recompile_limit=64)
+=== start/resume step=7500 max_steps=9000 max_tokens=8192 grad_accum=16 lr=5e-05 ===
+[guardian] Volume committed
+[guardian] Volume committed
+[guardian] Volume committed
+[guardian] Volume committed
+[guardian] Volume committed
+[guardian] Volume committed
+[guardian] Volume committed
+[guardian] Volume committed
+step 7510 | loss 2.0297 | lr 8.11e-06 | 218 tok/s | 255.48s/step
+step 7520 | loss 2.0276 | lr 8.07e-06 | 44,562 tok/s | 1.25s/step
+step 7530 | loss 2.0268 | lr 8.03e-06 | 43,559 tok/s | 1.25s/step
+step 7540 | loss 2.0389 | lr 7.99e-06 | 45,219 tok/s | 1.25s/step
+step 7550 | loss 2.0157 | lr 7.95e-06 | 43,129 tok/s | 1.26s/step
+step 7560 | loss 2.0186 | lr 7.91e-06 | 43,134 tok/s | 1.26s/step
+step 7570 | loss 2.0351 | lr 7.87e-06 | 44,612 tok/s | 1.26s/step
+step 7580 | loss 2.0263 | lr 7.83e-06 | 43,388 tok/s | 1.26s/step
+step 7590 | loss 2.0244 | lr 7.79e-06 | 43,915 tok/s | 1.27s/step
+step 7600 | loss 2.0354 | lr 7.76e-06 | 44,606 tok/s | 1.27s/step
+step 7610 | loss 2.0175 | lr 7.72e-06 | 42,720 tok/s | 1.27s/step
+[guardian] Volume committed
+step 7620 | loss 2.0279 | lr 7.68e-06 | 43,531 tok/s | 1.27s/step
+step 7630 | loss 2.0293 | lr 7.64e-06 | 44,277 tok/s | 1.27s/step
+step 7640 | loss 2.0249 | lr 7.60e-06 | 43,185 tok/s | 1.29s/step
+step 7650 | loss 2.0364 | lr 7.57e-06 | 43,750 tok/s | 1.29s/step
+step 7660 | loss 2.0291 | lr 7.53e-06 | 43,995 tok/s | 1.28s/step
+step 7670 | loss 2.0313 | lr 7.49e-06 | 43,648 tok/s | 1.29s/step
+step 7680 | loss 2.0324 | lr 7.46e-06 | 43,833 tok/s | 1.27s/step
+step 7690 | loss 2.0215 | lr 7.42e-06 | 42,898 tok/s | 1.28s/step
+step 7700 | loss 2.0306 | lr 7.38e-06 | 43,836 tok/s | 1.29s/step
+step 7710 | loss 2.0140 | lr 7.35e-06 | 41,886 tok/s | 1.30s/step
+step 7720 | loss 2.0299 | lr 7.31e-06 | 43,461 tok/s | 1.30s/step
+step 7730 | loss 2.0311 | lr 7.28e-06 | 43,436 tok/s | 1.29s/step
+step 7740 | loss 2.0248 | lr 7.24e-06 | 42,500 tok/s | 1.28s/step
+step 7750 | loss 2.0217 | lr 7.21e-06 | 43,401 tok/s | 1.28s/step
+  saved checkpoint @ step 7750
+step 7760 | loss 2.0292 | lr 7.17e-06 | 32,666 tok/s | 1.70s/step
+step 7770 | loss 2.0137 | lr 7.14e-06 | 41,295 tok/s | 1.28s/step
+step 7780 | loss 2.0350 | lr 7.10e-06 | 43,788 tok/s | 1.28s/step
+step 7790 | loss 2.0295 | lr 7.07e-06 | 44,127 tok/s | 1.30s/step
+step 7800 | loss 2.0373 | lr 7.04e-06 | 43,263 tok/s | 1.30s/step
+step 7810 | loss 2.0277 | lr 7.00e-06 | 43,282 tok/s | 1.31s/step
+step 7820 | loss 2.0341 | lr 6.97e-06 | 43,219 tok/s | 1.29s/step
+step 7830 | loss 2.0204 | lr 6.94e-06 | 42,977 tok/s | 1.29s/step
+step 7840 | loss 2.0195 | lr 6.91e-06 | 42,660 tok/s | 1.29s/step
+[guardian] Volume committed
+step 7850 | loss 2.0227 | lr 6.87e-06 | 42,736 tok/s | 1.29s/step
+step 7860 | loss 2.0281 | lr 6.84e-06 | 42,739 tok/s | 1.30s/step
+step 7870 | loss 2.0140 | lr 6.81e-06 | 41,329 tok/s | 1.31s/step
+step 7880 | loss 2.0292 | lr 6.78e-06 | 42,915 tok/s | 1.30s/step
+step 7890 | loss 2.0310 | lr 6.75e-06 | 43,807 tok/s | 1.29s/step
+step 7900 | loss 2.0217 | lr 6.72e-06 | 42,220 tok/s | 1.29s/step
+step 7910 | loss 2.0284 | lr 6.69e-06 | 43,105 tok/s | 1.29s/step
+step 7920 | loss 2.0294 | lr 6.65e-06 | 38,067 tok/s | 1.47s/step
+step 7930 | loss 2.0288 | lr 6.62e-06 | 42,932 tok/s | 1.31s/step
+step 7940 | loss 2.0211 | lr 6.59e-06 | 41,855 tok/s | 1.32s/step
+step 7950 | loss 2.0200 | lr 6.57e-06 | 42,001 tok/s | 1.31s/step
+step 7960 | loss 2.0285 | lr 6.54e-06 | 42,867 tok/s | 1.30s/step
+step 7970 | loss 2.0348 | lr 6.51e-06 | 42,942 tok/s | 1.29s/step
+step 7980 | loss 2.0168 | lr 6.48e-06 | 41,821 tok/s | 1.29s/step
+step 7990 | loss 2.0287 | lr 6.45e-06 | 42,767 tok/s | 1.29s/step
+step 8000 | loss 2.0195 | lr 6.42e-06 | 41,832 tok/s | 1.31s/step
+  DEV step 8000 | dev_loss 2.0579 | 4s
+  saved checkpoint @ step 8000
+step 8010 | loss 2.0267 | lr 6.39e-06 | 34,267 tok/s | 1.64s/step
+step 8020 | loss 2.0137 | lr 6.37e-06 | 42,163 tok/s | 1.29s/step
+step 8030 | loss 2.0217 | lr 6.34e-06 | 42,279 tok/s | 1.28s/step
+step 8040 | loss 2.0323 | lr 6.31e-06 | 43,500 tok/s | 1.28s/step
+step 8050 | loss 2.0303 | lr 6.28e-06 | 43,256 tok/s | 1.28s/step
+step 8060 | loss 2.0177 | lr 6.26e-06 | 43,088 tok/s | 1.28s/step
+step 8070 | loss 2.0167 | lr 6.23e-06 | 42,339 tok/s | 1.29s/step
+[guardian] Volume committed
+step 8080 | loss 2.0251 | lr 6.21e-06 | 43,145 tok/s | 1.30s/step
+step 8090 | loss 2.0137 | lr 6.18e-06 | 41,869 tok/s | 1.30s/step
+step 8100 | loss 2.0315 | lr 6.15e-06 | 43,225 tok/s | 1.29s/step
+step 8110 | loss 2.0203 | lr 6.13e-06 | 42,816 tok/s | 1.29s/step
+step 8120 | loss 2.0240 | lr 6.10e-06 | 43,765 tok/s | 1.29s/step
+step 8130 | loss 2.0214 | lr 6.08e-06 | 42,459 tok/s | 1.29s/step
+step 8140 | loss 2.0212 | lr 6.05e-06 | 42,833 tok/s | 1.30s/step
+step 8150 | loss 2.0278 | lr 6.03e-06 | 42,656 tok/s | 1.30s/step
+step 8160 | loss 2.0244 | lr 6.01e-06 | 42,239 tok/s | 1.29s/step
+step 8170 | loss 2.0275 | lr 5.98e-06 | 43,530 tok/s | 1.29s/step
+step 8180 | loss 2.0122 | lr 5.96e-06 | 42,198 tok/s | 1.29s/step
+step 8190 | loss 2.0101 | lr 5.94e-06 | 40,904 tok/s | 1.29s/step
+step 8200 | loss 2.0322 | lr 5.91e-06 | 43,513 tok/s | 1.30s/step
+step 8210 | loss 2.0156 | lr 5.89e-06 | 41,338 tok/s | 1.31s/step
+step 8220 | loss 2.0348 | lr 5.87e-06 | 43,381 tok/s | 1.30s/step
+step 8230 | loss 2.0210 | lr 5.85e-06 | 42,967 tok/s | 1.28s/step
+step 8240 | loss 2.0129 | lr 5.83e-06 | 42,659 tok/s | 1.28s/step
+step 8250 | loss 2.0298 | lr 5.80e-06 | 43,355 tok/s | 1.31s/step
+  saved checkpoint @ step 8250
+step 8260 | loss 2.0395 | lr 5.78e-06 | 32,654 tok/s | 1.74s/step
+step 8270 | loss 2.0255 | lr 5.76e-06 | 43,254 tok/s | 1.29s/step
+step 8280 | loss 2.0251 | lr 5.74e-06 | 42,819 tok/s | 1.29s/step
+step 8290 | loss 2.0321 | lr 5.72e-06 | 43,859 tok/s | 1.30s/step
+step 8300 | loss 2.0160 | lr 5.70e-06 | 41,664 tok/s | 1.30s/step
+[guardian] Volume committed
+step 8310 | loss 2.0233 | lr 5.68e-06 | 42,236 tok/s | 1.31s/step
+step 8320 | loss 2.0251 | lr 5.66e-06 | 42,410 tok/s | 1.32s/step
+step 8330 | loss 2.0362 | lr 5.64e-06 | 42,446 tok/s | 1.32s/step
+step 8340 | loss 2.0095 | lr 5.62e-06 | 42,320 tok/s | 1.29s/step
+step 8350 | loss 2.0160 | lr 5.60e-06 | 42,494 tok/s | 1.28s/step
+step 8360 | loss 2.0092 | lr 5.59e-06 | 41,737 tok/s | 1.29s/step
+step 8370 | loss 2.0195 | lr 5.57e-06 | 42,160 tok/s | 1.29s/step
+step 8380 | loss 2.0117 | lr 5.55e-06 | 42,330 tok/s | 1.30s/step
+step 8390 | loss 2.0202 | lr 5.53e-06 | 38,085 tok/s | 1.47s/step
+step 8400 | loss 2.0255 | lr 5.52e-06 | 42,644 tok/s | 1.30s/step
+step 8410 | loss 2.0205 | lr 5.50e-06 | 42,514 tok/s | 1.29s/step
+step 8420 | loss 2.0122 | lr 5.48e-06 | 41,150 tok/s | 1.31s/step
+step 8430 | loss 2.0239 | lr 5.47e-06 | 41,915 tok/s | 1.34s/step
+step 8440 | loss 2.0199 | lr 5.45e-06 | 41,787 tok/s | 1.30s/step
+step 8450 | loss 2.0303 | lr 5.43e-06 | 43,738 tok/s | 1.30s/step
+step 8460 | loss 2.0302 | lr 5.42e-06 | 42,575 tok/s | 1.30s/step
+step 8470 | loss 2.0138 | lr 5.40e-06 | 42,023 tok/s | 1.31s/step
+step 8480 | loss 2.0214 | lr 5.39e-06 | 42,991 tok/s | 1.31s/step
+step 8490 | loss 2.0312 | lr 5.37e-06 | 43,563 tok/s | 1.31s/step
+step 8500 | loss 2.0312 | lr 5.36e-06 | 42,894 tok/s | 1.31s/step
+  DEV step 8500 | dev_loss 2.0569 | 3s
+  saved checkpoint @ step 8500
+step 8510 | loss 2.0221 | lr 5.34e-06 | 33,928 tok/s | 1.64s/step
+step 8520 | loss 2.0281 | lr 5.33e-06 | 43,543 tok/s | 1.29s/step
+[guardian] Volume committed
+step 8530 | loss 2.0309 | lr 5.32e-06 | 39,802 tok/s | 1.39s/step
+step 8540 | loss 2.0297 | lr 5.30e-06 | 43,403 tok/s | 1.30s/step
+step 8550 | loss 2.0222 | lr 5.29e-06 | 42,428 tok/s | 1.31s/step
+step 8560 | loss 2.0279 | lr 5.28e-06 | 41,665 tok/s | 1.32s/step
+step 8570 | loss 2.0188 | lr 5.27e-06 | 41,532 tok/s | 1.31s/step
+step 8580 | loss 2.0200 | lr 5.25e-06 | 42,425 tok/s | 1.30s/step
+step 8590 | loss 2.0188 | lr 5.24e-06 | 42,623 tok/s | 1.29s/step
+step 8600 | loss 2.0281 | lr 5.23e-06 | 43,425 tok/s | 1.29s/step
+step 8610 | loss 2.0226 | lr 5.22e-06 | 42,782 tok/s | 1.29s/step
+step 8620 | loss 2.0166 | lr 5.21e-06 | 43,044 tok/s | 1.30s/step
+step 8630 | loss 2.0271 | lr 5.20e-06 | 43,047 tok/s | 1.30s/step
+step 8640 | loss 2.0308 | lr 5.19e-06 | 43,376 tok/s | 1.30s/step
+step 8650 | loss 2.0344 | lr 5.18e-06 | 43,319 tok/s | 1.30s/step
+step 8660 | loss 2.0240 | lr 5.17e-06 | 42,902 tok/s | 1.29s/step
+step 8670 | loss 2.0191 | lr 5.16e-06 | 42,726 tok/s | 1.30s/step
+step 8680 | loss 2.0299 | lr 5.15e-06 | 44,105 tok/s | 1.30s/step
+step 8690 | loss 2.0142 | lr 5.14e-06 | 41,700 tok/s | 1.30s/step
+step 8700 | loss 2.0282 | lr 5.13e-06 | 43,134 tok/s | 1.31s/step
+step 8710 | loss 2.0123 | lr 5.12e-06 | 41,438 tok/s | 1.31s/step
+step 8720 | loss 2.0191 | lr 5.11e-06 | 42,097 tok/s | 1.31s/step
+step 8730 | loss 2.0202 | lr 5.11e-06 | 41,559 tok/s | 1.32s/step
+step 8740 | loss 2.0186 | lr 5.10e-06 | 40,693 tok/s | 1.36s/step
+step 8750 | loss 2.0232 | lr 5.09e-06 | 42,327 tok/s | 1.31s/step
+  saved checkpoint @ step 8750
+[guardian] Volume committed
+step 8760 | loss 2.0241 | lr 5.08e-06 | 32,837 tok/s | 1.68s/step
+step 8770 | loss 2.0339 | lr 5.08e-06 | 43,362 tok/s | 1.31s/step
+step 8780 | loss 2.0294 | lr 5.07e-06 | 42,767 tok/s | 1.31s/step
+step 8790 | loss 2.0236 | lr 5.06e-06 | 41,428 tok/s | 1.31s/step
+step 8800 | loss 2.0202 | lr 5.06e-06 | 42,009 tok/s | 1.31s/step
+step 8810 | loss 2.0053 | lr 5.05e-06 | 41,319 tok/s | 1.31s/step
+step 8820 | loss 2.0131 | lr 5.05e-06 | 41,930 tok/s | 1.31s/step
+step 8830 | loss 2.0295 | lr 5.04e-06 | 42,835 tok/s | 1.31s/step
+step 8840 | loss 2.0190 | lr 5.04e-06 | 42,029 tok/s | 1.31s/step
+step 8850 | loss 2.0187 | lr 5.03e-06 | 42,132 tok/s | 1.32s/step
+step 8860 | loss 2.0217 | lr 5.03e-06 | 37,688 tok/s | 1.44s/step
+step 8870 | loss 2.0286 | lr 5.02e-06 | 42,060 tok/s | 1.35s/step
+step 8880 | loss 2.0135 | lr 5.02e-06 | 39,613 tok/s | 1.37s/step
+step 8890 | loss 2.0184 | lr 5.02e-06 | 41,517 tok/s | 1.32s/step
+step 8900 | loss 2.0167 | lr 5.01e-06 | 41,816 tok/s | 1.30s/step
+step 8910 | loss 2.0120 | lr 5.01e-06 | 40,686 tok/s | 1.31s/step
+step 8920 | loss 2.0262 | lr 5.01e-06 | 42,736 tok/s | 1.31s/step
+step 8930 | loss 2.0235 | lr 5.01e-06 | 42,476 tok/s | 1.30s/step
+step 8940 | loss 2.0267 | lr 5.01e-06 | 43,236 tok/s | 1.30s/step
+step 8950 | loss 2.0203 | lr 5.00e-06 | 42,900 tok/s | 1.29s/step
+step 8960 | loss 2.0352 | lr 5.00e-06 | 44,783 tok/s | 1.30s/step
+step 8970 | loss 2.0267 | lr 5.00e-06 | 43,589 tok/s | 1.30s/step
+step 8980 | loss 2.0323 | lr 5.00e-06 | 43,335 tok/s | 1.30s/step
+[guardian] Volume committed
+step 8990 | loss 2.0277 | lr 5.00e-06 | 43,344 tok/s | 1.30s/step
+step 9000 | loss 2.0156 | lr 5.00e-06 | 41,773 tok/s | 1.30s/step
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous

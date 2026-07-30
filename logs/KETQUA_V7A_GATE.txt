@@ -1,0 +1,17 @@
+===== GATE V7A =====
+Thu Jul 30 05:15:55 SEAST 2026
+--- dev_loss theo step (dev SẠCH 3.886) ---
+  DEV step 500 | dev_loss 2.1283 | 4s
+  DEV step 1000 | dev_loss 2.1191 | 3s
+  DEV step 1500 | dev_loss 2.1100 | 3s
+  DEV step 2000 | dev_loss 2.1016 | 3s
+  DEV step 2500 | dev_loss 2.0900 | 3s
+  DEV step 3000 | dev_loss 2.0771 | 3s
+  DEV step 3500 | dev_loss 2.0670 | 3s
+  DEV step 4000 | dev_loss 2.0617 | 3s
+
+Đã trung bình 4 checkpoint -> D:/Bit-Translate-data/checkpoints_v7a/gate_avg.pt
+
+SÁNG DẬY CẦN LÀM (chấm mù cùng phiên với baseline):
+  panel: build_panels (bản _opus/_rand ở scratchpad) gate=eval/bench_gateopus.jsonl vs opuspt/opusgguf/google
+  LUẬT: long-OOD >=78 -> 18L tiếp | <75 + dev giảm -> thêm liều | <75 + dev phẳng -> GROW 24L

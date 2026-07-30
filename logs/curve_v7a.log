@@ -1,0 +1,10 @@
+[neo] /d/Bit-Translate-data/checkpoints_v7a -> /d/Bit-Translate-data/curve_v7a | moc %1000 | kiem moi 120s
+[neo 05:12:54] giu step2000.pt
+[neo 05:14:57] giu step3000.pt
+  CORRUPT PytorchStreamReader failed reading zip archive: failed findi
+[neo 05:14:59] step4000.pt HONG luc copy (se thu lai vong sau)
+[neo 05:17:05] giu step4000.pt
+[neo 08:15:47] giu step5000.pt
+[neo 08:36:17] giu step6000.pt
+[neo 08:58:25] giu step7000.pt
+[neo 10:16:44] giu step8000.pt

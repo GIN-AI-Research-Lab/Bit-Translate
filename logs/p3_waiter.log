@@ -1,0 +1,35 @@
+[09:24] p3 step ?/9000
+[09:29] p3 step ?/9000
+[09:34] p3 step ?/9000
+[09:39] p3 step ?/9000
+[09:44] p3 step ?/9000
+[09:49] p3 step ?/9000
+[09:54] p3 step ?/9000
+[09:59] p3 step ?/9000
+[10:04] p3 step 7610/9000
+[10:10] p3 step 7840/9000
+[10:15] p3 step 8070/9000
+[10:20] p3 step 8300/9000
+[10:25] p3 step 8520/9000
+[10:30] p3 step 8750/9000
+[10:35] p3 step 9000/9000
+Đã trung bình 4 checkpoint -> D:/Bit-Translate-data/checkpoints_v7a/v7a_avg.pt
+[v7aopus] dịch 100 câu...
+  18L d768 | 152.1M
+  25/100 (36s)
+  50/100 (68s)
+  75/100 (92s)
+  100/100 (140s)
+[v7aopus] -> E:\Bit-Translate\eval\bench_v7aopus.jsonl
+[v7arand] dịch 200 câu...
+  18L d768 | 152.1M
+  25/200 (46s)
+  50/200 (77s)
+  75/200 (160s)
+  100/200 (233s)
+  125/200 (260s)
+  150/200 (293s)
+  175/200 (365s)
+  200/200 (455s)
+[v7arand] -> E:\Bit-Translate\eval\bench_v7arand.jsonl
+=== P3 XONG: v7a_avg + 2 bench san sang cham mu ===
