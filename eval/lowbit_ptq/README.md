@@ -173,6 +173,57 @@ sub-1-bit sống; **0.6B ít dư thừa → sàn bit cao → là ca KHÓ NHẤT 
 đạt PPL 31.7 ở 0.55bit trên LLaMA-7B. **Kết luận cuối: kỹ thuật đúng, model sai cỡ.** Muốn sub-1-bit
 "sống" cần model 7B+ (dư thừa chức năng) HOẶC binary QAT (train). 0.6B là giới hạn cứng.
 
+## Bài 8 — Fix-pack + SEQUENTIAL: đòn bù liên lớp (exp_k)
+
+`exp_k_fixpack_sequential.py` — 3 arm cô lập từng biến số (fix-pack = scale Lloyd-survivor +
+mask Wanda + 100 step + calib 60 câu; kế toán bit đủ):
+
+| arm | bpw | PPL vi | PPL ja |
+|---|---:|---:|---:|
+| dense ternary, fix-pack TF | 2.08 | 4.401 | 8.250 |
+| ternary 2:4, fix-pack TF | 1.94 | 5.774 | 33.375 |
+| **ternary 2:4, fix-pack + SEQUENTIAL block-wise** | 1.94 | **594** | 8.069 |
+| FP32 | 16 | 69 | 125 |
+
+**Ba kết luận:**
+1. **SEQUENTIAL (BRECQ-lite) ăn ~10×** (5.774 → 594 vi): mỗi block nhận input *đã lượng tử* của
+   prefix + khớp quỹ đạo FP → block sau BÙ lỗi block trước. Đây là cơ chế lớn nhất tìm được sau
+   fix-pack; PPL vi 594 @1.94bpw chỉ còn 8.6× FP — chạm mép "vùng xám dùng được cho việc dễ".
+   Trace cho thấy block 2 và block 27 cực nhạy (mse 32k→81 và 16.5k→723) — sequential cứu đúng chỗ đó.
+2. **ĐÍNH CHÍNH sweet-spot Bài 7:** ở NGANG bước tối ưu, dense 2.08bpw (4.401) THẮNG t2:4 1.94bpw
+   (5.774) trên TF — chiến thắng của 2:4 ở exp_i là artifact hội tụ (2:4 ít tham số tự do nên hội tụ
+   nhanh hơn trong 80 step). Nghi vấn audit #3 xác nhận. (Chưa đo dense+sequential — khoảng trống.)
+3. Bất đối xứng vi/ja: sequential kéo vi mạnh hơn ja nhiều (594 vs 8.069) — nghi calib ja chưa đủ
+   nặng ký; đáng tăng tỉ trọng ja trong calib ở vòng sau.
+
+## Bài 9 — Thang SUB-1-BIT THẬT: kết quả cuối (exp_l)
+
+`exp_l_true_sub1bit.py` — 6 arm, kế toán đủ payload+mask+scale, cùng fix-pack TF như exp_k
+(để so trực tiếp arm1/1b), quét 3 đòn bẩy giá-bit: scale (tensor/row/f8-g64), mask (1:4/1:8/2:8),
+payload (ternary/binary):
+
+| arm | bpw thật | PPL vi | PPL ja |
+|---|---:|---:|---:|
+| A ternary dense, scale/TENSOR | 1.580 | 66.999 | 513.320 |
+| B ternary 1:4, f8/g64 | 1.020 | 245.163 | 499.247 |
+| F binary 2:8, f8/g64 | 0.976 | 22.311.065 | 11.792.505 |
+| C ternary 1:4, f16/ROW | 0.908 | 2.318.366 | 1.660.599 |
+| D binary 1:4, f8/g64 | 0.875 | 1.178.193 | 424.452 |
+| E ternary 1:8, f8/g64 | 0.698 | 153.717 | 116.642 |
+| (mốc exp_k TF: dense g32-f16 2.08 = 4.401 · t2:4 1.94 = 5.774 · t2:4+SEQ = **594**) |
+
+**Kết luận & xếp hạng nguyên nhân chết (đo được, không đoán):**
+1. **Mọi cấu hình <1.9 bpw đều chết trên 0.6B** (tốt nhất 67k, cách FP ~1000×). Thang khép lại
+   bức tranh: trần không-train của 0.6B ≈ 4bit (dùng được) / ≈1.94bpw+SEQ (vùng xám 594).
+2. **Thuế scale là yếu tố thống trị**: per-tensor (A) ×15 so g32-f16; f8/g64 (B) ×8 so f16/g32;
+   per-row (C) tệ hơn cả binary-g64 (D). Granularity scale > mức 0 > số mức giá trị.
+   PTQ *phải mua* scale mịn bằng bit — trái với QAT (v7a sống khỏe với scale per-tensor).
+3. **Binary chết mọi biến thể** (D 1.2M, F 22M); ternary thắng binary ở MỌI cặp so sánh được.
+4. Bất ngờ E > B (0.70 bpw 154k < 1.02 bpw 245k): 1:8 ít tham số tự do hơn → hội tụ nhanh hơn
+   trong 100 step (nghi cùng loại artifact như 2:4-vs-dense Bài 8) — nhưng cả hai đều chết nên
+   không đổi kết luận.
+5. PPL-vs-bpw KHÔNG đơn điệu trong vùng chết — đừng nội suy giữa các format khác cơ chế.
+
 ---
 
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
