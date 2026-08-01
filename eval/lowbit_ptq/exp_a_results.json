@@ -1,0 +1,12 @@
+{
+  "source": "D:\\Bit-Translate-data\\models\\Qwen3-0.6B-Q8_0.gguf",
+  "note": "quantize từ Q8_0 (--allow-requantize), imatrix vi+ja",
+  "quants": {
+    "IQ1_S": {
+      "file": "D:\\Bit-Translate-data\\ptq_ladder\\qwen3-0.6b-IQ1_S.gguf",
+      "size_mb": 198.4,
+      "ppl_vi": 20492.1887,
+      "ppl_ja": 18390.3863
+    }
+  }
+}

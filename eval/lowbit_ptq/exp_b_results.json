@@ -1,0 +1,41 @@
+{
+  "snapshot": "D:\\Bit-Translate-data\\hf_cache\\hub\\models--Qwen--Qwen3-0.6B\\snapshots\\c1899de289a04d12100db370d81485cdf75e47ca\\model.safetensors",
+  "n_mats": 35,
+  "layers": [
+    0,
+    6,
+    13,
+    20,
+    27
+  ],
+  "results": {
+    "int4-g32 (anchor)": {
+      "bpw": 4.5,
+      "rel_err": 0.09923246189701493
+    },
+    "int3-g32 (anchor)": {
+      "bpw": 3.5,
+      "rel_err": 0.2312327048489828
+    },
+    "int2-g32 RTN": {
+      "bpw": 2.5,
+      "rel_err": 0.4781055594886437
+    },
+    "int2-g32 Lloyd": {
+      "bpw": 2.5,
+      "rel_err": 0.34146443628028417
+    },
+    "ternary-g32 Lloyd": {
+      "bpw": 2.5,
+      "rel_err": 0.43026124013524564
+    },
+    "ternary 2-plane": {
+      "bpw": 5.0,
+      "rel_err": 0.19899441126625053
+    },
+    "int2-g32 Lloyd + 1% outlier f16": {
+      "bpw": 2.86,
+      "rel_err": 0.3102040978177636
+    }
+  }
+}
