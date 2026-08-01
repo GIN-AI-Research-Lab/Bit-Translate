@@ -1,0 +1,14 @@
+[01:40:59] Config chọn: N3_t24_f8g64_3fix_1.56bpw (mốc: vi 536.3); flags=['NOADPT', 'NOKL']
+[01:41:05] FP32: vi 69.0 / ja 125.1
+[01:41:15] Quỹ đạo FP (trước khi gắn adapter)...
+[01:56:44]     pass 1 xong (918s)
+[01:56:46]     đã refresh mask theo |Wfp| x xnorm
+[02:04:01]     pass 2 xong (1354s)
+[02:04:01] Bỏ tail KL-polish (NOKL)
+[02:04:06] => EXP P [N3_t24_f8g64_3fix_1.56bpw | NOADPT,NOKL]: PPL vi 1168.0 / ja 3392.2
+
+========================================================================
+EXP P — N3_t24_f8g64_3fix_1.56bpw + 3 vá + adapter(+0.03bpw) + tail-KL-polish
+  mốc cũ  : vi      536.3
+  exp_p   : vi     1168.0  ja     3392.2   (fp32: 69.0/125.1)
+========================================================================

@@ -1,0 +1,15 @@
+[02:54:48] Config chọn: O2_t18_f8g64_3fix_0.70bpw (mốc: vi 1475.9); flags=['NOREFRESH', 'NORELMSE']
+[02:54:54] FP32: vi 69.0 / ja 125.1
+[02:55:04] Quỹ đạo FP (trước khi gắn adapter)...
+[03:10:36]     pass 1 xong (921s)
+[03:17:49]     pass 2 xong (1353s)
+[03:17:49] Tail KL-polish: 4 block cuối + model.norm + adapter đuôi (40 step)
+[03:18:29]     KL step-0: 574.9976
+[03:19:42]     KL best: 378.4064
+[03:19:48] => EXP P [O2_t18_f8g64_3fix_0.70bpw | NOREFRESH,NORELMSE]: PPL vi 1055.0 / ja 2456.4
+
+========================================================================
+EXP P — O2_t18_f8g64_3fix_0.70bpw + 3 vá + adapter(+0.03bpw) + tail-KL-polish
+  mốc cũ  : vi     1475.9
+  exp_p   : vi     1055.0  ja     2456.4   (fp32: 69.0/125.1)
+========================================================================

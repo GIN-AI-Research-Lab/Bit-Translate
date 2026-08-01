@@ -1,0 +1,15 @@
+[02:30:01] Config chọn: O1_t14_f8g64_3fix_1.02bpw (mốc: vi 766.9); flags=['NOREFRESH', 'NORELMSE']
+[02:30:07] FP32: vi 69.0 / ja 125.1
+[02:30:17] Quỹ đạo FP (trước khi gắn adapter)...
+[02:45:52]     pass 1 xong (924s)
+[02:52:58]     pass 2 xong (1350s)
+[02:52:58] Tail KL-polish: 4 block cuối + model.norm + adapter đuôi (40 step)
+[02:53:34]     KL step-0: 265.1329
+[02:54:37]     KL best: 224.2197
+[02:54:43] => EXP P [O1_t14_f8g64_3fix_1.02bpw | NOREFRESH,NORELMSE]: PPL vi 827.1 / ja 1709.6
+
+========================================================================
+EXP P — O1_t14_f8g64_3fix_1.02bpw + 3 vá + adapter(+0.03bpw) + tail-KL-polish
+  mốc cũ  : vi      766.9
+  exp_p   : vi      827.1  ja     1709.6   (fp32: 69.0/125.1)
+========================================================================

@@ -1,5 +1,14 @@
 # HANDOFF — Nghiên cứu low-bit/sub-1-bit + kế hoạch chạy trên Laguna S2.1 (máy khác)
 
+> **CẬP NHẬT 02/08 sáng — đường biên thế hệ 2 (xem README Bài 10 cho bảng đầy đủ):**
+> 1.94bpw→471 · **1.56→400 (kỷ lục, 5.8×FP)** · 1.02→767 · 0.70→1.055 · 0.62→1.843.
+> Công thức thắng: gauge (up↔down, v↔o; sanity-check FP bắt buộc) → Wanda mask CỐ ĐỊNH →
+> sequential 2-pass, scale+bias HỌC ĐƯỢC, norm co-tune, guard step-0 → polish (adapter+tail-KL)
+> CHỈ khi bpw<1. Đã bác bằng ablation: mask refresh giữa pass (×2.2 hại), relative-MSE (hại ja).
+> Script chuẩn: `exp_q_gauge_bias_budget.py` (≥1.5bpw) + `exp_p_tail_polish.py` NOREFRESH NORELMSE (<1bpw).
+> Lưu ý Laguna: gauge up↔down áp cho TỪNG expert (256×48); v↔o cần map GQA 72/8 head;
+> QK-norm Qwen3-Next của Laguna → KHÔNG gauge q/k. Ước tính có kiểm chứng từ dưới bằng thang IQ (L1).
+
 > Cập nhật 2026-08-01 18:25, máy B. Người nhận: phiên làm việc trên máy khác (mạnh hơn),
 > mục tiêu: lặp lại thang thí nghiệm trên **Laguna S2.1 (MoE 118B, 14.5B active)**.
 > Toàn bộ chi tiết từng bài: `eval/lowbit_ptq/README.md` (Bài 0–7). File này là bản đồ hành động.

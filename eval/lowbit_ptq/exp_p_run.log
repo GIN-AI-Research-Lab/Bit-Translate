@@ -1,0 +1,16 @@
+[00:48:17] Config chọn: N3_t24_f8g64_3fix_1.56bpw (mốc chưa-fix-mới: vi 536.3); bpw 1.56 + 0.03 adapter
+[00:48:23] FP32: vi 69.0 / ja 125.1
+[00:48:32] Quỹ đạo FP (trước khi gắn adapter)...
+[01:04:01]     pass 1 xong (919s)
+[01:04:03]     đã refresh mask theo |Wfp| x xnorm
+[01:11:07]     pass 2 xong (1345s)
+[01:11:07] Tail KL-polish: 4 block cuối + model.norm + adapter đuôi (40 step)
+[01:11:42]     KL step-0: 147.0478
+[01:12:45]     KL best: 147.0478
+[01:12:51] => EXP P [N3_t24_f8g64_3fix_1.56bpw + vá + adapter + KL-polish]: PPL vi 790.1 / ja 3317.8
+
+========================================================================
+EXP P — N3_t24_f8g64_3fix_1.56bpw + 3 vá + adapter(+0.03bpw) + tail-KL-polish
+  mốc cũ  : vi      536.3
+  exp_p   : vi      790.1  ja     3317.8   (fp32: 69.0/125.1)
+========================================================================

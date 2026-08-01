@@ -224,6 +224,42 @@ payload (ternary/binary):
    không đổi kết luận.
 5. PPL-vs-bpw KHÔNG đơn điệu trong vùng chết — đừng nội suy giữa các format khác cơ chế.
 
+## Bài 10 — Thế hệ 2: đường biên cuối + bảng quy công/tội (exp_m/n/o/p/q, đêm 01–02/08)
+
+**Đường biên PPL-vs-bit cuối cùng** (best-of mỗi mức bit, eval dev vi/ja FP=69/125):
+
+| bpw thật | PPL vi | PPL ja | vi/FP | Công thức thắng |
+|---:|---:|---:|---:|---|
+| 1.94 | 471 | 1.739 | 6.8× | exp_n (SEQ + scale học + norm + 2pass) |
+| **1.56** | **400** | **1.708** | **5.8×** | **exp_n + exp_q (gauge + bias + budget) — kỷ lục lab** |
+| 1.02 | 767 | 1.919 | 11× | exp_n (gauge không ăn ở mức này) |
+| 0.70 | 1.055 | 2.456 | 15× | exp_n + polish (adapter + tail-KL) |
+| 0.62 | 1.843 | 6.278 | 27× | exp_n (chưa polish) |
+
+So thế hệ 1 (TF thuần): cùng 0.70 bpw từ 153.717 → 1.055 = **×146**. Điểm 1.56 bpw (dưới ngân sách
+BitNet) đạt 5.8× FP — vượt cả kỷ lục cũ ở 1.94 bpw.
+
+**Bảng quy công/tội từng kỹ thuật (tất cả đo bằng ablation, không suy diễn):**
+
+| Kỹ thuật | Phán quyết | Bằng chứng |
+|---|---|---|
+| Sequential block-wise (BRECQ-lite) | ✅ đòn lớn nhất | ×10 (5774→594); ×219 khi format thô (M3) |
+| Scale HỌC ĐƯỢC (thay Lloyd-derive) | ✅ xóa thuế f8/g64 | ×8 thuế → ×1.14 (N3 536 vs exp_l 245k) |
+| Norm đồng-tối-ưu + 2 pass | ✅ (trong gói exp_n) | N1 471 vs Lloyd-SEQ 594; ja ×4.6 |
+| **Gauge up↔down + v↔o** (0 bit) | ✅ **ở ≥1.5 bpw**: ×1.34; ≈0 ở 1.02 | Q(N3) 400 vs 536; Q(O1) 774 ≈ 767 |
+| Bias học được + budget theo block | ✅ (gói với gauge) | trong Q(N3) |
+| Adapter + tail-KL-polish | ✅ **chỉ khi bpw < ~1** (bộ hấp thụ lỗi hệ thống) | O2: 1476→1055 (+29%); trung tính ở ≥1 bpw |
+| Regression guard step-0 | ✅ giữ (an toàn, miễn phí) | ablation A |
+| Mask refresh giữa pass | ❌ LOẠI — thủ phạm ×2.2 | ablation B (1168 vs 521) |
+| Relative-MSE | ❌ LOẠI — ja +38% | ablation A |
+| Mask 2:4 "sweet spot" | ❌ artifact hội tụ | exp_k ngang bước: dense thắng TF |
+
+**Quy tắc pipeline rút ra (mang sang Laguna):** gauge trước tiên (miễn phí, sanity-check FP bắt buộc)
+→ Wanda mask cố định → sequential 2-pass với scale+bias học được + norm co-tune + guard step-0
+→ nếu bpw < 1: thêm adapter + tail-KL-polish. KHÔNG refresh mask giữa chừng, KHÔNG relative-MSE.
+⚠️ Mọi số trên eval 16 câu/ngôn ngữ — xếp hạng tin được, giá trị tuyệt đối cần kiểm định lại
+trên eval lớn (mục "kiểm định" trong danh sách việc kế).
+
 ---
 
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng

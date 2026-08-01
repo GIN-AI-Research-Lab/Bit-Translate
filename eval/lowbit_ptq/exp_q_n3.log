@@ -1,0 +1,14 @@
+[03:20:15] Config: N3_t24_f8g64_3fix_1.56bpw (mốc exp_n: vi 536.3); gauge + bias(+0.006bpw) + budget
+[03:20:21] FP32 trước gauge: vi 68.97 / ja 125.07
+[03:20:21] Gauge xong (max spread d=21.6x). Sanity check FP...
+[03:20:26] FP32 SAU gauge:   vi 68.97 / ja 125.07
+[03:20:26] Sanity OK — gauge là tương đương chính xác.
+[03:20:36] Quỹ đạo FP (sau gauge)...
+[03:37:20]     pass 1 xong (993s)
+[03:45:18]     pass 2 xong (1471s)
+[03:45:25] => EXP Q [N3_t24_f8g64_3fix_1.56bpw]: PPL vi 400.1 / ja 1708.3  (mốc exp_n: 536.3)
+========================================================================
+EXP Q — gauge + bias + budget | N3_t24_f8g64_3fix_1.56bpw
+  mốc exp_n : vi      536.3
+  exp_q     : vi      400.1  ja     1708.3  (fp32 69.0/125.1)
+========================================================================
