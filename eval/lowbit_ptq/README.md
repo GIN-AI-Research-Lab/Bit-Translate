@@ -441,6 +441,38 @@ vi/ja/en/zh/math, ja 60/40] + chọn best geo6 + mẫu sinh chữ @best**. 5.000
 
 Checkpoint: `/vol/out/qat_gen4_{n4,o1,o2,o3}.pt` (chưa tải về — chế độ 4G, gate server-side).
 
+## Bài 16 — Đêm 03/08: GEN4.1 (code-KD) + exp_v 30B-A3B streaming, 4 định luật mới
+
+**GEN4.1 — vá chân code (nguồn codeparrot-clean, kiểm chứng datasets-server):**
+0.70bpw: geo6 589→**531** (code 241→**144**, −41%) · 0.62bpw: 708→**613** (code 472→**204**, −57%).
+Giá: vi/val-100 +7–12% (6k câu code chiếm chỗ vi trong KD). Định luật mỏ-neo lần 6 — chiều dương.
+Bẫy đã ghi: smollm python-edu chỉ chứa blob_id (0 dòng); the-stack gated.
+
+**exp_v — S1-only STREAMING cho Qwen3-30B-A3B (exp_v_s1_stream.py):** model bf16 61GB ở CPU RAM
+144GB, L40S cầm từng block; gauge per-expert + perm toàn cục (gồm cột ROUTER + lm_head untied);
+bake-as-you-go 1 pass. Neo FP 30B lần đầu: vi 29.0/ja 54.2/en 13.7/code 2.3/zh 15.9/math 4.6.
+Cổng bất biến QUA cả 2 run (29.0→29.1/28.9). 48 block: 27–50 phút, $1.3–2.7/run.
+
+| 30B @2:4 | vi(16c) | ja | en | code | zh | math | geo6 | val-100 vi |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| v1 (calib 122, 60 st/blk) | 1123 | 1443 | 5123 | 1052 | 3228 | 131 | 1243 | 1604 |
+| v2 (calib **529 thật**, 100 st/blk) | 1274 | 3653⚠ | **519** | 979 | **2394** | **97** | **905** | **472** |
+
+**4 định luật mới (kỳ vọng ghi trước ×2–5 TRƯỢT — và trượt có giáo trình):**
+1. **Luật active-capacity**: MoE chịu nén theo cỡ KÍCH HOẠT (~3B), không theo tổng 30B — prior
+   "model to chịu nén tốt" là kinh nghiệm dense, ngoại suy theo tổng params là sai.
+2. **Đói-expert đo được**: 122 câu ÷ 128 expert ≈ 540 tok/expert → mask nhiễu + phần bù không được
+   train + router drift. Calib ×4.3 câu thật → **en −90% (×374→×38), val-100 vi −71%**.
+3. **Probe 16 câu ĐÁNH LỪA ở bit thấp**: probe vi nói +13% trong khi val-100 nói −71% — mọi kết
+   luận 30B từ nay phải neo bằng thước lớn (bài học small/large gap, tái phạm lần 2).
+4. **Code calib cần GIỮ CẤU TRÚC**: prep kd_mix ép mẫu thành 1 dòng (mất newline/indent) → expert
+   code nhận phân bố lạ → calib code ×4 mà code chỉ −7%. Fix: escape newline (việc v3).
+   ja probe ×2.5 sau calib-to — cần thước lớn ja trước khi kết luận (nghi seesaw share).
+
+So chuẩn: 0.6B full-KD @1.56 val-100 = 351; 30B **S1-thuần** = 472 — tầng KD cho 30B là chỗ ăn
+kế tiếp (cần multi-GPU/offload, thiết kế riêng). Ckpt: expv_Qwen3-30B-A3B_2x4.pt (v2, 61GB, volume
+tritue12) + qat_gen41_o2/o3.pt. Chi đêm ~$7.5, ví mới còn ~$22.5.
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |
