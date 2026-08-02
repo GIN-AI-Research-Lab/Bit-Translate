@@ -373,6 +373,42 @@ Bài học vận hành đắt giá: chuỗi driver local phóng `modal run` KHÔ
 app ephemeral giữa run, driver tưởng xong phóng bậc kế (mất ~$5, 2 run không xác nhận được).
 Mọi run dài từ nay: MỘT hàm screen/chain chạy TRONG container + `--detach`.
 
+## Bài 14 — Đợt A/B: 14 thách thức đấu đường biên S1-v2, 1 thắng (02/08 tối)
+
+Sau Bài 13, screening tiếp 14 ô ($2.6) đấu với mốc S1-v2 (1:4 mixw+perm geo6 **732** @1.023bpw;
+1:8 geo6 **1310** @0.699). Kết quả: **đường biên phòng thủ 13/14** — mỗi ô ❌ chốt một định luật.
+
+| Ô | bpw | geo6 | Phán quyết |
+|---|---|---|---|
+| **A1 mixwj** (ja 20→32 câu calib) | 1.023 | **716** | ✅ **ja 5814→1854 (−68%)**, đều ×11→×13 — VÀO CÔNG THỨC |
+| A2 awq-gauge α=.25/.5 | 1.023 | 801/903 | ❌ scale học được đã bao việc của AWQ; α to nổ ja |
+| A3 snip mask (\|W·∇W\|) | 1.023 | 838 | ❌ Wanda đủ tín hiệu ở granularity này |
+| A4 calib-big ×8 (976 câu) | 1.023 | 2159 | ❌❌ ja NỔ 476k — **chất lượng phân bố ≫ số lượng** |
+| A5 calib-seq 192 | 0.699 | 1721 | ❌ ngữ cảnh dài hút stats về vi/en, bỏ đói ja |
+| B1a/b absorber SVD(orig−Q) r8 | 0.783/0.700 | ❌×1.5–2 | tháo phần bù sequential (họ mask-refresh) |
+| B1a2/b2 absorber SVD(Wfp−Q) r8 | — | ☠ 17–100M | **nhiễu STE ô pruned** (xem dưới) |
+| B2 guard6 (6 block 2:4 + 22 block 1:8) | 0.885 | 957 | trung tính — nằm ĐÚNG đường nội suy (938), không xuyên |
+| B3a 2:8 | 1.122 | 735 | ❌ = 1:4 nhưng đắt +0.1bpw (entropy mask 0.60 vs 0.40) |
+| B3b cascade 1:8 + residual 1:32 | 1.030 | 912 | ❌ thua 1:4 25% cùng giá bit |
+
+**Hai cơ chế giết absorber weight-space (đóng cửa vĩnh viễn, chỉ còn đường activation-fit exp_p):**
+1. Đích `orig−Q`: orig−Wfp là phần bù S1 cố ý tạo — mài về orig là THÁO nó (×1.5–2, đo 2 bậc).
+2. Đích `Wfp−Q`: gradient STE chảy vào cả ô pruned nhưng ô pruned KHÔNG ảnh hưởng output
+   → không có phản hồi sửa sai → Adam đẩy chúng random-walk ~0.1 (gấp 5 trọng số thật 0.02)
+   → Wfp−Q = 87.5–90% nhiễu → SVD chọn đúng hướng nhiễu to nhất → 17–100 TRIỆU PPL.
+   **VỆ SINH: ô pruned của Wfp sau S1 là NHIỄU — cấm đọc trực tiếp** (bake dùng quant() nên an toàn).
+
+**Pattern xuyên suốt:** mọi format tái phân bổ (guard6/2:8/cascade) đều mua ja bằng cách bán miền
+khác — không ai xuyên biên. Đòn ja duy nhất miễn phí là CALIB (mixwj). Frontier uniform-tier +
+S1-v2 hiện là điểm tựa vững; muốn xuyên tiếp phải đổi vũ khí (KD-mix ở S2 — GEN4 đang chạy;
+activation-fit absorber; hoặc model to hơn).
+
+**GEN4 (đang chạy):** 4 bậc × [mixwj + perm + v4 + **KD-mix** (fineweb-edu/stack-smol/fineweb2-zh/
+openwebmath, ja 60/40, vi24/ja36/en15/code10/zh10/math5) + **best-geo6** + mẫu sinh chữ @best]
+— lần đầu S1, KD-data và tiêu chí chọn checkpoint CÙNG nhìn đủ 6 miền. steps 5000, ~$5.
+Vận hành: Modal PREEMPT giết container giữa run → hàm tự restart TỪ ĐẦU (đốt lại cell đã xong);
+results.json theo tag nên số cũ không mất — thiết kế cell idempotent là đúng.
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |

@@ -28,7 +28,8 @@ def _prep_kd_mix():
     import os
     srcs = [
         ("en", "HuggingFaceFW/fineweb-edu", None, "text", 12_000),
-        ("code", "bigcode/the-stack-smol", None, "content", 8_000),
+        # the-stack-smol bị GATED — dùng smollm-corpus python-edu (công khai, parquet)
+        ("code", "HuggingFaceTB/smollm-corpus", "python-edu", "text", 8_000),
         ("zh", "HuggingFaceFW/fineweb-2", "cmn_Hani", "text", 8_000),
         ("math", "open-web-math/open-web-math", None, "text", 5_000),
     ]
@@ -312,7 +313,10 @@ def screen_b2():
     mdir = snapshot_download("Qwen/Qwen3-0.6B")
     os.makedirs("/vol/out", exist_ok=True)
     os.environ["EXPR_OUT_DIR"] = "/vol/out"
-    for tag, n, m in (("B1a2-lr8fix[1:8]", 1, 8), ("B1b2-lr8fix[1:10]", 1, 10)):
+    cells = [("B1a2-lr8fix[1:8]", 1, 8, 8, ""),
+             ("B1b2-lr8fix[1:10]", 1, 10, 8, ""),
+             ("B3b-casc[1:8+1:32]", 1, 8, 0, "1:32")]   # ô bị preempt ở screen_b, chạy bù
+    for tag, n, m, lr_, c2 in cells:
         print(f"==== SCREEN {tag} ====", flush=True)
         r = subprocess.run(["python", "/root/exp_r_qat_lite.py", "--device", "cuda",
                             "--model-glob", mdir,
@@ -322,7 +326,8 @@ def screen_b2():
                             "--dev-ja", "/root/qat_data/dev.ja",
                             "--train-skip", "0", "--steps", "0", "--save-ckpt", "0",
                             "--nm-n", str(n), "--nm-m", str(m), "--calib-mode", "mixw",
-                            "--perm-gauge", "1", "--lowrank", "8", "--tag", tag])
+                            "--perm-gauge", "1", "--lowrank", str(lr_),
+                            "--cascade2", c2, "--tag", tag])
         print(f"exit={r.returncode}", flush=True)
         vol.commit()
     print("SCREEN B2 XONG")
