@@ -229,14 +229,17 @@ def to_f16(s):
     return s.to(torch.float16).to(s.dtype)
 
 
-def wanda_nm_mask(W, xnorm, N, M):
-    R, C = W.shape
-    imp = W.abs() * xnorm[None, :].clamp(min=1e-8)
+def nm_mask_from_imp(imp, N, M):
+    R, C = imp.shape
     pad = (M - C % M) % M
     A = F.pad(imp, (0, pad)) if pad else imp
     g = A.view(R, -1, M)
     kth = g.kthvalue(M - N + 1, dim=2, keepdim=True).values
     return (g >= kth).view(R, -1)[:, :C]
+
+
+def wanda_nm_mask(W, xnorm, N, M):
+    return nm_mask_from_imp(W.abs() * xnorm[None, :].clamp(min=1e-8), N, M)
 
 
 def inv_softplus(y):
@@ -258,34 +261,81 @@ class LearnQLinear(nn.Module):
         self.register_buffer("maskf", mask.to(W0.dtype))
         with torch.no_grad():
             Wv, Mv = self._views(W0)
-            Wm = Wv * Mv
-            cnt = Mv.sum(2, keepdim=True).clamp(min=1)
-            s = (Wm.abs().sum(2, keepdim=True) / cnt).clamp(min=1e-6)
-            for _ in range(3):
-                t = torch.round(Wm / s).clamp(-1, 1) * Mv
-                num = (Wm * t).sum(2, keepdim=True)
-                den = (t * t).sum(2, keepdim=True).clamp(min=1e-8)
-                s = (num / den).abs().clamp(min=1e-6)
+            s = self._fit_s(Wv * Mv, Mv)
         self.raw_s = nn.Parameter(inv_softplus(s.float()).to(W0.dtype))
+        self.has2 = False          # cascade plane 2 (B3)
+        self.lrA = self.lrB = None  # absorber low-rank (B1)
 
-    def _views(self, W):
+    @staticmethod
+    def _fit_s(Wm, Mv):
+        cnt = Mv.sum(2, keepdim=True).clamp(min=1)
+        s = (Wm.abs().sum(2, keepdim=True) / cnt).clamp(min=1e-6)
+        for _ in range(3):
+            t = torch.round(Wm / s).clamp(-1, 1) * Mv
+            num = (Wm * t).sum(2, keepdim=True)
+            den = (t * t).sum(2, keepdim=True).clamp(min=1e-8)
+            s = (num / den).abs().clamp(min=1e-6)
+        return s
+
+    def _views(self, W, maskf=None):
         Wp = F.pad(W, (0, self.pad)) if self.pad else W
-        Mp = F.pad(self.maskf, (0, self.pad)) if self.pad else self.maskf
+        M = self.maskf if maskf is None else maskf
+        Mp = F.pad(M, (0, self.pad)) if self.pad else M
         return Wp.view(self.R, -1, self.G), Mp.view(self.R, -1, self.G)
 
-    def quant(self):
-        s = F.softplus(self.raw_s).clamp(min=4e-3)
+    @torch.no_grad()
+    def init_plane2(self, xnorm, N2, M2):
+        """B3 — tầng ternary thứ 2 trên PHẦN DƯ: mask theo |W − q1|·xnorm."""
+        q1 = self.quant()
+        Rres = self.Wfp.data - q1
+        imp = Rres.abs() * xnorm[None, :].clamp(min=1e-8)
+        m2 = nm_mask_from_imp(imp, N2, M2).to(self.Wfp.dtype)
+        self.register_buffer("maskf2", m2)
+        Rv, Mv2 = self._views(Rres, m2)
+        s2 = self._fit_s(Rv * Mv2, Mv2)
+        self.raw_s2 = nn.Parameter(inv_softplus(s2.float()).to(self.Wfp.dtype))
+        self.has2 = True
+
+    @torch.no_grad()
+    def init_lowrank(self, W_target, r):
+        """B1 — absorber SVD trên sai số W−Q; fake-quant int8 để đo = kê khai bit."""
+        E = (W_target - self.quant()).float()
+        U, S, V = torch.svd_lowrank(E, q=r)
+        sq = S.clamp(min=0).sqrt()
+        self.lrA = nn.Parameter((U * sq[None, :]).to(self.Wfp.dtype))
+        self.lrB = nn.Parameter((V * sq[None, :]).t().contiguous().to(self.Wfp.dtype))
+
+    @staticmethod
+    def _fq_int8(t):
+        s = t.abs().amax().clamp(min=1e-8) / 127.0
+        q = torch.round(t / s).clamp(-127, 127) * s
+        return t + (q - t).detach()
+
+    def _splane(self, raw):
+        s = F.softplus(raw).clamp(min=4e-3)
         qs = to_f16(s) if self.sdtype == "f16" else to_f8(s)
-        s_q = s + (qs - s).detach()
-        s_q = s_q.clamp(min=1e-6)
+        return (s + (qs - s).detach()).clamp(min=1e-6)
+
+    def quant(self):
+        s_q = self._splane(self.raw_s)
         Wv, Mv = self._views(self.Wfp)
         t = (torch.round((Wv * Mv) / s_q.detach()).clamp(-1, 1) * Mv).detach()
-        return (t * s_q).reshape(self.R, -1)[:, :self.C]
+        q = t * s_q
+        if self.has2:
+            s2q = self._splane(self.raw_s2)
+            Rv = Wv - q
+            _, Mv2 = self._views(self.Wfp, self.maskf2)
+            t2 = (torch.round((Rv.detach() * Mv2) / s2q.detach()).clamp(-1, 1) * Mv2).detach()
+            q = q + t2 * s2q
+        return q.reshape(self.R, -1)[:, :self.C]
 
     def forward(self, x):
         q = self.quant()
         Wq = q + self.Wfp - self.Wfp.detach()
-        return F.linear(x, Wq, self.bias)
+        y = F.linear(x, Wq, self.bias)
+        if self.lrA is not None:
+            y = y + F.linear(F.linear(x, self._fq_int8(self.lrB)), self._fq_int8(self.lrA))
+        return y
 
 
 def hadamard(n, device, dtype):
@@ -412,6 +462,38 @@ def apply_perm_gauge(model, xnorm, M):
 
 
 @torch.no_grad()
+def apply_awq_gauge(model, xnorm, alpha):
+    """Gauge chéo THEO ACTIVATION (AWQ-style, EXACT): kênh salient (xnorm cao) được phóng to
+    trong không gian trọng số → sai số lượng tử tương đối trên kênh đó nhỏ đi. Chỉ scale nhánh
+    TUYẾN TÍNH: up (nhánh silu(gate) giữ nguyên → exact) và v; bù nghịch đảo ở down/o.
+    Wanda importance BẤT BIẾN với gauge chéo — chỉ đổi phân bố sai số trên lưới. Cập nhật xnorm."""
+    cfg = model.config
+    n_q, n_kv, hd = cfg.num_attention_heads, cfg.num_key_value_heads, cfg.head_dim
+    rep = n_q // n_kv
+    for b, blk in enumerate(model.model.layers):
+        kd = f"model.layers.{b}.mlp.down_proj"
+        xn = xnorm[kd]
+        s = (xn / xn.mean().clamp(min=1e-8)).clamp(min=1e-3).pow(alpha).clamp(0.25, 4.0)
+        blk.mlp.up_proj.weight.data.mul_(s[:, None])
+        blk.mlp.down_proj.weight.data.div_(s[None, :])
+        xnorm[kd] = xn * s
+        ko = f"model.layers.{b}.self_attn.o_proj"
+        xo = xnorm[ko]
+        Wv = blk.self_attn.v_proj.weight.data
+        Wo = blk.self_attn.o_proj.weight.data
+        xo_new = xo.clone()
+        for kv in range(n_kv):
+            agg = sum(xo[(kv * rep + r) * hd:(kv * rep + r + 1) * hd] for r in range(rep)) / rep
+            m = (agg / agg.mean().clamp(min=1e-8)).clamp(min=1e-3).pow(alpha).clamp(0.25, 4.0)
+            Wv[kv * hd:(kv + 1) * hd, :].mul_(m[:, None])
+            for r in range(rep):
+                q = kv * rep + r
+                Wo[:, q * hd:(q + 1) * hd].div_(m[None, :])
+                xo_new[q * hd:(q + 1) * hd] = xo[q * hd:(q + 1) * hd] * m
+        xnorm[ko] = xo_new
+
+
+@torch.no_grad()
 def eval_ppl(model, tok, lines, dev, max_tok=96):
     nll, ntok = 0.0, 0
     for s in lines:
@@ -449,15 +531,38 @@ def main():
     ap.add_argument("--sgroup", type=int, default=64, help="cỡ nhóm scale (64 | 256=TQ2_0-native)")
     ap.add_argument("--no-bias", type=int, default=0, help="1 = không bias (bắt buộc cho export GGUF)")
     # S1-floor attack
-    ap.add_argument("--calib-mode", default="vija", choices=["vija", "mix4", "mixw"],
-                    help="mix4 = vi/ja/en/code; mixw = theo căn cước Qwen3 (thêm zh/toán/chat)")
+    ap.add_argument("--calib-mode", default="vija",
+                    choices=["vija", "mix4", "mixw", "mixwj", "mixwbig"],
+                    help="mix4 = vi/ja/en/code; mixw = căn cước Qwen3 (thêm zh/toán/chat); "
+                         "mixwj = mixw nặng ja (32 câu); mixwbig = mixw phóng ~10× (vi/ja từ train)")
     ap.add_argument("--s1-passes", type=int, default=2, help="2=(70,30) | 3=(100,50,30)")
-    ap.add_argument("--best-metric", default="geo2", choices=["geo2", "geo4"],
-                    help="geo4 = chọn best theo cả 4 miền (bảo vệ en/code khi KD thuần vi/ja)")
+    ap.add_argument("--best-metric", default="geo2", choices=["geo2", "geo4", "geo6"],
+                    help="geo4/geo6 = chọn best theo 4/6 miền (bảo vệ miền không có trong KD)")
+    # GEN4 — KD-mix: trộn en/code/zh/math vào data KD (nguồn stream sẵn ra file)
+    ap.add_argument("--kd-mix", type=int, default=0,
+                    help="1 = KD data vi24/ja36/en15/code10/zh10/math5 (%); nguồn thiếu dồn về vi/ja")
+    ap.add_argument("--kd-en", default="", help="file text en cho KD-mix")
+    ap.add_argument("--kd-code", default="", help="file text code cho KD-mix")
+    ap.add_argument("--kd-zh", default="", help="file text zh cho KD-mix")
+    ap.add_argument("--kd-math", default="", help="file text math cho KD-mix")
     ap.add_argument("--rot-gauge", type=int, default=0,
                     help="1 = Hadamard-128 per-head trong gauge v<->o (incoherence MIỄN PHÍ, exact)")
     ap.add_argument("--perm-gauge", type=int, default=0,
                     help="1 = hoán vị kênh EXACT để kênh quan trọng rải đều nhóm M (cứu mask N:M)")
+    ap.add_argument("--awq-alpha", type=float, default=0.0,
+                    help=">0 = gauge chéo theo activation xnorm^α (AWQ-style, exact); thử 0.25/0.5")
+    ap.add_argument("--mask-signal", default="wanda", choices=["wanda", "snip"],
+                    help="snip = trộn saliency gradient |W·∇W| vào điểm chọn mask")
+    ap.add_argument("--snip-beta", type=float, default=0.5, help="trọng số pha trộn snip (0..1)")
+    ap.add_argument("--mask-grad-batches", type=int, default=8, help="số batch backward cho snip")
+    ap.add_argument("--calib-seq", type=int, default=96, help="độ dài token mỗi câu calib (S1)")
+    # Đợt B — phân bổ bit thông minh
+    ap.add_argument("--nm-profile", default="uniform", choices=["uniform", "guard6"],
+                    help="guard6 = block nhạy {0,1,2,3,26,27} giữ 2:4, còn lại 1:8 (~0.885 bpw)")
+    ap.add_argument("--lowrank", type=int, default=0,
+                    help=">0 = absorber SVD rank-r trên sai số W−Q (int8, ~+0.08bpw @r8)")
+    ap.add_argument("--cascade2", default="",
+                    help="'N:M' = tầng ternary thứ 2 trên phần dư (vd 1:32 → +0.33bpw)")
     ap.add_argument("--save-ckpt", type=int, default=1, help="0 = không lưu .pt (screening)")
     ap.add_argument("--tag", default="", help="nhãn riêng cho record trong results.json")
     # v4 — gói train-polish (mặc định tắt để giữ so sánh được với v3)
@@ -471,6 +576,7 @@ def main():
     if args.smoke:
         args.calib, args.train_sents, args.batch = 12, 64, 2
         args.steps = min(args.steps, 6)   # giữ --steps 0 (nhánh screening S1-only)
+        args.mask_grad_batches = min(args.mask_grad_batches, 2)
     dev = ("cuda" if torch.cuda.is_available() else "cpu") if args.device == "auto" else args.device
     torch.set_num_threads(5)
     log(f"device={dev} steps={args.steps} smoke={args.smoke}")
@@ -500,14 +606,26 @@ def main():
         calib = calib[: args.calib] + CAL_EN + CAL_CODE   # vi/ja + en + code (tách biệt gate)
         random.Random(0).shuffle(calib)
         log(f"calib mix4: {len(calib)} câu (vi/ja {min(len(calib)-40, args.calib)} + en 24 + code 16)")
-    elif args.calib_mode == "mixw":
+    elif args.calib_mode in ("mixw", "mixwj"):
         # Theo căn cước Qwen3 (en/zh/code/math ~ mix pretraining) + mục đích dùng (vi/ja) + chat
         k = 4 if args.smoke else None
-        calib = (vi_c[:(k or 20)] + ja_c[:(k or 20)] + CAL_EN[:k] + CAL_CODE[:k]
+        nja = 32 if args.calib_mode == "mixwj" else 20   # mixwj: vá mắt xích yếu ja
+        ja_c2 = read_lines(args.dev_ja, max(args.calib // 2, nja))
+        calib = (vi_c[:(k or 20)] + ja_c2[:(k or nja)] + CAL_EN[:k] + CAL_CODE[:k]
                  + CAL_ZH[:k] + CAL_MATH[:k] + CAL_CHAT[:k])
         random.Random(0).shuffle(calib)
-        log(f"calib mixw (căn cước Qwen3): {len(calib)} câu"
-            " (vi 20 + ja 20 + en 24 + code 16 + zh 20 + math 14 + chat 8)")
+        log(f"calib {args.calib_mode}: {len(calib)} câu"
+            f" (vi 20 + ja {nja} + en 24 + code 16 + zh 20 + math 14 + chat 8)")
+    elif args.calib_mode == "mixwbig":
+        # mixw phóng ~10×: vi/ja lấy câu MỚI từ train (skip 20k — tránh dev/val), CAL_* lặp ×8
+        # (lặp = giữ nguyên TỈ TRỌNG thống kê; thông tin mới chỉ thêm ở trục vi/ja)
+        k = 4 if args.smoke else None
+        rep = 1 if args.smoke else 8
+        vi_b = read_lines(args.train_vi, k or 160, skip=20_000)
+        ja_b = read_lines(args.train_ja, k or 160, skip=20_000)
+        calib = (vi_b + ja_b + (CAL_EN + CAL_CODE + CAL_ZH + CAL_MATH + CAL_CHAT) * rep)
+        random.Random(0).shuffle(calib)
+        log(f"calib mixwbig: {len(calib)} câu (vi {len(vi_b)} + ja {len(ja_b)} + CAL×{rep})")
     linears = [(n, m) for n, m in model.named_modules() if isinstance(m, nn.Linear) and "layers." in n]
     xn_acc, handles = {n: None for n, _ in linears}, []
     def mk(nm_):
@@ -521,13 +639,21 @@ def main():
     calib_ids = []
     with torch.no_grad():
         for s in calib:
-            ids = tok(s, return_tensors="pt", truncation=True, max_length=96).input_ids.to(dev)
+            ids = tok(s, return_tensors="pt", truncation=True,
+                      max_length=args.calib_seq).input_ids.to(dev)
             if ids.shape[1] >= 4:
                 calib_ids.append(ids)
                 model(ids)
     for h in handles:
         h.remove()
     xnorm = {n: xn_acc[n].sqrt() for n in xn_acc}
+    if args.awq_alpha > 0:
+        apply_awq_gauge(model, xnorm, args.awq_alpha)
+        ppl_a = eval_ppl(model, tok, dev_vi, dev)
+        log(f"FP sau awq-gauge (α={args.awq_alpha}): vi {ppl_a:.1f}")
+        if abs(ppl_a - ppl_fp[0]) / ppl_fp[0] > 0.01:
+            log("!!! awq-gauge sai — abort")
+            sys.exit(1)
     if args.perm_gauge:
         apply_perm_gauge(model, xnorm, args.nm_m)
         ppl_p = eval_ppl(model, tok, dev_vi, dev)
@@ -535,6 +661,34 @@ def main():
         if abs(ppl_p - ppl_fp[0]) / ppl_fp[0] > 0.01:
             log("!!! perm-gauge sai — abort")
             sys.exit(1)
+    gscore = None
+    if args.mask_signal == "snip":
+        log(f"SNIP saliency: {args.mask_grad_batches} batch backward |W·∇W| trên FP")
+        if tok.pad_token is None:
+            tok.pad_token = tok.eos_token
+        for _, m_ in linears:
+            m_.weight.requires_grad_(True)
+        gacc = {n_: torch.zeros_like(m_.weight) for n_, m_ in linears}
+        bs = 8
+        for i in range(args.mask_grad_batches):
+            st = (i * bs) % max(len(calib) - bs, 1)
+            batch = calib[st:st + bs]
+            enc = tok(batch, return_tensors="pt", padding=True, truncation=True,
+                      max_length=args.calib_seq)
+            ids = enc.input_ids.to(dev)
+            am = enc.attention_mask.to(dev)
+            labels = ids.masked_fill(am == 0, -100)
+            out = model(ids, attention_mask=am, labels=labels)
+            model.zero_grad(set_to_none=True)
+            out.loss.backward()
+            with torch.no_grad():
+                for n_, m_ in linears:
+                    if m_.weight.grad is not None:
+                        gacc[n_] += (m_.weight * m_.weight.grad).abs()
+        model.zero_grad(set_to_none=True)
+        for _, m_ in linears:
+            m_.weight.requires_grad_(False)
+        gscore = gacc
     orig = {n: m.weight.data.clone() for n, m in linears}
 
     layers = model.model.layers
@@ -553,16 +707,31 @@ def main():
     NC = len(calib_ids)
     eval_sub = list(range(0, NC, max(1, NC // 12)))[:12]
 
+    GUARD6 = {0, 1, 2, 3, 26, 27}
+    def nm_for(b):
+        if args.nm_profile == "guard6":
+            return (2, 4) if b in GUARD6 else (1, 8)
+        return (args.nm_n, args.nm_m)
+    casc = tuple(int(x) for x in args.cascade2.split(":")) if args.cascade2 else None
     wrapped = []
     for b, blk in enumerate(layers):
+        nm_n_b, nm_m_b = nm_for(b)
         for sub, name in LIN_PATHS:
             parent = getattr(blk, sub)
             lin = getattr(parent, name)
             key = f"model.layers.{b}.{sub}.{name}"
+            imp_w = orig[key].abs() * xnorm[key][None, :].clamp(min=1e-8)
+            if gscore is not None:
+                b_ = args.snip_beta
+                iw = imp_w / imp_w.mean(dim=1, keepdim=True).clamp(min=1e-12)
+                ig = gscore[key] / gscore[key].mean(dim=1, keepdim=True).clamp(min=1e-12)
+                imp_w = iw.pow(1.0 - b_) * (ig + 1e-8).pow(b_)
             m_ = (torch.ones_like(orig[key]) if args.dense
-                  else wanda_nm_mask(orig[key], xnorm[key], args.nm_n, args.nm_m))
+                  else nm_mask_from_imp(imp_w, nm_n_b, nm_m_b))
             w = LearnQLinear(lin, m_, G=args.sgroup, use_bias=not args.no_bias,
                              sdtype=("f16" if args.sgroup == 256 else "f8"))
+            if casc:
+                w.init_plane2(xnorm[key], casc[0], casc[1])
             setattr(parent, name, w)
             wrapped.append((b, parent, name, lin, w))
 
@@ -583,6 +752,7 @@ def main():
             opt = torch.optim.Adam([
                 {"params": [w.Wfp for w in mods], "lr": 1e-3},
                 {"params": [w.raw_s for w in mods], "lr": 5e-3},
+                {"params": [w.raw_s2 for w in mods if w.has2], "lr": 5e-3},
                 {"params": [w.bias for w in mods if w.bias is not None], "lr": 5e-4},
                 {"params": norm_ws, "lr": 5e-4},
             ])
@@ -624,6 +794,13 @@ def main():
                     H_q[s] = blk(H_q[s], position_embeddings=ropes[s]).detach()
         log(f"S1 pass {p_idx+1} xong ({time.time()-t0:.0f}s)")
     del H_fp, H_q, ropes
+    if args.lowrank > 0:
+        # Đích = Wfp − Q (phần dư lượng tử của trọng số ĐÃ-bù-sequential).
+        # KHÔNG dùng orig − Q: orig − Wfp là phần bù S1 cố ý tạo ra — kéo về orig là tháo nó
+        # (đo thật B1a bản lỗi: tệ hơn ×1.5 — cùng họ sai lầm mask-refresh).
+        log(f"B1 absorber: SVD r={args.lowrank} (int8 fake-quant) trên Wfp−Q, {len(wrapped)} layer")
+        for b, parent, name, lin, w in wrapped:
+            w.init_lowrank(w.Wfp.data, args.lowrank)
     pv = eval_ppl(model, tok, dev_vi, dev)
     log(f"S1 (dựng lại ~exp_q): PPL vi {pv:.1f}  (mốc lab: 400.1)")
 
@@ -636,16 +813,38 @@ def main():
         apply_gauge(teacher, rot=bool(args.rot_gauge))
         for p in teacher.parameters():
             p.requires_grad_(False)
-        tr_vi = read_lines(args.train_vi, args.train_sents // 2, skip=args.train_skip)
-        tr_ja = read_lines(args.train_ja, args.train_sents // 2, skip=args.train_skip)
-        train_txt = [x for pr in zip(tr_vi, tr_ja) for x in pr]
-        log(f"S2 data: {len(train_txt)} câu")
+        if args.kd_mix:
+            T = args.train_sents
+            want_vi, want_ja = int(T * 0.24), int(T * 0.36)   # ja 60/40 trong nửa vi/ja
+            pool, miss = [], 0
+            for k, p, n_ in (("en", args.kd_en, int(T * 0.15)), ("code", args.kd_code, int(T * 0.10)),
+                             ("zh", args.kd_zh, int(T * 0.10)), ("math", args.kd_math, int(T * 0.05))):
+                lines = read_lines(p, n_) if (p and os.path.exists(p)) else []
+                if not lines:
+                    miss += n_
+                    log(f"KD-mix: nguồn {k} TRỐNG — dồn {n_} câu về vi/ja")
+                pool += lines
+            want_ja += int(miss * 0.6)
+            want_vi += miss - int(miss * 0.6)
+            tr_vi = read_lines(args.train_vi, want_vi, skip=args.train_skip)
+            tr_ja = read_lines(args.train_ja, want_ja, skip=args.train_skip)
+            train_txt = tr_vi + tr_ja + pool
+            random.Random(1).shuffle(train_txt)
+            log(f"S2 data KD-mix: {len(train_txt)} câu (vi {len(tr_vi)} + ja {len(tr_ja)}"
+                f" + extra {len(pool)})")
+        else:
+            tr_vi = read_lines(args.train_vi, args.train_sents // 2, skip=args.train_skip)
+            tr_ja = read_lines(args.train_ja, args.train_sents // 2, skip=args.train_skip)
+            train_txt = [x for pr in zip(tr_vi, tr_ja) for x in pr]
+            log(f"S2 data: {len(train_txt)} câu")
     else:
         teacher, train_txt = None, []   # screening S1-only: khỏi tốn RAM/thời gian teacher
 
     params_w = [w.Wfp for (_, _, _, _, w) in wrapped]
-    params_s = [w.raw_s for (_, _, _, _, w) in wrapped]
+    params_s = [w.raw_s for (_, _, _, _, w) in wrapped] + \
+               [w.raw_s2 for (_, _, _, _, w) in wrapped if w.has2]
     params_b = [w.bias for (_, _, _, _, w) in wrapped if w.bias is not None]
+    params_lr = [p for (_, _, _, _, w) in wrapped for p in (w.lrA, w.lrB) if p is not None]
     norm_all = []
     for b, blk in enumerate(layers):
         for sub, name in NORM_PATHS:
@@ -654,6 +853,9 @@ def main():
     norm_all.append(model.model.norm.weight)
     groups = [{"params": params_w, "lr": args.lr}, {"params": params_b, "lr": args.lr}]
     trainable = params_w + params_b
+    if params_lr:
+        groups.append({"params": params_lr, "lr": args.lr})
+        trainable += params_lr
     if not args.freeze_scales:
         groups.append({"params": params_s, "lr": args.lr * 2})
         trainable += params_s
@@ -673,7 +875,12 @@ def main():
     c0 = eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)
     z0 = eval_ppl(model, tok, ZH_EVAL, dev)
     m0 = eval_ppl(model, tok, MATH_EVAL, dev)
-    best_score = (v0 * j0 * e0 * c0) ** 0.25 if args.best_metric == "geo4" else math.sqrt(v0 * j0)
+    if args.best_metric == "geo6":
+        best_score = (v0 * j0 * e0 * c0 * z0 * m0) ** (1 / 6)
+    elif args.best_metric == "geo4":
+        best_score = (v0 * j0 * e0 * c0) ** 0.25
+    else:
+        best_score = math.sqrt(v0 * j0)
     best_vi = v0
     best_sd = {k: t.detach().clone() for k, t in model.state_dict().items()}
     s1_probe = {"vi": v0, "ja": j0, "en": e0, "code": c0, "zh": z0, "math": m0}
@@ -761,25 +968,41 @@ def main():
             j = eval_ppl(model, tok, dev_ja, dev)
             en = eval_ppl(model, tok, EN_EVAL, dev)
             cd = eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)
-            sc = (v * j * en * cd) ** 0.25 if args.best_metric == "geo4" else math.sqrt(v * j)
-            log(f"  step {step+1}/{args.steps}: KL/token {loss_acc:.4f} | vi {v:.1f} / ja {j:.1f} | geo {sc:.1f} | en {en:.1f} / code {cd:.1f} ({time.time()-t1:.0f}s)")
+            tail = ""
+            if args.best_metric == "geo6":
+                z = eval_ppl(model, tok, ZH_EVAL, dev)
+                mm = eval_ppl(model, tok, MATH_EVAL, dev)
+                sc = (v * j * en * cd * z * mm) ** (1 / 6)
+                tail = f" | zh {z:.0f} / math {mm:.0f}"
+            elif args.best_metric == "geo4":
+                sc = (v * j * en * cd) ** 0.25
+            else:
+                sc = math.sqrt(v * j)
+            log(f"  step {step+1}/{args.steps}: KL/token {loss_acc:.4f} | vi {v:.1f} / ja {j:.1f} | geo {sc:.1f} | en {en:.1f} / code {cd:.1f}{tail} ({time.time()-t1:.0f}s)")
             if sc < best_score:
                 best_score = sc
                 best_vi = v
                 best_sd = {k: t.detach().clone() for k, t in model.state_dict().items()}
+                with torch.no_grad():   # mẫu hành vi @best — soi NGƯỠNG hết loop (bài học gate)
+                    g = tok("Hôm nay trời đẹp nên", return_tensors="pt").input_ids.to(dev)
+                    o = model.generate(g, max_new_tokens=20, do_sample=False,
+                                       pad_token_id=tok.eos_token_id)
+                    log(f"    mẫu vi @best: {tok.decode(o[0][g.shape[1]:], skip_special_tokens=True)!r}")
             if ema is not None:
                 ema_swap()
     if best_sd is not None:
         model.load_state_dict(best_sd)
 
-    # bake + persist + eval cuối
-    with torch.no_grad():
-        for b, parent, name, lin, w in wrapped:
-            new_lin = nn.Linear(w.C, w.R, bias=w.use_bias).to(dev)
-            new_lin.weight.data = w.quant().detach()
-            if w.use_bias:
-                new_lin.bias.data = w.bias.detach()
-            setattr(parent, name, new_lin)
+    # bake + persist + eval cuối (absorber KHÔNG bake được vào Linear thường —
+    # giữ wrapper để eval; numerics giống hệt vì forward dùng đúng quant())
+    if args.lowrank == 0:
+        with torch.no_grad():
+            for b, parent, name, lin, w in wrapped:
+                new_lin = nn.Linear(w.C, w.R, bias=w.use_bias).to(dev)
+                new_lin.weight.data = w.quant().detach()
+                if w.use_bias:
+                    new_lin.bias.data = w.bias.detach()
+                setattr(parent, name, new_lin)
     pv, pj = eval_ppl(model, tok, dev_vi, dev), eval_ppl(model, tok, dev_ja, dev)
     pen = eval_ppl(model, tok, EN_EVAL, dev)
     pcd = eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)
@@ -787,11 +1010,35 @@ def main():
     pma = eval_ppl(model, tok, MATH_EVAL, dev)
     big_vi = eval_ppl(model, tok, read_lines(args.dev_vi, 200)[-100:], dev)
     # bpw trung thực theo bậc (payload*keep + entropy mask + scale f8/g64) — dense: không mask
-    BPW_NM = {(2, 4): 1.566, (1, 4): 1.023, (1, 8): 0.699, (1, 10): 0.616}
     sb = (16.0 if args.sgroup == 256 else 8.0) / args.sgroup
-    bpw = round(math.log2(3) + sb, 3) if args.dense else BPW_NM.get((args.nm_n, args.nm_m), -1.0)
+
+    def nm_bpw(n_, m_):
+        return n_ / m_ * math.log2(3) + math.log2(math.comb(m_, n_)) / m_ + sb
+    if args.dense:
+        bpw = math.log2(3) + sb
+    elif args.nm_profile == "guard6":
+        bpw = (6 * nm_bpw(2, 4) + 22 * nm_bpw(1, 8)) / 28
+    else:
+        bpw = nm_bpw(args.nm_n, args.nm_m)
+    if casc:
+        bpw += nm_bpw(casc[0], casc[1])
+    if args.lowrank > 0:
+        tot = sum(w.R * w.C for (_, _, _, _, w) in wrapped)
+        extra = sum(args.lowrank * (w.R + w.C) * 8.0 for (_, _, _, _, w) in wrapped)
+        bpw += extra / tot
+    bpw = round(bpw, 3)
     log(f"=> EXP R QAT-lite: PPL vi {pv:.1f} / ja {pj:.1f} | en {pen:.1f} / code {pcd:.1f}"
         f" | zh {pzh:.1f} / math {pma:.1f} | validation 100 câu vi: {big_vi:.1f}")
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    for dom, pr in (("vi", "Hà Nội là thủ đô của Việt Nam, nổi tiếng với"),
+                    ("en", "The most important thing about learning a language is"),
+                    ("code", "def is_prime(n):\n    ")):
+        g = tok(pr, return_tensors="pt").input_ids.to(dev)
+        with torch.no_grad():
+            o = model.generate(g, max_new_tokens=32, do_sample=False,
+                               pad_token_id=tok.eos_token_id)
+        log(f"  sinh [{dom}]: {tok.decode(o[0][g.shape[1]:], skip_special_tokens=True)!r}")
     if args.save_ckpt:
         torch.save({"state_dict": {k: v.half().cpu() for k, v in model.state_dict().items()},
                     "meta": {"config": f"nm{args.nm_n}:{args.nm_m}+gauge+QATlite",
@@ -811,6 +1058,8 @@ def main():
     out[key] = {
         "bpw": bpw, "nm": f"{args.nm_n}:{args.nm_m}", "calib_mode": args.calib_mode,
         "perm_gauge": args.perm_gauge, "steps": args.steps,
+        "nm_profile": args.nm_profile, "cascade2": args.cascade2, "lowrank": args.lowrank,
+        "awq_alpha": args.awq_alpha, "mask_signal": args.mask_signal,
         "ppl_vi": pv, "ppl_ja": pj, "ppl_en": pen, "ppl_code": pcd,
         "ppl_zh": pzh, "ppl_math": pma, "ppl_vi_100c": big_vi,
         "s1_probe": s1_probe, "fp_vi": ppl_fp[0], "fp_ja": ppl_fp[1]}

@@ -15,10 +15,46 @@ app = modal.App("qat-lite-n3")
 
 image = (
     modal.Image.debian_slim(python_version="3.11")
-    .pip_install("torch", "transformers==4.57.6", "numpy", "accelerate", "huggingface_hub")
+    .pip_install("torch", "transformers==4.57.6", "numpy", "accelerate", "huggingface_hub",
+                 "datasets")
     .add_local_file("eval/lowbit_ptq/exp_r_qat_lite.py", "/root/exp_r_qat_lite.py")
     .add_local_dir("cloud/qat_data", "/root/qat_data")
 )
+
+
+def _prep_kd_mix():
+    """Stream en/code/zh/math về /vol/kd_mix (MỘT lần, cache) — server-side, 0 byte 4G."""
+    import io
+    import os
+    srcs = [
+        ("en", "HuggingFaceFW/fineweb-edu", None, "text", 12_000),
+        ("code", "bigcode/the-stack-smol", None, "content", 8_000),
+        ("zh", "HuggingFaceFW/fineweb-2", "cmn_Hani", "text", 8_000),
+        ("math", "open-web-math/open-web-math", None, "text", 5_000),
+    ]
+    os.makedirs("/vol/kd_mix", exist_ok=True)
+    from datasets import load_dataset
+    for name, repo, cfg, field, n in srcs:
+        path = f"/vol/kd_mix/kd_{name}.txt"
+        if os.path.exists(path) and os.path.getsize(path) > 100_000:
+            print(f"kd_mix: {name} đã cache", flush=True)
+            continue
+        try:
+            ds = load_dataset(repo, cfg, split="train", streaming=True)
+            cnt = 0
+            with io.open(path + ".tmp", "w", encoding="utf-8") as f:
+                for row in ds:
+                    t = (row.get(field) or "").strip().replace("\n", " ")
+                    if len(t) < 40:
+                        continue
+                    f.write(t[:400] + "\n")
+                    cnt += 1
+                    if cnt >= n:
+                        break
+            os.replace(path + ".tmp", path)
+            print(f"kd_mix: {name} = {cnt} dòng", flush=True)
+        except Exception as e:  # nguồn hỏng thì bỏ qua — exp_r tự dồn về vi/ja
+            print(f"kd_mix: {name} LỖI {type(e).__name__}: {e}", flush=True)
 
 vol = modal.Volume.from_name("qat-lite-vol", create_if_missing=True)
 
@@ -31,7 +67,9 @@ def train(steps: int = 1500, train_sents: int = 8000, lr: float = 2e-4,
           ema: float = 0.0, dense: int = 0, sgroup: int = 64, no_bias: int = 0,
           calib_mode: str = "vija", s1_passes: int = 2, rot_gauge: int = 0,
           best_metric: str = "geo2", perm_gauge: int = 0, save_ckpt: int = 1,
-          tag: str = ""):
+          tag: str = "", awq_alpha: float = 0.0, mask_signal: str = "wanda",
+          snip_beta: float = 0.5, calib_seq: int = 96, nm_profile: str = "uniform",
+          lowrank: int = 0, cascade2: str = ""):
     import os
     import subprocess
     from huggingface_hub import snapshot_download
@@ -70,6 +108,13 @@ def train(steps: int = 1500, train_sents: int = 8000, lr: float = 2e-4,
         "--rot-gauge", str(rot_gauge),
         "--best-metric", best_metric,
         "--perm-gauge", str(perm_gauge),
+        "--awq-alpha", str(awq_alpha),
+        "--mask-signal", mask_signal,
+        "--snip-beta", str(snip_beta),
+        "--calib-seq", str(calib_seq),
+        "--nm-profile", nm_profile,
+        "--lowrank", str(lowrank),
+        "--cascade2", cascade2,
         "--save-ckpt", str(save_ckpt),
         "--tag", tag,
         "--out", f"/vol/out/{out_name}",
@@ -122,6 +167,165 @@ def screen_s1():
             fails.append(tag)
         vol.commit()
     print(f"SCREEN S1-V2 XONG — fail: {fails if fails else 'không'}")
+
+
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=2 * 3600)
+def screen_a():
+    """Đợt A — screening S1 các đòn CHƯA dùng, so với mốc s1v2 (1:4 mixw+perm geo6 732;
+    1:8 mixw+perm geo6 1310). 6 ô × ~4-6 phút L40S ≈ $1.2. steps=0, không ckpt."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    # (tag, nm_n, nm_m, calib_mode, perm, awq_alpha, mask_signal, calib_seq)
+    cells = [
+        ("A1-japatch[1:4]", 1, 4, "mixwj", 1, 0.0, "wanda", 96),
+        ("A2-awq25[1:4]", 1, 4, "mixw", 1, 0.25, "wanda", 96),
+        ("A2-awq50[1:4]", 1, 4, "mixw", 1, 0.5, "wanda", 96),
+        ("A3-snip[1:4]", 1, 4, "mixw", 1, 0.0, "snip", 96),
+        ("A4-big[1:4]", 1, 4, "mixwbig", 1, 0.0, "wanda", 96),
+        ("A5-seq192[1:8]", 1, 8, "mixw", 1, 0.0, "wanda", 192),
+    ]
+    fails = []
+    for tag, n, m, cm, pg, aw, ms, cs in cells:
+        print(f"==== SCREEN {tag} ====", flush=True)
+        cmd = ["python", "/root/exp_r_qat_lite.py", "--device", "cuda",
+               "--model-glob", mdir,
+               "--train-vi", "/root/qat_data/train_slice.vi",
+               "--train-ja", "/root/qat_data/train_slice.ja",
+               "--dev-vi", "/root/qat_data/dev.vi",
+               "--dev-ja", "/root/qat_data/dev.ja",
+               "--train-skip", "0", "--steps", "0", "--save-ckpt", "0",
+               "--nm-n", str(n), "--nm-m", str(m), "--calib-mode", cm,
+               "--perm-gauge", str(pg), "--awq-alpha", str(aw),
+               "--mask-signal", ms, "--calib-seq", str(cs), "--tag", tag]
+        r = subprocess.run(cmd)
+        print(f"exit={r.returncode}", flush=True)
+        if r.returncode != 0:
+            fails.append(tag)
+        vol.commit()
+    print(f"SCREEN DOT-A XONG — fail: {fails if fails else 'không'}")
+
+
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=6 * 3600)
+def gen4(steps: int = 5000, lowrank_sub1: int = 8):
+    """GEN4 — 4 bậc TUẦN TỰ trong 1 container (app chết là chuỗi chết theo, không mồ côi):
+    S1-v2 thắng cuộc (mixwj + perm) + v4 + KD-mix + chọn best geo6 + absorber cho <1bpw.
+    steps 5000 (thay 6000) để vừa budget ~$5. Ckpt Ở LẠI volume (chế độ 4G)."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    _prep_kd_mix()
+    tiers = [
+        ("n4", 2, 4, 0),
+        ("o1", 1, 4, 0),
+        ("o2", 1, 8, lowrank_sub1),
+        ("o3", 1, 10, lowrank_sub1),
+    ]
+    fails = []
+    for name, n, m, lr_ in tiers:
+        print(f"==== GEN4 {name} (nm {n}:{m}, lowrank {lr_}) ====", flush=True)
+        cmd = ["python", "/root/exp_r_qat_lite.py", "--device", "cuda",
+               "--model-glob", mdir,
+               "--train-vi", "/root/qat_data/train_slice.vi",
+               "--train-ja", "/root/qat_data/train_slice.ja",
+               "--dev-vi", "/root/qat_data/dev.vi",
+               "--dev-ja", "/root/qat_data/dev.ja",
+               "--train-skip", "0",
+               "--steps", str(steps), "--train-sents", "60000", "--lr", "2e-05",
+               "--freeze-scales", "1", "--freeze-norms", "1", "--batch", "16",
+               "--fast", "1", "--cosine", "1", "--kd-temp", "2.0", "--ce-w", "0.1",
+               "--ema", "0.999", "--nm-n", str(n), "--nm-m", str(m),
+               "--calib-mode", "mixwj", "--perm-gauge", "1", "--best-metric", "geo6",
+               "--kd-mix", "1",
+               "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", "/vol/kd_mix/kd_code.txt",
+               "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
+               "--lowrank", str(lr_),
+               "--tag", f"gen4[{n}:{m}]", "--out", f"/vol/out/qat_gen4_{name}.pt"]
+        r = subprocess.run(cmd)
+        print(f"exit={r.returncode}", flush=True)
+        if r.returncode != 0:
+            fails.append(name)
+        vol.commit()
+    print(f"GEN4 XONG CA 4 BAC — fail: {fails if fails else 'không'}")
+
+
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=2 * 3600)
+def screen_b():
+    """Đợt B — phân bổ bit thông minh: absorber SVD / guard6 / 2:8 / cascade.
+    Mốc so: 1:4 mixw+perm 732 geo6 @1.023 | 1:8 mixw+perm 1310 @0.699 | 1:10 1919 @0.616.
+    B1b là ô đối đầu TRỰC TIẾP: 1:10+absorber @0.700 vs 1:8 thuần @0.699."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    # (tag, nm_n, nm_m, profile, lowrank, cascade2)
+    cells = [
+        ("B1a-lr8[1:8]", 1, 8, "uniform", 8, ""),
+        ("B1b-lr8[1:10]", 1, 10, "uniform", 8, ""),
+        ("B2-guard6", 1, 8, "guard6", 0, ""),
+        ("B3a-2of8", 2, 8, "uniform", 0, ""),
+        ("B3b-casc[1:8+1:32]", 1, 8, "uniform", 0, "1:32"),
+    ]
+    fails = []
+    for tag, n, m, prof, lr_, c2 in cells:
+        print(f"==== SCREEN {tag} ====", flush=True)
+        cmd = ["python", "/root/exp_r_qat_lite.py", "--device", "cuda",
+               "--model-glob", mdir,
+               "--train-vi", "/root/qat_data/train_slice.vi",
+               "--train-ja", "/root/qat_data/train_slice.ja",
+               "--dev-vi", "/root/qat_data/dev.vi",
+               "--dev-ja", "/root/qat_data/dev.ja",
+               "--train-skip", "0", "--steps", "0", "--save-ckpt", "0",
+               "--nm-n", str(n), "--nm-m", str(m), "--calib-mode", "mixw",
+               "--perm-gauge", "1", "--nm-profile", prof,
+               "--lowrank", str(lr_), "--cascade2", c2, "--tag", tag]
+        r = subprocess.run(cmd)
+        print(f"exit={r.returncode}", flush=True)
+        if r.returncode != 0:
+            fails.append(tag)
+        vol.commit()
+    print(f"SCREEN DOT-B XONG — fail: {fails if fails else 'không'}")
+
+
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=3600)
+def screen_b2():
+    """B1 bản SỬA (absorber đích Wfp−Q thay vì orig−Q) — 2 ô, so cặp với B1a/B1b bản lỗi."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    for tag, n, m in (("B1a2-lr8fix[1:8]", 1, 8), ("B1b2-lr8fix[1:10]", 1, 10)):
+        print(f"==== SCREEN {tag} ====", flush=True)
+        r = subprocess.run(["python", "/root/exp_r_qat_lite.py", "--device", "cuda",
+                            "--model-glob", mdir,
+                            "--train-vi", "/root/qat_data/train_slice.vi",
+                            "--train-ja", "/root/qat_data/train_slice.ja",
+                            "--dev-vi", "/root/qat_data/dev.vi",
+                            "--dev-ja", "/root/qat_data/dev.ja",
+                            "--train-skip", "0", "--steps", "0", "--save-ckpt", "0",
+                            "--nm-n", str(n), "--nm-m", str(m), "--calib-mode", "mixw",
+                            "--perm-gauge", "1", "--lowrank", "8", "--tag", tag])
+        print(f"exit={r.returncode}", flush=True)
+        vol.commit()
+    print("SCREEN B2 XONG")
 
 
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=1800)
