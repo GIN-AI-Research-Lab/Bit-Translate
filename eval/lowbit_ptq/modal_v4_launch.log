@@ -1,0 +1,44 @@
+✓ Initialized. View run at 
+https://modal.com/apps/tuent1997/main/ap-kgujSmBuK20kkcv2cEVoJ8
+✓ Created objects.
+├── 🔨 Created mount E:\Bit-Translate\cloud\modal_qat_lite.py
+├── 🔨 Created mount eval\lowbit_ptq\exp_r_qat_lite.py
+├── 🔨 Created mount E:\Bit-Translate\cloud\qat_data
+├── 🔨 Created function train.
+└── 🔨 Created function status.
+
+[1AFetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+[1AFetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 19.86it/s]
+[1AFetching 10 files: 100%|██████████| 10/10 [00:05<00:00,  1.79it/s]
+RUN: python /root/exp_r_qat_lite.py --device cuda --model-glob /root/.cache/huggingface/hub/models--Qwen--Qwen3-0.6B/snapshots/c1899de289a04d12100db370d81485cdf75e47ca --train-vi /root/qat_data/train_slice.vi --train-ja /root/qat_data/train_slice.ja --dev-vi /root/qat_data/dev.vi --dev-ja /root/qat_data/dev.ja --train-skip 0 --steps 6000 --train-sents 60000 --lr 2e-05 --freeze-scales 1 --freeze-norms 1 --nm-n 2 --nm-m 4 --batch 16 --fast 1 --cosine 1 --kd-temp 2.0 --ce-w 0.1 --ema 0.999 --out /vol/out/qat_lite_n3_v4.pt
+[04:47:50] device=cuda steps=6000 smoke=False
+[04:47:56] FP32: vi 69.0 / ja 125.1
+[04:47:57] FP sau gauge: vi 69.0
+[04:48:56] S1 pass 1 xong (56s)
+[04:49:22] S1 pass 2 xong (82s)
+[04:49:22] S1 (dựng lại ~exp_q): PPL vi 447.1  (mốc lab: 400.1)
+[04:49:22] S2: nạp teacher FP...
+[04:49:23] S2 data: 60000 câu
+[04:49:23] S2 trainable: W+bias | lr 2e-05
+[04:49:25] S2 step-0 (mốc S1): PPL vi 447.1 / ja 1605.2 | en 27647.7 / code 11970.6
+[04:53:32]   step 500/6000: KL/token 0.7741 | vi 410.1 / ja 1185.1 | geo 697.1 | en 11105.9 / code 5155.7 (246s)
+[04:57:38]   step 1000/6000: KL/token 0.7325 | vi 400.6 / ja 1253.0 | geo 708.5 | en 5590.2 / code 3636.4 (492s)
+[05:01:44]   step 1500/6000: KL/token 0.6739 | vi 398.4 / ja 1165.6 | geo 681.4 | en 3834.1 / code 2712.3 (738s)
+[05:05:50]   step 2000/6000: KL/token 0.6802 | vi 393.3 / ja 1101.3 | geo 658.1 | en 2942.3 / code 2112.1 (985s)
+[05:09:56]   step 2500/6000: KL/token 0.6827 | vi 396.4 / ja 1111.4 | geo 663.8 | en 2709.9 / code 1736.3 (1231s)
+[05:14:02]   step 3000/6000: KL/token 0.6606 | vi 384.8 / ja 1191.6 | geo 677.1 | en 2532.7 / code 1150.3 (1477s)
+[05:18:08]   step 3500/6000: KL/token 0.5865 | vi 373.5 / ja 1042.8 | geo 624.1 | en 2091.1 / code 979.2 (1723s)
+[05:22:14]   step 4000/6000: KL/token 0.5017 | vi 367.7 / ja 1073.1 | geo 628.2 | en 1976.0 / code 872.5 (1969s)
+[05:26:21]   step 4500/6000: KL/token 0.5627 | vi 364.2 / ja 1096.3 | geo 631.8 | en 1875.6 / code 826.1 (2216s)
+[05:30:28]   step 5000/6000: KL/token 0.5714 | vi 358.8 / ja 1070.9 | geo 619.9 | en 1814.8 / code 782.5 (2462s)
+[05:34:32]   step 5500/6000: KL/token 0.5180 | vi 356.4 / ja 1114.9 | geo 630.3 | en 1822.6 / code 740.3 (2707s)
+[05:38:36]   step 6000/6000: KL/token 0.6183 | vi 350.8 / ja 1192.3 | geo 646.7 | en 1838.2 / code 703.9 (2951s)
+[05:38:41] => EXP R QAT-lite: PPL vi 358.8 / ja 1070.9 | validation 100 câu vi: 360.3
+[05:38:43] Đã lưu model bake: /vol/out/qat_lite_n3_v4.pt
+========================================================================
+EXP R — QAT-lite e2e (N3 1.56bpw + gauge)  [mốc exp_q: vi 400.1]
+  sau QAT-lite: vi      358.8  ja     1070.9  | 100 câu vi: 360.3
+========================================================================
+exit=0
+✓ App completed. View run at 
+https://modal.com/apps/tuent1997/main/ap-kgujSmBuK20kkcv2cEVoJ8

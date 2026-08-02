@@ -1,0 +1,19 @@
+[13:08:31] Nạp FP32 + giữ bản gốc trong RAM
+[13:08:32] === FP32 (baseline) ===
+[13:08:40]     PPL vi 69.0 / ja 125.1 / en 34.2 / code 2.7
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[13:09:32]     sinh 720 token, 14.0 tok/s (mô phỏng)
+[13:09:32] === 1.56bpw QAT-v3 ===
+[13:09:43]     PPL vi 399.7 / ja 1085.0 / en 2593.9 / code 1049.8
+[13:10:37]     sinh 720 token, 13.3 tok/s (mô phỏng)
+[13:10:37] === 1.02bpw S1 ===
+[13:10:50]     PPL vi 676.0 / ja 2848.5 / en 21448.2 / code 16598.9
+[13:11:42]     sinh 720 token, 13.8 tok/s (mô phỏng)
+[13:11:42] === 0.70bpw S1 ===
+[13:11:55]     PPL vi 957.9 / ja 2849.5 / en 33708.1 / code 16325.3
+[13:12:48]     sinh 720 token, 13.4 tok/s (mô phỏng)
+[13:12:48] === 0.62bpw S1 ===
+[13:13:01]     PPL vi 1384.5 / ja 2889.7 / en 48339.4 / code 19200.5
+[13:13:52]     sinh 720 token, 14.2 tok/s (mô phỏng)
+[13:13:52] XONG. Báo cáo: e:\Bit-Translate\eval\lowbit_ptq\exp_s_report.md

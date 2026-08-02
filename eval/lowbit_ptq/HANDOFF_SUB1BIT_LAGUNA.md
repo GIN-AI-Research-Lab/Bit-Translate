@@ -1,5 +1,25 @@
 # HANDOFF — Nghiên cứu low-bit/sub-1-bit + kế hoạch chạy trên Laguna S2.1 (máy khác)
 
+> **CẬP NHẬT LỚN 02/08 chiều — QAT-lite Modal + bài học calib + lộ trình mới (chi tiết README Bài 11):**
+> 1. **Recipe train chuẩn (v4)**: S1 (gauge+Wanda+sequential 2-pass, scale/bias học được) → e2e KD
+>    **lr 2e-5, CHỈ train W+bias (freeze scale+norm — kiểu EfficientQAT)**, KL/token + warmup 100 +
+>    cosine + EMA 0.999 + KD-temp 2 + CE 0.1, data ≥5×steps×batch/epoch·3, guard best-GEO đa ngôn ngữ.
+>    Kết quả 0.6B@1.56bpw: val-100 vi 621→**360** (~4M token KD, ~$1.3/run L40S).
+>    Hạ tầng sẵn: `cloud/modal_qat_lite.py` (profile trituekstns/tuent1997, volume qat-lite-vol).
+> 2. **BẮT BUỘC calib + KD trộn miền** cho model tổng quát: calib vi/ja-thuần làm en ×808, code ×4.434
+>    ở S1 (FP anchor en 34.2/code 2.7). Gate 4 miền (vi/ja/en/code) có sẵn trong exp_r; Laguna cần
+>    thêm code-pass@1. MoE có "cách ly forgetting" tự nhiên (expert không kích hoạt = không gradient)
+>    nhưng attention/shared/router vẫn chịu — freeze router.
+> 3. **F0 — export ra GGUF chạy thật**: TQ2_0 đo 144.5 tok/s (79% băng thông) nhưng PPL 21 TRIỆU;
+>    ta có PPL 360 nhưng chưa có kernel. Giải: retrain với ràng buộc TQ2_0-native (dense ternary,
+>    scale f16/g256, KHÔNG bias) → convert GGUF → llama-quantize TQ2_0 (lossless khi trọng số đã
+>    nằm trên lưới) → một file ~230MB vừa nhanh vừa giữ chất lượng QAT.
+> 4. **Lộ trình bậc thang mới**: 0.6B (xong) → **Qwen3-30B-A3B** (2507-Instruct cho dịch / Coder cho
+>    code; cùng họ arch → exp_r port thẳng; ~6GB@1.56bpw, ~35-40 tok/s máy B đo theo mỏ neo 79%;
+>    tổng duyệt mọi cơ chế ở giá 1/4 Laguna) → **Laguna 118B** (trận chính).
+> 5. Bài học vận hành: verify checkpoint sau download (miniz corrupt); guard step-0 cứu 4 run hỏng;
+>    "kỳ vọng ghi trước" bắt 3 bug loss/LR/scale-trôi-f8.
+
 > **CẬP NHẬT 02/08 sáng — đường biên thế hệ 2 (xem README Bài 10 cho bảng đầy đủ):**
 > 1.94bpw→471 · **1.56→400 (kỷ lục, 5.8×FP)** · 1.02→767 · 0.70→1.055 · 0.62→1.843.
 > Công thức thắng: gauge (up↔down, v↔o; sanity-check FP bắt buộc) → Wanda mask CỐ ĐỊNH →

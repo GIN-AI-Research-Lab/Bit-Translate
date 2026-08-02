@@ -260,6 +260,65 @@ BitNet) đạt 5.8× FP — vượt cả kỷ lục cũ ở 1.94 bpw.
 ⚠️ Mọi số trên eval 16 câu/ngôn ngữ — xếp hạng tin được, giá trị tuyệt đối cần kiểm định lại
 trên eval lớn (mục "kiểm định" trong danh sách việc kế).
 
+## Bài 11 — QAT-lite trên Modal + hai bảng ĐO THẬT tốc độ/chất lượng packed (02/08)
+
+**Vòng cung QAT-lite @1.56bpw** (validation 100 câu vi; FP=69; script `exp_r_qat_lite.py`, chạy Modal L40S):
+
+| Giai đoạn | Token KD | val-100 vi | ja (16c) | Ghi chú |
+|---|---:|---:|---:|---|
+| S1 (PTQ, không train) | 0 | 621.5 | 1.605 | |
+| + e2e KD v2 (bug loss đã vá) | 0.8M | 448.1 | 1.141 | |
+| + fast-loop v3 (batch thật + bf16, ×7 tốc độ train) | 1.3M | 399.5 | 1.085 | overfit sau 1.250 step (data 12k câu) |
+| **+ v4: data 5× + cosine + EMA + KD-temp2 + CE0.1** | ~4M | **360.3** | **1.071** | **recipe chuẩn**; en/code TỰ HỒI ×15 dù KD thuần vi/ja |
+
+Bug đã bắt trong nhánh này (đều bằng "kỳ vọng ghi trước + chất vấn số lạ"): (1) KL `batchmean` chia
+theo batch=1 → loss to ×seq_len → LR hiệu dụng ×100 phá model; (2) lr 2e-4 + mở scale/norm làm nhảy
+ô ternary — công thức đúng là **EfficientQAT-style: lr 2e-5, CHỈ train W+bias, freeze scale+norm**;
+(3) checkpoint tải qua mạng phải verify (miniz corrupt). Guard step-0 + best-geo cứu cả 4 run hỏng.
+
+**Tốc độ THẬT (llama-bench, máy B 6 luồng, packed format)** và **chất lượng packed** (llama-perplexity
+test vi/ja, imatrix vi/ja):
+
+| Format | bpw | tok/s tg64 | PPL vi | PPL ja | Phán quyết |
+|---|---:|---:|---:|---:|---|
+| Q8_0 | 8.5 | 57.5 | ~FP | ~FP | mốc |
+| Q4_K_M | 4.5 | 84.7 | 50.0 | 75.2 | chuẩn thực dụng |
+| Q2_K | 2.6 | 106.6 | 91.8 | 142.3 | ×1.8 — dùng tạm |
+| IQ2_XS | 2.31 | 82.9 | 281.3 | 440.0 | ×5.6 — xám tối |
+| IQ1_M | 1.75 | 96.2 | 4.387 | 6.413 | ×88 — chết |
+| IQ1_S | 1.56 | 104.5 | 20.492 | 18.390 | ×410 — chết |
+| **TQ2_0** | **2.06** | **144.5** 🏆 | **21.132.250** ☠️ | 17.068.433 | **nhanh nhất = chết nhất** |
+
+**Ba kết luận vàng:** (1) kernel quyết định tốc độ hơn kích thước (TQ2_0 to hơn IQ1_S mà nhanh hơn 38%
+— LUT ternary đạt 79% băng thông lý thuyết); (2) vách chất lượng của tooling đại chúng nằm ngay dưới
+Q2_K; (3) cùng lớp 1.56–2 bpw: pipeline của ta 360 vs IQ1_S 20.492 vs TQ2_0 21 triệu → **F0 = retrain
+theo ràng buộc TQ2_0-native (dense ternary, scale g256, bỏ bias) rồi requantize lossless → MỘT file
+GGUF vừa 144 tok/s vừa PPL ~400** — mảnh khép mục tiêu "nhỏ + cực nhanh trên CPU".
+
+⚠️ Bài học phương pháp lớn nhất nhánh này: **eval chỉ vi/ja = thiên vị chọn lọc cả chuỗi nghiên cứu**.
+Calib vi/ja làm en ×808, code ×4.434 ở S1 (FP anchor: en 34.2, code 2.7). Từ nay mọi run có gate
+4 miền; calib/KD trộn là bắt buộc cho model tổng quát.
+
+## Bài 12 — Gate hành vi: sinh văn bản 4 miền × 5 mức bit (exp_s, mẫu đầy đủ: exp_s_report.md)
+
+PPL 4 miền (eval cố định; FP anchor vi 69 / ja 125.1 / en 34.2 / code 2.7):
+
+| Config | tầng đã qua | vi | ja | en | code |
+|---|---|---:|---:|---:|---:|
+| FP32 | — | 69.0 | 125.1 | 34.2 | 2.7 |
+| 1.56 QAT-v3 | gauge→S1→S2 | 399.7 | 1.085 | 2.594 | 1.050 |
+| 1.02 S1 | gauge→S1 | 676.0 | 2.849 | 21.448 | 16.599 |
+| 0.70 S1 | gauge→S1 | 957.9 | 2.850 | 33.708 | 16.325 |
+| 0.62 S1 | gauge→S1 | 1.384.5 | 2.890 | 48.339 | 19.201 |
+
+(S1 bản exp_r — gauge+bias+budget — TỐT HƠN exp_n cũ ở bit thấp: 0.70 bpw 1.476→958 không cần train.)
+
+**Phán quyết mẫu sinh (greedy, 60 token):** FP32 mạch lạc kiểu-0.6B; 1.56-QAT ra từ vựng vi thật,
+bám đề vài từ rồi **rơi vòng lặp** ("và có thể, và có thể…"); 1.02 nửa chữ nửa spam số; ≤0.70 xà bần.
+Bài học: **sinh-mở đòi hỏi cao hơn PPL nhiều** — PPL ×5.8 vẫn lặp khi greedy. Ở 0.6B, artifact
+low-bit dùng được thật sự cần model lớn hơn (bậc 30B-A3B/Laguna) hoặc task đóng (dịch có nguồn).
+tok/s trong exp_s là mô phỏng fp32 (~13-14) — tốc độ THẬT xem bảng packed Bài 11 (TQ2_0 144.5).
+
 ---
 
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng

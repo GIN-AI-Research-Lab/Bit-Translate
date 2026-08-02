@@ -1,0 +1,162 @@
+{
+  "FP32 (baseline)": {
+    "bpw": 16.0,
+    "ppl": {
+      "vi": 68.96674504648298,
+      "ja": 125.07473679391529,
+      "en": 34.18858100234608,
+      "code": 2.65903540589439
+    },
+    "sim_tps": 14.0,
+    "gens": {
+      "vi": [
+        " nào? A. Việt Nam B. Trung Quốc C. Nhật Bản D. Hàn Quốc\n\nTrả lời: A\n\nGiải thích: Hà Nội là thành phố lớn nhất của Việt Nam, và là thủ đô của nước Việt Nam.\n\nGiải thích: Hà Nội là thành phố lớn",
+        " đi dạo đi bộ ở nhà. Tôi muốn tìm hiểu về các loại thực phẩm có thể ăn khi đi dạo đi bộ, và tôi muốn tìm hiểu về các loại thực phẩm có thể ăn khi đi dạo đi bộ. Tôi muốn tìm hiểu về các loại thực phẩm có thể ăn khi",
+        " nào? Có thể có nhiều loại công nghệ khác nhau? Có thể có nhiều loại công nghệ khác nhau? Có thể có nhiều loại công nghệ khác nhau? Có thể có nhiều loại công nghệ khác nhau?\n\n**Câu trả lời:**\nA. A\nB. B"
+      ],
+      "ja": [
+        "首都であり、日本を代表する国です。日本は、1945年、第二次世界大戦の末、国際的な危機を受けて、戦争を終えた国です。日本は、1945年、第二次世界大戦の",
+        "おしゃべりの時間に使うおしゃべりの本を選びましょう。おしゃべりの本には、おしゃべりの本の内容と、おしゃべりの本のテーマ、おしゃべりの本のテーマのまとめ、おしゃべり",
+        "どこですか？また、その山の名前と高度を教えてください。\n\n回答: 京都の山の名前と高度を教えてください。\n\n京都の山の名前と高度を教えてください。\n\n京都の山の名前と高度を教えてください。\n\n京都の山の名"
+      ],
+      "en": [
+        " Paris. The capital of Italy is Rome. The capital of Spain is Madrid. The capital of China is Beijing. The capital of Japan is Tokyo. The capital of India is New Delhi. The capital of Brazil is Brasilia. The capital of Egypt is Cairo. The capital of South Africa is Cape",
+        " study that uses algorithms to make decisions based on data. It has been widely used in various fields, including healthcare, finance, and artificial intelligence. However, there are some challenges in applying machine learning to real-world problems. One of the main challenges is the lack of data. In the absence of sufficient",
+        " man who lived in a village called Elan. He had a lot of problems with his family, and he was very poor. He was also very lonely. He had no money to buy food, and he couldn't afford to buy anything else. He was very poor and lonely, and he was"
+      ],
+      "code": [
+        " if n < 0:\n         return -1\n     if n == 0 or n == 1:\n         return 1\n     else:\n         return n * factorial(n-1)\nn = int(input())\nprint(factorial(n))\n\n# Test case 1: n = 5",
+        " return s[::-1]\n\ns = input(\"Enter a string: \")\nprint(reverse_string(s))\n\n# test case 1\nprint(reverse_string(\"hello\")) # output: olleh\n\n# test case 2\nprint(reverse_string(\"world\")) # output: dlrow\n\n# test case 3",
+        " return math.pi * radius ** 2\n\nradius = float(input(\"Enter the radius of the circle: \"))\narea = circle_area(radius)\nprint(f\"The area of the circle with radius {radius} is {area:.2f}\")\n\n# Example input:\n# Enter the radius of the circle: "
+      ]
+    }
+  },
+  "1.56bpw QAT-v3": {
+    "bpw": 1.56,
+    "ppl": {
+      "vi": 399.7370739975045,
+      "ja": 1084.9563590510509,
+      "en": 2593.9371776949843,
+      "code": 1049.814473598073
+    },
+    "sim_tps": 13.3,
+    "gens": {
+      "vi": [
+        ", và có thể là gì? Cảo có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể",
+        ", và có thể là gì? Cảo có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể, và có thể",
+        " của một số học học học đại học học đại học học đại học học học đại học học học học học học học này là gì? Trong khi bạn có thể thay đổi, ta có thể thay đổi, và thay đổi, và thay đổi, và thay đổi,"
+      ],
+      "ja": [
+        "国藤の国藤の国語の国語の言語的理解を理解するには、人々に言葉の言葉の言葉の言葉の言葉の言葉の言葉の言葉の言葉の言葉の言葉の言葉の言",
+        "何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か何か? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe? Maybe?",
+        "、ある表現を許えるにはかでいう。これは、ある表現を許っててたような意味を理解しすぎたような意味を理解しすぎたような意味を理解しすぎたような意味を理解しすぎたような意味を意味した。これは、これは、何かある"
+      ],
+      "en": [
+        " a 2025, and the 2025, 2025, 2025, 2025, 2025, 2025, 2025, 2025, 20",
+        " the 10000\n1000\n1000\n1000\n1000\n\n1000\n\n1000\n\n1000\n\n1000\n\n1000\n\n1000\n\n10",
+        " 2025, the 2025, the 2025, the 2025, the 2025, the 2025, the 2025, the 2025, the 202"
+      ],
+      "code": [
+        " ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ???????????????????",
+        " ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?                             ",
+        "...................................................................................................................................................................................."
+      ]
+    }
+  },
+  "1.02bpw S1": {
+    "bpw": 1.02,
+    "ppl": {
+      "vi": 675.9988664479259,
+      "ja": 2848.5447831384986,
+      "en": 21448.24543516933,
+      "code": 16598.8605575463
+    },
+    "sim_tps": 13.8,
+    "gens": {
+      "vi": [
+        ", một điều kiện nào có thể, 200000000, 2000000, 1000000, 20000000, 10000000, 10",
+        ", 2000000000000000000, 200000000, 2000000, 10000000, 100000,",
+        " của một công trình phát triển của một hệ điều kiện nào không phải có thể, trong các điều kiện, không phải có thể, một sự thay, không phải thay, điều kiện, không phải thay, điều kiện, không phải thay, không phải thay, không phải"
+      ],
+      "ja": [
+        "、この、そのイーボンのアーボーボのアーミンのアーボのため、アーミンのアーボのアーボのため、アーボのアーボのアーボのアーボのアーボ",
+        "おさ、おさ、おさ、おさ、おさ、おさ、おさ、おさ、おさ、おさ、おさ、おさ、おさ、おす、おさ、おさ、おさ、おさ、おす、おす、",
+        "、その、そのイーボンのアーボのアーボの車を車に、車車の車を車に車を車に車を車に車を車に車に車を車に車を車に車に車を車に車に車"
+      ],
+      "en": [
+        " 20000000000, 200000, 20, 20 20 20 10 10 10 10 10 10 10 1000",
+        ", 20, 20000, 20 20 2000000000000000000000000  10  1000 10000",
+        ", 20000000, 20000000, 200000, 20000, 20, 20000, 20 1000, 10 "
+      ],
+      "code": [
+        "elihood\n\n 20000000, 200000, 20 20 100 10 10 100 100 100 10000000 10",
+        " 10000000, 20 10 1 10 1 10 10 10 10 100 10000000000011111100",
+        " 1000000000, 100000000, 100000000 100000 100000 10000 10000 "
+      ]
+    }
+  },
+  "0.70bpw S1": {
+    "bpw": 0.7,
+    "ppl": {
+      "vi": 957.9420571222872,
+      "ja": 2849.514783919806,
+      "en": 33708.14303358316,
+      "code": 16325.308727723754
+    },
+    "sim_tps": 13.4,
+    "gens": {
+      "vi": [
+        ", không có thể được sử dụng một sự thè, các điều kiện trong các công trình trong các công trình trong các công trong các công trong một cơ, các công trình trong một công trình trong một các công trong các công trong một các công trong các công cơ, các công lý trong",
+        ", tôi có thể cho các công nghệ và các công nghệ và các điều kiện trong các công nghệ của các công nghệ của một công nghệ của một công nghệ của một công nghệ của một công công trong một các công trong các công trong các công trong các công công của một công nghệ của một",
+        " trong một một điều kiện trong các công nghệ của một công nghệ của một công nghệ của một công trong một công nghệ của một một công trong một công trong một công trong một công trong một công công của một một công trong một các công trong một công công của một công công của một một"
+      ],
+      "ja": [
+        "マーボーボンのオーボンのオーボン・ロー�ン・ロー�ンのオーボーボ・ロー�ン・ロー�ン・ロー�ン・スローボ・ロー�ン・スローボ・ロー�ン",
+        "その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、その、この、その、",
+        "、その、その、その、その、その、その、その、その、その、その、その、その、その、その、そのの関問の富え、そののアーボーボ・アーボ・スローボ・ス・アーリ"
+      ],
+      "en": [
+        " 20 10 11110 1 1 1   1 1     1      1                       ",
+        " 20000000000000000 1000000 100000 100 100 100 1000 100000 10",
+        " 2000000 100000 1000 1000 10 100 10  10  10   10     10   10"
+      ],
+      "code": [
+        " longBBBB       long  long                 long                           long     ",
+        "                                                    long        long",
+        " 100000000 1000 10 10 10 10  10 10    1    10 1        11 1 "
+      ]
+    }
+  },
+  "0.62bpw S1": {
+    "bpw": 0.62,
+    "ppl": {
+      "vi": 1384.4900959902116,
+      "ja": 2889.739492586345,
+      "en": 48339.387404618305,
+      "code": 19200.481088218374
+    },
+    "sim_tps": 14.2,
+    "gens": {
+      "vi": [
+        ", các công điều thốt, các cơ bò trong các cơ cung và các bộ trống và thiết thốt, có thể thốt, có thể trong các bộ trống, có thể 10, 1000, 10000000",
+        " một một điều thống, có thể điều thốt, có thể điều thốt, có thể điều thốt, có thể điều, có thể, các điều thống, có thể 1, và có thể, các điều thốt, và thiết thốt, 20, ",
+        " trống và thiết định trống, thiết nh nhò và thiết định trống, 20000000000000000000000000000000000000000"
+      ],
+      "ja": [
+        "、、アーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボーボー�",
+        "おか、おか、おか、おか、おか、、アーボーボーボ・アーボーボ・カーボーボ・カーボ・カーボーボ・カーボーボ・カーボーボ・カー�",
+        "、その、その、その、その、アーボーボ・アーボーボ・カーボ・カーボ・カーボ・カーボ・カーボ・カーボ・カーボ・カーボ・カーボ・カーボ"
+      ],
+      "en": [
+        " 20000000000000000000000000000000000000000000000000000000000",
+        " 200000000 200 200 20  20  20  20  20  20  20  20  20   20  ",
+        " 10000000000000000000000000000000000000000000000000000000000"
+      ],
+      "code": [
+        " 20 100 1000 20 20 20 20 2 2 2 2 2 20 2 2 2 2 2 20 20 20 2 2",
+        " 2000000000 200  200 20 20 20 20 2000 200 20 20 20 200 20 20",
+        " 20000000000000000000000000000000000000000000000000000000000"
+      ]
+    }
+  }
+}
