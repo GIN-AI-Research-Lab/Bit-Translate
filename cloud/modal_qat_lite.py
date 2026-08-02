@@ -124,6 +124,72 @@ def screen_s1():
     print(f"SCREEN S1-V2 XONG — fail: {fails if fails else 'không'}")
 
 
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=1800)
+def gate(ckpt: str = "qat_gen3_n3.pt", max_new: int = 48):
+    """Gate hành vi NGAY TRÊN MODAL (không tải ckpt về máy — tiết kiệm 4G):
+    PPL 6 miền + sinh thử mỗi miền từ ckpt trong /vol/out. Chỉ trả TEXT."""
+    import os
+    import sys
+
+    import torch
+    import torch.nn as nn
+    from huggingface_hub import snapshot_download
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    sys.path.insert(0, "/root")
+    from exp_r_qat_lite import (CODE_EVAL, EN_EVAL, LIN_PATHS, MATH_EVAL,
+                                ZH_EVAL, eval_ppl, read_lines)
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    dev = "cuda"
+    tok = AutoTokenizer.from_pretrained(mdir)
+    model = AutoModelForCausalLM.from_pretrained(mdir, dtype=torch.float32).to(dev).eval()
+    for blk in model.model.layers:  # ckpt bake có bias=True -> phẫu thuật Linear như exp_s
+        for sub, name in LIN_PATHS:
+            parent = getattr(blk, sub)
+            lin = getattr(parent, name)
+            nl = nn.Linear(lin.in_features, lin.out_features, bias=True)
+            nl.weight.data = lin.weight.data.clone()
+            nl.bias.data.zero_()
+            setattr(parent, name, nl.to(dev))
+    sd = torch.load(f"/vol/out/{ckpt}", map_location="cpu", weights_only=False)
+    state = {k: v.float() for k, v in sd["state_dict"].items()}
+    missing, unexpected = model.load_state_dict(state, strict=False)
+    assert not unexpected, f"unexpected keys: {unexpected[:5]}"
+    print(f"GATE {ckpt} | meta: {sd.get('meta', {})}", flush=True)
+
+    dev_vi = read_lines("/root/qat_data/dev.vi", 400)[-16:]
+    dev_ja = read_lines("/root/qat_data/dev.ja", 400)[-16:]
+    with torch.no_grad():
+        rows = [("vi", eval_ppl(model, tok, dev_vi, dev)),
+                ("ja", eval_ppl(model, tok, dev_ja, dev)),
+                ("en", eval_ppl(model, tok, EN_EVAL, dev)),
+                ("code", eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)),
+                ("zh", eval_ppl(model, tok, ZH_EVAL, dev)),
+                ("math", eval_ppl(model, tok, MATH_EVAL, dev))]
+    print("PPL: " + " | ".join(f"{k} {v:.1f}" for k, v in rows), flush=True)
+
+    PROMPTS = [
+        ("vi", "Hà Nội là thủ đô của Việt Nam, nổi tiếng với"),
+        ("vi", "Hôm nay trời mưa nên tôi quyết định"),
+        ("ja", "日本の四季の中で、私が一番好きなのは"),
+        ("ja", "東京駅から新幹線に乗って"),
+        ("en", "The most important thing about learning a new language is"),
+        ("code", "# Python function to check if a number is prime\ndef is_prime(n):\n    "),
+        ("zh", "北京的秋天很美，特别是"),
+        ("math", "Q: A box has 12 apples. Tom takes 5. How many are left?\nA:"),
+    ]
+    for dom, pr in PROMPTS:
+        ids = tok(pr, return_tensors="pt").input_ids.to(dev)
+        with torch.no_grad():
+            out = model.generate(ids, max_new_tokens=max_new, do_sample=False,
+                                 pad_token_id=tok.eos_token_id)
+        txt = tok.decode(out[0][ids.shape[1]:], skip_special_tokens=True)
+        print(f"[{dom}] {pr!r}\n    -> {txt!r}", flush=True)
+    print("GATE XONG", flush=True)
+
+
 @app.function(image=image, volumes={"/vol": vol}, timeout=120)
 def status():
     import io as _io
