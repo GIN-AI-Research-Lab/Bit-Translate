@@ -18,6 +18,7 @@ image = (
     .pip_install("torch", "transformers==4.57.6", "numpy", "accelerate", "huggingface_hub",
                  "datasets")
     .add_local_file("eval/lowbit_ptq/exp_r_qat_lite.py", "/root/exp_r_qat_lite.py")
+    .add_local_file("eval/lowbit_ptq/exp_v_s1_stream.py", "/root/exp_v_s1_stream.py")
     .add_local_dir("cloud/qat_data", "/root/qat_data")
 )
 
@@ -28,8 +29,9 @@ def _prep_kd_mix():
     import os
     srcs = [
         ("en", "HuggingFaceFW/fineweb-edu", None, "text", 12_000),
-        # the-stack-smol bị GATED — dùng smollm-corpus python-edu (công khai, parquet)
-        ("code", "HuggingFaceTB/smollm-corpus", "python-edu", "text", 8_000),
+        # the-stack-smol GATED; smollm python-edu chỉ có blob_id (0 dòng).
+        # codeparrot-clean: ĐÃ KIỂM CHỨNG qua datasets-server — code inline field "content"
+        ("code", "codeparrot/codeparrot-clean", None, "content", 8_000),
         ("zh", "HuggingFaceFW/fineweb-2", "cmn_Hani", "text", 8_000),
         ("math", "open-web-math/open-web-math", None, "text", 5_000),
     ]
@@ -260,6 +262,76 @@ def gen4(steps: int = 5000, lowrank_sub1: int = 8):
     print(f"GEN4 XONG CA 4 BAC — fail: {fails if fails else 'không'}")
 
 
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=4 * 3600)
+def gen41(steps: int = 5000):
+    """GEN4.1 — rerun 2 bậc dưới-1-bit với code-KD ĐÃ SỬA (codeparrot-clean).
+    Chạy trên tài khoản MỚI (tritue12/trituenguyen97) — volume tự dựng từ đầu."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    _prep_kd_mix()
+    fails = []
+    for name, n, m in (("o2", 1, 8), ("o3", 1, 10)):
+        print(f"==== GEN4.1 {name} (nm {n}:{m}) ====", flush=True)
+        cmd = ["python", "/root/exp_r_qat_lite.py", "--device", "cuda",
+               "--model-glob", mdir,
+               "--train-vi", "/root/qat_data/train_slice.vi",
+               "--train-ja", "/root/qat_data/train_slice.ja",
+               "--dev-vi", "/root/qat_data/dev.vi",
+               "--dev-ja", "/root/qat_data/dev.ja",
+               "--train-skip", "0",
+               "--steps", str(steps), "--train-sents", "60000", "--lr", "2e-05",
+               "--freeze-scales", "1", "--freeze-norms", "1", "--batch", "16",
+               "--fast", "1", "--cosine", "1", "--kd-temp", "2.0", "--ce-w", "0.1",
+               "--ema", "0.999", "--nm-n", str(n), "--nm-m", str(m),
+               "--calib-mode", "mixwj", "--perm-gauge", "1", "--best-metric", "geo6",
+               "--kd-mix", "1",
+               "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", "/vol/kd_mix/kd_code.txt",
+               "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
+               "--lowrank", "0",
+               "--tag", f"gen4.1[{n}:{m}]", "--out", f"/vol/out/qat_gen41_{name}.pt"]
+        r = subprocess.run(cmd)
+        print(f"exit={r.returncode}", flush=True)
+        if r.returncode != 0:
+            fails.append(name)
+        vol.commit()
+    print(f"GEN4.1 XONG — fail: {fails if fails else 'không'}")
+
+
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=5 * 3600,
+              memory=147_456, cpu=8)
+def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
+           steps_block: int = 60, smoke: int = 0, tag: str = "", save: int = 1):
+    """Exp V — S1-only streaming cho 30B-A3B: model bf16 ở CPU RAM 144GB, L40S cầm từng block.
+    ~2.5-3h/bậc. Ckpt bake bf16 (~61GB) Ở LẠI volume."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    snapshot_download(model_id)
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    tag = tag or f"expv[{model_id.split('/')[-1]},{nm_n}:{nm_m}]"
+    cmd = ["python", "/root/exp_v_s1_stream.py", "--model-id", model_id,
+           "--dev-vi", "/root/qat_data/dev.vi", "--dev-ja", "/root/qat_data/dev.ja",
+           "--nm-n", str(nm_n), "--nm-m", str(nm_m), "--steps-block", str(steps_block),
+           "--tag", tag, "--save", str(save),
+           "--out", f"/vol/out/expv_{model_id.split('/')[-1]}_{nm_n}x{nm_m}.pt"]
+    if smoke:
+        cmd.append("--smoke")
+    print("RUN:", " ".join(cmd), flush=True)
+    r = subprocess.run(cmd)
+    vol.commit()
+    print(f"exit={r.returncode}")
+    return r.returncode
+
+
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=2 * 3600)
 def screen_b():
     """Đợt B — phân bổ bit thông minh: absorber SVD / guard6 / 2:8 / cascade.
@@ -331,6 +403,74 @@ def screen_b2():
         print(f"exit={r.returncode}", flush=True)
         vol.commit()
     print("SCREEN B2 XONG")
+
+
+@app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=3600)
+def gate_all(max_new: int = 48):
+    """Gate hành vi CẢ 4 ckpt gen4 trong MỘT container (1 lần nạp model, 4 lần đổ state)."""
+    import os
+    import sys
+
+    import torch
+    import torch.nn as nn
+    from huggingface_hub import snapshot_download
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    sys.path.insert(0, "/root")
+    from exp_r_qat_lite import (CODE_EVAL, EN_EVAL, LIN_PATHS, MATH_EVAL,
+                                ZH_EVAL, eval_ppl, read_lines)
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mdir = snapshot_download("Qwen/Qwen3-0.6B")
+    dev = "cuda"
+    tok = AutoTokenizer.from_pretrained(mdir)
+    model = AutoModelForCausalLM.from_pretrained(mdir, dtype=torch.float32).to(dev).eval()
+    for blk in model.model.layers:
+        for sub, name in LIN_PATHS:
+            parent = getattr(blk, sub)
+            lin = getattr(parent, name)
+            nl = nn.Linear(lin.in_features, lin.out_features, bias=True)
+            nl.weight.data = lin.weight.data.clone()
+            nl.bias.data.zero_()
+            setattr(parent, name, nl.to(dev))
+    dev_vi = read_lines("/root/qat_data/dev.vi", 400)[-16:]
+    dev_ja = read_lines("/root/qat_data/dev.ja", 400)[-16:]
+    PROMPTS = [
+        ("vi", "Hà Nội là thủ đô của Việt Nam, nổi tiếng với"),
+        ("vi", "Hôm nay trời mưa nên tôi quyết định"),
+        ("ja", "日本の四季の中で、私が一番好きなのは"),
+        ("ja", "東京駅から新幹線に乗って"),
+        ("en", "The most important thing about learning a new language is"),
+        ("code", "# Python function to check if a number is prime\ndef is_prime(n):\n    "),
+        ("zh", "北京的秋天很美，特别是"),
+        ("math", "Q: A box has 12 apples. Tom takes 5. How many are left?\nA:"),
+    ]
+    for ckpt in ("qat_gen4_n4.pt", "qat_gen4_o1.pt", "qat_gen4_o2.pt", "qat_gen4_o3.pt"):
+        p = f"/vol/out/{ckpt}"
+        if not os.path.exists(p):
+            print(f"GATE {ckpt}: KHÔNG CÓ trên volume — bỏ", flush=True)
+            continue
+        sd = torch.load(p, map_location="cpu", weights_only=False)
+        state = {k: v.float() for k, v in sd["state_dict"].items()}
+        missing, unexpected = model.load_state_dict(state, strict=False)
+        assert not unexpected, f"unexpected keys: {unexpected[:5]}"
+        print(f"===== GATE {ckpt} | meta: {sd.get('meta', {})}", flush=True)
+        with torch.no_grad():
+            rows = [("vi", eval_ppl(model, tok, dev_vi, dev)),
+                    ("ja", eval_ppl(model, tok, dev_ja, dev)),
+                    ("en", eval_ppl(model, tok, EN_EVAL, dev)),
+                    ("code", eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)),
+                    ("zh", eval_ppl(model, tok, ZH_EVAL, dev)),
+                    ("math", eval_ppl(model, tok, MATH_EVAL, dev))]
+        print("PPL: " + " | ".join(f"{k} {v:.1f}" for k, v in rows), flush=True)
+        for dom, pr in PROMPTS:
+            ids = tok(pr, return_tensors="pt").input_ids.to(dev)
+            with torch.no_grad():
+                out = model.generate(ids, max_new_tokens=max_new, do_sample=False,
+                                     pad_token_id=tok.eos_token_id)
+            txt = tok.decode(out[0][ids.shape[1]:], skip_special_tokens=True)
+            print(f"[{dom}] -> {txt!r}", flush=True)
+    print("GATE_ALL XONG", flush=True)
 
 
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=1800)
