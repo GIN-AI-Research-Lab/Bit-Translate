@@ -241,6 +241,12 @@ def main():
     ap.add_argument("--nm-m", type=int, default=4)
     ap.add_argument("--sgroup", type=int, default=64)
     ap.add_argument("--steps-block", type=int, default=60)
+    ap.add_argument("--cal-scale", type=int, default=1,
+                    help="x4 = calib 4x (vi/ja từ dev, en/code/zh/math từ file kd nếu có)")
+    ap.add_argument("--kd-en", default="")
+    ap.add_argument("--kd-code", default="")
+    ap.add_argument("--kd-zh", default="")
+    ap.add_argument("--kd-math", default="")
     ap.add_argument("--calib-seq", type=int, default=96)
     ap.add_argument("--val100", type=int, default=1)
     ap.add_argument("--save", type=int, default=1)
@@ -265,12 +271,23 @@ def main():
     log(f"nạp xong: {sum(p.numel() for p in model.parameters())/1e9:.1f}B params, moe={moe},"
         f" {len(layers)} block")
 
-    # ---- calib mixwj + bộ đo 6 miền (dùng chung sweep) ----
+    # ---- calib mixwj (×cal-scale cho MoE — chống đói-expert) + bộ đo 6 miền ----
     k = 4 if args.smoke else None
-    vi_c = read_lines(args.dev_vi, 40)[: (k or 20)]
-    ja_c = read_lines(args.dev_ja, 40)[: (k or 32)]
-    calib_txt = (vi_c + ja_c + CAL_EN[:k] + CAL_CODE[:k] + CAL_ZH[:k] + CAL_MATH[:k]
-                 + CAL_CHAT[:k])
+    cs = 1 if args.smoke else max(1, args.cal_scale)
+    vi_c = read_lines(args.dev_vi, 20 * cs + 20)[: (k or 20 * cs)]
+    ja_c = read_lines(args.dev_ja, 32 * cs + 20)[: (k or 32 * cs)]
+
+    def dom_cal(path, base, n):
+        if path and os.path.exists(path):
+            got = read_lines(path, n)
+            if len(got) >= n // 2:
+                return got
+        return (base * ((n + len(base) - 1) // len(base)))[:n]
+    en_c = CAL_EN[:k] if k else dom_cal(args.kd_en, CAL_EN, 24 * cs)
+    co_c = CAL_CODE[:k] if k else dom_cal(args.kd_code, CAL_CODE, 16 * cs)
+    zh_c = CAL_ZH[:k] if k else dom_cal(args.kd_zh, CAL_ZH, 20 * cs)
+    ma_c = CAL_MATH[:k] if k else dom_cal(args.kd_math, CAL_MATH, 14 * cs)
+    calib_txt = vi_c + ja_c + en_c + co_c + zh_c + ma_c + (CAL_CHAT * cs if not k else CAL_CHAT[:k])
     random.Random(0).shuffle(calib_txt)
     dev_vi = read_lines(args.dev_vi, 400)[-16:]
     dev_ja = read_lines(args.dev_ja, 400)[-16:]

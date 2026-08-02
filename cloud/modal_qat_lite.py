@@ -306,7 +306,8 @@ def gen41(steps: int = 5000):
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=5 * 3600,
               memory=147_456, cpu=8)
 def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
-           steps_block: int = 60, smoke: int = 0, tag: str = "", save: int = 1):
+           steps_block: int = 60, smoke: int = 0, tag: str = "", save: int = 1,
+           cal_scale: int = 1):
     """Exp V — S1-only streaming cho 30B-A3B: model bf16 ở CPU RAM 144GB, L40S cầm từng block.
     ~2.5-3h/bậc. Ckpt bake bf16 (~61GB) Ở LẠI volume."""
     import os
@@ -321,6 +322,9 @@ def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
     cmd = ["python", "/root/exp_v_s1_stream.py", "--model-id", model_id,
            "--dev-vi", "/root/qat_data/dev.vi", "--dev-ja", "/root/qat_data/dev.ja",
            "--nm-n", str(nm_n), "--nm-m", str(nm_m), "--steps-block", str(steps_block),
+           "--cal-scale", str(cal_scale),
+           "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", "/vol/kd_mix/kd_code.txt",
+           "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
            "--tag", tag, "--save", str(save),
            "--out", f"/vol/out/expv_{model_id.split('/')[-1]}_{nm_n}x{nm_m}.pt"]
     if smoke:
