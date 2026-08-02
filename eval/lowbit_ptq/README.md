@@ -409,6 +409,38 @@ openwebmath, ja 60/40, vi24/ja36/en15/code10/zh10/math5) + **best-geo6** + mẫu
 Vận hành: Modal PREEMPT giết container giữa run → hàm tự restart TỪ ĐẦU (đốt lại cell đã xong);
 results.json theo tag nên số cũ không mất — thiết kế cell idempotent là đúng.
 
+## Bài 15 — GEN4: đường biên 4 bậc × 6 miền HOÀN CHỈNH (03/08 đêm)
+
+Công thức chốt sau 14 ô screening: **S1[mixwj + perm-gauge] + v4-KD[KD-mix 5 miền chủ động:
+vi/ja/en/zh/math, ja 60/40] + chọn best geo6 + mẫu sinh chữ @best**. 5.000 bước/bậc, L40S ~3.2h/$6.
+(Code-KD vắng mặt: the-stack-smol gated, smollm-corpus trả 0 dòng — code chỉ hồi thụ động.)
+
+| bpw | vi | ja | en | code | zh | math | val-100 vi | geo6 | val-100 vs gen2.5 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| **1.566** | **319** | **926** | **183** | 41 | **338** | **22** | **350.9** | **159** | 360 → 351 |
+| **1.023** | 536 | 1129 | 408 | 98 | 584 | 33 | **555.1** | **278** | 571 → 555 |
+| **0.699** | 954 | 3310 | 972 | 241 | 1218 | 47 | **1059.7** | **589** | 1299 → 1060 (**−18%**) |
+| **0.616** | 1201 | 3000 | 1047 | 472 | 1276 | 55 | **1320.9** | **708** | 1428 → 1321 (−7.5%) |
+
+Đối chiếu FP (69/125/34/2.7/51/5.5):
+- **GEN4 thắng gen2.5 trên val-100-vi Ở CẢ 4 BẬC** — trong khi gen2.5 giết en/code/zh (en ×808-class,
+  zh 10⁵). Cân bằng 6 miền KHÔNG mất đỉnh vi — trade-off "chuyên hóa vs đều" bị hóa giải bởi
+  kiềng 3 chân: S1-calib + KD-data + tiêu chí chọn cùng nhìn 6 miền.
+- 1.56bpw: tỉ lệ ×FP = vi 4.6 / ja 7.4 / en 5.4 / code 15 / zh 6.6 / math 3.9 — **đều ×3.9**
+  (gen2: ×400). zh hồi ×1000 so gen3 (335.836 → 338) — thuần công KD-mix.
+- **Vân tay của mắt xích thiếu**: code suy nhanh nhất theo bậc (×15→×36→×89→×175) — đúng miền
+  duy nhất KHÔNG có KD chủ động. Định luật mỏ-neo miền hiện nguyên hình lần 5. Việc kế: nguồn
+  code công khai đã kiểm chứng (hoặc HF token vào Modal secret) rồi rerun 2 bậc thấp.
+- **Hành vi (mẫu greedy in-run)**: en @1.56 vượt ngưỡng ngữ pháp ("...it is important to learn
+  the language. So, the language is the main source..."); code @1.56 có hình dạng Python thật;
+  vi vẫn lặp cụm ở PPL 319. Các bậc ≤1.02: mọi miền còn loop. **Ngưỡng hết-loop ≈ ×3–5 FP,
+  tùy miền** — mục tiêu hành vi = kéo từng miền qua ngưỡng riêng, không phải hạ geo chung.
+- Tái lập xác nhận: S1 của o1 (gen4) = ô A1 screening TỪNG CHỮ SỐ (cùng seed/config).
+- Vận hành: session local chết giữa chuỗi — app `--detach` chạy tiếp trọn 3 bậc còn lại, ckpt
+  đủ 4 bậc trên volume. Trạng thái ví: ~CẠN sau GEN4 (~$6). Mọi run kế cần nạp credit.
+
+Checkpoint: `/vol/out/qat_gen4_{n4,o1,o2,o3}.pt` (chưa tải về — chế độ 4G, gate server-side).
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |
