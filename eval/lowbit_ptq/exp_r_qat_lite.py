@@ -75,6 +75,124 @@ CODE_EVAL = [
 ]
 NORM_PATHS = [("", "input_layernorm"), ("", "post_attention_layernorm"),
               ("self_attn", "q_norm"), ("self_attn", "k_norm")]
+
+# Calib bổ sung cho chế độ mix4 (TÁCH BIỆT với EN_EVAL/CODE_EVAL — không nhiễm gate)
+CAL_EN = [
+    "The weather forecast predicts light rain throughout the weekend in the northern regions.",
+    "Global supply chains continue to adapt to shifting trade policies and consumer demand.",
+    "The research team published their findings on protein folding in a peer-reviewed journal.",
+    "Students are encouraged to submit applications before the deadline at the end of March.",
+    "The city council approved funding for new public transportation infrastructure.",
+    "Historical records suggest the settlement was established during the twelfth century.",
+    "Engineers tested the bridge design under simulated earthquake conditions.",
+    "The documentary examines the daily lives of fishermen along the coastal villages.",
+    "Investors reacted cautiously to the quarterly earnings report released on Monday.",
+    "The recipe calls for two cups of flour, a pinch of salt, and fresh rosemary.",
+    "Volunteers spent the morning cleaning debris from the riverbank after the flood.",
+    "The orchestra rehearsed the symphony's final movement late into the evening.",
+    "Migration patterns of arctic birds have shifted noticeably over the past decade.",
+    "The startup raised funding to expand its cloud security platform across Asia.",
+    "Local farmers reported higher yields after adopting drip irrigation techniques.",
+    "The novel's protagonist returns to her hometown to confront a long-buried secret.",
+    "Regulators proposed new guidelines for labeling genetically modified products.",
+    "The hiking trail winds through dense forest before reaching the alpine meadow.",
+    "Technicians upgraded the observatory's telescope with a more sensitive detector.",
+    "The museum acquired a rare collection of manuscripts from a private donor.",
+    "Negotiations between the two companies stalled over intellectual property terms.",
+    "The marathon route passes several historic landmarks in the old quarter.",
+    "Analysts expect the housing market to stabilize by the second quarter next year.",
+    "The workshop teaches participants how to restore antique wooden furniture.",
+]
+CAL_CODE = [
+    "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge(left, right)",
+    "class LinkedList:\n    def __init__(self):\n        self.head = None\n    def append(self, value):\n        node = Node(value)\n        if not self.head:\n            self.head = node",
+    "async function fetchUser(id) {\n  const res = await fetch(`/api/users/${id}`);\n  if (!res.ok) throw new Error('failed');\n  return res.json();\n}",
+    "import os\nfor root, dirs, files in os.walk('.'):\n    for f in files:\n        if f.endswith('.log'):\n            os.remove(os.path.join(root, f))",
+    "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE NOT NULL,\n  created_at TIMESTAMP DEFAULT NOW()\n);",
+    "fn main() {\n    let numbers: Vec<i32> = (1..=10).filter(|n| n % 2 == 0).collect();\n    println!(\"{:?}\", numbers);\n}",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1",
+    "const debounce = (fn, ms) => {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n};",
+    "with open('data.csv') as f:\n    reader = csv.DictReader(f)\n    rows = [row for row in reader if float(row['score']) > 0.5]",
+    "public static int gcd(int a, int b) {\n    while (b != 0) {\n        int t = b;\n        b = a % b;\n        a = t;\n    }\n    return a;\n}",
+    "git rebase -i HEAD~3\n# pick abc123 fix parser\n# squash def456 cleanup\n# reword ghi789 update docs",
+    "import numpy as np\nA = np.random.randn(64, 64)\nU, S, Vt = np.linalg.svd(A)\nrank = np.sum(S > 1e-10)",
+    "SELECT u.name, COUNT(o.id) AS orders\nFROM users u LEFT JOIN orders o ON o.user_id = u.id\nWHERE o.created_at > '2025-01-01'\nGROUP BY u.name;",
+    "try {\n  const data = JSON.parse(raw);\n  cache.set(key, data, { ttl: 3600 });\n} catch (e) {\n  logger.warn('invalid payload', e);\n}",
+    "def flatten(nested):\n    for item in nested:\n        if isinstance(item, list):\n            yield from flatten(item)\n        else:\n            yield item",
+    "#!/bin/bash\nfor f in *.png; do\n  convert \"$f\" -resize 50% \"small_$f\"\ndone",
+]
+# Probe zh/toán (đo độ ĐỀU đa miền — không dùng chọn best, không trùng calib):
+ZH_EVAL = [
+    "今天天气很好，我们去公园散步吧。",
+    "这家公司的季度收入比去年同期增长了百分之十五。",
+    "人工智能正在改变医疗、教育和交通等许多行业。",
+    "他每天早上六点起床，先跑步半小时再吃早饭。",
+    "这本小说讲述了一个家庭三代人的故事。",
+    "请把这份报告翻译成英文，明天上午发给客户。",
+    "长城是中国古代最伟大的建筑工程之一。",
+    "手机没电了，你带充电器了吗？",
+    "科学家发现了一种新的方法来降低电池的生产成本。",
+    "如果明天下雨，运动会就推迟到下个星期举行。",
+]
+MATH_EVAL = [
+    "Tom has 3 boxes with 12 apples each. He gives away 8 apples. 3 x 12 = 36, and 36 - 8 = 28. The answer is 28.",
+    "Solve for x: 2x + 5 = 17. Subtract 5 from both sides: 2x = 12. Divide by 2: x = 6.",
+    "The area of a rectangle is length times width. A = 7 * 4 = 28 square meters.",
+    "A train travels 60 km per hour for 2.5 hours. Distance = speed * time = 60 * 2.5 = 150 km.",
+    "The probability of rolling a 6 on a fair die is 1/6, so in 60 rolls we expect 60 / 6 = 10 sixes.",
+    "12% of 250 is 0.12 * 250 = 30.",
+    "The derivative of x^2 + 3x is 2x + 3, so at x = 2 the slope is 7.",
+    "Sarah saves $15 per week. After 8 weeks she has 15 * 8 = $120, enough for the $110 bike.",
+]
+# Calib bổ sung cho mixw (TÁCH BIỆT probe — tránh nhiễm cổng đo):
+CAL_ZH = [
+    "北京是中国的首都，也是政治和文化中心。",
+    "我昨天在书店买了两本关于历史的书。",
+    "这个软件可以自动备份你的照片和文件。",
+    "经济学家预测明年的通货膨胀率会下降。",
+    "妈妈做的饺子比饭馆的好吃多了。",
+    "地铁站离我家只有五分钟的路程。",
+    "他大学毕业以后在一家互联网公司工作。",
+    "气候变化导致极端天气越来越频繁。",
+    "请在会议开始前把材料打印好。",
+    "这部电影的结局出乎所有人的意料。",
+    "健康的生活方式包括均衡饮食和适量运动。",
+    "老师让学生们用中文写一篇关于家乡的作文。",
+    "新的高铁线路把两个城市之间的时间缩短到三个小时。",
+    "网上购物虽然方便，但是也要注意保护个人信息。",
+    "博物馆里陈列着几千年前的青铜器和陶器。",
+    "公司决定在东南亚开设三家新的分公司。",
+    "冬天来了，山上的树木都被雪覆盖了。",
+    "他学了五年中文，现在说得非常流利。",
+    "医生建议病人多喝水，好好休息。",
+    "这个问题很复杂，我们需要更多的时间讨论。",
+]
+CAL_MATH = [
+    "A shop sells pens for $2 each. Buying 15 pens costs 15 * 2 = $30. With a $5 discount the total is $25.",
+    "If 3 workers finish a job in 8 days, 6 workers finish it in 8 * 3 / 6 = 4 days.",
+    "The sum of angles in a triangle is 180 degrees. If two angles are 50 and 60, the third is 70.",
+    "Simplify: (2/3) + (1/6) = (4/6) + (1/6) = 5/6.",
+    "A circle with radius 5 has area pi * 25, approximately 78.5.",
+    "John reads 40 pages a day. A 320-page book takes 320 / 40 = 8 days.",
+    "Solve: x^2 - 9 = 0, so x = 3 or x = -3.",
+    "The average of 4, 8, and 12 is (4 + 8 + 12) / 3 = 8.",
+    "A car uses 6 liters per 100 km. For 250 km it needs 6 * 2.5 = 15 liters.",
+    "Convert 3/4 to a percentage: 3/4 = 0.75 = 75%.",
+    "The next number in 2, 4, 8, 16 is 32 because each term doubles.",
+    "20% off a $50 shirt saves $10, so you pay $40.",
+    "If f(x) = 3x - 2 then f(4) = 10.",
+    "A box holds 24 cans arranged in 4 rows, so each row has 24 / 4 = 6 cans.",
+]
+CAL_CHAT = [
+    "<|im_start|>user\nXin chào, bạn có thể giúp tôi dịch câu này sang tiếng Nhật không?<|im_end|>\n<|im_start|>assistant\nTất nhiên rồi! Bạn hãy gửi câu cần dịch nhé.<|im_end|>",
+    "<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\nThe capital of France is Paris.<|im_end|>",
+    "<|im_start|>user\n明日の会議は何時からですか。<|im_end|>\n<|im_start|>assistant\n明日の会議は午前10時からです。<|im_end|>",
+    "<|im_start|>user\nWrite a Python function to reverse a string.<|im_end|>\n<|im_start|>assistant\ndef reverse_string(s):\n    return s[::-1]<|im_end|>",
+    "<|im_start|>user\n请推荐三本适合初学者的编程书。<|im_end|>\n<|im_start|>assistant\n我推荐《Python编程：从入门到实践》、《笨办法学Python》和《代码大全》。<|im_end|>",
+    "<|im_start|>user\nExplain photosynthesis in one sentence.<|im_end|>\n<|im_start|>assistant\nPhotosynthesis is the process by which plants use sunlight to convert water and carbon dioxide into glucose and oxygen.<|im_end|>",
+    "<|im_start|>user\nTính 17 nhân 23 bằng bao nhiêu?<|im_end|>\n<|im_start|>assistant\n17 nhân 23 bằng 391.<|im_end|>",
+    "<|im_start|>user\nGive me a haiku about autumn.<|im_end|>\n<|im_start|>assistant\nCrimson leaves drifting /\nover the quiet river —\nautumn holds its breath.<|im_end|>",
+]
 HARD_BLOCKS = {2: 2.0, 26: 2.0, 27: 2.0, 0: 1.5, 1: 1.5, 3: 1.25}
 EASY_RANGE = set(range(8, 21))
 
@@ -107,6 +225,10 @@ def to_f8(s):
         return sign * (2 ** e) * (torch.round(a / (2 ** e) * 8) / 8)
 
 
+def to_f16(s):
+    return s.to(torch.float16).to(s.dtype)
+
+
 def wanda_nm_mask(W, xnorm, N, M):
     R, C = W.shape
     imp = W.abs() * xnorm[None, :].clamp(min=1e-8)
@@ -122,11 +244,14 @@ def inv_softplus(y):
 
 
 class LearnQLinear(nn.Module):
-    def __init__(self, lin, mask, G=64):
+    def __init__(self, lin, mask, G=64, use_bias=True, sdtype="f8"):
         super().__init__()
         W0 = lin.weight.data
         self.Wfp = nn.Parameter(W0.clone())
-        self.bias = nn.Parameter(torch.zeros(W0.shape[0], dtype=W0.dtype, device=W0.device))
+        self.use_bias = use_bias
+        self.bias = nn.Parameter(torch.zeros(W0.shape[0], dtype=W0.dtype, device=W0.device)) \
+            if use_bias else None
+        self.sdtype = sdtype
         R, C = W0.shape
         self.R, self.C, self.G = R, C, G
         self.pad = (G - C % G) % G
@@ -150,7 +275,8 @@ class LearnQLinear(nn.Module):
 
     def quant(self):
         s = F.softplus(self.raw_s).clamp(min=4e-3)
-        s_q = s + (to_f8(s) - s).detach()
+        qs = to_f16(s) if self.sdtype == "f16" else to_f8(s)
+        s_q = s + (qs - s).detach()
         s_q = s_q.clamp(min=1e-6)
         Wv, Mv = self._views(self.Wfp)
         t = (torch.round((Wv * Mv) / s_q.detach()).clamp(-1, 1) * Mv).detach()
@@ -162,8 +288,15 @@ class LearnQLinear(nn.Module):
         return F.linear(x, Wq, self.bias)
 
 
+def hadamard(n, device, dtype):
+    H = torch.ones(1, 1, device=device, dtype=dtype)
+    while H.shape[0] < n:
+        H = torch.cat([torch.cat([H, H], 1), torch.cat([H, -H], 1)], 0)
+    return H / math.sqrt(n)
+
+
 @torch.no_grad()
-def apply_gauge(model):
+def apply_gauge(model, rot=False):
     cfg = model.config
     n_q, n_kv, hd = cfg.num_attention_heads, cfg.num_key_value_heads, cfg.head_dim
     rep = n_q // n_kv
@@ -187,6 +320,95 @@ def apply_gauge(model):
             for r in range(rep):
                 q = kv * rep + r
                 Wo[:, q * hd:(q + 1) * hd] /= m[kv * hd:(kv + 1) * hd][None, :]
+        if rot:  # incoherence MIỄN PHÍ: xoay Hadamard per-head, o bù H^T -> attention bất biến
+            H = hadamard(hd, Wv.device, Wv.dtype)
+            for kv in range(n_kv):
+                Wv[kv * hd:(kv + 1) * hd, :] = H @ Wv[kv * hd:(kv + 1) * hd, :]
+                for r in range(rep):
+                    q = kv * rep + r
+                    Wo[:, q * hd:(q + 1) * hd] = Wo[:, q * hd:(q + 1) * hd] @ H.t()
+
+
+def balanced_idx(imp, M):
+    """Chia bài round-robin theo importance giảm dần vào các nhóm M liền kề
+    (nhóm cuối có thể ngắn nếu C không chia hết M — khớp padding của wanda_nm_mask)."""
+    C = imp.numel()
+    G = (C + M - 1) // M
+    cap = [M] * G
+    if C % M:
+        cap[-1] = C % M
+    srt = imp.argsort(descending=True).tolist()
+    slots = [[] for _ in range(G)]
+    g = 0
+    for ch in srt:
+        while len(slots[g]) >= cap[g]:
+            g = (g + 1) % G
+        slots[g].append(ch)
+        g = (g + 1) % G
+    return torch.tensor([c for s in slots for c in s], dtype=torch.long, device=imp.device)
+
+
+@torch.no_grad()
+def apply_perm_gauge(model, xnorm, M):
+    """Hoán vị kênh CHÍNH XÁC TUYỆT ĐỐI (gauge) để kênh quan trọng rải đều các nhóm M
+    của mask N:M — khác rotation (bị bác): giữ nguyên thống kê từng kênh, chỉ đổi cách chia nhóm.
+    3 họ: (a) hidden toàn cục -> input q/k/v/gate/up; (b) intermediate từng block -> input down;
+    (c) head-dim v<->o theo kv-head -> input o. RoPE/QK-norm không bị đụng (chỉ hoán vị INPUT).
+    Sửa xnorm tại chỗ cho khớp thứ tự mới."""
+    cfg = model.config
+    n_q, n_kv, hd = cfg.num_attention_heads, cfg.num_key_value_heads, cfg.head_dim
+    rep = n_q // n_kv
+    layers = model.model.layers
+    emb = model.model.embed_tokens.weight
+    # (a) hidden toàn cục: importance = tổng xnorm (chuẩn hóa per-layer) của mọi consumer
+    imp = torch.zeros(cfg.hidden_size, device=emb.device)
+    for b in range(len(layers)):
+        for sub, name in LIN_PATHS:
+            if name in ("o_proj", "down_proj"):
+                continue
+            xn = xnorm[f"model.layers.{b}.{sub}.{name}"]
+            imp += xn / xn.mean().clamp(min=1e-8)
+    pi = balanced_idx(imp, M)
+    tied = model.lm_head.weight.data_ptr() == emb.data_ptr()
+    emb.data = emb.data[:, pi].contiguous()
+    if not tied:
+        model.lm_head.weight.data = model.lm_head.weight.data[:, pi].contiguous()
+    model.model.norm.weight.data = model.model.norm.weight.data[pi]
+    for b, blk in enumerate(layers):
+        blk.input_layernorm.weight.data = blk.input_layernorm.weight.data[pi]
+        blk.post_attention_layernorm.weight.data = blk.post_attention_layernorm.weight.data[pi]
+        for sub, name in LIN_PATHS:
+            lin = getattr(getattr(blk, sub), name)
+            key = f"model.layers.{b}.{sub}.{name}"
+            if name in ("o_proj", "down_proj"):
+                lin.weight.data = lin.weight.data[pi, :].contiguous()
+            else:
+                lin.weight.data = lin.weight.data[:, pi].contiguous()
+                xnorm[key] = xnorm[key][pi]
+    for b, blk in enumerate(layers):
+        # (b) intermediate: gate/up hàng <-> down cột (silu elementwise -> exact)
+        kd = f"model.layers.{b}.mlp.down_proj"
+        pj = balanced_idx(xnorm[kd], M)
+        blk.mlp.gate_proj.weight.data = blk.mlp.gate_proj.weight.data[pj, :].contiguous()
+        blk.mlp.up_proj.weight.data = blk.mlp.up_proj.weight.data[pj, :].contiguous()
+        blk.mlp.down_proj.weight.data = blk.mlp.down_proj.weight.data[:, pj].contiguous()
+        xnorm[kd] = xnorm[kd][pj]
+        # (c) v<->o theo kv-head: 1 hoán vị dùng chung cho rep q-head (attention là scalar/head
+        #     nên không trộn kênh -> exact); biên nhóm thẳng hàng vì hd % M == 0 hoặc nhóm cuối ngắn
+        ko = f"model.layers.{b}.self_attn.o_proj"
+        xo = xnorm[ko]
+        Wv = blk.self_attn.v_proj.weight.data
+        Wo = blk.self_attn.o_proj.weight.data
+        xo_new = xo.clone()
+        for kv in range(n_kv):
+            agg = sum(xo[(kv * rep + r) * hd:(kv * rep + r + 1) * hd] for r in range(rep))
+            ph = balanced_idx(agg, M)
+            Wv[kv * hd:(kv + 1) * hd, :] = Wv[kv * hd:(kv + 1) * hd, :][ph, :]
+            for r in range(rep):
+                q = kv * rep + r
+                Wo[:, q * hd:(q + 1) * hd] = Wo[:, q * hd:(q + 1) * hd][:, ph]
+                xo_new[q * hd:(q + 1) * hd] = xo[q * hd:(q + 1) * hd][ph]
+        xnorm[ko] = xo_new
 
 
 @torch.no_grad()
@@ -221,6 +443,23 @@ def main():
     ap.add_argument("--nm-n", type=int, default=2, help="N của mask N:M (2:4=1.56bpw, 1:4=1.02, 1:8=0.70, 1:10=0.62)")
     ap.add_argument("--nm-m", type=int, default=4)
     ap.add_argument("--fast", type=int, default=0, help="1 = S2 batch thật + bf16 autocast (v3)")
+    # F0 — chế độ TQ2_0-native: dense (không mask), scale f16 per-256, KHÔNG bias
+    # -> baked weights nằm ĐÚNG lưới TQ2_0 -> llama-quantize TQ2_0 tái tạo lossless
+    ap.add_argument("--dense", type=int, default=0, help="1 = bỏ mask N:M (dense ternary)")
+    ap.add_argument("--sgroup", type=int, default=64, help="cỡ nhóm scale (64 | 256=TQ2_0-native)")
+    ap.add_argument("--no-bias", type=int, default=0, help="1 = không bias (bắt buộc cho export GGUF)")
+    # S1-floor attack
+    ap.add_argument("--calib-mode", default="vija", choices=["vija", "mix4", "mixw"],
+                    help="mix4 = vi/ja/en/code; mixw = theo căn cước Qwen3 (thêm zh/toán/chat)")
+    ap.add_argument("--s1-passes", type=int, default=2, help="2=(70,30) | 3=(100,50,30)")
+    ap.add_argument("--best-metric", default="geo2", choices=["geo2", "geo4"],
+                    help="geo4 = chọn best theo cả 4 miền (bảo vệ en/code khi KD thuần vi/ja)")
+    ap.add_argument("--rot-gauge", type=int, default=0,
+                    help="1 = Hadamard-128 per-head trong gauge v<->o (incoherence MIỄN PHÍ, exact)")
+    ap.add_argument("--perm-gauge", type=int, default=0,
+                    help="1 = hoán vị kênh EXACT để kênh quan trọng rải đều nhóm M (cứu mask N:M)")
+    ap.add_argument("--save-ckpt", type=int, default=1, help="0 = không lưu .pt (screening)")
+    ap.add_argument("--tag", default="", help="nhãn riêng cho record trong results.json")
     # v4 — gói train-polish (mặc định tắt để giữ so sánh được với v3)
     ap.add_argument("--cosine", type=int, default=0, help="1 = cosine decay sau warmup")
     ap.add_argument("--kd-temp", type=float, default=1.0, help="nhiệt độ KD (2.0 = dark knowledge)")
@@ -230,7 +469,8 @@ def main():
     ap.add_argument("--smoke", action="store_true")
     args = ap.parse_args()
     if args.smoke:
-        args.steps, args.calib, args.train_sents, args.batch = 6, 12, 64, 2
+        args.calib, args.train_sents, args.batch = 12, 64, 2
+        args.steps = min(args.steps, 6)   # giữ --steps 0 (nhánh screening S1-only)
     dev = ("cuda" if torch.cuda.is_available() else "cpu") if args.device == "auto" else args.device
     torch.set_num_threads(5)
     log(f"device={dev} steps={args.steps} smoke={args.smoke}")
@@ -246,7 +486,7 @@ def main():
     log(f"FP32: vi {ppl_fp[0]:.1f} / ja {ppl_fp[1]:.1f}")
 
     # ===== S1: gauge + sanity =====
-    apply_gauge(model)
+    apply_gauge(model, rot=bool(args.rot_gauge))
     ppl_g = eval_ppl(model, tok, dev_vi, dev)
     log(f"FP sau gauge: vi {ppl_g:.1f}")
     if abs(ppl_g - ppl_fp[0]) / ppl_fp[0] > 0.01:
@@ -256,6 +496,18 @@ def main():
     vi_c = read_lines(args.dev_vi, args.calib // 2)
     ja_c = read_lines(args.dev_ja, args.calib // 2)
     calib = [x for pr in zip(vi_c, ja_c) for x in pr]
+    if args.calib_mode == "mix4":
+        calib = calib[: args.calib] + CAL_EN + CAL_CODE   # vi/ja + en + code (tách biệt gate)
+        random.Random(0).shuffle(calib)
+        log(f"calib mix4: {len(calib)} câu (vi/ja {min(len(calib)-40, args.calib)} + en 24 + code 16)")
+    elif args.calib_mode == "mixw":
+        # Theo căn cước Qwen3 (en/zh/code/math ~ mix pretraining) + mục đích dùng (vi/ja) + chat
+        k = 4 if args.smoke else None
+        calib = (vi_c[:(k or 20)] + ja_c[:(k or 20)] + CAL_EN[:k] + CAL_CODE[:k]
+                 + CAL_ZH[:k] + CAL_MATH[:k] + CAL_CHAT[:k])
+        random.Random(0).shuffle(calib)
+        log(f"calib mixw (căn cước Qwen3): {len(calib)} câu"
+            " (vi 20 + ja 20 + en 24 + code 16 + zh 20 + math 14 + chat 8)")
     linears = [(n, m) for n, m in model.named_modules() if isinstance(m, nn.Linear) and "layers." in n]
     xn_acc, handles = {n: None for n, _ in linears}, []
     def mk(nm_):
@@ -276,6 +528,13 @@ def main():
     for h in handles:
         h.remove()
     xnorm = {n: xn_acc[n].sqrt() for n in xn_acc}
+    if args.perm_gauge:
+        apply_perm_gauge(model, xnorm, args.nm_m)
+        ppl_p = eval_ppl(model, tok, dev_vi, dev)
+        log(f"FP sau perm-gauge: vi {ppl_p:.1f}")
+        if abs(ppl_p - ppl_fp[0]) / ppl_fp[0] > 0.01:
+            log("!!! perm-gauge sai — abort")
+            sys.exit(1)
     orig = {n: m.weight.data.clone() for n, m in linears}
 
     layers = model.model.layers
@@ -300,12 +559,15 @@ def main():
             parent = getattr(blk, sub)
             lin = getattr(parent, name)
             key = f"model.layers.{b}.{sub}.{name}"
-            w = LearnQLinear(lin, wanda_nm_mask(orig[key], xnorm[key], args.nm_n, args.nm_m))
+            m_ = (torch.ones_like(orig[key]) if args.dense
+                  else wanda_nm_mask(orig[key], xnorm[key], args.nm_n, args.nm_m))
+            w = LearnQLinear(lin, m_, G=args.sgroup, use_bias=not args.no_bias,
+                             sdtype=("f16" if args.sgroup == 256 else "f8"))
             setattr(parent, name, w)
             wrapped.append((b, parent, name, lin, w))
 
     t0 = time.time()
-    pass_steps = (6, 4) if args.smoke else (70, 30)
+    pass_steps = (6, 4) if args.smoke else ((100, 50, 30) if args.s1_passes >= 3 else (70, 30))
     for p_idx, base_steps in enumerate(pass_steps):
         H_q = [H_fp[0][s].clone() for s in range(NC)]
         for b, blk in enumerate(layers):
@@ -321,7 +583,7 @@ def main():
             opt = torch.optim.Adam([
                 {"params": [w.Wfp for w in mods], "lr": 1e-3},
                 {"params": [w.raw_s for w in mods], "lr": 5e-3},
-                {"params": [w.bias for w in mods], "lr": 5e-4},
+                {"params": [w.bias for w in mods if w.bias is not None], "lr": 5e-4},
                 {"params": norm_ws, "lr": 5e-4},
             ])
 
@@ -333,7 +595,7 @@ def main():
             best = eval_block()
             best_state = ([w.Wfp.detach().clone() for w in mods],
                           [w.raw_s.detach().clone() for w in mods],
-                          [w.bias.detach().clone() for w in mods],
+                          [w.bias.detach().clone() for w in mods if w.bias is not None],
                           [nw_.detach().clone() for nw_ in norm_ws])
             for step in range(steps):
                 idx = random.sample(range(NC), min(6, NC))
@@ -348,7 +610,7 @@ def main():
                         best = v
                         best_state = ([w.Wfp.detach().clone() for w in mods],
                                       [w.raw_s.detach().clone() for w in mods],
-                                      [w.bias.detach().clone() for w in mods],
+                                      [w.bias.detach().clone() for w in mods if w.bias is not None],
                                       [nw_.detach().clone() for nw_ in norm_ws])
             with torch.no_grad():
                 for w, Wb, Sb, Bb in zip(mods, best_state[0], best_state[1], best_state[2]):
@@ -366,21 +628,24 @@ def main():
     log(f"S1 (dựng lại ~exp_q): PPL vi {pv:.1f}  (mốc lab: 400.1)")
 
     # ===== S2: E2E KD-STE =====
-    log("S2: nạp teacher FP...")
-    teacher = AutoModelForCausalLM.from_pretrained(
-        mdir, dtype=(torch.bfloat16 if dev == "cuda" else torch.float32)).to(dev).eval()
-    apply_gauge(teacher)  # teacher cùng gauge (tương đương chính xác, giữ hidden khớp)
-    for p in teacher.parameters():
-        p.requires_grad_(False)
-
-    tr_vi = read_lines(args.train_vi, args.train_sents // 2, skip=args.train_skip)
-    tr_ja = read_lines(args.train_ja, args.train_sents // 2, skip=args.train_skip)
-    train_txt = [x for pr in zip(tr_vi, tr_ja) for x in pr]
-    log(f"S2 data: {len(train_txt)} câu")
+    if args.steps > 0:
+        log("S2: nạp teacher FP...")
+        teacher = AutoModelForCausalLM.from_pretrained(
+            mdir, dtype=(torch.bfloat16 if dev == "cuda" else torch.float32)).to(dev).eval()
+        # teacher cùng gauge (exact). KHÔNG cần cùng perm: KD chỉ so LOGIT (bất biến hoán vị).
+        apply_gauge(teacher, rot=bool(args.rot_gauge))
+        for p in teacher.parameters():
+            p.requires_grad_(False)
+        tr_vi = read_lines(args.train_vi, args.train_sents // 2, skip=args.train_skip)
+        tr_ja = read_lines(args.train_ja, args.train_sents // 2, skip=args.train_skip)
+        train_txt = [x for pr in zip(tr_vi, tr_ja) for x in pr]
+        log(f"S2 data: {len(train_txt)} câu")
+    else:
+        teacher, train_txt = None, []   # screening S1-only: khỏi tốn RAM/thời gian teacher
 
     params_w = [w.Wfp for (_, _, _, _, w) in wrapped]
     params_s = [w.raw_s for (_, _, _, _, w) in wrapped]
-    params_b = [w.bias for (_, _, _, _, w) in wrapped]
+    params_b = [w.bias for (_, _, _, _, w) in wrapped if w.bias is not None]
     norm_all = []
     for b, blk in enumerate(layers):
         for sub, name in NORM_PATHS:
@@ -406,10 +671,14 @@ def main():
     j0 = eval_ppl(model, tok, dev_ja, dev)
     e0 = eval_ppl(model, tok, EN_EVAL, dev)
     c0 = eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)
-    best_score = math.sqrt(v0 * j0)
+    z0 = eval_ppl(model, tok, ZH_EVAL, dev)
+    m0 = eval_ppl(model, tok, MATH_EVAL, dev)
+    best_score = (v0 * j0 * e0 * c0) ** 0.25 if args.best_metric == "geo4" else math.sqrt(v0 * j0)
     best_vi = v0
     best_sd = {k: t.detach().clone() for k, t in model.state_dict().items()}
-    log(f"S2 step-0 (mốc S1): PPL vi {v0:.1f} / ja {j0:.1f} | en {e0:.1f} / code {c0:.1f}")
+    s1_probe = {"vi": v0, "ja": j0, "en": e0, "code": c0, "zh": z0, "math": m0}
+    log(f"S2 step-0 (mốc S1): PPL vi {v0:.1f} / ja {j0:.1f} | en {e0:.1f} / code {c0:.1f}"
+        f" | zh {z0:.1f} / math {m0:.1f}")
     nan_cnt = 0
     eval_every = max(2, args.steps // 12)
     base_lrs = [g["lr"] for g in opt.param_groups]
@@ -492,7 +761,7 @@ def main():
             j = eval_ppl(model, tok, dev_ja, dev)
             en = eval_ppl(model, tok, EN_EVAL, dev)
             cd = eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)
-            sc = math.sqrt(v * j)
+            sc = (v * j * en * cd) ** 0.25 if args.best_metric == "geo4" else math.sqrt(v * j)
             log(f"  step {step+1}/{args.steps}: KL/token {loss_acc:.4f} | vi {v:.1f} / ja {j:.1f} | geo {sc:.1f} | en {en:.1f} / code {cd:.1f} ({time.time()-t1:.0f}s)")
             if sc < best_score:
                 best_score = sc
@@ -506,17 +775,30 @@ def main():
     # bake + persist + eval cuối
     with torch.no_grad():
         for b, parent, name, lin, w in wrapped:
-            new_lin = nn.Linear(w.C, w.R, bias=True).to(dev)
+            new_lin = nn.Linear(w.C, w.R, bias=w.use_bias).to(dev)
             new_lin.weight.data = w.quant().detach()
-            new_lin.bias.data = w.bias.detach()
+            if w.use_bias:
+                new_lin.bias.data = w.bias.detach()
             setattr(parent, name, new_lin)
     pv, pj = eval_ppl(model, tok, dev_vi, dev), eval_ppl(model, tok, dev_ja, dev)
+    pen = eval_ppl(model, tok, EN_EVAL, dev)
+    pcd = eval_ppl(model, tok, CODE_EVAL, dev, max_tok=160)
+    pzh = eval_ppl(model, tok, ZH_EVAL, dev)
+    pma = eval_ppl(model, tok, MATH_EVAL, dev)
     big_vi = eval_ppl(model, tok, read_lines(args.dev_vi, 200)[-100:], dev)
-    log(f"=> EXP R QAT-lite: PPL vi {pv:.1f} / ja {pj:.1f} | validation 100 câu vi: {big_vi:.1f}")
-    torch.save({"state_dict": {k: v.half().cpu() for k, v in model.state_dict().items()},
-                "meta": {"config": "N3+gauge+QATlite", "bpw": 1.566, "ppl_vi": pv, "ppl_ja": pj,
-                         "ppl_vi_100c": big_vi, "steps": args.steps}}, args.out)
-    log(f"Đã lưu model bake: {args.out}")
+    # bpw trung thực theo bậc (payload*keep + entropy mask + scale f8/g64) — dense: không mask
+    BPW_NM = {(2, 4): 1.566, (1, 4): 1.023, (1, 8): 0.699, (1, 10): 0.616}
+    sb = (16.0 if args.sgroup == 256 else 8.0) / args.sgroup
+    bpw = round(math.log2(3) + sb, 3) if args.dense else BPW_NM.get((args.nm_n, args.nm_m), -1.0)
+    log(f"=> EXP R QAT-lite: PPL vi {pv:.1f} / ja {pj:.1f} | en {pen:.1f} / code {pcd:.1f}"
+        f" | zh {pzh:.1f} / math {pma:.1f} | validation 100 câu vi: {big_vi:.1f}")
+    if args.save_ckpt:
+        torch.save({"state_dict": {k: v.half().cpu() for k, v in model.state_dict().items()},
+                    "meta": {"config": f"nm{args.nm_n}:{args.nm_m}+gauge+QATlite",
+                             "tag": args.tag, "bpw": bpw, "calib_mode": args.calib_mode,
+                             "perm_gauge": args.perm_gauge, "ppl_vi": pv, "ppl_ja": pj,
+                             "ppl_vi_100c": big_vi, "steps": args.steps}}, args.out)
+        log(f"Đã lưu model bake: {args.out}")
     rj = os.path.join(OUT_DIR, "exp_r_results.json")
     out = {}
     if os.path.exists(rj):
@@ -525,14 +807,20 @@ def main():
                 out = json.load(f)
         except Exception:
             out = {}
-    out[f"exp_r[steps={args.steps},smoke={args.smoke}]"] = {
-        "bpw": 1.566, "ppl_vi": pv, "ppl_ja": pj, "ppl_vi_100c": big_vi,
-        "s1_vi": None, "fp_vi": ppl_fp[0], "fp_ja": ppl_fp[1]}
+    key = args.tag if args.tag else f"exp_r[steps={args.steps},smoke={args.smoke}]"
+    out[key] = {
+        "bpw": bpw, "nm": f"{args.nm_n}:{args.nm_m}", "calib_mode": args.calib_mode,
+        "perm_gauge": args.perm_gauge, "steps": args.steps,
+        "ppl_vi": pv, "ppl_ja": pj, "ppl_en": pen, "ppl_code": pcd,
+        "ppl_zh": pzh, "ppl_math": pma, "ppl_vi_100c": big_vi,
+        "s1_probe": s1_probe, "fp_vi": ppl_fp[0], "fp_ja": ppl_fp[1]}
     with io.open(rj, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
     print("=" * 72)
-    print(f"EXP R — QAT-lite e2e (N3 1.56bpw + gauge)  [mốc exp_q: vi 400.1]")
-    print(f"  sau QAT-lite: vi {pv:10.1f}  ja {pj:10.1f}  | 100 câu vi: {big_vi:.1f}")
+    print(f"EXP R — nm {args.nm_n}:{args.nm_m} ({bpw} bpw) calib={args.calib_mode}"
+          f" perm={args.perm_gauge} steps={args.steps}")
+    print(f"  vi {pv:9.1f}  ja {pj:9.1f}  en {pen:9.1f}  code {pcd:8.1f}"
+          f"  zh {pzh:9.1f}  math {pma:8.1f} | 100c vi: {big_vi:.1f}")
     print("=" * 72)
 
 

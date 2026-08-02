@@ -321,6 +321,58 @@ tok/s trong exp_s là mô phỏng fp32 (~13-14) — tốc độ THẬT xem bản
 
 ---
 
+## Bài 13 — S1-v2: calib "căn cước model" (mixw) + HOÁN VỊ KÊNH gauge-exact (02/08 chiều)
+
+Câu hỏi: sàn S1 (PTQ thuần) hạ được bao nhiêu nữa, và có CHIA ĐỀU cho các miền không?
+Hai dao mổ mới trong `exp_r` (screening 11 ô × `--steps 0`, L40S 21 phút ≈ $0.7):
+
+- **`--calib-mode mixw`** — calib theo căn cước Qwen3 (36T tok, 119 ngôn ngữ, nặng en/zh/code/math):
+  vi 20 + ja 20 + en 24 + code 16 + **zh 20 + math 14 + chat 8** (122 câu); probe mở rộng 6 miền
+  (thêm `ZH_EVAL`/`MATH_EVAL`; neo FP: vi 69.0 / ja 125.1 / en 34.2 / code 2.7 / zh 50.8 / math 5.5).
+- **`--perm-gauge`** — hoán vị kênh CHÍNH XÁC TUYỆT ĐỐI (FP sau perm = 69.0, khớp từng chữ số):
+  3 họ gauge (hidden toàn cục → input q/k/v/gate/up; intermediate mỗi block → input down;
+  head-dim v↔o mỗi kv-head → input o), chia bài round-robin theo importance để kênh quan trọng
+  rải đều nhóm M — mask N:M hết bị ép vứt kênh quan trọng vì trùng nhóm. Khác rotation (bị bác):
+  GIỮ NGUYÊN thống kê từng kênh, chỉ đổi cách chia nhóm.
+
+Bảng S1 (PPL; ☠ = miền chết >10⁵; geo6 = trung bình nhân 6 miền):
+
+| bậc | cấu hình | vi | ja | en | code | zh | math | geo6 | đều (max/min ×FP) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2:4 1.56 | mix4 (mốc gen3) | **444** | 2207 | 1448 | 142 | ☠* | 109* | ~1227* | ~×413 |
+| | mix4+perm | 511 | 1959 | 1302 | 216 | ☠ | 109 | — | — |
+| | mixw | 1025 | 3150 | 869 | **133** | 2056 | **37** | **552** | **×7.2** |
+| | mixw+perm | 851 | 2381 | 1044 | 196 | **1864** | 42 | 565 | ×7.4 |
+| 1:4 1.02 | mix4 | 823 | 4077 | 1607 | 246 | ☠ | 168 | 1767 | ×226 |
+| | mixw | 1149 | **3343** | 2078 | 474 | 3234 | 54 | 934 | ×18 |
+| | mix4+perm | **696** | 3389 | 1381 | 231 | ☠ | 129 | — | — |
+| | mixw+perm | 969 | 5814⚠ | **1103** | **238** | **2281** | **45** | **732** | ×11 |
+| 1:8 0.70 | mix4 | **1461** | 4804 | 4622 | 1619 | ☠ | 298 | 3521 | ×114 |
+| | mixw+perm | 1666 | **3550** | **3030** | **925** | **3905** | **78** | **1310** | **×24** |
+| 1:10 0.62 | mix4 | **1791** | 6321 | 7951 | 2320 | ☠ | 262 | 4779 | ×165 |
+| | mixw+perm | 2427 | **5768** | **3786** | **1082** | **9060** | **96** | **1919** | **×23** |
+
+(*zh/math của 2:4-mix4 chưa đo trực tiếp — lấy proxy từ ô mix4+perm; zh chết như nhau.)
+
+**Phán quyết (kỳ vọng ghi trước → số thật):**
+1. **Miền vắng calib = chết, lặp lần 3**: zh dưới mix4 = 122k–317k (×2400–6200 FP) — đúng nguyên
+   xi bài "en ×808". Probe battery bắt điểm mù như thiết kế → calib PHẢI phủ miền cần sống.
+2. **mixw mua ĐỘ ĐỀU bằng đỉnh vi**: max/min ×FP từ ×114–413 → ×7–24; zh sống lại ×24–75, math ×3–4;
+   ja thường TỐT lên (chuyển giao chữ Hán zh→ja); giá: vi +14..40% (riêng 2:4: ×2.3).
+3. **perm trung tính ở 2:4, THẬT từ 1:4 xuống, mạnh dần theo độ gắt mask** (đúng thuyết va chạm:
+   giữ 1/M thì kênh quan trọng trùng nhóm là mất): 1:4 mix4 5/6 miền −6..−23% (geo4 −13%);
+   1:8 combo en −34% code −43% math −74%; 1:10 en −52% code −53%. Geo6 full-stack vs mix4:
+   **−54% (2:4) · −59% (1:4) · −63% (1:8) · −60% (1:10)** — sàn S1 KHÔNG phải format-bound
+   như kết luận vội ở Bài 11; nó còn hạ được bằng calib + gauge, không tốn bit nào.
+4. **Mắt xích yếu ja**: riêng 1:4 mixw+perm nổ ja +74% (π tổng gộp lấy chỗ kênh riêng ja chia cho
+   zh/math). Vá: tăng share ja calib (20→~32, kiểu 60/40) — cần 1 ô screening trước GEN4.
+5. gen3_n3 (mix4+v4+geo4, xong 31/07): **val-100 vi 353.8, vi 323.1 / ja 1077** — KD từ sàn cân
+   bằng hơn + chọn best geo là hướng đúng; GEN4 = S1-v2 (mixw+perm) + v4 + KD-mix + geo6.
+
+Bài học vận hành đắt giá: chuỗi driver local phóng `modal run` KHÔNG `--detach` → laptop sleep giết
+app ephemeral giữa run, driver tưởng xong phóng bậc kế (mất ~$5, 2 run không xác nhận được).
+Mọi run dài từ nay: MỘT hàm screen/chain chạy TRONG container + `--detach`.
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |
