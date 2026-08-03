@@ -82,6 +82,45 @@ def _prep_kd_mix():
 
 vol = modal.Volume.from_name("qat-lite-vol", create_if_missing=True)
 
+# Image cho pha C (đóng gói GGUF): thêm toolchain build llama-quantize
+image_pack = (
+    modal.Image.debian_slim(python_version="3.11")
+    .pip_install("torch", "transformers==4.57.6", "numpy", "accelerate", "huggingface_hub",
+                 "datasets", "sentencepiece", "gguf")
+    .apt_install("git", "cmake", "build-essential")
+    .run_commands(
+        "git clone --depth 1 https://github.com/ggml-org/llama.cpp /root/llama.cpp",
+        "cmake -S /root/llama.cpp -B /root/llama.cpp/build"
+        " -DGGML_NATIVE=OFF -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release",
+        "cmake --build /root/llama.cpp/build --target llama-quantize -j 8",
+    )
+    .add_local_file("eval/lowbit_ptq/exp_r_qat_lite.py", "/root/exp_r_qat_lite.py")
+    .add_local_file("eval/lowbit_ptq/exp_v_s1_stream.py", "/root/exp_v_s1_stream.py")
+    .add_local_file("eval/lowbit_ptq/exp_w_lora_kd.py", "/root/exp_w_lora_kd.py")
+    .add_local_file("eval/lowbit_ptq/exp_x_pack_gguf.py", "/root/exp_x_pack_gguf.py")
+    .add_local_dir("cloud/qat_data", "/root/qat_data")
+)
+
+
+@app.function(image=image_pack, gpu="L40S", volumes={"/vol": vol}, timeout=4 * 3600,
+              memory=147_456, cpu=8)
+def pack_30b():
+    """Pha C — đóng gói ternary+LoRA thành GGUF TQ2_0 chạy thật (exp_x)."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    snapshot_download("Qwen/Qwen3-30B-A3B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    r = subprocess.run(["python", "/root/exp_x_pack_gguf.py",
+                        "--dev-vi", "/root/qat_data/dev.vi",
+                        "--dev-ja", "/root/qat_data/dev.ja"])
+    vol.commit()
+    print(f"exit={r.returncode}")
+    return r.returncode
+
 
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=3 * 3600)
 def train(steps: int = 1500, train_sents: int = 8000, lr: float = 2e-4,
@@ -433,8 +472,8 @@ def screen_b2():
     print("SCREEN B2 XONG")
 
 
-@app.function(image=image, gpu="A100-80GB", volumes={"/vol": vol}, timeout=5 * 3600,
-              memory=112_640, cpu=8)
+@app.function(image=image, gpu=["H100", "A100-80GB"], volumes={"/vol": vol},
+              timeout=5 * 3600, memory=112_640, cpu=8)
 def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 2000,
                 rank: int = 8, tag: str = "", lr: float = 3e-5,
                 lora_scope: str = "attn+down",

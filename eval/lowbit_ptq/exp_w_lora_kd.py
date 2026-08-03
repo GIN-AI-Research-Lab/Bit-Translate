@@ -228,6 +228,14 @@ def main():
     for p in model.parameters():
         p.requires_grad_(False)
     n_lora = attach_lora(model, args.rank, args.lora_scope)
+    if args.out and os.path.exists(args.out):   # WARM-START sau preempt: nạp best-LoRA đã lưu
+        try:
+            prev = torch.load(args.out, map_location="cpu", weights_only=False)
+            model.load_state_dict(prev["lora"], strict=False)
+            log(f"warm-start từ best cũ: step {prev.get('meta', {}).get('step')} "
+                f"geo6 {prev.get('meta', {}).get('geo6')}")
+        except Exception as e:
+            log(f"warm-start bỏ qua ({type(e).__name__})")
     model.to(dev)
     model.gradient_checkpointing_enable(
         gradient_checkpointing_kwargs={"use_reentrant": False})
@@ -303,7 +311,7 @@ def main():
                 loss = loss + args.ce_w * (ce * m2).sum() / m2_tot
             loss.backward()
             loss_acc += loss.item()
-            del sl, slT, lse, s_at
+            del sl, slT, s_lse, s_at
         loss = torch.tensor(loss_acc)
         torch.nn.utils.clip_grad_norm_(params, 1.0)
         opt.step()
