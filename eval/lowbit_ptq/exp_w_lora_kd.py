@@ -75,17 +75,22 @@ def to_bias_linears(model):
                         setattr(sub, name, nl)
 
 
-def attach_lora(model, r):
+def attach_lora(model, r, scope="all"):
+    """scope='attn+down': attention đủ 4 + CHỈ down_proj mỗi expert (6.3k module thay 18.6k
+    — giảm ×3 số lần phóng kernel, giữ absorber ở tầng tổn thương chính)."""
     n = 0
     for blk in model.model.layers:
         moe = hasattr(blk.mlp, "experts")
-        subs = [blk.self_attn]
-        subs += list(blk.mlp.experts) if moe else [blk.mlp]
-        for sub in subs:
+        subs = [(blk.self_attn, True)]
+        subs += [(ex, False) for ex in (blk.mlp.experts if moe else [blk.mlp])]
+        for sub, is_attn in subs:
             for name, lin in list(sub.named_children()):
-                if isinstance(lin, nn.Linear) and "norm" not in name and name != "gate":
-                    setattr(sub, name, LoRALinear(lin, r))
-                    n += 1
+                if not isinstance(lin, nn.Linear) or "norm" in name or name == "gate":
+                    continue
+                if scope == "attn+down" and not is_attn and name != "down_proj":
+                    continue
+                setattr(sub, name, LoRALinear(lin, r))
+                n += 1
     return n
 
 
@@ -149,11 +154,12 @@ def main():
     ap.add_argument("--kd-vi", type=int, default=18_000)
     ap.add_argument("--kd-ja", type=int, default=27_000, help="ja 60/40 vs vi")
     ap.add_argument("--kd-dom", type=int, default=8_000)
-    ap.add_argument("--steps", type=int, default=3000)
+    ap.add_argument("--steps", type=int, default=2000)
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--seq", type=int, default=128)
     ap.add_argument("--rank", type=int, default=8)
-    ap.add_argument("--lr", type=float, default=1e-4)
+    ap.add_argument("--lora-scope", default="attn+down", choices=["all", "attn+down"])
+    ap.add_argument("--lr", type=float, default=3e-5)
     ap.add_argument("--kd-temp", type=float, default=2.0)
     ap.add_argument("--ce-w", type=float, default=0.1)
     ap.add_argument("--topk", type=int, default=64)
@@ -191,13 +197,17 @@ def main():
                 am = enc.attention_mask.to(dev)
                 lg = teacher(ids, attention_mask=am).logits.float()
                 v, ix = lg.topk(args.topk, dim=-1)
+                # lseT: normalizer FULL-vocab ở nhiệt độ T -> pha S khớp được XÁC SUẤT TUYỆT ĐỐI
+                # (v2 fix: renorm top-K từng chặt đuôi -> thiên kiến entropy giết ja/zh)
+                lseT = (lg / args.kd_temp).logsumexp(-1)
                 cache.append({"ids": ids.cpu().to(torch.int32),
                               "am": am.cpu().to(torch.int8),
                               "v": v.cpu().to(torch.float16),
-                              "ix": ix.cpu().to(torch.int32)})
+                              "ix": ix.cpu().to(torch.int32),
+                              "lseT": lseT.cpu().to(torch.float32)})
                 if i % 200 == 199:
                     log(f"  T {i+1}/{len(batches)} ({time.time()-t0:.0f}s)")
-        torch.save(cache, tl_path)
+        torch.save({"T": args.kd_temp, "batches": cache}, tl_path)
         log(f"PHA T xong: {tl_path} ({os.path.getsize(tl_path)/1e9:.2f} GB)")
         del teacher, cache
         torch.cuda.empty_cache()
@@ -217,14 +227,19 @@ def main():
         log(f"nạp ckpt ternary: {args.ckpt}")
     for p in model.parameters():
         p.requires_grad_(False)
-    n_lora = attach_lora(model, args.rank)
+    n_lora = attach_lora(model, args.rank, args.lora_scope)
     model.to(dev)
     model.gradient_checkpointing_enable(
         gradient_checkpointing_kwargs={"use_reentrant": False})
     params = [p for p in model.parameters() if p.requires_grad]
     log(f"LoRA: {n_lora} linear, {sum(p.numel() for p in params)/1e6:.0f}M trainable")
     opt = torch.optim.Adam(params, lr=args.lr)
-    cache = torch.load(tl_path, map_location="cpu", weights_only=False)
+    obj = torch.load(tl_path, map_location="cpu", weights_only=False)
+    if isinstance(obj, dict) and "batches" in obj:
+        assert abs(obj["T"] - args.kd_temp) < 1e-6, "kd-temp KHÁC lúc build cache (lseT sai)"
+        cache = obj["batches"]
+    else:
+        cache = obj   # cache v1 (không lseT — renorm top-K, thiên kiến entropy đã biết)
 
     dev_vi = read_lines(args.dev_vi, 400)[-16:]
     dev_ja = read_lines(args.dev_ja, 400)[-16:]
@@ -248,26 +263,53 @@ def main():
         for g in opt.param_groups:
             g["lr"] = args.lr * fac * 0.5 * (1 + math.cos(math.pi * prog))
         cb = cache[step]
-        ids = cb["ids"].to(dev).long()
-        am = cb["am"].to(dev).float()
-        tv = cb["v"].to(dev).float() / T
-        tix = cb["ix"].to(dev).long()
+        ids_f = cb["ids"].to(dev).long()
+        am_f = cb["am"].to(dev).float()
+        tv_f = cb["v"].to(dev).float() / T
+        tix_f = cb["ix"].to(dev).long()
+        lse_f = cb["lseT"].to(dev).float() if "lseT" in cb else None
         opt.zero_grad()
-        sl = model(ids, attention_mask=am.long()).logits.float()
-        slT = sl / T
-        lse = slT.logsumexp(-1, keepdim=True)
-        s_at = slT.gather(-1, tix) - lse          # log p_s tại top-K
-        t_p = F.softmax(tv, -1)                   # phân bố teacher trên top-K (renorm)
-        t_lp = F.log_softmax(tv, -1)
-        kl_tok = (t_p * (t_lp - s_at)).sum(-1)    # [B,Tk]
-        loss = (kl_tok * am).sum() / am.sum().clamp(min=1) * (T * T)
-        if args.ce_w > 0:
-            m2 = (am[:, 1:] * am[:, :-1])
-            ce = F.cross_entropy(sl[:, :-1].transpose(1, 2), ids[:, 1:], reduction="none")
-            loss = loss + args.ce_w * (ce * m2).sum() / m2.sum().clamp(min=1)
-        loss.backward()
+        Bf = ids_f.shape[0]
+        mb = max(1, Bf // 2)                       # micro-batch ×2 (OOM fix, giữ loss chuẩn)
+        am_tot = am_f.sum().clamp(min=1)
+        m2_f = (am_f[:, 1:] * am_f[:, :-1])
+        m2_tot = m2_f.sum().clamp(min=1)
+        loss_acc = 0.0
+        for s0 in range(0, Bf, mb):
+            ids, am = ids_f[s0:s0 + mb], am_f[s0:s0 + mb]
+            tv, tix = tv_f[s0:s0 + mb], tix_f[s0:s0 + mb]
+            sl = model(ids, attention_mask=am.long()).logits.float()
+            slT = sl / T
+            s_lse = slT.logsumexp(-1, keepdim=True)
+            s_at = slT.gather(-1, tix) - s_lse     # log p_s TUYỆT ĐỐI tại top-K (temp T)
+            if lse_f is not None:
+                # v2: KL đúng cả KHỐI ĐUÔI — teacher probs tuyệt đối nhờ lseT full-vocab.
+                # Fix thiên kiến entropy: renorm top-K từng ép student bóp đuôi -> ja/zh nổ.
+                t_lp = tv - lse_f[s0:s0 + mb].unsqueeze(-1)
+                t_p = t_lp.exp()
+                t_tail = (1.0 - t_p.sum(-1)).clamp(min=1e-5)
+                s_tail = (1.0 - s_at.exp().sum(-1)).clamp(min=1e-5)
+                kl_tok = (t_p * (t_lp - s_at)).sum(-1) \
+                    + t_tail * (t_tail.log() - s_tail.log())
+            else:                                   # v1 renorm (giữ để so sánh)
+                t_p = F.softmax(tv, -1)
+                t_lp = F.log_softmax(tv, -1)
+                kl_tok = (t_p * (t_lp - s_at)).sum(-1)
+            loss = (kl_tok * am).sum() / am_tot * (T * T)
+            if args.ce_w > 0:
+                m2 = m2_f[s0:s0 + mb]
+                ce = F.cross_entropy(sl[:, :-1].transpose(1, 2), ids[:, 1:],
+                                     reduction="none")
+                loss = loss + args.ce_w * (ce * m2).sum() / m2_tot
+            loss.backward()
+            loss_acc += loss.item()
+            del sl, slT, lse, s_at
+        loss = torch.tensor(loss_acc)
         torch.nn.utils.clip_grad_norm_(params, 1.0)
         opt.step()
+        if step % 50 == 49:
+            log(f"  ... {step+1}/{args.steps} | KL {loss_acc:.3f}"
+                f" | {(time.time()-t1)/(step+1):.1f}s/bước")
         if step % eval_every == eval_every - 1 or step == args.steps - 1:
             pe = eval_probes(model, tok, probes, dev)
             sc = geo(pe)
@@ -278,6 +320,11 @@ def main():
                 best_score = sc
                 best_lora = {k: v.detach().clone() for k, v in model.state_dict().items()
                              if ".A" in k or ".B" in k}
+                if args.out and not args.smoke:   # lưu TĂNG DẦN — app chết không mất trắng
+                    torch.save({"lora": {k: v.cpu() for k, v in best_lora.items()},
+                                "meta": {"tag": args.tag, "rank": args.rank,
+                                         "step": step + 1, "probe": pe, "geo6": sc}},
+                               args.out)
     model.load_state_dict(best_lora, strict=False)
 
     pf = eval_probes(model, tok, probes, dev)

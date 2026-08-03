@@ -435,8 +435,10 @@ def screen_b2():
 
 @app.function(image=image, gpu="A100-80GB", volumes={"/vol": vol}, timeout=5 * 3600,
               memory=112_640, cpu=8)
-def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 3000,
-                rank: int = 8, tag: str = ""):
+def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 2000,
+                rank: int = 8, tag: str = "", lr: float = 3e-5,
+                lora_scope: str = "attn+down",
+                tlogits: str = "tlogits_30b_v2.pt"):
     """(b) — LoRA-KD trên nền ternary exp_v: pha T cache top-64 logits teacher (1 lượt A100),
     pha S train LoRA r nhỏ trên student đóng băng + grad checkpointing. ~2.5h/$8."""
     import os
@@ -444,6 +446,7 @@ def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 3000,
     from huggingface_hub import snapshot_download
 
     os.environ["HF_HOME"] = "/vol/hf"
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"  # chống phân mảnh 80GB
     snapshot_download("Qwen/Qwen3-30B-A3B")
     os.makedirs("/vol/out", exist_ok=True)
     os.environ["EXPR_OUT_DIR"] = "/vol/out"
@@ -456,14 +459,63 @@ def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 3000,
            "--dev-vi", "/root/qat_data/dev.vi", "--dev-ja", "/root/qat_data/dev.ja",
            "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", "/vol/kd_mix/kd_code_ml.txt",
            "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
-           "--steps", str(steps), "--rank", str(rank),
-           "--tlogits", "/vol/out/tlogits_30b.pt",
+           "--steps", str(steps), "--rank", str(rank), "--lr", str(lr),
+           "--lora-scope", lora_scope,
+           "--tlogits", f"/vol/out/{tlogits}",
            "--tag", tag, "--out", "/vol/out/expw_lora_30b.pt"]
     print("RUN:", " ".join(cmd), flush=True)
     r = subprocess.run(cmd)
     vol.commit()
     print(f"exit={r.returncode}")
     return r.returncode
+
+
+@app.function(image=image, gpu="A100-80GB", volumes={"/vol": vol}, timeout=3600,
+              memory=112_640, cpu=8)
+def gate_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", max_new: int = 48):
+    """Gate hành vi cho 30B ternary (exp_v bake): PPL nhanh + sinh 8 prompt 6 miền."""
+    import os
+    import sys
+
+    import torch
+    from huggingface_hub import snapshot_download
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    sys.path.insert(0, "/root")
+    from exp_w_lora_kd import to_bias_linears
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    mid = "Qwen/Qwen3-30B-A3B"
+    snapshot_download(mid)
+    dev = "cuda"
+    tok = AutoTokenizer.from_pretrained(mid)
+    model = AutoModelForCausalLM.from_pretrained(
+        mid, dtype=torch.bfloat16, low_cpu_mem_usage=True).eval()
+    to_bias_linears(model)
+    sd = torch.load(f"/vol/out/{ckpt}", map_location="cpu", weights_only=False)
+    state = sd["state_dict"] if "state_dict" in sd else sd
+    missing, unexpected = model.load_state_dict(state, strict=False)
+    assert not unexpected, f"unexpected: {unexpected[:5]}"
+    model.to(dev)
+    print(f"GATE30B {ckpt} | meta: {sd.get('meta', {})}", flush=True)
+    PROMPTS = [
+        ("vi", "Hà Nội là thủ đô của Việt Nam, nổi tiếng với"),
+        ("vi", "Hôm nay trời mưa nên tôi quyết định"),
+        ("ja", "日本の四季の中で、私が一番好きなのは"),
+        ("ja", "東京駅から新幹線に乗って"),
+        ("en", "The most important thing about learning a new language is"),
+        ("code", "# Python function to check if a number is prime\ndef is_prime(n):\n    "),
+        ("zh", "北京的秋天很美，特别是"),
+        ("math", "Q: A box has 12 apples. Tom takes 5. How many are left?\nA:"),
+    ]
+    for dom, pr in PROMPTS:
+        ids = tok(pr, return_tensors="pt").input_ids.to(dev)
+        with torch.no_grad():
+            out = model.generate(ids, max_new_tokens=max_new, do_sample=False,
+                                 pad_token_id=tok.eos_token_id)
+        txt = tok.decode(out[0][ids.shape[1]:], skip_special_tokens=True)
+        print(f"[{dom}] -> {txt!r}", flush=True)
+    print("GATE30B XONG", flush=True)
 
 
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=3600)
