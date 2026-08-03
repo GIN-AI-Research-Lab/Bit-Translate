@@ -243,6 +243,8 @@ def main():
     ap.add_argument("--steps-block", type=int, default=60)
     ap.add_argument("--cal-scale", type=int, default=1,
                     help="x4 = calib 4x (vi/ja từ dev, en/code/zh/math từ file kd nếu có)")
+    ap.add_argument("--ja-share", type=int, default=32,
+                    help="số câu ja mỗi đơn vị cal-scale (v3: 44 — vá seesaw ja)")
     ap.add_argument("--kd-en", default="")
     ap.add_argument("--kd-code", default="")
     ap.add_argument("--kd-zh", default="")
@@ -274,14 +276,16 @@ def main():
     # ---- calib mixwj (×cal-scale cho MoE — chống đói-expert) + bộ đo 6 miền ----
     k = 4 if args.smoke else None
     cs = 1 if args.smoke else max(1, args.cal_scale)
+    js = args.ja_share
     vi_c = read_lines(args.dev_vi, 20 * cs + 20)[: (k or 20 * cs)]
-    ja_c = read_lines(args.dev_ja, 32 * cs + 20)[: (k or 32 * cs)]
+    ja_c = read_lines(args.dev_ja, js * cs + 20)[: (k or js * cs)]
 
     def dom_cal(path, base, n):
         if path and os.path.exists(path):
             got = read_lines(path, n)
             if len(got) >= n // 2:
-                return got
+                # unescape newline (kd_code_ml giữ cấu trúc code); vô hại với văn xuôi
+                return [s.replace("\\n", "\n").replace("\\\\", "\\") for s in got]
         return (base * ((n + len(base) - 1) // len(base)))[:n]
     en_c = CAL_EN[:k] if k else dom_cal(args.kd_en, CAL_EN, 24 * cs)
     co_c = CAL_CODE[:k] if k else dom_cal(args.kd_code, CAL_CODE, 16 * cs)
@@ -426,17 +430,18 @@ def main():
     q_line = " / ".join(f"{k_} {v:.1f}" for k_, v in nll_q.items())
     geo6 = math.exp(sum(math.log(max(v, 1e-9)) for v in nll_q.values()) / len(nll_q))
     log(f"=> EXP V S1 nm{args.nm_n}:{args.nm_m}: {q_line} | geo6 {geo6:.1f}")
-    big_vi = None
+    big_vi = big_ja = None
     if args.val100 and not args.smoke:
-        v_seqs, v_idx = [], []
-        for s in read_lines(args.dev_vi, 200)[-100:]:
-            ids = tok(s, return_tensors="pt", truncation=True, max_length=96).input_ids
-            if ids.shape[1] >= 2:
-                v_idx.append(len(v_seqs))
-                v_seqs.append(ids)
-        _, _, nv = stream_sweep(model, v_seqs, dev, nll_domains={"vi100": v_idx})
-        big_vi = nv["vi100"]
-        log(f"   val-100 vi: {big_vi:.1f}")
+        v_seqs, vd = [], {"vi100": [], "ja100": []}
+        for name, path in (("vi100", args.dev_vi), ("ja100", args.dev_ja)):
+            for s in read_lines(path, 200)[-100:]:
+                ids = tok(s, return_tensors="pt", truncation=True, max_length=96).input_ids
+                if ids.shape[1] >= 2:
+                    vd[name].append(len(v_seqs))
+                    v_seqs.append(ids)
+        _, _, nv = stream_sweep(model, v_seqs, dev, nll_domains=vd)
+        big_vi, big_ja = nv["vi100"], nv["ja100"]
+        log(f"   val-100 vi: {big_vi:.1f} | val-100 ja: {big_ja:.1f}")
 
     rj = os.path.join(OUT_DIR, "exp_v_results.json")
     outj = {}
@@ -448,7 +453,9 @@ def main():
             outj = {}
     outj[args.tag] = {"model": args.model_id or args.model_glob,
                       "nm": f"{args.nm_n}:{args.nm_m}", "steps_block": args.steps_block,
-                      "fp": nll_fp, "s1": nll_q, "geo6": geo6, "val100_vi": big_vi}
+                      "cal_scale": args.cal_scale, "ja_share": args.ja_share,
+                      "fp": nll_fp, "s1": nll_q, "geo6": geo6,
+                      "val100_vi": big_vi, "val100_ja": big_ja}
     with io.open(rj, "w", encoding="utf-8") as f:
         json.dump(outj, f, ensure_ascii=False, indent=2)
     if args.save and args.out and not args.smoke:

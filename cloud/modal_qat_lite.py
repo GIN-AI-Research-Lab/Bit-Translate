@@ -19,6 +19,7 @@ image = (
                  "datasets")
     .add_local_file("eval/lowbit_ptq/exp_r_qat_lite.py", "/root/exp_r_qat_lite.py")
     .add_local_file("eval/lowbit_ptq/exp_v_s1_stream.py", "/root/exp_v_s1_stream.py")
+    .add_local_file("eval/lowbit_ptq/exp_w_lora_kd.py", "/root/exp_w_lora_kd.py")
     .add_local_dir("cloud/qat_data", "/root/qat_data")
 )
 
@@ -58,6 +59,26 @@ def _prep_kd_mix():
             print(f"kd_mix: {name} = {cnt} dòng", flush=True)
         except Exception as e:  # nguồn hỏng thì bỏ qua — exp_r tự dồn về vi/ja
             print(f"kd_mix: {name} LỖI {type(e).__name__}: {e}", flush=True)
+    # code_ml: GIỮ newline/indent (escape \n) — calib code cho MoE cần đúng phân bố cấu trúc
+    path = "/vol/kd_mix/kd_code_ml.txt"
+    if not (os.path.exists(path) and os.path.getsize(path) > 100_000):
+        try:
+            ds = load_dataset("codeparrot/codeparrot-clean", split="train", streaming=True)
+            cnt = 0
+            with io.open(path + ".tmp", "w", encoding="utf-8") as f:
+                for row in ds:
+                    raw = (row.get("content") or "").strip()
+                    if len(raw) < 200:
+                        continue
+                    t = raw[:600].replace("\\", "\\\\").replace("\n", "\\n")
+                    f.write(t + "\n")
+                    cnt += 1
+                    if cnt >= 4_000:
+                        break
+            os.replace(path + ".tmp", path)
+            print(f"kd_mix: code_ml = {cnt} mẫu (newline giữ nguyên)", flush=True)
+        except Exception as e:
+            print(f"kd_mix: code_ml LỖI {type(e).__name__}: {e}", flush=True)
 
 vol = modal.Volume.from_name("qat-lite-vol", create_if_missing=True)
 
@@ -307,7 +328,7 @@ def gen41(steps: int = 5000):
               memory=147_456, cpu=8)
 def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
            steps_block: int = 60, smoke: int = 0, tag: str = "", save: int = 1,
-           cal_scale: int = 1):
+           cal_scale: int = 1, ja_share: int = 32, code_ml: int = 0):
     """Exp V — S1-only streaming cho 30B-A3B: model bf16 ở CPU RAM 144GB, L40S cầm từng block.
     ~2.5-3h/bậc. Ckpt bake bf16 (~61GB) Ở LẠI volume."""
     import os
@@ -318,12 +339,15 @@ def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
     snapshot_download(model_id)
     os.makedirs("/vol/out", exist_ok=True)
     os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    if code_ml:
+        _prep_kd_mix()   # bảo đảm kd_code_ml.txt (code giữ newline) có mặt
     tag = tag or f"expv[{model_id.split('/')[-1]},{nm_n}:{nm_m}]"
+    code_path = "/vol/kd_mix/kd_code_ml.txt" if code_ml else "/vol/kd_mix/kd_code.txt"
     cmd = ["python", "/root/exp_v_s1_stream.py", "--model-id", model_id,
            "--dev-vi", "/root/qat_data/dev.vi", "--dev-ja", "/root/qat_data/dev.ja",
            "--nm-n", str(nm_n), "--nm-m", str(nm_m), "--steps-block", str(steps_block),
-           "--cal-scale", str(cal_scale),
-           "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", "/vol/kd_mix/kd_code.txt",
+           "--cal-scale", str(cal_scale), "--ja-share", str(ja_share),
+           "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", code_path,
            "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
            "--tag", tag, "--save", str(save),
            "--out", f"/vol/out/expv_{model_id.split('/')[-1]}_{nm_n}x{nm_m}.pt"]
@@ -407,6 +431,39 @@ def screen_b2():
         print(f"exit={r.returncode}", flush=True)
         vol.commit()
     print("SCREEN B2 XONG")
+
+
+@app.function(image=image, gpu="A100-80GB", volumes={"/vol": vol}, timeout=5 * 3600,
+              memory=112_640, cpu=8)
+def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 3000,
+                rank: int = 8, tag: str = ""):
+    """(b) — LoRA-KD trên nền ternary exp_v: pha T cache top-64 logits teacher (1 lượt A100),
+    pha S train LoRA r nhỏ trên student đóng băng + grad checkpointing. ~2.5h/$8."""
+    import os
+    import subprocess
+    from huggingface_hub import snapshot_download
+
+    os.environ["HF_HOME"] = "/vol/hf"
+    snapshot_download("Qwen/Qwen3-30B-A3B")
+    os.makedirs("/vol/out", exist_ok=True)
+    os.environ["EXPR_OUT_DIR"] = "/vol/out"
+    _prep_kd_mix()
+    tag = tag or f"expw[30B,r{rank},s{steps}]"
+    cmd = ["python", "/root/exp_w_lora_kd.py", "--model-id", "Qwen/Qwen3-30B-A3B",
+           "--ckpt", f"/vol/out/{ckpt}",
+           "--train-vi", "/root/qat_data/train_slice.vi",
+           "--train-ja", "/root/qat_data/train_slice.ja",
+           "--dev-vi", "/root/qat_data/dev.vi", "--dev-ja", "/root/qat_data/dev.ja",
+           "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", "/vol/kd_mix/kd_code_ml.txt",
+           "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
+           "--steps", str(steps), "--rank", str(rank),
+           "--tlogits", "/vol/out/tlogits_30b.pt",
+           "--tag", tag, "--out", "/vol/out/expw_lora_30b.pt"]
+    print("RUN:", " ".join(cmd), flush=True)
+    r = subprocess.run(cmd)
+    vol.commit()
+    print(f"exit={r.returncode}")
+    return r.returncode
 
 
 @app.function(image=image, gpu="L40S", volumes={"/vol": vol}, timeout=3600)
