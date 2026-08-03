@@ -239,7 +239,10 @@ def main():
     ap.add_argument("--dev-ja", default="/root/qat_data/dev.ja")
     ap.add_argument("--nm-n", type=int, default=2)
     ap.add_argument("--nm-m", type=int, default=4)
-    ap.add_argument("--sgroup", type=int, default=64)
+    ap.add_argument("--sgroup", type=int, default=64,
+                    help="256 = TQ2_0-native (scale f16/256 — export lossless)")
+    ap.add_argument("--no-bias", type=int, default=0,
+                    help="1 = không bias (BẮT BUỘC cho export GGUF — bài học F0)")
     ap.add_argument("--steps-block", type=int, default=60)
     ap.add_argument("--cal-scale", type=int, default=1,
                     help="x4 = calib 4x (vi/ja từ dev, en/code/zh/math từ file kd nếu có)")
@@ -349,7 +352,8 @@ def main():
             key = f"model.layers.{b}.{suf}"
             imp = lin.weight.data.abs().float() * xnorm[key].to(dev)[None, :].clamp(min=1e-8)
             m_ = nm_mask_from_imp(imp, args.nm_n, args.nm_m)
-            w = LearnQLinear(lin, m_, G=args.sgroup, use_bias=True, sdtype="f8")
+            w = LearnQLinear(lin, m_, G=args.sgroup, use_bias=True,
+                             sdtype=("f16" if args.sgroup == 256 else "f8"))
             parent = blk
             parts = suf.split(".")
             for q_ in parts[:-1]:
@@ -367,7 +371,8 @@ def main():
         opt = torch.optim.Adam([
             {"params": [w.Wfp for *_, w in wrapped], "lr": 1e-3},
             {"params": [w.raw_s for *_, w in wrapped], "lr": 5e-3},
-            {"params": [w.bias for *_, w in wrapped], "lr": 5e-4},
+            # no-bias: bias init 0 + KHÔNG vào opt -> vĩnh viễn 0 -> export bỏ bias zero-tax
+            {"params": ([] if args.no_bias else [w.bias for *_, w in wrapped]), "lr": 5e-4},
             {"params": norm_ws, "lr": 5e-4},
         ])
         tgt = [H[b + 1][i] for i in cal_idx]
