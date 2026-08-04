@@ -282,6 +282,58 @@ và toàn bộ triết lý "kỳ vọng ghi trước + cổng hủy giữa chừ
    optimize phải là `Wfp_gốc − Q` theo đúng chiều đã học được (không mài về `orig−Q`, không
    đọc trực tiếp ô "residual" chưa qua `quant()` — xem lý do kỹ thuật đầy đủ ở Bài 14).
 
+## 5c. ⚠️ ĐẢO NGƯỢC KẾT LUẬN — PPL thật (không phải sai-số-tái-tạo) nói AQLM THUA THẢM
+
+**Đọc mục này TRƯỚC mục 5b/3b/4 phía trên — các mục đó dùng thước SAI, kết luận "AQLM thắng"
+ở đó KHÔNG ĐÚNG khi đo bằng thứ thật sự quan trọng.**
+
+`exp_ak_ppl_real.py` (04-05/08): dựng model **ĐẦY ĐỦ 16 layer** thật từ GGUF (không phải 1
+tensor/1 layer cô lập như mọi thử nghiệm trước), thay `down_proj` toàn bộ 16 layer × 64
+expert, đo PPL thật trên câu held-out qua forward pass đầy đủ (không phải ||Ŵ-W||):
+
+| Cấu hình | PPL | So baseline |
+|---|---:|---:|
+| Baseline (Q4_K_M dequant, không nén thêm) | 8,616 | — |
+| **Ternary N:M (2:4, ~1,56bpw)** | **11,602** | **×1,35 — gần như không đổi** |
+| **AQLM (1,5bpw, k-means+beam, không refine)** | **6055,116** | **×703 — SỤP HOÀN TOÀN** |
+
+**Đảo ngược hoàn toàn mọi kết luận "AQLM thắng" ở mục 3b/4/5b trên** (những mục đó đo
+||Ŵ-W|| trên tensor cô lập, KHÔNG qua forward pass thật). Ở PPL thật: **ternary N:M áp đảo
+AQLM**, và điều này **khớp hoàn toàn với phát hiện của Máy B** (VQ thua scalar+sequential
+~10×) — không còn là mâu thuẫn cần giải quyết (mục 5b dưới), mà là HỘI TỤ: cả 2 phiên độc
+lập, 2 model khác nhau, đều thấy VQ/AQLM thua thảm ở PPL thật, chỉ có phiên của tôi từng bị
+đánh lừa bởi thước sai-số-tái-tạo cho tới bước PPL-hóa này.
+
+**Vì sao sai-số-tái-tạo (L2) không dự đoán được PPL** — cơ chế hợp lý nhất (khớp đúng lý
+thuyết "mức 0 là vua" Máy B đã đưa ra ở mục 5b): ternary có tùy chọn ép về **đúng số 0** khi
+sai — tương đương "mất kết nối", một dạng lỗi AN TOÀN, mạng vốn quen chịu (dropout-like). AQLM
+không có "số 0 an toàn" trong codebook — chọn sai codeword cho ra một giá trị SAI nhưng TỰ TIN
+(không phải nhiễu ngẫu nhiên quanh 0) — qua 16 layer residual + weighted-sum của MoE, loại lỗi
+này khuếch đại theo chiều sâu thành sụp đổ, đúng bài học Bài 4 "sai số cục bộ không dự đoán
+được lan truyền qua độ sâu" — chỉ khác lần này lộ ra ở CHÍNH cách đo sai số cục bộ (L2), không
+chỉ ở việc có sequential hay không.
+
+**Xác nhận thêm bằng battery đa miền + tok/s** (`exp_ao_battery_speed.py`, có validator tự
+động chấm đúng/sai, không chỉ PPL — đúng kỷ luật "đọc transcript bằng mắt"):
+
+| Thước đo | Baseline (Q4_K_M) | Ternary N:M 2:4 (~1,56bpw) |
+|---|---:|---:|
+| Battery 17 câu (toán/kiến thức/code/chỉ dẫn) | 16/17 (94%) | 15/17 (88%) — mất đúng 1 câu toán |
+| tok/s (PyTorch fp16, CHƯA đóng gói packed-format) | 10,13 | 10,14 — không đổi (đúng dự đoán: chưa nén dung lượng thật, chỉ đổi giá trị) |
+
+Fact/code/instruction-following **giữ nguyên tuyệt đối (4/4, 4/4, 3/3 cả hai bản)** — hao hụt
+duy nhất nằm ở toán học (2 câu sai ternary vs 1 câu sai baseline, cả hai đều sai CÙNG câu khó
+nhất "3×4+2"). Kết luận: **ternary 1,56bpw cho down_proj giữ được gần như toàn bộ năng lực
+thật**, không chỉ PPL đẹp — hai thước đo độc lập cùng xác nhận. tok/s không đổi vì đây mới là
+kiểm CHẤT LƯỢNG (đổi giá trị trọng số), CHƯA đóng gói compact-format — lợi ích tốc độ/dung
+lượng thật cần bước kernel riêng (`RESEARCH_MOE_SPEED_PTQ.md`), chưa làm ở đây.
+
+**Bài học phương pháp lớn nhất của session này**: KHÔNG BAO GIỜ kết luận một kỹ thuật PTQ
+"thắng" chỉ bằng ||Ŵ-W|| trên tensor cô lập — phải luôn xác nhận bằng forward pass thật (PPL
+tối thiểu) trước khi đầu tư thêm (kernel, mở rộng scale, viết thêm biến thể). Mục 3b/4/5b vẫn
+giữ lại làm HỒ SƠ cho thấy quá trình suy nghĩ và bài học rút ra, không xóa, nhưng KHÔNG dùng
+làm căn cứ quyết định nữa.
+
 ## 5b. ĐỐI CHIẾU với phiên song song trên Máy B (`RESEARCH_VQ_CODEBOOK_PTQ.md`, commit
 `8b61ba8`/`5df74c2`) — kết quả NGƯỢC NHAU, cần nói rõ tại sao trước khi tin bên nào
 
@@ -319,7 +371,10 @@ AQLM+sequential (BRECQ-lite, port đúng `s1_sequential`-style code) trên OLMoE
 với scalar ternary+sequential CÙNG model — đây là phép so sánh THỰC SỰ tương đương với thứ
 máy B đã đo, hiện chưa ai làm.
 
-## 5c. CÂU HỎI ĐÃ ĐÓNG (05/08, máy B — `exp_ao_aqlm_beam_sequential.py`, xem
+## 5d. CÂU HỎI ĐÃ ĐÓNG — XÁC NHẬN ĐỘC LẬP THỨ 2 (05/08, máy B — `exp_ao_aqlm_beam_sequential.py`,
+đọc SAU mục 5c ở trên vì mục đó đã tự đảo ngược kết luận bằng con đường khác (PPL full-model);
+mục này xác nhận CÙNG chiều bằng con đường thứ 3 (SEQUENTIAL trên Qwen3-0.6B, không phải PPL
+full-model OLMoE) — 2 con đường độc lập, cùng kết luận, xem
 `RESEARCH_VQ_CODEBOOK_PTQ.md` Phần 3 để biết chi tiết đầy đủ)
 
 Máy B đã port NGUYÊN thuật toán `beam_assign` từ `exp_am_aqlm_full.py` (verify trước khi chạy

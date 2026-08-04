@@ -194,5 +194,8 @@ bẩy mạnh nhất lab từng đo (BRECQ-lite), scalar ternary bứt hẳn lên
 - `exp_ad_run.log` / `exp_ad_run2.log` — log chạy lần 1 (chết giữa chừng) + lần 2 (resume, hoàn tất)
 - `exp_ae_vq_wanda.py` + `exp_ae_results.json` + `exp_ae_run.log` — Wanda-weighting (âm tính)
 - `exp_af_vq_zero.py` + `exp_af_results.json` + `exp_af_run.log` — entry-0 tường minh (âm tính)
-- `exp_ao_aqlm_beam_sequential.py` + `exp_ao_results.json` + `exp_ao_run.log` — beam-search
-  (port từ máy A) + SEQUENTIAL, đóng câu hỏi treo giữa 2 phiên (vẫn âm tính, thua ~7×)
+- `exp_ao_aqlm_beam_sequential.py` + `exp_ao_aqlm_beam_seq_results.json` + `exp_ao_run.log` —
+  beam-search (port từ máy A) + SEQUENTIAL, đóng câu hỏi treo giữa 2 phiên (vẫn âm tính, thua ~7×)
+  — LƯU Ý: tên file kết quả đã đổi từ `exp_ao_results.json` vì đụng tên với
+  `exp_ao_battery_speed.py` của máy A (2 phiên cùng chọn chữ "ao" độc lập, xem
+  [[phien-song-song-cung-repo]])

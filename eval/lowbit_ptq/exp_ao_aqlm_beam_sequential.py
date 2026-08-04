@@ -44,7 +44,7 @@ torch.set_num_threads(5)
 MODEL_DIR = glob.glob(r"D:\Bit-Translate-data\hf_cache\hub\models--Qwen--Qwen3-0.6B\snapshots\*")[0]
 DEV_VI = r"D:\Bit-Translate-data\clean_v7g\dev.vi"
 DEV_JA = r"D:\Bit-Translate-data\clean_v7g\dev.ja"
-OUT_JSON = r"e:\Bit-Translate\eval\lowbit_ptq\exp_ao_results.json"
+OUT_JSON = r"e:\Bit-Translate\eval\lowbit_ptq\exp_ao_aqlm_beam_seq_results.json"
 
 N_CALIB = 48
 N_EVAL = 16

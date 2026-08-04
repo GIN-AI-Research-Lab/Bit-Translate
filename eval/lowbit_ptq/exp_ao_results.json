@@ -1,34 +1,238 @@
 {
-  "fp32": {
-    "ppl_vi": 68.96674504648298,
-    "ppl_ja": 125.07473679391529
+  "baseline": {
+    "tokps": 10.13,
+    "battery": {
+      "t0.0": {
+        "pass_rate": 0.941,
+        "per_dom": {
+          "math": "5/6",
+          "fact": "4/4",
+          "code": "4/4",
+          "inst": "3/3"
+        },
+        "transcripts": [
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: 7 + 15 = ?\nA:",
+            "out": " 22\n\nQ: 7 + 16 = ?\nA: 23\n\nQ: 7 + 17 = ?\n"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: 12 * 3 = ?\nA:",
+            "out": " 36\n\nQ: 12 * 4 = ?\nA: 48\n\nQ: 12 * 5 = ?\n"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: 100 - 37 = ?\nA:",
+            "out": " 63\n\nQ: 100 - 38 = ?\nA: 62\n\nQ: 100 - 39 = ?\n"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: A box has 12 apples. Tom takes 5. How many appl",
+            "out": " 7\n\nQ: What is the difference between a cat and a comma?\nA: One has claws at the"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: What is half of 26?\nA:",
+            "out": " 13\n\nQ: What is half of 26?\nA: 13\n\nQ: What is half of 26"
+          },
+          {
+            "dom": "math",
+            "ok": false,
+            "prompt": "Q: 3 * 4 + 2 = ?\nA:",
+            "out": " 12\n\nQ: 3 * 4 + 2 = ?\nA: 12\n\nQ: 3 * 4 +"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: What is the capital of France?\nA:",
+            "out": " Paris.\n\nQ: What is the capital of the United States?\nA: Washington, D.C."
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: How many days are in one week?\nA:",
+            "out": " Seven.\n\nQ: How many days in a month?\nA: Thirty-one.\n\nQ:"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: What color is the sky on a clear day?\nA:",
+            "out": " Blue.\n\nQ: What is the difference between a cat and a comma?\nA: One has claws at"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: Who wrote Romeo and Juliet?\nA:",
+            "out": " William Shakespeare\n\nQ: What is the name of the main character in Romeo and Jul"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"",
+            "out": " a + b\n\ndef sub(a, b):\n    \"\"\"Return the difference of a and b.\"\"\"\n"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def square(x):\n    \"\"\"Return x squared.\"\"\"\n    ret",
+            "out": " x * x\n\ndef cube(x):\n    \"\"\"Return x cubed.\"\"\"\n    return x * x"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def is_even(n):\n    \"\"\"Return True if n is even, e",
+            "out": " n % 2 == 0\n\ndef is_prime(n):\n    \"\"\"Return True if n is prime,"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def double(x):\n    \"\"\"Return 2 times x.\"\"\"\n    ret",
+            "out": " 2 * x\n\ndef triple(x):\n    \"\"\"Return 3 times x.\"\"\"\n    return 3 * x"
+          },
+          {
+            "dom": "inst",
+            "ok": true,
+            "prompt": "List exactly three fruits, one per line:\n1.",
+            "out": " Apple\n2. Banana\n3. Orange\n\nThe output should be:\n\n1. Apple\n2"
+          },
+          {
+            "dom": "inst",
+            "ok": true,
+            "prompt": "Reply with one word only. The opposite of hot is:",
+            "out": "\n\nA. Cold\nB. Warm\nC. Neutral\nD. None of the above\n\nThe"
+          },
+          {
+            "dom": "inst",
+            "ok": true,
+            "prompt": "Complete the sequence: one, two, three, four,",
+            "out": " five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen"
+          }
+        ]
+      }
+    }
   },
-  "config": {
-    "n_calib": 48,
-    "kmeans_iters": 6,
-    "beam": 4,
-    "refine_steps": 40,
-    "method": "aqlm_beam_search_port_tu_may_A"
-  },
-  "AQLM_beam_g8_M2K256": {
-    "d": 8,
-    "M": 2,
-    "K": 256,
-    "payload_bpw": 2.0,
-    "codebook_overhead_bpw": 0.029166666666666667,
-    "bpw_total": 2.029166666666667,
-    "werr": 0.39985247003302776,
-    "ppl_vi": 147060.13289329957,
-    "ppl_ja": 180667.99397018162
-  },
-  "AQLM_beam_g8_M2K256_SEQ": {
-    "d": 8,
-    "M": 2,
-    "K": 256,
-    "payload_bpw": 2.0,
-    "codebook_overhead_bpw": 0.029166666666666667,
-    "bpw_total": 2.029166666666667,
-    "ppl_vi": 4196.585946637649,
-    "ppl_ja": 9568.622156978878
+  "ternary": {
+    "tokps": 10.14,
+    "battery": {
+      "t0.0": {
+        "pass_rate": 0.882,
+        "per_dom": {
+          "math": "4/6",
+          "fact": "4/4",
+          "code": "4/4",
+          "inst": "3/3"
+        },
+        "transcripts": [
+          {
+            "dom": "math",
+            "ok": false,
+            "prompt": "Q: 7 + 15 = ?\nA:",
+            "out": " 4\n\nQ: What is the\n\nA: The\n\nQ: What is the\n\nA:"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: 12 * 3 = ?\nA:",
+            "out": " 36\n\nA: 12\n\nA: 12\n\nA: 12\n\nA: 12\n\nA"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: 100 - 37 = ?\nA:",
+            "out": " 63\n\nA: 100 - 37 = 63\n\nA: 100 - 37 = 63\n\nA: 100"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: A box has 12 apples. Tom takes 5. How many appl",
+            "out": " 7\n\nQ: A box has 12 apples. Tom takes 5. How many apples are left?\nA:"
+          },
+          {
+            "dom": "math",
+            "ok": true,
+            "prompt": "Q: What is half of 26?\nA:",
+            "out": " 13\n\nQ: What is the\n\nA: The same\n\nQ: What is the\n\nA"
+          },
+          {
+            "dom": "math",
+            "ok": false,
+            "prompt": "Q: 3 * 4 + 2 = ?\nA:",
+            "out": " 10\n\nQ: 3 + 4 * 2 = ?\nA: 8\n\nQ: 3 * 4 +"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: What is the capital of France?\nA:",
+            "out": " Paris\n\nQ: What is the capital of the United States?\nA: Washington\n\nQ: What is"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: How many days are in one week?\nA:",
+            "out": " 7\n\nQ: How many days are in one week?\nA: 7\n\nQ: How many days"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: What color is the sky on a clear day?\nA:",
+            "out": " Blue.\n\nQ: What color is the sky on a cloudy day?\nA: Gray.\n\n"
+          },
+          {
+            "dom": "fact",
+            "ok": true,
+            "prompt": "Q: Who wrote Romeo and Juliet?\nA:",
+            "out": " William Shakespeare\n\nQ: What is the name of the famous book about the life of J"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"",
+            "out": " a + b\n\ndef subtract(a, b):\n    \"\"\"Return the difference of the two numbers.\"\"\"\n"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def square(x):\n    \"\"\"Return x squared.\"\"\"\n    ret",
+            "out": " x ** 2\n\ndef square_root(x):\n    \"\"\"Return the square root of x.\"\"\"\n    "
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def is_even(n):\n    \"\"\"Return True if n is even, e",
+            "out": " n % 2 == 0\n\ndef is_odd(n):\n    \"\"\"Return True if n is odd,"
+          },
+          {
+            "dom": "code",
+            "ok": true,
+            "prompt": "def double(x):\n    \"\"\"Return 2 times x.\"\"\"\n    ret",
+            "out": " x * 2\n\ndef triple(x):\n    \"\"\"Return 3 times x.\"\"\"\n    return x * 3"
+          },
+          {
+            "dom": "inst",
+            "ok": true,
+            "prompt": "List exactly three fruits, one per line:\n1.",
+            "out": " Apples\n2. Oranges\n3. Bananas\n\nThe program should print out the following:\n\n"
+          },
+          {
+            "dom": "inst",
+            "ok": true,
+            "prompt": "Reply with one word only. The opposite of hot is:",
+            "out": "\n\nA. Cold\n\nB. Stupid\n\nC. Poor\n\nD. Rich\n\nE"
+          },
+          {
+            "dom": "inst",
+            "ok": true,
+            "prompt": "Complete the sequence: one, two, three, four,",
+            "out": " five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen"
+          }
+        ]
+      }
+    }
   }
 }

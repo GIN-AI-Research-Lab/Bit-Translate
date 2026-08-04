@@ -1,5 +1,15 @@
 # HANDOFF — đóng câu hỏi AQLM vs scalar-ternary+SEQUENTIAL (từ Máy A, cho Máy B)
 
+> ⚠️ **CẬP NHẬT 05/08 — câu hỏi ĐÃ CÓ CÂU TRẢ LỜI, không cần làm việc dưới đây nữa** (vẫn
+> giữ nguyên văn để làm hồ sơ). `exp_ak_ppl_real.py` đo PPL thật (16 layer đầy đủ, không phải
+> tensor cô lập) trên OLMoE: **ternary N:M = 11,6 PPL (×1,35 baseline) vs AQLM = 6055 PPL
+> (×703 baseline — sụp hoàn toàn)**. Ternary thắng áp đảo Ở PPL THẬT, dù AQLM từng thắng ở
+> thước sai-số-tái-tạo trước đó — xem `RESEARCH_AQLM_CODEBOOK_PTQ.md` mục 5c. Kết quả này
+> **khớp hoàn toàn với phát hiện của Máy B** (VQ thua scalar+sequential ~10×) — không còn là
+> mâu thuẫn, là hội tụ. Không cần chạy AQLM+sequential nữa để đóng câu hỏi này — đã đóng.
+> Nếu vẫn muốn làm, chỉ còn là "AQLM+sequential có cứu được phần nào không", một câu hỏi phụ,
+> không phải câu hỏi gốc.
+
 **Ngày**: 2026-08-04 · **Từ**: phiên Claude máy A (desktop, đang chạy PPL full-model nốt job
 cũ, không rảnh tay code thêm) · **Cho**: phiên chạy trên máy B (laptop, CPU, không cần GPU —
 toàn bộ việc dưới đây là PTQ thuần, giống mọi việc khác trong nhánh lowbit gần đây).
