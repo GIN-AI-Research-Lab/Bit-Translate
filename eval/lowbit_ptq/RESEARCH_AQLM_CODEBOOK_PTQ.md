@@ -313,6 +313,21 @@ này khuếch đại theo chiều sâu thành sụp đổ, đúng bài học Bà
 được lan truyền qua độ sâu" — chỉ khác lần này lộ ra ở CHÍNH cách đo sai số cục bộ (L2), không
 chỉ ở việc có sequential hay không.
 
+**Xác nhận thêm bằng battery đa miền + tok/s** (`exp_ao_battery_speed.py`, có validator tự
+động chấm đúng/sai, không chỉ PPL — đúng kỷ luật "đọc transcript bằng mắt"):
+
+| Thước đo | Baseline (Q4_K_M) | Ternary N:M 2:4 (~1,56bpw) |
+|---|---:|---:|
+| Battery 17 câu (toán/kiến thức/code/chỉ dẫn) | 16/17 (94%) | 15/17 (88%) — mất đúng 1 câu toán |
+| tok/s (PyTorch fp16, CHƯA đóng gói packed-format) | 10,13 | 10,14 — không đổi (đúng dự đoán: chưa nén dung lượng thật, chỉ đổi giá trị) |
+
+Fact/code/instruction-following **giữ nguyên tuyệt đối (4/4, 4/4, 3/3 cả hai bản)** — hao hụt
+duy nhất nằm ở toán học (2 câu sai ternary vs 1 câu sai baseline, cả hai đều sai CÙNG câu khó
+nhất "3×4+2"). Kết luận: **ternary 1,56bpw cho down_proj giữ được gần như toàn bộ năng lực
+thật**, không chỉ PPL đẹp — hai thước đo độc lập cùng xác nhận. tok/s không đổi vì đây mới là
+kiểm CHẤT LƯỢNG (đổi giá trị trọng số), CHƯA đóng gói compact-format — lợi ích tốc độ/dung
+lượng thật cần bước kernel riêng (`RESEARCH_MOE_SPEED_PTQ.md`), chưa làm ở đây.
+
 **Bài học phương pháp lớn nhất của session này**: KHÔNG BAO GIỜ kết luận một kỹ thuật PTQ
 "thắng" chỉ bằng ||Ŵ-W|| trên tensor cô lập — phải luôn xác nhận bằng forward pass thật (PPL
 tối thiểu) trước khi đầu tư thêm (kernel, mở rộng scale, viết thêm biến thể). Mục 3b/4/5b vẫn
