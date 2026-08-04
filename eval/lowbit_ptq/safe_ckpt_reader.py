@@ -132,18 +132,41 @@ def read_tensor(path, prefix, meta):
     return t.clone()
 
 
-def open_reader(path):
-    """Trả (prefix, tensors_meta, extra) rồi 1 hàm get(name)->Tensor dùng chung 1 ZipFile."""
+def open_reader(path, warn_crc_mismatch=True):
+    """Trả (prefix, tensors_meta, extra) rồi 1 hàm get(name)->Tensor dùng chung 1 ZipFile.
+
+    Đọc data qua OFFSET SUY TỪ ALIGNMENT (header_offset + 30 + nlen(tên đã biết chính xác)
+    + elen(suy từ bất biến "data bắt đầu ở địa chỉ chia hết 64")) THAY VÌ zipfile.open()
+    (dựa vào đọc lại nlen/elen từ chính local header trên đĩa). Lý do: ckpt 61GB này có
+    một số entry bị lỗi truyền tải khiến local header cũng hỏng (nlen/elen sai, ví dụ đọc
+    ra 0/0 thay vì giá trị đúng) — CRC-32 chỉ bảo vệ phần DATA, không bảo vệ header, nên
+    zipfile tự đọc header hỏng sẽ tính sai vị trí data và báo "hỏng" dù data THẬT vẫn nguyên
+    vẹn. Cách này đã verify phục hồi đúng nhiều tensor tưởng hỏng nhưng thực ra chỉ header
+    lỗi (xem lowbit-lab-hoc-tap.md / RESEARCH_TQ33.md mục CRC). Nếu vẫn lệch CRC sau khi
+    dùng offset đúng — đó là hỏng DATA thật (đã gặp: vài chục tensor bị tải về toàn số 0,
+    lỗi tải/CDN không phải bit-flip; encode vẫn AN TOÀN vì all-zero mã hoá ternary chính
+    xác thành all-zero, chỉ cảnh báo để biết mà báo cáo minh bạch).
+    """
     prefix, tensors, extra = list_tensors(path)
     zf = zipfile.ZipFile(path, "r")
+    fh = open(path, "rb")
+    crc_warned = []
 
     def get(name):
         meta = tensors[name]
         elem_size = _ELEM_SIZE[meta.dtype]
         n_bytes = meta.numel * elem_size
         entry = f"{prefix}data/{meta.storage_key}"
-        with zf.open(entry, "r") as f:
-            raw = f.read(n_bytes)
+        info = zf.getinfo(entry)
+        nlen = len(entry.encode("utf-8"))
+        elen = (64 - (info.header_offset + 30 + nlen) % 64) % 64
+        data_start = info.header_offset + 30 + nlen + elen
+        fh.seek(data_start)
+        raw = fh.read(n_bytes)
+        if warn_crc_mismatch:
+            import zlib
+            if (zlib.crc32(raw) & 0xFFFFFFFF) != info.CRC:
+                crc_warned.append(name)
         if meta.dtype == "BFloat16Storage":
             arr = np.frombuffer(raw, dtype=np.uint16)
             t = torch.from_numpy(arr.copy()).view(torch.bfloat16)
@@ -156,6 +179,7 @@ def open_reader(path):
             t = t.view(meta.shape)
         return t.clone()
 
+    get.crc_warned = crc_warned  # danh sach tensor CRC lech thuc su (data hong, khong phai header)
     return prefix, tensors, extra, get, zf
 
 

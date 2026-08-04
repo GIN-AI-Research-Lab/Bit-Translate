@@ -113,7 +113,17 @@ def encode_linear(W, stats=None):
         for b in range(11):
             bits[:, :, k * 11 + b] = (code_k >> b) & 1
     codes = np.packbits(bits, axis=-1, bitorder="little")         # [R, nb, 11]
-    return codes, s.numpy().astype(np.float32)
+
+    # nen scale ve 1-byte index/codebook (<=256 gia tri duy nhat/tensor) — day la phan
+    # BAT BUOC de dat dung 1.5bpw thiet ke (12B/block64 = 11B code + 1B scale-idx), chu
+    # KHONG phai luu thang float32 (se ra 1.875bpw, sai dinh dang kernel AVX2 dang doi).
+    s_np = s.numpy().astype(np.float32)
+    uniq, inv = np.unique(s_np, return_inverse=True)
+    if len(uniq) > 256:
+        raise ValueError(f"codebook scale {len(uniq)} > 256 — vuot gia dinh thiet ke TQ33!")
+    sidx = inv.reshape(s_np.shape).astype(np.uint8)                # [R, nb]
+    packed = np.concatenate([codes, sidx[..., None]], axis=-1)     # [R, nb, 12]
+    return packed, uniq
 
 
 def main():
@@ -138,19 +148,34 @@ def main():
 
     manifest = {}
     stats = {}
+    corrupted_zeroed = []
     t0 = time.time()
     total_bytes = 0
     for i, name in enumerate(linear_names):
+        n_warn_before = len(get.crc_warned)
         W = get(name)
-        codes, scales = encode_linear(W, stats=stats)
+        # ckpt 61GB tai qua Modal co ~70 storage entry bi loi tai (crc-32 sai that su —
+        # da dieu tra ky: khong phai bit-flip ngau nhien, mot phan la lo tai bi zero-fill,
+        # phan con lai la du lieu khac-khong nhung sai — xem RESEARCH_TQ33.md muc CRC).
+        # 3 lan tai doc lap deu khong phuc hoi duoc DUNG NHUNG cho nay -> quyet dinh: zero
+        # hoa MINH BACH thay vi ma hoa nhieu nhu that (tuong duong vo hieu hoa 1 projection
+        # cua 1 expert cu the — MoE 128 expert chiu duoc muc do nay, con hon ma hoa gia tri
+        # sai lech khong biet ma tuong la dung).
+        if len(get.crc_warned) > n_warn_before:
+            corrupted_zeroed.append(name)
+            W = torch.zeros_like(W)
+        packed, codebook = encode_linear(W, stats=stats)
         R, C = W.shape
         nb = C // G_SCALE
         fname = f"linears/{i:05d}.tq33"
         with open(os.path.join(OUT, fname), "wb") as f:
-            f.write(codes.tobytes())
-            f.write(scales.tobytes())
-        manifest[name] = {"shape": [R, C], "nb": nb, "file": fname}
-        total_bytes += codes.nbytes + scales.nbytes
+            f.write(np.uint16(len(codebook)).tobytes())     # 2 byte: so gia tri codebook
+            f.write(codebook.astype(np.float32).tobytes())  # codebook: len*4 byte
+            f.write(packed.tobytes())                        # R*nb*12 byte (11B code+1B idx)
+        file_bytes = 2 + len(codebook) * 4 + packed.nbytes
+        manifest[name] = {"shape": [R, C], "nb": nb, "file": fname,
+                           "codebook_n": int(len(codebook))}
+        total_bytes += file_bytes
         if i % 500 == 0 or i == len(linear_names) - 1:
             dt = time.time() - t0
             nv = stats.get("n_violated", 0)
@@ -168,12 +193,32 @@ def main():
           f"({stats.get('n_violated',0)/max(stats.get('n_groups',1),1)*100:.6f}%)")
     print(f"RMS loi do vam (tren toan bo nhom, kha nang cuc nho vi vi pham cuc hiem): {rmse:.3e}")
 
+    print(f"\n=== TONG KET TENSOR HONG DO TAI (zero-hoa minh bach, xem note trong code) ===")
+    print(f"{len(corrupted_zeroed)}/{len(linear_names)} tensor "
+          f"({len(corrupted_zeroed)/len(linear_names)*100:.3f}%) bi zero-hoa vi crc-32 sai "
+          f"sau 3 lan tai doc lap deu khong phuc hoi duoc:")
+    experts_affected = set()
+    for n in corrupted_zeroed:
+        print(" ", n)
+        m = __import__("re").search(r"layers\.(\d+)\.mlp\.experts\.(\d+)\.", n)
+        if m:
+            experts_affected.add((int(m.group(1)), int(m.group(2))))
+    print(f"so expert DUY NHAT bi anh huong (>=1 trong 3 projection): {len(experts_affected)} / 6144")
+    with open(os.path.join(OUT, "corrupted_zeroed.json"), "w", encoding="utf-8") as f:
+        json.dump({"tensors": corrupted_zeroed,
+                    "unique_experts": sorted(list(e) for e in experts_affected)}, f)
+
     # extras: ghi tuan tu vao 1 blob + index (giu nguyen dtype bf16 -> uint16 view)
     extras_manifest = {}
+    extras_corrupted = []
     off = 0
     with open(os.path.join(OUT, "extras.bin"), "wb") as f:
         for name in extras_names:
+            n_warn_before = len(get.crc_warned)
             t = get(name)
+            if len(get.crc_warned) > n_warn_before:
+                extras_corrupted.append(name)
+                t = torch.zeros_like(t)
             raw = t.view(torch.uint16).numpy().tobytes() if t.dtype == torch.bfloat16 else t.numpy().tobytes()
             f.write(raw)
             extras_manifest[name] = {"shape": list(t.shape), "dtype": str(t.dtype),
@@ -183,6 +228,11 @@ def main():
         json.dump(extras_manifest, f)
 
     zf.close()
+    if extras_corrupted:
+        print(f"\nCANH BAO: {len(extras_corrupted)} tensor extras (embed/lm_head/norm/router) "
+              f"cung bi crc hong, da zero-hoa: {extras_corrupted}")
+    else:
+        print("\nOK: khong tensor extras nao (embed/lm_head/norm/router) bi anh huong.")
     tot_size = total_bytes + off
     print(f"\nXONG: {tot_size/1e9:.2f} GB tong ({total_bytes/1e9:.2f}GB TQ33 + {off/1e9:.2f}GB extras-bf16)")
     print(f"bpw hieu dung tren linear: {total_bytes*8/sum(m['shape'][0]*m['shape'][1] for m in manifest.values()):.3f}")

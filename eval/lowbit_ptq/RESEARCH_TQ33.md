@@ -116,7 +116,40 @@ KV-cache/sampling/batching có sẵn của llama.cpp (phải tự viết tối t
 quan trọng hơn: buộc validate ĐÚNG/SAI từng layer so PyTorch oracle trước khi tin số tốc độ —
 thứ mà microbench 1-tensor (Phase 1) chưa chứng minh được cho một model đầy đủ.
 
-## 7. File
+## 7. Sự cố CRC-32 khi tải ckpt 61GB qua Modal (04/08, ~2h điều tra)
+
+Sau khi tải ckpt 30B (61GB) về, quét CRC-32 nội bộ zip phát hiện lỗi — quá trình điều tra
+và bài học (đầy đủ trong memory, tóm tắt ở đây):
+
+1. **`torch.load(mmap=True)` crash** trên file 61GB (access violation) — không phải file
+   hỏng (OS mmap + sequential read + MD5 đều OK). Fix: `safe_ckpt_reader.py` (custom
+   pickle unpickler, đọc trực tiếp qua zipfile thay vì torch).
+2. **Quét CRC lần 1: 81/37491 entry sai. Tải lại (lần 2, tải mới hoàn toàn): 113/37491 sai,
+   0 TRÙNG với lần 1** → xác nhận lỗi TRUYỀN TẢI (transfer-side), không phải hỏng nguồn
+   Modal (nếu hỏng nguồn thì 2 lần tải phải sai CÙNG chỗ).
+3. **Bẫy quan trọng**: CRC-32 chỉ bảo vệ phần DATA của mỗi entry zip, KHÔNG bảo vệ local
+   header (nlen/elen). Nếu lỗi truyền tải chạm cả header, `nlen/elen` đọc sai (vd đọc ra
+   `0/0` thay vì `42/32`) → cả `zipfile` chuẩn lẫn code tự viết tính SAI vị trí data, báo
+   "hỏng" dù data thật vẫn nguyên vẹn. **Fix: suy `elen` từ bất biến "data bắt đầu ở địa chỉ
+   chia hết 64" (`.storage_alignment=64`) thay vì đọc từ header nghi ngờ**, `nlen` tính
+   trực tiếp từ tên entry (đã biết chính xác, không cần đọc). Cách này tự phục hồi
+   **42/112 tensor tưởng hỏng** (data đúng, chỉ header sai) — đã đưa vào `safe_ckpt_reader.py`
+   làm mặc định.
+4. **70/112 còn lại hỏng DATA thật** (đã thử vá bằng 3 lần stream-tải-lại độc lập, đều thất
+   bại ở ĐÚNG các vị trí này — nghi ngờ cache CDN/mạng tạm thời phía Modal, không phải hỏng
+   nguồn tuyệt đối vì lần 1↔lần 2 không trùng). 14/70 tải về toàn số 0 (lỗ tải bị zero-fill
+   thay vì báo lỗi), 56/70 có dữ liệu khác-không nhưng sai CRC (garbled thật).
+   **Quyết định**: sau ~2 giờ điều tra không phục hồi được, **zero-hoá minh bạch** 70 tensor
+   này khi encode (ghi rõ trong `corrupted_zeroed.json`) — tương đương vô hiệu hoá 1
+   projection của 1 expert cụ thể, KHÔNG mã hoá nhiễu làm dữ liệu sai lệch âm thầm. MoE
+   128 expert/layer chịu được mức độ này (dự kiến <60 expert riêng biệt bị ảnh hưởng /
+   6144 tổng, mỗi expert chỉ 1/8 khả năng được router chọn/token).
+5. **Bài học tổng quát**: khi tải ckpt lớn (>10GB) qua mạng, LUÔN quét CRC-32 nội bộ zip
+   (không chỉ so MD5 toàn file — MD5 chỉ xác nhận ổn định giữa các lần đọc CỤC BỘ, không
+   xác nhận khớp bản gốc); nếu có entry hỏng, LUÔN thử offset suy từ alignment trước khi
+   kết luận mất dữ liệu — phần lớn trường hợp chỉ header hỏng, data vẫn còn.
+
+## 8. File
 
 - `exp_t24_codec.py` — codec tham chiếu + verify lossless (LUT 33³ bản 16-bit/12w đầu tiên, 1.458 bpw).
 - `exp_t24_export_bench.py` — xuất tensor thật → block64 12-byte + x/y_ref.
