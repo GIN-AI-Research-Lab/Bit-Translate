@@ -97,8 +97,65 @@ Sequential block 27/28 có MSE trước-refine đột biến (305.121 so với h
 block khác) — **khớp phát hiện cũ đã ghi trong memory lab** ("block 2 & 27 cực nhạy" — exp_k),
 không phải bug mới.
 
+## Phần 2 — 2 thử nghiệm vá lỗi (exp_ae Wanda-weighting, exp_af entry-0), CẢ HAI ÂM TÍNH
+
+Sau exp_ad, thử vá đúng 2 điểm có cơ sở kỹ thuật rõ ràng nhất (không phải đoán mò):
+
+### exp_ae — Wanda column-importance weighting cho k-means/assignment
+
+Giả thuyết: VQ ở exp_ad dùng k-means KHÔNG trọng số (mọi cột như nhau), trong khi scalar
+ternary chỉ tốt SAU KHI thêm trọng số Wanda `|W|·‖X‖`. Vá: nhân W theo cột với RMS-activation
+(kiểu Wanda/AWQ) trước khi nhóm vector + k-means, chia lại sau khi reconstruct.
+
+**Sự cố kỹ thuật lần 1**: chia lại cho importance có cột GẦN 0 (do outlier-channel — vài kênh
+activation áp đảo làm kênh khác co lại tương đối, đã biết từ RESEARCH_TQ33_OUTLIER_FIX.md) gây
+**nổ số** (werr 8137%, MSE sequential tăng thay vì giảm) — bug, không phải kết quả. Fix: kẹp
+importance về [0,2× ; 5×] quanh trung vị trước khi dùng, giữ đúng thứ tự ưu tiên mà không cho
+khuếch đại vô hạn.
+
+**Kết quả sau fix (sạch, không bug) — VẪN ÂM TÍNH, TỆ HƠN không-trọng-số ở CẢ HAI trường hợp**:
+
+| Config | bpw | PPL vi | PPL ja | So với exp_ad không trọng số |
+|---|---:|---:|---:|---|
+| VQ_d16_M2K1024 + Wanda (TF) | 1,483 | 82.592 | 355.044 | **tệ hơn 2,4×** (exp_ad: 34.195) |
+| VQ_d16_M3K256 + Wanda (SEQ) | 1,588 | 16.705 | 25.194 | **tệ hơn 2,8×** (exp_ad: 6.044) |
+
+Kết luận: Wanda-weighting (đúng ý tưởng, không phải thực thi sai) **không** transfer từ scalar
+sang VQ ở đây — nhiều khả năng vì scale-rồi-chia-lại làm nhiễu bị khuếch đại không đều giữa các
+cột trong không gian VQ, trong khi ở scalar nó chỉ ảnh hưởng NGƯỠNG chọn (không transform giá trị).
+
+### exp_af — Entry-0 tường minh trong codebook (nhắm 0,3bpw, mốc sụp nặng nhất)
+
+Giả thuyết: "mức 0 là vua" (phát hiện mạnh nhất toàn lab, exp_h/i) chưa được hiện thực hoá tường
+minh trong VQ — mọi entry codebook đều học từ k-means, không có vector-0 đảm bảo. Vá: ép cứng
+1/K entry mỗi codebook = vector-0 tuyệt đối (không train), luôn là ứng viên khi gán gần nhất.
+
+**Kết quả — ÂM TÍNH, kèm cơ chế giải thích rõ ràng**:
+
+| Config | bpw | zero_frac | PPL vi | PPL ja |
+|---|---:|---:|---:|---:|
+| VQ_d16_M1K32 + entry-0 (TF) | 0,316 | **6,2%** | 89.198.177 | 133.935.517 |
+| exp_ad không entry-0 (mốc) | 0,316 | – | 65.184.339 | 56.777.103 |
+| VQ_d16_M1K32 + entry-0 (SEQ) | 0,316 | – | 185.157 | 389.337 |
+
+Entry-0 **tệ hơn một chút** chứ không cứu được, và **zero_frac chỉ 6,2%** — phát hiện cơ chế:
+"mức 0 là vua" mạnh ở SCALAR vì 1 số riêng lẻ dễ tình cờ gần 0; ở VECTOR 16 chiều, phải **CẢ 16
+số cùng lúc** gần 0 mới đáng dùng entry-0 — xác suất thấp hơn hẳn. Nhóm vector càng lớn (d càng
+cao), lợi thế "mức 0" càng bị pha loãng. Đây là lý do CẤU TRÚC (không phải lỗi thực thi) giải
+thích vì sao VQ hi sinh chính ưu thế đã cứu được ternary.
+
+## Kết luận tổng thể (exp_ad + ae + af) — 3/3 thử nghiệm VQ đều âm tính
+
+Sau khi thử: (1) VQ thuần, (2) VQ + Wanda-weighting, (3) VQ + entry-0 tường minh — không cấu
+hình nào vượt qua scalar ternary+sequential ở cùng ngân sách bit. VQ nhất quán THUA, có cơ chế
+giải thích hợp lý cho từng lần thử (không phải "chưa thử đủ tinh chỉnh"). Kết hợp với H1/H2 (đã
+có từ trước) và trần PTQ ~4bit đã đo nhiều góc độ khác, đây là bằng chứng hội tụ khá mạnh rằng
+**PTQ thuần (không train) đã cạn ý tưởng có cơ sở kỹ thuật rõ ràng cho sub-1,58bpw ở quy mô 0,6B**.
+
 ## File
 
 - `exp_ad_vq_codebook.py` — script chính (đã vá RESUME + gc.collect)
 - `exp_ad_results.json` — kết quả đầy đủ 9 cấu hình
 - `exp_ad_run.log` / `exp_ad_run2.log` — log chạy lần 1 (chết giữa chừng) + lần 2 (resume, hoàn tất)
+- `exp_ae_vq_wanda.py` + `exp_ae_results.json` + `exp_ae_run.log` — Wanda-weighting (âm tính)
+- `exp_af_vq_zero.py` + `exp_af_results.json` + `exp_af_run.log` — entry-0 tường minh (âm tính)

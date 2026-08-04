@@ -1,0 +1,33 @@
+{
+  "fp32": {
+    "ppl_vi": 68.96674504648298,
+    "ppl_ja": 125.07473679391529
+  },
+  "config": {
+    "n_calib": 48,
+    "kmeans_iters": 6,
+    "refine_steps": 40,
+    "weighting": "wanda_col_rms"
+  },
+  "VQ_d16_M2K1024_wanda": {
+    "d": 16,
+    "M": 2,
+    "K": 1024,
+    "payload_bpw": 1.25,
+    "codebook_overhead_bpw": 0.23333333333333334,
+    "bpw_total": 1.4833333333333334,
+    "werr": 0.669150961522128,
+    "ppl_vi": 82592.20988770259,
+    "ppl_ja": 355044.3445212025
+  },
+  "VQ_d16_M3K256_wanda_SEQ": {
+    "d": 16,
+    "M": 3,
+    "K": 256,
+    "payload_bpw": 1.5,
+    "codebook_overhead_bpw": 0.0875,
+    "bpw_total": 1.5875,
+    "ppl_vi": 16704.85101522245,
+    "ppl_ja": 25193.753288690048
+  }
+}
