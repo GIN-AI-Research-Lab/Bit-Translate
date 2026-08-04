@@ -46,13 +46,14 @@ def refit_g256(W, G=256):
     pad = (G - C % G) % G
     Wp = torch.nn.functional.pad(W.float(), (0, pad)) if pad else W.float()
     Wv = Wp.view(R, -1, G)
-    s = Wv.abs().mean(2, keepdim=True).clamp(min=1e-8)
+    # SÀN 1e-4: trên vùng subnormal f16 (1e-8 ép f16 = 0 -> 0/0 NaN — bug họ f8 gen-1 tái xuất)
+    s = Wv.abs().mean(2, keepdim=True).clamp(min=1e-4)
     for _ in range(3):
         t = torch.round(Wv / s).clamp(-1, 1)
         num = (Wv * t).sum(2, keepdim=True)
         den = (t * t).sum(2, keepdim=True).clamp(min=1e-8)
-        s = (num / den).abs().clamp(min=1e-8)
-    s = s.half().float()                     # lưới f16 của TQ2_0
+        s = (num / den).abs().clamp(min=1e-4)
+    s = s.half().float().clamp(min=1e-4)     # lưới f16 của TQ2_0, giữ sàn sau khi ép
     q = (torch.round(Wv / s).clamp(-1, 1) * s).view(R, -1)[:, :C]
     return q.to(W.dtype)
 
