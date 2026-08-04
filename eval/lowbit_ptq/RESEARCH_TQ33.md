@@ -82,7 +82,41 @@ trên file 1.78GB active).
 - Phase 2b (rẻ hơn, thử trước 0.6B): viết runner riêng ngoài llama.cpp cho 0.6B để đo PPL
   end-to-end format TQ33 mà không đụng build system lớn.
 
-## 6. File
+## 6. Phase 2 — tích hợp đầy đủ llama.cpp vs runner độc lập (quyết định 04/08)
+
+Khảo sát trực tiếp source llama.cpp (checkout tại `D:\Bit-Translate-data\pack_local\llama.cpp`,
+đối chiếu với đường TQ2_0 làm mẫu) cho ra bản đồ đầy đủ:
+
+**Tích hợp đầy đủ (fork thật, để llama-cli/llama-bench chạy được thẳng):**
+- Core: `ggml.h` (enum), `ggml-common.h` (struct block), `ggml-quants.c/.h` (quantize/dequantize
+  + dispatcher `ggml_quantize_chunk`), `ggml.c` (bảng `type_traits`), `ggml-cpu/quants.c` +
+  `ggml-cpu/arch/x86/quants.c` (kernel AVX2 — nơi port thẳng `tq33_bench.c`), `ggml-cpu.c` (bảng
+  `type_traits_cpu`: from_float/vec_dot/vec_dot_type).
+- llama core: `llama.h`, `llama-quant.cpp`, `llama-model-loader.cpp`, `tools/quantize/quantize.cpp`.
+- Python: `gguf-py/constants.py` (enum + bảng blck_size/type_size), `gguf-py/quants.py` (class
+  quantize/dequantize numpy — **đây là đường THẬT convert_hf_to_gguf.py dùng**, đã xác nhận vì
+  `--outtype tq2_0` chạy trực tiếp không cần llama-quantize), `convert_hf_to_gguf.py` (--outtype).
+- **Không cần sửa CMakeLists/Makefile nào** — mọi thứ là code thêm vào file đã biên dịch sẵn.
+- **Không backend nào bắt buộc** — TQ1_0/TQ2_0 vốn CPU-only (0 hit trong CUDA/Metal/Vulkan/SYCL/
+  OpenCL), khớp nhu cầu của ta (máy chỉ có Intel Arc iGPU, không train/infer GPU ở đây).
+- **Rủi ro thật**: `ggml-cpu/ops.cpp` có ~7 switch-case liệt kê mọi quantized type
+  (`add/add1/acc/out_prod/set/get_rows/clamp`), `default: GGML_ABORT`. Quên thêm case → không lỗi
+  build, mà **crash cứng lúc chạy** nếu graph gọi đúng op đó trên tensor TQ33 (`get_rows` nguy
+  hiểm nhất nếu lỡ áp TQ33 lên `token_embd`). Né bằng cách CHỈ áp TQ33 cho linear attn/ffn (đằng
+  nào embedding/lm_head cũng phải giữ bit cao theo định luật F0 — [[lowbit-lab-hoc-tap]]).
+- Ước lượng thật (không phải phỏng đoán): **4-6 ngày** — khó nhất là AVX2 kernel vì TQ2_0 dùng
+  `vec_dot_type=Q8_K` (block 256) còn TQ33 block-tự-nhiên=64 khớp `Q8_0` (block 32) hơn — không
+  copy máy móc được, phải tự thiết kế lại phần lượng tử hóa activation.
+
+**Runner độc lập (khuyến nghị, đã chọn 04/08):** không đụng ggml/build system, tự dựng forward
+pass Qwen3/Qwen3MoE bằng C thuần (không cần ggml.h), đọc thẳng ckpt bake bằng script Python xuất
+binary, dùng kernel `tq33_bench.c` cho các linear. Né HOÀN TOÀN rủi ro switch-abort (không đụng
+graph generic nào), không cần đăng ký enum hệ thống, không cần Python gguf-py class. Đổi lại: mất
+KV-cache/sampling/batching có sẵn của llama.cpp (phải tự viết tối thiểu). **Ước 2-3 ngày**, và
+quan trọng hơn: buộc validate ĐÚNG/SAI từng layer so PyTorch oracle trước khi tin số tốc độ —
+thứ mà microbench 1-tensor (Phase 1) chưa chứng minh được cho một model đầy đủ.
+
+## 7. File
 
 - `exp_t24_codec.py` — codec tham chiếu + verify lossless (LUT 33³ bản 16-bit/12w đầu tiên, 1.458 bpw).
 - `exp_t24_export_bench.py` — xuất tensor thật → block64 12-byte + x/y_ref.
