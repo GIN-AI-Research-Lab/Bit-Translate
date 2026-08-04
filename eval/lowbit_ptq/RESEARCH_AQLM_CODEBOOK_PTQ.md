@@ -112,11 +112,11 @@ không chỉ PPL vi/ja đơn lẻ — tránh lặp lại bài học "eval chỉ 
 > range-read (đọc header safetensors + range-read đúng tensor cần, KHÔNG tải cả shard/model —
 > kỹ thuật giống Kimi-K3-in-C "sampled tensors over HTTP range reads").
 
-**Bước 0** (`exp_ad_aqlm_toy.py`, 4 tensor riêng, k-means thuần không refine): AQLM
+**Bước 0** (`exp_al_aqlm_toy.py`, 4 tensor riêng, k-means thuần không refine): AQLM
 **2,062bpw → err 0,325** vs ternary-Lloyd tốt nhất **2,585bpw → err 0,384**. AQLM thắng ở bit
 THẤP HƠN. → PASS, đi Bước 1.
 
-**Bước 1** (`exp_ae_aqlm_full.py`, pool 16 expert cùng 1 bộ codebook chung, 33,5M trọng số
+**Bước 1** (`exp_am_aqlm_full.py`, pool 16 expert cùng 1 bộ codebook chung, 33,5M trọng số
 thật, ablation 4 bước):
 
 | Cấu hình | err | bpw |
@@ -162,9 +162,9 @@ ternary-Lloyd cùng bpw (hoặc thắng nhưng err vẫn ở vùng "chết" theo
 tương đối, chưa có PPL/chất lượng sinh thật ở bước này) → ghi nhận mốc đó "chưa tìm được tổ
 hợp thắng", đi tiếp mốc CAO hơn, không cố đấm ăn xôi ở 1 mốc.
 
-### KẾT QUẢ THẬT — quét 5 mốc (04/08, `exp_af_bpw_sweep.py` + fix baseline `exp_ah_nm_ternary_fix.py`)
+### KẾT QUẢ THẬT — quét 5 mốc (04/08, `exp_an_bpw_sweep.py` + fix baseline `exp_ah_nm_ternary_fix.py`)
 
-⚠️ Lần chạy đầu (`exp_af`) so AQLM với ternary DENSE — SAI, vì ternary dense có sàn cứng
+⚠️ Lần chạy đầu (`exp_an`) so AQLM với ternary DENSE — SAI, vì ternary dense có sàn cứng
 log2(3)=1,585bpw, không biểu diễn được 4/5 mốc mục tiêu (đều <1,585bpw), nên code tự rơi về
 group=64 (~1,71bpw) ở MỌI mốc — so sánh không công bằng (ternary luôn dùng nhiều bit hơn).
 **Đã sửa bằng ternary N:M SPARSE đúng CANON** (`exp_ah`) — bảng đúng:
@@ -282,12 +282,60 @@ và toàn bộ triết lý "kỳ vọng ghi trước + cổng hủy giữa chừ
    optimize phải là `Wfp_gốc − Q` theo đúng chiều đã học được (không mài về `orig−Q`, không
    đọc trực tiếp ô "residual" chưa qua `quant()` — xem lý do kỹ thuật đầy đủ ở Bài 14).
 
+## 5b. ĐỐI CHIẾU với phiên song song trên Máy B (`RESEARCH_VQ_CODEBOOK_PTQ.md`, commit
+`8b61ba8`/`5df74c2`) — kết quả NGƯỢC NHAU, cần nói rõ tại sao trước khi tin bên nào
+
+Một phiên khác chạy CÙNG THỜI GIAN trên Máy B thử ĐÚNG cùng ý tưởng (VQ/codebook AQLM-style)
+nhưng trên **Qwen3-0.6B** (dense FFN, không phải MoE), và **kết luận ÂM TÍNH**: VQ thua scalar
+ternary+sequential ~10 lần (VQ+SEQ 1,587bpw → PPL vi 6.044; scalar t2:4+SEQUENTIAL 1,94bpw →
+PPL 594,3), qua 3 lần thử độc lập (thuần/Wanda-weighted/forced-zero-entry), mỗi lần có cơ chế
+giải thích riêng.
+
+**Điểm ĐỒNG THUẬN thật (đáng tin, 2 phiên độc lập cùng ra)**: Wanda-style calibration làm VQ/
+AQLM TỆ HƠN, không tốt hơn — máy B đo trên Qwen3-0.6B (tệ hơn 2,4-2,8×), tôi đo trên OLMoE
+(0/16 expert cải thiện, cả 2 cách áp). Hai kiến trúc, hai phương pháp đo khác nhau, CÙNG chiều
+— đây là phát hiện chắc, không phải trùng hợp.
+
+**Điểm MÂU THUẪN thật (chưa giải quyết được, phải nói rõ, không giả vờ đã xong)**: máy B nói
+VQ thua scalar THẢM ở đúng phối cảnh (weight compression, PTQ). Khác biệt lớn nhất giữa 2 thử
+nghiệm:
+1. **Tôi CHƯA BAO GIỜ test AQLM+sequential** — mọi so sánh của tôi là "AQLM trơn vs ternary
+   N:M trơn", KHÔNG có BRECQ-lite. Máy B chính xác chỉ ra rằng gap khủng khiếp (10×) xuất hiện
+   SAU KHI thêm sequential — "sequential ăn ~10×" (Bài 8) hóa ra là đòn RIÊNG cho scalar ternary,
+   không rõ có chuyển giao được sang VQ hay không. Số "không sequential" của máy B (VQ 34.195
+   ≈ ngang scalar 33.687) KHÔNG mâu thuẫn nhiều với tôi — gap lớn chỉ lộ ra ở tầng sequential
+   tôi chưa chạm tới.
+2. **Model khác hẳn**: Qwen3-0.6B dense FFN (196 ma trận, dùng chung 1 model) vs OLMoE-1B-7B
+   MoE expert FFN (64 expert/layer, mỗi expert nhỏ hơn nhiều). Định luật kích thước (Bài 6/7/9,
+   máy B tự nhắc lại: "0.6B là ca khó nhất") có thể khiến VQ hoạt động khác hẳn ở 2 quy mô này.
+3. Máy B đưa ra lý giải CƠ CHẾ hợp lý cho vì sao VQ mất lợi thế "mức 0 là vua" (xác suất CẢ d
+   chiều cùng gần 0 giảm theo cấp số nhân với d) — lý giải này về LÝ THUYẾT áp dụng cho cả
+   trường hợp của tôi, nhưng tôi lại đo được AQLM thắng thực nghiệm. Đây là mâu thuẫn CHƯA GIẢI
+   THÍCH ĐƯỢC, không nên lờ đi — có thể do (1) hoặc (2) trên, có thể do khác biệt khác chưa
+   thấy.
+
+**Việc kế cần làm để đóng câu hỏi này (chưa làm, ghi rõ để không ai tưởng đã xong)**: chạy
+AQLM+sequential (BRECQ-lite, port đúng `s1_sequential`-style code) trên OLMoE, so trực tiếp
+với scalar ternary+sequential CÙNG model — đây là phép so sánh THỰC SỰ tương đương với thứ
+máy B đã đo, hiện chưa ai làm.
+
 ## 6. Bản đồ file dự kiến
 
 | File | Vai trò | Trạng thái |
 |---|---|---|
-| `exp_ad_aqlm_toy.py` (mới) | Bước 0: AQLM k-means thuần trên 1 tensor, so ternary-Lloyd | chưa code |
-| `exp_ae_aqlm_full.py` (mới) | Bước 1-2: AQLM đầy đủ (+gradient-refine tùy chọn) + sequential | chưa code |
+| `exp_al_aqlm_toy.py` | Bước 0: AQLM k-means thuần trên 1 tensor, so ternary-Lloyd | ĐÃ CHẠY |
+| `exp_am_aqlm_full.py` | Bước 1-2: AQLM đầy đủ (+gradient-refine tùy chọn) + sequential | ĐÃ CHẠY |
+| `exp_an_bpw_sweep.py` | Quét 5 mốc CANON + thử Hadamard ở mốc thấp nhất | ĐÃ CHẠY |
+| `exp_ah_nm_ternary_fix.py` | Sửa baseline ternary N:M sparse | ĐÃ CHẠY |
+| `exp_ag_wanda_calib.py` / `exp_ai_wanda_aqlm.py` | Wanda-calib (mask + AQLM trực tiếp), fix L2-norm | ĐÃ CHẠY, âm tính |
+| `exp_aj_generalization.py` | Kiểm tra tổng quát hóa (64 expert, 2 layer) | ĐÃ CHẠY |
+| `exp_ak_ppl_real.py` | PPL thật trên model đầy đủ 16 layer | ĐANG CHẠY |
+
+⚠️ **Lưu ý đặt tên**: file `exp_ad/ae/af` GỐC của tôi đã đổi tên thành `exp_al/am/an` vì
+đụng tên với 3 file `exp_ad/ae/af` của phiên khác trên Máy B (VQ/codebook trên Qwen3-0.6B,
+xem mục "Đối chiếu với Máy B" dưới đây) — quy ước đặt tên chữ cái tuần tự bị 2 phiên song song
+dùng độc lập không đồng bộ, gây trùng. Từ nay kiểm tra `git log --all -- 'eval/lowbit_ptq/exp_*'`
+trước khi đặt tên file mới.
 
 Không đụng file PTQ hiện có (`exp_h/i/k/l/...`) — hướng này độc lập, so sánh KẾT QUẢ với
 chúng, không sửa chúng.

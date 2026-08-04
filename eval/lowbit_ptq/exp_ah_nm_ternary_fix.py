@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Sua loi baseline trong exp_af: ternary DENSE co san CUNG log2(3)=1.585bpw, khong the bieu
+Sua loi baseline trong exp_an: ternary DENSE co san CUNG log2(3)=1.585bpw, khong the bieu
 dien duoc bat ky moc nao trong 5 moc CANON (0.331..1.566, 4/5 moc DUOI san nay). Baseline
 DUNG phai la ternary N:M SPARSE (dung dinh nghia CANON: 1:32/1:16/1:8/1:4/2:4, mask theo
 magnitude top-N/M, group=64 cho scale - dung uoc dinh nm_bpw trong exp_ab_subbit_curriculum.py).
 
-Tai dung dung 16 tensor da fetch trong exp_af (fetch lai qua range-read, nhe).
+Tai dung dung 16 tensor da fetch trong exp_an (fetch lai qua range-read, nhe).
 
 Chay: python eval/lowbit_ptq/exp_ah_nm_ternary_fix.py
 """
@@ -73,7 +73,7 @@ def nm_bpw(n, m, sgroup=64, sbits=8.0):
 
 def nm_ternary_err(W, n, m, sgroup=64):
     """Mask = top-n/m theo |W| (giong Wanda nhung KHONG co activation - dung |W| thuan,
-    dung tinh than 'PTQ khong-calib' de so sanh cong bang voi AQLM khong-calib cua exp_af)."""
+    dung tinh than 'PTQ khong-calib' de so sanh cong bang voi AQLM khong-calib cua exp_an)."""
     R, C = W.shape
     Wg = W.view(R, -1, m)
     idx = Wg.abs().topk(n, dim=2).indices
@@ -98,7 +98,7 @@ def nm_ternary_err(W, n, m, sgroup=64):
 def main():
     rs = RemoteSafetensors(BASE)
     names = [f"model.layers.0.mlp.experts.{e}.down_proj.weight" for e in range(N_EXPERTS)]
-    log(f"tai lai {N_EXPERTS} tensor (giong exp_af)...")
+    log(f"tai lai {N_EXPERTS} tensor (giong exp_an)...")
     Ws = [rs.get(n) for n in names]
     log("  xong.")
 
@@ -113,9 +113,9 @@ def main():
         rows.append({"nm": f"{n}:{m}", "bpw": round(bpw, 4), "ternary_nm_err": round(mean_err, 4)})
         log(f"  ternary {n}:{m} @ {bpw:.4f}bpw: err {mean_err:.4f}")
 
-    # ghep voi so AQLM da co (exp_af, khong tinh lai - AQLM khong doi, chi baseline doi)
+    # ghep voi so AQLM da co (exp_an, khong tinh lai - AQLM khong doi, chi baseline doi)
     target_map = {0.331: 0, 0.474: 1, 0.699: 2, 1.023: 3, 1.566: 4}
-    log("\n=== BANG DA SUA (AQLM tu exp_af, ternary N:M sparse THAY the ternary dense sai) ===")
+    log("\n=== BANG DA SUA (AQLM tu exp_an, ternary N:M sparse THAY the ternary dense sai) ===")
     for target, idx in target_map.items():
         row = rows[idx]
         aqlm_err = AQLM_FROM_AF[target]
@@ -126,8 +126,8 @@ def main():
             f"  -> AQLM {'THANG' if win else 'THUA'}")
 
     with io.open(OUT_JSON, "w", encoding="utf-8") as f:
-        json.dump({"ternary_nm_sparse": rows, "aqlm_from_exp_af": AQLM_FROM_AF,
-                  "aqlm_bpw_from_exp_af": AQLM_BPW_FROM_AF}, f, ensure_ascii=False, indent=2)
+        json.dump({"ternary_nm_sparse": rows, "aqlm_from_exp_an": AQLM_FROM_AF,
+                  "aqlm_bpw_from_exp_an": AQLM_BPW_FROM_AF}, f, ensure_ascii=False, indent=2)
     log(f"da ghi {OUT_JSON}")
 
 
