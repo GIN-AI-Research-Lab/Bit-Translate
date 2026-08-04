@@ -1,0 +1,222 @@
+{
+  "smoke_cr": {
+    "ladder": "1:32,1:16,1:8,1:4,2:4",
+    "stage_steps": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "rollout": 1,
+    "roll_lambda": 0.5,
+    "highway_cols": [],
+    "s1_vi": 13594526.674788712,
+    "fp_vi": 68.96674504648298,
+    "stages": [
+      {
+        "stage": "1:32",
+        "bpw": 0.331,
+        "ppl": {
+          "vi": 7854626.3,
+          "ja": 7756882.7,
+          "en": 80480490.5,
+          "code": 313914.0,
+          "zh": 7597630.5,
+          "math": 142139.4
+        },
+        "geo6": 3441790.8,
+        "val100_vi": 3316791.6,
+        "battery": {
+          "t0.0": {
+            "pass_rate": 0.0,
+            "loop_rate": 1.0,
+            "per_dom": {
+              "math": "0/4"
+            }
+          }
+        },
+        "rollout_on": false
+      },
+      {
+        "stage": "1:16",
+        "bpw": 0.474,
+        "ppl": {
+          "vi": 21720401.9,
+          "ja": 4218915.3,
+          "en": 1797696.9,
+          "code": 1109264.4,
+          "zh": 8490512.1,
+          "math": 103722.8
+        },
+        "geo6": 2332230.2,
+        "val100_vi": 9583808.0,
+        "battery": {
+          "t0.0": {
+            "pass_rate": 0.0,
+            "loop_rate": 0.75,
+            "per_dom": {
+              "math": "0/4"
+            }
+          }
+        },
+        "rollout_on": false
+      },
+      {
+        "stage": "1:8",
+        "bpw": 0.698,
+        "ppl": {
+          "vi": 1401125.6,
+          "ja": 6073294.8,
+          "en": 37610007.3,
+          "code": 4051758.4,
+          "zh": 60431244.6,
+          "math": 13765233.8
+        },
+        "geo6": 10127033.6,
+        "val100_vi": 1002833.3,
+        "battery": {
+          "t0.0": {
+            "pass_rate": 0.0,
+            "loop_rate": 0.75,
+            "per_dom": {
+              "math": "0/4"
+            }
+          }
+        },
+        "rollout_on": true
+      },
+      {
+        "stage": "1:4",
+        "bpw": 1.021,
+        "ppl": {
+          "vi": 7475356.1,
+          "ja": 8341622.5,
+          "en": 29707277.7,
+          "code": 1321516.3,
+          "zh": 14188963.6,
+          "math": 3025417.1
+        },
+        "geo6": 6869507.8,
+        "val100_vi": 10190166.2,
+        "battery": {
+          "t0.0": {
+            "pass_rate": 0.0,
+            "loop_rate": 0.25,
+            "per_dom": {
+              "math": "0/4"
+            }
+          }
+        },
+        "rollout_on": true
+      },
+      {
+        "stage": "2:4",
+        "bpw": 1.564,
+        "ppl": {
+          "vi": 2573753.3,
+          "ja": 11038730.6,
+          "en": 1660325.4,
+          "code": 1145675.0,
+          "zh": 10744947.8,
+          "math": 137743.3
+        },
+        "geo6": 2075722.3,
+        "val100_vi": 2359029.4,
+        "battery": {
+          "t0.0": {
+            "pass_rate": 0.0,
+            "loop_rate": 0.0,
+            "per_dom": {
+              "math": "0/4"
+            }
+          }
+        },
+        "rollout_on": true
+      }
+    ],
+    "final": {
+      "ppl": {
+        "vi": 2573753.3,
+        "ja": 11038730.6,
+        "en": 1660325.4,
+        "code": 1145675.0,
+        "zh": 10744947.8,
+        "math": 137743.3
+      },
+      "geo6": 2075722.3,
+      "val100_vi": 2359029.4,
+      "battery": {
+        "t0.0": {
+          "pass_rate": 0.0,
+          "loop_rate": 0.0,
+          "per_dom": {
+            "math": "0/4"
+          },
+          "transcripts": [
+            {
+              "dom": "math",
+              "ok": false,
+              "loop": false,
+              "prompt": "Q: 7 + 15 = ?\nA:",
+              "out": " part which which which which part which which part part part part"
+            },
+            {
+              "dom": "math",
+              "ok": false,
+              "loop": false,
+              "prompt": "Q: 12 * 3 = ?\nA:",
+              "out": " in in in inies otheries weitere fies weitere "
+            },
+            {
+              "dom": "math",
+              "ok": false,
+              "loop": false,
+              "prompt": "Q: 100 - 37 = ?\nA:",
+              "out": " ev in extgene umbrella umbrellagene umbrellagenegene Ogene"
+            },
+            {
+              "dom": "math",
+              "ok": false,
+              "loop": false,
+              "prompt": "Q: A box has 12 apples. Tom takes 5. How",
+              "out": " allbooksbooksamesらいغان trick other computer other other other"
+            }
+          ]
+        }
+      },
+      "divergence": {
+        "kl_self": [
+          9.4171,
+          5.754,
+          0.0,
+          0.0
+        ],
+        "kl_tf": [
+          11.7935,
+          12.0963,
+          0.0,
+          0.0
+        ],
+        "buckets": [
+          [
+            0,
+            8
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            32
+          ],
+          [
+            32,
+            48
+          ]
+        ]
+      }
+    }
+  }
+}

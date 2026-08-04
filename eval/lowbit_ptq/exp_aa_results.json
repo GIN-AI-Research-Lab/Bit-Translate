@@ -1,0 +1,121 @@
+{
+  "G1_nested_family": {
+    "pass": true,
+    "counts": [
+      {
+        "nm": "1:32",
+        "max_per_group": 1,
+        "bpw": 0.331,
+        "nested": true
+      },
+      {
+        "nm": "1:16",
+        "max_per_group": 1,
+        "bpw": 0.474,
+        "nested": true
+      },
+      {
+        "nm": "1:8",
+        "max_per_group": 1,
+        "bpw": 0.698,
+        "nested": true
+      },
+      {
+        "nm": "1:4",
+        "max_per_group": 1,
+        "bpw": 1.021,
+        "nested": true
+      },
+      {
+        "nm": "2:4",
+        "max_per_group": 2,
+        "bpw": 1.564,
+        "nested": true
+      }
+    ],
+    "bpw_match_lab": true,
+    "masked_ste": true,
+    "highway": true
+  },
+  "G2_transition_shock": {
+    "pass": true,
+    "real_tensor": true,
+    "full_ste": {
+      "drift_pruned": 0.2214,
+      "drift_kept": 0.1322,
+      "grow_shock_rel": 10.78439,
+      "err_after_rel": 47.66678,
+      "new_cells_on_ratio": 0.8526
+    },
+    "masked_ste": {
+      "drift_pruned": 0.0,
+      "drift_kept": 0.1322,
+      "grow_shock_rel": 4.73228,
+      "err_after_rel": 8.69918,
+      "new_cells_on_ratio": 0.00793
+    }
+  },
+  "G3_toy_rollout_kd": {
+    "pass": true,
+    "tf_kd": {
+      "tf": 1.0,
+      "roll_sampled": 0.465,
+      "roll_mutated_greedy": 0.894,
+      "curve_sampled": [
+        0.87,
+        0.552,
+        0.375,
+        0.323
+      ],
+      "curve_mutated": [
+        0.651,
+        0.859,
+        0.979,
+        0.995
+      ]
+    },
+    "rollout_kd": {
+      "tf": 1.0,
+      "roll_sampled": 0.623,
+      "roll_mutated_greedy": 0.926,
+      "curve_sampled": [
+        0.839,
+        0.63,
+        0.568,
+        0.505
+      ],
+      "curve_mutated": [
+        0.734,
+        0.906,
+        0.979,
+        0.984
+      ]
+    },
+    "exposure_gap_sampled": {
+      "tf_kd": 0.535,
+      "rollout_kd": 0.377
+    },
+    "note": "data vàng = 8 pattern cố định (manifold hẹp có cấu trúc). Thước CHÍNH = self-acc tự sinh SAMPLING (đúng chế độ lỗi thật: sinh sampling mất mạch); phụ = greedy từ prompt đột biến (recovery). Kỳ vọng ghi trước: TF-KD sụp curve theo vị trí (compounding); rollout-KD +≥8đ self-acc, bucket cuối +≥30%, TF-acc không tụt, recovery không xấu đi.",
+    "sec": 97.0
+  },
+  "G5_router_margin": {
+    "pass": true,
+    "flip_rate": {
+      "no_margin": 0.0825,
+      "margin": 0.059
+    },
+    "mse_clean": {
+      "no_margin": 0.24035,
+      "margin": 0.25837
+    },
+    "output_instability": {
+      "no_margin": 0.16677,
+      "margin": 0.14839
+    },
+    "note": "margin phạt gap (logit chọn thứ k) − (logit bị loại tốt nhất). Tiêu chí chính: flip −25%+ (đại lượng đích của finding routing); guard: MSE sạch +≤10%, instability ||m(x+ε)−m(x)|| phải GIẢM (ở toy thành phần nhiễu-mượt chiếm ưu thế nên chỉ đòi chiều đúng; ở 30B flip = đổi NGUYÊN expert nên kỳ vọng tác động lớn hơn nhiều)."
+  },
+  "_meta": {
+    "sec_total": 105.8,
+    "torch": "2.12.0+cpu"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "probe[fp]": {
+    "fp": {
+      "kl_self_buckets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_tf_buckets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "self_over_tf": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "self_slope_last_over_first": 0.0,
+      "distinct2": 1.0,
+      "max_4gram_rep": 1.0,
+      "sample": " cập nhật có thể xảy ra khi thiết bị đang vận hành"
+    },
+    "_meta": {
+      "gen_tokens": 12,
+      "plen": 24,
+      "n_prompts": 3,
+      "seed": 0,
+      "doc": "self_over_tf tăng theo bucket = chữ ký exposure-bias (H-A); phẳng = lỗi per-step capacity, rollout-KD sẽ vô ích"
+    }
+  },
+  "local_baseline": {
+    "fp": {
+      "kl_self_buckets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_tf_buckets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "self_over_tf": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "self_slope_last_over_first": 0.0,
+      "distinct2": 0.86,
+      "max_4gram_rep": 1.0,
+      "sample": " cập nhật thông tin là một nhánh của các vấn đề liên quan đến việc sử dụng thông tin. Nếu \"cần\", chuyển sang bước 4. - Kiểm soát tốc độ cập"
+    },
+    "int4": {
+      "kl_self_buckets": [
+        0.2978,
+        0.2309,
+        0.2606,
+        0.2044
+      ],
+      "kl_tf_buckets": [
+        0.2541,
+        0.2375,
+        0.2823,
+        0.2839
+      ],
+      "self_over_tf": [
+        1.17,
+        0.97,
+        0.92,
+        0.72
+      ],
+      "self_slope_last_over_first": 0.69,
+      "distinct2": 0.883,
+      "max_4gram_rep": 1.0,
+      "sample": " này là một điều quan trọng. - Nếu không có, then 5. - Nếu có, thì 6. - Kết hợp thông tin 7. - Tóm tắt 8."
+    },
+    "ptq24": {
+      "kl_self_buckets": [
+        7.4258,
+        5.0787,
+        4.5933,
+        4.3677
+      ],
+      "kl_tf_buckets": [
+        12.437,
+        12.7156,
+        13.5339,
+        13.7537
+      ],
+      "self_over_tf": [
+        0.6,
+        0.4,
+        0.34,
+        0.32
+      ],
+      "self_slope_last_over_first": 0.59,
+      "distinct2": 0.566,
+      "max_4gram_rep": 2.06,
+      "sample": "ESP-supported-supported-supported-supported-supported物-supported窟-supported-supported xuyênANC�行-supported窟窟-to-to瓢冀�行窟窟vy瓢窟瓢瓢瓢瓢瓢瓢瓢瓢瓢瓢瓢瓢瓢"
+    },
+    "_meta": {
+      "gen_tokens": 48,
+      "plen": 24,
+      "n_prompts": 16,
+      "seed": 0,
+      "doc": "self_over_tf tăng theo bucket = chữ ký exposure-bias (H-A); phẳng = lỗi per-step capacity, rollout-KD sẽ vô ích"
+    }
+  }
+}
