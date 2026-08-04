@@ -282,6 +282,43 @@ và toàn bộ triết lý "kỳ vọng ghi trước + cổng hủy giữa chừ
    optimize phải là `Wfp_gốc − Q` theo đúng chiều đã học được (không mài về `orig−Q`, không
    đọc trực tiếp ô "residual" chưa qua `quant()` — xem lý do kỹ thuật đầy đủ ở Bài 14).
 
+## 5c. ⚠️ ĐẢO NGƯỢC KẾT LUẬN — PPL thật (không phải sai-số-tái-tạo) nói AQLM THUA THẢM
+
+**Đọc mục này TRƯỚC mục 5b/3b/4 phía trên — các mục đó dùng thước SAI, kết luận "AQLM thắng"
+ở đó KHÔNG ĐÚNG khi đo bằng thứ thật sự quan trọng.**
+
+`exp_ak_ppl_real.py` (04-05/08): dựng model **ĐẦY ĐỦ 16 layer** thật từ GGUF (không phải 1
+tensor/1 layer cô lập như mọi thử nghiệm trước), thay `down_proj` toàn bộ 16 layer × 64
+expert, đo PPL thật trên câu held-out qua forward pass đầy đủ (không phải ||Ŵ-W||):
+
+| Cấu hình | PPL | So baseline |
+|---|---:|---:|
+| Baseline (Q4_K_M dequant, không nén thêm) | 8,616 | — |
+| **Ternary N:M (2:4, ~1,56bpw)** | **11,602** | **×1,35 — gần như không đổi** |
+| **AQLM (1,5bpw, k-means+beam, không refine)** | **6055,116** | **×703 — SỤP HOÀN TOÀN** |
+
+**Đảo ngược hoàn toàn mọi kết luận "AQLM thắng" ở mục 3b/4/5b trên** (những mục đó đo
+||Ŵ-W|| trên tensor cô lập, KHÔNG qua forward pass thật). Ở PPL thật: **ternary N:M áp đảo
+AQLM**, và điều này **khớp hoàn toàn với phát hiện của Máy B** (VQ thua scalar+sequential
+~10×) — không còn là mâu thuẫn cần giải quyết (mục 5b dưới), mà là HỘI TỤ: cả 2 phiên độc
+lập, 2 model khác nhau, đều thấy VQ/AQLM thua thảm ở PPL thật, chỉ có phiên của tôi từng bị
+đánh lừa bởi thước sai-số-tái-tạo cho tới bước PPL-hóa này.
+
+**Vì sao sai-số-tái-tạo (L2) không dự đoán được PPL** — cơ chế hợp lý nhất (khớp đúng lý
+thuyết "mức 0 là vua" Máy B đã đưa ra ở mục 5b): ternary có tùy chọn ép về **đúng số 0** khi
+sai — tương đương "mất kết nối", một dạng lỗi AN TOÀN, mạng vốn quen chịu (dropout-like). AQLM
+không có "số 0 an toàn" trong codebook — chọn sai codeword cho ra một giá trị SAI nhưng TỰ TIN
+(không phải nhiễu ngẫu nhiên quanh 0) — qua 16 layer residual + weighted-sum của MoE, loại lỗi
+này khuếch đại theo chiều sâu thành sụp đổ, đúng bài học Bài 4 "sai số cục bộ không dự đoán
+được lan truyền qua độ sâu" — chỉ khác lần này lộ ra ở CHÍNH cách đo sai số cục bộ (L2), không
+chỉ ở việc có sequential hay không.
+
+**Bài học phương pháp lớn nhất của session này**: KHÔNG BAO GIỜ kết luận một kỹ thuật PTQ
+"thắng" chỉ bằng ||Ŵ-W|| trên tensor cô lập — phải luôn xác nhận bằng forward pass thật (PPL
+tối thiểu) trước khi đầu tư thêm (kernel, mở rộng scale, viết thêm biến thể). Mục 3b/4/5b vẫn
+giữ lại làm HỒ SƠ cho thấy quá trình suy nghĩ và bài học rút ra, không xóa, nhưng KHÔNG dùng
+làm căn cứ quyết định nữa.
+
 ## 5b. ĐỐI CHIẾU với phiên song song trên Máy B (`RESEARCH_VQ_CODEBOOK_PTQ.md`, commit
 `8b61ba8`/`5df74c2`) — kết quả NGƯỢC NHAU, cần nói rõ tại sao trước khi tin bên nào
 
