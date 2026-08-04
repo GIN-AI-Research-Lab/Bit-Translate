@@ -473,6 +473,33 @@ So chuẩn: 0.6B full-KD @1.56 val-100 = 351; 30B **S1-thuần** = 472 — tần
 kế tiếp (cần multi-GPU/offload, thiết kế riêng). Ckpt: expv_Qwen3-30B-A3B_2x4.pt (v2, 61GB, volume
 tritue12) + qat_gen41_o2/o3.pt. Chi đêm ~$7.5, ví mới còn ~$22.5.
 
+## Bài 17 — Chiến dịch 30B khép vòng: KD-frontier, định luật F0 tái lập, 2 probe kiến-trúc-mới (04/08)
+
+**Đường biên 30B-A3B @1.56bpw hoàn chỉnh (val-100 vi/ja | geo6 probe):**
+| Bậc thang | vi | ja | geo6 | Ghi chú |
+|---|---:|---:|---:|---|
+| S1-g64+bias (bản lab) | 407.2 | 168.1 | 542 | calib 574 câu thật, 3 lần tái lập từng chữ số |
+| + LoRA-KD 1.4M token | **383.5** | 243.2 | **233.9** | code −83%, zh −67%, en sinh đúng ngữ pháp+fact |
+| Ép hậu kỳ sang TQ2_0 | — | — | **2.3 TRIỆU** | THUẾ RÚT-XƯƠNG-SỐNG: scale-mịn + bias là chỗ model DỰA vào |
+| S1-TQ2native (train trong khuôn) | 524.7 | 173.2 | 677 | thuế in-frame chỉ **×1.25** — định luật F0 định lượng ở 30B |
+| + LoRA-native | (chết cạn ví trước khi lưu) | | | cần ~$9 để hoàn tất |
+
+**Định luật F0 (lần 2, giờ có số 30B): train-trong-khuôn ×1.25 vs ép-hậu-kỳ ×4.000.**
+Bias là phép dịch hằng số — LoRA/norm không biểu diễn nổi → không heal hậu kỳ được.
+
+**Luồng kiến-trúc-mới (H1/H2/H3, $0, 20 phút):** H1 gauge-folding ✗ (real=98.4% null);
+H2 response-surface ✗ (intrinsic dim 645/1024 @95%). Hội tụ: thông tin transformer đã train
+là ĐẶC — free-lunch chỉ ở tầng format (đã vét bằng gauge/perm/mask). H3 hot-core+cold-overlay
+cổng entropy còn sống (không đấu R(D) — tái phân bổ chi phí theo token; dự án tuần).
+
+**Đối đầu IQ1_S (đính chính quan trọng):** unsloth UD-"IQ1_S" thực chất **2.37bpw** (8.42GB) —
+không đủ chuẩn ≤1.56; làn true-≤1.6bpw cho model này đang TRỐNG. IQ1_S/Q4_XL cùng thước llama
+= ×1.11-1.13. Đòn học được: bảo vệ attention (+0.07bpw) — ứng viên exp_v v4.
+
+**Trạng thái artifact (04/08 05:00):** ckpt S1-native 61GB + tlogits trên volume free30 (an toàn);
+4/4 ví Modal cạn (~$120/3 ngày cho toàn chiến dịch). Còn thiếu: pack $1.5 (→ GGUF 8.5GB chạy
+llama.cpp máy B) + tùy chọn LoRA-native $9. Suite test local đã soạn sẵn (run_local_suite.ps1).
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |
