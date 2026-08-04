@@ -49,7 +49,7 @@
 #define RMS_EPS 1e-6f
 #define ROPE_THETA 1000000.0f
 
-#define MAX_POS 48          /* prompt (7) + n_gen benchmark, du dung */
+#define MAX_POS 768         /* du cho prompt chat-template + ~150-200 token sinh */
 #define MAX_THREADS 16
 #define MAX_INDIM 4096      /* max(HIDDEN=2048, Q_DIM=4096, MOE_FFN=768) */
 
@@ -700,6 +700,103 @@ static int forward_one_token(int32_t token_id, int pos, float *K_cache, float *V
     return next_id;
 }
 
+/* ================= sampling (temperature + top-p) — MOI, khong dung cho duong benchmark ================= */
+typedef struct { float p; int32_t id; } ProbIdx;
+static int cmp_prob_desc(const void *a, const void *b) {
+    float pa = ((const ProbIdx *)a)->p, pb = ((const ProbIdx *)b)->p;
+    return (pa < pb) - (pa > pb);
+}
+
+static uint32_t g_rng_state;
+static uint32_t xorshift32(void) {
+    uint32_t x = g_rng_state;
+    x ^= x << 13; x ^= x >> 17; x ^= x << 5;
+    return g_rng_state = x;
+}
+static float rng_uniform01(void) { return (float)(xorshift32() >> 8) / (float)(1u << 24); }
+
+/* logits[VOCAB] -> 1 token id, ap dung temperature roi loc nucleus (top-p) roi sample.
+ * temp<=0 hoac top_p>=1 va temp==1: fallback ve nghia thong thuong (temp<=0 => argmax). */
+static ProbIdx g_sortbuf[VOCAB];
+static int32_t sample_token(const float *logits, float temperature, float top_p) {
+    if (temperature <= 1e-6f) {
+        int32_t best_id = 0; float best = logits[0];
+        for (int v = 1; v < VOCAB; v++) if (logits[v] > best) { best = logits[v]; best_id = v; }
+        return best_id;
+    }
+    float maxv = -1e30f;
+    for (int v = 0; v < VOCAB; v++) if (logits[v] > maxv) maxv = logits[v];
+    double sum = 0.0;
+    for (int v = 0; v < VOCAB; v++) {
+        float p = expf((logits[v] - maxv) / temperature);
+        g_sortbuf[v].p = p; g_sortbuf[v].id = v;
+        sum += p;
+    }
+    qsort(g_sortbuf, VOCAB, sizeof(ProbIdx), cmp_prob_desc);
+    double cum = 0.0;
+    int keep = VOCAB;
+    if (top_p < 0.999999f) {
+        for (int i = 0; i < VOCAB; i++) {
+            cum += g_sortbuf[i].p / sum;
+            if (cum >= (double)top_p) { keep = i + 1; break; }
+        }
+    }
+    double kept_sum = 0.0;
+    for (int i = 0; i < keep; i++) kept_sum += g_sortbuf[i].p;
+    double r = rng_uniform01() * kept_sum;
+    double acc = 0.0;
+    for (int i = 0; i < keep; i++) {
+        acc += g_sortbuf[i].p;
+        if (acc >= r) return g_sortbuf[i].id;
+    }
+    return g_sortbuf[keep - 1].id;
+}
+
+/* sinh van ban that: prompt tu file, sampling that (khong greedy), ghi token id ra file de
+ * Python detokenize (khong viet lai BPE tokenizer trong C — tai su dung tokenizer that qua
+ * huggingface). KHONG dung/sua duong run_benchmark() da validate. */
+static void run_generate(const int32_t *prompt_tokens, int prompt_len, int n_gen,
+                          float temperature, float top_p, uint32_t seed, int nthreads,
+                          const char *out_path) {
+    g_rng_state = seed ? seed : 1;
+    g_nthreads = nthreads;
+    float *K_cache = malloc((size_t)N_LAYER * MAX_POS * KV_DIM * 4);
+    float *V_cache = malloc((size_t)N_LAYER * MAX_POS * KV_DIM * 4);
+    float *logits = malloc((size_t)VOCAB * 4);
+    int32_t *all_tokens = malloc(sizeof(int32_t) * (prompt_len + n_gen));
+    memcpy(all_tokens, prompt_tokens, sizeof(int32_t) * prompt_len);
+
+    int pos = 0;
+    for (; pos < prompt_len - 1; pos++)
+        forward_one_token(prompt_tokens[pos], pos, K_cache, V_cache, logits, 0);
+    forward_one_token(prompt_tokens[prompt_len - 1], prompt_len - 1, K_cache, V_cache, logits, 1);
+    int32_t cur_tok = sample_token(logits, temperature, top_p);
+    all_tokens[prompt_len] = cur_tok;
+    printf("[gen] pos=%d token=%d\n", prompt_len, cur_tok);
+    fflush(stdout);
+
+    int n_written = prompt_len + 1;
+    for (int g = 1; g < n_gen; g++) {
+        int p = prompt_len - 1 + g;
+        if (p >= MAX_POS - 1) { printf("[gen] cham MAX_POS, dung som\n"); break; }
+        forward_one_token(cur_tok, p, K_cache, V_cache, logits, 1);
+        cur_tok = sample_token(logits, temperature, top_p);
+        all_tokens[prompt_len + g] = cur_tok;
+        n_written = prompt_len + g + 1;
+        printf("[gen] pos=%d token=%d\n", p + 1, cur_tok);
+        fflush(stdout);
+    }
+
+    FILE *f = fopen(out_path, "wb");
+    int32_t n32 = n_written;
+    fwrite(&n32, 4, 1, f);
+    fwrite(all_tokens, 4, n_written, f);
+    fclose(f);
+    printf("[gen] da ghi %d token -> %s\n", n_written, out_path);
+
+    free(K_cache); free(V_cache); free(logits); free(all_tokens);
+}
+
 /* ================= benchmark + dump oracle ================= */
 static void write_dump(const char *path, int prompt_len) {
     FILE *f = fopen(path, "wb");
@@ -777,6 +874,40 @@ static void run_benchmark(const int32_t *prompt_tokens, int prompt_len, int n_ge
 
 /* ================= main ================= */
 int main(int argc, char **argv) {
+    /* che do MOI: qwen3moe_runner_tq33.exe gen <runner_dir> <extras_bin> <prompt_tokens_bin>
+     * <out_tokens_bin> <n_gen> <temperature> <top_p> <seed> <nthreads>
+     * (khong dung duong benchmark da validate — chi doc them 1 file prompt khac, sample that).
+     * PHAI kiem tra TRUOC khi doc argv theo quy uoc cu, neu khong se load nham thu muc "gen". */
+    if (argc > 1 && strcmp(argv[1], "gen") == 0) {
+        const char *r_dir = argv[2], *ex_bin = argv[3], *prompt_path = argv[4], *out_path = argv[5];
+        int gen_n = atoi(argv[6]);
+        float temp = (float)atof(argv[7]);
+        float top_p = (float)atof(argv[8]);
+        uint32_t seed = (uint32_t)strtoul(argv[9], NULL, 10);
+        int nth = argc > 10 ? atoi(argv[10]) : 6;
+
+        build_tq33_tables();
+        load_linear_index(r_dir);
+        load_packed_data(r_dir);
+        load_extras_index(r_dir);
+        load_extras_data(ex_bin);
+        sanity_check_shapes();
+        convert_norms();
+
+        FILE *pf = fopen(prompt_path, "rb");
+        if (!pf) { fprintf(stderr, "khong mo duoc %s\n", prompt_path); return 1; }
+        int32_t plen;
+        if (fread(&plen, 4, 1, pf) != 1) return 1;
+        int32_t *ptoks = malloc(sizeof(int32_t) * plen);
+        if (fread(ptoks, 4, plen, pf) != (size_t)plen) return 1;
+        fclose(pf);
+        printf("[gen] prompt_len=%d temp=%.2f top_p=%.2f seed=%u threads=%d n_gen=%d\n",
+               plen, temp, top_p, seed, nth, gen_n);
+
+        run_generate(ptoks, plen, gen_n, temp, top_p, seed, nth, out_path);
+        return 0;
+    }
+
     const char *runner_dir = argc > 1 ? argv[1] : "D:\\Bit-Translate-data\\tq33_30b\\runner";
     const char *extras_bin = argc > 2 ? argv[2] : "D:\\Bit-Translate-data\\tq33_30b\\extras.bin";
     const char *oracle_dir = argc > 3 ? argv[3] : "D:\\Bit-Translate-data\\tq33_30b\\runner\\oracle";
