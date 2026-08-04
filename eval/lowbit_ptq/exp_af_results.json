@@ -1,0 +1,34 @@
+{
+  "fp32": {
+    "ppl_vi": 68.96674504648298,
+    "ppl_ja": 125.07473679391529
+  },
+  "config": {
+    "n_calib": 48,
+    "kmeans_iters": 6,
+    "refine_steps": 40,
+    "method": "residual_vq_forced_zero_entry"
+  },
+  "VQ_d16_M1K32_zero": {
+    "d": 16,
+    "M": 1,
+    "K": 32,
+    "payload_bpw": 0.3125,
+    "codebook_overhead_bpw": 0.0036458333333333334,
+    "bpw_total": 0.31614583333333335,
+    "werr": 0.9292562414575531,
+    "zero_frac": 0.06217513311476935,
+    "ppl_vi": 89198177.36371943,
+    "ppl_ja": 133935517.41919914
+  },
+  "VQ_d16_M1K32_zero_SEQ": {
+    "d": 16,
+    "M": 1,
+    "K": 32,
+    "payload_bpw": 0.3125,
+    "codebook_overhead_bpw": 0.0036458333333333334,
+    "bpw_total": 0.31614583333333335,
+    "ppl_vi": 185156.7667957588,
+    "ppl_ja": 389336.7832969758
+  }
+}
