@@ -1,0 +1,119 @@
+{
+  "tok_counts": {
+    "0": 110,
+    "1": 37,
+    "2": 49,
+    "3": 58,
+    "4": 61,
+    "5": 97,
+    "6": 623,
+    "7": 58,
+    "8": 87,
+    "9": 94,
+    "10": 67,
+    "11": 31,
+    "12": 62,
+    "13": 85,
+    "14": 73,
+    "15": 49
+  },
+  "starved": [],
+  "per_expert": {
+    "0": {
+      "tok_count": 110,
+      "err_magnitude_only": 0.9061,
+      "err_wanda_calib": 0.9198,
+      "wanda_better": false
+    },
+    "1": {
+      "tok_count": 37,
+      "err_magnitude_only": 0.9064,
+      "err_wanda_calib": 0.9296,
+      "wanda_better": false
+    },
+    "2": {
+      "tok_count": 49,
+      "err_magnitude_only": 0.907,
+      "err_wanda_calib": 0.9384,
+      "wanda_better": false
+    },
+    "3": {
+      "tok_count": 58,
+      "err_magnitude_only": 0.906,
+      "err_wanda_calib": 0.9292,
+      "wanda_better": false
+    },
+    "4": {
+      "tok_count": 61,
+      "err_magnitude_only": 0.9067,
+      "err_wanda_calib": 0.9195,
+      "wanda_better": false
+    },
+    "5": {
+      "tok_count": 97,
+      "err_magnitude_only": 0.9069,
+      "err_wanda_calib": 0.9286,
+      "wanda_better": false
+    },
+    "6": {
+      "tok_count": 623,
+      "err_magnitude_only": 0.9009,
+      "err_wanda_calib": 0.9348,
+      "wanda_better": false
+    },
+    "7": {
+      "tok_count": 58,
+      "err_magnitude_only": 0.9076,
+      "err_wanda_calib": 0.9252,
+      "wanda_better": false
+    },
+    "8": {
+      "tok_count": 87,
+      "err_magnitude_only": 0.9055,
+      "err_wanda_calib": 0.93,
+      "wanda_better": false
+    },
+    "9": {
+      "tok_count": 94,
+      "err_magnitude_only": 0.9067,
+      "err_wanda_calib": 0.9196,
+      "wanda_better": false
+    },
+    "10": {
+      "tok_count": 67,
+      "err_magnitude_only": 0.9076,
+      "err_wanda_calib": 0.9269,
+      "wanda_better": false
+    },
+    "11": {
+      "tok_count": 31,
+      "err_magnitude_only": 0.9062,
+      "err_wanda_calib": 0.9278,
+      "wanda_better": false
+    },
+    "12": {
+      "tok_count": 62,
+      "err_magnitude_only": 0.9057,
+      "err_wanda_calib": 0.9186,
+      "wanda_better": false
+    },
+    "13": {
+      "tok_count": 85,
+      "err_magnitude_only": 0.9069,
+      "err_wanda_calib": 0.9204,
+      "wanda_better": false
+    },
+    "14": {
+      "tok_count": 73,
+      "err_magnitude_only": 0.9074,
+      "err_wanda_calib": 0.9338,
+      "wanda_better": false
+    },
+    "15": {
+      "tok_count": 49,
+      "err_magnitude_only": 0.9064,
+      "err_wanda_calib": 0.9368,
+      "wanda_better": false
+    }
+  }
+}

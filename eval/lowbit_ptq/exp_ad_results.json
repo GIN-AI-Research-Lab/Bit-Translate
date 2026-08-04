@@ -1,0 +1,94 @@
+{
+  "model": "allenai/OLMoE-1B-7B-0924",
+  "note": "Buoc 0 toy: AQLM k-means-only (khong gradient-refine) vs q_ternary Lloyd, tren tensor THAT qua HTTP range-read",
+  "results": {
+    "model.layers.0.mlp.experts.0.down_proj.weight": {
+      "shape": [
+        2048,
+        1024
+      ],
+      "aqlm_kmeans_only": {
+        "bpw": 2.062,
+        "rel_energy_err": 0.3254,
+        "payload_bpw": 2.0,
+        "codebook_overhead_bpw": 0.0625
+      },
+      "ternary_lloyd": {
+        "g8_f8": {
+          "bpw": 2.585,
+          "rel_energy_err": 0.3841
+        },
+        "g32_f8": {
+          "bpw": 1.835,
+          "rel_energy_err": 0.4268
+        }
+      }
+    },
+    "model.layers.0.mlp.experts.0.gate_proj.weight": {
+      "shape": [
+        1024,
+        2048
+      ],
+      "aqlm_kmeans_only": {
+        "bpw": 2.062,
+        "rel_energy_err": 0.3247,
+        "payload_bpw": 2.0,
+        "codebook_overhead_bpw": 0.0625
+      },
+      "ternary_lloyd": {
+        "g8_f8": {
+          "bpw": 2.585,
+          "rel_energy_err": 0.3844
+        },
+        "g32_f8": {
+          "bpw": 1.835,
+          "rel_energy_err": 0.4287
+        }
+      }
+    },
+    "model.layers.0.mlp.experts.0.up_proj.weight": {
+      "shape": [
+        1024,
+        2048
+      ],
+      "aqlm_kmeans_only": {
+        "bpw": 2.062,
+        "rel_energy_err": 0.3246,
+        "payload_bpw": 2.0,
+        "codebook_overhead_bpw": 0.0625
+      },
+      "ternary_lloyd": {
+        "g8_f8": {
+          "bpw": 2.585,
+          "rel_energy_err": 0.3854
+        },
+        "g32_f8": {
+          "bpw": 1.835,
+          "rel_energy_err": 0.4291
+        }
+      }
+    },
+    "model.layers.0.mlp.experts.7.down_proj.weight": {
+      "shape": [
+        2048,
+        1024
+      ],
+      "aqlm_kmeans_only": {
+        "bpw": 2.062,
+        "rel_energy_err": 0.3237,
+        "payload_bpw": 2.0,
+        "codebook_overhead_bpw": 0.0625
+      },
+      "ternary_lloyd": {
+        "g8_f8": {
+          "bpw": 2.585,
+          "rel_energy_err": 0.3825
+        },
+        "g32_f8": {
+          "bpw": 1.835,
+          "rel_energy_err": 0.4244
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "model": "allenai/OLMoE-1B-7B-0924",
+  "n_experts": 16,
+  "ladder": [
+    {
+      "target_bpw": 0.331,
+      "cfg": {
+        "M": 1,
+        "K": 32,
+        "g": 16
+      },
+      "aqlm_bpw": 0.3125,
+      "aqlm_err": 0.8572,
+      "ternary_bracket": {
+        "g": 64,
+        "bpw": 1.71,
+        "err": 0.4333
+      },
+      "hadamard_combo": {
+        "err": 0.8573,
+        "better_than_plain": false
+      }
+    },
+    {
+      "target_bpw": 0.474,
+      "cfg": {
+        "M": 1,
+        "K": 128,
+        "g": 16
+      },
+      "aqlm_bpw": 0.4375,
+      "aqlm_err": 0.7938,
+      "ternary_bracket": {
+        "g": 64,
+        "bpw": 1.71,
+        "err": 0.4333
+      }
+    },
+    {
+      "target_bpw": 0.699,
+      "cfg": {
+        "M": 1,
+        "K": 64,
+        "g": 8
+      },
+      "aqlm_bpw": 0.75,
+      "aqlm_err": 0.6695,
+      "ternary_bracket": {
+        "g": 64,
+        "bpw": 1.71,
+        "err": 0.4333
+      }
+    },
+    {
+      "target_bpw": 1.023,
+      "cfg": {
+        "M": 2,
+        "K": 16,
+        "g": 8
+      },
+      "aqlm_bpw": 1.0,
+      "aqlm_err": 0.5905,
+      "ternary_bracket": {
+        "g": 64,
+        "bpw": 1.71,
+        "err": 0.4333
+      }
+    },
+    {
+      "target_bpw": 1.566,
+      "cfg": {
+        "M": 2,
+        "K": 64,
+        "g": 8
+      },
+      "aqlm_bpw": 1.5,
+      "aqlm_err": 0.4344,
+      "ternary_bracket": {
+        "g": 64,
+        "bpw": 1.71,
+        "err": 0.4333
+      }
+    }
+  ]
+}

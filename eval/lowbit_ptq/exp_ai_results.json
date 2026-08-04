@@ -1,0 +1,120 @@
+{
+  "gate1_pass": true,
+  "gate1_n_better": 0,
+  "gate1_covered": 16,
+  "gate2_rows": [
+    {
+      "expert": 0,
+      "tok": 148,
+      "aqlm_plain": 0.8563,
+      "aqlm_wanda": 0.8636,
+      "better": false
+    },
+    {
+      "expert": 1,
+      "tok": 48,
+      "aqlm_plain": 0.8559,
+      "aqlm_wanda": 0.8677,
+      "better": false
+    },
+    {
+      "expert": 2,
+      "tok": 68,
+      "aqlm_plain": 0.8556,
+      "aqlm_wanda": 0.8724,
+      "better": false
+    },
+    {
+      "expert": 3,
+      "tok": 90,
+      "aqlm_plain": 0.8557,
+      "aqlm_wanda": 0.8686,
+      "better": false
+    },
+    {
+      "expert": 4,
+      "tok": 90,
+      "aqlm_plain": 0.8559,
+      "aqlm_wanda": 0.8632,
+      "better": false
+    },
+    {
+      "expert": 5,
+      "tok": 143,
+      "aqlm_plain": 0.8559,
+      "aqlm_wanda": 0.8688,
+      "better": false
+    },
+    {
+      "expert": 6,
+      "tok": 910,
+      "aqlm_plain": 0.8644,
+      "aqlm_wanda": 0.8793,
+      "better": false
+    },
+    {
+      "expert": 7,
+      "tok": 81,
+      "aqlm_plain": 0.8557,
+      "aqlm_wanda": 0.8623,
+      "better": false
+    },
+    {
+      "expert": 8,
+      "tok": 133,
+      "aqlm_plain": 0.856,
+      "aqlm_wanda": 0.8678,
+      "better": false
+    },
+    {
+      "expert": 9,
+      "tok": 153,
+      "aqlm_plain": 0.8557,
+      "aqlm_wanda": 0.8608,
+      "better": false
+    },
+    {
+      "expert": 10,
+      "tok": 90,
+      "aqlm_plain": 0.8559,
+      "aqlm_wanda": 0.8646,
+      "better": false
+    },
+    {
+      "expert": 11,
+      "tok": 52,
+      "aqlm_plain": 0.8556,
+      "aqlm_wanda": 0.8657,
+      "better": false
+    },
+    {
+      "expert": 12,
+      "tok": 79,
+      "aqlm_plain": 0.8575,
+      "aqlm_wanda": 0.8634,
+      "better": false
+    },
+    {
+      "expert": 13,
+      "tok": 124,
+      "aqlm_plain": 0.8561,
+      "aqlm_wanda": 0.8616,
+      "better": false
+    },
+    {
+      "expert": 14,
+      "tok": 117,
+      "aqlm_plain": 0.8558,
+      "aqlm_wanda": 0.8661,
+      "better": false
+    },
+    {
+      "expert": 15,
+      "tok": 61,
+      "aqlm_plain": 0.8556,
+      "aqlm_wanda": 0.8733,
+      "better": false
+    }
+  ],
+  "gate2_n_better": 0
+}
