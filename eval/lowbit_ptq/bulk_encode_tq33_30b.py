@@ -50,8 +50,14 @@ LUT_B3 = build_pat_lut_b3()
 POW3 = torch.tensor([27, 9, 3, 1], dtype=torch.int8)
 
 
-def encode_linear(W):
-    """W: [R,C] bf16/float, C%64==0. Tra (codes: np.uint8[R,C//64,11], scales: np.float32[R,C//64])."""
+def encode_linear(W, stats=None):
+    """W: [R,C] bf16/float, C%64==0. Tra (codes: np.uint8[R,C//64,11], scales: np.float32[R,C//64]).
+
+    Model train 2:4 KHÔNG hoàn hảo tuyệt đối: đo thật thấy hiếm nhóm-4 có 3 nonzero
+    (vd 1/393216 ở 1 expert — có thể do mask-refresh dynamics, xem memory). Xử lý bằng
+    cách ép nhóm vi phạm về hợp lệ: bỏ (=0) giá trị |W| NHỎ NHẤT trong nhóm cho tới khi
+    ≤2 nonzero — đây là xấp xỉ ternary GẦN NHẤT, tổn thất tối thiểu và cực hiếm.
+    `stats` (dict, tùy chọn) được cộng dồn: n_groups, n_violated, sq_err (để báo cáo tổng)."""
     W = W.float()
     R, C = W.shape
     assert C % G_SCALE == 0, f"C={C} khong chia het {G_SCALE}"
@@ -61,14 +67,42 @@ def encode_linear(W):
     t = torch.where(s.unsqueeze(2) > 0,
                     torch.round(Wv / s.unsqueeze(2).clamp(min=1e-12)),
                     torch.zeros_like(Wv)).clamp(-1, 1).to(torch.int8)
-    recon = (t.float() * s.unsqueeze(2)).view(R, C)
-    if not torch.equal(recon, W):
-        raise ValueError("KHONG lossless — dung lai kiem tra, dung encode tiep")
+
     tg = t.view(R, nb, G_SCALE // 4, 4)                            # 16 nhom-4 / block64
+    Wg = Wv.view(R, nb, G_SCALE // 4, 4)
+    nz = (tg != 0).sum(dim=-1)
+    viol = (nz > 2).nonzero(as_tuple=False)                       # hiem -> loop nho an toan
+    if stats is not None:
+        stats["n_groups"] = stats.get("n_groups", 0) + nz.numel()
+        stats["n_violated"] = stats.get("n_violated", 0) + viol.shape[0]
+    for pos in viol.tolist():
+        ri, bi, gi = pos
+        wv = Wg[ri, bi, gi].abs()
+        tv = tg[ri, bi, gi]
+        nnz = int((tv != 0).sum().item())
+        n_drop = nnz - 2
+        order = torch.argsort(wv)                                 # tang dan; wv=0 (da la 0) len dau, vo hai
+        dropped_sq = 0.0
+        dropped = 0
+        for j in order.tolist():
+            if dropped >= n_drop:
+                break
+            if tv[j].item() != 0:
+                if stats is not None:
+                    dropped_sq += Wg[ri, bi, gi, j].item() ** 2
+                tg[ri, bi, gi, j] = 0
+                dropped += 1
+        if stats is not None:
+            stats["sq_err"] = stats.get("sq_err", 0.0) + dropped_sq
+    t = tg.view(R, nb, G_SCALE)
+
+    recon = (t.float() * s.unsqueeze(2)).view(R, C)
+    if viol.shape[0] == 0 and not torch.equal(recon, W):
+        raise ValueError("KHONG lossless (0 vi pham nhung van lech) — bug thuc su, dung lai")
     base3 = ((tg + 1) * POW3).sum(-1)                              # [R, nb, 16]
     gid = LUT_B3[base3.to(torch.int64)]
     if int((gid < 0).sum().item()) != 0:
-        raise ValueError("pattern ngoai bang 33 — vi pham 2:4!")
+        raise ValueError("van con pattern ngoai bang 33 sau khi vam — bug logic vam nhom")
     gid = gid.view(R, nb, 8, 2)                                    # 8 cap nhom / block64
     codeword = gid[..., 0] * 33 + gid[..., 1]                      # [R,nb,8] moi so 0..1088 (11bit)
     codeword_np = codeword.numpy().astype(np.uint16)
@@ -103,11 +137,12 @@ def main():
     print(f"giu nguyen bf16: {len(extras_names)} tensor (embed/lm_head/norm/router/q_norm/k_norm)")
 
     manifest = {}
+    stats = {}
     t0 = time.time()
     total_bytes = 0
     for i, name in enumerate(linear_names):
         W = get(name)
-        codes, scales = encode_linear(W)
+        codes, scales = encode_linear(W, stats=stats)
         R, C = W.shape
         nb = C // G_SCALE
         fname = f"linears/{i:05d}.tq33"
@@ -118,12 +153,20 @@ def main():
         total_bytes += codes.nbytes + scales.nbytes
         if i % 500 == 0 or i == len(linear_names) - 1:
             dt = time.time() - t0
+            nv = stats.get("n_violated", 0)
+            ng = max(stats.get("n_groups", 1), 1)
             print(f"  [{i+1}/{len(linear_names)}] {name}  "
-                  f"({total_bytes/1e9:.2f}GB ghi, {dt:.0f}s, ~{(i+1)/max(dt,1e-9):.1f} tensor/s)",
+                  f"({total_bytes/1e9:.2f}GB ghi, {dt:.0f}s, ~{(i+1)/max(dt,1e-9):.1f} tensor/s, "
+                  f"vi pham 2:4 tich luy: {nv}/{ng}={nv/ng*100:.5f}%)",
                   flush=True)
 
     with open(os.path.join(OUT, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f)
+    rmse = (stats.get("sq_err", 0.0) / max(stats.get("n_groups", 1), 1)) ** 0.5
+    print(f"\n=== TONG KET VI PHAM 2:4 (ep ve hop le bang cach bo gia tri |W| nho nhat) ===")
+    print(f"tong nhom-4: {stats.get('n_groups',0)} | vi pham: {stats.get('n_violated',0)} "
+          f"({stats.get('n_violated',0)/max(stats.get('n_groups',1),1)*100:.6f}%)")
+    print(f"RMS loi do vam (tren toan bo nhom, kha nang cuc nho vi vi pham cuc hiem): {rmse:.3e}")
 
     # extras: ghi tuan tu vao 1 blob + index (giu nguyen dtype bf16 -> uint16 view)
     extras_manifest = {}
