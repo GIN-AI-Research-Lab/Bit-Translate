@@ -500,6 +500,34 @@ không đủ chuẩn ≤1.56; làn true-≤1.6bpw cho model này đang TRỐNG. 
 4/4 ví Modal cạn (~$120/3 ngày cho toàn chiến dịch). Còn thiếu: pack $1.5 (→ GGUF 8.5GB chạy
 llama.cpp máy B) + tùy chọn LoRA-native $9. Suite test local đã soạn sẵn (run_local_suite.ps1).
 
+## Bài 18 — TQ33: format 1.5bpw tự chế, codec lossless + kernel AVX2 chứng minh (04/08, $0)
+
+Câu hỏi user: *"model 2:4-ternary là 1.56bpw, sao đóng gói TQ2_0 lại thành 2.06 —
+sao không build riêng?"* → Trả lời bằng format thật (chi tiết: `RESEARCH_TQ33.md`).
+
+**Format**: nhóm-4 ≤2 nonzero ∈ {−1,0,+1} → đúng **33 pattern**; cặp nhóm = 11 bit
+(33²=1089≤2¹¹); **block 64 trọng số = 12 byte** (11B codes + 1B scale-idx) = **1.500 bpw
+chẵn**, mọi chiều chia hết 64, LUT decode 1089×8 = 8.7KB (L1). Trần Shannon đo trên ckpt
+thật = 1.36 bpw (0nz 7.9%/1nz 36.4%/2nz 55.7%) — fixed-rate chỉ trả thêm 0.14 cho O(1) access.
+
+**Bằng chứng ($0, máy B, tensor thật gen4-0.6B):**
+| Kiểm | Kết quả |
+|---|---|
+| Codec Python 6/6 tensor | tách (t,s) exact, 0 vi phạm 2:4, encode→decode **lossless bit-level** → PPL giữ nguyên THEO ĐỊNH NGHĨA |
+| Kernel C fp32-exact vs y_ref | rel err 2.9e-07 ✓ (build `python -m ziglang cc`, không cần VS/cmake) |
+| Dot ternary AVX2 | `maddubs(\|t\|, sign(xq,t))` — 32 trọng số/lệnh, số 0 tự triệt |
+| DRAM-stream 151MB, 6 luồng | kernel v3 **19.3 GB/s** → chiếu 30B-A3B **~31 tok/s** linear-stream, ~21–24 end-to-end |
+| Bài học kernel | v2 vpgather CHẬM hơn buffer+reload (2.6 vs 5.6 GB/s/luồng) — gather AVX2 đắt trên Core Ultra; v3 = buffer + FMA-acc/hàng, hsum 1 lần |
+
+**Ý nghĩa**: 30B-A3B S1-native → **~6.2GB** (vs TQ2_0 8.5GB, "IQ1_S" 8.4GB, Q4 16.5GB),
+tốc độ dự phóng **+35–50%** so Q4/IQ1 đo thật (16.0/16.5 tok/s). Format ĂN ĐƯỢC chỉ với
+gia phả S1 (2:4 + scale f8-grid — đo thật: 43 giá trị duy nhất/tensor). Phase 2 = GGML_TYPE_TQ33
+trong llama.cpp fork hoặc runner riêng 0.6B (4–7 ngày). Files: `exp_t24_codec.py`,
+`exp_t24_export_bench.py`, `tq33_bench.c`.
+
+**Modal 04/08 sáng**: free30 vẫn spend-limit → pack TQ2_0 vẫn blocked $3; TQ33 không đổi
+kết luận này (TQ33 convert từ CÙNG ckpt S1-native, làm local được khi có runner).
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |

@@ -104,7 +104,10 @@ image_pack = (
 
 @app.function(image=image_pack, gpu="L40S", volumes={"/vol": vol}, timeout=4 * 3600,
               memory=147_456, cpu=8)
-def pack_30b():
+def pack_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt",
+             lora: str = "expw_lora_30b.pt",
+             gguf_name: str = "qwen3-30b-a3b-ternKD-TQ2_0.gguf",
+             do_eval: int = 1):
     """Pha C — đóng gói ternary+LoRA thành GGUF TQ2_0 chạy thật (exp_x)."""
     import os
     import subprocess
@@ -115,6 +118,8 @@ def pack_30b():
     os.makedirs("/vol/out", exist_ok=True)
     os.environ["EXPR_OUT_DIR"] = "/vol/out"
     r = subprocess.run(["python", "/root/exp_x_pack_gguf.py",
+                        "--ckpt", f"/vol/out/{ckpt}", "--lora", f"/vol/out/{lora}",
+                        "--gguf-name", gguf_name, "--eval", str(do_eval),
                         "--dev-vi", "/root/qat_data/dev.vi",
                         "--dev-ja", "/root/qat_data/dev.ja"])
     vol.commit()
@@ -367,7 +372,8 @@ def gen41(steps: int = 5000):
               memory=147_456, cpu=8)
 def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
            steps_block: int = 60, smoke: int = 0, tag: str = "", save: int = 1,
-           cal_scale: int = 1, ja_share: int = 32, code_ml: int = 0):
+           cal_scale: int = 1, ja_share: int = 32, code_ml: int = 0,
+           sgroup: int = 64, no_bias: int = 0, out_suffix: str = ""):
     """Exp V — S1-only streaming cho 30B-A3B: model bf16 ở CPU RAM 144GB, L40S cầm từng block.
     ~2.5-3h/bậc. Ckpt bake bf16 (~61GB) Ở LẠI volume."""
     import os
@@ -386,10 +392,11 @@ def s1_30b(model_id: str = "Qwen/Qwen3-30B-A3B", nm_n: int = 2, nm_m: int = 4,
            "--dev-vi", "/root/qat_data/dev.vi", "--dev-ja", "/root/qat_data/dev.ja",
            "--nm-n", str(nm_n), "--nm-m", str(nm_m), "--steps-block", str(steps_block),
            "--cal-scale", str(cal_scale), "--ja-share", str(ja_share),
+           "--sgroup", str(sgroup), "--no-bias", str(no_bias),
            "--kd-en", "/vol/kd_mix/kd_en.txt", "--kd-code", code_path,
            "--kd-zh", "/vol/kd_mix/kd_zh.txt", "--kd-math", "/vol/kd_mix/kd_math.txt",
            "--tag", tag, "--save", str(save),
-           "--out", f"/vol/out/expv_{model_id.split('/')[-1]}_{nm_n}x{nm_m}.pt"]
+           "--out", f"/vol/out/expv_{model_id.split('/')[-1]}_{nm_n}x{nm_m}{out_suffix}.pt"]
     if smoke:
         cmd.append("--smoke")
     print("RUN:", " ".join(cmd), flush=True)
@@ -477,7 +484,8 @@ def screen_b2():
 def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 2000,
                 rank: int = 8, tag: str = "", lr: float = 3e-5,
                 lora_scope: str = "attn+down",
-                tlogits: str = "tlogits_30b_v2.pt"):
+                tlogits: str = "tlogits_30b_v2.pt",
+                out_name: str = "expw_lora_30b.pt"):
     """(b) — LoRA-KD trên nền ternary exp_v: pha T cache top-64 logits teacher (1 lượt A100),
     pha S train LoRA r nhỏ trên student đóng băng + grad checkpointing. ~2.5h/$8."""
     import os
@@ -501,7 +509,7 @@ def lora_kd_30b(ckpt: str = "expv_Qwen3-30B-A3B_2x4.pt", steps: int = 2000,
            "--steps", str(steps), "--rank", str(rank), "--lr", str(lr),
            "--lora-scope", lora_scope,
            "--tlogits", f"/vol/out/{tlogits}",
-           "--tag", tag, "--out", "/vol/out/expw_lora_30b.pt"]
+           "--tag", tag, "--out", f"/vol/out/{out_name}"]
     print("RUN:", " ".join(cmd), flush=True)
     r = subprocess.run(cmd)
     vol.commit()
