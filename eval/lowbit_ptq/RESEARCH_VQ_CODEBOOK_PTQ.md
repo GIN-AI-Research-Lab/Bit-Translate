@@ -152,6 +152,41 @@ giải thích hợp lý cho từng lần thử (không phải "chưa thử đủ
 có từ trước) và trần PTQ ~4bit đã đo nhiều góc độ khác, đây là bằng chứng hội tụ khá mạnh rằng
 **PTQ thuần (không train) đã cạn ý tưởng có cơ sở kỹ thuật rõ ràng cho sub-1,58bpw ở quy mô 0,6B**.
 
+## Phần 3 — đóng câu hỏi treo với phiên song song "Máy A" (AQLM beam-search + SEQUENTIAL)
+
+Phiên khác chạy song song (xem `RESEARCH_AQLM_CODEBOOK_PTQ.md`, `HANDOFF_MAYB_AQLM_SEQUENTIAL.md`)
+đo AQLM (k-means + **beam-search** assignment, KHÁC greedy-residual của exp_ad/ae/af ở trên)
+trên **OLMoE-1B-7B** (MoE, khác Qwen3-0.6B dense) và thấy **AQLM thắng ternary N:M** trên toàn
+dải 0,33-1,56bpw — NHƯNG **chưa test SEQUENTIAL** (mọi so sánh của họ là "trơn"/TF). Vì kết quả
+của họ (AQLM thắng) và của tôi (VQ thua ~10× sau sequential) tưởng như mâu thuẫn, cần đóng dứt
+điểm bằng đúng 1 thí nghiệm còn thiếu: **AQLM beam-search THẬT + SEQUENTIAL, trên CHÍNH Qwen3-0.6B.**
+
+`exp_ao_aqlm_beam_sequential.py`: port nguyên thuật toán `beam_assign` từ `exp_am_aqlm_full.py`
+(máy A) — giữ top-4 ứng viên codebook-1, với mỗi ứng viên tìm codebook-2 tốt nhất cho residual,
+chọn cặp tổng lỗi bé nhất (khác greedy: chỉ chọn codebook-1 gần nhất rồi mới tìm codebook-2).
+Verify trước khi chạy full: beam-search cho werr thấp hơn greedy trên 1 ma trận test (33,5% vs
+35,3%, không refine) — khớp phát hiện của máy A, xác nhận port đúng. Ghép với SEQUENTIAL
+(BRECQ-lite) của chính lab tôi (refine codebook value khớp OUTPUT block, không phải weight-MSE
+như refine của máy A — đúng kỹ thuật mạnh nhất đã biết trong toàn lab).
+
+**Kết quả — CÂU HỎI ĐÃ ĐÓNG DỨT ĐIỂM:**
+
+| Phương pháp | bpw | PPL vi | PPL ja |
+|---|---:|---:|---:|
+| scalar t2:4 fixpack + SEQUENTIAL (exp_k) | 1,94 | **594,3** | 8.068,6 |
+| VQ residual-greedy + SEQUENTIAL (exp_ad) | 1,587 | 6.044,3 | 10.095,7 |
+| **AQLM beam-search + SEQUENTIAL (exp_ao)** | 2,029 | **4.196,6** | 9.568,6 |
+
+Beam-search **có cải thiện thật** so với greedy (4.197 < 6.044, ~31% tốt hơn, đúng chiều máy A
+đã thấy) — nhưng **vẫn thua scalar+SEQUENTIAL ~7 lần**, dù dùng NHIỀU bit hơn (2,03 vs 1,94bpw).
+**Kết luận cuối cùng cho cả 2 phiên**: AQLM (dù k-means thuần hay beam-search, dù trên OLMoE hay
+Qwen3-0.6B) chỉ thắng scalar ternary khi CHƯA có sequential-reconstruction. Ngay khi thêm đòn
+bẩy mạnh nhất lab từng đo (BRECQ-lite), scalar ternary bứt hẳn lên trên mọi biến thể VQ/codebook
+đã thử — sequential là đòn KHÔNG chuyển giao sang biểu diễn codebook, bất kể thuật toán gán
+(greedy/beam) hay kiến trúc model (dense/MoE). Đây là kết luận PTQ cuối cùng, hội tụ từ 2 phiên
+độc lập, 2 model khác nhau, 4 biến thể VQ khác nhau (greedy/Wanda/entry-0/beam) — đủ vững để
+đóng hẳn hướng VQ/codebook cho PTQ sub-1,58bpw ở quy mô model này.
+
 ## File
 
 - `exp_ad_vq_codebook.py` — script chính (đã vá RESUME + gc.collect)
@@ -159,3 +194,5 @@ có từ trước) và trần PTQ ~4bit đã đo nhiều góc độ khác, đây
 - `exp_ad_run.log` / `exp_ad_run2.log` — log chạy lần 1 (chết giữa chừng) + lần 2 (resume, hoàn tất)
 - `exp_ae_vq_wanda.py` + `exp_ae_results.json` + `exp_ae_run.log` — Wanda-weighting (âm tính)
 - `exp_af_vq_zero.py` + `exp_af_results.json` + `exp_af_run.log` — entry-0 tường minh (âm tính)
+- `exp_ao_aqlm_beam_sequential.py` + `exp_ao_results.json` + `exp_ao_run.log` — beam-search
+  (port từ máy A) + SEQUENTIAL, đóng câu hỏi treo giữa 2 phiên (vẫn âm tính, thua ~7×)
