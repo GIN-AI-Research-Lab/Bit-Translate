@@ -70,6 +70,33 @@
                                  giong 0.6B (RESEARCH_TQ33_RUNNER.md muc 2.2/3.3) — du lieu nho
                                  (48*7*2048*4 byte =~2.75MB) nen dump het khong ton kem */
 
+/* ================= RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 1 — instrumentation do outlier-
+ * channel THAT theo TUNG KENH (khong phai theo nhom-64 nhu quantize_x_int8). Mac dinh TAT
+ * (g_stats_enabled=0) nen KHONG anh huong toi run_benchmark()/che do "bench" da validate —
+ * chi bat khi chay che do CLI moi "stats". Cap nhat o DUNG 2 diem theo nhiem vu:
+ *   (a) stats_update_cur(): `cur` sau rmsnorm hau-attention — input CHUNG cho router VA
+ *       expert gate/up (khong gian HIDDEN=2048) — goi trong forward_one_token().
+ *   (b) stats_update_h(): `h`=silu(gate)*up trong moe_expert_job() — input cho down_proj
+ *       (khong gian MOE_FFN=768).
+ * Tich luy MAX(|gia tri|) qua MOI layer, MOI vi tri token (khac debug dump cu chi lay
+ * l<N_DUMP_LAYER va khong theo kenh). Khi bat "stats", runner ep g_nthreads=1 (xem run_stats)
+ * de tranh nhieu thread cung ghi vao g_chan_absmax_h[l] tu moe_expert_job (moi job la 1
+ * expert chay tren 1 thread rieng khi g_nthreads>1). */
+static int g_stats_enabled = 0;
+static float g_chan_absmax_cur[N_LAYER][HIDDEN];
+static float g_chan_absmax_h[N_LAYER][MOE_FFN];
+
+static void stats_update_cur(int l, const float *cur) {
+    if (!g_stats_enabled) return;
+    float *dst = g_chan_absmax_cur[l];
+    for (int i = 0; i < HIDDEN; i++) { float a = fabsf(cur[i]); if (a > dst[i]) dst[i] = a; }
+}
+static void stats_update_h(int l, const float *h) {
+    if (!g_stats_enabled) return;
+    float *dst = g_chan_absmax_h[l];
+    for (int i = 0; i < MOE_FFN; i++) { float a = fabsf(h[i]); if (a > dst[i]) dst[i] = a; }
+}
+
 static double now_ms(void) {
     struct timespec ts;
     timespec_get(&ts, TIME_UTC);
@@ -348,6 +375,48 @@ static void quantize_x_int8(int8_t *xq, float *xs, const float *x, int in_dim) {
     }
 }
 
+/* ================= RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 2 — outlier-channel isolation
+ * (kieu LLM.int8() decomposition). quantize_x_int8() GOC o tren giu NGUYEN, dung cho MOI
+ * duong khi g_use_outlier_fix=0 (Q/K/V/O luon dung ban goc — nhiem vu chi yeu cau sua 2 diem
+ * "cur" cho router+expert gate/up va "h" cho down_proj, xem forward_one_token/moe_expert_job).
+ * Danh sach kenh protected LAY TU SO DO Giai doan 1 (khong doan) — dien cu the trong
+ * setup_outlier_protect() o cuoi file. */
+#define MAX_PROTECT 8
+static int g_use_outlier_fix = 0;
+static int g_n_protect_cur = 0;
+static int g_protect_cur[MAX_PROTECT];   /* chi so kenh trong khong gian HIDDEN=2048 */
+static int g_n_protect_h = 0;
+static int g_protect_h[MAX_PROTECT];     /* chi so kenh trong khong gian MOE_FFN=768 */
+
+static inline int is_protected(const int *list, int n, int ch) {
+    for (int k = 0; k < n; k++) if (list[k] == ch) return 1;
+    return 0;
+}
+
+/* quantize_x_int8 nhung LOAI cac kenh outlier ra khoi ca (1) max() dung tinh scale nhom-64 VA
+ * (2) mang int8 (dat 0 de KHONG dong gop sai vao tong int8 — se duoc cong bu CHINH XAC bang
+ * FP32 sau, xem linear_tq33_add_protected). Day CHINH LA co che sua loi: nhom-64 chua outlier
+ * gio tinh scale tu 63 kenh "binh thuong" con lai, khong con bi keo méo boi outlier nua. */
+static void quantize_x_int8_protected(int8_t *xq, float *xs, const float *x, int in_dim,
+                                       const int *prot_list, int n_prot) {
+    int nb = in_dim / 64;
+    for (int b = 0; b < nb; b++) {
+        float m = 0.0f;
+        for (int i = 0; i < 64; i++) {
+            int ch = b * 64 + i;
+            if (is_protected(prot_list, n_prot, ch)) continue;
+            float a = fabsf(x[ch]); if (a > m) m = a;
+        }
+        float sc = m > 0 ? m / 127.0f : 1.0f;
+        xs[b] = sc;
+        for (int i = 0; i < 64; i++) {
+            int ch = b * 64 + i;
+            if (is_protected(prot_list, n_prot, ch)) { xq[ch] = 0; continue; }
+            xq[ch] = (int8_t)lrintf(x[ch] / sc);
+        }
+    }
+}
+
 /* dot bf16(w) . f32(x) bang AVX2 — BAT BUOC viet AVX2 tuong minh ngay tu dau (bai hoc 0.6B
  * muc 4.1: scalar loop KHONG duoc clang tu dong vector hoa voi strict FP semantics). bf16->f32
  * bang cach shift trai 16 bit thanh bit-pattern f32 (dung chuan, khong mat gi vi bf16 la 8 bit
@@ -499,6 +568,50 @@ static void linear_tq33_rows_from_q(float *out, const int8_t *xq, const float *x
         out[o] = row_dot_avx2(packed_base + (size_t)o * row_stride, (int)tm->nb, xq, xs, table);
 }
 
+/* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 2 — cong THEM dong gop CHINH XAC (FP32) cua cac kenh
+ * protected vao out[] da tinh boi duong int8 o tren (row_dot_avx2 voi xq[protected]=0 nen
+ * KHONG dong gop gi tu duong int8 cho dung cac kenh nay — xem quantize_x_int8_protected).
+ * Voi MOI hang dau ra o: giai ma DUNG cac block-64 chua kenh protected bang decode_block() (ham
+ * NAY, khong sua), lay gia tri ternary CHINH XAC tai vi tri kenh, nhan voi x_fp32 THAT (chua
+ * lam tron int8) + scale codebook cua dung block do, cong don — day la phep tinh LOSSLESS (format
+ * TQ33 da xac nhan lossless 194/196 tensor 0.6B, xem RESEARCH_TQ33_RUNNER.md muc 3.1), sai so
+ * CHI con la lam tron float32 thuan tuy, khong con sai so luong tu hoa int8 cho DUNG cac kenh
+ * nay. So kenh protected rat it (<=MAX_PROTECT=8) va thuong tap trung trong 1-2 block/64 (xem
+ * Giai doan 1) nen chi phi them khong dang ke so voi 196-1392 GEMV/token da co. An toan da luong:
+ * CHI doc g_packed/g_codebooks/x (read-only, dung chung duoc giua nhieu thread) va ghi vao
+ * out[] cua RIENG caller (gate[j]/up[j]/eo+j*HIDDEN — moi job 1 slot rieng, khong dung chung). */
+static void linear_tq33_add_protected(float *out, int out_dim, const float *x,
+                                       const TQ33Meta *tm, const int *prot_list, int n_prot) {
+    if (n_prot <= 0) return;
+    int blocks[MAX_PROTECT], nblocks = 0;
+    for (int k = 0; k < n_prot; k++) {
+        int b = prot_list[k] / 64;
+        int found = 0;
+        for (int z = 0; z < nblocks; z++) if (blocks[z] == b) { found = 1; break; }
+        if (!found) blocks[nblocks++] = b;
+    }
+    const uint8_t *packed_base = g_packed + tm->byte_offset;
+    const float *table = g_codebooks + tm->cb_offset;
+    size_t row_stride = (size_t)tm->nb * 12;
+    for (int o = 0; o < out_dim; o++) {
+        const uint8_t *row = packed_base + (size_t)o * row_stride;
+        float acc = 0.0f;
+        for (int zb = 0; zb < nblocks; zb++) {
+            int b = blocks[zb];
+            const uint8_t *p = row + (size_t)b * 12;
+            int8_t t64[64] __attribute__((aligned(32)));
+            decode_block(p, t64);
+            float wscale = table[p[11]];
+            for (int k = 0; k < n_prot; k++) {
+                int ch = prot_list[k];
+                if (ch / 64 != b) continue;
+                acc += (float)t64[ch % 64] * wscale * x[ch];
+            }
+        }
+        out[o] += acc;
+    }
+}
+
 /* linear bf16 row-parallel (router + lm_head — dung dot_bf16_f32_avx2, KHONG upconvert ca
  * ma tran sang F32 de giu nguyen loi ich bang thong bf16, xem chu thich dau file). */
 typedef struct { float *out; const float *x; const uint16_t *W; int in_dim; } Bf16RowCtx;
@@ -546,6 +659,11 @@ typedef struct {
     int layer;
     const int8_t *xq; const float *xs;   /* x (post ffn_norm) DA quantize SAN, dung CHUNG cho
                                              gate/up cua CA 8 expert — chi tinh 1 lan/layer */
+    const float *x_fp32;                  /* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 2: CHINH
+                                             ban fp32 chua luong tu cua cur (HIDDEN) — can de
+                                             cong bu dong gop outlier-channel CHINH XAC cho
+                                             gate/up khi g_use_outlier_fix=1 (chi doc, an toan
+                                             dung chung giua cac thread/job) */
     const int *sel_idx;                   /* expert id duoc chon, [N_ACTIVE] */
     float *expert_out;                    /* [N_ACTIVE][HIDDEN], MOI JOB ghi vao slot j RIENG */
 } MoeJobCtx;
@@ -560,13 +678,28 @@ static void moe_expert_job(void *ctx_, int j) {
 
     linear_tq33_rows_from_q(gate, c->xq, c->xs, wg, MOE_FFN);
     linear_tq33_rows_from_q(up, c->xq, c->xs, wu, MOE_FFN);
+    if (g_use_outlier_fix) {
+        /* cong bu dong gop CHINH XAC cua cac kenh outlier trong "cur" (bi loai khoi duong int8
+         * boi quantize_x_int8_protected da goi truoc parallel_jobs — xem forward_one_token) */
+        linear_tq33_add_protected(gate, MOE_FFN, c->x_fp32, wg, g_protect_cur, g_n_protect_cur);
+        linear_tq33_add_protected(up, MOE_FFN, c->x_fp32, wu, g_protect_cur, g_n_protect_cur);
+    }
     for (int i = 0; i < MOE_FFN; i++) h[i] = moe_silu(gate[i]) * up[i];
+
+    /* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 1: instrumentation do outlier THAT tren "h" (input
+     * cho down_proj) — mac dinh tat (g_stats_enabled=0), khong doi so hoc khi tat. */
+    stats_update_h(c->layer, h);
 
     /* down: input h RIENG cho tung expert -> quantize RIENG (buffer slot j, khong static
      * chung -> an toan khi nhieu thread chay dong thoi) */
-    quantize_x_int8(g_moe_hq[j], g_moe_hs[j], h, MOE_FFN);
+    if (g_use_outlier_fix)
+        quantize_x_int8_protected(g_moe_hq[j], g_moe_hs[j], h, MOE_FFN, g_protect_h, g_n_protect_h);
+    else
+        quantize_x_int8(g_moe_hq[j], g_moe_hs[j], h, MOE_FFN);
     float *eo = c->expert_out + (size_t)j * HIDDEN;
     linear_tq33_rows_from_q(eo, g_moe_hq[j], g_moe_hs[j], wd, HIDDEN);
+    if (g_use_outlier_fix)
+        linear_tq33_add_protected(eo, HIDDEN, h, wd, g_protect_h, g_n_protect_h);
 }
 
 /* ================= debug dump (Giai doan B.4 — so oracle 1-2 layer dau) ================== */
@@ -660,6 +793,10 @@ static int forward_one_token(int32_t token_id, int pos, float *K_cache, float *V
         rmsnorm(cur, ffn_inp, g_ln_post[l], HIDDEN);
         g_t_norm_rope += now_ms() - t0;
 
+        /* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 1: instrumentation do outlier THAT tren "cur"
+         * (input CHUNG cho router + expert gate/up) — mac dinh tat, khong doi so hoc khi tat. */
+        stats_update_cur(l, cur);
+
         /* ---- router: softmax TOAN BO 128 expert -> chon top-8 -> renormalize ---- */
         t0 = now_ms();
         linear_bf16(router_logits, cur, ex_ptr(ex_layer(l, EX_ROUTER_OFF)), HIDDEN, N_EXPERT);
@@ -674,9 +811,12 @@ static int forward_one_token(int32_t token_id, int pos, float *K_cache, float *V
 
         /* ---- 8 expert song song theo TUNG EXPERT (khong theo hang GEMV) ---- */
         t0 = now_ms();
-        quantize_x_int8(shared_xq, shared_xs, cur, HIDDEN);
+        if (g_use_outlier_fix)
+            quantize_x_int8_protected(shared_xq, shared_xs, cur, HIDDEN, g_protect_cur, g_n_protect_cur);
+        else
+            quantize_x_int8(shared_xq, shared_xs, cur, HIDDEN);
         MoeJobCtx jctx;
-        jctx.layer = l; jctx.xq = shared_xq; jctx.xs = shared_xs;
+        jctx.layer = l; jctx.xq = shared_xq; jctx.xs = shared_xs; jctx.x_fp32 = cur;
         jctx.sel_idx = sel_idx; jctx.expert_out = &expert_out[0][0];
         parallel_jobs(N_ACTIVE, moe_expert_job, &jctx);
         moe_combine(moe_combined, &expert_out[0][0], sel_weight, N_ACTIVE, HIDDEN);
@@ -797,6 +937,41 @@ static void run_generate(const int32_t *prompt_tokens, int prompt_len, int n_gen
     free(K_cache); free(V_cache); free(logits); free(all_tokens);
 }
 
+/* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 1 — che do CLI moi "stats": chay forward qua 1 chuoi
+ * prompt THAT (dung lai forward_one_token(), KHONG sinh token moi, KHONG can logits) de tich
+ * luy g_chan_absmax_cur/g_chan_absmax_h theo TUNG KENH roi ghi ra file nhi phan cho Python doc.
+ * EP g_nthreads=1: stats_update_h() goi TU BEN TRONG moe_expert_job(), neu g_nthreads>1 nhieu
+ * expert (job) chay tren nhieu thread SONG SONG se cung ghi vao g_chan_absmax_h[l] (RACE thuc
+ * su — mat vai lan cap nhat max, khong sai lech nghiem trong nhung KHONG can thiet phai chap
+ * nhan rui ro nay: 1 lan chay qua vai tram token o 1 luong van du nhanh cho muc dich do dac). */
+static void run_stats(const int32_t *prompt_tokens, int prompt_len, const char *out_path) {
+    g_nthreads = 1;
+    g_stats_enabled = 1;
+    memset(g_chan_absmax_cur, 0, sizeof(g_chan_absmax_cur));
+    memset(g_chan_absmax_h, 0, sizeof(g_chan_absmax_h));
+
+    float *K_cache = calloc((size_t)N_LAYER * MAX_POS * KV_DIM, 4);
+    float *V_cache = calloc((size_t)N_LAYER * MAX_POS * KV_DIM, 4);
+    double t0 = now_ms();
+    for (int p = 0; p < prompt_len; p++)
+        forward_one_token(prompt_tokens[p], p, K_cache, V_cache, NULL, 0);
+    printf("[stats] da chay forward qua %d token (%.1fs), dang ghi thong ke...\n",
+           prompt_len, (now_ms() - t0) / 1000.0);
+
+    FILE *f = fopen(out_path, "wb");
+    if (!f) { fprintf(stderr, "khong ghi duoc %s\n", out_path); exit(1); }
+    int32_t hdr[4] = {N_LAYER, HIDDEN, MOE_FFN, prompt_len};
+    fwrite(hdr, 4, 4, f);
+    fwrite(g_chan_absmax_cur, sizeof(float), (size_t)N_LAYER * HIDDEN, f);
+    fwrite(g_chan_absmax_h, sizeof(float), (size_t)N_LAYER * MOE_FFN, f);
+    fclose(f);
+    printf("[stats] da ghi g_chan_absmax_cur[%d][%d] + g_chan_absmax_h[%d][%d] -> %s\n",
+           N_LAYER, HIDDEN, N_LAYER, MOE_FFN, out_path);
+
+    g_stats_enabled = 0;
+    free(K_cache); free(V_cache);
+}
+
 /* ================= benchmark + dump oracle ================= */
 static void write_dump(const char *path, int prompt_len) {
     FILE *f = fopen(path, "wb");
@@ -872,6 +1047,50 @@ static void run_benchmark(const int32_t *prompt_tokens, int prompt_len, int n_ge
     free(K_cache); free(V_cache); free(logits);
 }
 
+/* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 2 — danh sach kenh protected CO DINH, LAY TU SO DO
+ * Giai doan 1 that (chay che do "stats" + phan tich bang analyze_outlier_stats.py), KHONG
+ * doan truoc. Xem bang so do + ly do chon K trong RESEARCH_TQ33_OUTLIER_FIX.md muc Giai doan 1.
+ */
+static void setup_outlier_protect(void) {
+    g_use_outlier_fix = 1;
+
+    /* So do THAT tren 470 token tieng Viet that (xem analyze_outlier_stats.py + outlier_stats.bin,
+     * chi tiet bang so trong RESEARCH_TQ33_OUTLIER_FIX.md muc Giai doan 1):
+     *
+     * PROTECT_CUR (khong gian HIDDEN=2048, input router+expert gate/up): kenh 0 la outlier CUC
+     * MANH VA CO DINH — RANK 0 TUYET DOI (gia tri LON NHAT trong ca 2048 kenh, khong chi trong
+     * nhom-64 chua no) o 45/48 layer (layer 2..46 lien tuc), ty le vs median-nhom dat 55-272x o
+     * nhieu layer. Kenh 0 KHONG con la outlier o layer 0 (rank 88), layer 1 (rank 19), va DAC
+     * BIET la layer 47 cuoi cung (rank 1876/2048 — gan day, hoan toan KHONG outlier — outlier o
+     * layer 47 chuyen sang kenh khac, xem duoi). Cac kenh 8/24/28/32/40 la outlier THU CAP, xuat
+     * hien lai trong top-5 tung layer voi tan suat thap hon (30/22/19/15/12 trong 48 layer) —
+     * CA 6 kenh nay cung nam trong block-64 dau tien (kenh 0-63) nen fix chi can giai ma 1 block.
+     *
+     * PROTECT_H (khong gian MOE_FFN=768, input down_proj): tin hieu YEU HON VA IT NHAT QUAN HON
+     * han "cur" — KHONG co kenh CO DINH chiem uu the (top-1 rai rac, kenh manh nhat cung chi
+     * top-1 o 3/48 layer). Kenh 0 va 8 la ung vien tot nhat do do (lot top-50/768 toan cuc o
+     * 31/48 va 26/48 layer), cac kenh 16/20/24/28 yeu hon (14-22/48). Gia thuyet hop ly: "h" la
+     * gia tri TINH LAI moi lan tu trong so RIENG cua expert duoc chon (128 expert khac nhau moi
+     * layer, khac "cur" gan voi residual stream ben vung xuyen suot mang) nen khong co 1 kenh
+     * "massive activation" CO DINH giong nhu cur — ky vong fix o day cai thien IT hon nhieu so
+     * voi "cur". Van chon 6 kenh top-tan-suat lam protected (toan bo cung nam block-64 dau) vi
+     * ve mat toan hoc, bao ve 1 kenh KHONG PHAI outlier trong 1 nhom cu the la NO-OP (xem chu
+     * thich quantize_x_int8_protected — khong lam sai lech scale neu kenh do khong phai max cua
+     * nhom), nen thu van an toan du tin hieu yeu hon. */
+    static const int PROTECT_CUR[] = { 0, 8, 24, 28, 32, 40 };
+    static const int PROTECT_H[] = { 0, 8, 16, 20, 24, 28 };
+    g_n_protect_cur = (int)(sizeof(PROTECT_CUR) / sizeof(PROTECT_CUR[0]));
+    g_n_protect_h = (int)(sizeof(PROTECT_H) / sizeof(PROTECT_H[0]));
+    memcpy(g_protect_cur, PROTECT_CUR, sizeof(PROTECT_CUR));
+    memcpy(g_protect_h, PROTECT_H, sizeof(PROTECT_H));
+
+    printf("[outlier-fix] BAT: %d kenh protected trong 'cur' (HIDDEN=%d): ", g_n_protect_cur, HIDDEN);
+    for (int i = 0; i < g_n_protect_cur; i++) printf("%d ", g_protect_cur[i]);
+    printf("\n[outlier-fix] BAT: %d kenh protected trong 'h' (MOE_FFN=%d): ", g_n_protect_h, MOE_FFN);
+    for (int i = 0; i < g_n_protect_h; i++) printf("%d ", g_protect_h[i]);
+    printf("\n");
+}
+
 /* ================= main ================= */
 int main(int argc, char **argv) {
     /* che do MOI: qwen3moe_runner_tq33.exe gen <runner_dir> <extras_bin> <prompt_tokens_bin>
@@ -905,6 +1124,104 @@ int main(int argc, char **argv) {
                plen, temp, top_p, seed, nth, gen_n);
 
         run_generate(ptoks, plen, gen_n, temp, top_p, seed, nth, out_path);
+        return 0;
+    }
+
+    /* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 1 — che do MOI "stats":
+     * qwen3moe_runner_tq33.exe stats <runner_dir> <extras_bin> <prompt_tokens_bin> <out_stats_bin>
+     * Chay forward qua 1 chuoi prompt that (KHONG sinh, KHONG sampling), tich luy absmax theo
+     * TUNG KENH cho "cur" (router+expert gate/up) va "h" (down_proj input), ghi ra file nhi
+     * phan cho analyze_outlier_stats.py doc. KHONG dung/sua duong run_benchmark()/"gen" da co. */
+    if (argc > 1 && strcmp(argv[1], "stats") == 0) {
+        const char *r_dir = argv[2], *ex_bin = argv[3], *prompt_path = argv[4], *out_path = argv[5];
+
+        build_tq33_tables();
+        load_linear_index(r_dir);
+        load_packed_data(r_dir);
+        load_extras_index(r_dir);
+        load_extras_data(ex_bin);
+        sanity_check_shapes();
+        convert_norms();
+
+        FILE *pf = fopen(prompt_path, "rb");
+        if (!pf) { fprintf(stderr, "khong mo duoc %s\n", prompt_path); return 1; }
+        int32_t plen;
+        if (fread(&plen, 4, 1, pf) != 1) return 1;
+        int32_t *ptoks = malloc(sizeof(int32_t) * plen);
+        if (fread(ptoks, 4, plen, pf) != (size_t)plen) return 1;
+        fclose(pf);
+        printf("[stats] prompt_len=%d (Giai doan 1 - do outlier-channel that, 1 luong)\n", plen);
+
+        run_stats(ptoks, plen, out_path);
+        return 0;
+    }
+
+    /* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 3 — che do MOI "genfix": Y HET "gen" o tren (sampling
+     * that, cung prompt/seed de so sanh cong bang) nhung BAT outlier-fix (setup_outlier_protect())
+     * truoc khi sinh — dung lai NGUYEN VAN run_generate(), CHI khac o g_use_outlier_fix=1. */
+    if (argc > 1 && strcmp(argv[1], "genfix") == 0) {
+        const char *r_dir = argv[2], *ex_bin = argv[3], *prompt_path = argv[4], *out_path = argv[5];
+        int gen_n = atoi(argv[6]);
+        float temp = (float)atof(argv[7]);
+        float top_p = (float)atof(argv[8]);
+        uint32_t seed = (uint32_t)strtoul(argv[9], NULL, 10);
+        int nth = argc > 10 ? atoi(argv[10]) : 6;
+
+        build_tq33_tables();
+        load_linear_index(r_dir);
+        load_packed_data(r_dir);
+        load_extras_index(r_dir);
+        load_extras_data(ex_bin);
+        sanity_check_shapes();
+        convert_norms();
+        setup_outlier_protect();
+
+        FILE *pf = fopen(prompt_path, "rb");
+        if (!pf) { fprintf(stderr, "khong mo duoc %s\n", prompt_path); return 1; }
+        int32_t plen;
+        if (fread(&plen, 4, 1, pf) != 1) return 1;
+        int32_t *ptoks = malloc(sizeof(int32_t) * plen);
+        if (fread(ptoks, 4, plen, pf) != (size_t)plen) return 1;
+        fclose(pf);
+        printf("[genfix] prompt_len=%d temp=%.2f top_p=%.2f seed=%u threads=%d n_gen=%d "
+               "(outlier-fix BAT)\n", plen, temp, top_p, seed, nth, gen_n);
+
+        run_generate(ptoks, plen, gen_n, temp, top_p, seed, nth, out_path);
+        return 0;
+    }
+
+    /* RESEARCH_TQ33_OUTLIER_FIX.md Giai doan 2.3 — che do MOI "dumpfix": Y HET che do mac dinh
+     * o duoi (doc oracle/tokens.bin, goi run_benchmark() KHONG SUA) nhung BAT outlier-fix truoc,
+     * VA ghi dump ra ten file KHAC (runner_dump_layers_fixed.bin) de KHONG de len dump goc
+     * (runner_dump_layers.bin, dung lam baseline "truoc fix" — xem validate_30b_layers_compare.py). */
+    if (argc > 1 && strcmp(argv[1], "dumpfix") == 0) {
+        const char *runner_dir = argv[2], *extras_bin = argv[3], *oracle_dir = argv[4], *out_dir = argv[5];
+        int n_gen = argc > 6 ? atoi(argv[6]) : 20;
+
+        build_tq33_tables();
+        load_linear_index(runner_dir);
+        load_packed_data(runner_dir);
+        load_extras_index(runner_dir);
+        load_extras_data(extras_bin);
+        sanity_check_shapes();
+        convert_norms();
+        setup_outlier_protect();
+
+        char tpath[512], dpath[512];
+        snprintf(tpath, sizeof tpath, "%s\\tokens.bin", oracle_dir);
+        FILE *tf = fopen(tpath, "rb");
+        if (!tf) { fprintf(stderr, "khong mo duoc %s\n", tpath); return 1; }
+        int32_t seq_len;
+        if (fread(&seq_len, 4, 1, tf) != 1) return 1;
+        int32_t *tokens = (int32_t *)malloc(sizeof(int32_t) * seq_len);
+        if (fread(tokens, 4, seq_len, tf) != (size_t)seq_len) return 1;
+        fclose(tf);
+        printf("[dumpfix] seq_len=%d, ghi dump -> runner_dump_layers_fixed.bin\n", seq_len);
+
+        snprintf(dpath, sizeof dpath, "%s\\runner_dump_layers_fixed.bin", out_dir);
+        int threads_try[] = {1, 2, 4, 6, 8, 12, 14};
+        int n_try = (int)(sizeof(threads_try) / sizeof(threads_try[0]));
+        run_benchmark(tokens, seq_len, n_gen, threads_try, n_try, dpath);
         return 0;
     }
 
