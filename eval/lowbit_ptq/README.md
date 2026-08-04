@@ -528,6 +528,38 @@ trong llama.cpp fork hoặc runner riêng 0.6B (4–7 ngày). Files: `exp_t24_co
 **Modal 04/08 sáng**: free30 vẫn spend-limit → pack TQ2_0 vẫn blocked $3; TQ33 không đổi
 kết luận này (TQ33 convert từ CÙNG ckpt S1-native, làm local được khi có runner).
 
+## Bài 19 — TQ33 30B-A3B: từ file 1.5bpw đến runner MoE chạy thật, validate 48/48 layer (04/08)
+
+Sau Bài 18 (format TQ33 thiết kế + microbench), hoàn tất toàn bộ chuỗi: tải ckpt 30B →
+encode → dựng runner MoE → đo tốc độ thật. Chi tiết đầy đủ: `RESEARCH_TQ33.md` (encode +
+CRC saga) và `RESEARCH_TQ33_RUNNER_30B.md` (runner + validate + tốc độ).
+
+**Sự cố CRC-32 khi tải 61GB (~2h, bài học đáng nhớ):** 2 lần tải độc lập lỗi ở 2 chỗ hoàn
+toàn khác nhau (transfer-side, không phải hỏng nguồn). Bẫy: CRC-32 chỉ bảo vệ DATA của entry
+zip, không bảo vệ local header — lỗi chạm header khiến cả zipfile chuẩn lẫn code tự viết tính
+sai vị trí data, báo "hỏng" oan. Fix bằng suy offset từ bất biến alignment-64 thay vì tin
+header — tự phục hồi 42/112 tensor. 70 tensor (41/6144 expert) hỏng thật không phục hồi được
+sau 3 lần thử → zero-hoá minh bạch, ghi rõ trong `corrupted_zeroed.json`.
+
+**Bug bpw tự bắt được:** bản encode đầu lưu scale float32 thô → 1.875bpw thay vì 1.5 thiết
+kế. Sửa bằng codebook 1-byte/tensor (≤256 giá trị, đã verify). **Kết quả cuối: 30B TQ33 =
+6.88GB** (5.61GB linear @1.501bpw + 1.27GB embed/lm_head/norm/router giữ bf16).
+
+**Runner MoE (`qwen3moe_runner_tq33.c`)**: mở rộng runner 0.6B (Bài 18), thuật toán routing
+xác nhận qua đọc trực tiếp source llama.cpp (`build_moe_ffn`): softmax-128 → top8 → renorm
+→ SwiGLU/expert → weighted-sum, không bias/scale/shared-expert. Validate 2 lớp (thuật toán cô
+lập rel-err 2.7e-7; TOÀN BỘ 48/48 layer thật vs oracle đọc ckpt gốc — routing khớp hoàn hảo ở
+mọi lựa chọn tự tin cao, lệch chỉ ở nhiễu-số-học-ranh-giới). Đa luồng theo EXPERT (không theo
+GEMV — bài học 0.6B) đạt 9.3-13.2 GB/s @12-14T so với 0.6B chỉ 4.5-5.7 GB/s @6T.
+
+**Tốc độ thật: 5.1-17.9 tok/s tuỳ luồng/nhiệt, dải bền vững 13.0-14.4 tok/s @8+ luồng** — SO
+với Q4_K_XL/IQ1_S đã đo trên cùng máy (~16.0-16.5 tok/s): **KHÔNG vượt trội tốc độ** như ước
+tính lạc quan ban đầu (lm_head bf16 622MB/token không nén vẫn chiếm 18-37%, vì TQ33-active
+thật ~486MB/token — ước tính "10-15MB" ban đầu sai 32 lần). **Giá trị thật của TQ33 là DUNG
+LƯỢNG** (6.88GB vs 8.4-16.5GB các format khác) ở tốc độ tương đương, không phải tốc độ vượt
+trội. Chất lượng sinh văn bản (ngoài phạm vi đo ở đây) là ckpt **S1-only geo6 677, chưa qua
+LoRA-KD** (233.9) — đây là sàn, không phải trần model có thể đạt.
+
 ## Kiến trúc Qwen3-0.6B: chỗ tận dụng được & chỗ chặn cứng
 
 | | |
