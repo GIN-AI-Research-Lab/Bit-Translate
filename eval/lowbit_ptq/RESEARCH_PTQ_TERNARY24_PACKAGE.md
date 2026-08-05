@@ -90,6 +90,24 @@ threading redesign), tái sử dụng nguyên vẹn không cần sửa kernel g�
 Kernel verify: `i8 maddubs == vnni` khớp tuyệt đối, `tq33 decode-register == decode_block` khớp
 tuyệt đối trên 300 hàng thật.
 
+## 3b. Mixed-precision theo độ nhạy (user hỏi thêm: "có mixed nén phần nặng/chậm không?")
+
+`exp_as_mixed_precision_sensitivity.py` (TF-only, xếp hạng) + `exp_at_mixed_sequential.py`
+(SEQUENTIAL thật): thay vì ép ĐỀU 196 ma trận về ternary 2:4, đo sai số ternary từng ma trận
+riêng để xếp hạng độ nhạy — top nhạy nhất đều là `down_proj`/`o_proj` tầng giữa-sâu (khớp phát
+hiện cũ "Hadamard mạnh nhất ở down_proj/o_proj"). Nâng 39/196 ma trận (20%) nhạy nhất lên
+int4-g32 (4,5bpw), giữ 80% còn lại ternary 2:4 — CẢ HAI loại cùng qua SEQUENTIAL 28-block.
+
+| Cấu hình | bpw | geo6 | ×FP |
+|---|---:|---:|---:|
+| Ternary thuần + SEQUENTIAL (§3) | 1,689 | 634,9 | ×25,8 |
+| **Mixed 20% int4 + 80% ternary + SEQUENTIAL** | 2,311 (+37%) | **483,3** | ×19,7 |
+
+Cải thiện thật (vi −27%, code −34%, zh −33%, math −22%, ja chỉ −5%) đổi lấy dung lượng phần
+linear tăng ~54% (82,6MB→~127MB, tổng gói ước ~284MB thay vì 239,6MB). **Không đổi kết luận
+tổng thể**: geo6 vẫn ×19,7 so FP — bớt tệ hơn với giá đắt hơn, không phải đột phá. Đây là 1
+điểm khác trên đường cong ternary↔int4 đã biết (exp_g cũ), không phải cơ chế mới.
+
 ## 4. Kết luận
 
 Đây là gói PTQ-thuần (không train) hoàn chỉnh đầu tiên của nhánh nghiên cứu tối nay có ĐỦ 3
@@ -109,3 +127,7 @@ nhưng không "dùng được" theo nghĩa hội thoại mạch lạc đa miền
   vá lỗi thiếu bias)
 - Checkpoint: `D:\Bit-Translate-data\qat_ckpts\ternary24_seq_g64_baked.pt`
 - Runner data: `D:\Bit-Translate-data\tq33_runner_ptq24\{weights_f32,tq33_packed,embed_int8,oracle}`
+- `exp_as_mixed_precision_sensitivity.py` + `exp_as_results.json` — sweep TF-only mixed-precision
+- `exp_at_mixed_sequential.py` + `exp_at_results.json` — mixed 20% int4 + SEQUENTIAL thật
+  (checkpoint: `D:\Bit-Translate-data\qat_ckpts\mixed20_seq_baked.pt`, chưa đóng gói TQ33/đo
+  tốc độ vì cải thiện không đủ lớn để đầu tư thêm bước đó)
