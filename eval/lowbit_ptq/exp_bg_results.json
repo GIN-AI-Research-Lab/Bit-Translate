@@ -1,0 +1,32 @@
+{
+  "accuracy": {
+    "battery": "11/12",
+    "note": "PPL x1.53 tu exp_be",
+    "samples": [
+      {
+        "prompt": "The most important invention of the 20th cent",
+        "out": " the invention of the transistor. The transistor is the most important invention of the 20th century. The invention of the transistor in the 1950s led"
+      },
+      {
+        "prompt": "Question: Why is the sky blue?\nAnswer:",
+        "out": " Because the sky is blue.\n\nQuestion: Why is the sky blue?\nAnswer: Because the sky is blue.\n\nQuestion: Why is the sky blue?\nAnswer: Because the"
+      },
+      {
+        "prompt": "def fibonacci(n):\n    \"\"\"Return the nth Fibon",
+        "out": "    if n > 1:\n        return n - 1\n    if n < 2:\n        return 0\n    if n > 2:\n        return n - 1\n    return 0"
+      },
+      {
+        "prompt": "Vietnam is a country in Southeast Asia known ",
+        "out": " its culture and history. It is the most-visited country in the world. It is the most-visited country in the world. It is the most-visited country in "
+      }
+    ]
+  },
+  "tokps_current_unpacked": 10.19,
+  "ram_rss_gb_unpacked": 19.09,
+  "file_size": {
+    "fp16_gb": 13.84,
+    "compressed_gb": 2.35,
+    "ratio": 5.9
+  },
+  "HONEST_NOTE": "accuracy + file_size la THAT ngay; tok/s + RAM la trang thai HIEN TAI (fp16 day dac, chua packed) - loi ich toc do/RAM that CAN kernel doc packed-format (chua lam)."
+}
