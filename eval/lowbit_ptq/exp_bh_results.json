@@ -1,0 +1,16 @@
+{
+  "text": "ppl_big.txt (cung file voi llama-perplexity)",
+  "pytorch": {
+    "baseline_q4dequant": 5.0108,
+    "our_config": 7.8888,
+    "our_ratio_vs_q4": 1.574,
+    "our_bpw": 2.71
+  },
+  "llamacpp": {
+    "Q4_K_M": 2.386,
+    "Q3_K_M": 2.423,
+    "Q2_K": 2.679,
+    "Q2K_ratio_vs_q4": 1.123,
+    "Q2K_bpw": 2.6
+  }
+}

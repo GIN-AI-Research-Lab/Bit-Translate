@@ -137,6 +137,39 @@ bắt nguồn từ VAI TRÒ thành phần, không phải model cụ thể. Đây
 - **Quy trình chuẩn cho model mới**: KHÔNG copy config. Bắt đầu từ thứ hạng đã biết
   (down<gate_up<attention<lm_head), chạy sweep (exp_bc/bd/be, script sẵn) đo NGƯỠNG riêng.
 
+## 2e. ⚠️ ĐO THẬT bằng llama.cpp + SO CÔNG BẰNG vs Q2_K — PHÁN QUYẾT QUAN TRỌNG (exp_bg/bh)
+
+Dùng llama.cpp (kernel CPU thật, có sẵn ở `F:/Project Ai/teams-caption-translator/bin/`) đo
+tok/s + RAM + PPL thật cho OLMoE ở các quant chuẩn, so với config sensitivity tự chế của ta:
+
+| | bpw | tok/s (thật) | RAM/file | PPL ratio vs Q4 (cùng text) |
+|---|---:|---:|---:|---:|
+| Q4_K_M | ~4,5 | 39,9 | 3,92 GiB | ×1,00 (mốc) |
+| Q3_K_M | ~3,3 | 48,0 | 3,11 GiB | ×1,015 |
+| **Q2_K (off-the-shelf)** | **2,6** | **56,6** | **2,39 GiB** | **×1,12** |
+| **Config tự chế của ta** | 2,71 | (cần tự viết kernel) | 2,35GB (file) | **×1,57** |
+
+(Ratio đo công bằng: cùng text ppl_big, tỷ lệ vs Q4 TRONG CÙNG framework — llama.cpp cho quant
+chuẩn, PyTorch cho config ta. exp_bh.)
+
+**PHÁN QUYẾT: Q2_K THẮNG config tự chế trên MỌI trục** — ít bit hơn (2,6 vs 2,71), chất lượng
+tốt hơn nhiều (×1,12 vs ×1,57), có kernel nhanh sẵn (56 tok/s). **→ KHÔNG đáng tự viết kernel
+cho sơ đồ naive của ta trên OLMoE. Muốn deploy OLMoE nén: DÙNG THẲNG Q2_K của llama.cpp.**
+
+**Vì sao Q2_K thắng (bài học thật, quan trọng cho cả hướng "nén model có sẵn"):**
+- Q2_K KHÔNG phải int2 naive — nó là K-quant tinh vi: super-block, scale + MIN bất đối xứng,
+  imatrix-tunable, VÀ tự phân bổ bit theo vai trò tensor. Ý tưởng "phân bổ theo độ nhạy" của
+  ta ĐÚNG nhưng llama.cpp ĐÃ làm rồi ở dạng chín muồi hơn.
+- Bộ lượng tử hóa từng thành phần của ta THÔ (per-group symmetric, không imatrix, không min
+  bất đối xứng) → thua máy K-quant.
+- **Giá trị nghiên cứu của cả chuỗi KHÔNG phải "đánh bại llama.cpp"** — mà là HIỂU CƠ CHẾ
+  (thứ hạng độ nhạy, vì sao gate_up vỡ, sequential cứu ra sao, chuyển giao thế nào). Là
+  artifact deploy thì off-the-shelf Q2_K thắng.
+- **Muốn THẬT SỰ thắng Q2_K**: (a) ghép phân-bổ-theo-độ-nhạy + bộ lượng tử hóa CHÍN (imatrix
+  + asymmetric, tức nâng cấp máy quant của ta lên ngang K-quant) rồi mới thêm allocation; HOẶC
+  (b) xuống dưới 2,6bpw nơi mọi quant llama.cpp sụp — nhưng ta đã chứng minh sub-2bit sụp.
+  Cả hai đều là việc lớn; Q2_K đã rất tốt nên bar cao.
+
 ## 3. Vì sao gate_up nhạy hơn down (cơ chế)
 
 `FFN(x) = down( SiLU(gate(x)) × up(x) )`.
