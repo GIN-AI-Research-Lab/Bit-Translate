@@ -1,0 +1,14 @@
+{
+  "model": "Qwen3-0.6B",
+  "note": "naive vs sequential, ternary 2:4 TAT CA linear",
+  "ppl": {
+    "baseline": 22.054,
+    "naive_all": 2178033.809,
+    "sequential_all": 44626218.021
+  },
+  "x_baseline": {
+    "baseline": 1.0,
+    "naive_all": 98757.34,
+    "sequential_all": 2023461.03
+  }
+}

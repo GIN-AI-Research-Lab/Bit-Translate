@@ -1,0 +1,58 @@
+{
+  "model": "Qwen3-0.6B",
+  "importance": "|x|*||down_col||",
+  "results": {
+    "baseline": {
+      "keep_frac": 1.0,
+      "ppl": 31.296,
+      "x_baseline": 1.0
+    },
+    "keep50%": {
+      "keep_frac": 0.5,
+      "ppl": 36.081,
+      "x_baseline": 1.153
+    },
+    "keep30%": {
+      "keep_frac": 0.3,
+      "ppl": 57.367,
+      "x_baseline": 1.833
+    },
+    "keep23%": {
+      "keep_frac": 0.23,
+      "ppl": 83.44,
+      "x_baseline": 2.666
+    },
+    "keep15%": {
+      "keep_frac": 0.15,
+      "ppl": 162.057,
+      "x_baseline": 5.178
+    }
+  },
+  "compare_exp_aq_absx": {
+    "baseline": {
+      "keep_frac": 1.0,
+      "ppl": 31.296,
+      "x_baseline": 1.0
+    },
+    "keep50%": {
+      "keep_frac": 0.5,
+      "ppl": 36.22,
+      "x_baseline": 1.157
+    },
+    "keep30%": {
+      "keep_frac": 0.3,
+      "ppl": 50.573,
+      "x_baseline": 1.616
+    },
+    "keep23%": {
+      "keep_frac": 0.23,
+      "ppl": 64.416,
+      "x_baseline": 2.058
+    },
+    "keep15%": {
+      "keep_frac": 0.15,
+      "ppl": 114.143,
+      "x_baseline": 3.647
+    }
+  }
+}

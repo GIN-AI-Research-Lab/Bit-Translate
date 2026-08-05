@@ -1,0 +1,31 @@
+{
+  "model": "Qwen3-0.6B",
+  "note": "oracle top-k activation mask, chan tren lac quan",
+  "results": {
+    "baseline": {
+      "keep_frac": 1.0,
+      "ppl": 31.296,
+      "x_baseline": 1.0
+    },
+    "keep50%": {
+      "keep_frac": 0.5,
+      "ppl": 36.22,
+      "x_baseline": 1.157
+    },
+    "keep30%": {
+      "keep_frac": 0.3,
+      "ppl": 50.573,
+      "x_baseline": 1.616
+    },
+    "keep23%": {
+      "keep_frac": 0.23,
+      "ppl": 64.416,
+      "x_baseline": 2.058
+    },
+    "keep15%": {
+      "keep_frac": 0.15,
+      "ppl": 114.143,
+      "x_baseline": 3.647
+    }
+  }
+}

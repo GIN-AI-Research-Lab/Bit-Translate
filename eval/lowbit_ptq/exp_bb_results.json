@@ -1,0 +1,9 @@
+{
+  "baseline": 22.054,
+  "naive_all": 2178033.809,
+  "sequential_v2_all": 10487.709,
+  "x_baseline": {
+    "naive": 98757.3,
+    "seq_v2": 475.54
+  }
+}
