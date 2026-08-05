@@ -1,0 +1,54 @@
+[08:36:06] Nạp Qwen3-0.6B FP32 từ D:\Bit-Translate-data\hf_cache\hub\models--Qwen--Qwen3-0.6B\snapshots\c1899de289a04d12100db370d81485cdf75e47ca
+[08:36:07] 196 ma trận. bpw ternary2:4=1.689  int4-g32=4.500
+[08:36:18] FP32 geo6: {"vi": 69.0, "ja": 125.1, "en": 34.2, "code": 2.7, "zh": 50.8, "math": 5.5, "geo6": 24.6}
+[08:36:18] Thu activation calibration (mix 6 miền)...
+[08:36:45] Xếp hạng độ nhạy từng ma trận...
+[08:36:50] Nâng 39/196 ma trận lên int4: model.layers.1.mlp.down_proj, model.layers.10.mlp.down_proj, model.layers.11.mlp.down_proj, model.layers.11.self_attn.o_proj, model.layers.12.mlp.down_proj, model.layers.12.self_attn.k_proj, model.layers.12.self_attn.o_proj, model.layers.12.self_attn.q_proj, model.layers.12.self_attn.v_proj, model.l ...
+[08:36:50] bpw trung bình thực tế: 2.311
+[08:36:50] === SEQUENTIAL mixed-precision — bake toàn bộ 28 block ===
+[08:38:26]     block  0/28: mse 0.4627 -> 0.1773  (77s)
+[08:39:48]     block  1/28: mse 0.4835 -> 0.2389  (158s)
+[08:41:27]     block  2/28: mse 14922.5098 -> 76.3327  (258s)
+[08:42:41]     block  3/28: mse 76.9104 -> 50.9372  (332s)
+[08:43:53]     block  4/28: mse 51.2575 -> 40.4338  (403s)
+[08:45:31]     block  5/28: mse 41.2789 -> 37.7810  (501s)
+[08:46:56]     block  6/28: mse 38.5107 -> 36.1635  (586s)
+[08:48:22]     block  7/28: mse 37.0580 -> 35.4419  (672s)
+[08:49:39]     block  8/28: mse 36.1559 -> 34.3283  (750s)
+[08:50:39]     block  9/28: mse 35.5044 -> 33.9931  (809s)
+[08:51:38]     block 10/28: mse 36.1366 -> 34.5697  (869s)
+[08:53:05]     block 11/28: mse 37.1917 -> 35.7195  (955s)
+[08:54:51]     block 12/28: mse 36.6771 -> 36.0883  (1062s)
+[08:56:21]     block 13/28: mse 37.1552 -> 36.1061  (1151s)
+[08:57:29]     block 14/28: mse 36.6877 -> 35.3143  (1220s)
+[08:59:08]     block 15/28: mse 37.8026 -> 35.8496  (1319s)
+[09:00:41]     block 16/28: mse 43.1662 -> 39.5365  (1411s)
+[09:02:12]     block 17/28: mse 49.8544 -> 43.9754  (1502s)
+[09:03:41]     block 18/28: mse 59.5180 -> 47.7927  (1592s)
+[09:05:19]     block 19/28: mse 72.4075 -> 58.7520  (1689s)
+[09:06:34]     block 20/28: mse 97.5470 -> 72.2429  (1764s)
+[09:07:45]     block 21/28: mse 127.1963 -> 83.8013  (1835s)
+[09:08:59]     block 22/28: mse 151.9148 -> 102.2893  (1909s)
+[09:10:43]     block 23/28: mse 186.6204 -> 118.3710  (2014s)
+[09:12:08]     block 24/28: mse 216.5373 -> 144.1976  (2098s)
+[09:13:39]     block 25/28: mse 302.1046 -> 181.2638  (2189s)
+[09:15:05]     block 26/28: mse 361.8065 -> 231.1477  (2276s)
+[09:16:36]     block 27/28: mse 6249.4991 -> 483.9676  (2366s)
+[09:16:54] BAKED geo6: {"vi": 533.0, "ja": 1641.2, "en": 1118.9, "code": 159.6, "zh": 1766.6, "math": 46.2, "geo6": 483.3}
+[09:16:56] Đã lưu checkpoint -> D:\Bit-Translate-data\qat_ckpts\mixed20_seq_baked.pt
+
+============================================================================================
+EXP AT — MIXED 20% int4 + 80% ternary2:4, CẢ HAI qua SEQUENTIAL (bpw=2.311)
+============================================================================================
+miền                FP32     mixed+SEQ      x FP
+vi                 68.97        533.04      7.73
+ja                125.07       1641.19     13.12
+en                 34.19       1118.87     32.73
+code                2.66        159.61     60.03
+zh                 50.78       1766.63     34.79
+math                5.54         46.19      8.33
+geo6               24.58        483.32     19.66
+
+So mốc exp_ap (ternary thuần + SEQUENTIAL, bpw=1.689): geo6=634.9
+Mixed ở đây (bpw=2.311, +37% bit): geo6=483.3
+============================================================================================

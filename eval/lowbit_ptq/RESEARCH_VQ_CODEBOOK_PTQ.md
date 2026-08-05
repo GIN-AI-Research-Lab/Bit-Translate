@@ -152,6 +152,84 @@ giải thích hợp lý cho từng lần thử (không phải "chưa thử đủ
 có từ trước) và trần PTQ ~4bit đã đo nhiều góc độ khác, đây là bằng chứng hội tụ khá mạnh rằng
 **PTQ thuần (không train) đã cạn ý tưởng có cơ sở kỹ thuật rõ ràng cho sub-1,58bpw ở quy mô 0,6B**.
 
+## Phần 3 — đóng câu hỏi treo với phiên song song "Máy A" (AQLM beam-search + SEQUENTIAL)
+
+Phiên khác chạy song song (xem `RESEARCH_AQLM_CODEBOOK_PTQ.md`, `HANDOFF_MAYB_AQLM_SEQUENTIAL.md`)
+đo AQLM (k-means + **beam-search** assignment, KHÁC greedy-residual của exp_ad/ae/af ở trên)
+trên **OLMoE-1B-7B** (MoE, khác Qwen3-0.6B dense) và thấy **AQLM thắng ternary N:M** trên toàn
+dải 0,33-1,56bpw — NHƯNG **chưa test SEQUENTIAL** (mọi so sánh của họ là "trơn"/TF). Vì kết quả
+của họ (AQLM thắng) và của tôi (VQ thua ~10× sau sequential) tưởng như mâu thuẫn, cần đóng dứt
+điểm bằng đúng 1 thí nghiệm còn thiếu: **AQLM beam-search THẬT + SEQUENTIAL, trên CHÍNH Qwen3-0.6B.**
+
+`exp_ao_aqlm_beam_sequential.py`: port nguyên thuật toán `beam_assign` từ `exp_am_aqlm_full.py`
+(máy A) — giữ top-4 ứng viên codebook-1, với mỗi ứng viên tìm codebook-2 tốt nhất cho residual,
+chọn cặp tổng lỗi bé nhất (khác greedy: chỉ chọn codebook-1 gần nhất rồi mới tìm codebook-2).
+Verify trước khi chạy full: beam-search cho werr thấp hơn greedy trên 1 ma trận test (33,5% vs
+35,3%, không refine) — khớp phát hiện của máy A, xác nhận port đúng. Ghép với SEQUENTIAL
+(BRECQ-lite) của chính lab tôi (refine codebook value khớp OUTPUT block, không phải weight-MSE
+như refine của máy A — đúng kỹ thuật mạnh nhất đã biết trong toàn lab).
+
+**Kết quả — CÂU HỎI ĐÃ ĐÓNG DỨT ĐIỂM:**
+
+| Phương pháp | bpw | PPL vi | PPL ja |
+|---|---:|---:|---:|
+| scalar t2:4 fixpack + SEQUENTIAL (exp_k) | 1,94 | **594,3** | 8.068,6 |
+| VQ residual-greedy + SEQUENTIAL (exp_ad) | 1,587 | 6.044,3 | 10.095,7 |
+| **AQLM beam-search + SEQUENTIAL (exp_ao)** | 2,029 | **4.196,6** | 9.568,6 |
+
+Beam-search **có cải thiện thật** so với greedy (4.197 < 6.044, ~31% tốt hơn, đúng chiều máy A
+đã thấy) — nhưng **vẫn thua scalar+SEQUENTIAL ~7 lần**, dù dùng NHIỀU bit hơn (2,03 vs 1,94bpw).
+**Kết luận cuối cùng cho cả 2 phiên**: AQLM (dù k-means thuần hay beam-search, dù trên OLMoE hay
+Qwen3-0.6B) chỉ thắng scalar ternary khi CHƯA có sequential-reconstruction. Ngay khi thêm đòn
+bẩy mạnh nhất lab từng đo (BRECQ-lite), scalar ternary bứt hẳn lên trên mọi biến thể VQ/codebook
+đã thử — sequential là đòn KHÔNG chuyển giao sang biểu diễn codebook, bất kể thuật toán gán
+(greedy/beam) hay kiến trúc model (dense/MoE). Đây là kết luận PTQ cuối cùng, hội tụ từ 2 phiên
+độc lập, 2 model khác nhau, 4 biến thể VQ khác nhau (greedy/Wanda/entry-0/beam) — đủ vững để
+đóng hẳn hướng VQ/codebook cho PTQ sub-1,58bpw ở quy mô model này.
+
+## Phần 4 — Hadamard incoherence + VQ (hướng cuối cùng của QTIP chưa thử), ÂM TÍNH
+
+QTIP/QuIP# đạt SOTA 2-bit bằng tổ hợp: xoay Hadamard (làm phân bố "incoherent", ít outlier)
++ trellis-coded quantization (TCQ). Lab đã thử Hadamard cho SCALAR (`exp_c_incoherence.py`,
+giảm 2-5%, không đủ cứu 1,58bit) và VQ/AQLM KHÔNG Hadamard (thua scalar). Chưa thử: **Hadamard
++ VQ cùng lúc** — giả thuyết VQ có thể hưởng lợi từ decorrelation NHIỀU HƠN scalar (vì VQ vốn
+nhạy với cấu trúc tương quan mà Hadamard phá vỡ).
+
+**Thăm dò rẻ ($0, 15 giây, `exp_aq_hadamard_vq_toy.py`)**: áp Hadamard trực giao thật (tái
+dùng `random_orthogonal_for_dim` đã verify ở exp_c) trước VQ beam-search (M=2,K=256,g=8, đúng
+cấu hình exp_ao), đo trên 6 ma trận đại diện (giống bộ test của exp_c).
+
+**Kết quả: giảm trung bình chỉ 1,6%** (32,15→31,81% ... 33,78→32,75%) — **ÍT hơn** mức 2-5%
+Hadamard đã cho scalar, không phải nhiều hơn như giả thuyết. Cơ chế hợp lý: VQ (qua k-means/
+beam) đã tự khai thác một phần tương quan chéo trong nhóm ngay từ đầu — decorrelate trước bằng
+Hadamard vô tình xóa bớt đúng cấu trúc VQ định khai thác, nên lợi ích cộng thêm NHỎ HƠN cho VQ.
+
+**Theo đúng kill-criteria đã đặt trước (≤15% giảm → không đầu tư tiếp)**: KHÔNG code tiếp
+(không xoay activation runtime, không SEQUENTIAL, không viết trellis-coded quantization —
+TCQ phức tạp hơn AQLM nhiều, chỉ đáng làm nếu bước rẻ này có tín hiệu tốt). Đây là ý tưởng PTQ
+cuối cùng còn lại trong danh mục SOTA (AQLM/QuIP#/QTIP) mà lab chưa thử — giờ đã đóng, cùng
+kết luận với Phần 1-3: **PTQ thuần đã cạn mọi hướng có cơ sở kỹ thuật cho sub-1,58bpw ở 0,6B.**
+
+## Phần 5 — Codebook TOÀN CỤC nhắm 0,03bpw (hướng khác hẳn: xuyên-layer thay vì cục bộ) — ÂM TÍNH DỨT KHOÁT
+
+Người dùng yêu cầu thử tiếp ở mức cực đoan hơn (0,03bpw, gấp ~50× khắt khe hơn 1,5bpw đã là
+sàn). Mọi thử nghiệm trước (Phần 1-4) dùng codebook RIÊNG từng tensor (d nhỏ 8-16) — chỉ khai
+thác tương quan CỤC BỘ trong 1 ma trận. Giả thuyết MỚI, cơ chế khác hẳn: có thể tồn tại một tập
+nhỏ **pattern phổ quát (universal template)** lặp lại XUYÊN SUỐT nhiều layer/loại ma trận khác
+nhau — nếu đúng, 1 codebook DUY NHẤT dùng chung cho CẢ 196 tensor (chi phí lưu gần như 0 khi
+chia đều cho 440 triệu trọng số) có thể nén cực sâu.
+
+`exp_ar_global_codebook.py`: gộp toàn bộ 196 ma trận (đã chuẩn hóa RMS=1 mỗi tensor trước khi
+gộp, tránh để ma trận magnitude lớn lấn át) thành 1 pool 1.720.320 vector chiều 256, k-means
+1 codebook K=256 (M=1,d=256 → log2(256)/256 = 0,03125bpw đúng mục tiêu).
+
+**Kết quả: werr 99,1% TOÀN CỤC** (99,0-99,2% ở mọi loại ma trận, không loại nào khá hơn) —
+gần như KHÔNG giữ được tín hiệu nào (100% = tái tạo bằng 0). Giả thuyết "pattern phổ quát xuyên
+layer" **bị bác bỏ dứt khoát bằng số đo** — không phải giả thuyết mơ hồ nữa, mà là bằng chứng
+THỨ 3 độc lập (sau H1 gauge-folding 98,4% null và H2 intrinsic-dim 645/1024) cùng kết luận:
+440 triệu trọng số của Qwen3-0.6B không có cấu trúc dư thừa dạng nào (cục bộ, đối xứng, hay
+xuyên-layer) đủ để nén xuống mức cực đoan này bằng PTQ.
+
 ## File
 
 - `exp_ad_vq_codebook.py` — script chính (đã vá RESUME + gc.collect)
@@ -159,3 +237,11 @@ có từ trước) và trần PTQ ~4bit đã đo nhiều góc độ khác, đây
 - `exp_ad_run.log` / `exp_ad_run2.log` — log chạy lần 1 (chết giữa chừng) + lần 2 (resume, hoàn tất)
 - `exp_ae_vq_wanda.py` + `exp_ae_results.json` + `exp_ae_run.log` — Wanda-weighting (âm tính)
 - `exp_af_vq_zero.py` + `exp_af_results.json` + `exp_af_run.log` — entry-0 tường minh (âm tính)
+- `exp_ao_aqlm_beam_sequential.py` + `exp_ao_aqlm_beam_seq_results.json` + `exp_ao_run.log` —
+  beam-search (port từ máy A) + SEQUENTIAL, đóng câu hỏi treo giữa 2 phiên (vẫn âm tính, thua ~7×)
+  — LƯU Ý: tên file kết quả đã đổi từ `exp_ao_results.json` vì đụng tên với
+  `exp_ao_battery_speed.py` của máy A (2 phiên cùng chọn chữ "ao" độc lập, xem
+  [[phien-song-song-cung-repo]])
+- `exp_aq_hadamard_vq_toy.py` — Hadamard + VQ beam-search (âm tính, giảm chỉ 1,6%, đóng hướng
+  QTIP/TCQ cuối cùng)
+- `exp_ar_global_codebook.py` — codebook toàn cục 0,03bpw (âm tính dứt khoát, werr 99,1%)

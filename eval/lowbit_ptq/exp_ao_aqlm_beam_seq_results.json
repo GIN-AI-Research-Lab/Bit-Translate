@@ -1,0 +1,34 @@
+{
+  "fp32": {
+    "ppl_vi": 68.96674504648298,
+    "ppl_ja": 125.07473679391529
+  },
+  "config": {
+    "n_calib": 48,
+    "kmeans_iters": 6,
+    "beam": 4,
+    "refine_steps": 40,
+    "method": "aqlm_beam_search_port_tu_may_A"
+  },
+  "AQLM_beam_g8_M2K256": {
+    "d": 8,
+    "M": 2,
+    "K": 256,
+    "payload_bpw": 2.0,
+    "codebook_overhead_bpw": 0.029166666666666667,
+    "bpw_total": 2.029166666666667,
+    "werr": 0.39985247003302776,
+    "ppl_vi": 147060.13289329957,
+    "ppl_ja": 180667.99397018162
+  },
+  "AQLM_beam_g8_M2K256_SEQ": {
+    "d": 8,
+    "M": 2,
+    "K": 256,
+    "payload_bpw": 2.0,
+    "codebook_overhead_bpw": 0.029166666666666667,
+    "bpw_total": 2.029166666666667,
+    "ppl_vi": 4196.585946637649,
+    "ppl_ja": 9568.622156978878
+  }
+}

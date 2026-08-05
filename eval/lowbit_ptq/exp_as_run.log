@@ -1,0 +1,29 @@
+[08:31:33] Nạp Qwen3-0.6B FP32 từ D:\Bit-Translate-data\hf_cache\hub\models--Qwen--Qwen3-0.6B\snapshots\c1899de289a04d12100db370d81485cdf75e47ca
+[08:31:34] 196 ma trận. bpw ternary2:4=1.689  bpw int4-g32=4.500
+[08:31:46] FP32 geo6: {"vi": 69.0, "ja": 125.1, "en": 34.2, "code": 2.7, "zh": 50.8, "math": 5.5, "geo6": 24.6}
+[08:31:46] Thu activation calibration (mix 6 miền)...
+[08:32:09] Đo sai số ternary 2:4 từng ma trận (xếp hạng độ nhạy)...
+[08:32:15] Top-5 ma trận NHẠY NHẤT (sai số ternary cao nhất): model.layers.27.mlp.down_proj(31.2%), model.layers.19.mlp.down_proj(31.1%), model.layers.21.mlp.down_proj(31.0%), model.layers.22.mlp.down_proj(31.0%), model.layers.16.mlp.down_proj(30.7%)
+[08:32:15] Top-5 ma trận CHỊU TERNARY TỐT NHẤT: model.layers.1.mlp.gate_proj(25.9%), model.layers.3.mlp.gate_proj(25.9%), model.layers.0.mlp.up_proj(25.9%), model.layers.2.mlp.gate_proj(25.9%), model.layers.0.mlp.gate_proj(25.8%)
+[08:32:30]   upgrade_0pct_int4: bpw=1.689  geo6=616807.5  (vi 4254740.0 ja 1967035.8 en 131432.7 code 595959.3 zh 1960560.1 math 42846.2)
+[08:32:45]   upgrade_10pct_int4: bpw=2.037  geo6=519168.9  (vi 2240533.4 ja 2396819.3 en 250226.3 code 235263.5 zh 2509257.4 math 24685.0)
+[08:32:57]   upgrade_20pct_int4: bpw=2.311  geo6=236970.0  (vi 1565892.6 ja 1569815.5 en 100684.0 code 89874.4 zh 1081385.6 math 7361.6)
+[08:33:15]   upgrade_30pct_int4: bpw=2.559  geo6=67525.9  (vi 270074.6 ja 416844.2 en 26073.3 code 23007.0 zh 575080.7 math 2441.1)
+[08:33:33]   upgrade_50pct_int4: bpw=3.168  geo6=17828.6  (vi 28848.6 ja 158871.4 en 13058.6 code 6750.9 zh 72205.6 math 1100.8)
+[08:33:50]   upgrade_100pct_int4: bpw=4.500  geo6=28.7  (vi 85.7 ja 160.1 en 34.3 code 3.0 zh 68.6 math 5.7)
+
+========================================================================================
+EXP AS — MIXED-PRECISION theo độ nhạy (ternary 2:4 + int4-g32 cho lớp nhạy nhất)
+========================================================================================
+config                         bpw        geo6        vi      code        zh
+----------------------------------------------------------------------------------------
+upgrade_0pct_int4            1.689    616807.5 4254740.0  595959.3 1960560.1
+upgrade_10pct_int4           2.037    519168.9 2240533.4  235263.5 2509257.4
+upgrade_20pct_int4           2.311    236970.0 1565892.6   89874.4 1081385.6
+upgrade_30pct_int4           2.559     67525.9  270074.6   23007.0  575080.7
+upgrade_50pct_int4           3.168     17828.6   28848.6    6750.9   72205.6
+upgrade_100pct_int4          4.500        28.7      85.7       3.0      68.6
+fp32                         16.00        24.6      69.0       2.7      50.8
+========================================================================================
+Mốc so sánh: exp_ap ternary2:4 THUẦN + SEQUENTIAL (không mixed) = bpw 1.689 geo6 634.9
+========================================================================================

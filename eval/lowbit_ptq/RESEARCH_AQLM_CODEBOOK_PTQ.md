@@ -371,6 +371,39 @@ AQLM+sequential (BRECQ-lite, port đúng `s1_sequential`-style code) trên OLMoE
 với scalar ternary+sequential CÙNG model — đây là phép so sánh THỰC SỰ tương đương với thứ
 máy B đã đo, hiện chưa ai làm.
 
+## 5d. CÂU HỎI ĐÃ ĐÓNG — XÁC NHẬN ĐỘC LẬP THỨ 2 (05/08, máy B — `exp_ao_aqlm_beam_sequential.py`,
+đọc SAU mục 5c ở trên vì mục đó đã tự đảo ngược kết luận bằng con đường khác (PPL full-model);
+mục này xác nhận CÙNG chiều bằng con đường thứ 3 (SEQUENTIAL trên Qwen3-0.6B, không phải PPL
+full-model OLMoE) — 2 con đường độc lập, cùng kết luận, xem
+`RESEARCH_VQ_CODEBOOK_PTQ.md` Phần 3 để biết chi tiết đầy đủ)
+
+Máy B đã port NGUYÊN thuật toán `beam_assign` từ `exp_am_aqlm_full.py` (verify trước khi chạy
+full: werr thấp hơn greedy 33,5% vs 35,3% trên 1 ma trận, khớp đúng chiều ablation (a)→(b) của
+máy A) và ghép với SEQUENTIAL (BRECQ-lite) — chạy trên Qwen3-0.6B (không phải OLMoE, nhưng cùng
+họ so sánh scalar-vs-VQ đã có sẵn mốc để đối chiếu):
+
+| Phương pháp | bpw | PPL vi |
+|---|---:|---:|
+| scalar t2:4 fixpack + SEQUENTIAL | 1,94 | **594,3** |
+| VQ residual-greedy + SEQUENTIAL | 1,587 | 6.044,3 |
+| **AQLM beam-search + SEQUENTIAL** | 2,029 | **4.196,6** |
+
+**Kết luận theo đúng bảng tiêu chí đã ghi trước ở `HANDOFF_MAYB_AQLM_SEQUENTIAL.md` §3**: rơi
+vào ô **"AQLM+SEQ thua scalar+SEQ, gap ~10× (giống máy B đã đo VQ)"** (thực đo ~7×, cùng bucket
+định tính) → **Đóng dứt điểm: AQLM chỉ thắng khi CHƯA có sequential; sequential là đòn KHÔNG
+chuyển giao sang codebook**, dù dùng thuật toán gán mã tốt nhất đã biết (beam-search) và dù
+dùng NHIỀU bit hơn scalar (2,03 vs 1,94bpw). Beam-search có cải thiện thật so với greedy
+(~31%, đúng chiều máy A đã thấy trong ablation OLMoE) nhưng không đủ để đảo ngược kết luận.
+
+Điểm mâu thuẫn ở mục 5b coi như đã giải thích: kết quả "AQLM thắng" của máy A chỉ đúng ở tầng
+TF (chưa sequential); kết quả "VQ thua" của máy B đúng ở tầng SEQUENTIAL — cả hai đều đúng
+trong phạm vi đo của mình, không ai sai, chỉ là 2 lát cắt khác nhau của cùng 1 hiện tượng.
+Khác biệt model (Qwen3-0.6B dense vs OLMoE MoE) chưa được loại trừ hoàn toàn (khuyến nghị: nếu
+cần chắc chắn tuyệt đối, chạy lại đúng thí nghiệm này trên OLMoE) nhưng với gap ~7× nhất quán
+qua 4 biến thể VQ khác nhau (greedy/Wanda/entry-0/beam) trên model đã test, xác suất kết luận
+đảo ngược khi đổi sang OLMoE là thấp — **đủ cơ sở đóng hướng VQ/codebook PTQ cho vòng thăm dò
+này.**
+
 ## 6. Bản đồ file dự kiến
 
 | File | Vai trò | Trạng thái |
