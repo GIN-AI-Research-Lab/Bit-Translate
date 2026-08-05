@@ -1,0 +1,29 @@
+{
+  "baseline": {
+    "ppl": 13.744,
+    "battery": "12/12"
+  },
+  "probe_down_ternary": {
+    "ppl": 701.907,
+    "x_base": 51.07
+  },
+  "probe_gateup_ternary": {
+    "ppl": 4607.051,
+    "x_base": 335.2
+  },
+  "probe_attn_ternary": {
+    "ppl": 316158.511,
+    "x_base": 23002.84
+  },
+  "transfer_olmoe_config": {
+    "config": {
+      "down": "ternary",
+      "gateup": "int3",
+      "attn": "int4",
+      "embhead": "int4"
+    },
+    "ppl": 6771.741,
+    "x_base": 492.69,
+    "battery": "1/12"
+  }
+}

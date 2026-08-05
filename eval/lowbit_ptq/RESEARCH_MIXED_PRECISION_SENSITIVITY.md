@@ -110,6 +110,33 @@ Trên nền down=ternary+gate_up=int3+attn=int4, quét embed_tokens+lm_head + ba
 =int8): 2,45GB = 5,6×, ×1,41, 10/12. Tất cả bằng phân-bổ-bit-theo-độ-nhạy, đo bằng CẢ PPL
 lẫn battery, KHÔNG reconstruction/train.
 
+## 2d. exp_bf — KIỂM CHỨNG CHUYỂN GIAO (Qwen3-0.6B dense vs OLMoE MoE)
+
+Câu hỏi: thứ hạng + config tìm trên OLMoE có chuyển giao sang kiến trúc KHÁC HẲN không?
+Test trên Qwen3-0.6B (dense, GQA 16q/8kv, tied embedding — khác OLMoE cả 3 mặt).
+
+**Ranking probe (mỗi thành phần ternary riêng lẻ, ×baseline PPL):**
+| | Qwen3-0.6B | OLMoE |
+|---|---:|---|
+| down | ×51 (nhẹ nhất) | ×1,35 (nhẹ nhất) |
+| gate_up | ×335 | (giữa) |
+| attention | ×23.003 (nặng nhất) | (nặng nhất) |
+
+**→ THỨ HẠNG CHUYỂN GIAO HOÀN TOÀN** (down < gate_up < attention), trên kiến trúc khác hẳn →
+bắt nguồn từ VAI TRÒ thành phần, không phải model cụ thể. Đây là kiến thức mang đi được.
+
+**→ NGƯỠNG KHÔNG chuyển giao**: config thắng OLMoE (×1,53) áp thẳng Qwen3-0.6B → **×492 (vỡ)**.
+
+**Giải thích + hệ quả cho lộ trình (quan trọng):**
+- OLMoE nén tốt (down=ternary chỉ ×1,35) vì là **MoE 7B tổng** — dư thừa lớn (7B params +
+  expert dư thừa lẫn nhau) dù 1B active/token. Qwen3-0.6B dense chỉ 0.6B → mỗi trọng số quan
+  trọng hơn → nhạy hơn cả trăm-nghìn lần. Qwen3-0.6B là **ca KHÓ NHẤT** (nhỏ nhất + dense).
+- **Hệ quả THUẬN cho scale-up**: model TO hơn / MoE nhiều dư thừa hơn sẽ nén CÒN TỐT HƠN
+  OLMoE, không tệ hơn. Lộ trình "0.6B/1B → model to" đi đúng chiều: OLMoE (nén tốt) là bằng
+  chứng, Qwen3-0.6B (nén kém) chỉ là sàn dưới của định luật kích thước.
+- **Quy trình chuẩn cho model mới**: KHÔNG copy config. Bắt đầu từ thứ hạng đã biết
+  (down<gate_up<attention<lm_head), chạy sweep (exp_bc/bd/be, script sẵn) đo NGƯỠNG riêng.
+
 ## 3. Vì sao gate_up nhạy hơn down (cơ chế)
 
 `FFN(x) = down( SiLU(gate(x)) × up(x) )`.
