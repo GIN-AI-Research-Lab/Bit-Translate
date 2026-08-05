@@ -1,0 +1,42 @@
+{
+  "baseline": {
+    "ppl": 8.616,
+    "battery": "12/12"
+  },
+  "attn_fp16": {
+    "ppl": 11.852,
+    "x_base": 1.38,
+    "battery": "9/12",
+    "attn_bpw": 16.0
+  },
+  "attn_int8": {
+    "ppl": 11.829,
+    "x_base": 1.37,
+    "battery": "10/12",
+    "attn_bpw": 8.12
+  },
+  "attn_int4": {
+    "ppl": 12.061,
+    "x_base": 1.4,
+    "battery": "9/12",
+    "attn_bpw": 4.12
+  },
+  "attn_int3": {
+    "ppl": 15.393,
+    "x_base": 1.79,
+    "battery": "8/12",
+    "attn_bpw": 3.12
+  },
+  "attn_int2": {
+    "ppl": 82917.909,
+    "x_base": 9623.5,
+    "battery": "0/12",
+    "attn_bpw": 2.12
+  },
+  "attn_ternary": {
+    "ppl": 7519.554,
+    "x_base": 872.72,
+    "battery": "0/12",
+    "attn_bpw": 1.56
+  }
+}

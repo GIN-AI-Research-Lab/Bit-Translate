@@ -55,6 +55,36 @@ bpw giảm 4,3×; rớt vực ở int2 (×27) và ternary (×1700).
 phân-bổ-theo-độ-nhạy 2,60bpw gần như nguyên vẹn — chênh 1bpw đổi lấy ~1230× chất lượng. Đây là
 config PTQ-thuần deploy được ngay, và là nền cho hướng "nén model có sẵn".
 
+## 2b. exp_bd — quét attention trên nền down=ternary+gate_up=int3 (hoàn thiện phân bổ)
+
+Trên nền điểm ngọt (down=ternary, gate_up=int3), quét attention q/k/v/o + đo BATTERY:
+
+| attn | PPL | ×base | battery | attn bpw |
+|---|---:|---:|---:|---:|
+| fp16 | 11,9 | ×1,38 | 9/12 | 16,0 |
+| int8 | 11,8 | ×1,37 | 10/12 | 8,12 |
+| **int4** | **12,1** | **×1,40** | **9/12** | **4,12 ← điểm ngọt attn** |
+| int3 | 15,4 | ×1,79 | 8/12 | 3,12 |
+| int2 | 82.918 | ×9623 | 0/12 | 2,12 |
+| ternary | 7.520 | ×873 | 0/12 | 1,56 |
+
+**Attention nhạy hơn gate_up ĐÚNG MỘT BẬC**: gate_up êm tới int3, attention chỉ êm tới int4
+(int3 đã tụt ×1,79). Xác nhận trực giác lab "attention nhạy nhất".
+
+### BẢNG XẾP HẠNG ĐỘ NHẠY HOÀN CHỈNH (đo thật, xây dần cả chuỗi)
+| Thành phần | Mức bit thấp nhất còn ổn | Cơ chế |
+|---|---|---|
+| **down_proj** (bền nhất) | ternary ~1,56bpw | đầu ra tuyến tính, residual bảo vệ |
+| **gate_up_proj** (nhạy vừa) | int3 ~3,1bpw | đầu vào SiLU + phép nhân |
+| **attention q/k/v/o** (nhạy nhất) | int4 ~4,1bpw | softmax + quyết định "nhìn đâu", lỗi rời rạc |
+
+### CONFIG PTQ-THUẦN ĐẦY ĐỦ (deploy được ngay, KHÔNG train)
+`down=ternary + gate_up=int3 + attention=int4` → **PPL ×1,40, battery 9/12, overall ~3,06bpw**.
+Xác nhận bằng CẢ PPL lẫn battery (không chỉ 1 thước). Embed/lm_head/router/norm giữ fp16.
+
+**Phát hiện phụ (lever tiếp theo)**: embed+lm_head giữ fp16 = 3% tham số nhưng ~16% tổng bit.
+Nén chúng (int8, biết chịu được từ bản 0.6B TQ33 speed) → overall ~2,8bpw. Việc kế §6.
+
 ## 3. Vì sao gate_up nhạy hơn down (cơ chế)
 
 `FFN(x) = down( SiLU(gate(x)) × up(x) )`.
@@ -81,10 +111,13 @@ kích thước": contextual sparsity mạnh ở 7B+, yếu ở 0.6B.
 
 ## 6. Việc kế (hướng nén model có sẵn)
 
-1. **Xác nhận config điểm ngọt bằng battery đa miền** (mới chỉ có PPL cho sweep gate_up).
-2. **Quét attention tương tự** (int8/int4) trên nền down=ternary+gate_up=int3 — tìm điểm ngọt
-   attention (kỳ vọng nhạy hơn gate_up, cần bit cao hơn).
-3. **Đóng gói + kernel** để đo tok/s THẬT (mọi thứ tới giờ là chất lượng; tốc độ chưa đổi vì
-   chưa packed — xem `RESEARCH_MOE_SPEED_PTQ.md`).
-4. **Scale lên model to** (theo lộ trình): kỳ vọng int3/thấp hơn còn dễ thở hơn (định luật
-   kích thước — model to chịu nén tốt hơn).
+1. ~~Xác nhận config điểm ngọt bằng battery~~ ✅ XONG (exp_bd: 9/12 battery cho config đầy đủ).
+2. ~~Quét attention~~ ✅ XONG (exp_bd: attention êm tới int4, nhạy hơn gate_up 1 bậc).
+3. **Nén embed+lm_head xuống int8** (lever rẻ tiếp theo): 3% param nhưng 16% tổng bit; int8
+   đã chứng minh chịu được ở bản 0.6B (RESEARCH_TQ33_SPEED_100). Kỳ vọng overall 3,06→~2,8bpw
+   gần như không mất chất lượng. → config gần-tối-ưu đầy đủ.
+4. **Đóng gói + kernel** để đo tok/s THẬT (mọi thứ tới giờ là chất lượng; tốc độ chưa đổi vì
+   chưa packed — xem `RESEARCH_MOE_SPEED_PTQ.md`). Config đích: down=TQ33(ternary) +
+   gate_up=int3-packed + attn=int4-packed + embed/head=int8.
+5. **Scale lên model to** (theo lộ trình): kỳ vọng ngưỡng bit còn dễ thở hơn (định luật
+   kích thước — model to chịu nén tốt hơn; contextual sparsity/extreme-quant đều mạnh hơn ở 7B+).
