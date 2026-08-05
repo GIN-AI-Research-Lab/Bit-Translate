@@ -208,3 +208,30 @@ kích thước": contextual sparsity mạnh ở 7B+, yếu ở 0.6B.
 5. **Scale lên model to** (theo lộ trình): chạy LẠI sweep (exp_bc/bd/be — script sẵn) trên
    model to; kỳ vọng ngưỡng bit còn dễ thở hơn (định luật kích thước — model to chịu nén tốt
    hơn). CHỈ cần đo lại NGƯỠNG; THỨ HẠNG độ nhạy (down<gate_up<attention<lm_head) chuyển giao.
+
+## 2f. ⚠️ SCALE-UP THẬT: Qwen3-30B-A3B — mix-theo-độ-nhạy THUA off-the-shelf Q2_K (exp llama.cpp)
+
+Áp ranking độ nhạy lên 30B-A3B qua `llama-quantize --tensor-type` (requantize từ Q4_K_M vì
+mix ≤Q4; PyTorch sweep bất khả vì 30B fp16 ~60GB > RAM 34GB). Mix: down=Q2, gate_up=Q3,
+attn=Q4, lm_head=Q6, embed=Q3. Đo THẬT bằng llama.cpp trên máy desktop này (6 luồng, cùng
+text ppl_big):
+
+| Bản | Size | bpw | tok/s | PPL | ×Q4 |
+|---|---:|---:|---:|---:|---:|
+| Q4_K_M | 17,28 GiB | ~4,5 | 7,0 | 2,124 | ×1,00 |
+| **SENS (mix của ta)** | 11,57 GiB | 3,26 | 18,4 | 2,282 | ×1,074 |
+| **Q2_K (off-the-shelf)** | 10,48 GiB | 2,6 | 21,3 | **2,169** | **×1,02** |
+
+**PHÁN QUYẾT: Q2_K Pareto-dominate mix của ta — nhỏ hơn + nhanh hơn + PPL tốt hơn**, dù ta
+dùng nhiều bit hơn (3,26 vs 2,6). Ba nguyên nhân:
+1. **30B MoE nén cực tốt off-the-shelf**: Q2_K ×1,02 so Q4 = gần lossless → gần hết dư địa.
+2. **Ta ép down=Q2 nhiều khả năng SAI**: Q2_K/Q4_K_M đều BẢO VỆ down (Q3/Q6). "down bền" (đo
+   ternary-riêng trên OLMoE) CÓ THỂ không chuyển giao sang Qwen-MoE — llama.cpp bảo vệ down
+   xuyên model là có lý do.
+3. **Requantize từ Q4 (không f16)**: down Q4→Q2 double-quant, tệ hơn f16→Q2 của Q2_K.
+
+**Định luật kích thước theo chiều BẤT LỢI cho custom scheme**: model càng to (OLMoE Q2_K ×1,12
+→ 30B Q2_K ×1,02), off-the-shelf Q2_K càng gần hoàn hảo → custom scheme càng ít chỗ thêm giá
+trị. **Kết luận thực dụng cuối: nén model to có sẵn để deploy → dùng thẳng Q2_K/K-quant
+llama.cpp. Custom PTQ tự chế KHÔNG thắng, càng lên model to càng thua rõ.** (30B chạy thật
+trên máy desktop 34GB RAM: Q2_K 10,5GB, 21 tok/s — dùng được.)
