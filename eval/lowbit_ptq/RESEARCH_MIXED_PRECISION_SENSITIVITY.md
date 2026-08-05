@@ -235,3 +235,21 @@ dùng nhiều bit hơn (3,26 vs 2,6). Ba nguyên nhân:
 trị. **Kết luận thực dụng cuối: nén model to có sẵn để deploy → dùng thẳng Q2_K/K-quant
 llama.cpp. Custom PTQ tự chế KHÔNG thắng, càng lên model to càng thua rõ.** (30B chạy thật
 trên máy desktop 34GB RAM: Q2_K 10,5GB, 21 tok/s — dùng được.)
+
+## 2g. CỰC HẠN 30B: ép experts xuống sàn Q1_0 (~1bit) — SỤP THẢM, xác nhận tường rate-distortion
+
+Thử ép phần nặng (experts = 93% params) xuống SÀN llama.cpp (Q1_0 1.125bpw), attn/lm_head bảo
+vệ. ("0.3bit" bất khả: llama.cpp sàn 1.125bpw; ternary-1:32 tự chế cần PyTorch load 60GB > RAM.)
+
+| Bản | Size | bpw | tok/s | PPL | ×Q4 |
+|---|---:|---:|---:|---:|---:|
+| Q4_K_M | 17,28 GiB | ~4,5 | 7,0 | 2,124 | ×1,00 |
+| SENS | 11,57 GiB | 3,26 | 18,4 | 2,282 | ×1,07 |
+| Q2_K | 10,48 GiB | 2,6 | 21,3 | 2,169 | ×1,02 |
+| **FLOOR (experts Q1_0)** | 4,72 GiB | 1,33 | 20,8 | **11.340** | **×5.340 💀** |
+
+**KẾT LUẬN**: NGAY CẢ trên 30B siêu-dư-thừa (Q2_K ×1,02 gần lossless), ép experts xuống ~1bit
+→ PPL sụp ×5.340. **Sàn dùng được ≈ 2,6bpw (Q2_K); dưới đó chết, không vùng xám.** VÀ FLOOR
+4,72GB KHÔNG nhanh hơn Q2_K 10,48GB (20,8 vs 21,3 tok/s) — nén dưới Q2_K MẤT chất lượng mà
+KHÔNG được tốc độ (Q1_0 decode nặng compute + vẫn memory-bound). Q2_K là điểm ngọt/sàn thực
+dụng dứt điểm. Tường rate-distortion xác nhận toàn dải 0.6B→30B.
