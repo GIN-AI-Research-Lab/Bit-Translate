@@ -187,6 +187,29 @@ bẩy mạnh nhất lab từng đo (BRECQ-lite), scalar ternary bứt hẳn lên
 độc lập, 2 model khác nhau, 4 biến thể VQ khác nhau (greedy/Wanda/entry-0/beam) — đủ vững để
 đóng hẳn hướng VQ/codebook cho PTQ sub-1,58bpw ở quy mô model này.
 
+## Phần 4 — Hadamard incoherence + VQ (hướng cuối cùng của QTIP chưa thử), ÂM TÍNH
+
+QTIP/QuIP# đạt SOTA 2-bit bằng tổ hợp: xoay Hadamard (làm phân bố "incoherent", ít outlier)
++ trellis-coded quantization (TCQ). Lab đã thử Hadamard cho SCALAR (`exp_c_incoherence.py`,
+giảm 2-5%, không đủ cứu 1,58bit) và VQ/AQLM KHÔNG Hadamard (thua scalar). Chưa thử: **Hadamard
++ VQ cùng lúc** — giả thuyết VQ có thể hưởng lợi từ decorrelation NHIỀU HƠN scalar (vì VQ vốn
+nhạy với cấu trúc tương quan mà Hadamard phá vỡ).
+
+**Thăm dò rẻ ($0, 15 giây, `exp_aq_hadamard_vq_toy.py`)**: áp Hadamard trực giao thật (tái
+dùng `random_orthogonal_for_dim` đã verify ở exp_c) trước VQ beam-search (M=2,K=256,g=8, đúng
+cấu hình exp_ao), đo trên 6 ma trận đại diện (giống bộ test của exp_c).
+
+**Kết quả: giảm trung bình chỉ 1,6%** (32,15→31,81% ... 33,78→32,75%) — **ÍT hơn** mức 2-5%
+Hadamard đã cho scalar, không phải nhiều hơn như giả thuyết. Cơ chế hợp lý: VQ (qua k-means/
+beam) đã tự khai thác một phần tương quan chéo trong nhóm ngay từ đầu — decorrelate trước bằng
+Hadamard vô tình xóa bớt đúng cấu trúc VQ định khai thác, nên lợi ích cộng thêm NHỎ HƠN cho VQ.
+
+**Theo đúng kill-criteria đã đặt trước (≤15% giảm → không đầu tư tiếp)**: KHÔNG code tiếp
+(không xoay activation runtime, không SEQUENTIAL, không viết trellis-coded quantization —
+TCQ phức tạp hơn AQLM nhiều, chỉ đáng làm nếu bước rẻ này có tín hiệu tốt). Đây là ý tưởng PTQ
+cuối cùng còn lại trong danh mục SOTA (AQLM/QuIP#/QTIP) mà lab chưa thử — giờ đã đóng, cùng
+kết luận với Phần 1-3: **PTQ thuần đã cạn mọi hướng có cơ sở kỹ thuật cho sub-1,58bpw ở 0,6B.**
+
 ## File
 
 - `exp_ad_vq_codebook.py` — script chính (đã vá RESUME + gc.collect)
@@ -199,3 +222,5 @@ bẩy mạnh nhất lab từng đo (BRECQ-lite), scalar ternary bứt hẳn lên
   — LƯU Ý: tên file kết quả đã đổi từ `exp_ao_results.json` vì đụng tên với
   `exp_ao_battery_speed.py` của máy A (2 phiên cùng chọn chữ "ao" độc lập, xem
   [[phien-song-song-cung-repo]])
+- `exp_aq_hadamard_vq_toy.py` — Hadamard + VQ beam-search (âm tính, giảm chỉ 1,6%, đóng hướng
+  QTIP/TCQ cuối cùng)
