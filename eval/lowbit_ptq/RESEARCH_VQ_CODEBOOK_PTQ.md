@@ -210,6 +210,26 @@ TCQ phức tạp hơn AQLM nhiều, chỉ đáng làm nếu bước rẻ này c�
 cuối cùng còn lại trong danh mục SOTA (AQLM/QuIP#/QTIP) mà lab chưa thử — giờ đã đóng, cùng
 kết luận với Phần 1-3: **PTQ thuần đã cạn mọi hướng có cơ sở kỹ thuật cho sub-1,58bpw ở 0,6B.**
 
+## Phần 5 — Codebook TOÀN CỤC nhắm 0,03bpw (hướng khác hẳn: xuyên-layer thay vì cục bộ) — ÂM TÍNH DỨT KHOÁT
+
+Người dùng yêu cầu thử tiếp ở mức cực đoan hơn (0,03bpw, gấp ~50× khắt khe hơn 1,5bpw đã là
+sàn). Mọi thử nghiệm trước (Phần 1-4) dùng codebook RIÊNG từng tensor (d nhỏ 8-16) — chỉ khai
+thác tương quan CỤC BỘ trong 1 ma trận. Giả thuyết MỚI, cơ chế khác hẳn: có thể tồn tại một tập
+nhỏ **pattern phổ quát (universal template)** lặp lại XUYÊN SUỐT nhiều layer/loại ma trận khác
+nhau — nếu đúng, 1 codebook DUY NHẤT dùng chung cho CẢ 196 tensor (chi phí lưu gần như 0 khi
+chia đều cho 440 triệu trọng số) có thể nén cực sâu.
+
+`exp_ar_global_codebook.py`: gộp toàn bộ 196 ma trận (đã chuẩn hóa RMS=1 mỗi tensor trước khi
+gộp, tránh để ma trận magnitude lớn lấn át) thành 1 pool 1.720.320 vector chiều 256, k-means
+1 codebook K=256 (M=1,d=256 → log2(256)/256 = 0,03125bpw đúng mục tiêu).
+
+**Kết quả: werr 99,1% TOÀN CỤC** (99,0-99,2% ở mọi loại ma trận, không loại nào khá hơn) —
+gần như KHÔNG giữ được tín hiệu nào (100% = tái tạo bằng 0). Giả thuyết "pattern phổ quát xuyên
+layer" **bị bác bỏ dứt khoát bằng số đo** — không phải giả thuyết mơ hồ nữa, mà là bằng chứng
+THỨ 3 độc lập (sau H1 gauge-folding 98,4% null và H2 intrinsic-dim 645/1024) cùng kết luận:
+440 triệu trọng số của Qwen3-0.6B không có cấu trúc dư thừa dạng nào (cục bộ, đối xứng, hay
+xuyên-layer) đủ để nén xuống mức cực đoan này bằng PTQ.
+
 ## File
 
 - `exp_ad_vq_codebook.py` — script chính (đã vá RESUME + gc.collect)
@@ -224,3 +244,4 @@ kết luận với Phần 1-3: **PTQ thuần đã cạn mọi hướng có cơ s
   [[phien-song-song-cung-repo]])
 - `exp_aq_hadamard_vq_toy.py` — Hadamard + VQ beam-search (âm tính, giảm chỉ 1,6%, đóng hướng
   QTIP/TCQ cuối cùng)
+- `exp_ar_global_codebook.py` — codebook toàn cục 0,03bpw (âm tính dứt khoát, werr 99,1%)
