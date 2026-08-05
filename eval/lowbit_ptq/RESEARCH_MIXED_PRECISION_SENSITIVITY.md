@@ -85,6 +85,31 @@ Xác nhận bằng CẢ PPL lẫn battery (không chỉ 1 thước). Embed/lm_he
 **Phát hiện phụ (lever tiếp theo)**: embed+lm_head giữ fp16 = 3% tham số nhưng ~16% tổng bit.
 Nén chúng (int8, biết chịu được từ bản 0.6B TQ33 speed) → overall ~2,8bpw. Việc kế §6.
 
+## 2c. exp_be — quét embed+lm_head (hoàn thiện nén toàn model)
+
+Trên nền down=ternary+gate_up=int3+attn=int4, quét embed_tokens+lm_head + battery + tổng GB:
+
+| emb+head | PPL | ×base | battery | TỔNG GB | overall bpw |
+|---|---:|---:|---:|---:|---:|
+| fp16 | 12,1 | ×1,40 | 9/12 | 2,65 | 3,06 |
+| int8 | 12,1 | ×1,41 | 10/12 | 2,45 | 2,83 |
+| **int4** | **13,2** | **×1,53** | **11/12** | **2,34** | **2,71 ← điểm ngọt** |
+| int3 | 14,2 | ×1,65 | 11/12 | 2,32 | 2,68 |
+| int2 | 398 | ×46 | 2/12 | 2,29 | 2,65 |
+| ternary | 40,7 | ×4,72 | 6/12 | 2,28 | 2,63 |
+
+- **Lợi nhuận giảm dần rõ rệt**: dưới int4, GB tiết kiệm không đáng kể (2,34→2,28, chênh
+  0,06GB) mà rủi ro sụp (int2 ×46). KHÔNG đi dưới int4 cho embed/head. int8 = an toàn.
+- **int2 tệ hơn ternary** (398 vs 40,7) — vùng chết, ternary có mức 0, int2 không (bài học
+  nhất quán). Đừng nội suy trong vùng chết.
+
+### 🏁 CONFIG NÉN TOÀN MODEL ĐẦY ĐỦ (PTQ THUẦN, KHÔNG TRAIN) — kết quả cuối
+`down=ternary + gate_up=int3 + attn=int4 + embed/head=int4`
+= **2,34GB (~2,71bpw), PPL ×1,53, battery 11/12** (baseline 12/12).
+**13,84GB (fp16 gốc) → 2,34GB = 5,9× nhỏ hơn**, giữ 11/12 năng lực. Bản an toàn (embed/head
+=int8): 2,45GB = 5,6×, ×1,41, 10/12. Tất cả bằng phân-bổ-bit-theo-độ-nhạy, đo bằng CẢ PPL
+lẫn battery, KHÔNG reconstruction/train.
+
 ## 3. Vì sao gate_up nhạy hơn down (cơ chế)
 
 `FFN(x) = down( SiLU(gate(x)) × up(x) )`.
@@ -113,11 +138,11 @@ kích thước": contextual sparsity mạnh ở 7B+, yếu ở 0.6B.
 
 1. ~~Xác nhận config điểm ngọt bằng battery~~ ✅ XONG (exp_bd: 9/12 battery cho config đầy đủ).
 2. ~~Quét attention~~ ✅ XONG (exp_bd: attention êm tới int4, nhạy hơn gate_up 1 bậc).
-3. **Nén embed+lm_head xuống int8** (lever rẻ tiếp theo): 3% param nhưng 16% tổng bit; int8
-   đã chứng minh chịu được ở bản 0.6B (RESEARCH_TQ33_SPEED_100). Kỳ vọng overall 3,06→~2,8bpw
-   gần như không mất chất lượng. → config gần-tối-ưu đầy đủ.
+3. ~~Nén embed+lm_head~~ ✅ XONG (exp_be: int4 là điểm ngọt, dưới int4 vô ích + sụp). Config
+   đầy đủ chốt: 2,34GB (5,9× fp16), ×1,53, 11/12 battery.
 4. **Đóng gói + kernel** để đo tok/s THẬT (mọi thứ tới giờ là chất lượng; tốc độ chưa đổi vì
    chưa packed — xem `RESEARCH_MOE_SPEED_PTQ.md`). Config đích: down=TQ33(ternary) +
-   gate_up=int3-packed + attn=int4-packed + embed/head=int8.
-5. **Scale lên model to** (theo lộ trình): kỳ vọng ngưỡng bit còn dễ thở hơn (định luật
-   kích thước — model to chịu nén tốt hơn; contextual sparsity/extreme-quant đều mạnh hơn ở 7B+).
+   gate_up=int3-packed + attn=int4-packed + embed/head=int4/int8. Đây là việc lớn kế tiếp.
+5. **Scale lên model to** (theo lộ trình): chạy LẠI sweep (exp_bc/bd/be — script sẵn) trên
+   model to; kỳ vọng ngưỡng bit còn dễ thở hơn (định luật kích thước — model to chịu nén tốt
+   hơn). CHỈ cần đo lại NGƯỠNG; THỨ HẠNG độ nhạy (down<gate_up<attention<lm_head) chuyển giao.
