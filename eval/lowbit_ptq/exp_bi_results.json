@@ -1,0 +1,10 @@
+{
+  "framework": "PyTorch, cung text ppl_big, cung baseline Q4-dequant",
+  "baseline_q4dequant": 5.0108,
+  "q2k_dequant": 6.0271,
+  "q2k_ratio": 1.203,
+  "q2k_bpw": 2.6,
+  "our_config": 7.8888,
+  "our_ratio": 1.574,
+  "our_bpw": 2.71
+}

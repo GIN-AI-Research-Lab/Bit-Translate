@@ -152,6 +152,8 @@ tok/s + RAM + PPL thật cho OLMoE ở các quant chuẩn, so với config sensi
 (Ratio đo công bằng: cùng text ppl_big, tỷ lệ vs Q4 TRONG CÙNG framework — llama.cpp cho quant
 chuẩn, PyTorch cho config ta. exp_bh.)
 
+**XÁC NHẬN CÙNG FRAMEWORK (exp_bi, bỏ nhiễu framework)**: dequant Q2_K ra fp16 rồi đo PPL PyTorch CÙNG text/baseline với config ta → Q2_K **×1,20** vs config ta **×1,57** (baseline Q4-dequant 5,01; Q2_K 6,03; ta 7,89). Q2_K tốt hơn ~1,3× ở gần cùng bpw — kết luận KHÔNG phải artifact framework, giữ nguyên.
+
 **PHÁN QUYẾT: Q2_K THẮNG config tự chế trên MỌI trục** — ít bit hơn (2,6 vs 2,71), chất lượng
 tốt hơn nhiều (×1,12 vs ×1,57), có kernel nhanh sẵn (56 tok/s). **→ KHÔNG đáng tự viết kernel
 cho sơ đồ naive của ta trên OLMoE. Muốn deploy OLMoE nén: DÙNG THẲNG Q2_K của llama.cpp.**
