@@ -1,0 +1,1352 @@
+[
+ {
+  "id": 245,
+  "ja": "今月の残業時間、把握してる？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 56,
+  "ja": "このアプリはパスワードを忘れても簡単に再設定できます。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa; 'đặt lại mật khẩu' là thuật ngữ chuẩn, tự nhiên hơn 'thiết lập lại'."
+ },
+ {
+  "id": 593,
+  "ja": "どうしてもやる気が出ない、そんな日もある。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "やる気 là động lực nói chung; A thêm 'để làm việc' thu hẹp thành công việc, B trung tính hơn."
+ },
+ {
+  "id": 528,
+  "ja": "お弁当作る気力が今日はなかった。",
+  "winner": "v7a",
+  "x3_q": "bad",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "気力がなかった là không còn sức/tinh thần; B dịch thành 'không có ý định' làm sai nghĩa cốt lõi."
+ },
+ {
+  "id": 482,
+  "ja": "うちの子、なんでそんなに甘えん坊なんだろう。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "甘えん坊 là nhõng nhẽo/bám mẹ; A dịch 'ỷ lại' lệch nghĩa sang dựa dẫm."
+ },
+ {
+  "id": 308,
+  "ja": "御見積の内容にご不明点がございましたら、遠慮なくお申し付けください。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 224,
+  "ja": "会議室、空いてる？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Hai bản gần như trùng nhau, đều đúng và tự nhiên."
+ },
+ {
+  "id": 1180,
+  "ja": "政治的な分断が深まる社会では、少数意見への配慮がとかく後回しにされやすい。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Chỉ khác 'các ý kiến' / 'ý kiến', nghĩa và độ tự nhiên ngang nhau."
+ },
+ {
+  "id": 192,
+  "ja": "彼女の笑顔を見ると、こっちまで幸せな気分になる。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "'hạnh phúc theo' và 'hạnh phúc lây' đều truyền đạt đúng こっちまで, tự nhiên ngang nhau."
+ },
+ {
+  "id": 914,
+  "ja": "湿度が高い日は、汗が全然乾かない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng 全然乾かない; 'hoàn toàn không khô' và 'chẳng khô chút nào' ngang nhau."
+ },
+ {
+  "id": 70,
+  "ja": "今夜はカレーにしようと思って、材料を買ってきた。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 66,
+  "ja": "このリンクをクリックすると、詳細ページに移動します。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 205,
+  "ja": "すみません、遅れます！",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 472,
+  "ja": "台風来るらしいから気をつけて。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 502,
+  "ja": "マジで！？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 1096,
+  "ja": "有権者の政治的無関心は、民主主義そのものの基盤を揺るがしかねない問題である。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "そのもの bổ nghĩa cho 民主主義; B đặt 'chính' đúng vào 'nền dân chủ', A chuyển sang 'nền tảng'."
+ },
+ {
+  "id": 59,
+  "ja": "このサイト、最近ログインするたびにエラーが出るんだよね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa và tự nhiên; 'báo lỗi' và 'bị lỗi' đều chấp nhận được cho エラーが出る."
+ },
+ {
+  "id": 432,
+  "ja": "あの子とはもう疎遠になっちゃったな。",
+  "winner": "tie",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Cả hai dịch あの子 thành 'đứa bé' không hợp ngữ cảnh xa cách bạn bè; phần còn lại như nhau."
+ },
+ {
+  "id": 909,
+  "ja": "気温が急に下がったから、風邪をひかないように。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "急に下がった chỉ là giảm đột ngột; B thêm 'giảm mạnh' là bịa thêm mức độ."
+ },
+ {
+  "id": 476,
+  "ja": "お財布忘れて、レジで焦った。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "B 'cuống lên thu ngân' thiếu 'ở quầy', câu gãy; A đủ và tự nhiên."
+ },
+ {
+  "id": 971,
+  "ja": "駐車場はどこにありますか。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 599,
+  "ja": "振り返ってみると、大変なこともあったけど、それなりに充実した一日だった気がする。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "大変なこともあった là 'cũng có lúc khó khăn'; A thêm 'nhiều chuyện vất vả' phóng đại mức độ."
+ },
+ {
+  "id": 15,
+  "ja": "なんでこんなに時間が経つの早いんだろう。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa và đều là cách nói tự nhiên."
+ },
+ {
+  "id": 350,
+  "ja": "あの案件、もう手遅れなんじゃないかな。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai truyền đạt đúng 手遅れ và sắc thái phỏng đoán; khác biệt chỉ ở cách gọi 案件."
+ },
+ {
+  "id": 915,
+  "ja": "秋の空は澄んでいて、遠くの山まで見える。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "B giữ 'có thể nhìn thấy' sát 見える hơn; A vẫn hiểu được nhưng lược khả năng."
+ },
+ {
+  "id": 735,
+  "ja": "会議アプリの音声が途切れて、内容がよく聞こえなかった。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "途切れて là ngắt quãng từng đoạn; B 'ngắt quãng' chính xác hơn A 'bị ngắt' dễ hiểu là mất hẳn."
+ },
+ {
+  "id": 342,
+  "ja": "決裁が下りるまで、もう少しお時間をいただけますか。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "決裁が下りるまで là 'cho đến khi được phê duyệt'; B giữ đúng cấu trúc này, A đổi thành 'để được phê duyệt' hơi lệch, B hơi rườm nhưng đúng."
+ },
+ {
+  "id": 465,
+  "ja": "天気良かったら公園行こうか。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Gần như trùng nhau, chỉ khác chủ ngữ 'mình'; nghĩa ngang nhau."
+ },
+ {
+  "id": 725,
+  "ja": "新作映画の配信、いつ始まるんだろう?",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa; A giữ sắc thái băn khoăn んだろう, B giữ 'bắt đầu' — ngang nhau."
+ },
+ {
+  "id": 203,
+  "ja": "恐れ入りますが、来週の火曜日までにご返信いただけますでしょうか。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "恐れ入りますが không nói về 'sự bất tiện'; A thêm ý không có, B gọn và đúng."
+ },
+ {
+  "id": 818,
+  "ja": "ホステルは安いけど、部屋が狭いんだよね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Chỉ khác 'thật đấy'/'thật', nghĩa và độ tự nhiên ngang nhau."
+ },
+ {
+  "id": 213,
+  "ja": "お忙しいところ恐縮ですが、ご確認いただけますと幸いです。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng いただけますと幸いです; A 'nếu được thì mong bạn kiểm tra giúp' tự nhiên hơn B 'thì thật tốt quá'."
+ },
+ {
+  "id": 775,
+  "ja": "ドローンを使った測量作業、効率がすごく上がったらしい。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 743,
+  "ja": "カートに入れたまま忘れていた商品、セール中に買っておいた。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "B 'mua lại' gợi nghĩa mua lần nữa/mua lại từ ai, sai sắc thái 買っておいた; A đúng dù hơi dài."
+ },
+ {
+  "id": 570,
+  "ja": "どうしてこんなに不器用なんだろう、自分でも呆れる。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng; B giữ rõ tự trách bản thân (mình... chính mình) khớp 自分でも呆れる hơn."
+ },
+ {
+  "id": 96,
+  "ja": "無理をしないで、今日はゆっくり体を休めてください。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Chỉ khác 'nhé'/'đi' cuối câu, nghĩa và độ nhã ngang nhau."
+ },
+ {
+  "id": 994,
+  "ja": "暗くなってきたから、気をつけて帰ってね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "'bắt đầu tối' và 'đang tối dần' đều đúng 暗くなってきた."
+ },
+ {
+  "id": 1162,
+  "ja": "文化予算の国内総生産比は主要国の中でも低く、芸術支援の拡充を求める声が根強い。",
+  "winner": "v7a",
+  "x3_q": "bad",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "B đảo ngược tỷ lệ ('tỷ lệ GDP trong ngân sách văn hóa') và bịa 'thấp nhất'; A đúng chiều tỷ lệ nhưng lệch 'ở các nước lớn đều thấp' thay vì 'thấp ngay cả trong các nước lớn'."
+ },
+ {
+  "id": 272,
+  "ja": "転職エージェントから紹介された会社、条件は悪くない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 815,
+  "ja": "展望台からの夜景は本当に感動的だった。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 174,
+  "ja": "本当にありがとう、助かったよ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng 助かった và đều tự nhiên."
+ },
+ {
+  "id": 1194,
+  "ja": "専門分野には専門家の知見を生かすべきだという原則は、行政の現場でも軽視されがちだ。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "bad",
+  "identical": false,
+  "why": "A gãy nghĩa ('chuyên môn cần vận dụng kiến thức chuyên môn'), mất 'chuyên gia' và mất でも; B đủ và đúng cấu trúc."
+ },
+ {
+  "id": 630,
+  "ja": "パスワード管理アプリを使い始めてから管理が楽になった。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 780,
+  "ja": "産業用ロボットの導入で、工場の生産効率が大きく上がった。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Hai cách diễn đạt khác nhau nhưng nghĩa và độ tự nhiên ngang nhau."
+ },
+ {
+  "id": 418,
+  "ja": "床にホコリがたまってきたな。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Chỉ khác 'sàn nhà'/'sàn', nghĩa ngang nhau."
+ },
+ {
+  "id": 154,
+  "ja": "うまくいかないときこそ、基本に立ち返ることが大切だ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "'không suôn sẻ' và 'không thuận lợi' đều đúng うまくいかない."
+ },
+ {
+  "id": 102,
+  "ja": "紅葉の季節になると、山全体が赤や黄色に染まる。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "A 'nhuộm một màu đỏ hoặc vàng' tự mâu thuẫn (một màu nhưng hai màu); cả hai dùng 'hoặc' thay vì 'và' cho や nhưng B gọn hơn."
+ },
+ {
+  "id": 491,
+  "ja": "静かにしてくれない？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Chỉ khác 'giùm'/'giùm tôi', nghĩa ngang nhau."
+ },
+ {
+  "id": 622,
+  "ja": "二段階認証を設定しておくと安心です。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 176,
+  "ja": "また今度ゆっくり話そうね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 221,
+  "ja": "新入社員の研修プログラムを見直すべきだと思います。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 980,
+  "ja": "やっぱり日本の夏は蒸し暑いなあ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa và tự nhiên, chỉ khác trật tự từ."
+ },
+ {
+  "id": 787,
+  "ja": "チャットサポートの対応、すごく丁寧で助かった。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng 丁寧で助かった; 'đỡ được bao nhiêu việc' và 'may quá' đều là cách diễn đạt hợp lệ của 助かった."
+ },
+ {
+  "id": 357,
+  "ja": "契約解除の手続きについて、詳しく教えてもらえますか。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 798,
+  "ja": "もっと早く知っておきたかった便利な機能だ。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "A dịch đúng sắc thái tiếc nuối 'ước gì biết sớm hơn'; B 'đã muốn biết sớm hơn' gượng và mờ nghĩa hối tiếc."
+ },
+ {
+  "id": 766,
+  "ja": "家電同士が連携すると、こんなに便利になるとは思わなかった。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa 'không ngờ tiện lợi đến vậy', gần như trùng nhau."
+ },
+ {
+  "id": 454,
+  "ja": "ガーデニングって思ったより奥が深いんだよね。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "奥が深い là 'có chiều sâu' (A đúng); B 'làm vườn sâu sắc' dùng từ lệch, kém tự nhiên."
+ },
+ {
+  "id": 575,
+  "ja": "娘はおかげさまで元気に育っています。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 158,
+  "ja": "やらずに後悔するより、やって後悔したほうがましだ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai giữ đúng phép so sánh 'thà làm rồi hối hận còn hơn không làm'."
+ },
+ {
+  "id": 374,
+  "ja": "御社製品のカタログを送付させていただきます。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Nghĩa ngang nhau, chỉ khác 'danh mục' và 'catalogue' đều chấp nhận được cho カタログ."
+ },
+ {
+  "id": 1157,
+  "ja": "対立の末に組織にもたらされた傷は、簡単には癒えないとの見方が根強い。",
+  "winner": "tie",
+  "x3_q": "bad",
+  "v7a_q": "bad",
+  "identical": false,
+  "why": "Cả hai đảo vai chủ-vị: 組織にもたらされた傷 là vết thương gây ra CHO tổ chức, không phải 'do tổ chức gây ra'."
+ },
+ {
+  "id": 358,
+  "ja": "さすがベテラン、対応が早いね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "対応 dịch 'xử lý' hay 'hỗ trợ' đều đúng ngữ cảnh, nghĩa ngang nhau."
+ },
+ {
+  "id": 1000,
+  "ja": "政府は来年度予算案において社会保障費を前年比三・二パーセント増となる三十八兆円台に積み上げる方針を固めた。",
+  "winner": "tie",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": true,
+  "why": "giống hệt; số liệu 38 nghìn tỷ và 3,2% đúng nhưng 'quyết định phương châm... tích lũy' dịch cứng."
+ },
+ {
+  "id": 817,
+  "ja": "現地のガイドさんがとても親切に案内してくれた。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 582,
+  "ja": "あ、雨降ってきた！",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 474,
+  "ja": "スーパー行くけど、何か欲しいものある？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 700,
+  "ja": "防水機能つきのガジェットは、やっぱり安心感がある。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa やっぱり安心感; khác biệt chỉ ở chữ 'vẫn' không đổi nghĩa."
+ },
+ {
+  "id": 125,
+  "ja": "本当のことを言うと、あの映画はそれほど面白くなかった。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng 'thú thật thì không thú vị đến thế', ngang nhau."
+ },
+ {
+  "id": 495,
+  "ja": "また忘れたの？ほんと勘弁してよ。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "B giữ được ほんと ('thật sự'), A bỏ sót nhưng nghĩa chính vẫn đúng."
+ },
+ {
+  "id": 679,
+  "ja": "SNSを見る時間を減らしたら、なんだか気持ちが楽になった。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "A dịch SNS thành 'mạng xã hội' tự nhiên; B để nguyên 'SNS' và thêm 'đi' nghe như câu mệnh lệnh."
+ },
+ {
+  "id": 871,
+  "ja": "足首をひねってしまって、歩くのがつらい。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Cả hai mất chi tiết ひねって (bị trẹo/lật cổ chân), chỉ nói 'đau'; B còn lặp 'quá... quá' và dịch つらい thành 'mệt' kém sát."
+ },
+ {
+  "id": 577,
+  "ja": "お義母さんの手料理、本当に美味しかったです。",
+  "winner": "v7a",
+  "x3_q": "bad",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "お義母さん là mẹ chồng/mẹ vợ: A đúng 'mẹ chồng', B dịch thành 'mẹ' làm mất quan hệ gia đình cốt lõi."
+ },
+ {
+  "id": 147,
+  "ja": "情報があふれる時代だからこそ、何を信じるかを見極める力が求められる。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "何を信じるかを見極める là 'xác định NÊN tin điều gì' (A đúng); B 'đánh giá xem mình tin vào điều gì' lệch nghĩa."
+ },
+ {
+  "id": 457,
+  "ja": "料理のレシピ、新しいの試してみたい。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 677,
+  "ja": "インスタのストーリー機能、意外と使いやすい。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Nghĩa ngang nhau nhưng B 'hơn tôi tưởng' tự nhiên, A 'hơn tưởng tượng' gượng."
+ },
+ {
+  "id": 460,
+  "ja": "編み物って地味に見えて、意外と楽しいんだよ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng 編み物 = đan len và giữ đủ ý 'trông giản dị nhưng vui', ngang nhau."
+ },
+ {
+  "id": 1081,
+  "ja": "地域コミュニティの希薄化は、災害時の助け合いの機能を弱める要因になっている。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "地域コミュニティ là 'cộng đồng địa phương' (B đúng hơn 'cộng đồng khu vực'); cả hai dịch 希薄化 thành 'pha loãng' hơi cứng."
+ },
+ {
+  "id": 860,
+  "ja": "最近、頭痛がひどくて困っている。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa 'dạo này đau đầu dữ dội, khổ quá', ngang nhau."
+ },
+ {
+  "id": 993,
+  "ja": "親切に道を教えていただいて、本当にありがとうございました。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "B tự nhiên; A 'chỉ đường một cách tử tế' dịch máy móc 親切に, gượng tiếng Việt."
+ },
+ {
+  "id": 315,
+  "ja": "予算案、上に通すの結構大変そうだな。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "上に通す là trình cấp trên duyệt: B 'thông qua cấp trên' rõ nghĩa, A 'để lên trên' mơ hồ."
+ },
+ {
+  "id": 571,
+  "ja": "お世話になっております、いつもありがとうございます。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Nghĩa như nhau, B chỉ thêm 'tôi'."
+ },
+ {
+  "id": 532,
+  "ja": "奥さんの誕生日、何をプレゼントしようか悩んでる。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa 'phân vân quà sinh nhật vợ'; B mượt hơn một chút nhưng không đáng kể."
+ },
+ {
+  "id": 1167,
+  "ja": "リスクを取らない経営に、大きな成長は望めない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai giữ đúng ý 'kinh doanh không chấp nhận rủi ro thì không thể kỳ vọng tăng trưởng lớn'."
+ },
+ {
+  "id": 567,
+  "ja": "すごく感動して、思わず涙が出た。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "思わず dịch 'không cầm được' hay 'bất giác' đều đúng, ngang nhau."
+ },
+ {
+  "id": 928,
+  "ja": "昨日のオリンピックの決勝、見た？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 867,
+  "ja": "腰が痛くて、長時間座っていられない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng 'đau lưng, không ngồi lâu được', khác biệt 'ngồi yên' không đổi nghĩa."
+ },
+ {
+  "id": 781,
+  "ja": "サポートに問い合わせたのに、返信が全然来ない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 306,
+  "ja": "貴社のご発展を心よりお祈り申し上げます。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa lời chúc trang trọng, ngang nhau."
+ },
+ {
+  "id": 1106,
+  "ja": "他国の制度を過度に理想化することにも、危うさがあるとの指摘は根強い。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "A giữ được 根強い dù diễn đạt vụng ('vẫn còn rất sâu sắc'); B bỏ hẳn 根強い và câu thiếu vị ngữ."
+ },
+ {
+  "id": 1068,
+  "ja": "「切磋琢磨」という言葉が示すように、競争は必ずしも敵対を意味するものではない。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "A giữ 示すように ('đã chỉ ra'); B lược mất làm câu cụt; cả hai dịch 切磋琢磨 thành 'cùng nhau nỗ lực' tạm được."
+ },
+ {
+  "id": 200,
+  "ja": "失敗したからといって、それがすべての終わりというわけではない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 105,
+  "ja": "予算が限られているので、なるべく安く抑えたいんです。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 240,
+  "ja": "これで契約は成立ということでよろしいでしょうか。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "契約成立 là hợp đồng được 'xác lập' (B đúng thuật ngữ); A 'thiết lập hợp đồng' dùng từ lệch."
+ },
+ {
+  "id": 336,
+  "ja": "最近入った子、電話対応がだいぶ上手くなったね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai truyền đúng ý 'tiến bộ hẳn lên' của 上手くなった, ngang nhau."
+ },
+ {
+  "id": 351,
+  "ja": "何度も催促してすみません。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 142,
+  "ja": "成功する人としない人の違いは、才能よりも継続する力にあると思う。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 830,
+  "ja": "パンを焼くときは、発酵の時間が大事らしい。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 822,
+  "ja": "お米は何合炊きますか。",
+  "winner": "tie",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Cả hai dịch đơn vị 合 thành 'bát' không chuẩn (合 là cốc đong gạo), nghĩa còn lại ngang nhau."
+ },
+ {
+  "id": 1013,
+  "ja": "若者の投票率は前回の選挙でわずか三十四パーセントにすぎず、政治への関心の低さが浮き彫りになった。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "A giữ được sắc thái nhấn わずか…にすぎず ('chỉ vỏn vẹn') và 浮き彫り ('cho thấy rõ'); B làm nhạt cả hai."
+ },
+ {
+  "id": 1146,
+  "ja": "デジタル教育の推進は、教員自身のICTスキル向上という新たな課題を生んでいる。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "教員 là 'giáo viên' (B đúng); A dịch 'giảng viên' lệch cấp bậc."
+ },
+ {
+  "id": 541,
+  "ja": "お腹ペコペコだよー。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều truyền tải đúng ý đói bụng ペコペコ, tự nhiên ngang nhau."
+ },
+ {
+  "id": 1197,
+  "ja": "学ぶことの本質は、正解を覚えることではなく問いを立てる姿勢にあるのかもしれない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Hai bản gần như trùng nhau, đều đúng nghĩa và giữ được かもしれない."
+ },
+ {
+  "id": 25,
+  "ja": "これはいくらですか。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng và tự nhiên cho câu hỏi giá."
+ },
+ {
+  "id": 251,
+  "ja": "ボーナスの査定基準がいまだによく分からない。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "分からない là người nói chưa hiểu; B chuyển thành tiêu chuẩn tự nó chưa rõ ràng, lệch chủ thể nhẹ."
+ },
+ {
+  "id": 1163,
+  "ja": "教育の機会均等という理念は、現実の家庭の経済力によって大きく揺らいでいる。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng nghĩa, chỉ khác chỗ đặt từ 'thực tế' và mức độ 'mạnh mẽ/dữ dội'."
+ },
+ {
+  "id": 631,
+  "ja": "クラウドにバックアップしておけば、機種変更のときも安心です。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng 機種変更 = đổi máy/dòng máy; A thêm 'hơn' nhỏ, B gọn hơn, ngang nhau."
+ },
+ {
+  "id": 942,
+  "ja": "次の角を右に曲がってください。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cùng nghĩa; B thêm 'Hãy' phản ánh ください, A gọn, ngang nhau."
+ },
+ {
+  "id": 347,
+  "ja": "内定式、参加する予定？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 981,
+  "ja": "これ、本当に美味しい！",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 8,
+  "ja": "冷蔵庫に何も入ってないから買い物に行かなきゃ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng nghĩa và tự nhiên, chỉ khác từ nối."
+ },
+ {
+  "id": 568,
+  "ja": "なんとなく気分が晴れないんだよね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "気分が晴れない cả hai đều diễn đạt được, mức tự nhiên tương đương."
+ },
+ {
+  "id": 1084,
+  "ja": "文化財の保存には多額の費用がかかり、自治体の財源不足が修復の遅れを招いている。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Nội dung y hệt nhau, B chỉ gọn hơn vài chữ."
+ },
+ {
+  "id": 389,
+  "ja": "面接で聞かれた質問、想定してたのと全然違った。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng nghĩa 想定してた = dự tính, khác biệt chỉ ở từ ngữ nhỏ."
+ },
+ {
+  "id": 1101,
+  "ja": "図書館の利用者数は減少傾向にあるが、電子書籍の貸出は着実に伸びている。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 233,
+  "ja": "契約更新の件、どうなった？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 642,
+  "ja": "ルーターを再起動したら直った。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 805,
+  "ja": "パスポートを見せてください。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cùng nghĩa, chỉ khác trợ từ 'với' cuối câu."
+ },
+ {
+  "id": 354,
+  "ja": "見積書の再発行をお願いできますでしょうか。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Gần như trùng nhau, chỉ khác 'bản báo giá' vs 'báo giá'."
+ },
+ {
+  "id": 1168,
+  "ja": "少子化の進行は、将来の年金制度そのものの持続可能性を直接揺るがす問題である。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "B giữ được 進行 (đang diễn ra) mà A lược mất; phần còn lại như nhau."
+ },
+ {
+  "id": 1150,
+  "ja": "地方の商店街は、大型店の進出とネット通販の普及という二重の圧力にさらされている。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "二重の圧力 là hai áp lực song song; B nối bằng 'và' đúng cấu trúc, A dùng 'từ...cho đến' gợi khoảng liên tục hơi lệch."
+ },
+ {
+  "id": 2,
+  "ja": "週末は家でゆっくりするつもり。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Trùng nghĩa, B chỉ thêm 'sẽ'."
+ },
+ {
+  "id": 699,
+  "ja": "実際のところ、スマートグラスはどれくらい実用的なんだろう?",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "B thêm 'nhỉ' phản ánh sắc thái tự hỏi んだろう, phần còn lại giống hệt."
+ },
+ {
+  "id": 1058,
+  "ja": "中央銀行は、金融政策の正常化に向けた道筋を慎重に見極めているとみられる。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đúng nghĩa; B tách 慎重に = thận trọng rõ hơn nhưng A 'kỹ lưỡng' cũng chấp nhận được."
+ },
+ {
+  "id": 44,
+  "ja": "このたびは弊社の製品をお選びいただき誠にありがとうございます。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 246,
+  "ja": "お手数をおかけいたしますが、ご対応をお願いいたします。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cùng nghĩa, chỉ khác 'Rất' đầu câu."
+ },
+ {
+  "id": 783,
+  "ja": "マニュアル通りに設定したのに、全く動かない。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "A giữ được 全く (hoàn toàn không hoạt động), B lược mất mức độ này."
+ },
+ {
+  "id": 660,
+  "ja": "セール中に買ったソフト、まだ全然プレイできてない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều giữ được 全然 (chưa chơi tí/chút nào), ngang nhau."
+ },
+ {
+  "id": 517,
+  "ja": "とことんツイてない一日だったな、今日は。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Nghĩa như nhau; 'xui xẻo hết chỗ nói' của A tự nhiên hơn 'xui xẻo tột cùng'."
+ },
+ {
+  "id": 129,
+  "ja": "心配しなくても、きっとうまくいくから大丈夫だよ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 520,
+  "ja": "冷蔵庫の中、もう何もないじゃん。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cùng nghĩa, B chỉ thêm 'giờ' phản ánh もう, khác biệt không đáng kể."
+ },
+ {
+  "id": 189,
+  "ja": "まあ、終わったことは仕方がないよ。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng nghĩa 'chuyện đã qua đành chịu', tự nhiên ngang nhau."
+ },
+ {
+  "id": 1053,
+  "ja": "政府は、来年の通常国会に働き方改革関連法案の再改正案を提出する見通しだ。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Nội dung như nhau; 'trình... lên kỳ họp' của B đúng giới từ hơn 'trình... vào kỳ họp'."
+ },
+ {
+  "id": 153,
+  "ja": "たかがゲームと思われがちだが、そこから学べることは意外と多い。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Gần như trùng nhau, đều giữ được ý たかが...と思われがち."
+ },
+ {
+  "id": 1154,
+  "ja": "疑いを招く行動を慎むべきだという戒めを忘れた政治家の言動が、しばしば問題視される。",
+  "winner": "tie",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Cả hai đều dịch 戒め thành 'răn đe' lệch từ (đúng ra là lời răn), nghĩa tổng thể vẫn theo được nhưng vụng như nhau."
+ },
+ {
+  "id": 275,
+  "ja": "クレーム対応に追われて一日が終わった。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Nghĩa như nhau nhưng 'cơn bận rộn' của A gượng, 'trong lúc bận rộn' của B tự nhiên hơn."
+ },
+ {
+  "id": 280,
+  "ja": "明日のプレゼン、資料は準備できてる？",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 1030,
+  "ja": "有言実行を旨とする経営者ほど、社員からの信頼を集めやすいという調査結果が出ている。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "旨とする = lấy làm chủ trương/tôn chỉ; B dịch 'có chủ trương nói được làm được' sát hơn 'có tâm lý' của A."
+ },
+ {
+  "id": 1189,
+  "ja": "理数系への進学を選ぶ女子生徒の割合は、依然として男子生徒の半数程度にとどまっている。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 362,
+  "ja": "出向先での仕事、思ったより大変らしいよ。",
+  "winner": "v7a",
+  "x3_q": "ok",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "思ったより không chỉ định người nghe; B gán 'hơn cậu tưởng' là áp đặt chủ thể kỳ vọng, A 'hơn mình nghĩ' an toàn hơn."
+ },
+ {
+  "id": 1143,
+  "ja": "経済統計の発表を受け、市場では今後の金融政策の行方を巡る思惑が交錯した。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 916,
+  "ja": "今年は雪が少なくて、スキー場が困っているらしい。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cùng nghĩa; B thêm 'các' hợp nghĩa chung chung nhưng khác biệt không đáng kể."
+ },
+ {
+  "id": 458,
+  "ja": "ヨガを始めてから体が軽くなった気がする。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều giữ đúng 気がする (cảm thấy) và mốc 'từ khi tập yoga'."
+ },
+ {
+  "id": 436,
+  "ja": "恋人と一緒にいると時間があっという間に過ぎるよね。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": true,
+  "why": "giống hệt"
+ },
+ {
+  "id": 670,
+  "ja": "eスポーツ市場は今後もっと大きくなると思う。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cùng nghĩa 'thị trường sẽ lớn hơn nữa', khác một từ 'mạnh' không đổi nghĩa."
+ },
+ {
+  "id": 804,
+  "ja": "スーツケースが重すぎて持ち上げられない。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng 持ち上げられない = không nhấc nổi/không nhấc lên được."
+ },
+ {
+  "id": 949,
+  "ja": "この地図で今どこにいるか分かりますか。",
+  "winner": "tie",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "Chủ thể 'đang ở đâu' trong câu gốc mơ hồ; 'mình' của A và 'tôi' của B đều là cách đọc chấp nhận được."
+ },
+ {
+  "id": 1122,
+  "ja": "明らかになった不正はごく一部にすぎないとの指摘もあるが、関係者に衝撃を与えた。",
+  "winner": "v7a",
+  "x3_q": "good",
+  "v7a_q": "good",
+  "identical": false,
+  "why": "A dịch 明らかになった = 'được đưa ra ánh sáng' và 衝撃 = 'gây chấn động' sát và tự nhiên hơn 'được làm rõ/gây sốc' của B."
+ },
+ {
+  "id": 976,
+  "ja": "電車を乗り過ごして、一駅先まで行ってしまった。",
+  "winner": "tie",
+  "x3_q": "ok",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Cả hai đều làm mất chi tiết 一駅先 (đi lố đúng một ga), chỉ nói chung chung 'một đoạn'."
+ },
+ {
+  "id": 264,
+  "ja": "今度の飲み会、行く？",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Cùng nghĩa rủ đi nhậu nhưng 'Đi nhậu tới không?' của B cụt và gượng tiếng Việt."
+ },
+ {
+  "id": 534,
+  "ja": "甥っ子がすごく大きくなってて、びっくりした。",
+  "winner": "x3",
+  "x3_q": "good",
+  "v7a_q": "ok",
+  "identical": false,
+  "why": "Nói về cháu lớn lên thì 'lớn quá chừng' của A đúng hơn; 'to quá' của B thiên về to béo, lệch nhẹ nghĩa 大きくなってて."
+ }
+]

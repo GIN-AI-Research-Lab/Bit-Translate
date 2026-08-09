@@ -1,0 +1,578 @@
+[
+ {
+  "id": 6,
+  "ja": "最近、運動不足で体がなまってる気がする。",
+  "winner": "v8",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "運動不足 = thiếu vận động/không tập thể dục; B 'chẳng tập thể dục' sát hơn, A đổi thành 'chẳng muốn vận động' (thêm ý muốn)."
+ },
+ {
+  "id": 31,
+  "ja": "先日はお忙しい中、お時間をいただきありがとうございました。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Nghĩa ngang nhau, cùng dịch hơi vụng 'dành thời gian bận rộn'; B chỉ thêm 'rất nhiều'."
+ },
+ {
+  "id": 33,
+  "ja": "恐れ入りますが、担当者に代わっていただけますでしょうか。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 37,
+  "ja": "申し訳ございませんが、その件については確認してから折り返します。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Cả hai giữ đúng thứ tự xác nhận rồi mới liên hệ lại, nhưng đều dịch 折り返します thành 'quay lại' mơ hồ thay vì 'gọi lại'."
+ },
+ {
+  "id": 73,
+  "ja": "炊きたてのご飯に卵をかけるだけで最高のごちそうだ。",
+  "winner": "avg",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "卵をかける là đập/rưới trứng LÊN cơm; A 'lên cơm' đúng hướng hơn B 'vào cơm', còn lại như nhau."
+ },
+ {
+  "id": 83,
+  "ja": "乗り換えが多くて、初めての人には少し分かりにくいかもしれない。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "乗り換え là đổi tàu/chuyển tuyến; A 'chuyển mạng' bịa sang miền viễn thông, B 'chuyển đổi nhiều' mơ hồ nhưng không sai hẳn."
+ },
+ {
+  "id": 88,
+  "ja": "この駅から徒歩で十分ほどのところに有名なお寺があります。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "good",
+  "identical": false,
+  "why": "徒歩で十分 = MƯỜI phút đi bộ; A dịch thành 'một phút' sai số liệu, B đúng."
+ },
+ {
+  "id": 98,
+  "ja": "今朝はぐっと冷え込んで、初めて息が白くなった。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt; 'hơi thở trắng trẻo' dùng từ vụng (trắng trẻo tả da) nhưng nghĩa chính vẫn ra."
+ },
+ {
+  "id": 123,
+  "ja": "一夜漬けではなく、日頃からコツコツ勉強するべきだった。",
+  "winner": "v8",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Nghĩa 一夜漬け cả hai đều ra; A gọn tự nhiên, B lặp 'chăm chỉ... chăm chỉ' và 'chìm đắm trong một đêm' tối nghĩa."
+ },
+ {
+  "id": 124,
+  "ja": "なんだか最近、彼、様子がおかしいと思わない。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Cả hai đều bỏ mất câu hỏi gợi đồng tình 〜と思わない？, nghĩa 'anh ấy khác lạ' thì ngang nhau."
+ },
+ {
+  "id": 141,
+  "ja": "人は誰しも、他人には言えない悩みの一つや二つは抱えているものだ。",
+  "winner": "v8",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Nghĩa ngang nhau (cùng lệch nhẹ 他人には言えない thành 'không ai có thể nói ra'); A 'nỗi niềm riêng' tự nhiên hơn B 'ôm giữ nỗi trăn trở'."
+ },
+ {
+  "id": 163,
+  "ja": "雨上がりの空に、大きな虹がかかっていた。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "虹 là cầu vồng; B dịch thành 'tia hy vọng' bịa nghĩa, A giữ đúng cầu vồng dù 'phủ một tia' hơi vụng."
+ },
+ {
+  "id": 186,
+  "ja": "どうりで今日は道が空いていたわけだ。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": true,
+  "why": "Giống hệt; cả hai sai 道が空いていた (đường vắng/thông thoáng) thành 'vắng khách'."
+ },
+ {
+  "id": 207,
+  "ja": "ご査収のほど、よろしくお願いいたします。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "ご査収 = mong kiểm tra và tiếp nhận (tài liệu); A bịa 'thông cảm', B bịa 'sự hỗ trợ của quý khách', đều lệch cốt lõi."
+ },
+ {
+  "id": 226,
+  "ja": "経費精算、まだ出してないの？",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 241,
+  "ja": "財務部から予算超過の指摘を受けました。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": true,
+  "why": "Giống hệt; 指摘を受けた là BỊ NHẮC NHỞ về việc vượt ngân sách, dịch 'nhận được chỉ thị vượt quá ngân sách' đảo hẳn nghĩa."
+ },
+ {
+  "id": 274,
+  "ja": "あの新人、なかなか筋がいいね。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "good",
+  "identical": false,
+  "why": "筋がいい = có tố chất/có năng khiếu; B 'có năng lực' đúng, A 'có lý' sai nghĩa cốt lõi."
+ },
+ {
+  "id": 286,
+  "ja": "びっくりした、まさか内定もらえるとは！",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt; 内定 để nguyên 'naitei' không dịch."
+ },
+ {
+  "id": 292,
+  "ja": "その話、結局白紙になったんだって。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "白紙になった = bị hủy/xóa bỏ, cả hai đúng, chỉ khác vài chữ đệm."
+ },
+ {
+  "id": 294,
+  "ja": "履歴書の写真、いつのを使った？",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt; いつの hỏi ảnh chụp HỒI NÀO, cả hai lệch thành 'dùng từ khi nào' nhưng như nhau."
+ },
+ {
+  "id": 297,
+  "ja": "人手不足でシフトが回らない。",
+  "winner": "avg",
+  "avg_q": "good",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Nghĩa ngang; A 'không thể luân chuyển ca làm' rõ và tự nhiên, B 'ca làm không chạy' dịch máy móc."
+ },
+ {
+  "id": 305,
+  "ja": "出張報告書は今週中に提出してください。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 339,
+  "ja": "まったく状況が改善していないじゃないか！",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt; nghĩa đúng nhưng cấu trúc 'chẳng phải đã hoàn toàn không... sao' lủng củng."
+ },
+ {
+  "id": 411,
+  "ja": "洗濯物、そろそろ干してくれない？",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt; そろそろ dịch 'sắp phơi... được không' hơi vụng nhưng nghĩa ra."
+ },
+ {
+  "id": 494,
+  "ja": "塩、こっちに取ってもらえる？",
+  "winner": "avg",
+  "avg_q": "ok",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "取ってもらえる là nhờ NGƯỜI KIA đưa muối; A 'cho tôi lấy muối ở đây' đảo vai thành xin phép tự lấy, B 'cho tôi xin ít muối' đúng hướng nhờ vả."
+ },
+ {
+  "id": 508,
+  "ja": "母がいつも作ってくれた味噌汁の味を思い出すと、なんだか懐かしくて実家に帰りたくなる。",
+  "winner": "avg",
+  "avg_q": "good",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "懐かしい = nhớ nhung/bồi hồi; B 'nhớ mang máng' (nhớ lờ mờ) sai nghĩa cốt lõi, A đúng."
+ },
+ {
+  "id": 546,
+  "ja": "珍しく機嫌いいじゃん、今日。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "機嫌いい = tâm trạng tốt; A 'thấy cậu ghét tớ' vô nghĩa, B 'khó ưa' dịch ngược hẳn, cả hai hỏng."
+ },
+ {
+  "id": 553,
+  "ja": "カラオケ行きたいけど、みんな予定合わないんだよなあ。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "予定合わない = lịch mọi người không khớp; A 'chẳng ai lên lịch' gần ý khó hẹn, B 'mọi người không có lịch hẹn gì' hàm ý ngược (rảnh mà vẫn không đi)."
+ },
+ {
+  "id": 581,
+  "ja": "のど乾いた、何か飲み物ある？",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Nghĩa ngang nhau, cùng tự nhiên, chỉ khác 'đồ uống gì' và 'gì uống'."
+ },
+ {
+  "id": 634,
+  "ja": "バックアップを取り忘れていたせいで、旅行中に撮った大切な写真や動画がすべて消えてしまい、しばらく立ち直れなかった。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Gần giống hệt, chỉ khác 'chuyến du lịch'/'chuyến đi', đều đúng và đủ ý."
+ },
+ {
+  "id": 669,
+  "ja": "新しいイベントが始まったから、ログインボーナスを取りに行かないと。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 676,
+  "ja": "知らない人からいきなりフォローされて、少し怖い。",
+  "winner": "v8",
+  "avg_q": "ok",
+  "v8_q": "good",
+  "identical": false,
+  "why": "フォローされて là bị follow; B 'follow lại' dễ đọc thành follow back (ngụ ý mình follow trước), A đúng và gọn."
+ },
+ {
+  "id": 693,
+  "ja": "充電の減りが早くて、このスマートウォッチはがっかりしている。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "Cả hai dịch sai 充電の減りが早い (hao pin nhanh) thành 'sạc nhanh' và để đồng hồ làm chủ thể thất vọng thay vì người nói."
+ },
+ {
+  "id": 694,
+  "ja": "ワイヤレス充電に対応しているケース、地味に便利。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 695,
+  "ja": "見た目はかっこいいけど、機能はそこそこなガジェットだった。",
+  "winner": "avg",
+  "avg_q": "ok",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "そこそこ là 'tàm tạm'; A giữ được ý so-so dù thừa từ 'gadget', B biến thành 'khá là tiện lợi' làm mất hẳn ý chê."
+ },
+ {
+  "id": 726,
+  "ja": "音楽配信アプリのおすすめ機能、地味に優秀。",
+  "winner": "avg",
+  "avg_q": "good",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "おすすめ機能 là tính năng gợi ý; A dịch thành 'tính năng nổi bật' và bịa 'âm nhạc thực sự xuất sắc', B đúng cả 地味に (tuy nhỏ nhưng)."
+ },
+ {
+  "id": 731,
+  "ja": "オンライン会議中に、急にマイクが聞こえなくなった。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt (lặp thừa 'đột nhiên' hai lần nhưng đúng nghĩa)."
+ },
+ {
+  "id": 733,
+  "ja": "テレワークになってから、通勤時間がなくなって助かってる。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Gần như giống hệt; cả hai dịch 通勤時間がなくなって thành 'không còn thời gian đi làm' dễ hiểu lầm là hết thời gian để đi làm."
+ },
+ {
+  "id": 767,
+  "ja": "音声操作でエアコンをつけられるのは、地味にありがたい。",
+  "winner": "avg",
+  "avg_q": "good",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "A đúng nghĩa bật điều hòa bằng giọng nói; B vô nghĩa 'Dùng điều hòa để bật điều hòa'."
+ },
+ {
+  "id": 821,
+  "ja": "味噌汁を作るには、まずだしを取る必要がある。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Hai bản gần giống hệt, đều đúng nghĩa lấy dashi trước khi nấu."
+ },
+ {
+  "id": 828,
+  "ja": "お弁当のおかずに悩んでいる。",
+  "winner": "avg",
+  "avg_q": "ok",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "A giữ được 'món ăn kèm' dù thêm ý 'có nên chọn'; B mất hẳn おかず, biến thành phân vân có nên ăn cơm hộp."
+ },
+ {
+  "id": 837,
+  "ja": "賞味期限が切れているみたいだから、これは捨てよう。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Gần giống hệt, đều đúng nghĩa."
+ },
+ {
+  "id": 843,
+  "ja": "これ、辛くないですか。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 845,
+  "ja": "ラーメンの替え玉お願いします。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Cả hai dịch 替え玉 (thêm vắt mì) thành 'mì thay thế' — cùng lệch nhuận nghĩa như nhau, B chỉ thêm chữ ramen."
+ },
+ {
+  "id": 846,
+  "ja": "アレルギーがあるので、卵は入れないでもらえますか。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Cả hai đều đúng nghĩa dị ứng và xin không cho trứng, chỉ khác văn phong nhẹ."
+ },
+ {
+  "id": 852,
+  "ja": "デザートは別腹だよね。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Gần giống hệt; 別腹 dịch sát chữ 'cái bụng riêng' nhưng vẫn hiểu được."
+ },
+ {
+  "id": 853,
+  "ja": "コースメニューの中に、飲み物は含まれていますか。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": true,
+  "why": "Giống hệt; cùng dịch sai コースメニュー (thực đơn set/món theo course) thành 'thực đơn của khóa học'."
+ },
+ {
+  "id": 855,
+  "ja": "すみません、テーブルの上のこのお皿、下げてもらってもいいですか。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "Cả hai sai nghĩa 下げる (dọn đĩa đi): A xin nhận cái đĩa, B còn tự mâu thuẫn 'hạ cái đĩa này lên bàn'."
+ },
+ {
+  "id": 857,
+  "ja": "お腹いっぱい！もう一品も入らないよ。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": true,
+  "why": "Giống hệt."
+ },
+ {
+  "id": 917,
+  "ja": "春一番が吹いて、花粉が一気に舞い上がった。",
+  "winner": "avg",
+  "avg_q": "good",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "一気に là bốc lên đồng loạt/ào ạt; A dịch 'bay lên một lúc' sai nghĩa, B 'vùn vụt' truyền được ý."
+ },
+ {
+  "id": 940,
+  "ja": "すみません、駅はどちらですか。",
+  "winner": "avg",
+  "avg_q": "good",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "駅はどちらですか là hỏi ga ở đâu; A biến thành hỏi 'ga này là ga nào', B đúng."
+ },
+ {
+  "id": 983,
+  "ja": "まさか、こんなに市場が混んでいるとは思わなかった。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": true,
+  "why": "Giống hệt; 市場 đông người ở đây là 'chợ', cả hai dịch thành 'thị trường' sai loại."
+ },
+ {
+  "id": 989,
+  "ja": "びっくりした！急に雷が鳴って、雨も降ってきた。",
+  "winner": "v8",
+  "avg_q": "ok",
+  "v8_q": "good",
+  "identical": false,
+  "why": "B tự nhiên và sát ('mưa cũng rơi theo'); A bịa thêm sắc thái 'rả rích' không có trong 降ってきた."
+ },
+ {
+  "id": 1002,
+  "ja": "灯台下暗しというように、身近な課題ほど見過ごされやすいものだ。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "good",
+  "identical": false,
+  "why": "A chọn sai thành ngữ 'đèn nhà ai nấy rạng' (nghĩa khác hẳn 灯台下暗し); B 'chân đèn thì tối' đúng ý gần mà khó thấy."
+ },
+ {
+  "id": 1025,
+  "ja": "地方創生を掲げる自治体の多くは、若年層の流出をいかに食い止めるかで苦慮している。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Gần như giống nhau; cả hai đổi 流出 (giới trẻ rời đi) thành 'chảy máu chất xám' hơi lệch, phần còn lại đều đúng."
+ },
+ {
+  "id": 1027,
+  "ja": "木を見て森を見ずという態度では、複雑化する国際情勢を正しく読み解くことはできない。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Chỉ khác 'thấy/nhìn cây', đều đúng nghĩa thành ngữ và vế sau."
+ },
+ {
+  "id": 1050,
+  "ja": "過疎地域における公共交通の縮小は、高齢者の生活の足を奪う深刻な問題となっている。",
+  "winner": "tie",
+  "avg_q": "good",
+  "v8_q": "good",
+  "identical": false,
+  "why": "Giống hệt (chỉ khác dấu phẩy)."
+ },
+ {
+  "id": 1077,
+  "ja": "「玉石混交」のインターネット情報の中から真実を見極める力が、これからの教育に求められる。",
+  "winner": "avg",
+  "avg_q": "ok",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "玉石混交 là vàng thau lẫn lộn; A 'hàng vàng lẫn lộn' vụng nhưng gần đúng, B 'hàng giả lẫn lộn' cộng chữ 'về' làm sai hẳn nghĩa."
+ },
+ {
+  "id": 1085,
+  "ja": "経済学者の中には、賃金上昇こそがデフレ脱却の鍵だと主張する者が少なくない。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": true,
+  "why": "Giống hệt; デフレ là GIẢM phát, cả hai dịch thành 'lạm phát' — sai ngược nghĩa kinh tế cốt lõi."
+ },
+ {
+  "id": 1087,
+  "ja": "若年層の非婚化が進む背景には、経済的な不安定さが少なからず影響している。",
+  "winner": "avg",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Cả hai bỏ 少なからず (không nhỏ); A còn ép nhân quả tuyệt đối 'là do', B giữ cấu trúc 'đằng sau... là' sát hơn."
+ },
+ {
+  "id": 1091,
+  "ja": "「焼け石に水」との批判もあるが、政府は追加の物価対策を打ち出した。",
+  "winner": "tie",
+  "avg_q": "bad",
+  "v8_q": "bad",
+  "identical": false,
+  "why": "Cả hai dịch hỏng thành ngữ 焼け石に水 (muối bỏ bể): 'đá bào thì nước' và 'đá cháy là nước' đều vô nghĩa."
+ },
+ {
+  "id": 1104,
+  "ja": "看板だけに終わった地方創生事業も多く、成果が見えないとの指摘は根強い。",
+  "winner": "v8",
+  "avg_q": "ok",
+  "v8_q": "good",
+  "identical": false,
+  "why": "根強い B dịch đúng 'dai dẳng'; A dịch sát chữ 'nhiều điểm bám rễ' tối nghĩa dù ý còn nhận ra."
+ },
+ {
+  "id": 1148,
+  "ja": "多文化共生社会が進む中、郷に従うことだけを求める発想はむしろ再考を要する。",
+  "winner": "tie",
+  "avg_q": "ok",
+  "v8_q": "ok",
+  "identical": true,
+  "why": "Giống hệt; 郷に従う dịch 'thuận theo quê hương' hơi sát chữ (chuẩn là nhập gia tùy tục) nhưng ý chính đủ."
+ },
+ {
+  "id": 1198,
+  "ja": "「捨てる神あれば拾う神あり」という言葉のとおり、支援を打ち切られた事業が別の形で再生することもある。",
+  "winner": "v8",
+  "avg_q": "bad",
+  "v8_q": "ok",
+  "identical": false,
+  "why": "Thành ngữ đều trục trặc nhưng A 'thần vứt đi... thần nhặt được' còn nhận ra ý; B 'Có Chúa Vứt, có Chúa Chấn' vô nghĩa."
+ }
+]

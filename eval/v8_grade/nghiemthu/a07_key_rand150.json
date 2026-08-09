@@ -1,0 +1,1202 @@
+[
+ {
+  "id": 245,
+  "ja": "今月の残業時間、把握してる？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 56,
+  "ja": "このアプリはパスワードを忘れても簡単に再設定できます。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 593,
+  "ja": "どうしてもやる気が出ない、そんな日もある。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 528,
+  "ja": "お弁当作る気力が今日はなかった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 482,
+  "ja": "うちの子、なんでそんなに甘えん坊なんだろう。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 308,
+  "ja": "御見積の内容にご不明点がございましたら、遠慮なくお申し付けください。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 224,
+  "ja": "会議室、空いてる？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1180,
+  "ja": "政治的な分断が深まる社会では、少数意見への配慮がとかく後回しにされやすい。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 192,
+  "ja": "彼女の笑顔を見ると、こっちまで幸せな気分になる。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 914,
+  "ja": "湿度が高い日は、汗が全然乾かない。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 70,
+  "ja": "今夜はカレーにしようと思って、材料を買ってきた。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 66,
+  "ja": "このリンクをクリックすると、詳細ページに移動します。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 205,
+  "ja": "すみません、遅れます！",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 472,
+  "ja": "台風来るらしいから気をつけて。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 502,
+  "ja": "マジで！？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1096,
+  "ja": "有権者の政治的無関心は、民主主義そのものの基盤を揺るがしかねない問題である。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 59,
+  "ja": "このサイト、最近ログインするたびにエラーが出るんだよね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 432,
+  "ja": "あの子とはもう疎遠になっちゃったな。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 909,
+  "ja": "気温が急に下がったから、風邪をひかないように。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 476,
+  "ja": "お財布忘れて、レジで焦った。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 971,
+  "ja": "駐車場はどこにありますか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 599,
+  "ja": "振り返ってみると、大変なこともあったけど、それなりに充実した一日だった気がする。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 15,
+  "ja": "なんでこんなに時間が経つの早いんだろう。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 350,
+  "ja": "あの案件、もう手遅れなんじゃないかな。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 915,
+  "ja": "秋の空は澄んでいて、遠くの山まで見える。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 735,
+  "ja": "会議アプリの音声が途切れて、内容がよく聞こえなかった。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 342,
+  "ja": "決裁が下りるまで、もう少しお時間をいただけますか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 465,
+  "ja": "天気良かったら公園行こうか。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 725,
+  "ja": "新作映画の配信、いつ始まるんだろう?",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 203,
+  "ja": "恐れ入りますが、来週の火曜日までにご返信いただけますでしょうか。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 818,
+  "ja": "ホステルは安いけど、部屋が狭いんだよね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 213,
+  "ja": "お忙しいところ恐縮ですが、ご確認いただけますと幸いです。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 775,
+  "ja": "ドローンを使った測量作業、効率がすごく上がったらしい。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 743,
+  "ja": "カートに入れたまま忘れていた商品、セール中に買っておいた。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 570,
+  "ja": "どうしてこんなに不器用なんだろう、自分でも呆れる。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 96,
+  "ja": "無理をしないで、今日はゆっくり体を休めてください。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 994,
+  "ja": "暗くなってきたから、気をつけて帰ってね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1162,
+  "ja": "文化予算の国内総生産比は主要国の中でも低く、芸術支援の拡充を求める声が根強い。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 272,
+  "ja": "転職エージェントから紹介された会社、条件は悪くない。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 815,
+  "ja": "展望台からの夜景は本当に感動的だった。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 174,
+  "ja": "本当にありがとう、助かったよ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1194,
+  "ja": "専門分野には専門家の知見を生かすべきだという原則は、行政の現場でも軽視されがちだ。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 630,
+  "ja": "パスワード管理アプリを使い始めてから管理が楽になった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 780,
+  "ja": "産業用ロボットの導入で、工場の生産効率が大きく上がった。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 418,
+  "ja": "床にホコリがたまってきたな。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 154,
+  "ja": "うまくいかないときこそ、基本に立ち返ることが大切だ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 102,
+  "ja": "紅葉の季節になると、山全体が赤や黄色に染まる。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 491,
+  "ja": "静かにしてくれない？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 622,
+  "ja": "二段階認証を設定しておくと安心です。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 176,
+  "ja": "また今度ゆっくり話そうね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 221,
+  "ja": "新入社員の研修プログラムを見直すべきだと思います。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 980,
+  "ja": "やっぱり日本の夏は蒸し暑いなあ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 787,
+  "ja": "チャットサポートの対応、すごく丁寧で助かった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 357,
+  "ja": "契約解除の手続きについて、詳しく教えてもらえますか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 798,
+  "ja": "もっと早く知っておきたかった便利な機能だ。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 766,
+  "ja": "家電同士が連携すると、こんなに便利になるとは思わなかった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 454,
+  "ja": "ガーデニングって思ったより奥が深いんだよね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 575,
+  "ja": "娘はおかげさまで元気に育っています。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 158,
+  "ja": "やらずに後悔するより、やって後悔したほうがましだ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 374,
+  "ja": "御社製品のカタログを送付させていただきます。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1157,
+  "ja": "対立の末に組織にもたらされた傷は、簡単には癒えないとの見方が根強い。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 358,
+  "ja": "さすがベテラン、対応が早いね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1000,
+  "ja": "政府は来年度予算案において社会保障費を前年比三・二パーセント増となる三十八兆円台に積み上げる方針を固めた。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 817,
+  "ja": "現地のガイドさんがとても親切に案内してくれた。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 582,
+  "ja": "あ、雨降ってきた！",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 474,
+  "ja": "スーパー行くけど、何か欲しいものある？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 700,
+  "ja": "防水機能つきのガジェットは、やっぱり安心感がある。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 125,
+  "ja": "本当のことを言うと、あの映画はそれほど面白くなかった。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 495,
+  "ja": "また忘れたの？ほんと勘弁してよ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 679,
+  "ja": "SNSを見る時間を減らしたら、なんだか気持ちが楽になった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 871,
+  "ja": "足首をひねってしまって、歩くのがつらい。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 577,
+  "ja": "お義母さんの手料理、本当に美味しかったです。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 147,
+  "ja": "情報があふれる時代だからこそ、何を信じるかを見極める力が求められる。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 457,
+  "ja": "料理のレシピ、新しいの試してみたい。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 677,
+  "ja": "インスタのストーリー機能、意外と使いやすい。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 460,
+  "ja": "編み物って地味に見えて、意外と楽しいんだよ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1081,
+  "ja": "地域コミュニティの希薄化は、災害時の助け合いの機能を弱める要因になっている。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 860,
+  "ja": "最近、頭痛がひどくて困っている。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 993,
+  "ja": "親切に道を教えていただいて、本当にありがとうございました。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 315,
+  "ja": "予算案、上に通すの結構大変そうだな。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 571,
+  "ja": "お世話になっております、いつもありがとうございます。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 532,
+  "ja": "奥さんの誕生日、何をプレゼントしようか悩んでる。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1167,
+  "ja": "リスクを取らない経営に、大きな成長は望めない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 567,
+  "ja": "すごく感動して、思わず涙が出た。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 928,
+  "ja": "昨日のオリンピックの決勝、見た？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 867,
+  "ja": "腰が痛くて、長時間座っていられない。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 781,
+  "ja": "サポートに問い合わせたのに、返信が全然来ない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 306,
+  "ja": "貴社のご発展を心よりお祈り申し上げます。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1106,
+  "ja": "他国の制度を過度に理想化することにも、危うさがあるとの指摘は根強い。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1068,
+  "ja": "「切磋琢磨」という言葉が示すように、競争は必ずしも敵対を意味するものではない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 200,
+  "ja": "失敗したからといって、それがすべての終わりというわけではない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 105,
+  "ja": "予算が限られているので、なるべく安く抑えたいんです。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 240,
+  "ja": "これで契約は成立ということでよろしいでしょうか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 336,
+  "ja": "最近入った子、電話対応がだいぶ上手くなったね。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 351,
+  "ja": "何度も催促してすみません。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 142,
+  "ja": "成功する人としない人の違いは、才能よりも継続する力にあると思う。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 830,
+  "ja": "パンを焼くときは、発酵の時間が大事らしい。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 822,
+  "ja": "お米は何合炊きますか。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1013,
+  "ja": "若者の投票率は前回の選挙でわずか三十四パーセントにすぎず、政治への関心の低さが浮き彫りになった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1146,
+  "ja": "デジタル教育の推進は、教員自身のICTスキル向上という新たな課題を生んでいる。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 541,
+  "ja": "お腹ペコペコだよー。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1197,
+  "ja": "学ぶことの本質は、正解を覚えることではなく問いを立てる姿勢にあるのかもしれない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 25,
+  "ja": "これはいくらですか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 251,
+  "ja": "ボーナスの査定基準がいまだによく分からない。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1163,
+  "ja": "教育の機会均等という理念は、現実の家庭の経済力によって大きく揺らいでいる。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 631,
+  "ja": "クラウドにバックアップしておけば、機種変更のときも安心です。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 942,
+  "ja": "次の角を右に曲がってください。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 347,
+  "ja": "内定式、参加する予定？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 981,
+  "ja": "これ、本当に美味しい！",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 8,
+  "ja": "冷蔵庫に何も入ってないから買い物に行かなきゃ。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 568,
+  "ja": "なんとなく気分が晴れないんだよね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1084,
+  "ja": "文化財の保存には多額の費用がかかり、自治体の財源不足が修復の遅れを招いている。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 389,
+  "ja": "面接で聞かれた質問、想定してたのと全然違った。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1101,
+  "ja": "図書館の利用者数は減少傾向にあるが、電子書籍の貸出は着実に伸びている。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 233,
+  "ja": "契約更新の件、どうなった？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 642,
+  "ja": "ルーターを再起動したら直った。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 805,
+  "ja": "パスポートを見せてください。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 354,
+  "ja": "見積書の再発行をお願いできますでしょうか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1168,
+  "ja": "少子化の進行は、将来の年金制度そのものの持続可能性を直接揺るがす問題である。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1150,
+  "ja": "地方の商店街は、大型店の進出とネット通販の普及という二重の圧力にさらされている。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 2,
+  "ja": "週末は家でゆっくりするつもり。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 699,
+  "ja": "実際のところ、スマートグラスはどれくらい実用的なんだろう?",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1058,
+  "ja": "中央銀行は、金融政策の正常化に向けた道筋を慎重に見極めているとみられる。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 44,
+  "ja": "このたびは弊社の製品をお選びいただき誠にありがとうございます。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 246,
+  "ja": "お手数をおかけいたしますが、ご対応をお願いいたします。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 783,
+  "ja": "マニュアル通りに設定したのに、全く動かない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 660,
+  "ja": "セール中に買ったソフト、まだ全然プレイできてない。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 517,
+  "ja": "とことんツイてない一日だったな、今日は。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 129,
+  "ja": "心配しなくても、きっとうまくいくから大丈夫だよ。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 520,
+  "ja": "冷蔵庫の中、もう何もないじゃん。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 189,
+  "ja": "まあ、終わったことは仕方がないよ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1053,
+  "ja": "政府は、来年の通常国会に働き方改革関連法案の再改正案を提出する見通しだ。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 153,
+  "ja": "たかがゲームと思われがちだが、そこから学べることは意外と多い。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1154,
+  "ja": "疑いを招く行動を慎むべきだという戒めを忘れた政治家の言動が、しばしば問題視される。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 275,
+  "ja": "クレーム対応に追われて一日が終わった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 280,
+  "ja": "明日のプレゼン、資料は準備できてる？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1030,
+  "ja": "有言実行を旨とする経営者ほど、社員からの信頼を集めやすいという調査結果が出ている。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1189,
+  "ja": "理数系への進学を選ぶ女子生徒の割合は、依然として男子生徒の半数程度にとどまっている。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 362,
+  "ja": "出向先での仕事、思ったより大変らしいよ。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 1143,
+  "ja": "経済統計の発表を受け、市場では今後の金融政策の行方を巡る思惑が交錯した。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 916,
+  "ja": "今年は雪が少なくて、スキー場が困っているらしい。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 458,
+  "ja": "ヨガを始めてから体が軽くなった気がする。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 436,
+  "ja": "恋人と一緒にいると時間があっという間に過ぎるよね。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 670,
+  "ja": "eスポーツ市場は今後もっと大きくなると思う。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 804,
+  "ja": "スーツケースが重すぎて持ち上げられない。",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 949,
+  "ja": "この地図で今どこにいるか分かりますか。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 1122,
+  "ja": "明らかになった不正はごく一部にすぎないとの指摘もあるが、関係者に衝撃を与えた。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 976,
+  "ja": "電車を乗り過ごして、一駅先まで行ってしまった。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ },
+ {
+  "id": 264,
+  "ja": "今度の飲み会、行く？",
+  "A_sys": "v8",
+  "B_sys": "soup",
+  "identical": true,
+  "domain": ""
+ },
+ {
+  "id": 534,
+  "ja": "甥っ子がすごく大きくなってて、びっくりした。",
+  "A_sys": "soup",
+  "B_sys": "v8",
+  "identical": false,
+  "domain": ""
+ }
+]

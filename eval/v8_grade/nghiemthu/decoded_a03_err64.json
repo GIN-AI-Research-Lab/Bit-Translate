@@ -1,0 +1,578 @@
+[
+ {
+  "id": 6,
+  "ja": "最近、運動不足で体がなまってる気がする。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản gần như trùng nhau, cùng biến quan hệ nhân quả 'do thiếu vận động' thành hai vế song song và đổi thành 'lười vận động'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 31,
+  "ja": "先日はお忙しい中、お時間をいただきありがとうございました。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai đều gượng ở 'dành thời gian bận rộn' (đúng ra là 'dành thời gian dù bận rộn'), khác nhau chỉ ở mức nhấn 'rất nhiều'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 33,
+  "ja": "恐れ入りますが、担当者に代わっていただけますでしょうか。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A chuyển máy cho NGƯỜI PHỤ TRÁCH đúng nguyên văn; B đổi thành 'chuyển máy cho tôi', sai hẳn vai người nhận.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 37,
+  "ja": "申し訳ございませんが、その件については確認してから折り返します。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai giữ đúng trình tự 'xác nhận rồi mới hồi đáp' nhưng cùng dịch 折り返す thành 'quay lại' thay vì 'gọi/liên hệ lại'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 73,
+  "ja": "炊きたてのご飯に卵をかけるだけで最高のごちそうだ。",
+  "winner": "v7a",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cùng dùng 'rắc trứng' hơi sai kết hợp từ, nhưng A giữ được sắc thái 最高 ('tuyệt vời nhất') mà B lược mất.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 83,
+  "ja": "乗り換えが多くて、初めての人には少し分かりにくいかもしれない。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt nhau; đều dịch 乗り換え thành 'chuyển đổi' chung chung thay vì 'chuyển tàu/đổi tuyến'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 88,
+  "ja": "この駅から徒歩で十分ほどのところに有名なお寺があります。",
+  "winner": "v7a",
+  "soup_q": "bad",
+  "v7a_q": "ok",
+  "why": "A xoá hẳn thông tin quãng thời gian đi bộ và làm vỡ câu; B giữ cấu trúc đúng dù đổi '10 phút' thành 'vài phút'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 98,
+  "ja": "今朝はぐっと冷え込んで、初めて息が白くなった。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản giống nhau, cùng biến 息が白くなった ('thấy hơi thở trắng ra vì lạnh') thành 'thở không ra hơi' — sai nghĩa hoàn toàn.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 123,
+  "ja": "一夜漬けではなく、日頃からコツコツ勉強するべきだった。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "A giữ được 日頃から ('học mỗi ngày'), B đánh rơi ý đều đặn hằng ngày và diễn đạt 一夜漬け còn ngô nghê hơn.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 124,
+  "ja": "なんだか最近、彼、様子がおかしいと思わない。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A lật nghĩa thành 'không thấy có gì bất thường'; B giữ đúng ý 'thấy anh ấy có gì đó không ổn'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 141,
+  "ja": "人は誰しも、他人には言えない悩みの一つや二つは抱えているものだ。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "B đảo vai thành 'người khác không thể nói ra'; A giữ đúng hướng nỗi niềm không thể thổ lộ với người ngoài.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 163,
+  "ja": "雨上がりの空に、大きな虹がかかっていた。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A bịa 'tia hy vọng', mất hẳn cầu vồng; B tuy vỡ ngữ pháp nhưng vẫn giữ 'cầu vồng lớn trên trời sau mưa'.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 186,
+  "ja": "どうりで今日は道が空いていたわけだ。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản trùng nhau, cùng đổi 道が空いていた ('đường vắng xe') thành 'vắng khách' — sai chủ thể.",
+  "domain": "orig_mix"
+ },
+ {
+  "id": 207,
+  "ja": "ご査収のほど、よろしくお願いいたします。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đánh mất nghĩa cốt lõi ご査収 ('kính mong quý vị kiểm tra và nhận tài liệu'), chỉ còn câu xã giao chung chung.",
+  "domain": "work"
+ },
+ {
+  "id": 226,
+  "ja": "経費精算、まだ出してないの？",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt; đều bỏ ý 'chưa NỘP' đơn quyết toán nhưng vẫn truyền đạt được đại ý.",
+  "domain": "work"
+ },
+ {
+  "id": 241,
+  "ja": "財務部から予算超過の指摘を受けました。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A dịch 指摘 thành 'chỉ trích' hơi nặng nhưng đúng hướng; B đổi thành 'chỉ thị' (指示) là sai loại hành động.",
+  "domain": "work"
+ },
+ {
+  "id": 274,
+  "ja": "あの新人、なかなか筋がいいね。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản trùng nhau, cùng dịch 筋がいい ('có tố chất/có khiếu') thành 'chuyên nghiệp' hơi lệch.",
+  "domain": "work"
+ },
+ {
+  "id": 286,
+  "ja": "びっくりした、まさか内定もらえるとは！",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A hiểu 内定 thành 'nhận nội bộ' là sai nghĩa; B để nguyên 'naitei' chưa Việt hoá nhưng không xuyên tạc nghĩa.",
+  "domain": "work"
+ },
+ {
+  "id": 292,
+  "ja": "その話、結局白紙になったんだって。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A dịch đúng 白紙になった là 'bị huỷ bỏ'; B hiểu theo nghĩa đen 'để trống', sai nghĩa thành ngữ.",
+  "domain": "work"
+ },
+ {
+  "id": 294,
+  "ja": "履歴書の写真、いつのを使った？",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản gần trùng, cùng hiểu いつの thành 'từ khi nào' thay vì 'ảnh chụp hồi nào'.",
+  "domain": "work"
+ },
+ {
+  "id": 297,
+  "ja": "人手不足でシフトが回らない。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt, cùng lược mất ý シフトが回らない ('không xếp nổi ca làm').",
+  "domain": "work"
+ },
+ {
+  "id": 305,
+  "ja": "出張報告書は今週中に提出してください。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "ok",
+  "why": "B dùng đúng thuật ngữ 'báo cáo công tác' cho 出張報告書; A dịch thành 'báo cáo lưu động' sai thuật ngữ.",
+  "domain": "work"
+ },
+ {
+  "id": 339,
+  "ja": "まったく状況が改善していないじゃないか！",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều lật phủ định: nguyên văn than 'chẳng cải thiện chút nào', hai bản đều thành 'chẳng phải đã cải thiện sao'.",
+  "domain": "work"
+ },
+ {
+  "id": 411,
+  "ja": "洗濯物、そろそろ干してくれない？",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt, cùng biến lời nhờ vả 干してくれない？ thành câu hỏi 'sắp phơi chưa'.",
+  "domain": "life"
+ },
+ {
+  "id": 494,
+  "ja": "塩、こっちに取ってもらえる？",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản trùng nhau, đều bỏ dịch 塩 ('muối') thành 'Shio' và thay tân ngữ bằng 'cái này'.",
+  "domain": "life"
+ },
+ {
+  "id": 508,
+  "ja": "母がいつも作ってくれた味噌汁の味を思い出すと、なんだか懐かしくて実家に帰りたくなる。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A đổi 懐かしい thành 'nhớ mang máng' (sai cảm xúc) và bịa thêm 'ngay lập tức'; B dịch đúng và đủ.",
+  "domain": "life"
+ },
+ {
+  "id": 546,
+  "ja": "珍しく機嫌いいじゃん、今日。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều hiểu sai 機嫌いい ('tâm trạng tốt') thành 'ghét máy móc'/'ghét cơ thể', vỡ nghĩa như nhau.",
+  "domain": "life"
+ },
+ {
+  "id": 553,
+  "ja": "カラオケ行きたいけど、みんな予定合わないんだよなあ。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều hỏng ở 予定合わない ('lịch mọi người không khớp'): A thành 'chẳng ai thèm lịch', B thành 'không hẹn trước'.",
+  "domain": "life"
+ },
+ {
+  "id": 581,
+  "ja": "のど乾いた、何か飲み物ある？",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai vỡ câu, mất ý 'khát nước' và câu hỏi 'có gì uống không'.",
+  "domain": "life"
+ },
+ {
+  "id": 634,
+  "ja": "バックアップを取り忘れていたせいで、旅行中に撮った大切な写真や動画がすべて消えてしまい、しばらく立ち直れなかった。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A lật nghĩa 立ち直れなかった thành 'đứng dậy một lúc lâu không sao'; B dịch đúng 'không gượng dậy được một thời gian'.",
+  "domain": "tech"
+ },
+ {
+  "id": 669,
+  "ja": "新しいイベントが始まったから、ログインボーナスを取りに行かないと。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A đổi 始まった ('đã bắt đầu') thành 'sắp bắt đầu', phá quan hệ nhân quả; B giữ đúng thì.",
+  "domain": "tech"
+ },
+ {
+  "id": 676,
+  "ja": "知らない人からいきなりフォローされて、少し怖い。",
+  "winner": "v7a",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều dịch sai フォロー ('theo dõi trên mạng xã hội'), nhưng 'đỡ đần' của A còn là từ có nghĩa, 'đỡ đỡ' của B vô nghĩa.",
+  "domain": "tech"
+ },
+ {
+  "id": 693,
+  "ja": "充電の減りが早くて、このスマートウォッチはがっかりしている。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều dịch ngược 充電の減りが早い (hao pin nhanh) thành 'sạc nhanh' và giữ nguyên chủ ngữ sai 'đồng hồ đang thất vọng'.",
+  "domain": "tech"
+ },
+ {
+  "id": 694,
+  "ja": "ワイヤレス充電に対応しているケース、地味に便利。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản y hệt nhau, cùng dịch ケース thành 'trường hợp' thay vì ốp lưng, làm hỏng chủ ngữ.",
+  "domain": "tech"
+ },
+ {
+  "id": 695,
+  "ja": "見た目はかっこいいけど、機能はそこそこなガジェットだった。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A giữ đúng そこそこ ('kha khá', tầm tầm) dù thừa chữ 'gadget'; B tự thêm phủ định 'không phải là tiện ích cho lắm', lật nghĩa.",
+  "domain": "tech"
+ },
+ {
+  "id": 726,
+  "ja": "音楽配信アプリのおすすめ機能、地味に優秀。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai đều lạc chữ 'âm nhạc', nhưng B dịch 地味に優秀 sát hơn ('đơn giản mà xuất sắc') còn A chỉ còn 'khá là xuất sắc'.",
+  "domain": "tech"
+ },
+ {
+  "id": 731,
+  "ja": "オンライン会議中に、急にマイクが聞こえなくなった。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A lật phủ định 聞こえなくなった thành 'nghe thấy tiếng micro'; B giữ đúng 'micro không nghe thấy gì nữa'.",
+  "domain": "tech"
+ },
+ {
+  "id": 733,
+  "ja": "テレワークになってから、通勤時間がなくなって助かってる。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt; 通勤時間 dịch thành 'thời gian đi làm' hơi mơ hồ (đúng là thời gian đi lại) nhưng ý chính giữ được.",
+  "domain": "tech"
+ },
+ {
+  "id": 767,
+  "ja": "音声操作でエアコンをつけられるのは、地味にありがたい。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A còn giữ ý bật điều hòa bằng điều khiển giọng nói dù đuôi câu lủng củng; B thành 'dùng điều hòa để bật điều hòa', mất hẳn 音声操作 và vỡ câu.",
+  "domain": "tech"
+ },
+ {
+  "id": 821,
+  "ja": "味噌汁を作るには、まずだしを取る必要がある。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "だしを取る là lấy/nấu nước dùng; A dịch thành 'ăn nước dùng' sai hẳn động tác, B đúng.",
+  "domain": "travel"
+ },
+ {
+  "id": 828,
+  "ja": "お弁当のおかずに悩んでいる。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều bịa 'có nên ăn cơm hộp không', mất hoàn toàn ý đang đau đầu chọn món ăn kèm (おかず).",
+  "domain": "travel"
+ },
+ {
+  "id": 837,
+  "ja": "賞味期限が切れているみたいだから、これは捨てよう。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản đều đổi 賞味期限が切れている (đã hết hạn) thành 'sắp hết hạn' và thêm 'nghe nói'; 'bỏ đi'/'vứt đi' tương đương.",
+  "domain": "travel"
+ },
+ {
+  "id": 843,
+  "ja": "これ、辛くないですか。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản y hệt, đều đọc 辛い thành 'khổ' thay vì 'cay' trong ngữ cảnh món ăn.",
+  "domain": "travel"
+ },
+ {
+  "id": 845,
+  "ja": "ラーメンの替え玉お願いします。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai đều dịch 替え玉 thành 'mì thay thế' (đúng là thêm phần mì), nghĩa ngang nhau, B đọc thuận tiếng Việt hơn.",
+  "domain": "travel"
+ },
+ {
+  "id": 846,
+  "ja": "アレルギーがあるので、卵は入れないでもらえますか。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A giữ đúng lời nhờ 'đừng cho trứng vào'; B lật phủ định thành 'cho trứng vào được không', nguy hiểm với người dị ứng.",
+  "domain": "travel"
+ },
+ {
+  "id": 852,
+  "ja": "デザートは別腹だよね。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản đều dịch sát chữ 別腹 thành 'bụng riêng', cùng mức tự nhiên, không bản nào chuyển được thành ngữ.",
+  "domain": "travel"
+ },
+ {
+  "id": 853,
+  "ja": "コースメニューの中に、飲み物は含まれていますか。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai đều hiểu コースメニュー là 'khóa học' thay vì thực đơn set, phần còn lại giống nhau.",
+  "domain": "travel"
+ },
+ {
+  "id": 855,
+  "ja": "すみません、テーブルの上のこのお皿、下げてもらってもいいですか。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều biến 下げてもらう (dọn đĩa đi) thành 'hạ cái đĩa này lên bàn', tự mâu thuẫn và mất ý chính.",
+  "domain": "travel"
+ },
+ {
+  "id": 857,
+  "ja": "お腹いっぱい！もう一品も入らないよ。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt; 'không cho thêm món nào nữa' hơi lệch khỏi 'không nhét thêm nổi' nhưng vẫn hiểu đúng.",
+  "domain": "travel"
+ },
+ {
+  "id": 917,
+  "ja": "春一番が吹いて、花粉が一気に舞い上がった。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt, đều biến 一気に舞い上がった thành 'bay lên một cái là hết', làm sai sắc thái nhưng giống nhau.",
+  "domain": "travel"
+ },
+ {
+  "id": 940,
+  "ja": "すみません、駅はどちらですか。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "Câu hỏi là 'ga ở đâu'; A đổi thành 'ga này là ga nào', hỏi sai nội dung, B đúng.",
+  "domain": "travel"
+ },
+ {
+  "id": 983,
+  "ja": "まさか、こんなに市場が混んでいるとは思わなかった。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai đều dịch 市場 thành 'thị trường' thay vì 'chợ', phần còn lại tương đương.",
+  "domain": "travel"
+ },
+ {
+  "id": 989,
+  "ja": "びっくりした！急に雷が鳴って、雨も降ってきた。",
+  "winner": "v7a",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Cả hai đều lật 雨も降ってきた thành 'mưa cũng tạnh rồi'; B nhỉnh hơn ở '雷が鳴る = sấm nổ' còn A chỉ nói 'sấm sét'.",
+  "domain": "travel"
+ },
+ {
+  "id": 1002,
+  "ja": "灯台下暗しというように、身近な課題ほど見過ごされやすいものだ。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Cả hai đều hỏng thành ngữ 灯台下暗し ('thấp đèn thì có' / 'thế gian nan') nhưng vế giải thích còn lại đúng và giống hệt nhau.",
+  "domain": "news"
+ },
+ {
+  "id": 1025,
+  "ja": "地方創生を掲げる自治体の多くは、若年層の流出をいかに食い止めるかで苦慮している。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A dịch 流出 thành 'rò rỉ' còn giữ ý người trẻ rời đi (dù chế từ 'chấn sinh'); B đúng từ 'tái thiết' nhưng 'sự cố tràn lan của giới trẻ' làm vỡ nghĩa vị ngữ chính.",
+  "domain": "news"
+ },
+ {
+  "id": 1027,
+  "ja": "木を見て森を見ずという態度では、複雑化する国際情勢を正しく読み解くことはできない。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A giữ đúng thành ngữ 'nhìn cây mà không thấy rừng'; B đảo thành 'coi thường cây cối mà không nhìn vào rừng', sai hẳn ý.",
+  "domain": "news"
+ },
+ {
+  "id": 1050,
+  "ja": "過疎地域における公共交通の縮小は、高齢者の生活の足を奪う深刻な問題となっている。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "生活の足 là phương tiện đi lại; A đổi thành 'sinh kế' (sai đối tượng bị cướp), B dịch đúng.",
+  "domain": "news"
+ },
+ {
+  "id": 1077,
+  "ja": "「玉石混交」のインターネット情報の中から真実を見極める力が、これからの教育に求められる。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A biến 玉石混交 thành 'thịt thạch lẫn lộn' vô nghĩa; B 'sự pha trộn vàng ngọc' tuy thiếu vế 'đá' nhưng vẫn gợi đúng ý vàng thau lẫn lộn.",
+  "domain": "news"
+ },
+ {
+  "id": 1085,
+  "ja": "経済学者の中には、賃金上昇こそがデフレ脱却の鍵だと主張する者が少なくない。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản y hệt, đều dịch デフレ脱却 thành 'thoát khỏi lạm phát' trong khi phải là giảm phát — lật ngược thuật ngữ kinh tế cốt lõi.",
+  "domain": "news"
+ },
+ {
+  "id": 1087,
+  "ja": "若年層の非婚化が進む背景には、経済的な不安定さが少なからず影響している。",
+  "winner": "soup",
+  "soup_q": "good",
+  "v7a_q": "bad",
+  "why": "A giữ đúng 非婚化 ('ngày càng ít kết hôn'); B mất chữ phủ định thành 'ngày càng kết hôn', lật nghĩa.",
+  "domain": "news"
+ },
+ {
+  "id": 1091,
+  "ja": "「焼け石に水」との批判もあるが、政府は追加の物価対策を打ち出した。",
+  "winner": "tie",
+  "soup_q": "bad",
+  "v7a_q": "bad",
+  "why": "Hai bản y hệt, đều đổi 焼け石に水 (muối bỏ bể, vô ích) thành 'nước chảy đá mòn' mang nghĩa ngược lại.",
+  "domain": "news"
+ },
+ {
+  "id": 1104,
+  "ja": "看板だけに終わった地方創生事業も多く、成果が見えないとの指摘は根強い。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt; 根強い dịch thành 'còn rất sâu sắc' hơi gượng nhưng phần nội dung chính đúng.",
+  "domain": "news"
+ },
+ {
+  "id": 1148,
+  "ja": "多文化共生社会が進む中、郷に従うことだけを求める発想はむしろ再考を要する。",
+  "winner": "soup",
+  "soup_q": "ok",
+  "v7a_q": "bad",
+  "why": "A dịch 郷に従う thành 'tuân theo quê hương' còn hiểu được; B chế từ 'thuận theo hương tộc' vô nghĩa.",
+  "domain": "news"
+ },
+ {
+  "id": 1198,
+  "ja": "「捨てる神あれば拾う神あり」という言葉のとおり、支援を打ち切られた事業が別の形で再生することもある。",
+  "winner": "tie",
+  "soup_q": "ok",
+  "v7a_q": "ok",
+  "why": "Hai bản y hệt: câu tục ngữ bị lặp lỗi 'Có thần thì có thần, có thần thì nhặt', nhưng vế giải thích dịch đúng.",
+  "domain": "news"
+ }
+]
