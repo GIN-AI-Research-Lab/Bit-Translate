@@ -1,0 +1,226 @@
+[
+ {
+  "id": 6,
+  "winner": "tie",
+  "a_q": "good",
+  "b_q": "good",
+  "why": "Cả hai đều đúng ý chính (uể oải vì ít vận động), tự nhiên tương đương, khác biệt nhỏ về sắc thái không đáng kể."
+ },
+ {
+  "id": 31,
+  "winner": "tie",
+  "a_q": "ok",
+  "b_q": "ok",
+  "why": "Cả hai đều dịch hơi cứng 'お忙しい中' thành 'thời gian bận rộn', còn lại tương đương nhau."
+ },
+ {
+  "id": 33,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "good",
+  "why": "A dịch sai đối tượng: 'chuyển máy cho tôi' ngược nghĩa, bỏ mất 担当者 (người phụ trách); B giữ đúng."
+ },
+ {
+  "id": 37,
+  "winner": "tie",
+  "a_q": "good",
+  "b_q": "good",
+  "why": "Cả hai đều giữ đúng trình tự xác nhận trước rồi mới phản hồi, đều tự nhiên."
+ },
+ {
+  "id": 73,
+  "winner": "B",
+  "a_q": "ok",
+  "b_q": "good",
+  "why": "Cả hai dùng 'rắc trứng' hơi gượng, nhưng B dùng giới từ 'lên' đúng hơn 'vào' và cấu trúc 'đã...rồi' tự nhiên hơn."
+ },
+ {
+  "id": 83,
+  "winner": "tie",
+  "a_q": "good",
+  "b_q": "good",
+  "why": "Ý nghĩa giống nhau, A thêm 'quá' nhấn mạnh nhẹ không đáng kể."
+ },
+ {
+  "id": 88,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "good",
+  "why": "A dịch sai số: 十分 (mười phút) thành 'vài phút'; B giữ đúng 'mười phút'."
+ },
+ {
+  "id": 98,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "bad",
+  "why": "A giữ đúng ý hơi thở trắng vì lạnh dù từ 'trắng trẻo' hơi gượng; B dịch sai hẳn thành 'thở không ra hơi' (hụt hơi)."
+ },
+ {
+  "id": 123,
+  "winner": "B",
+  "a_q": "ok",
+  "b_q": "good",
+  "why": "B giữ được 日頃から (hàng ngày) mà A bỏ mất; 'vùi đầu vào một đêm' tự nhiên hơn 'ngâm mình' của A."
+ },
+ {
+  "id": 124,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "good",
+  "why": "Đây là câu hỏi tu từ 'chẳng phải...sao', ý thật là anh ấy CÓ vẻ khác lạ; A dịch ngược thành 'không có gì bất thường', sai phủ định."
+ },
+ {
+  "id": 141,
+  "winner": "tie",
+  "a_q": "good",
+  "b_q": "good",
+  "why": "Cả hai đều truyền tải đúng tinh thần câu, khác nhỏ về chủ thể không đáng kể."
+ },
+ {
+  "id": 163,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "bad",
+  "why": "B dịch sai hẳn 虹 (cầu vồng) thành 'tia hy vọng', mất hình ảnh cầu vồng; A tuy 'tia cầu vồng' hơi lạ nhưng đúng ý."
+ },
+ {
+  "id": 186,
+  "winner": "tie",
+  "a_q": "ok",
+  "b_q": "ok",
+  "why": "Hai bản giống hệt nhau; cùng lệch nghĩa 道が空いていた (đường vắng xe) thành 'vắng khách'."
+ },
+ {
+  "id": 207,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "bad",
+  "why": "B bỏ hẳn ý 'kiểm tra và nhận' (ご査収) chỉ còn 'mong được hỗ trợ' chung chung; A tuy gượng nhưng còn giữ ý đó."
+ },
+ {
+  "id": 226,
+  "winner": "tie",
+  "a_q": "ok",
+  "b_q": "ok",
+  "why": "Hai bản giống hệt nhau, dịch thoáng 経費精算 thành 'thanh toán chi phí' nhưng vẫn hiểu được."
+ },
+ {
+  "id": 241,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "bad",
+  "why": "Cả hai cùng dịch sai 指摘 thành 'chỉ thị', nhưng câu B tối nghĩa hơn (đọc như bản thân chỉ thị vượt ngân sách); A rõ nghĩa hơn."
+ },
+ {
+  "id": 274,
+  "winner": "B",
+  "a_q": "ok",
+  "b_q": "good",
+  "why": "筋がいい nghĩa là có năng khiếu/tố chất tốt, 'có năng lực' (B) sát nghĩa hơn 'chuyên nghiệp' (A, thiên về tác phong)."
+ },
+ {
+  "id": 286,
+  "winner": "tie",
+  "a_q": "bad",
+  "b_q": "bad",
+  "why": "A để nguyên tiếng Nhật 'naitei' không dịch, B dịch sai thành 'nội bộ'; cả hai đều không truyền tải đúng ý 'được nhận việc'."
+ },
+ {
+  "id": 292,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "good",
+  "why": "A dịch cứng 白紙になった thành 'thành ra để trống', khó hiểu; B dùng 'bị hủy' tự nhiên và đúng nghĩa thành ngữ."
+ },
+ {
+  "id": 294,
+  "winner": "tie",
+  "a_q": "good",
+  "b_q": "good",
+  "why": "Hai bản giống hệt nhau, chuyển tải đúng tinh thần câu hỏi về ảnh cũ."
+ },
+ {
+  "id": 297,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "ok",
+  "why": "A giữ được ý cụ thể 'ca làm' dù từ 'chạy' hơi gượng; B chuyển thành 'không thể làm việc' chung chung, mất ý xoay ca."
+ },
+ {
+  "id": 305,
+  "winner": "A",
+  "a_q": "good",
+  "b_q": "bad",
+  "why": "'báo cáo công tác' (A) là cách nói chuẩn; 'báo cáo lưu động' (B) dùng từ sai/lạ, dễ gây hiểu nhầm."
+ },
+ {
+  "id": 339,
+  "winner": "A",
+  "a_q": "good",
+  "b_q": "ok",
+  "why": "A giữ đúng cực phủ định 'hoàn toàn không cải thiện'; B dùng 'cải thiện chút nào' kèm tag hỏi dễ gây hiểu lầm ngược nghĩa."
+ },
+ {
+  "id": 411,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "ok",
+  "why": "A giữ được sắc thái nhờ vả 'giúp tôi được không' đúng với てくれない; B chuyển thành câu hỏi tình trạng, mất sắc thái nhờ vả."
+ },
+ {
+  "id": 494,
+  "winner": "A",
+  "a_q": "ok",
+  "b_q": "bad",
+  "why": "B để nguyên 'Shio' không dịch, đọc như đang gọi tên người, gây hiểu nhầm nghiêm trọng; A tuy đổi chủ thể nhưng câu vẫn rõ nghĩa."
+ },
+ {
+  "id": 508,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "ok",
+  "why": "Cả hai cùng dịch sai 懐かしい (hoài niệm) thành 'nhớ mang máng', nhưng A còn thêm 'ngay lập tức' không có trong nguyên văn."
+ },
+ {
+  "id": 546,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "bad",
+  "why": "Cả hai đều dịch sai 機嫌いい (tâm trạng tốt) thành liên quan đến 'ghét', nhưng A lạc đề hẳn sang 'ghét máy móc' vô nghĩa."
+ },
+ {
+  "id": 553,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "ok",
+  "why": "A chuyển 予定合わない (lịch không khớp) thành 'chẳng ai thèm lịch' (thái độ thờ ơ), sai sắc thái; B giữ đúng hơn."
+ },
+ {
+  "id": 581,
+  "winner": "A",
+  "a_q": "good",
+  "b_q": "bad",
+  "why": "B dịch tối nghĩa 'nước sôi họng', không có nghĩa; A đúng và tự nhiên."
+ },
+ {
+  "id": 634,
+  "winner": "A",
+  "a_q": "good",
+  "b_q": "bad",
+  "why": "B dùng 'đứng dậy một lúc lâu không sao' tối nghĩa, không truyền tải được ý 'không thể gượng dậy'; A dùng 'gượng dậy' chính xác."
+ },
+ {
+  "id": 669,
+  "winner": "A",
+  "a_q": "good",
+  "b_q": "bad",
+  "why": "B đổi thì thành 'sắp bắt đầu' trái với nguyên văn 始まった (đã bắt đầu), tạo mâu thuẫn logic; A đúng thì."
+ },
+ {
+  "id": 676,
+  "winner": "B",
+  "a_q": "bad",
+  "b_q": "good",
+  "why": "A dịch sai フォロー thành 'đỡ đần' (giúp đỡ), khiến câu vô lý; B giữ đúng nghĩa 'follow' mạng xã hội bằng từ mượn phổ biến."
+ }
+]

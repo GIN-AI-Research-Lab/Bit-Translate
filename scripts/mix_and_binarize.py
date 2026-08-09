@@ -67,6 +67,10 @@ SOURCES = [
     ("vong3_ctx",       "jsonl:vong3/ctx_pairs.jsonl",        "record", "other", False),
     ("vong3_num",       "jsonl:vong3/numeric_negation.jsonl", "both",   "other", False),
     ("vong3_gi",        "jsonl:vong3/glossary_inject.jsonl",  "record", "other", False),
+    # Vòng 8 (KD targeted sửa 64 lỗi bench 1200): idiom+phủ định+đồng âm+câu dài,
+    # Sonnet sinh/dịch (medium) + clean-as-generate + lọc nguồn MT + dedup + chống rò.
+    # ja2vi (đúng chiều lỗi v7a); đã audit Opus nên KHÔNG cần LaBSE (labse=False).
+    ("v8_kd",           "jsonl:v8_all.jsonl",                 "ja2vi",  "other", False),
 ]
 
 

@@ -1,4 +1,36 @@
-# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-07-30)
+# STATUS — BitNet 1.58-bit VI↔JA (cập nhật 2026-08-09)
+
+## 🟡 VÒNG V8 targeted-KD — TRAIN XONG, CHỜ CHỐT DEPLOY (2026-08-09)
+
+> Thẻ đầy đủ + 3 đường đi tiếp: **`eval/TONGKET_V8.md`**. Chi tiết chấm mù từng câu:
+> **`eval/v8_grade/grade_merged.json`**. Trình train/eval: **`cloud/modal_train_v8.py`**.
+
+1. **Mục tiêu**: sửa **64 câu bench 1199 mà v7a từng SAI** (idiom/phủ định/đồng âm/câu
+   dài) bằng KD nhắm-lỗi, KHÔNG được regression phổ thông. Data KD: `data/synthetic/v8_all.jsonl`
+   (Sonnet medium sinh+dịch ja2vi, audit Opus, dedup + chống rò eval — nguồn đăng ký ở
+   `scripts/mix_and_binarize.py` khoá `v8_kd`, labse=False).
+2. **Train (Modal `thaovyh2t`, $30 trial, GPU L40S)**: continue từ **v7a_avg (step 8750)
+   → 16750** (+8000). LR-restart 5e-5→5e-6, warmup 200, anchor 8750; eff-batch 8192×16
+   = 131k tok/step (= y hệt run nhà). Data mix: base bin_v7g 15.881.846 + **KD ×8 = 104.800**
+   → 15.986.646 seq. **~1,17 s/step, ~47k tok/s, ~2h35m, rc=0.** dev_loss **2,1112@9000 →
+   2,0368@16750 (−0,0744, đơn điệu)**.
+3. **Eval proxy chrF vs Google** (mốc 10k/12k/14k/16750): toàn bộ −0.20→+0.38→+0.41→
+   **+0.44**; tập-64 +2.01/−0.03/+2.77/**+1.94** (n nhỏ, nhiễu).
+4. **NGHIỆM THU CHẤM MÙ LLM** (Sonnet 5, blind A/B, giải mã key):
+   - **Tập 64 câu v7a sai (đích): v8 THẮNG 39–7** (hoà 18, win-rate 85%); v8 good/ok/bad
+     **31/22/11** vs v7a 9/18/37 → sửa dứt điểm 48%, cắt bad 37→11. **KD làm đúng việc.**
+   - **Tập 150 phổ thông: v8 KÉM nhẹ** — 24–34 (hoà 92), bad 7 vs 4, **7 câu regression thật**.
+   - **chrF nói v8 tốt hơn, chấm LLM nói ngược trên phổ thông** → tin chấm LLM (đo nghĩa).
+     Kết: KD hơi nặng tay (×8) → đổi ~2% chất lượng phổ thông lấy cú sửa lớn tập-khó.
+5. **CHƯA deploy v8.** Đường đi tiếp (rẻ→đắt): **(soup)** trộn v7a_avg⊕v8 (script
+   `eval/v8_grade/soup_checkpoints.py`, CPU OK) quét alpha 0.3/0.5/0.7 + chấm lại → **(2)**
+   deploy thẳng v8 nếu ưu tiên ca khó → **(3)** train lại mix KD nhẹ (×3–4) trên Modal.
+6. **Checkpoint**: v8 step16750 = Modal `vija-v8-vol:checkpoints_v8/last.pt` (kèm optimizer,
+   1,82GB, resume được) + đã lưu bền `E:/Bit-Translate-data/checkpoints_v8/v8_step16750.pt`.
+   Milestones 10k/12k/14k trên volume. ⚠️ v7a_avg đã bị ghi đè trên volume (last.pt=v8);
+   bản gốc v7a_avg ở `E:/Bit-Translate-data/checkpoints_v7a/v7a_avg.pt` + GitHub Release.
+7. **Tiếp trên laptop (Máy B)**: dùng Modal account **`thaovyh2t`** (còn credit). Laptop
+   soup được (CPU); eval/re-grade đẩy lên Modal L40S; train KHÔNG chạy laptop.
 
 ## 🟢 VÒNG V7A XONG (2026-07-28 → 30) — v7a_avg là bản deploy chính, thay v6
 

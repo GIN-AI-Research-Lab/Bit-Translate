@@ -1,0 +1,450 @@
+[
+ {
+  "id": 6,
+  "ja": "最近、運動不足で体がなまってる気がする。",
+  "google_ref": "Gần đây tôi cảm thấy cơ thể mình uể oải vì ít vận động.",
+  "A": "Dạo này tôi thấy người cứ uể oải, chẳng tập thể dục gì cả.",
+  "B": "Dạo này tôi thấy người cứ uể oải, lười vận động."
+ },
+ {
+  "id": 31,
+  "ja": "先日はお忙しい中、お時間をいただきありがとうございました。",
+  "google_ref": "Cảm ơn bạn đã dành thời gian trong lịch trình bận rộn của mình vào ngày hôm trước.",
+  "A": "Cảm ơn bạn rất nhiều vì đã dành thời gian bận rộn hôm trước.",
+  "B": "Cảm ơn bạn đã dành thời gian bận rộn hôm trước."
+ },
+ {
+  "id": 33,
+  "ja": "恐れ入りますが、担当者に代わっていただけますでしょうか。",
+  "google_ref": "Chúng tôi xin lỗi vì sự bất tiện này, nhưng bạn có thể vui lòng thay người phụ trách cho bạn được không?",
+  "A": "Xin lỗi, bạn có thể chuyển máy cho tôi được không?",
+  "B": "Xin lỗi, bạn có thể chuyển máy cho người phụ trách được không?"
+ },
+ {
+  "id": 37,
+  "ja": "申し訳ございませんが、その件については確認してから折り返します。",
+  "google_ref": "Chúng tôi xin lỗi vì sự bất tiện này nhưng chúng tôi sẽ xem xét vấn đề và liên hệ lại với bạn.",
+  "A": "Rất xin lỗi, tôi sẽ xác nhận lại vấn đề đó rồi mới quay lại sau.",
+  "B": "Rất xin lỗi, nhưng tôi sẽ xác nhận lại vấn đề đó trước khi quay lại."
+ },
+ {
+  "id": 73,
+  "ja": "炊きたてのご飯に卵をかけるだけで最高のごちそうだ。",
+  "google_ref": "Chỉ cần thêm một quả trứng vào cơm mới nấu là có một bữa ăn hoàn hảo.",
+  "A": "Chỉ cần rắc trứng vào cơm vừa mới nấu xong là có ngay bữa tiệc tuyệt vời nhất.",
+  "B": "Chỉ cần rắc trứng lên cơm vừa nấu xong là đã có một bữa tiệc tuyệt vời nhất rồi."
+ },
+ {
+  "id": 83,
+  "ja": "乗り換えが多くて、初めての人には少し分かりにくいかもしれない。",
+  "google_ref": "Có rất nhiều lần chuyển tiền nên có thể sẽ hơi khó hiểu đối với những người lần đầu tiên tham gia.",
+  "A": "Vì phải chuyển đổi nhiều quá nên có thể hơi khó hiểu với người mới.",
+  "B": "Vì phải chuyển đổi nhiều nên có thể hơi khó hiểu đối với người mới."
+ },
+ {
+  "id": 88,
+  "ja": "この駅から徒歩で十分ほどのところに有名なお寺があります。",
+  "google_ref": "Có một ngôi chùa nổi tiếng cách nhà ga này mười phút đi bộ.",
+  "A": "Có một ngôi chùa nổi tiếng nằm cách ga này khoảng vài phút đi bộ.",
+  "B": "Có một ngôi chùa nổi tiếng nằm cách ga này khoảng chừng mười phút đi bộ."
+ },
+ {
+  "id": 98,
+  "ja": "今朝はぐっと冷え込んで、初めて息が白くなった。",
+  "google_ref": "Sáng nay trời lạnh đến nỗi lần đầu tiên hơi thở của tôi trở nên trắng xóa.",
+  "A": "Sáng nay trời lạnh hẳn, lần đầu tiên tôi thấy hơi thở trắng trẻo.",
+  "B": "Sáng nay trời lạnh hẳn, lần đầu tiên tôi thấy thở không ra hơi."
+ },
+ {
+  "id": 123,
+  "ja": "一夜漬けではなく、日頃からコツコツ勉強するべきだった。",
+  "google_ref": "Đáng lẽ tôi phải học tập chăm chỉ hàng ngày chứ không chỉ qua đêm.",
+  "A": "Đáng lẽ tôi nên kiên trì học tập chăm chỉ chứ không phải chỉ ngâm mình trong một đêm.",
+  "B": "Đáng lẽ tôi nên kiên trì học hỏi hàng ngày chứ không chỉ vùi đầu vào một đêm."
+ },
+ {
+  "id": 124,
+  "ja": "なんだか最近、彼、様子がおかしいと思わない。",
+  "google_ref": "Tôi không nghĩ gần đây anh ấy hành động kỳ lạ.",
+  "A": "Dạo này không hiểu sao anh ấy không thấy có gì bất thường cả.",
+  "B": "Dạo này tôi cứ thấy anh ấy có gì đó không ổn."
+ },
+ {
+  "id": 141,
+  "ja": "人は誰しも、他人には言えない悩みの一つや二つは抱えているものだ。",
+  "google_ref": "Mỗi người đều có một hoặc hai nỗi lo lắng không thể chia sẻ với người khác.",
+  "A": "Mỗi người đều có một hoặc hai nỗi niềm riêng mà không ai có thể nói ra.",
+  "B": "Ai cũng có một hoặc hai nỗi niềm riêng mà người khác không thể nói ra."
+ },
+ {
+  "id": 163,
+  "ja": "雨上がりの空に、大きな虹がかかっていた。",
+  "google_ref": "Cầu vồng lớn xuất hiện trên bầu trời sau cơn mưa.",
+  "A": "Bầu trời sau cơn mưa đã phủ một tia cầu vồng lớn.",
+  "B": "Trời sau cơn mưa, một tia hy vọng lớn đang bao phủ."
+ },
+ {
+  "id": 186,
+  "ja": "どうりで今日は道が空いていたわけだ。",
+  "google_ref": "Chẳng trách hôm nay đường lại vắng.",
+  "A": "Thảo nào hôm nay lại vắng khách.",
+  "B": "Thảo nào hôm nay lại vắng khách."
+ },
+ {
+  "id": 207,
+  "ja": "ご査収のほど、よろしくお願いいたします。",
+  "google_ref": "Cảm ơn bạn đã xem xét.",
+  "A": "Mong bạn thông cảm cho việc kiểm tra và nhận hàng.",
+  "B": "Rất mong nhận được sự hỗ trợ của quý vị."
+ },
+ {
+  "id": 226,
+  "ja": "経費精算、まだ出してないの？",
+  "google_ref": "Bạn vẫn chưa thanh toán chi phí của mình?",
+  "A": "Vẫn chưa thanh toán chi phí à?",
+  "B": "Vẫn chưa thanh toán chi phí à?"
+ },
+ {
+  "id": 241,
+  "ja": "財務部から予算超過の指摘を受けました。",
+  "google_ref": "Bộ phận tài chính chỉ ra rằng chúng tôi đã vượt quá ngân sách.",
+  "A": "Tôi đã nhận được chỉ thị về việc ngân sách bị vượt quá từ phòng tài chính.",
+  "B": "Tôi đã nhận được chỉ thị vượt quá ngân sách từ bộ phận tài chính."
+ },
+ {
+  "id": 274,
+  "ja": "あの新人、なかなか筋がいいね。",
+  "google_ref": "Anh chàng mới đó rất thông minh.",
+  "A": "Cậu lính mới đó có vẻ khá là chuyên nghiệp đấy.",
+  "B": "Cậu lính mới đó khá là có năng lực đấy."
+ },
+ {
+  "id": 286,
+  "ja": "びっくりした、まさか内定もらえるとは！",
+  "google_ref": "Tôi rất ngạc nhiên, tôi không bao giờ mong đợi nhận được lời mời làm việc!",
+  "A": "Bất ngờ quá, không ngờ lại nhận được naitei!",
+  "B": "Bất ngờ thật, không ngờ lại được nhận nội bộ!"
+ },
+ {
+  "id": 292,
+  "ja": "その話、結局白紙になったんだって。",
+  "google_ref": "Câu chuyện đó cuối cùng trở nên trống rỗng.",
+  "A": "Nghe nói chuyện đó rốt cuộc lại thành ra để trống.",
+  "B": "Nghe nói chuyện đó rốt cuộc bị hủy rồi."
+ },
+ {
+  "id": 294,
+  "ja": "履歴書の写真、いつのを使った？",
+  "google_ref": "Bạn sử dụng ảnh cho sơ yếu lý lịch của mình khi nào?",
+  "A": "Bạn đã dùng ảnh sơ yếu lý lịch từ khi nào vậy?",
+  "B": "Bạn đã dùng ảnh sơ yếu lý lịch từ khi nào vậy?"
+ },
+ {
+  "id": 297,
+  "ja": "人手不足でシフトが回らない。",
+  "google_ref": "Không có ca làm việc do thiếu nhân lực.",
+  "A": "Thiếu nhân lực nên ca làm không chạy.",
+  "B": "Thiếu nhân lực nên không thể làm việc được."
+ },
+ {
+  "id": 305,
+  "ja": "出張報告書は今週中に提出してください。",
+  "google_ref": "Vui lòng gửi báo cáo chuyến đi của bạn trước cuối tuần này.",
+  "A": "Vui lòng nộp báo cáo công tác trong tuần này.",
+  "B": "Vui lòng nộp báo cáo lưu động trong tuần này."
+ },
+ {
+  "id": 339,
+  "ja": "まったく状況が改善していないじゃないか！",
+  "google_ref": "Tình hình vẫn chưa được cải thiện chút nào!",
+  "A": "Tình hình chẳng phải đã hoàn toàn không được cải thiện sao!",
+  "B": "Tình hình chẳng phải đã được cải thiện chút nào rồi sao!"
+ },
+ {
+  "id": 411,
+  "ja": "洗濯物、そろそろ干してくれない？",
+  "google_ref": "Bạn có thể vui lòng sấy khô đồ giặt sớm được không?",
+  "A": "Sắp phơi quần áo giúp tôi được không?",
+  "B": "Sắp phơi quần áo chưa?"
+ },
+ {
+  "id": 494,
+  "ja": "塩、こっちに取ってもらえる？",
+  "google_ref": "Bạn có thể lấy cho tôi một ít muối được không?",
+  "A": "Cho tôi lấy muối ở đây được không?",
+  "B": "Shio, lấy giúp tôi cái này được không?"
+ },
+ {
+  "id": 508,
+  "ja": "母がいつも作ってくれた味噌汁の味を思い出すと、なんだか懐かしくて実家に帰りたくなる。",
+  "google_ref": "Khi nhớ đến mùi vị món súp miso mẹ nấu, tôi lại thấy nhớ nhung và muốn quay về nhà bố mẹ.",
+  "A": "Mỗi khi nhớ lại hương vị món súp miso mẹ nấu, tôi lại thấy nhớ mang máng, muốn về nhà bố mẹ đẻ ngay lập tức.",
+  "B": "Mỗi khi nhớ lại hương vị món súp miso mẹ nấu, tôi lại thấy nhớ mang máng muốn về nhà bố mẹ đẻ."
+ },
+ {
+  "id": 546,
+  "ja": "珍しく機嫌いいじゃん、今日。",
+  "google_ref": "Hôm nay bạn có tâm trạng tốt bất thường.",
+  "A": "Hôm nay trông ghét máy móc thế, lạ thật đấy.",
+  "B": "Hôm nay hiếm khi thấy cậu ghét tớ lắm đấy."
+ },
+ {
+  "id": 553,
+  "ja": "カラオケ行きたいけど、みんな予定合わないんだよなあ。",
+  "google_ref": "Tôi muốn đi hát karaoke nhưng lịch trình của mọi người không phù hợp.",
+  "A": "Muốn đi karaoke mà chẳng ai thèm lịch cả.",
+  "B": "Muốn đi karaoke mà chẳng thấy ai lên lịch cả."
+ },
+ {
+  "id": 581,
+  "ja": "のど乾いた、何か飲み物ある？",
+  "google_ref": "Tôi khát, bạn có gì để uống không?",
+  "A": "Khát nước quá, có gì uống không?",
+  "B": "Nước sôi họng hay có gì không?"
+ },
+ {
+  "id": 634,
+  "ja": "バックアップを取り忘れていたせいで、旅行中に撮った大切な写真や動画がすべて消えてしまい、しばらく立ち直れなかった。",
+  "google_ref": "Vì tôi quên sao lưu nên tất cả ảnh và video quan trọng tôi chụp trong chuyến đi đều biến mất và tôi không thể khôi phục trong một thời gian.",
+  "A": "Vì quên không sao lưu nên toàn bộ ảnh và video quan trọng chụp trong chuyến du lịch đã biến mất, khiến tôi không thể gượng dậy được một thời gian.",
+  "B": "Vì quên sao lưu nên toàn bộ ảnh và video quan trọng chụp trong chuyến du lịch đã biến mất, khiến tôi đứng dậy một lúc lâu không sao."
+ },
+ {
+  "id": 669,
+  "ja": "新しいイベントが始まったから、ログインボーナスを取りに行かないと。",
+  "google_ref": "Một sự kiện mới đã bắt đầu nên tôi phải đi nhận phần thưởng đăng nhập của mình.",
+  "A": "Sự kiện mới bắt đầu rồi, phải đi lấy bonus đăng nhập thôi.",
+  "B": "Sự kiện mới sắp bắt đầu rồi, phải đi lấy bonus đăng nhập thôi."
+ },
+ {
+  "id": 676,
+  "ja": "知らない人からいきなりフォローされて、少し怖い。",
+  "google_ref": "Có một chút đáng sợ khi đột nhiên bị theo dõi bởi một người không quen biết.",
+  "A": "Tự nhiên bị người lạ đỡ đần, hơi sợ.",
+  "B": "Bị người lạ đột ngột follow, thấy hơi sợ."
+ },
+ {
+  "id": 693,
+  "ja": "充電の減りが早くて、このスマートウォッチはがっかりしている。",
+  "google_ref": "Tôi thất vọng với chiếc đồng hồ thông minh này vì nó hao pin nhanh chóng.",
+  "A": "Sạc nhanh quá, chiếc smartwatch này đang thất vọng tràn trề.",
+  "B": "Sạc nhanh quá, chiếc smartwatch này đang thất vọng tràn trề."
+ },
+ {
+  "id": 694,
+  "ja": "ワイヤレス充電に対応しているケース、地味に便利。",
+  "google_ref": "Một chiếc ốp lưng hỗ trợ sạc không dây rất tiện lợi.",
+  "A": "Cái ốp hỗ trợ sạc không dây, tiện lợi ra phết.",
+  "B": "Trường hợp có hỗ trợ sạc không dây, tiện lợi một cách âm thầm."
+ },
+ {
+  "id": 695,
+  "ja": "見た目はかっこいいけど、機能はそこそこなガジェットだった。",
+  "google_ref": "Nó trông rất ngầu, nhưng nó chỉ là một thiết bị có chức năng tầm thường.",
+  "A": "Nhìn thì đẹp trai đấy, nhưng tính năng thì cũng khá là tiện lợi.",
+  "B": "Nhìn thì ngầu đấy, nhưng tính năng thì cũng không phải là tiện ích cho lắm."
+ },
+ {
+  "id": 726,
+  "ja": "音楽配信アプリのおすすめ機能、地味に優秀。",
+  "google_ref": "Các tính năng được đề xuất cho ứng dụng phân phối nhạc đơn giản là tuyệt vời.",
+  "A": "Tính năng nổi bật của ứng dụng phát nhạc trực tuyến, âm nhạc thực sự xuất sắc.",
+  "B": "Tính năng gợi ý của ứng dụng phát nhạc trực tuyến, âm nhạc khá là xuất sắc."
+ },
+ {
+  "id": 731,
+  "ja": "オンライン会議中に、急にマイクが聞こえなくなった。",
+  "google_ref": "Trong một cuộc họp trực tuyến, tôi đột nhiên không nghe thấy micro.",
+  "A": "Đang họp online thì đột nhiên micro đột nhiên không nghe thấy gì nữa.",
+  "B": "Đang họp online mà tự nhiên nghe thấy tiếng micro."
+ },
+ {
+  "id": 733,
+  "ja": "テレワークになってから、通勤時間がなくなって助かってる。",
+  "google_ref": "Kể từ khi bắt đầu làm việc tại nhà, tôi không còn phải đi lại, điều này thật hữu ích.",
+  "A": "Từ khi chuyển sang làm việc từ xa, tôi không còn thời gian đi làm nữa, thật may quá.",
+  "B": "Từ khi chuyển sang làm việc từ xa, tôi không còn thời gian đi làm nữa, thật may quá."
+ },
+ {
+  "id": 767,
+  "ja": "音声操作でエアコンをつけられるのは、地味にありがたい。",
+  "google_ref": "Có thể bật điều hòa bằng điều khiển bằng giọng nói quả là một điều may mắn.",
+  "A": "Dùng điều hòa để bật điều hòa thì cũng tiện thật đấy, nhưng mà tiện.",
+  "B": "Dùng điều hòa để bật điều hòa bằng giọng nói, đúng là tiện lợi thật."
+ },
+ {
+  "id": 821,
+  "ja": "味噌汁を作るには、まずだしを取る必要がある。",
+  "google_ref": "Để nấu súp miso, trước tiên bạn cần làm dashi.",
+  "A": "Để nấu súp miso, trước tiên phải lấy nước dùng dashi.",
+  "B": "Muốn nấu súp miso thì trước tiên phải ăn nước dùng."
+ },
+ {
+  "id": 828,
+  "ja": "お弁当のおかずに悩んでいる。",
+  "google_ref": "Tôi đang lo lắng về món ăn kèm cho hộp cơm trưa của mình.",
+  "A": "Đang phân vân không biết có nên ăn cơm hộp không.",
+  "B": "Tôi đang phân vân không biết có nên ăn cơm hộp không."
+ },
+ {
+  "id": 837,
+  "ja": "賞味期限が切れているみたいだから、これは捨てよう。",
+  "google_ref": "Có vẻ như nó đã hết hạn nên tôi sẽ vứt nó đi.",
+  "A": "Nghe nói sắp hết hạn sử dụng rồi, cái này vứt đi thôi.",
+  "B": "Hình như hết hạn sử dụng rồi, vứt cái này đi thôi."
+ },
+ {
+  "id": 843,
+  "ja": "これ、辛くないですか。",
+  "google_ref": "Cái này không cay à?",
+  "A": "Cái này không cay sao?",
+  "B": "Cái này không thấy khổ sao?"
+ },
+ {
+  "id": 845,
+  "ja": "ラーメンの替え玉お願いします。",
+  "google_ref": "Làm ơn cho tôi một tô ramen dự phòng.",
+  "A": "Cho tôi xin mì thay thế của ramen với.",
+  "B": "Cho tôi xin mì thay thế."
+ },
+ {
+  "id": 846,
+  "ja": "アレルギーがあるので、卵は入れないでもらえますか。",
+  "google_ref": "Tôi bị dị ứng, vậy bạn có thể để nó không có trứng được không?",
+  "A": "Vì tôi bị dị ứng nên bạn có thể cho trứng vào được không?",
+  "B": "Tôi bị dị ứng, không cho trứng vào được không ạ?"
+ },
+ {
+  "id": 852,
+  "ja": "デザートは別腹だよね。",
+  "google_ref": "Món tráng miệng là thứ khác.",
+  "A": "Tráng miệng là bụng riêng rồi nhỉ.",
+  "B": "Món tráng miệng là một cái bụng riêng nhỉ."
+ },
+ {
+  "id": 853,
+  "ja": "コースメニューの中に、飲み物は含まれていますか。",
+  "google_ref": "Đồ uống có bao gồm trong thực đơn khóa học không?",
+  "A": "Trong menu khóa học có bao gồm đồ uống không?",
+  "B": "Trong thực đơn của khóa học có bao gồm đồ uống không?"
+ },
+ {
+  "id": 855,
+  "ja": "すみません、テーブルの上のこのお皿、下げてもらってもいいですか。",
+  "google_ref": "Xin lỗi, tôi có thể lấy cái đĩa này ra khỏi bàn được không?",
+  "A": "Xin lỗi, tôi có thể xin phép được hạ cái đĩa này lên bàn được không ạ?",
+  "B": "Xin lỗi, cho tôi xin cái đĩa này ở trên bàn được không ạ?"
+ },
+ {
+  "id": 857,
+  "ja": "お腹いっぱい！もう一品も入らないよ。",
+  "google_ref": "Tôi no rồi! Tôi không thể phù hợp với một món đồ khác.",
+  "A": "No căng bụng rồi! Không cho thêm món nào nữa đâu.",
+  "B": "No căng bụng rồi! Không cho thêm món nào nữa đâu."
+ },
+ {
+  "id": 917,
+  "ja": "春一番が吹いて、花粉が一気に舞い上がった。",
+  "google_ref": "Làn gió đầu tiên của mùa xuân thổi qua, phấn hoa bay đi cùng một lúc.",
+  "A": "Gió xuân đầu mùa thổi, phấn hoa bay lên một lúc.",
+  "B": "Gió xuân đầu mùa thổi, phấn hoa bay lên một cái là hết."
+ },
+ {
+  "id": 940,
+  "ja": "すみません、駅はどちらですか。",
+  "google_ref": "Xin lỗi, đó là ga nào?",
+  "A": "Xin lỗi, ga này là ga nào vậy ạ?",
+  "B": "Xin lỗi, ga này là ga nào vậy ạ?"
+ },
+ {
+  "id": 983,
+  "ja": "まさか、こんなに市場が混んでいるとは思わなかった。",
+  "google_ref": "Tôi không ngờ chợ lại đông đúc đến thế.",
+  "A": "Không ngờ thị trường lại đông đúc đến thế.",
+  "B": "Không ngờ thị trường lại đông đến thế này."
+ },
+ {
+  "id": 989,
+  "ja": "びっくりした！急に雷が鳴って、雨も降ってきた。",
+  "google_ref": "Tôi đã rất ngạc nhiên! Đột nhiên có sấm sét và trời bắt đầu mưa.",
+  "A": "Giật cả mình! Tự nhiên sấm nổ, mưa cũng rơi theo.",
+  "B": "Giật cả mình! Tự nhiên sấm nổ, mưa cũng tạnh rồi."
+ },
+ {
+  "id": 1002,
+  "ja": "灯台下暗しというように、身近な課題ほど見過ごされやすいものだ。",
+  "google_ref": "Vấn đề càng quen thuộc thì càng dễ bị bỏ qua, chẳng hạn như khi trời tối dưới ngọn hải đăng.",
+  "A": "Đúng như câu \"chân đèn thì tối\", những vấn đề càng gần gũi thì càng dễ bị bỏ qua.",
+  "B": "Đúng như câu \"thế gian nan\", những vấn đề càng gần gũi thì càng dễ bị bỏ qua."
+ },
+ {
+  "id": 1025,
+  "ja": "地方創生を掲げる自治体の多くは、若年層の流出をいかに食い止めるかで苦慮している。",
+  "google_ref": "Nhiều chính quyền địa phương ủng hộ việc phục hồi khu vực đang phải vật lộn với việc làm thế nào để ngăn chặn làn sóng di cư của giới trẻ.",
+  "A": "Nhiều chính quyền địa phương theo đuổi chủ nghĩa tái thiết địa phương đang gặp khó khăn trong việc làm thế nào để ngăn chặn sự cố tràn lan của giới trẻ.",
+  "B": "Nhiều chính quyền địa phương theo đuổi chủ trương chấn hưng địa phương đang gặp khó khăn trong việc làm thế nào để ngăn chặn tình trạng chảy máu chất xám ở giới trẻ."
+ },
+ {
+  "id": 1027,
+  "ja": "木を見て森を見ずという態度では、複雑化する国際情勢を正しく読み解くことはできない。",
+  "google_ref": "Nếu không nhìn thấy rừng mà thấy cây, chúng ta sẽ không thể giải thích chính xác tình hình quốc tế ngày càng phức tạp.",
+  "A": "Với thái độ \"nhìn cây mà không thấy rừng\", không thể diễn giải đúng tình hình quốc tế đang ngày càng phức tạp.",
+  "B": "Thái độ coi thường cây cối mà không nhìn vào rừng thì không thể diễn giải đúng được tình hình quốc tế đang ngày càng phức tạp."
+ },
+ {
+  "id": 1050,
+  "ja": "過疎地域における公共交通の縮小は、高齢者の生活の足を奪う深刻な問題となっている。",
+  "google_ref": "Việc giảm phương tiện giao thông công cộng ở các khu vực đông dân cư đã trở thành một vấn đề nghiêm trọng khiến người cao tuổi mất đi sinh kế.",
+  "A": "Việc thu hẹp giao thông công cộng ở các khu vực thưa dân đang trở thành một vấn đề nghiêm trọng cướp đi sinh kế của người cao tuổi.",
+  "B": "Việc thu hẹp giao thông công cộng ở các khu vực thưa dân đang trở thành một vấn đề nghiêm trọng cướp đi phương tiện đi lại của người cao tuổi."
+ },
+ {
+  "id": 1077,
+  "ja": "「玉石混交」のインターネット情報の中から真実を見極める力が、これからの教育に求められる。",
+  "google_ref": "Giáo dục trong tương lai sẽ đòi hỏi khả năng nhận ra sự thật từ “hỗn hợp” thông tin trên Internet.",
+  "A": "Khả năng nhìn thấu sự thật từ thông tin internet về \"hàng giả lẫn lộn\" là điều cần thiết cho giáo dục trong tương lai.",
+  "B": "Khả năng nhìn ra sự thật từ thông tin trên internet về \"thịt thạch lẫn lộn\" là điều cần thiết cho giáo dục trong tương lai."
+ },
+ {
+  "id": 1085,
+  "ja": "経済学者の中には、賃金上昇こそがデフレ脱却の鍵だと主張する者が少なくない。",
+  "google_ref": "Nhiều nhà kinh tế cho rằng tăng lương là chìa khóa để khắc phục tình trạng giảm phát.",
+  "A": "Trong số các nhà kinh tế học, không ít người cho rằng tăng lương chính là chìa khóa để thoát khỏi lạm phát.",
+  "B": "Trong số các nhà kinh tế học, không ít người cho rằng tăng lương chính là chìa khóa để thoát khỏi lạm phát."
+ },
+ {
+  "id": 1087,
+  "ja": "若年層の非婚化が進む背景には、経済的な不安定さが少なからず影響している。",
+  "google_ref": "Sự bất ổn kinh tế góp phần không nhỏ vào việc ngày càng có nhiều người trẻ chưa lập gia đình.",
+  "A": "Đằng sau xu hướng ngày càng kết hôn ở giới trẻ là do sự bất ổn về kinh tế đang ảnh hưởng không nhỏ.",
+  "B": "Đằng sau xu hướng không kết hôn ở giới trẻ ngày càng phổ biến là do sự bất ổn về kinh tế."
+ },
+ {
+  "id": 1091,
+  "ja": "「焼け石に水」との批判もあるが、政府は追加の物価対策を打ち出した。",
+  "google_ref": "Mặc dù một số người chỉ trích động thái này là “ngõ cụt”, chính phủ đã đưa ra các biện pháp bổ sung về giá.",
+  "A": "Mặc dù có những chỉ trích cho rằng \"nước chảy đá mòn\", chính phủ đã đưa ra các biện pháp đối phó với vật giá bổ sung.",
+  "B": "Mặc dù có những chỉ trích rằng \"đá cháy là nước\", nhưng chính phủ đã đưa ra các biện pháp đối phó với vật giá bổ sung."
+ },
+ {
+  "id": 1104,
+  "ja": "看板だけに終わった地方創生事業も多く、成果が見えないとの指摘は根強い。",
+  "google_ref": "Nhiều dự án phục hồi khu vực cuối cùng chỉ mang lại kết quả không khác gì các bảng quảng cáo và có những lời phàn nàn dai dẳng rằng kết quả không thể nhìn thấy được.",
+  "A": "Có nhiều dự án tái thiết địa phương chỉ dừng lại ở biển hiệu, nên quan điểm cho rằng không thấy được thành quả vẫn còn rất sâu sắc.",
+  "B": "Nhiều dự án tái thiết địa phương chỉ dừng lại ở biển hiệu, nên những ý kiến cho rằng không thấy được thành quả vẫn còn rất dai dẳng."
+ },
+ {
+  "id": 1148,
+  "ja": "多文化共生社会が進む中、郷に従うことだけを求める発想はむしろ再考を要する。",
+  "google_ref": "Khi một xã hội đa văn hóa ngày càng phát triển, ý tưởng chỉ theo quê hương cần phải được xem xét lại.",
+  "A": "Trong bối cảnh xã hội đa văn hóa đang phát triển, ý tưởng chỉ đòi hỏi phải thuận theo hương tộc lại cần phải được xem xét lại.",
+  "B": "Trong bối cảnh xã hội đa văn hóa đang phát triển, ý tưởng chỉ yêu cầu phải thuận theo quê hương lại cần phải được xem xét lại."
+ },
+ {
+  "id": 1198,
+  "ja": "「捨てる神あれば拾う神あり」という言葉のとおり、支援を打ち切られた事業が別の形で再生することもある。",
+  "google_ref": "Người ta thường nói: “Có thần vứt đi thì cũng có thần nhặt lên”. Những dự án đã ngừng hỗ trợ đôi khi được hồi sinh dưới những hình thức khác.",
+  "A": "Đúng như câu \"Thần nào vứt đi thì thần nào nhặt được\", những dự án bị cắt hỗ trợ đôi khi lại được tái sinh theo một cách khác.",
+  "B": "Đúng như câu \"Có thần thì có thần, có thần thì nhặt\", những dự án bị cắt hỗ trợ đôi khi lại được tái sinh dưới một hình thức khác."
+ }
+]

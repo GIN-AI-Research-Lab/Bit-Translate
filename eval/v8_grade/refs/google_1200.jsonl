@@ -1,0 +1,1199 @@
+{"id": 1, "ja": "今日はなんだか疲れちゃった。", "gg": "Hôm nay tôi hơi mệt."}
+{"id": 2, "ja": "週末は家でゆっくりするつもり。", "gg": "Tôi dự định sẽ thư giãn ở nhà vào cuối tuần này."}
+{"id": 3, "ja": "ちょっとコンビニ行ってくるね。", "gg": "Tôi định đi đến cửa hàng tiện lợi một lát."}
+{"id": 4, "ja": "昨日の夜、全然眠れなかったんだ。", "gg": "Đêm qua tôi không thể ngủ được chút nào."}
+{"id": 5, "ja": "そろそろ出かけないと遅刻しちゃうよ。", "gg": "Nếu bạn không ra ngoài sớm, bạn sẽ bị trễ."}
+{"id": 6, "ja": "最近、運動不足で体がなまってる気がする。", "gg": "Gần đây tôi cảm thấy cơ thể mình uể oải vì ít vận động."}
+{"id": 7, "ja": "あのカフェ、いつも混んでるよね。", "gg": "Quán cà phê đó lúc nào cũng đông khách."}
+{"id": 8, "ja": "冷蔵庫に何も入ってないから買い物に行かなきゃ。", "gg": "Trong tủ lạnh chẳng có gì nên tôi phải đi mua sắm."}
+{"id": 9, "ja": "久しぶりに友達に会えて嬉しかった。", "gg": "Tôi rất vui khi được gặp lại bạn bè sau một thời gian dài."}
+{"id": 10, "ja": "もうこんな時間だ、早く寝よう。", "gg": "Đã đến giờ rồi, chúng ta đi ngủ sớm thôi."}
+{"id": 11, "ja": "明日は早起きしないといけないんだ。", "gg": "Ngày mai tôi phải dậy sớm."}
+{"id": 12, "ja": "お腹すいたな、何か食べようかな。", "gg": "Tôi đói. Tôi có nên ăn gì đó không?"}
+{"id": 13, "ja": "電車が遅れて、危うく遅刻するところだった。", "gg": "Chuyến tàu bị trễ và tôi gần như bị trễ."}
+{"id": 14, "ja": "今日は一日中ずっと雨だったね。", "gg": "Hôm nay trời mưa cả ngày."}
+{"id": 15, "ja": "なんでこんなに時間が経つの早いんだろう。", "gg": "Tại sao thời gian trôi qua nhanh như vậy?"}
+{"id": 16, "ja": "ちょっと手伝ってもらえると助かるんだけど。", "gg": "Sẽ rất hữu ích nếu bạn có thể giúp tôi một chút."}
+{"id": 17, "ja": "その話、前にも聞いたことがある気がする。", "gg": "Tôi có cảm giác như tôi đã từng nghe câu chuyện đó trước đây."}
+{"id": 18, "ja": "気づいたらもう12月になってた。", "gg": "Trước khi tôi kịp nhận ra thì đã là tháng 12 rồi."}
+{"id": 19, "ja": "最近ハマっているドラマがあるんだ。", "gg": "Gần đây có một bộ phim mà tôi thực sự rất thích."}
+{"id": 20, "ja": "週末どこか行きたいけど、どこがいいかな。", "gg": "Cuối tuần này tôi muốn đi đâu đó nhưng không biết đi đâu."}
+{"id": 21, "ja": "すみません、駅までの道を教えてもらえますか。", "gg": "Xin lỗi, bạn có thể chỉ cho tôi đường đến nhà ga được không?"}
+{"id": 22, "ja": "この書類は明日までに提出すればいいですか。", "gg": "Tôi có nên nộp tài liệu này trước ngày mai không?"}
+{"id": 23, "ja": "もう少し詳しく説明していただけますか。", "gg": "Bạn có thể vui lòng giải thích chi tiết hơn?"}
+{"id": 24, "ja": "お手洗いはどちらにありますか。", "gg": "Nhà vệ sinh ở đâu?"}
+{"id": 25, "ja": "これはいくらですか。", "gg": "cái này bao nhiêu"}
+{"id": 26, "ja": "少し静かにしてもらえませんか。", "gg": "Bạn có thể vui lòng im lặng một chút được không?"}
+{"id": 27, "ja": "写真を撮っていただけますか。", "gg": "Bạn có thể vui lòng chụp một bức ảnh được không?"}
+{"id": 28, "ja": "ここに座ってもいいですか。", "gg": "Tôi có thể ngồi đây được không?"}
+{"id": 29, "ja": "何時に伺えばよろしいでしょうか。", "gg": "Bạn muốn tôi đến lúc mấy giờ?"}
+{"id": 30, "ja": "もう一度言ってもらえますか。", "gg": "Bạn có thể vui lòng nói lại điều đó được không?"}
+{"id": 31, "ja": "先日はお忙しい中、お時間をいただきありがとうございました。", "gg": "Cảm ơn bạn đã dành thời gian trong lịch trình bận rộn của mình vào ngày hôm trước."}
+{"id": 32, "ja": "お世話になっております。株式会社山田の田中と申します。", "gg": "Cảm ơn sự giúp đỡ của bạn. Tên tôi là Tanaka từ Công ty TNHH Yamada."}
+{"id": 33, "ja": "恐れ入りますが、担当者に代わっていただけますでしょうか。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này, nhưng bạn có thể vui lòng thay người phụ trách cho bạn được không?"}
+{"id": 34, "ja": "会議の資料は事前にメールでお送りいたします。", "gg": "Tài liệu cuộc họp sẽ được gửi trước cho bạn qua email."}
+{"id": 35, "ja": "来週の月曜日までにご返信いただけますと幸いです。", "gg": "Tôi sẽ đánh giá cao nếu bạn có thể trả lời trước thứ Hai tới."}
+{"id": 36, "ja": "本日の議題は主に三つございます。", "gg": "Có ba chủ đề chính trong chương trình nghị sự ngày hôm nay."}
+{"id": 37, "ja": "申し訳ございませんが、その件については確認してから折り返します。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này nhưng chúng tôi sẽ xem xét vấn đề và liên hệ lại với bạn."}
+{"id": 38, "ja": "プロジェクトの進捗が予定より少し遅れています。", "gg": "Tiến độ của dự án có hơi chậm so với kế hoạch."}
+{"id": 39, "ja": "納期を一週間ほど延ばしていただくことは可能でしょうか。", "gg": "Có thể kéo dài ngày giao hàng thêm khoảng một tuần không?"}
+{"id": 40, "ja": "ご不明な点がございましたら、お気軽にお問い合わせください。", "gg": "Nếu bạn có bất kỳ câu hỏi nào, xin vui lòng liên hệ với chúng tôi."}
+{"id": 41, "ja": "売り上げは前年同期比で約15パーセント増加しました。", "gg": "Doanh số bán hàng tăng khoảng 15% so với cùng kỳ năm ngoái."}
+{"id": 42, "ja": "今回の決定については、社内でさらに議論が必要だと思います。", "gg": "Tôi nghĩ quyết định này cần phải thảo luận thêm trong công ty."}
+{"id": 43, "ja": "新入社員の研修は来月の初めから始まります。", "gg": "Việc đào tạo nhân viên mới sẽ bắt đầu vào đầu tháng tới."}
+{"id": 44, "ja": "このたびは弊社の製品をお選びいただき誠にありがとうございます。", "gg": "Cảm ơn bạn rất nhiều vì đã lựa chọn sản phẩm của chúng tôi."}
+{"id": 45, "ja": "契約書に署名する前に、もう一度条件を確認させてください。", "gg": "Trước khi ký hợp đồng, hãy để tôi xem lại các điều khoản một lần nữa."}
+{"id": 46, "ja": "政府は来年度の予算案を今週中に発表する見通しだ。", "gg": "Chính phủ dự kiến ​​sẽ công bố ngân sách năm tới trong tuần này."}
+{"id": 47, "ja": "台風の影響で、多くの交通機関が運転を見合わせている。", "gg": "Do bão, nhiều phương tiện vận tải phải tạm dừng hoạt động."}
+{"id": 48, "ja": "今回の選挙では投票率が過去最低を記録した。", "gg": "Tỷ lệ cử tri đi bỏ phiếu trong cuộc bầu cử này là thấp nhất từng được ghi nhận."}
+{"id": 49, "ja": "専門家はこの技術が今後10年で社会を大きく変えると予測している。", "gg": "Các chuyên gia dự đoán rằng công nghệ này sẽ thay đổi đáng kể xã hội trong 10 năm tới."}
+{"id": 50, "ja": "物価の上昇が家計に深刻な影響を及ぼしている。", "gg": "Giá cả tăng cao đang có tác động nghiêm trọng đến tài chính hộ gia đình."}
+{"id": 51, "ja": "その事件については現在も警察が捜査を続けている。", "gg": "Cảnh sát vẫn đang điều tra vụ việc."}
+{"id": 52, "ja": "地元の商店街は観光客の減少で苦戦を強いられている。", "gg": "Các đường phố mua sắm địa phương đang gặp khó khăn do lượng khách du lịch giảm."}
+{"id": 53, "ja": "新しい法律が来月から施行されることになった。", "gg": "Luật mới sẽ có hiệu lực vào tháng tới."}
+{"id": 54, "ja": "研究チームは長年の実験の末、ついに新素材の開発に成功した。", "gg": "Sau nhiều năm thử nghiệm, nhóm nghiên cứu cuối cùng đã thành công trong việc phát triển một loại vật liệu mới."}
+{"id": 55, "ja": "少子高齢化が進む中、地方の人口減少が加速している。", "gg": "Khi tỷ lệ sinh giảm và dân số già đi, sự suy giảm dân số ở khu vực nông thôn đang ngày càng gia tăng."}
+{"id": 56, "ja": "このアプリはパスワードを忘れても簡単に再設定できます。", "gg": "Ứng dụng này cho phép bạn dễ dàng đặt lại mật khẩu nếu bạn quên."}
+{"id": 57, "ja": "新しいスマホに乗り換えたら、電池の持ちが全然違う。", "gg": "Khi tôi chuyển sang điện thoại thông minh mới, thời lượng pin hoàn toàn khác."}
+{"id": 58, "ja": "ソフトの更新が終わるまでパソコンの電源を切らないでください。", "gg": "Không tắt máy tính cho đến khi quá trình cập nhật phần mềm hoàn tất."}
+{"id": 59, "ja": "このサイト、最近ログインするたびにエラーが出るんだよね。", "gg": "Tôi gặp lỗi mỗi lần đăng nhập vào trang này."}
+{"id": 60, "ja": "データはすべてクラウドに自動でバックアップされます。", "gg": "Tất cả dữ liệu được tự động sao lưu vào đám mây."}
+{"id": 61, "ja": "Wi-Fiの調子が悪くて、動画が何度も止まってしまう。", "gg": "Wi-Fi không hoạt động tốt và video liên tục dừng."}
+{"id": 62, "ja": "このコードを実行すると、なぜかエラーメッセージが表示される。", "gg": "Khi tôi chạy mã này, một thông báo lỗi xuất hiện vì lý do nào đó."}
+{"id": 63, "ja": "AIの進化によって、私たちの働き方も大きく変わりつつある。", "gg": "Cách chúng ta làm việc cũng đang trải qua những thay đổi lớn nhờ những tiến bộ trong AI."}
+{"id": 64, "ja": "セキュリティのため、定期的にパスワードを変更することをおすすめします。", "gg": "Vì lý do bảo mật, chúng tôi khuyên bạn nên thay đổi mật khẩu thường xuyên."}
+{"id": 65, "ja": "充電が20パーセントを切ったら通知が来るように設定した。", "gg": "Tôi đặt nó để thông báo cho tôi khi mức pin giảm xuống dưới 20%."}
+{"id": 66, "ja": "このリンクをクリックすると、詳細ページに移動します。", "gg": "Nhấp vào liên kết này để đi đến trang chi tiết."}
+{"id": 67, "ja": "無料版でも十分使えるけど、有料版だと広告が消えるらしい。", "gg": "Phiên bản miễn phí có thể sử dụng đủ, nhưng phiên bản trả phí dường như sẽ loại bỏ quảng cáo."}
+{"id": 68, "ja": "画面が急に固まって、何を押しても反応しなくなった。", "gg": "Màn hình đột nhiên đóng băng và không phản hồi cho dù tôi có nhấn nút nào đi chăng nữa."}
+{"id": 69, "ja": "検索履歴を消したいんだけど、どこから設定すればいいの。", "gg": "Tôi muốn xóa lịch sử tìm kiếm của mình nhưng tôi nên bắt đầu từ đâu?"}
+{"id": 70, "ja": "今夜はカレーにしようと思って、材料を買ってきた。", "gg": "Tôi quyết định làm món cà ri tối nay nên đã mua một ít nguyên liệu."}
+{"id": 71, "ja": "このお店のラーメン、スープが濃厚で本当においしい。", "gg": "Ramen và súp ở nhà hàng này rất phong phú và rất ngon."}
+{"id": 72, "ja": "辛いものが苦手なので、少し控えめにしてもらえますか。", "gg": "Mình không thích ăn cay nên bạn có thể làm bớt cay được không?"}
+{"id": 73, "ja": "炊きたてのご飯に卵をかけるだけで最高のごちそうだ。", "gg": "Chỉ cần thêm một quả trứng vào cơm mới nấu là có một bữa ăn hoàn hảo."}
+{"id": 74, "ja": "予約なしでも入れますか、それとも待ちますか。", "gg": "Tôi có thể đến mà không cần đặt trước hay tôi phải đợi?"}
+{"id": 75, "ja": "このケーキ、甘さ控えめで年配の方にも喜ばれそう。", "gg": "Bánh này không quá ngọt nên người lớn tuổi cũng sẽ thích."}
+{"id": 76, "ja": "夏はやっぱり冷たいそうめんが食べたくなる。", "gg": "Vào mùa hè, tôi luôn muốn ăn mì somen lạnh."}
+{"id": 77, "ja": "レシピ通りに作ったのに、なぜか味が薄くなってしまった。", "gg": "Mình làm theo công thức nhưng không hiểu sao mùi vị lại nhạt nhẽo."}
+{"id": 78, "ja": "食べ放題だからといって、無理して食べすぎないようにね。", "gg": "Chỉ vì bạn có thể ăn bao nhiêu tùy thích thì cũng đừng ép mình ăn quá nhiều."}
+{"id": 79, "ja": "この地方は新鮮な海の幸で有名なんですよ。", "gg": "Vùng này nổi tiếng với hải sản tươi sống."}
+{"id": 80, "ja": "すみません、この電車は東京駅に止まりますか。", "gg": "Xin lỗi, chuyến tàu này có dừng ở ga Tokyo không?"}
+{"id": 81, "ja": "次の角を右に曲がると、右手にコンビニが見えます。", "gg": "Rẽ phải ở góc tiếp theo và bạn sẽ thấy một cửa hàng tiện lợi ở bên phải."}
+{"id": 82, "ja": "空港までタクシーで行くと、だいたいどのくらいかかりますか。", "gg": "Mất khoảng bao lâu để đi taxi đến sân bay?"}
+{"id": 83, "ja": "乗り換えが多くて、初めての人には少し分かりにくいかもしれない。", "gg": "Có rất nhiều lần chuyển tiền nên có thể sẽ hơi khó hiểu đối với những người lần đầu tiên tham gia."}
+{"id": 84, "ja": "このバスは一時間に二本しかないので、乗り遅れないように。", "gg": "Xe buýt này chỉ chạy hai lần một giờ, vì vậy đừng bỏ lỡ."}
+{"id": 85, "ja": "道に迷ってしまったので、地図を見せてもらえますか。", "gg": "Tôi bị lạc, vậy bạn có thể chỉ cho tôi bản đồ được không?"}
+{"id": 86, "ja": "ホテルのチェックインは午後三時からとなっております。", "gg": "Nhận phòng khách sạn là từ 3 giờ chiều."}
+{"id": 87, "ja": "繁忙期は道路がかなり混雑するので、早めに出発したほうがいい。", "gg": "Đường có thể khá tắc nghẽn trong mùa cao điểm, vì vậy tốt nhất bạn nên rời đi sớm."}
+{"id": 88, "ja": "この駅から徒歩で十分ほどのところに有名なお寺があります。", "gg": "Có một ngôi chùa nổi tiếng cách nhà ga này mười phút đi bộ."}
+{"id": 89, "ja": "切符をなくしてしまったのですが、どうすればいいですか。", "gg": "Tôi bị mất vé, tôi phải làm sao?"}
+{"id": 90, "ja": "最近、肩こりがひどくて、なかなか眠れないんです。", "gg": "Gần đây vai tôi cứng đơ đến nỗi tôi không thể ngủ ngon được."}
+{"id": 91, "ja": "熱が下がらないようなら、早めに病院で診てもらったほうがいい。", "gg": "Nếu cơn sốt của bạn không giảm, tốt nhất bạn nên đến bệnh viện càng sớm càng tốt."}
+{"id": 92, "ja": "薬は食後に一日三回、水と一緒に飲んでください。", "gg": "Uống thuốc với nước ba lần một ngày sau bữa ăn."}
+{"id": 93, "ja": "運動を続けたおかげで、健康診断の結果がだいぶ良くなった。", "gg": "Nhờ thường xuyên tập luyện nên kết quả khám sức khỏe của tôi đã cải thiện đáng kể."}
+{"id": 94, "ja": "花粉症の季節になると、毎年くしゃみが止まらなくなる。", "gg": "Hàng năm vào mùa sốt cỏ khô, tôi không thể ngừng hắt hơi."}
+{"id": 95, "ja": "少し休んだら、めまいはだいぶ良くなってきました。", "gg": "Sau khi nghỉ ngơi một lúc, cơn chóng mặt của tôi bắt đầu cảm thấy dễ chịu hơn nhiều."}
+{"id": 96, "ja": "無理をしないで、今日はゆっくり体を休めてください。", "gg": "Đừng cố gắng quá sức và hãy nghỉ ngơi thật tốt ngay hôm nay."}
+{"id": 97, "ja": "最近ちょっと太ってきたから、間食を減らそうと思ってる。", "gg": "Gần đây tôi tăng cân một chút nên tôi đang cố gắng giảm bớt việc ăn vặt."}
+{"id": 98, "ja": "今朝はぐっと冷え込んで、初めて息が白くなった。", "gg": "Sáng nay trời lạnh đến nỗi lần đầu tiên hơi thở của tôi trở nên trắng xóa."}
+{"id": 99, "ja": "桜が満開になると、多くの人が公園に花見に集まる。", "gg": "Khi hoa anh đào nở rộ, rất nhiều người tụ tập trong công viên để ngắm hoa."}
+{"id": 100, "ja": "急に雲行きが怪しくなってきたから、傘を持って行ったほうがいい。", "gg": "Những đám mây đột nhiên trông đáng ngờ, vì vậy tốt nhất tôi nên mang theo ô."}
+{"id": 101, "ja": "今年の夏は例年になく暑い日が続いている。", "gg": "Mùa hè năm nay, ngày nóng hơn thường lệ."}
+{"id": 102, "ja": "紅葉の季節になると、山全体が赤や黄色に染まる。", "gg": "Vào mùa lá thu, toàn bộ ngọn núi chuyển sang màu đỏ và vàng."}
+{"id": 103, "ja": "朝晩はだいぶ涼しくなって、すっかり秋らしくなってきた。", "gg": "Buổi sáng và buổi tối mát mẻ hơn nhiều và bắt đầu có cảm giác như mùa thu."}
+{"id": 104, "ja": "このセーター、セールで半額になってたから思わず買っちゃった。", "gg": "Chiếc áo len này được giảm giá một nửa nên tôi không thể không mua nó."}
+{"id": 105, "ja": "予算が限られているので、なるべく安く抑えたいんです。", "gg": "Ngân sách của tôi có hạn nên tôi muốn giữ nó càng rẻ càng tốt."}
+{"id": 106, "ja": "レシートは返品のときに必要なので、捨てないでください。", "gg": "Vui lòng không vứt biên lai vì bạn sẽ cần nó khi trả lại hàng."}
+{"id": 107, "ja": "現金しか使えないお店もあるから、少しは持っておいたほうがいい。", "gg": "Một số cửa hàng chỉ chấp nhận tiền mặt, vì vậy bạn nên mang theo một ít tiền mặt."}
+{"id": 108, "ja": "送料無料になるまで、あと少し買い足そうかな。", "gg": "Tôi nghĩ tôi sẽ mua thêm một ít cho đến khi miễn phí vận chuyển."}
+{"id": 109, "ja": "この値段でこの品質なら、かなりお買い得だと思う。", "gg": "Với mức giá và chất lượng như vậy thì tôi thấy khá hời."}
+{"id": 110, "ja": "支払いはカードでも大丈夫ですか。", "gg": "Thanh toán bằng thẻ có được không?"}
+{"id": 111, "ja": "定価より少し高くても、品質がいいならそっちを選ぶ。", "gg": "Dù đắt hơn giá niêm yết một chút nhưng nếu chất lượng tốt thì tôi sẽ chọn."}
+{"id": 112, "ja": "毎月の生活費を見直して、少しずつ貯金を始めた。", "gg": "Tôi xem lại chi phí sinh hoạt hàng tháng của mình và bắt đầu tiết kiệm từng chút một."}
+{"id": 113, "ja": "一度使ってみて、気に入らなければ返品できるそうです。", "gg": "Nếu bạn dùng thử một lần và không thích, bạn có thể trả lại."}
+{"id": 114, "ja": "試験が近いのに、なかなか集中できなくて困っている。", "gg": "Kỳ thi sắp đến nhưng tôi khó tập trung."}
+{"id": 115, "ja": "毎日少しずつでも続けることが、上達への一番の近道だ。", "gg": "Cách tốt nhất để cải thiện là tiếp tục thực hiện nó một chút mỗi ngày."}
+{"id": 116, "ja": "先生の説明がとても分かりやすくて、やっと理解できた。", "gg": "Lời giải thích của thầy rất dễ hiểu nên cuối cùng tôi cũng hiểu được."}
+{"id": 117, "ja": "分からないところは、遠慮せずに何度でも質問してください。", "gg": "Nếu bạn không hiểu bất cứ điều gì, xin vui lòng đặt câu hỏi bao nhiêu lần tùy thích."}
+{"id": 118, "ja": "留学して初めて、自分の語学力のなさを痛感した。", "gg": "Lần đầu tiên sau khi đi du học, tôi nhận ra mình thiếu khả năng ngôn ngữ."}
+{"id": 119, "ja": "子どもの頃は勉強が嫌いだったが、今になって後悔している。", "gg": "Hồi nhỏ tôi ghét học hành nhưng giờ lại thấy hối hận."}
+{"id": 120, "ja": "この問題は難しそうに見えて、実は基本を押さえれば簡単だ。", "gg": "Vấn đề này có vẻ khó khăn nhưng nó thực sự dễ dàng khi bạn hiểu được những điều cơ bản."}
+{"id": 121, "ja": "発表の準備が間に合うか、正直かなり不安だ。", "gg": "Thành thật mà nói, tôi khá lo lắng không biết liệu mình có thể chuẩn bị kịp thời cho bài thuyết trình hay không."}
+{"id": 122, "ja": "外国語を学ぶうえで、一番大切なのは間違いを恐れないことだ。", "gg": "Điều quan trọng nhất khi học ngoại ngữ là không sợ mắc lỗi."}
+{"id": 123, "ja": "一夜漬けではなく、日頃からコツコツ勉強するべきだった。", "gg": "Đáng lẽ tôi phải học tập chăm chỉ hàng ngày chứ không chỉ qua đêm."}
+{"id": 124, "ja": "なんだか最近、彼、様子がおかしいと思わない。", "gg": "Tôi không nghĩ gần đây anh ấy hành động kỳ lạ."}
+{"id": 125, "ja": "本当のことを言うと、あの映画はそれほど面白くなかった。", "gg": "Nói thật với bạn, bộ phim đó không thú vị lắm."}
+{"id": 126, "ja": "君の気持ちも分かるけど、もう少し冷静に考えたほうがいい。", "gg": "Tôi hiểu cảm giác của bạn, nhưng bạn nên suy nghĩ về nó một cách bình tĩnh hơn một chút."}
+{"id": 127, "ja": "あんなに頑張ったのに結果が出なくて、正直悔しい。", "gg": "Thành thật mà nói, tôi rất thất vọng vì không đạt được kết quả nào dù đã làm việc rất chăm chỉ."}
+{"id": 128, "ja": "彼女はいつも人の悪口ばかり言っていて、正直うんざりする。", "gg": "Cô ấy luôn nói những điều không hay về mọi người, và thành thật mà nói, tôi chán việc đó rồi."}
+{"id": 129, "ja": "心配しなくても、きっとうまくいくから大丈夫だよ。", "gg": "Đừng lo lắng, mọi thứ sẽ ổn thôi."}
+{"id": 130, "ja": "まさか彼がそんなことをするなんて、夢にも思わなかった。", "gg": "Tôi chưa bao giờ mơ rằng anh ấy sẽ làm điều gì đó như thế."}
+{"id": 131, "ja": "何度も謝られると、かえってこっちが気まずくなる。", "gg": "Nếu bạn xin lỗi hết lần này đến lần khác, điều đó thực sự sẽ khiến bạn cảm thấy khó xử."}
+{"id": 132, "ja": "どうしてもっと早く相談してくれなかったの。", "gg": "Tại sao bạn không hỏi ý kiến ​​tôi sớm hơn?"}
+{"id": 133, "ja": "言いたいことは分かるけど、その言い方はちょっとひどいよ。", "gg": "Tôi biết bạn đang muốn nói gì, nhưng cách bạn nói nó thật khủng khiếp."}
+{"id": 134, "ja": "いくら家族でも、言っていいことと悪いことがある。", "gg": "Dù là gia đình thế nào thì cũng có những điều bạn có thể nói và những điều bạn không thể nói."}
+{"id": 135, "ja": "彼は口では偉そうなことを言うが、いざとなると何もしない。", "gg": "Anh ấy nói những điều lớn lao, nhưng khi nói đến chuyện đó, anh ấy lại không làm gì cả."}
+{"id": 136, "ja": "落ち込んでいる友達に、なんて声をかければいいか分からなかった。", "gg": "Tôi không biết phải nói gì với người bạn đang bị trầm cảm của mình."}
+{"id": 137, "ja": "たとえどんなに時間がかかっても、この夢だけは諦めたくない。", "gg": "Dù có mất bao lâu đi chăng nữa, tôi cũng không muốn từ bỏ ước mơ này."}
+{"id": 138, "ja": "子どものころ、よく祖母の家に遊びに行ったものだ。", "gg": "Khi còn nhỏ, tôi thường đến nhà bà ngoại."}
+{"id": 139, "ja": "振り返ってみれば、あの失敗が今の自分を作ってくれたと思う。", "gg": "Nhìn lại, tôi nghĩ chính thất bại đó đã tạo nên tôi như ngày hôm nay."}
+{"id": 140, "ja": "最初はうまくいかなかったが、諦めずに続けたら少しずつ形になってきた。", "gg": "Lúc đầu mọi chuyện không suôn sẻ nhưng tôi vẫn tiếp tục mà không bỏ cuộc và dần dần mọi thứ bắt đầu thành hình."}
+{"id": 141, "ja": "人は誰しも、他人には言えない悩みの一つや二つは抱えているものだ。", "gg": "Mỗi người đều có một hoặc hai nỗi lo lắng không thể chia sẻ với người khác."}
+{"id": 142, "ja": "成功する人としない人の違いは、才能よりも継続する力にあると思う。", "gg": "Tôi nghĩ sự khác biệt giữa những người thành công và những người không thành công nằm ở khả năng tiếp tục, hơn là tài năng của họ."}
+{"id": 143, "ja": "便利になればなるほど、人と人との直接のつながりが薄れていく気がする。", "gg": "Tôi cảm thấy mọi thứ càng thuận tiện thì sự kết nối trực tiếp giữa con người với nhau càng ít đi."}
+{"id": 144, "ja": "彼が急に会社を辞めると言い出したので、みんな驚きを隠せなかった。", "gg": "Mọi người đều bất ngờ khi anh bất ngờ thông báo sẽ rời công ty."}
+{"id": 145, "ja": "どんなに準備をしても、本番では思いがけないことが起こるものだ。", "gg": "Cho dù bạn có chuẩn bị bao nhiêu thì những điều bất ngờ vẫn có thể xảy ra trong sự kiện thực tế."}
+{"id": 146, "ja": "最初は反対していた両親も、最終的には私の決断を応援してくれた。", "gg": "Bố mẹ tôi lúc đầu phản đối nhưng cuối cùng lại ủng hộ quyết định của tôi."}
+{"id": 147, "ja": "情報があふれる時代だからこそ、何を信じるかを見極める力が求められる。", "gg": "Trong thời đại tràn ngập thông tin này, chúng ta cần khả năng phân biệt những gì cần tin."}
+{"id": 148, "ja": "締め切りに追われる毎日だが、それでもこの仕事にやりがいを感じている。", "gg": "Mặc dù tôi phải đối mặt với thời hạn mỗi ngày nhưng tôi vẫn thấy công việc này rất bổ ích."}
+{"id": 149, "ja": "若い頃にもっと色々な世界を見ておけばよかったと、今さらながら思う。", "gg": "Bây giờ tôi ước mình đã nhìn thấy nhiều thế giới hơn khi còn trẻ."}
+{"id": 150, "ja": "どんな仕事でも、続けているうちに必ず面白さが見えてくるものだ。", "gg": "Dù bạn làm công việc gì, khi bạn tiếp tục làm nó, chắc chắn bạn sẽ thấy nó thú vị."}
+{"id": 151, "ja": "彼の話は長いわりに中身がなく、聞いているうちに眠くなってしまった。", "gg": "Câu chuyện của anh dài nhưng thiếu nội dung, nghe xong tôi buồn ngủ."}
+{"id": 152, "ja": "急いでいたとはいえ、挨拶もせずに帰ったのは失礼だった。", "gg": "Mặc dù tôi đang vội nhưng thật là thô lỗ nếu tôi rời đi mà không chào hỏi."}
+{"id": 153, "ja": "たかがゲームと思われがちだが、そこから学べることは意外と多い。", "gg": "Mặc dù nó thường được coi chỉ là một trò chơi, nhưng có rất nhiều điều đáng ngạc nhiên có thể học được từ nó."}
+{"id": 154, "ja": "うまくいかないときこそ、基本に立ち返ることが大切だ。", "gg": "Khi mọi thứ không suôn sẻ, điều quan trọng là phải quay lại vấn đề cơ bản."}
+{"id": 155, "ja": "その提案には賛成だが、実行にはいくつか課題があると思う。", "gg": "Tôi đồng ý với đề xuất này, nhưng tôi nghĩ có một số thách thức trong việc thực hiện nó."}
+{"id": 156, "ja": "まだ間に合うから、今からでも始めれば遅くない。", "gg": "Vẫn còn thời gian nên bây giờ bắt đầu cũng chưa muộn."}
+{"id": 157, "ja": "一人で抱え込まないで、困ったときは周りを頼っていいんだよ。", "gg": "Đừng tự mình giải quyết mọi việc; nếu gặp khó khăn, bạn có thể dựa vào những người xung quanh."}
+{"id": 158, "ja": "やらずに後悔するより、やって後悔したほうがましだ。", "gg": "Thà hối hận vì đã làm còn hơn hối tiếc vì đã không làm."}
+{"id": 159, "ja": "彼女の優しさに、何度も救われた気がする。", "gg": "Tôi cảm thấy lòng tốt của cô ấy đã cứu tôi rất nhiều lần."}
+{"id": 160, "ja": "時間が解決してくれることもあるから、焦らなくていい。", "gg": "Không cần phải vội vàng, thời gian sẽ trả lời."}
+{"id": 161, "ja": "猫がテーブルの上のコップを落として、水浸しになった。", "gg": "Con mèo đánh rơi chiếc cốc xuống bàn và nó ướt đẫm nước."}
+{"id": 162, "ja": "子どもたちは公園で夢中になって鬼ごっこをしている。", "gg": "Các em nhỏ đang hăng say chơi trò đuổi bắt trong công viên."}
+{"id": 163, "ja": "雨上がりの空に、大きな虹がかかっていた。", "gg": "Cầu vồng lớn xuất hiện trên bầu trời sau cơn mưa."}
+{"id": 164, "ja": "夜遅くに大きな音がして、思わず飛び起きてしまった。", "gg": "Đêm khuya, tôi nghe thấy một tiếng động lớn khiến tôi giật mình."}
+{"id": 165, "ja": "隣の家の犬が、朝からずっと吠え続けている。", "gg": "Con chó nhà hàng xóm của tôi sủa suốt buổi sáng."}
+{"id": 166, "ja": "電車の中で居眠りをして、降りる駅を乗り過ごしてしまった。", "gg": "Tôi ngủ quên trên tàu và lỡ mất ga tôi sắp xuống."}
+{"id": 167, "ja": "道端に咲いている小さな花に、なんだか元気をもらった。", "gg": "Những bông hoa nhỏ nở bên đường phần nào đã tiếp thêm cho tôi năng lượng."}
+{"id": 168, "ja": "財布を家に忘れてきたことに、レジで気づいて焦った。", "gg": "Tôi hoảng hồn khi đến quầy tính tiền mới nhận ra mình để quên ví ở nhà."}
+{"id": 169, "ja": "久しぶりに実家に帰ったら、庭の木がずいぶん大きくなっていた。", "gg": "Khi tôi trở về nhà lần đầu tiên sau một thời gian, cái cây trong vườn đã lớn lên đáng kể."}
+{"id": 170, "ja": "コーヒーをこぼして、大事な資料を汚してしまった。", "gg": "Tôi làm đổ cà phê và làm bẩn những tài liệu quan trọng."}
+{"id": 171, "ja": "おすすめのメニューはどれですか。", "gg": "Bạn đề xuất thực đơn nào?"}
+{"id": 172, "ja": "今、少しお時間よろしいでしょうか。", "gg": "Bây giờ bạn có thể vui lòng dành chút thời gian được không?"}
+{"id": 173, "ja": "それ、いいアイデアだと思う。", "gg": "Tôi nghĩ đó là một ý tưởng tốt."}
+{"id": 174, "ja": "本当にありがとう、助かったよ。", "gg": "Cảm ơn bạn rất nhiều, nó rất hữu ích."}
+{"id": 175, "ja": "気にしないで、大したことじゃないから。", "gg": "Đừng lo lắng, không có gì to tát đâu."}
+{"id": 176, "ja": "また今度ゆっくり話そうね。", "gg": "Lần sau chúng ta hãy nói chậm hơn nhé."}
+{"id": 177, "ja": "ちょっと待って、今行くから。", "gg": "Đợi một chút, tôi đi ngay."}
+{"id": 178, "ja": "それは知らなかった、教えてくれてありがとう。", "gg": "Tôi không biết điều đó, cảm ơn bạn đã cho tôi biết."}
+{"id": 179, "ja": "無理しないで、体を大事にしてね。", "gg": "Đừng ép buộc bản thân quá nhiều, hãy chăm sóc cơ thể của bạn."}
+{"id": 180, "ja": "そろそろ本題に入りましょうか。", "gg": "Chúng ta hãy bắt tay vào công việc ngay bây giờ nhé?"}
+{"id": 181, "ja": "念のため、もう一度確認しておきます。", "gg": "Để chắc chắn, tôi sẽ kiểm tra lại."}
+{"id": 182, "ja": "おかげさまで、なんとか間に合いました。", "gg": "Nhờ có bạn mà tôi đã đến kịp lúc."}
+{"id": 183, "ja": "やっと週末だ、ゆっくり休める。", "gg": "Cuối cùng cũng đến cuối tuần và tôi có thể nghỉ ngơi một chút."}
+{"id": 184, "ja": "彼のことだから、きっとまた遅刻するだろう。", "gg": "Vì là về anh ấy nên tôi chắc chắn anh ấy sẽ lại đến muộn."}
+{"id": 185, "ja": "言われてみれば、確かにその通りだ。", "gg": "Nếu bạn hỏi tôi thì điều đó chắc chắn là đúng."}
+{"id": 186, "ja": "どうりで今日は道が空いていたわけだ。", "gg": "Chẳng trách hôm nay đường lại vắng."}
+{"id": 187, "ja": "まさかここで会うとは思わなかった。", "gg": "Tôi không bao giờ mong đợi được gặp bạn ở đây."}
+{"id": 188, "ja": "それはさすがに言い過ぎじゃないかな。", "gg": "Tôi nghĩ đó là một sự cường điệu."}
+{"id": 189, "ja": "まあ、終わったことは仕方がないよ。", "gg": "Chà, không thể tránh được việc mọi chuyện đã kết thúc."}
+{"id": 190, "ja": "とりあえず、今日はここまでにしておこう。", "gg": "Dù sao thì, hãy để nó ở đó cho ngày hôm nay."}
+{"id": 191, "ja": "思ったより簡単だったので、拍子抜けした。", "gg": "Nó dễ dàng hơn tôi mong đợi nên tôi rất ngạc nhiên."}
+{"id": 192, "ja": "彼女の笑顔を見ると、こっちまで幸せな気分になる。", "gg": "Nhìn thấy nụ cười của cô ấy tôi cảm thấy rất hạnh phúc."}
+{"id": 193, "ja": "朝起きたら雪が積もっていて、子どものようにはしゃいでしまった。", "gg": "Khi tôi thức dậy vào buổi sáng, có tuyết rơi trên mặt đất và tôi đang vui đùa như một đứa trẻ."}
+{"id": 194, "ja": "どんなに忙しくても、家族との食事の時間だけは大切にしている。", "gg": "Dù bận rộn đến đâu tôi cũng quý trọng thời gian dùng bữa cùng gia đình."}
+{"id": 195, "ja": "彼は失敗を恐れず、いつも新しいことに挑戦している。", "gg": "Anh ấy không sợ thất bại và luôn thử những điều mới."}
+{"id": 196, "ja": "この本を読んでから、物事の見方が少し変わった気がする。", "gg": "Sau khi đọc cuốn sách này, tôi cảm thấy như quan điểm của tôi về mọi thứ đã thay đổi một chút."}
+{"id": 197, "ja": "遠回りに見えても、地道な努力が結局は一番の近道になる。", "gg": "Dù có vẻ như là một chặng đường dài phía trước nhưng những nỗ lực kiên định cuối cùng sẽ là con đường ngắn nhất."}
+{"id": 198, "ja": "言葉にしなくても、その気持ちはちゃんと伝わっているよ。", "gg": "Dù không nói thành lời nhưng cảm xúc của bạn vẫn được truyền tải rõ ràng."}
+{"id": 199, "ja": "新しい環境に慣れるまでは、誰だって不安なものだ。", "gg": "Mọi người đều cảm thấy lo lắng cho đến khi quen với môi trường mới."}
+{"id": 200, "ja": "失敗したからといって、それがすべての終わりというわけではない。", "gg": "Chỉ vì bạn thất bại không có nghĩa là mọi thứ đã kết thúc."}
+{"id": 201, "ja": "お世話になっております、株式会社山田の田中でございます。", "gg": "Tôi là Tanaka đến từ Công ty TNHH Yamada và cảm ơn sự giúp đỡ của bạn."}
+{"id": 202, "ja": "会議の資料、もう出来た？", "gg": "Tài liệu cuộc họp đã sẵn sàng chưa?"}
+{"id": 203, "ja": "恐れ入りますが、来週の火曜日までにご返信いただけますでしょうか。", "gg": "Xin vui lòng, bạn có thể vui lòng trả lời trước thứ Ba tới được không?"}
+{"id": 204, "ja": "契約書にサインしてもらえますか。", "gg": "Bạn có thể vui lòng ký hợp đồng được không?"}
+{"id": 205, "ja": "すみません、遅れます！", "gg": "Xin lỗi, tôi sẽ đến muộn!"}
+{"id": 206, "ja": "今期の売上は前年比で十二パーセント増加しました。", "gg": "Doanh số bán hàng trong kỳ này tăng 12% so với năm trước."}
+{"id": 207, "ja": "ご査収のほど、よろしくお願いいたします。", "gg": "Cảm ơn bạn đã xem xét."}
+{"id": 208, "ja": "部長、この件について少しお話しできますか。", "gg": "Giám đốc, chúng ta có thể nói chuyện một chút về chuyện này được không?"}
+{"id": 209, "ja": "面接の日程を再調整していただくことは可能でしょうか。", "gg": "Có thể dời lịch phỏng vấn được không?"}
+{"id": 210, "ja": "請求書の金額が間違っている気がします。", "gg": "Tôi nghĩ số tiền trên hóa đơn của tôi không chính xác."}
+{"id": 211, "ja": "なるほど、それは大変でしたね。", "gg": "Tôi hiểu rồi, điều đó thật khó khăn."}
+{"id": 212, "ja": "来月から新しい部署に異動することになりました。", "gg": "Tôi sẽ chuyển sang bộ phận mới vào tháng tới."}
+{"id": 213, "ja": "お忙しいところ恐縮ですが、ご確認いただけますと幸いです。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này nhưng chúng tôi sẽ đánh giá cao nếu bạn có thể kiểm tra."}
+{"id": 214, "ja": "あの取引先、また値下げ交渉してきたよ。", "gg": "Khách hàng đó đã thương lượng lại giá xuống."}
+{"id": 215, "ja": "議事録はもう共有しましたか。", "gg": "Bạn đã chia sẻ số phút chưa?"}
+{"id": 216, "ja": "申し訳ございませんが、本日は在庫がございません。", "gg": "Rất tiếc, hôm nay chúng tôi không có mặt hàng nào trong kho."}
+{"id": 217, "ja": "給料日まだ？", "gg": "Đã đến ngày lĩnh lương chưa?"}
+{"id": 218, "ja": "弊社としましては、来期の予算を大幅に見直す必要があると考えております。", "gg": "Chúng tôi tin rằng chúng tôi cần xem xét lại đáng kể ngân sách của mình cho năm tới."}
+{"id": 219, "ja": "転職活動、順調に進んでいる？", "gg": "Quá trình tìm việc của bạn có tiến triển thuận lợi không?"}
+{"id": 220, "ja": "何とぞご了承いただきますようお願い申し上げます。", "gg": "Cảm ơn bạn đã hiểu biết của bạn."}
+{"id": 221, "ja": "新入社員の研修プログラムを見直すべきだと思います。", "gg": "Tôi nghĩ chương trình đào tạo cho nhân viên mới nên được xem lại."}
+{"id": 222, "ja": "これ、明日の朝までにできる?", "gg": "Bạn có thể làm việc này trước sáng mai được không?"}
+{"id": 223, "ja": "大変申し訳ございませんが、担当者が本日は外出しております。", "gg": "Chúng tôi rất tiếc, nhưng hôm nay người phụ trách đã đi vắng."}
+{"id": 224, "ja": "会議室、空いてる？", "gg": "Phòng họp có trống không?"}
+{"id": 225, "ja": "顧客からのクレームにはできるだけ早く対応する必要があります。", "gg": "Khiếu nại của khách hàng phải được giải quyết càng sớm càng tốt."}
+{"id": 226, "ja": "経費精算、まだ出してないの？", "gg": "Bạn vẫn chưa thanh toán chi phí của mình?"}
+{"id": 227, "ja": "お取引条件について、いくつか確認させていただきたい点がございます。", "gg": "Có một số điểm tôi muốn xác nhận về các điều khoản giao dịch."}
+{"id": 228, "ja": "すごい、今月の目標達成したじゃないか！", "gg": "Wow, tôi đã đạt được mục tiêu của mình trong tháng này!"}
+{"id": 229, "ja": "履歴書と職務経歴書を添付いたしましたので、ご確認ください。", "gg": "Tôi đã đính kèm sơ yếu lý lịch và kinh nghiệm làm việc của mình, vì vậy vui lòng kiểm tra chúng."}
+{"id": 230, "ja": "上司にどう報告すればいいか分からない。", "gg": "Tôi không biết phải báo cáo với sếp thế nào."}
+{"id": 231, "ja": "誠に恐縮ですが、価格の見直しをお願いできませんでしょうか。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này, nhưng bạn có thể vui lòng xem xét lại giá cả không?"}
+{"id": 232, "ja": "プロジェクトの進捗はいかがでしょうか。", "gg": "Dự án đang tiến triển như thế nào?"}
+{"id": 233, "ja": "契約更新の件、どうなった？", "gg": "Điều gì đã xảy ra với việc gia hạn hợp đồng?"}
+{"id": 234, "ja": "弊社の担当が変更となりましたので、あらためてご連絡いたします。", "gg": "Chúng tôi muốn thông báo với bạn rằng người phụ trách của chúng tôi đã thay đổi."}
+{"id": 235, "ja": "面接では第一印象がとても大切です。", "gg": "Ấn tượng đầu tiên rất quan trọng trong quá trình phỏng vấn."}
+{"id": 236, "ja": "なぜこの案が通らなかったのか、正直よく分からない。", "gg": "Tôi thực sự không hiểu tại sao đề xuất này không được thông qua."}
+{"id": 237, "ja": "来週の火曜、出張なんだ。", "gg": "Tôi đang đi công tác vào thứ Ba tới."}
+{"id": 238, "ja": "ご不便をおかけして申し訳ございませんでした。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này."}
+{"id": 239, "ja": "新規顧客の開拓に向けて、営業戦略を一から見直すことにしました。", "gg": "Chúng tôi quyết định xem lại chiến lược bán hàng của mình từ đầu để phát triển khách hàng mới."}
+{"id": 240, "ja": "これで契約は成立ということでよろしいでしょうか。", "gg": "Có đúng là hợp đồng bây giờ đã được ký kết không?"}
+{"id": 241, "ja": "財務部から予算超過の指摘を受けました。", "gg": "Bộ phận tài chính chỉ ra rằng chúng tôi đã vượt quá ngân sách."}
+{"id": 242, "ja": "あの案件、結局どうなったの？", "gg": "Vụ án đó rốt cuộc đã xảy ra chuyện gì?"}
+{"id": 243, "ja": "心よりお詫び申し上げます。", "gg": "Tôi thành thật xin lỗi."}
+{"id": 244, "ja": "面接官の質問にうまく答えられなかった。", "gg": "Tôi không thể trả lời tốt các câu hỏi của người phỏng vấn."}
+{"id": 245, "ja": "今月の残業時間、把握してる？", "gg": "Bạn có biết số giờ làm thêm của mình trong tháng này không?"}
+{"id": 246, "ja": "お手数をおかけいたしますが、ご対応をお願いいたします。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này và cảm ơn sự thông cảm của bạn."}
+{"id": 247, "ja": "取引先との交渉が難航しているようです。", "gg": "Việc đàm phán với đối tác kinh doanh dường như đang gặp khó khăn."}
+{"id": 248, "ja": "できれば今日中に返事がほしいな。", "gg": "Tôi muốn nhận được câu trả lời trước ngày hôm nay nếu có thể."}
+{"id": 249, "ja": "このたびは弊社の商品をご購入いただき、誠にありがとうございます。", "gg": "Cảm ơn bạn rất nhiều vì đã mua sản phẩm của chúng tôi."}
+{"id": 250, "ja": "決算報告書、いつまでに仕上げればいい？", "gg": "Khi nào tôi nên hoàn thành báo cáo tài chính?"}
+{"id": 251, "ja": "ボーナスの査定基準がいまだによく分からない。", "gg": "Tôi vẫn chưa hiểu rõ các tiêu chí để đánh giá tiền thưởng."}
+{"id": 252, "ja": "御社との取引を継続させていただきたく存じます。", "gg": "Chúng tôi muốn tiếp tục làm kinh doanh với công ty của bạn."}
+{"id": 253, "ja": "面接の合否連絡は一週間以内にいたします。", "gg": "Bạn sẽ được thông báo kết quả phỏng vấn trong vòng một tuần."}
+{"id": 254, "ja": "会議、また延びるの？", "gg": "Cuộc họp sẽ bị hoãn lại một lần nữa?"}
+{"id": 255, "ja": "貴社製品の不具合について、詳しくお伺いしてもよろしいでしょうか。", "gg": "Tôi có thể hỏi bạn thêm chi tiết về vấn đề với sản phẩm của bạn không?"}
+{"id": 256, "ja": "とりあえず今日はここまでにしよう。", "gg": "Dù sao, đó là tất cả cho ngày hôm nay."}
+{"id": 257, "ja": "人事評価の面談、来週だったよね？", "gg": "Cuộc phỏng vấn đánh giá nhân sự diễn ra vào tuần sau phải không?"}
+{"id": 258, "ja": "万が一ご不明な点がございましたら、いつでもお問い合わせください。", "gg": "Nếu bạn có bất kỳ câu hỏi nào, xin vui lòng liên hệ với chúng tôi bất cứ lúc nào."}
+{"id": 259, "ja": "新卒採用の説明会、参加者が予想より少なかった。", "gg": "Có ít người tham gia hơn dự kiến ​​tại buổi họp giao ban tuyển dụng sinh viên mới tốt nghiệp."}
+{"id": 260, "ja": "これ以上の値引きは正直難しいです。", "gg": "Thành thật mà nói, rất khó để giảm giá hơn mức này."}
+{"id": 261, "ja": "お待たせして大変申し訳ございません。", "gg": "Chúng tôi xin lỗi vì đã để bạn phải chờ đợi."}
+{"id": 262, "ja": "部下のモチベーションをどう上げればいいか悩んでいる。", "gg": "Tôi lo lắng về việc làm thế nào để động viên cấp dưới của mình."}
+{"id": 263, "ja": "契約内容に変更がございましたら、速やかにご連絡いたします。", "gg": "Nếu có bất kỳ thay đổi nào về chi tiết hợp đồng, chúng tôi sẽ thông báo kịp thời cho bạn."}
+{"id": 264, "ja": "今度の飲み会、行く？", "gg": "Bạn có định đến bữa tiệc rượu tiếp theo không?"}
+{"id": 265, "ja": "貴重なお時間をいただき、ありがとうございました。", "gg": "Cảm ơn bạn rất nhiều vì thời gian quý báu của bạn."}
+{"id": 266, "ja": "例のクライアント、また無理な要求してきた。", "gg": "Khách hàng lại đưa ra một yêu cầu vô lý khác."}
+{"id": 267, "ja": "損益計算書を確認したところ、想定していたよりも赤字が続いていることが判明したため、来月から経費の見直しを行う予定です。", "gg": "Khi kiểm tra báo cáo kết quả hoạt động kinh doanh, chúng tôi nhận thấy rằng chúng tôi đang ở trong tình trạng báo động đỏ lâu hơn dự kiến, vì vậy chúng tôi dự định xem xét lại chi phí của mình bắt đầu từ tháng tới."}
+{"id": 268, "ja": "早めに休暇の申請を出しておいたほうがいいよ。", "gg": "Tốt nhất nên nộp đơn xin nghỉ phép sớm."}
+{"id": 269, "ja": "ご多用の中恐縮ですが、ご一読いただければ幸いです。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này nhưng chúng tôi hy vọng bạn sẽ xem xét."}
+{"id": 270, "ja": "なんでこんなに残業ばかりなんだろう。", "gg": "Tại sao tôi phải làm thêm giờ nhiều như vậy?"}
+{"id": 271, "ja": "御見積書を添付いたしましたので、ご確認くださいませ。", "gg": "Mình có đính kèm báo giá của bạn, bạn kiểm tra nhé."}
+{"id": 272, "ja": "転職エージェントから紹介された会社、条件は悪くない。", "gg": "Tôi được một đại lý tuyển dụng giới thiệu đến một công ty và điều kiện ở đó không tệ."}
+{"id": 273, "ja": "今後とも変わらぬご愛顧をよろしくお願い申し上げます。", "gg": "Chúng tôi mong nhận được sự bảo trợ tiếp tục của bạn."}
+{"id": 274, "ja": "あの新人、なかなか筋がいいね。", "gg": "Anh chàng mới đó rất thông minh."}
+{"id": 275, "ja": "クレーム対応に追われて一日が終わった。", "gg": "Một ngày kết thúc với việc tôi bận rộn giải quyết những lời phàn nàn."}
+{"id": 276, "ja": "御社のご要望に沿った提案書を作成いたしました。", "gg": "Chúng tôi đã tạo một đề xuất đáp ứng nhu cầu của công ty bạn."}
+{"id": 277, "ja": "まさか契約が白紙になるとは思わなかった。", "gg": "Tôi chưa bao giờ nghĩ rằng hợp đồng sẽ trống."}
+{"id": 278, "ja": "領収書は経理に提出してください。", "gg": "Hãy nộp biên lai cho kế toán."}
+{"id": 279, "ja": "承知いたしました、すぐに対応いたします。", "gg": "Chúng tôi hiểu và sẽ phản hồi ngay lập tức."}
+{"id": 280, "ja": "明日のプレゼン、資料は準備できてる？", "gg": "Tài liệu đã sẵn sàng cho buổi thuyết trình ngày mai chưa?"}
+{"id": 281, "ja": "誠に遺憾ながら、今回のご提案はお断りせざるを得ません。", "gg": "Thật tiếc nuối khi chúng tôi không còn lựa chọn nào khác ngoài việc từ chối đề xuất này."}
+{"id": 282, "ja": "うちの会社、そろそろリモートワーク導入するらしい。", "gg": "Có vẻ như công ty của tôi sẽ sớm triển khai tính năng làm việc từ xa."}
+{"id": 283, "ja": "監査の結果、いくつか改善点が指摘されました。", "gg": "Theo kết quả của cuộc kiểm toán, một số lĩnh vực cần cải thiện đã được chỉ ra."}
+{"id": 284, "ja": "お世話になっている取引先への年末の挨拶、もう済ませた？", "gg": "Bạn đã gửi lời chúc cuối năm tới các đối tác kinh doanh của mình chưa?"}
+{"id": 285, "ja": "給与体系の見直しについて、労働組合と協議する予定です。", "gg": "Chúng tôi dự định tổ chức các cuộc thảo luận với liên đoàn lao động về việc xem xét lại hệ thống tiền lương."}
+{"id": 286, "ja": "びっくりした、まさか内定もらえるとは！", "gg": "Tôi rất ngạc nhiên, tôi không bao giờ mong đợi nhận được lời mời làm việc!"}
+{"id": 287, "ja": "経理の締め日が近いので、早めに提出をお願いします。", "gg": "Ngày kết thúc kế toán đang đến gần, vì vậy hãy nộp đơn sớm."}
+{"id": 288, "ja": "面接で聞かれた逆質問、うまく答えられた？", "gg": "Bạn có thể trả lời thành công các câu hỏi ngược được hỏi trong cuộc phỏng vấn không?"}
+{"id": 289, "ja": "お手すきの際にご確認いただければと存じます。", "gg": "Vui lòng kiểm tra nó khi bạn đã sẵn sàng."}
+{"id": 290, "ja": "部署間の連携がうまくいっていないように感じます。", "gg": "Tôi cảm thấy sự hợp tác giữa các bộ phận chưa được tốt."}
+{"id": 291, "ja": "新商品の発売に合わせて、大々的なキャンペーンを打つ予定です。", "gg": "Chúng tôi đang lên kế hoạch cho một chiến dịch lớn trùng với thời điểm ra mắt sản phẩm mới."}
+{"id": 292, "ja": "その話、結局白紙になったんだって。", "gg": "Câu chuyện đó cuối cùng trở nên trống rỗng."}
+{"id": 293, "ja": "貴社との今後のお取引を心待ちにしております。", "gg": "Chúng tôi mong muốn được làm ăn với bạn trong tương lai."}
+{"id": 294, "ja": "履歴書の写真、いつのを使った？", "gg": "Bạn sử dụng ảnh cho sơ yếu lý lịch của mình khi nào?"}
+{"id": 295, "ja": "ご担当者様の変更に伴い、契約内容を再確認させていただきたく存じます。", "gg": "Do sự thay đổi người phụ trách, chúng tôi xin xác nhận lại chi tiết hợp đồng."}
+{"id": 296, "ja": "さすがだね、あのプレゼンは完璧だったよ。", "gg": "Đúng như mong đợi, bài thuyết trình đó thật hoàn hảo."}
+{"id": 297, "ja": "人手不足でシフトが回らない。", "gg": "Không có ca làm việc do thiếu nhân lực."}
+{"id": 298, "ja": "お問い合わせいただいた件について、下記の通りご回答申し上げます。", "gg": "Chúng tôi xin trả lời câu hỏi của bạn như sau."}
+{"id": 299, "ja": "来期の事業計画、もう固まった？", "gg": "Bạn đã quyết định kế hoạch kinh doanh của mình cho năm tới chưa?"}
+{"id": 300, "ja": "恐縮ですが、本日中のご対応は難しい状況です。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này nhưng hiện tại chúng tôi không thể đáp ứng yêu cầu của bạn."}
+{"id": 301, "ja": "新しい上司、意外と話しやすい人だった。", "gg": "Sếp mới của tôi dễ nói chuyện đến mức đáng ngạc nhiên."}
+{"id": 302, "ja": "ご了承いただけますと幸いに存じます。", "gg": "Chúng tôi đánh giá cao sự hiểu biết của bạn."}
+{"id": 303, "ja": "業績が伸び悩んでいる原因を徹底的に分析する必要があります。", "gg": "Cần phân tích kỹ lưỡng nguyên nhân dẫn đến hiệu quả kinh doanh chậm chạp."}
+{"id": 304, "ja": "あの部長、いつも話が長いんだよな。", "gg": "Người quản lý đó luôn có những cuộc nói chuyện dài."}
+{"id": 305, "ja": "出張報告書は今週中に提出してください。", "gg": "Vui lòng gửi báo cáo chuyến đi của bạn trước cuối tuần này."}
+{"id": 306, "ja": "貴社のご発展を心よりお祈り申し上げます。", "gg": "Tôi chân thành chúc công ty bạn ngày càng phát triển."}
+{"id": 307, "ja": "面接官に給料のこと聞いてもいいのかな。", "gg": "Hỏi người phỏng vấn về mức lương có được không?"}
+{"id": 308, "ja": "御見積の内容にご不明点がございましたら、遠慮なくお申し付けください。", "gg": "Nếu bạn có bất kỳ câu hỏi nào về nội dung ước tính của mình, vui lòng cho chúng tôi biết."}
+{"id": 309, "ja": "今日の会議、正直あまり意味なかったね。", "gg": "Thành thật mà nói, cuộc gặp hôm nay chẳng có ý nghĩa gì nhiều."}
+{"id": 310, "ja": "労働契約の内容について、しっかり確認しておくべきです。", "gg": "Bạn nên kiểm tra kỹ nội dung hợp đồng lao động của mình."}
+{"id": 311, "ja": "なんとか納期には間に合わせたい。", "gg": "Tôi muốn đáp ứng ngày giao hàng bằng cách nào đó."}
+{"id": 312, "ja": "弊社の対応に不備があり、深くお詫び申し上げます。", "gg": "Chúng tôi chân thành xin lỗi vì sự bất tiện trong phản hồi của chúng tôi."}
+{"id": 313, "ja": "転職して三ヶ月、ようやく仕事に慣れてきた。", "gg": "Ba tháng sau khi thay đổi công việc, cuối cùng tôi cũng đã quen với công việc của mình."}
+{"id": 314, "ja": "貴社製品を長年愛用させていただいております。", "gg": "Chúng tôi đã sử dụng sản phẩm của bạn trong nhiều năm."}
+{"id": 315, "ja": "予算案、上に通すの結構大変そうだな。", "gg": "Có vẻ như việc thông qua dự luật ngân sách sẽ khá khó khăn."}
+{"id": 316, "ja": "ご多忙のところ大変申し訳ございませんが、今一度ご検討いただけないでしょうか。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này, nhưng bạn có thể vui lòng xem xét lại điều này không?"}
+{"id": 317, "ja": "あのプロジェクト、リーダー誰になったの？", "gg": "Ai là người đứng đầu dự án đó?"}
+{"id": 318, "ja": "決算期を迎え、各部署とも慌ただしくなっております。", "gg": "Khi năm tài chính sắp kết thúc, tất cả các bộ phận đều bận rộn."}
+{"id": 319, "ja": "面接の最後に何か質問はありますかと聞かれて焦った。", "gg": "Vào cuối cuộc phỏng vấn, tôi được hỏi liệu tôi có câu hỏi nào không, điều này khiến tôi rất lo lắng."}
+{"id": 320, "ja": "お力添えいただき、心より感謝申し上げます。", "gg": "Cảm ơn bạn rất nhiều vì sự giúp đỡ của bạn."}
+{"id": 321, "ja": "会社説明会、オンラインになったんだね。", "gg": "Phiên thông tin công ty hiện đang trực tuyến."}
+{"id": 322, "ja": "商談は思った以上にスムーズに進みました。", "gg": "Cuộc đàm phán kinh doanh diễn ra suôn sẻ hơn tôi mong đợi."}
+{"id": 323, "ja": "今回の人事異動には正直納得していない。", "gg": "Thành thật mà nói, tôi không hài lòng với sự thay đổi nhân sự này."}
+{"id": 324, "ja": "ご返送いただく際は、お手数ですが着払いにてお願いいたします。", "gg": "Nếu bạn muốn trả lại hàng, vui lòng thanh toán bằng tiền mặt khi nhận hàng."}
+{"id": 325, "ja": "上司からの評価が思ったより低くてショックだった。", "gg": "Tôi bị sốc khi nhận thấy đánh giá của sếp thấp hơn tôi mong đợi."}
+{"id": 326, "ja": "誠意ある対応をしていただき、ありがとうございました。", "gg": "Cảm ơn bạn đã phản hồi chân thành của bạn."}
+{"id": 327, "ja": "契約書、まだ判子押してないんだけど。", "gg": "Tôi chưa đóng dấu hợp đồng."}
+{"id": 328, "ja": "弊社製品につきまして、貴重なご意見をいただき感謝申し上げます。", "gg": "Cảm ơn bạn đã phản hồi có giá trị của bạn về sản phẩm của chúng tôi."}
+{"id": 329, "ja": "就職活動って本当に体力がいる。", "gg": "Săn việc thực sự đòi hỏi sức mạnh thể chất."}
+{"id": 330, "ja": "経費の申請フォームが変わったので、確認してください。", "gg": "Xin lưu ý rằng mẫu yêu cầu chi phí đã thay đổi."}
+{"id": 331, "ja": "御社のご期待に応えられるよう、全力を尽くします。", "gg": "Chúng tôi sẽ cố gắng hết sức để đáp ứng mong đợi của bạn."}
+{"id": 332, "ja": "有給休暇、まだ全然消化できてない。", "gg": "Tôi vẫn chưa sử dụng hết kỳ nghỉ được trả lương của mình."}
+{"id": 333, "ja": "お力になれず申し訳ございません。", "gg": "Tôi xin lỗi tôi không thể giúp bạn."}
+{"id": 334, "ja": "今度の株主総会、資料の準備はどう？", "gg": "Bạn đang chuẩn bị tài liệu cho đại hội đồng cổ đông sắp tới như thế nào?"}
+{"id": 335, "ja": "貴社からのご注文につきまして、下記の通り承りました。", "gg": "Chúng tôi đã nhận được đơn đặt hàng của bạn như sau."}
+{"id": 336, "ja": "最近入った子、電話対応がだいぶ上手くなったね。", "gg": "Cậu bé mới tham gia cùng chúng tôi đã trả lời điện thoại tốt hơn rất nhiều."}
+{"id": 337, "ja": "交渉が決裂しないよう、慎重に進める必要があります。", "gg": "Việc đàm phán cần phải được tiến hành một cách thận trọng để không bị đổ vỡ."}
+{"id": 338, "ja": "契約書の第三条について、ご説明いただけますか。", "gg": "Bạn có thể vui lòng giải thích về Điều 3 của hợp đồng?"}
+{"id": 339, "ja": "まったく状況が改善していないじゃないか！", "gg": "Tình hình vẫn chưa được cải thiện chút nào!"}
+{"id": 340, "ja": "御社との長年のお付き合いに、深く感謝しております。", "gg": "Chúng tôi rất biết ơn về mối quan hệ lâu dài của chúng tôi với công ty bạn."}
+{"id": 341, "ja": "面接で緊張しすぎて、うまく話せなかった。", "gg": "Tôi đã rất lo lắng trong cuộc phỏng vấn đến nỗi tôi không thể nói tốt."}
+{"id": 342, "ja": "決裁が下りるまで、もう少しお時間をいただけますか。", "gg": "Bạn có thể vui lòng cho tôi thêm một chút thời gian trước khi đưa ra quyết định được không?"}
+{"id": 343, "ja": "例の取引先、なかなか支払いをしてくれない。", "gg": "Đối tác kinh doanh trong ví dụ này không dễ dàng thanh toán."}
+{"id": 344, "ja": "お忙しい中お時間を割いていただき、ありがとうございました。", "gg": "Cảm ơn bạn đã dành thời gian trong lịch trình bận rộn của mình."}
+{"id": 345, "ja": "部門ごとの目標設定、今年はどう進める？", "gg": "Bạn sẽ tiến hành đặt mục tiêu cho từng bộ phận trong năm nay như thế nào?"}
+{"id": 346, "ja": "誠に勝手なお願いで恐縮ですが、社内の承認プロセスに時間がかかっているため、納期を一週間ほど延ばしていただけないでしょうか。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này nhưng quá trình phê duyệt nội bộ mất nhiều thời gian, vì vậy bạn có thể vui lòng gia hạn ngày giao hàng thêm một tuần không?"}
+{"id": 347, "ja": "内定式、参加する予定？", "gg": "Bạn có dự định tham dự buổi lễ không chính thức không?"}
+{"id": 348, "ja": "ご迷惑をおかけしましたことを、重ねてお詫び申し上げます。", "gg": "Chúng tôi xin lỗi một lần nữa vì sự bất tiện gây ra."}
+{"id": 349, "ja": "業務の効率化を図るため、新しいツールを導入することにしました。", "gg": "Chúng tôi quyết định giới thiệu một công cụ mới để hợp lý hóa hoạt động của mình."}
+{"id": 350, "ja": "あの案件、もう手遅れなんじゃないかな。", "gg": "Tôi nghĩ đã quá muộn cho vụ đó rồi."}
+{"id": 351, "ja": "何度も催促してすみません。", "gg": "Xin lỗi vì đã nhắc nhở bạn rất nhiều lần."}
+{"id": 352, "ja": "貴社のご厚意に深く感謝申し上げます。", "gg": "Chúng tôi đánh giá cao lòng tốt của bạn."}
+{"id": 353, "ja": "転職のタイミング、いつがいいと思う？", "gg": "Bạn nghĩ khi nào là thời điểm tốt để thay đổi công việc?"}
+{"id": 354, "ja": "見積書の再発行をお願いできますでしょうか。", "gg": "Bạn có thể vui lòng phát hành lại báo giá được không?"}
+{"id": 355, "ja": "部長の一言で会議の空気が一気に変わった。", "gg": "Lời nói của giám đốc ngay lập tức làm thay đổi không khí của cuộc họp."}
+{"id": 356, "ja": "ご記入いただいた個人情報は、適切に管理いたします。", "gg": "Thông tin cá nhân bạn nhập sẽ được quản lý một cách thích hợp."}
+{"id": 357, "ja": "契約解除の手続きについて、詳しく教えてもらえますか。", "gg": "Xin vui lòng cho tôi biết thêm về thủ tục hủy hợp đồng?"}
+{"id": 358, "ja": "さすがベテラン、対応が早いね。", "gg": "Đúng như mong đợi từ một cựu chiến binh, phản ứng của bạn rất nhanh chóng."}
+{"id": 359, "ja": "業務委託契約の条件を再確認しておく必要があります。", "gg": "Cần phải xác nhận lại các điều khoản của hợp đồng gia công."}
+{"id": 360, "ja": "何度説明しても理解してもらえなくて困っている。", "gg": "Dù có giải thích bao nhiêu lần thì người ta cũng khó hiểu."}
+{"id": 361, "ja": "ご来社の際は、受付にてお名前をお伝えください。", "gg": "Khi bạn đến văn phòng của chúng tôi, vui lòng cho chúng tôi biết tên của bạn tại quầy lễ tân."}
+{"id": 362, "ja": "出向先での仕事、思ったより大変らしいよ。", "gg": "Có vẻ như làm việc ở nơi tôi được cử đến vất vả hơn tôi tưởng."}
+{"id": 363, "ja": "お力を尽くしてまいりますので、何卒よろしくお願いいたします。", "gg": "Chúng tôi sẽ cố gắng hết sức để hỗ trợ bạn và cảm ơn sự thông cảm của bạn."}
+{"id": 364, "ja": "あのメール、まだ返信来てないんだけど。", "gg": "Tôi vẫn chưa nhận được thư trả lời cho email đó."}
+{"id": 365, "ja": "業績不振の責任を取って、社長が辞任することになりました。", "gg": "Chủ tịch công ty đã quyết định từ chức, nhận trách nhiệm về thành tích kém cỏi."}
+{"id": 366, "ja": "とりあえず落ち着いて、一つずつ片付けよう。", "gg": "Hiện tại, hãy bình tĩnh và thực hiện từng bước một."}
+{"id": 367, "ja": "ご送付いただいた書類に、一部不備がございました。", "gg": "Có một số sai sót trong tài liệu bạn gửi."}
+{"id": 368, "ja": "面接後のお礼メール、もう送った？", "gg": "Bạn đã gửi email cảm ơn sau buổi phỏng vấn chưa?"}
+{"id": 369, "ja": "誠に僭越ながら、一言申し上げたいことがございます。", "gg": "Với tất cả sự tôn trọng, tôi muốn nói điều gì đó."}
+{"id": 370, "ja": "今度のボーナス、期待していいのかな。", "gg": "Tôi tự hỏi liệu tôi có thể mong đợi phần thưởng tiếp theo không."}
+{"id": 371, "ja": "労務管理の観点から、勤務時間の見直しが必要です。", "gg": "Dưới góc độ quản lý lao động, cần xem xét lại giờ làm việc."}
+{"id": 372, "ja": "今回の担当者、対応が丁寧で助かる。", "gg": "Người phụ trách lần này rất lịch sự và hữu ích."}
+{"id": 373, "ja": "お約束のお時間に少々遅れそうです、申し訳ございません。", "gg": "Tôi xin lỗi vì sẽ đến muộn một chút so với thời gian đã hứa."}
+{"id": 374, "ja": "御社製品のカタログを送付させていただきます。", "gg": "Chúng tôi sẽ gửi cho bạn một danh mục sản phẩm của bạn."}
+{"id": 375, "ja": "面接官との相性って、意外と大事だよね。", "gg": "Khả năng tương thích với người phỏng vấn là quan trọng đáng ngạc nhiên."}
+{"id": 376, "ja": "今後の対応につきまして、社内で検討させていただきます。", "gg": "Chúng tôi sẽ xem xét các biện pháp trong tương lai trong nội bộ."}
+{"id": 377, "ja": "さっきの電話、クレームだったの？", "gg": "Cuộc gọi đó có phải là một lời phàn nàn không?"}
+{"id": 378, "ja": "誠意を持って対応させていただく所存でございます。", "gg": "Chúng tôi sẽ trả lời một cách thiện chí."}
+{"id": 379, "ja": "転職サイトに登録したけど、いい案件がなかなか見つからない。", "gg": "Tôi đã đăng ký trên một trang tìm kiếm việc làm nhưng dường như tôi không thể tìm được một công việc tốt."}
+{"id": 380, "ja": "ご署名とご捺印をお願いいたします。", "gg": "Hãy ký tên và đóng dấu."}
+{"id": 381, "ja": "今期の営業目標、正直かなり厳しいと思う。", "gg": "Thành thật mà nói, tôi nghĩ mục tiêu bán hàng trong kỳ này khá khắt khe."}
+{"id": 382, "ja": "御社のご発展を祈念いたします。", "gg": "Chúng tôi chúc công ty của bạn những điều may mắn nhất."}
+{"id": 383, "ja": "契約更新のタイミングで、価格交渉してみようかな。", "gg": "Tôi muốn thử thương lượng giá khi hợp đồng sắp được gia hạn."}
+{"id": 384, "ja": "今回の不手際により多大なご迷惑をおかけしましたことを深くお詫び申し上げるとともに、再発防止に向けて社内の体制を見直してまいります。", "gg": "Chúng tôi vô cùng xin lỗi vì sự bất tiện lớn do lỗi này gây ra và chúng tôi sẽ xem xét hệ thống nội bộ của mình để ngăn chặn sự cố xảy ra lần nữa."}
+{"id": 385, "ja": "あの資料、誰がまとめたの？", "gg": "Tài liệu đó do ai biên soạn?"}
+{"id": 386, "ja": "貴社のご指摘を踏まえ、改善策を検討いたします。", "gg": "Chúng tôi sẽ xem xét các biện pháp cải tiến dựa trên điểm của bạn."}
+{"id": 387, "ja": "なんとしても今期は目標を達成したい。", "gg": "Tôi muốn đạt được mục tiêu của mình trong học kỳ này bằng mọi giá."}
+{"id": 388, "ja": "ご不明点等ございましたら、担当者までご連絡ください。", "gg": "Nếu bạn có bất kỳ câu hỏi nào, xin vui lòng liên hệ với người phụ trách."}
+{"id": 389, "ja": "面接で聞かれた質問、想定してたのと全然違った。", "gg": "Những câu hỏi được hỏi trong cuộc phỏng vấn hoàn toàn khác với những gì tôi mong đợi."}
+{"id": 390, "ja": "経営陣の判断が遅すぎて、現場が困っている。", "gg": "Các quyết định của ban quản lý quá chậm và nơi làm việc gặp rắc rối."}
+{"id": 391, "ja": "お世話になった皆様に、心よりお礼申し上げます。", "gg": "Chúng tôi xin bày tỏ lòng biết ơn chân thành đến tất cả những người đã giúp đỡ chúng tôi."}
+{"id": 392, "ja": "前の会社、離職率が高いって聞いたけど本当？", "gg": "Tôi nghe nói công ty trước đây của tôi có tỷ lệ thôi việc cao, có đúng không?"}
+{"id": 393, "ja": "ご検討のほど、よろしくお願い申し上げます。", "gg": "Cảm ơn bạn đã xem xét."}
+{"id": 394, "ja": "今月の売上目標、あと少しで達成できそう。", "gg": "Tôi nghĩ tôi sẽ sớm đạt được mục tiêu bán hàng của mình trong tháng này."}
+{"id": 395, "ja": "お手を煩わせてしまい、申し訳ございませんでした。", "gg": "Chúng tôi xin lỗi vì sự bất tiện này."}
+{"id": 396, "ja": "就職氷河期に苦労した世代の話を聞いて、考えさせられた。", "gg": "Nghe những câu chuyện về thế hệ gặp khó khăn trong thời kỳ băng hà việc làm khiến tôi suy nghĩ."}
+{"id": 397, "ja": "貴社との信頼関係を大切にしてまいります。", "gg": "Chúng tôi đánh giá cao mối quan hệ tin cậy với công ty của bạn."}
+{"id": 398, "ja": "あの案件、正直もう諦めたほうがいいと思う。", "gg": "Thành thật mà nói, tôi nghĩ sẽ tốt hơn nếu từ bỏ vụ án đó."}
+{"id": 399, "ja": "末永くお付き合いいただけますと幸いです。", "gg": "Chúng tôi mong muốn được làm việc với bạn trong nhiều năm tới."}
+{"id": 400, "ja": "お先に失礼します！", "gg": "Tôi xin lỗi trước!"}
+{"id": 401, "ja": "おはよう。", "gg": "Chào buổi sáng."}
+{"id": 402, "ja": "もう起きたの？", "gg": "Bạn đã thức dậy chưa?"}
+{"id": 403, "ja": "眠い…まだ寝てたい。", "gg": "Tôi buồn ngủ...Tôi vẫn muốn ngủ."}
+{"id": 404, "ja": "早く起きなさいよ。", "gg": "Thức dậy sớm."}
+{"id": 405, "ja": "今日も寒いね。", "gg": "Hôm nay trời lại lạnh nữa."}
+{"id": 406, "ja": "布団から出たくない。", "gg": "Tôi không muốn ra khỏi giường."}
+{"id": 407, "ja": "二度寝しちゃった。", "gg": "Tôi đã ngủ quên hai lần."}
+{"id": 408, "ja": "朝ごはん何食べる？", "gg": "Bạn có gì cho bữa sáng?"}
+{"id": 409, "ja": "コーヒー飲む時間ないや。", "gg": "Tôi không có thời gian để uống cà phê."}
+{"id": 410, "ja": "歯磨きした？", "gg": "Bạn đã đánh răng chưa?"}
+{"id": 411, "ja": "洗濯物、そろそろ干してくれない？", "gg": "Bạn có thể vui lòng sấy khô đồ giặt sớm được không?"}
+{"id": 412, "ja": "お皿洗うの手伝ってよ。", "gg": "Giúp tôi rửa bát."}
+{"id": 413, "ja": "部屋がめちゃくちゃ汚いじゃん。", "gg": "Căn phòng thực sự bẩn."}
+{"id": 414, "ja": "ゴミ出し忘れてた、やばい。", "gg": "Tôi quên đổ rác, tệ quá."}
+{"id": 415, "ja": "掃除機かけるの面倒くさいなあ。", "gg": "Hút bụi là một rắc rối như vậy."}
+{"id": 416, "ja": "洗い物は後でやるから置いといて。", "gg": "Tôi sẽ giặt đồ sau, nên hãy để nó yên."}
+{"id": 417, "ja": "布団たたむの毎日大変なんだよね。", "gg": "Thật khó để gấp tấm futon của bạn mỗi ngày."}
+{"id": 418, "ja": "床にホコリがたまってきたな。", "gg": "Bụi đã tích tụ trên sàn nhà."}
+{"id": 419, "ja": "冷蔵庫の中、賞味期限切れてるの多すぎ。", "gg": "Có quá nhiều thứ trong tủ lạnh đã quá hạn sử dụng."}
+{"id": 420, "ja": "お風呂掃除、今日は私がやるね。", "gg": "Hôm nay tôi sẽ dọn dẹp phòng tắm."}
+{"id": 421, "ja": "お母さんまた怒ってるよ。", "gg": "Mẹ lại giận nữa rồi."}
+{"id": 422, "ja": "父さんは今日も残業らしい。", "gg": "Hôm nay bố có vẻ cũng phải làm thêm giờ."}
+{"id": 423, "ja": "おばあちゃんに電話しなきゃ。", "gg": "Tôi phải gọi cho bà tôi."}
+{"id": 424, "ja": "弟がゲームばっかりしてて心配。", "gg": "Tôi lo lắng vì em trai tôi suốt ngày chơi game."}
+{"id": 425, "ja": "妹、最近彼氏できたみたいだよ。", "gg": "Có vẻ như em gái tôi gần đây đã có bạn trai."}
+{"id": 426, "ja": "親戚が来るから家中片付けないと。", "gg": "Người thân của tôi sắp đến nên tôi phải dọn dẹp nhà cửa."}
+{"id": 427, "ja": "うちのおじいちゃん、いつも冗談ばっかり言ってる。", "gg": "Ông nội tôi luôn kể chuyện cười."}
+{"id": 428, "ja": "子供の宿題、見てあげないといけないな。", "gg": "Tôi phải xem bài tập về nhà của con tôi."}
+{"id": 429, "ja": "お姉ちゃんはいつも私の服を勝手に借りるんだから。", "gg": "Chị tôi luôn mượn quần áo của tôi mà không được phép."}
+{"id": 430, "ja": "家族全員で旅行に行けたらいいのになあ。", "gg": "Ước gì tôi có thể đi du lịch cùng cả gia đình."}
+{"id": 431, "ja": "久しぶり！元気だった？", "gg": "đã lâu không gặp! Bạn thế nào rồi?"}
+{"id": 432, "ja": "あの子とはもう疎遠になっちゃったな。", "gg": "Tôi đã trở nên xa lạ với đứa trẻ đó."}
+{"id": 433, "ja": "今度飲みに行こうよ。", "gg": "Lần sau chúng ta hãy đi uống nước nhé."}
+{"id": 434, "ja": "彼女とけんかしちゃって、まだ気まずい。", "gg": "Tôi đã cãi nhau với bạn gái và điều đó vẫn còn khó xử."}
+{"id": 435, "ja": "友達に借りたお金、まだ返してないや。", "gg": "Tôi vẫn chưa trả lại số tiền tôi đã vay từ bạn tôi."}
+{"id": 436, "ja": "恋人と一緒にいると時間があっという間に過ぎるよね。", "gg": "Thời gian trôi nhanh khi bạn ở bên người yêu."}
+{"id": 437, "ja": "結婚式に呼ばれたんだけど、何着ればいいかな。", "gg": "Tôi được mời dự đám cưới nhưng tôi nên mặc gì?"}
+{"id": 438, "ja": "あいつ、ほんと自己中だよな。", "gg": "Người đó thật sự rất ích kỷ."}
+{"id": 439, "ja": "昔からの友達って、なんでも話せるから安心する。", "gg": "Tôi cảm thấy thoải mái vì có thể nói chuyện với bạn bè cũ về bất cứ điều gì."}
+{"id": 440, "ja": "付き合ってどれくらいになるんだっけ？", "gg": "Bạn đã ở bên nhau bao lâu rồi?"}
+{"id": 441, "ja": "理由もなく、無性に寂しくなる日がある。", "gg": "Có những ngày tôi cảm thấy cô đơn chẳng vì lý do gì."}
+{"id": 442, "ja": "すごく嬉しい！ありがとう！", "gg": "Tôi rất hạnh phúc! Cảm ơn!"}
+{"id": 443, "ja": "ちょっとイライラしてるから、話しかけないで。", "gg": "Tôi hơi cáu nên xin đừng nói chuyện với tôi."}
+{"id": 444, "ja": "不安で夜も眠れなかった。", "gg": "Tôi lo lắng đến mức không thể ngủ được vào ban đêm."}
+{"id": 445, "ja": "なんでこんなに悲しいんだろう。", "gg": "Tại sao bạn lại buồn thế?"}
+{"id": 446, "ja": "感謝してもしきれないよ、本当に。", "gg": "Tôi thực sự không thể cảm ơn đủ."}
+{"id": 447, "ja": "焦らなくていいよ、ゆっくりでいいから。", "gg": "Không cần vội, cứ từ từ là được."}
+{"id": 448, "ja": "すっごく緊張してる…うまくできるかな。", "gg": "Tôi thực sự lo lắng...Tôi tự hỏi liệu mình có thể làm tốt được không."}
+{"id": 449, "ja": "涙が出そうなくらい、切ない気持ちになる。", "gg": "Tôi cảm thấy buồn đến mức muốn khóc."}
+{"id": 450, "ja": "こんなに幸せでいいのかなって思う。", "gg": "Tôi tự hỏi liệu hạnh phúc thế này có ổn không."}
+{"id": 451, "ja": "最近、また読書にハマってるんだ。", "gg": "Gần đây tôi lại bắt đầu đọc sách."}
+{"id": 452, "ja": "週末は釣りに行く予定。", "gg": "Tôi dự định đi câu cá vào cuối tuần này."}
+{"id": 453, "ja": "ゲーム、昨日夜中までやっちゃった。", "gg": "Tôi đã chơi game đến tận nửa đêm hôm qua."}
+{"id": 454, "ja": "ガーデニングって思ったより奥が深いんだよね。", "gg": "Làm vườn sâu sắc hơn bạn nghĩ."}
+{"id": 455, "ja": "ピアノの練習、全然続かないなあ。", "gg": "Việc luyện tập piano không bao giờ kéo dài."}
+{"id": 456, "ja": "映画観るの好きだけど、最近時間がなくて。", "gg": "Tôi thích xem phim nhưng gần đây tôi không có thời gian."}
+{"id": 457, "ja": "料理のレシピ、新しいの試してみたい。", "gg": "Tôi muốn thử công thức nấu ăn mới."}
+{"id": 458, "ja": "ヨガを始めてから体が軽くなった気がする。", "gg": "Tôi cảm thấy cơ thể mình trở nên nhẹ nhàng hơn kể từ khi bắt đầu tập yoga."}
+{"id": 459, "ja": "写真撮るの好きで、休みの日はよく散歩しながら撮ってる。", "gg": "Tôi thích chụp ảnh và tôi thường chụp chúng khi đi dạo vào những ngày nghỉ."}
+{"id": 460, "ja": "編み物って地味に見えて、意外と楽しいんだよ。", "gg": "Đan có vẻ đơn giản nhưng lại thú vị một cách đáng ngạc nhiên."}
+{"id": 461, "ja": "今週末、暇？", "gg": "Cuối tuần này bạn có rảnh không?"}
+{"id": 462, "ja": "明日、何する予定？", "gg": "Bạn dự định làm gì vào ngày mai?"}
+{"id": 463, "ja": "予定なかったら一緒に出かけない？", "gg": "Nếu chúng ta không có kế hoạch gì, tại sao chúng ta không đi chơi cùng nhau nhỉ?"}
+{"id": 464, "ja": "来週の土曜、空けておいてね。", "gg": "Xin vui lòng để nó mở vào thứ bảy tới."}
+{"id": 465, "ja": "天気良かったら公園行こうか。", "gg": "Nếu thời tiết đẹp thì chúng ta hãy đi đến công viên."}
+{"id": 466, "ja": "特に予定ないから、家でゴロゴロしてる。", "gg": "Tôi không có kế hoạch gì cụ thể nên chỉ ở nhà lười biếng."}
+{"id": 467, "ja": "今度の休み、実家に帰るつもり。", "gg": "Tôi dự định sẽ về nhà bố mẹ vào kỳ nghỉ sắp tới."}
+{"id": 468, "ja": "お出かけするなら早めに準備しなきゃ。", "gg": "Nếu đi chơi xa bạn cần chuẩn bị sớm."}
+{"id": 469, "ja": "今日、めっちゃ暑いね。", "gg": "Hôm nay trời rất nóng."}
+{"id": 470, "ja": "雨降りそうだから傘持って行きな。", "gg": "Có vẻ như trời sắp mưa nên hãy mang theo ô."}
+{"id": 471, "ja": "だんだん涼しくなってきたね。", "gg": "Trời đang mát hơn."}
+{"id": 472, "ja": "台風来るらしいから気をつけて。", "gg": "Có vẻ như sắp có bão nên hãy cẩn thận."}
+{"id": 473, "ja": "花粉症でくしゃみ止まらない。", "gg": "Tôi không thể ngừng hắt hơi vì sốt cỏ khô."}
+{"id": 474, "ja": "スーパー行くけど、何か欲しいものある？", "gg": "Tôi đang đi siêu thị, bạn có muốn gì không?"}
+{"id": 475, "ja": "これ、セールで安かったから買っちゃった。", "gg": "Tôi mua cái này vì nó được bán rẻ."}
+{"id": 476, "ja": "お財布忘れて、レジで焦った。", "gg": "Tôi quên ví và hoảng hốt ở quầy tính tiền."}
+{"id": 477, "ja": "ネットで注文したやつ、まだ届いてない。", "gg": "Cái tôi đặt trực tuyến vẫn chưa đến."}
+{"id": 478, "ja": "その服、似合ってるじゃん。", "gg": "Chiếc váy đó hợp với bạn."}
+{"id": 479, "ja": "うちの猫、また布団の上で寝てる。", "gg": "Con mèo của tôi lại đang ngủ trên tấm futon."}
+{"id": 480, "ja": "犬の散歩、雨の日は本当に憂鬱。", "gg": "Việc dắt chó đi dạo vào một ngày mưa thực sự rất buồn."}
+{"id": 481, "ja": "金魚にエサやった？", "gg": "Bạn đã cho cá vàng ăn chưa?"}
+{"id": 482, "ja": "うちの子、なんでそんなに甘えん坊なんだろう。", "gg": "Tại sao con tôi lại hư hỏng đến vậy?"}
+{"id": 483, "ja": "それ、どこで買ったの？", "gg": "Bạn mua cái đó ở đâu thế?"}
+{"id": 484, "ja": "なんでそんなに機嫌悪いの？", "gg": "Tại sao bạn lại có tâm trạng tồi tệ như vậy?"}
+{"id": 485, "ja": "今何時だっけ？", "gg": "Bây giờ là mấy giờ rồi?"}
+{"id": 486, "ja": "誰から電話？", "gg": "Ai đã gọi?"}
+{"id": 487, "ja": "お腹すいてない？", "gg": "Bạn không đói à?"}
+{"id": 488, "ja": "明日って何曜日だっけ？", "gg": "Ngày mai là ngày thứ mấy trong tuần?"}
+{"id": 489, "ja": "ちょっとそれ取って。", "gg": "Cứ lấy cái đó đi."}
+{"id": 490, "ja": "手伝ってくれる？", "gg": "Bạn có thể giúp tôi được không?"}
+{"id": 491, "ja": "静かにしてくれない？", "gg": "Bạn có thể vui lòng im lặng được không?"}
+{"id": 492, "ja": "もう少し待ってて。", "gg": "Đợi thêm một chút nữa."}
+{"id": 493, "ja": "あとで電話してね。", "gg": "Vui lòng gọi cho tôi sau."}
+{"id": 494, "ja": "塩、こっちに取ってもらえる？", "gg": "Bạn có thể lấy cho tôi một ít muối được không?"}
+{"id": 495, "ja": "また忘れたの？ほんと勘弁してよ。", "gg": "Bạn lại quên nữa à? Xin hãy thực sự cho tôi nghỉ ngơi."}
+{"id": 496, "ja": "隣の部屋、うるさすぎる。", "gg": "Phòng bên cạnh ồn ào quá."}
+{"id": 497, "ja": "なんで毎回そうなるの？", "gg": "Tại sao điều này xảy ra mọi lúc?"}
+{"id": 498, "ja": "約束の時間、いつも守らないよね。", "gg": "Không phải lúc nào bạn cũng giữ đúng thời gian đã hứa."}
+{"id": 499, "ja": "もう、なんでそんなことするの？", "gg": "Bây giờ tại sao bạn lại làm điều đó?"}
+{"id": 500, "ja": "すごい！やったじゃん！", "gg": "tuyệt vời! Bạn đã làm được nó!"}
+{"id": 501, "ja": "うわ、びっくりした！", "gg": "Ôi, tôi thật ngạc nhiên!"}
+{"id": 502, "ja": "マジで！？", "gg": "Nghiêm túc! ?"}
+{"id": 503, "ja": "やばっ、忘れてた！", "gg": "Ồ không, tôi quên mất!"}
+{"id": 504, "ja": "わー、懐かしい！", "gg": "Ôi, hoài niệm quá!"}
+{"id": 505, "ja": "仕事が終わってから疲れてるのに、家に帰ったら洗濯物がたまっていて、結局夜遅くまで片付けをすることになってしまった。", "gg": "Sau giờ làm mệt mỏi nhưng khi về đến nhà, đồ giặt đã chất đống nên tôi phải thức khuya để dọn dẹp."}
+{"id": 506, "ja": "子供の頃はよく家族みんなで近くの公園に行って、暗くなるまで遊んでいたことを今でもはっきり覚えている。", "gg": "Tôi vẫn nhớ rõ ngày còn nhỏ, tôi và gia đình thường đến công viên gần đó và chơi cho đến khi trời tối."}
+{"id": 507, "ja": "彼女と最初に会ったのは大学の頃で、あの時はまさかこんなに長く付き合うことになるなんて思ってもいなかった。", "gg": "Tôi gặp bạn gái lần đầu tiên khi còn học đại học và tôi chưa bao giờ tưởng tượng rằng chúng tôi sẽ hẹn hò lâu như vậy."}
+{"id": 508, "ja": "母がいつも作ってくれた味噌汁の味を思い出すと、なんだか懐かしくて実家に帰りたくなる。", "gg": "Khi nhớ đến mùi vị món súp miso mẹ nấu, tôi lại thấy nhớ nhung và muốn quay về nhà bố mẹ."}
+{"id": 509, "ja": "友達に相談したら、意外とあっさり解決策を教えてくれたので、悩んでいた時間が無駄だったように感じた。", "gg": "Khi tôi hỏi ý kiến ​​bạn mình, anh ấy dễ dàng đưa ra giải pháp cho tôi một cách đáng ngạc nhiên, khiến tôi cảm thấy như mình đang lãng phí thời gian để lo lắng về nó."}
+{"id": 510, "ja": "休みの日にゆっくり掃除をしていると、思いがけず昔の写真が出てきて、しばらく手が止まってしまった。", "gg": "Khi tôi đang dần dần dọn dẹp vào ngày nghỉ, tôi bất ngờ nhìn thấy một bức ảnh cũ và ngừng hoạt động một thời gian."}
+{"id": 511, "ja": "最近は仕事と家事の両立が大変で、自分の時間なんてほとんど取れていない気がする。", "gg": "Gần đây, thật khó để cân bằng giữa công việc và việc nhà, tôi cảm thấy mình hầu như không có thời gian dành cho bản thân."}
+{"id": 512, "ja": "弟が急に結婚するって言い出した時は、家族みんなびっくりして、しばらく信じられなかった。", "gg": "Khi em trai tôi bất ngờ thông báo sắp kết hôn, mọi người trong gia đình tôi đều bàng hoàng và nhất thời không thể tin được."}
+{"id": 513, "ja": "毎晩子供を寝かしつけるのに一時間近くかかって、そのあと自分の時間はもう残っていないことが多い。", "gg": "Tôi phải mất gần một tiếng đồng hồ để đưa con đi ngủ mỗi tối và sau đó tôi thường không còn thời gian cho bản thân."}
+{"id": 514, "ja": "昔からの友人と久しぶりに会って話していたら、時間を忘れるくらい盛り上がってしまった。", "gg": "Tôi gặp lại một người bạn cũ lần đầu tiên sau một thời gian dài và chúng tôi vui mừng đến mức quên mất thời gian."}
+{"id": 515, "ja": "あー、今日も一日長かった。", "gg": "À, hôm nay lại là một ngày dài nữa."}
+{"id": 516, "ja": "お疲れー、ご飯食べた？", "gg": "Làm tốt lắm, bạn đã ăn gì chưa?"}
+{"id": 517, "ja": "とことんツイてない一日だったな、今日は。", "gg": "Hôm nay thực sự là một ngày nhàm chán."}
+{"id": 518, "ja": "お風呂入って早く寝よう。", "gg": "Đi tắm và đi ngủ sớm."}
+{"id": 519, "ja": "今日のごはん、何にしようか迷うな。", "gg": "Đừng lo lắng về việc hôm nay ăn gì."}
+{"id": 520, "ja": "冷蔵庫の中、もう何もないじゃん。", "gg": "Chẳng còn gì trong tủ lạnh cả."}
+{"id": 521, "ja": "窓拭き、いつやろうかずっと先延ばしにしてる。", "gg": "Tôi đã bỏ việc lau cửa sổ từ lâu rồi."}
+{"id": 522, "ja": "あの人、いつも遅刻するよね。", "gg": "Người đó luôn đến muộn."}
+{"id": 523, "ja": "このところ、夜なかなか寝付けないんだ。", "gg": "Gần đây tôi thường khó ngủ vào ban đêm."}
+{"id": 524, "ja": "今日は何もしたくない気分。", "gg": "Tôi không cảm thấy muốn làm bất cứ điều gì ngày hôm nay."}
+{"id": 525, "ja": "早く休みにならないかな。", "gg": "Tôi tự hỏi liệu tôi có thể nghỉ ngơi sớm không."}
+{"id": 526, "ja": "最近ちょっと体重増えた気がする。", "gg": "Tôi cảm thấy gần đây mình tăng cân một chút."}
+{"id": 527, "ja": "お菓子ばっかり食べちゃうの、良くないよね。", "gg": "Ăn hết đồ ngọt là không tốt đâu."}
+{"id": 528, "ja": "お弁当作る気力が今日はなかった。", "gg": "Hôm nay tôi không còn sức để làm hộp cơm trưa."}
+{"id": 529, "ja": "アイロンかけるの、正直苦手なんだよね。", "gg": "Thành thật mà nói, tôi không giỏi ủi đồ."}
+{"id": 530, "ja": "ずっと同じ姿勢のせいか、肩が凝ってる気がする。", "gg": "Tôi cảm thấy vai mình cứng đờ, có lẽ là do tôi đã ở tư thế đó quá lâu."}
+{"id": 531, "ja": "旦那が全然話を聞いてくれなくて、ちょっとイライラする。", "gg": "Chồng tôi không hề nghe lời tôi và tôi hơi cáu kỉnh."}
+{"id": 532, "ja": "奥さんの誕生日、何をプレゼントしようか悩んでる。", "gg": "Tôi đang phân vân không biết nên tặng gì cho vợ mình vào ngày sinh nhật."}
+{"id": 533, "ja": "義理のお母さんとはなかなかうまく話せないんだよね。", "gg": "Tôi khó nói chuyện với mẹ chồng."}
+{"id": 534, "ja": "甥っ子がすごく大きくなってて、びっくりした。", "gg": "Tôi ngạc nhiên khi thấy cháu trai tôi lớn đến thế nào."}
+{"id": 535, "ja": "姪っ子は本当に可愛くて、会うたびに癒される。", "gg": "Cháu gái của tôi thực sự rất dễ thương và tôi cảm thấy nhẹ nhõm mỗi khi nhìn thấy cháu."}
+{"id": 536, "ja": "お義父さんが最近、体調を崩しているみたいで心配だ。", "gg": "Tôi lo lắng rằng gần đây bố chồng tôi có vẻ không được khỏe."}
+{"id": 537, "ja": "兄とはあまり仲良くないけど、最近は少しずつ話すようになった。", "gg": "Anh trai tôi và tôi không hợp nhau lắm, nhưng gần đây chúng tôi bắt đầu nói chuyện dần dần."}
+{"id": 538, "ja": "パートナーとの将来について、ちゃんと話し合わないといけないと思ってる。", "gg": "Tôi nghĩ tôi cần có một cuộc thảo luận đàng hoàng về tương lai của mình với đối tác."}
+{"id": 539, "ja": "幼馴染と結婚するなんて、正直今でも不思議な気持ちになる。", "gg": "Thành thật mà nói, tôi vẫn cảm thấy kỳ lạ khi kết hôn với người bạn thời thơ ấu của mình."}
+{"id": 540, "ja": "遠くに住んでる両親のことを、たまにすごく心配になる。", "gg": "Đôi khi tôi thực sự lo lắng về bố mẹ tôi sống ở xa."}
+{"id": 541, "ja": "お腹ペコペコだよー。", "gg": "Tôi đói."}
+{"id": 542, "ja": "まだ起きてたの？早く寝なよ。", "gg": "Bạn đã tỉnh chưa? Đi ngủ sớm đi."}
+{"id": 543, "ja": "これ美味しいから食べてみて。", "gg": "Món này ngon đấy, thử đi."}
+{"id": 544, "ja": "急に眠くなってきたな。", "gg": "Tôi đột nhiên cảm thấy buồn ngủ."}
+{"id": 545, "ja": "さっきの話、本当だったの？", "gg": "Những gì bạn nói trước đó có đúng không?"}
+{"id": 546, "ja": "珍しく機嫌いいじゃん、今日。", "gg": "Hôm nay bạn có tâm trạng tốt bất thường."}
+{"id": 547, "ja": "あれ、鍵どこに置いたっけ？", "gg": "Này, cậu để chìa khóa ở đâu thế?"}
+{"id": 548, "ja": "あ、そうだったそうだった。", "gg": "À, đúng rồi."}
+{"id": 549, "ja": "さっき言ったこと、もう忘れたの？", "gg": "Bạn đã quên những gì tôi vừa nói rồi à?"}
+{"id": 550, "ja": "まあ、そういう日もあるよね。", "gg": "Ừ thì cũng có những ngày như thế."}
+{"id": 551, "ja": "最近ドラマにハマりすぎて、寝不足なんだよね。", "gg": "Gần đây tôi quá mê xem phim truyền hình đến nỗi không ngủ đủ giấc."}
+{"id": 552, "ja": "筋トレ始めたけど、全然続かなくて困ってる。", "gg": "Tôi đã bắt đầu tập luyện nhưng gặp khó khăn trong việc duy trì nó."}
+{"id": 553, "ja": "カラオケ行きたいけど、みんな予定合わないんだよなあ。", "gg": "Tôi muốn đi hát karaoke nhưng lịch trình của mọi người không phù hợp."}
+{"id": 554, "ja": "手作りのお菓子作りにチャレンジしてみたんだ。", "gg": "Tôi đã thử sức mình với việc làm đồ ngọt tự làm."}
+{"id": 555, "ja": "サッカー観戦するのが唯一のストレス解消法なんだ。", "gg": "Xem bóng đá là cách duy nhất để giảm bớt căng thẳng."}
+{"id": 556, "ja": "キャンプに行ってから、アウトドアにすごく興味が出てきた。", "gg": "Sau khi đi cắm trại, tôi thực sự quan tâm đến hoạt động ngoài trời."}
+{"id": 557, "ja": "お絵かきするの好きだけど、上手くならなくて悩んでる。", "gg": "Tôi thích vẽ, nhưng tôi lo lắng rằng mình không thể vẽ tốt."}
+{"id": 558, "ja": "週末はいつも本屋さんに寄って新しい本を探すのが楽しみ。", "gg": "Tôi luôn mong muốn được đến hiệu sách vào cuối tuần và tìm những cuốn sách mới."}
+{"id": 559, "ja": "ジョギングを始めてから、朝の気分がすごく良くなった。", "gg": "Kể từ khi tôi bắt đầu chạy bộ, tôi cảm thấy tốt hơn nhiều vào buổi sáng."}
+{"id": 560, "ja": "パズルにハマってて、気づいたら何時間も経ってた。", "gg": "Tôi bị cuốn hút vào câu đố và trước khi tôi kịp nhận ra thì hàng giờ đã trôi qua."}
+{"id": 561, "ja": "なんでそんなに他人任せなの？", "gg": "Tại sao bạn lại để nó cho người khác nhiều như vậy?"}
+{"id": 562, "ja": "もう少し優しく言ってくれてもいいのに。", "gg": "Tôi ước gì bạn có thể nói nó tử tế hơn một chút."}
+{"id": 563, "ja": "誰にも言えない悩みがあるんだ。", "gg": "Tôi có một vấn đề không thể nói với ai."}
+{"id": 564, "ja": "どうしてみんな、今日はこんなに冷たいんだろう。", "gg": "Sao hôm nay mọi người lạnh thế?"}
+{"id": 565, "ja": "こんなに頑張ってるのに、誰も気づいてくれない。", "gg": "Mặc dù tôi đang làm việc rất chăm chỉ nhưng không ai để ý."}
+{"id": 566, "ja": "たまには自分を甘やかしてもいいよね。", "gg": "Thỉnh thoảng nuông chiều bản thân cũng không sao."}
+{"id": 567, "ja": "すごく感動して、思わず涙が出た。", "gg": "Tôi cảm động đến mức bật khóc."}
+{"id": 568, "ja": "なんとなく気分が晴れないんだよね。", "gg": "Bằng cách nào đó tôi chỉ cảm thấy không khỏe."}
+{"id": 569, "ja": "あの一言で、ちょっと救われた気がする。", "gg": "Tôi cảm thấy như những lời đó đã cứu tôi một chút."}
+{"id": 570, "ja": "どうしてこんなに不器用なんだろう、自分でも呆れる。", "gg": "Tôi tự hỏi tại sao anh ấy lại vụng về đến vậy, thậm chí tôi còn thắc mắc."}
+{"id": 571, "ja": "お世話になっております、いつもありがとうございます。", "gg": "Cảm ơn bạn đã tiếp tục hỗ trợ."}
+{"id": 572, "ja": "週末はご家族でどこかへ行かれるんですか？", "gg": "Cuối tuần bạn có đi đâu cùng gia đình không?"}
+{"id": 573, "ja": "お忙しい中、お時間いただきありがとうございます。", "gg": "Cảm ơn bạn đã dành thời gian trong lịch trình bận rộn của mình."}
+{"id": 574, "ja": "最近、体調はいかがですか？", "gg": "Gần đây bạn cảm thấy thế nào?"}
+{"id": 575, "ja": "娘はおかげさまで元気に育っています。", "gg": "Con gái tôi đang phát triển tốt nhờ có bạn."}
+{"id": 576, "ja": "こちらこそ、いつも助けていただいて感謝しています。", "gg": "Cảm ơn bạn rất nhiều vì đã luôn giúp đỡ tôi."}
+{"id": 577, "ja": "お義母さんの手料理、本当に美味しかったです。", "gg": "Món mẹ chồng tôi nấu thật sự rất ngon."}
+{"id": 578, "ja": "また今度、ぜひ遊びに来てくださいね。", "gg": "Hãy đến thăm chúng tôi lần sau nhé."}
+{"id": 579, "ja": "お子さんも大きくなられましたね。", "gg": "Con của bạn cũng đã lớn."}
+{"id": 580, "ja": "これからもよろしくお願いします。", "gg": "Cảm ơn bạn đã tiếp tục hỗ trợ."}
+{"id": 581, "ja": "のど乾いた、何か飲み物ある？", "gg": "Tôi khát, bạn có gì để uống không?"}
+{"id": 582, "ja": "あ、雨降ってきた！", "gg": "A, trời đang mưa!"}
+{"id": 583, "ja": "ちょっと待って、靴履くから。", "gg": "Đợi một chút, tôi sẽ đi giày vào."}
+{"id": 584, "ja": "外がなんだかうるさいね、何かあったのかな。", "gg": "Bên ngoài khá ồn ào, tôi tự hỏi liệu có chuyện gì xảy ra không."}
+{"id": 585, "ja": "お腹いっぱいで動けない。", "gg": "Tôi không thể di chuyển vì tôi đã no."}
+{"id": 586, "ja": "もう、ほんと勝手なんだから！", "gg": "Điều đó thực sự tùy thuộc vào bạn!"}
+{"id": 587, "ja": "今日は早く帰れそう。", "gg": "Tôi nghĩ hôm nay tôi có thể về nhà sớm."}
+{"id": 588, "ja": "明日から本気出す。", "gg": "Tôi sẽ nghiêm túc bắt đầu từ ngày mai."}
+{"id": 589, "ja": "さすがに今日は疲れすぎた。", "gg": "Đúng như dự đoán, hôm nay tôi quá mệt mỏi."}
+{"id": 590, "ja": "胸のあたりがなんだかざわざわする。", "gg": "Có cảm giác khó chịu quanh ngực."}
+{"id": 591, "ja": "あの一言、まだ引っかかってるんだよね。", "gg": "Câu nói đó vẫn còn đọng lại trong tôi."}
+{"id": 592, "ja": "気にしすぎだよ、大丈夫だから。", "gg": "Đừng lo lắng quá, sẽ ổn thôi."}
+{"id": 593, "ja": "どうしてもやる気が出ない、そんな日もある。", "gg": "Có những ngày tôi cảm thấy không muốn làm việc đó."}
+{"id": 594, "ja": "ずっと一緒にいたいって思うんだ。", "gg": "Tôi muốn ở bên bạn mãi mãi."}
+{"id": 595, "ja": "こういう何気ない時間が、実は一番幸せなのかもしれない。", "gg": "Những khoảnh khắc bình thường này thực sự có thể là hạnh phúc nhất."}
+{"id": 596, "ja": "たまには何も考えずに、ただぼーっとする時間も必要だと思う。", "gg": "Tôi nghĩ đôi khi chúng ta cần thời gian để thư giãn và không nghĩ về bất cứ điều gì."}
+{"id": 597, "ja": "あの時ちゃんと謝っておけばよかったと、今でも時々思い出す。", "gg": "Đôi khi tôi vẫn nghĩ rằng hồi đó lẽ ra mình nên xin lỗi đàng hoàng."}
+{"id": 598, "ja": "家族との何気ない会話が、いつも心を軽くしてくれる気がする。", "gg": "Tôi cảm thấy những cuộc trò chuyện bình thường với gia đình luôn khiến trái tim tôi nhẹ nhõm hơn."}
+{"id": 599, "ja": "振り返ってみると、大変なこともあったけど、それなりに充実した一日だった気がする。", "gg": "Nhìn lại, tuy có những lúc khó khăn nhưng tôi cảm thấy đó là một ngày khá trọn vẹn."}
+{"id": 600, "ja": "これからも一緒に、笑ったり泣いたりしながら過ごしていけたらいいなと思う。", "gg": "Tôi hy vọng chúng ta có thể tiếp tục dành thời gian cười và khóc cùng nhau."}
+{"id": 601, "ja": "スマホの画面が急に真っ暗になった。", "gg": "Màn hình điện thoại thông minh của tôi đột nhiên chuyển sang màu đen."}
+{"id": 602, "ja": "とても使いやすくて、このアプリはずっと気に入ってます。", "gg": "Tôi luôn yêu thích ứng dụng này và nó rất dễ sử dụng."}
+{"id": 603, "ja": "新しいiPhoneに機種変更しようか迷ってる。", "gg": "Tôi đang nghĩ đến việc nâng cấp lên iPhone mới."}
+{"id": 604, "ja": "アプリのアイコンが多すぎてホーム画面がぐちゃぐちゃだ。", "gg": "Có quá nhiều biểu tượng ứng dụng và màn hình chính trở nên lộn xộn."}
+{"id": 605, "ja": "通知をオフにしたら少し集中できるようになりました。", "gg": "Sau khi tắt thông báo, tôi đã có thể tập trung hơn một chút."}
+{"id": 606, "ja": "スマホのストレージがもう満杯なんだけど、どうすればいい?", "gg": "Bộ nhớ điện thoại thông minh của tôi đã đầy, tôi nên làm gì?"}
+{"id": 607, "ja": "このアプリは無料版でも十分使えると思います。", "gg": "Tôi nghĩ bạn có thể sử dụng phiên bản miễn phí của ứng dụng này."}
+{"id": 608, "ja": "機種変更したらデータ移行がすごく簡単だった。", "gg": "Sau khi thay đổi mô hình, việc truyền dữ liệu rất dễ dàng."}
+{"id": 609, "ja": "スマホケースを買い替えたくて色々探している。", "gg": "Tôi đang tìm một chiếc ốp điện thoại thông minh mới."}
+{"id": 610, "ja": "アプリを再インストールしたら直った。", "gg": "Nó đã được sửa sau khi cài đặt lại ứng dụng."}
+{"id": 611, "ja": "アップデートしてから動作がすごく重くなった気がする。", "gg": "Tôi cảm thấy như nó đã trở nên chậm hơn nhiều sau khi cập nhật."}
+{"id": 612, "ja": "バグ報告を送ったのに、まだ返信が来ない。", "gg": "Tôi đã gửi báo cáo lỗi nhưng vẫn chưa nhận được phản hồi."}
+{"id": 613, "ja": "次のバージョンでこの不具合は修正されますか?", "gg": "Lỗi này có được khắc phục trong phiên bản tiếp theo không?"}
+{"id": 614, "ja": "アップデート通知が来たら、まず必ずバックアップを取ってください。", "gg": "Khi bạn nhận được thông báo cập nhật, hãy nhớ sao lưu máy tính của bạn trước."}
+{"id": 615, "ja": "このバグ、再現性が低くて原因を特定しづらい。", "gg": "Lỗi này có khả năng tái hiện thấp và khó xác định nguyên nhân."}
+{"id": 616, "ja": "OSを最新版にアップデートしたら電池の減りが早くなった。", "gg": "Sau khi cập nhật hệ điều hành lên phiên bản mới nhất, pin sẽ hao nhanh hơn."}
+{"id": 617, "ja": "昨日のアップデートで新機能がいくつか追加された。", "gg": "Một số tính năng mới đã được thêm vào trong bản cập nhật ngày hôm qua."}
+{"id": 618, "ja": "アップデート後にログインできなくなったユーザーが多いらしく、SNS上でも同じような報告がいくつも上がっているのを見かけた。", "gg": "Có vẻ như nhiều người dùng không thể đăng nhập sau khi cập nhật và tôi đã thấy nhiều báo cáo tương tự trên mạng xã hội."}
+{"id": 619, "ja": "不具合が直るまでアップデートは見送るつもり。", "gg": "Tôi sẽ tạm dừng cập nhật cho đến khi vấn đề được khắc phục."}
+{"id": 620, "ja": "パッチノートを読むと、細かい修正がたくさん入っている。", "gg": "Nếu bạn đọc ghi chú vá lỗi, có rất nhiều bản sửa lỗi nhỏ."}
+{"id": 621, "ja": "パスワードを忘れてしまって、ログインできません。", "gg": "Tôi quên mật khẩu và không thể đăng nhập."}
+{"id": 622, "ja": "二段階認証を設定しておくと安心です。", "gg": "Để yên tâm, hãy thiết lập xác thực hai yếu tố."}
+{"id": 623, "ja": "このサイト、ログインのたびにエラーが出るんだけど。", "gg": "Trang web này báo lỗi mỗi lần tôi đăng nhập."}
+{"id": 624, "ja": "パスワードは定期的に変更した方がいいですよ。", "gg": "Đó là một ý tưởng tốt để thay đổi mật khẩu của bạn thường xuyên."}
+{"id": 625, "ja": "生体認証でログインできるようにしたら、すごく楽になった。", "gg": "Khi tôi có thể đăng nhập bằng xác thực sinh trắc học, mọi việc trở nên dễ dàng hơn nhiều."}
+{"id": 626, "ja": "アカウントが乗っ取られたかもしれないので、すぐパスワードを変更してください。", "gg": "Tài khoản của bạn có thể đã bị xâm phạm, vì vậy vui lòng thay đổi mật khẩu ngay lập tức."}
+{"id": 627, "ja": "セキュリティコードが届かないんだけど、どうすればいい?", "gg": "Tôi chưa nhận được mã bảo mật, tôi phải làm sao?"}
+{"id": 628, "ja": "同じパスワードを複数のサービスで使うのは危険です。", "gg": "Sử dụng cùng một mật khẩu cho nhiều dịch vụ là nguy hiểm."}
+{"id": 629, "ja": "ログイン画面がずっとくるくる回ったまま進まない。", "gg": "Màn hình đăng nhập cứ quay vòng và không thể tiếp tục."}
+{"id": 630, "ja": "パスワード管理アプリを使い始めてから管理が楽になった。", "gg": "Kể từ khi tôi bắt đầu sử dụng ứng dụng quản lý mật khẩu, việc quản lý mật khẩu của tôi trở nên dễ dàng hơn."}
+{"id": 631, "ja": "クラウドにバックアップしておけば、機種変更のときも安心です。", "gg": "Bằng cách sao lưu dữ liệu lên đám mây, bạn có thể yên tâm ngay cả khi thay đổi mẫu máy."}
+{"id": 632, "ja": "ストレージがいっぱいで写真が保存できない。", "gg": "Tôi không thể lưu ảnh vì bộ nhớ đã đầy."}
+{"id": 633, "ja": "容量が足りなくなってきたので、クラウドストレージを追加購入しようか考えている。", "gg": "Tôi sắp hết dung lượng nên tôi đang nghĩ đến việc mua thêm bộ nhớ trên đám mây."}
+{"id": 634, "ja": "バックアップを取り忘れていたせいで、旅行中に撮った大切な写真や動画がすべて消えてしまい、しばらく立ち直れなかった。", "gg": "Vì tôi quên sao lưu nên tất cả ảnh và video quan trọng tôi chụp trong chuyến đi đều biến mất và tôi không thể khôi phục trong một thời gian."}
+{"id": 635, "ja": "このファイル、クラウド上で共有できますか?", "gg": "Tệp này có thể được chia sẻ trên đám mây không?"}
+{"id": 636, "ja": "自動バックアップの設定をオンにしておいてください。", "gg": "Đảm bảo bật cài đặt sao lưu tự động."}
+{"id": 637, "ja": "同期がなかなか終わらなくて、クラウドの動作にイライラする。", "gg": "Quá trình đồng bộ hóa mất nhiều thời gian và tôi cảm thấy thất vọng với cách hoạt động của đám mây."}
+{"id": 638, "ja": "外付けHDDとクラウド、両方に保存しておくと安心だよ。", "gg": "Việc lưu nó trên cả ổ cứng gắn ngoài và đám mây là an toàn."}
+{"id": 639, "ja": "データ復元にどれくらい時間がかかりますか?", "gg": "Mất bao lâu để khôi phục dữ liệu?"}
+{"id": 640, "ja": "サービス障害が起きて、クラウド上のファイルにアクセスできなくなった。", "gg": "Đã xảy ra lỗi dịch vụ và bạn không thể truy cập các tệp trên đám mây được nữa."}
+{"id": 641, "ja": "Wi-Fiが繋がらなくて、さっきから何度も再起動してる。", "gg": "Tôi không thể kết nối với Wi-Fi nên tôi đã khởi động lại nhiều lần."}
+{"id": 642, "ja": "ルーターを再起動したら直った。", "gg": "Nó đã được sửa sau khi khởi động lại bộ định tuyến."}
+{"id": 643, "ja": "通信速度が遅すぎて、動画が全然読み込まれない。", "gg": "Tốc độ kết nối chậm đến mức không tải được video."}
+{"id": 644, "ja": "5G対応のプランに変更しようか検討中。", "gg": "Tôi đang xem xét thay đổi sang gói tương thích 5G."}
+{"id": 645, "ja": "家のWi-Fi、電波が弱い部屋があるんだよね。", "gg": "Có một số phòng trong nhà bạn có tín hiệu Wi-Fi yếu."}
+{"id": 646, "ja": "モバイルデータ通信をオフにしても大丈夫ですか?", "gg": "Tắt dữ liệu di động có được không?"}
+{"id": 647, "ja": "公共のWi-Fiを使うときはVPNを使った方がいいですよ。", "gg": "Tốt nhất nên sử dụng VPN khi sử dụng Wi-Fi công cộng."}
+{"id": 648, "ja": "回線が混雑する時間帯は、どうしても速度が落ちる。", "gg": "Trong thời gian đường dây bận, tốc độ chắc chắn sẽ giảm xuống."}
+{"id": 649, "ja": "ルーターの位置を変えただけで、電波状況がかなり改善した。", "gg": "Chỉ bằng cách thay đổi vị trí của bộ định tuyến, chất lượng tín hiệu đã được cải thiện đáng kể."}
+{"id": 650, "ja": "テザリングで繋いでいるけど、通信量がすぐなくなる。", "gg": "Tôi được kết nối qua tính năng chia sẻ kết nối nhưng lưu lượng dữ liệu nhanh chóng cạn kiệt."}
+{"id": 651, "ja": "新しいグラフィックカードに交換したら、フレームレートが倍になった。", "gg": "Sau khi thay card đồ họa mới, tốc độ khung hình của tôi tăng gấp đôi."}
+{"id": 652, "ja": "ロード時間の長さにいつもイライラさせられるゲームだ。", "gg": "Đây là một trò chơi luôn làm tôi thất vọng vì thời gian tải lâu."}
+{"id": 653, "ja": "PS5の在庫、まだ全然戻ってこないね。", "gg": "Nguồn cung PS5 vẫn chưa quay trở lại."}
+{"id": 654, "ja": "ゲーミングPCを自作してみようと思っている。", "gg": "Tôi đang nghĩ đến việc xây dựng một PC chơi game của riêng mình."}
+{"id": 655, "ja": "サーバー落ちてて対戦できない。", "gg": "Máy chủ ngừng hoạt động và tôi không thể chơi được."}
+{"id": 656, "ja": "最新作のグラフィックがすごく綺麗で驚いた。", "gg": "Tôi rất ngạc nhiên về đồ họa của trò chơi mới nhất đẹp đến thế nào."}
+{"id": 657, "ja": "コントローラーの反応が悪くて、操作しづらい。", "gg": "Bộ điều khiển không phản hồi và khó vận hành."}
+{"id": 658, "ja": "アップデートのたびに、このゲームの容量がどんどん増えていく。", "gg": "Dung lượng của trò chơi này tăng lên sau mỗi lần cập nhật."}
+{"id": 659, "ja": "冷却ファンの音がうるさくて、夜は気になる。", "gg": "Quạt tản nhiệt kêu to đến nỗi làm tôi khó chịu vào ban đêm."}
+{"id": 660, "ja": "セール中に買ったソフト、まだ全然プレイできてない。", "gg": "Mình mua phần mềm trong đợt giảm giá nên chưa chơi được."}
+{"id": 661, "ja": "スマホゲームのガチャで欲しいキャラが全然出ない。", "gg": "Tôi không thể tìm thấy nhân vật mình muốn trong gacha của trò chơi trên điện thoại thông minh."}
+{"id": 662, "ja": "eスポーツの大会を初めて生で観戦してきた。", "gg": "Đây là lần đầu tiên tôi xem trực tiếp một giải đấu thể thao điện tử."}
+{"id": 663, "ja": "課金しないと全然進まないアプリゲームで、正直ちょっと疲れてきた。", "gg": "Thành thật mà nói, tôi hơi mệt mỏi với trò chơi ứng dụng này, nơi bạn không thể tiến bộ chút nào trừ khi trả tiền."}
+{"id": 664, "ja": "課金要素が強すぎて、ちょっと萎えてきた。", "gg": "Bộ phận sạc mạnh đến mức tôi hơi thất vọng."}
+{"id": 665, "ja": "通勤中にできる軽いパズルゲームを探している。", "gg": "Tôi đang tìm một trò chơi giải đố nhẹ nhàng để chơi khi đang di chuyển."}
+{"id": 666, "ja": "プロゲーマーになるにはどれくらい練習が必要なんだろう?", "gg": "Cần luyện tập bao lâu để trở thành game thủ chuyên nghiệp?"}
+{"id": 667, "ja": "このゲーム、フレンドと一緒にプレイすると数倍楽しい。", "gg": "Trò chơi này thú vị hơn nhiều khi chơi với bạn bè."}
+{"id": 668, "ja": "スマホが熱くなりすぎて、長時間プレイできない。", "gg": "Điện thoại thông minh của tôi quá nóng và tôi không thể chơi trong thời gian dài."}
+{"id": 669, "ja": "新しいイベントが始まったから、ログインボーナスを取りに行かないと。", "gg": "Một sự kiện mới đã bắt đầu nên tôi phải đi nhận phần thưởng đăng nhập của mình."}
+{"id": 670, "ja": "eスポーツ市場は今後もっと大きくなると思う。", "gg": "Tôi nghĩ thị trường esports sẽ còn phát triển hơn nữa trong tương lai."}
+{"id": 671, "ja": "SNSに投稿したら、思ったよりいいねがついて驚いた。", "gg": "Khi đăng nó lên SNS, tôi rất ngạc nhiên khi nó nhận được nhiều lượt thích hơn tôi mong đợi."}
+{"id": 672, "ja": "フォロワーの数を気にしすぎるのは、あまり健康的じゃない。", "gg": "Sẽ không tốt cho sức khỏe nếu bạn lo lắng quá nhiều về số lượng người theo dõi mà bạn có."}
+{"id": 673, "ja": "今すごく流行っているハッシュタグらしい。", "gg": "Nó dường như là một hashtag rất phổ biến hiện nay."}
+{"id": 674, "ja": "ライブ配信中に急に接続が切れてしまった。", "gg": "Trong lúc phát sóng trực tiếp, kết nối đột ngột bị ngắt."}
+{"id": 675, "ja": "普段検索しているものに関係のない広告ばかり表示されるのは、たぶんアルゴリズムが変な学習をしてしまっているせいだと思う。", "gg": "Tôi nghĩ lý do khiến bạn thấy nhiều quảng cáo không liên quan đến những gì bạn thường tìm kiếm có thể là do thuật toán đang học theo một cách kỳ lạ."}
+{"id": 676, "ja": "知らない人からいきなりフォローされて、少し怖い。", "gg": "Có một chút đáng sợ khi đột nhiên bị theo dõi bởi một người không quen biết."}
+{"id": 677, "ja": "インスタのストーリー機能、意外と使いやすい。", "gg": "Tính năng câu chuyện của Instagram dễ sử dụng một cách đáng ngạc nhiên."}
+{"id": 678, "ja": "バズった投稿のせいで、通知が止まらない。", "gg": "Tôi không thể ngừng nhận thông báo vì một bài đăng lan truyền."}
+{"id": 679, "ja": "SNSを見る時間を減らしたら、なんだか気持ちが楽になった。", "gg": "Khi tôi giảm thời gian xem mạng xã hội, tôi cảm thấy tốt hơn rất nhiều."}
+{"id": 680, "ja": "コメント欄が荒れていて、見るのをやめた。", "gg": "Phần bình luận hỗn loạn đến mức tôi ngừng tìm kiếm."}
+{"id": 681, "ja": "AIチャットボットに質問したら、意外と的確な答えが返ってきた。", "gg": "Khi tôi hỏi chatbot AI một câu hỏi, nó đã cho tôi câu trả lời chính xác một cách đáng ngạc nhiên."}
+{"id": 682, "ja": "生成AIで作った画像、クオリティがすごく高い。", "gg": "Chất lượng hình ảnh được tạo ra bằng AI rất cao."}
+{"id": 683, "ja": "AIが仕事を奪うんじゃないかって、正直不安になる。", "gg": "Thành thật mà nói, tôi lo lắng rằng AI sẽ lấy đi công việc của tôi."}
+{"id": 684, "ja": "写真を自動で整理してくれるAI機能つきのアプリを使い始めた。", "gg": "Tôi bắt đầu sử dụng một ứng dụng có chức năng AI tự động sắp xếp ảnh."}
+{"id": 685, "ja": "機械学習モデルの学習データにはどんなものが使われているんですか?", "gg": "Loại dữ liệu đào tạo nào được sử dụng cho các mô hình học máy?"}
+{"id": 686, "ja": "AIアシスタントに予定を管理してもらってる。", "gg": "Tôi có trợ lý AI quản lý lịch trình của mình."}
+{"id": 687, "ja": "チャットボットの返答が、たまに的外れで笑ってしまう。", "gg": "Đôi khi phản hồi của chatbot lạc đề đến mức khiến tôi bật cười."}
+{"id": 688, "ja": "最近はAIが生成した文章なのか、人間が実際に書いた文章なのか、パッと見ただけでは見分けるのがどんどん難しくなってきている気がする。", "gg": "Gần đây, ngày càng khó để biết liệu một văn bản được tạo ra bởi AI hay thực sự được viết bởi con người chỉ bằng cách nhìn vào nó."}
+{"id": 689, "ja": "音声認識の精度が上がって、方言でもかなり正確に認識してくれるようになった。", "gg": "Độ chính xác của nhận dạng giọng nói đã được cải thiện và thậm chí cả tiếng địa phương giờ đây cũng có thể được nhận dạng khá chính xác."}
+{"id": 690, "ja": "技術の進歩のスピードには、AIの分野だけ本当に驚かされる。", "gg": "Tốc độ tiến bộ công nghệ thực sự đáng kinh ngạc trong lĩnh vực AI."}
+{"id": 691, "ja": "心拍数をスマートウォッチで測るようになってから、健康への意識が変わった。", "gg": "Kể từ khi tôi bắt đầu đo nhịp tim bằng đồng hồ thông minh, nhận thức của tôi về sức khỏe đã thay đổi."}
+{"id": 692, "ja": "ワイヤレスイヤホンの片方だけ音が出なくなった。", "gg": "Không có âm thanh phát ra từ một bên tai nghe không dây của tôi."}
+{"id": 693, "ja": "充電の減りが早くて、このスマートウォッチはがっかりしている。", "gg": "Tôi thất vọng với chiếc đồng hồ thông minh này vì nó hao pin nhanh chóng."}
+{"id": 694, "ja": "ワイヤレス充電に対応しているケース、地味に便利。", "gg": "Một chiếc ốp lưng hỗ trợ sạc không dây rất tiện lợi."}
+{"id": 695, "ja": "見た目はかっこいいけど、機能はそこそこなガジェットだった。", "gg": "Nó trông rất ngầu, nhưng nó chỉ là một thiết bị có chức năng tầm thường."}
+{"id": 696, "ja": "最近人気が出てきたらしいスマートリングというものもある。", "gg": "Ngoài ra còn có một thứ gọi là nhẫn thông minh dường như đã trở nên phổ biến gần đây."}
+{"id": 697, "ja": "イヤホンのペアリングがうまくいかないんだけど、どうすればいい?", "gg": "Tôi gặp sự cố khi ghép nối tai nghe, tôi phải làm gì?"}
+{"id": 698, "ja": "睡眠トラッキング機能、思ったより細かく記録してくれる。", "gg": "Chức năng theo dõi giấc ngủ ghi lại thông tin chi tiết hơn mong đợi."}
+{"id": 699, "ja": "実際のところ、スマートグラスはどれくらい実用的なんだろう?", "gg": "Kính thông minh thực sự thiết thực như thế nào?"}
+{"id": 700, "ja": "防水機能つきのガジェットは、やっぱり安心感がある。", "gg": "Các tiện ích không thấm nước mang lại cho bạn cảm giác an toàn."}
+{"id": 701, "ja": "ノートパソコンのバッテリーが1年でかなり劣化してしまった。", "gg": "Pin máy tính xách tay của tôi đã xuống cấp đáng kể trong năm qua."}
+{"id": 702, "ja": "SSDに交換したら、起動速度が驚くほど速くなった。", "gg": "Sau khi thay thế bằng SSD, tốc độ khởi động trở nên nhanh đến bất ngờ."}
+{"id": 703, "ja": "パソコンがフリーズして、何をしても反応しない。", "gg": "Máy tính của tôi bị treo và không phản hồi với bất cứ điều gì tôi làm."}
+{"id": 704, "ja": "メモリを増設しようと思っているんだけど、対応してるか分からない。", "gg": "Tôi đang nghĩ đến việc bổ sung thêm bộ nhớ nhưng không biết liệu nó có tương thích hay không."}
+{"id": 705, "ja": "薄くて軽いのに性能も十分なノートパソコンで、満足している。", "gg": "Tôi hài lòng với chiếc laptop này, mỏng nhẹ nhưng hiệu năng vừa đủ."}
+{"id": 706, "ja": "外付けモニターを繋いだら、作業効率がかなり上がった。", "gg": "Khi tôi kết nối màn hình ngoài, hiệu quả công việc của tôi được cải thiện đáng kể."}
+{"id": 707, "ja": "キーボードの一部のキーが反応しなくなってきた。", "gg": "Một số phím trên bàn phím đã ngừng phản hồi."}
+{"id": 708, "ja": "パソコンの動作が重いから、不要なソフトを整理しようと思う。", "gg": "Máy tính của tôi chạy chậm nên tôi đang nghĩ đến việc dọn dẹp những phần mềm không cần thiết."}
+{"id": 709, "ja": "冷却シートを敷いたら、少し温度が下がった気がする。", "gg": "Khi tôi đặt tấm làm mát lên đó, nhiệt độ có vẻ giảm xuống một chút."}
+{"id": 710, "ja": "デスクトップとノート、どっちを買うか迷っている。", "gg": "Tôi đang phân vân không biết nên mua máy tính để bàn hay máy tính xách tay."}
+{"id": 711, "ja": "ブラウザのタブを開きすぎて、パソコンが重くなった。", "gg": "Tôi mở quá nhiều tab trình duyệt và máy tính của tôi trở nên chậm chạp."}
+{"id": 712, "ja": "広告が多すぎて、このサイトは読みにくい。", "gg": "Trang web này khó đọc vì có quá nhiều quảng cáo."}
+{"id": 713, "ja": "キャッシュを削除したら、表示崩れが直った。", "gg": "Sau khi xóa bộ nhớ đệm, vấn đề hiển thị đã được khắc phục."}
+{"id": 714, "ja": "お気に入りのブックマーク、うっかり全部消してしまった。", "gg": "Tôi vô tình xóa tất cả dấu trang yêu thích của mình."}
+{"id": 715, "ja": "検索履歴を消したいんだけど、やり方が分からない。", "gg": "Tôi muốn xóa lịch sử tìm kiếm của mình nhưng không biết làm cách nào."}
+{"id": 716, "ja": "ブラウザ拡張機能を入れたら、広告が自動でブロックされるようになった。", "gg": "Sau khi cài đặt tiện ích mở rộng của trình duyệt, quảng cáo sẽ tự động bị chặn."}
+{"id": 717, "ja": "サイトの読み込みが遅くて、途中で閉じてしまった。", "gg": "Trang web tải chậm và đóng giữa chừng."}
+{"id": 718, "ja": "シークレットモードで開くと、なぜかログインできない。", "gg": "Nếu tôi mở nó ở chế độ ẩn danh, vì lý do nào đó tôi không thể đăng nhập được."}
+{"id": 719, "ja": "ブラウザを変えたら、動作が全然違って驚いた。", "gg": "Khi tôi thay đổi trình duyệt, tôi rất ngạc nhiên khi thấy rằng hoạt động này hoàn toàn khác."}
+{"id": 720, "ja": "レイアウトが崩れて、このページはスマホでうまく表示されない。", "gg": "Bố cục bị hỏng và trang này không hiển thị tốt trên điện thoại thông minh."}
+{"id": 721, "ja": "見たかったドラマ、配信終了になってたから焦った。", "gg": "Tôi rất lo lắng vì bộ phim tôi muốn xem đã không còn nữa."}
+{"id": 722, "ja": "サブスクの数が増えすぎて、月々の出費がすごいことになってる。", "gg": "Số lượng người đăng ký tăng lên nhiều đến mức chi phí hàng tháng trở nên quá tải."}
+{"id": 723, "ja": "画質が思ったよりきれいで、このストリーミングサービスは満足度が高い。", "gg": "Chất lượng hình ảnh tốt hơn tôi mong đợi và tôi rất hài lòng với dịch vụ phát trực tuyến này."}
+{"id": 724, "ja": "オフライン再生機能があるから、通勤中でも見られる。", "gg": "Có chức năng phát lại ngoại tuyến nên bạn có thể xem khi đang di chuyển."}
+{"id": 725, "ja": "新作映画の配信、いつ始まるんだろう?", "gg": "Khi nào bộ phim mới sẽ được phát hành?"}
+{"id": 726, "ja": "音楽配信アプリのおすすめ機能、地味に優秀。", "gg": "Các tính năng được đề xuất cho ứng dụng phân phối nhạc đơn giản là tuyệt vời."}
+{"id": 727, "ja": "字幕の同期がずれていて、少し見づらかった。", "gg": "Phụ đề không đồng bộ và hơi khó đọc."}
+{"id": 728, "ja": "配信サービスを解約しようか、ずっと迷っている。", "gg": "Tôi đang tự hỏi liệu mình có nên hủy dịch vụ phát trực tuyến của mình hay không."}
+{"id": 729, "ja": "深夜にドラマを一気見してしまって、寝不足になった。", "gg": "Cuối cùng tôi say sưa xem bộ phim vào đêm khuya và mất ngủ."}
+{"id": 730, "ja": "複数の配信サービスを比較して、一番安いプランを選んだ。", "gg": "Tôi đã so sánh nhiều dịch vụ phân phối và chọn gói rẻ nhất."}
+{"id": 731, "ja": "オンライン会議中に、急にマイクが聞こえなくなった。", "gg": "Trong một cuộc họp trực tuyến, tôi đột nhiên không nghe thấy micro."}
+{"id": 732, "ja": "画面共有のやり方、教えてもらえますか?", "gg": "Bạn có thể cho tôi biết cách chia sẻ màn hình không?"}
+{"id": 733, "ja": "テレワークになってから、通勤時間がなくなって助かってる。", "gg": "Kể từ khi bắt đầu làm việc tại nhà, tôi không còn phải đi lại, điều này thật hữu ích."}
+{"id": 734, "ja": "ビデオ通話の背景を変えたら、部屋を見せなくて済むようになった。", "gg": "Bằng cách thay đổi hình nền của cuộc gọi điện video, bạn không còn phải hiển thị phòng của mình nữa."}
+{"id": 735, "ja": "会議アプリの音声が途切れて、内容がよく聞こえなかった。", "gg": "Âm thanh từ ứng dụng hội nghị bị gián đoạn, khiến khó nghe được nội dung đang được nói."}
+{"id": 736, "ja": "リモートワーク用に、新しいウェブカメラを買った。", "gg": "Tôi đã mua một webcam mới để làm việc từ xa."}
+{"id": 737, "ja": "在宅勤務だと、つい仕事とプライベートの境が曖昧になる。", "gg": "Khi bạn làm việc ở nhà, ranh giới giữa công việc và cuộc sống riêng tư trở nên mờ nhạt."}
+{"id": 738, "ja": "画面越しだと、相手の反応が分かりづらいことがある。", "gg": "Có thể khó hiểu được phản ứng của người khác qua màn hình."}
+{"id": 739, "ja": "会議の録画機能、後で見返せてすごく便利。", "gg": "Chức năng ghi âm cuộc họp rất tiện lợi vì bạn có thể xem lại sau."}
+{"id": 740, "ja": "Wi-Fiが不安定で、会議中に何度も落ちてしまった。", "gg": "Wi-Fi không ổn định và bị lỗi nhiều lần trong cuộc họp."}
+{"id": 741, "ja": "ネットで注文した商品、思ったより早く届いた。", "gg": "Sản phẩm tôi đặt mua trực tuyến đã đến sớm hơn tôi mong đợi."}
+{"id": 742, "ja": "レビューの評価が高かったから、この製品を選んだ。", "gg": "Tôi chọn sản phẩm này vì nó được đánh giá cao."}
+{"id": 743, "ja": "カートに入れたまま忘れていた商品、セール中に買っておいた。", "gg": "Tôi đã quên món hàng đó trong giỏ hàng nhưng tôi đã mua nó khi nó đang được giảm giá."}
+{"id": 744, "ja": "配送状況を確認したいんだけど、追跡番号が見つからない。", "gg": "Tôi muốn kiểm tra trạng thái giao hàng nhưng không tìm thấy số theo dõi."}
+{"id": 745, "ja": "このサイト、決済方法がいろいろ選べて便利。", "gg": "Trang web này thuận tiện với nhiều phương thức thanh toán để bạn lựa chọn."}
+{"id": 746, "ja": "商品が届いたら、写真と全然違っていて驚いた。", "gg": "Khi nhận hàng, tôi rất ngạc nhiên khi thấy nó khác hoàn toàn với ảnh."}
+{"id": 747, "ja": "ワンクリックで購入できるのは楽だけど、つい買いすぎてしまう。", "gg": "Thật dễ dàng để mua chỉ bằng một cú nhấp chuột, nhưng thật dễ dàng để mua quá nhiều."}
+{"id": 748, "ja": "返品手続きって、どこからやればいいんですか?", "gg": "Tôi bắt đầu quá trình hoàn trả ở đâu?"}
+{"id": 749, "ja": "タイムセールに惹かれて、つい余計なものまで買ってしまった。", "gg": "Bị thu hút bởi đợt giảm giá theo thời gian, cuối cùng tôi đã mua thêm một số thứ."}
+{"id": 750, "ja": "レビュー欄にサクラっぽい投稿が多くて、信用しづらい。", "gg": "Trong phần đánh giá có rất nhiều bài viết giả mạo nên khó có thể tin tưởng được."}
+{"id": 751, "ja": "VRゴーグルをつけたら、想像以上に臨場感があった。", "gg": "Khi tôi đeo kính VR vào, tôi có cảm giác chân thực hơn tôi mong đợi."}
+{"id": 752, "ja": "道に迷わなくなったのは、ARを使ったナビ機能のおかげだ。", "gg": "Tôi không còn bị lạc nhờ chức năng định vị bằng AR."}
+{"id": 753, "ja": "会議をVR空間でするなんて、少し前まで想像もしなかった。", "gg": "Cho đến gần đây, tôi chưa bao giờ tưởng tượng việc tổ chức một cuộc họp trong không gian VR."}
+{"id": 754, "ja": "長時間VRを使うと、なんだか目が疲れる。", "gg": "Khi tôi sử dụng VR trong thời gian dài, mắt tôi sẽ mỏi."}
+{"id": 755, "ja": "家具を試し置きできるAR機能つきのアプリが、地味に便利。", "gg": "Một ứng dụng có chức năng AR cho phép bạn dùng thử đồ nội thất khá tiện lợi."}
+{"id": 756, "ja": "酔いやすいVRゲームは、休憩を挟みながらやるようにしている。", "gg": "Tôi cố gắng chơi những trò chơi VR có xu hướng khiến tôi phát ốm và nghỉ giữa chừng."}
+{"id": 757, "ja": "ARグラスが普及したら、生活はどう変わるんだろう?", "gg": "Cuộc sống sẽ thay đổi thế nào nếu kính AR trở nên phổ biến?"}
+{"id": 758, "ja": "体験施設でVRを試してみたら、思っていたより楽しかった。", "gg": "Khi tôi thử VR tại cơ sở trải nghiệm, nó thú vị hơn tôi mong đợi."}
+{"id": 759, "ja": "カメラ越しに情報が表示されるAR技術、まだ発展途中な気がする。", "gg": "Tôi cảm thấy rằng công nghệ AR hiển thị thông tin qua camera vẫn đang trong giai đoạn phát triển."}
+{"id": 760, "ja": "思っていたより重くて、VRヘッドセットは長時間つけていると疲れる。", "gg": "Nó nặng hơn tôi mong đợi và việc đeo tai nghe VR trong thời gian dài có thể gây mệt mỏi."}
+{"id": 761, "ja": "スマートスピーカーに天気を聞くのが、朝の習慣になっている。", "gg": "Việc hỏi loa thông minh về thời tiết đã trở thành thói quen buổi sáng của tôi."}
+{"id": 762, "ja": "外出先からも操作できて便利だから、スマート照明を導入した。", "gg": "Chúng tôi giới thiệu hệ thống chiếu sáng thông minh vì nó tiện lợi và có thể vận hành từ mọi nơi."}
+{"id": 763, "ja": "IoT家電が増えたぶん、Wi-Fiの接続台数も増えてきた。", "gg": "Khi số lượng thiết bị gia dụng IoT tăng lên, số lượng thiết bị kết nối Wi-Fi cũng tăng theo."}
+{"id": 764, "ja": "鍵を忘れる心配がなくなったのは、スマートロックのおかげだ。", "gg": "Nhờ có khóa thông minh, bạn không còn phải lo lắng về việc quên chìa khóa nữa."}
+{"id": 765, "ja": "家電がどんどんネットに繋がるようになってきたけれど、便利になった分、セキュリティ面のリスクも増えているようで少し心配になる。", "gg": "Các thiết bị gia dụng ngày càng được kết nối với internet nhiều hơn nhưng với sự tiện lợi đi kèm với nó dường như những rủi ro về bảo mật ngày càng gia tăng khiến tôi hơi lo lắng."}
+{"id": 766, "ja": "家電同士が連携すると、こんなに便利になるとは思わなかった。", "gg": "Tôi chưa bao giờ nghĩ rằng các thiết bị gia dụng có thể tiện lợi đến vậy khi chúng hoạt động cùng nhau."}
+{"id": 767, "ja": "音声操作でエアコンをつけられるのは、地味にありがたい。", "gg": "Có thể bật điều hòa bằng điều khiển bằng giọng nói quả là một điều may mắn."}
+{"id": 768, "ja": "急に反応しなくなったスマートスピーカーの設定を見直した。", "gg": "Tôi đã xem lại cài đặt của loa thông minh đột nhiên ngừng phản hồi."}
+{"id": 769, "ja": "IoTデバイスが増えると、その分ハッキングのリスクも高まる。", "gg": "Khi số lượng thiết bị IoT tăng lên, nguy cơ bị hack cũng tăng theo."}
+{"id": 770, "ja": "電源を外出先からオフにできるスマートプラグ、意外と便利。", "gg": "Một chiếc phích cắm thông minh cho phép bạn tắt nguồn điện từ bên ngoài tiện lợi đến không ngờ."}
+{"id": 771, "ja": "新しい人工衛星の打ち上げが、来週に予定されている。", "gg": "Việc phóng một vệ tinh mới dự kiến ​​sẽ diễn ra vào tuần tới."}
+{"id": 772, "ja": "ロボットが接客する店舗、最近ちらほら見かけるようになった。", "gg": "Gần đây, tôi thấy ngày càng có nhiều cửa hàng có robot phục vụ khách hàng."}
+{"id": 773, "ja": "火星探査機から送られてきた画像、想像以上に鮮明だった。", "gg": "Những hình ảnh được gửi về từ tàu thám hiểm sao Hỏa rõ ràng hơn tôi mong đợi."}
+{"id": 774, "ja": "自動運転技術は、あと何年で実用化されるんだろう?", "gg": "Phải mất bao nhiêu năm nữa công nghệ xe tự lái mới được đưa vào sử dụng thực tế?"}
+{"id": 775, "ja": "ドローンを使った測量作業、効率がすごく上がったらしい。", "gg": "Công việc khảo sát sử dụng máy bay không người lái dường như hiệu quả hơn nhiều."}
+{"id": 776, "ja": "量子コンピュータって、結局何がすごいのか正直まだよく分からない。", "gg": "Thành thật mà nói, tôi vẫn chưa thực sự hiểu máy tính lượng tử có gì tuyệt vời đến thế."}
+{"id": 777, "ja": "かつては国家主導で進められていた宇宙開発が、今では民間企業を中心に進んでいるのを見ると、時代が大きく変わったことを実感する。", "gg": "Khi chúng tôi thấy rằng việc phát triển không gian, vốn từng là sáng kiến ​​​​do nhà nước chỉ đạo, hiện đang được thực hiện chủ yếu bởi các công ty tư nhân, chúng tôi nhận ra rằng thời thế đã thay đổi đáng kể."}
+{"id": 778, "ja": "思ったより賢くて驚いたロボット掃除機だった。", "gg": "Robot hút bụi này thông minh hơn tôi mong đợi một cách đáng ngạc nhiên."}
+{"id": 779, "ja": "再生可能エネルギーの技術も、テクノロジーの進化と関係が深い。", "gg": "Công nghệ năng lượng tái tạo cũng liên quan chặt chẽ đến sự phát triển của công nghệ."}
+{"id": 780, "ja": "産業用ロボットの導入で、工場の生産効率が大きく上がった。", "gg": "Sự ra đời của robot công nghiệp đã làm tăng đáng kể hiệu quả sản xuất của các nhà máy."}
+{"id": 781, "ja": "サポートに問い合わせたのに、返信が全然来ない。", "gg": "Tôi đã liên hệ với bộ phận hỗ trợ nhưng chưa bao giờ nhận được phản hồi."}
+{"id": 782, "ja": "この不具合について何度もサポートに問い合わせているのに、いつも同じ案内をされるだけで、結局一向に直らないんですけど。", "gg": "Mặc dù tôi đã liên hệ với bộ phận hỗ trợ nhiều lần về vấn đề này nhưng tôi luôn nhận được hướng dẫn tương tự và vấn đề không bao giờ được giải quyết."}
+{"id": 783, "ja": "マニュアル通りに設定したのに、全く動かない。", "gg": "Mình đã setup theo hướng dẫn nhưng không được."}
+{"id": 784, "ja": "サポートセンターに電話しても、いつも繋がるまで時間がかかる。", "gg": "Ngay cả khi tôi gọi đến trung tâm hỗ trợ, tôi cũng luôn phải mất một khoảng thời gian mới được giải quyết."}
+{"id": 785, "ja": "再起動しても直らない場合は、初期化を試してみてください。", "gg": "Nếu việc khởi động lại không khắc phục được sự cố, hãy thử khởi tạo nó."}
+{"id": 786, "ja": "保証期間内なら、無料で修理してもらえますか?", "gg": "Nếu còn trong thời gian bảo hành, bạn có thể sửa chữa miễn phí không?"}
+{"id": 787, "ja": "チャットサポートの対応、すごく丁寧で助かった。", "gg": "Hỗ trợ trò chuyện rất lịch sự và hữu ích."}
+{"id": 788, "ja": "まずケーブルがきちんと挿さっているか確認してください。", "gg": "Đầu tiên, hãy kiểm tra xem cáp đã được cắm đúng chưa."}
+{"id": 789, "ja": "同じ症状の人がいないか、フォーラムで検索してみた。", "gg": "Mình search trên diễn đàn xem có ai bị giống mình không."}
+{"id": 790, "ja": "サポートに電話する前に、一度キャッシュを削除してみてください。", "gg": "Vui lòng thử xóa bộ nhớ đệm trước khi gọi hỗ trợ."}
+{"id": 791, "ja": "最近のガジェットって、進化のスピードが早すぎてついていけない。", "gg": "Các thiết bị hiện đại đang phát triển nhanh đến mức khó có thể theo kịp."}
+{"id": 792, "ja": "電子書籍で読むようになってから、本を持ち歩かなくなった。", "gg": "Kể từ khi tôi bắt đầu đọc sách điện tử, tôi không còn mang theo sách nữa."}
+{"id": 793, "ja": "キャッシュレス決済がすっかり生活に定着した。", "gg": "Thanh toán không dùng tiền mặt đã trở nên vững chắc trong cuộc sống hàng ngày của chúng ta."}
+{"id": 794, "ja": "スマホ一台で、ほとんどのことができる時代になったよね。", "gg": "Chúng ta hiện đang ở thời đại mà bạn có thể làm hầu hết mọi thứ chỉ với một chiếc điện thoại thông minh."}
+{"id": 795, "ja": "テクノロジーに詳しくない親に、スマホの使い方を教えるのが地味に大変。", "gg": "Việc dạy các bậc cha mẹ không am hiểu công nghệ cách sử dụng điện thoại thông minh có thể khá khó khăn."}
+{"id": 796, "ja": "新製品の発表会、リアルタイムで見ていた。", "gg": "Tôi đã xem buổi ra mắt sản phẩm mới trong thời gian thực."}
+{"id": 797, "ja": "デジタル機器を使わない日を作ってみたら、意外と快適だった。", "gg": "Tôi đã thử thiết lập một ngày mà tôi không sử dụng các thiết bị kỹ thuật số và cảm thấy thoải mái một cách đáng ngạc nhiên."}
+{"id": 798, "ja": "もっと早く知っておきたかった便利な機能だ。", "gg": "Đây là một tính năng hữu ích mà tôi ước mình đã biết sớm hơn."}
+{"id": 799, "ja": "テック系のニュースを毎朝チェックするのが日課になっている。", "gg": "Việc kiểm tra tin tức công nghệ vào mỗi buổi sáng đã trở thành thói quen hàng ngày của tôi."}
+{"id": 800, "ja": "技術の進化は嬉しいけど、覚えることも増えて大変だ。", "gg": "Tôi rất vui vì công nghệ đang phát triển nhưng việc ghi nhớ mọi thứ cũng khó khăn."}
+{"id": 801, "ja": "この魚は塩を振ってから焼くと美味しいよ。", "gg": "Món cá này ngon khi được rắc muối rồi nướng."}
+{"id": 802, "ja": "成田空港から羽田空港まで移動する場合、リムジンバスと電車のどちらが早くて安いか、事前に比較しておいたほうがいいと思う。", "gg": "Khi đi từ sân bay Narita đến sân bay Haneda, tôi nghĩ nên so sánh trước xem xe buýt hay xe lửa limousine nhanh hơn và rẻ hơn."}
+{"id": 803, "ja": "チェックインは何時からですか。", "gg": "Thời gian nhận phòng bắt đầu lúc mấy giờ?"}
+{"id": 804, "ja": "スーツケースが重すぎて持ち上げられない。", "gg": "Vali của tôi nặng quá không nhấc nổi."}
+{"id": 805, "ja": "パスポートを見せてください。", "gg": "Vui lòng cho tôi xem hộ chiếu của bạn."}
+{"id": 806, "ja": "ホテルの部屋からは富士山がきれいに見えた。", "gg": "Núi Phú Sĩ có thể được nhìn thấy rõ ràng từ phòng khách sạn."}
+{"id": 807, "ja": "荷物を一つ預けたいのですが、いくらかかりますか。", "gg": "Tôi muốn để lại cho bạn một kiện hành lý, giá bao nhiêu?"}
+{"id": 808, "ja": "観光案内所はどこにありますか。", "gg": "Trung tâm thông tin du lịch ở đâu?"}
+{"id": 809, "ja": "このツアーには昼食が含まれていますか。", "gg": "Tour này có bao gồm bữa trưa không?"}
+{"id": 810, "ja": "免税店でお土産をたくさん買いました。", "gg": "Tôi đã mua rất nhiều quà lưu niệm ở cửa hàng miễn thuế."}
+{"id": 811, "ja": "パスポートとチケットを両方持ってきましたか。", "gg": "Bạn có mang theo cả hộ chiếu và vé không?"}
+{"id": 812, "ja": "次の休みはどこに行きたい？", "gg": "Bạn muốn đi đâu vào kỳ nghỉ tiếp theo?"}
+{"id": 813, "ja": "ビザなしで何日間滞在できますか。", "gg": "Tôi có thể ở lại bao nhiêu ngày mà không cần thị thực?"}
+{"id": 814, "ja": "空港でWi-Fiを借りることができるらしい。", "gg": "Rõ ràng bạn có thể thuê Wi-Fi tại sân bay."}
+{"id": 815, "ja": "展望台からの夜景は本当に感動的だった。", "gg": "Cảnh đêm từ đài quan sát thực sự ấn tượng."}
+{"id": 816, "ja": "できれば来月の連休には、静かな温泉旅館に泊まって、日頃の疲れをゆっくり癒しながら、美味しい懐石料理を楽しみたいと思っている。", "gg": "Nếu có thể, trong kỳ nghỉ tháng tới, tôi muốn ở trong một quán trọ suối nước nóng yên tĩnh và thưởng thức ẩm thực kaiseki ngon miệng trong khi thư giãn sau những mệt mỏi hàng ngày."}
+{"id": 817, "ja": "現地のガイドさんがとても親切に案内してくれた。", "gg": "Hướng dẫn viên địa phương rất tốt bụng."}
+{"id": 818, "ja": "ホステルは安いけど、部屋が狭いんだよね。", "gg": "Nhà nghỉ giá rẻ nhưng phòng lại nhỏ."}
+{"id": 819, "ja": "出発は何時の予定ですか。", "gg": "Bạn dự định rời đi lúc mấy giờ?"}
+{"id": 820, "ja": "旅の思い出にたくさん写真を撮っておいてね。", "gg": "Hãy nhớ chụp thật nhiều ảnh làm kỷ niệm cho chuyến đi của bạn nhé."}
+{"id": 821, "ja": "味噌汁を作るには、まずだしを取る必要がある。", "gg": "Để nấu súp miso, trước tiên bạn cần làm dashi."}
+{"id": 822, "ja": "お米は何合炊きますか。", "gg": "Bạn nấu bao nhiêu chén cơm?"}
+{"id": 823, "ja": "玉ねぎを薄くスライスしてください。", "gg": "Cắt hành tây mỏng."}
+{"id": 824, "ja": "醤油とみりんを大さじ2杯ずつ入れて。", "gg": "Thêm 2 muỗng canh nước tương và mirin."}
+{"id": 825, "ja": "このレシピ、思ったより簡単だった！", "gg": "Công thức này dễ hơn tôi mong đợi!"}
+{"id": 826, "ja": "鍋料理は冬にぴったりの家庭料理です。", "gg": "Lẩu là món ăn nấu tại nhà hoàn hảo cho mùa đông."}
+{"id": 827, "ja": "野菜を切る前に、よく手を洗いましょう。", "gg": "Rửa tay thật sạch trước khi cắt rau."}
+{"id": 828, "ja": "お弁当のおかずに悩んでいる。", "gg": "Tôi đang lo lắng về món ăn kèm cho hộp cơm trưa của mình."}
+{"id": 829, "ja": "甘辛いソースが絡んだ照り焼きチキンが好き。", "gg": "Tôi thích gà teriyaki với nước sốt cay ngọt."}
+{"id": 830, "ja": "パンを焼くときは、発酵の時間が大事らしい。", "gg": "Thời gian lên men dường như rất quan trọng khi nướng bánh mì."}
+{"id": 831, "ja": "唐揚げは一度揚げてから、二度揚げすると外がカリカリになる。", "gg": "Gà rán được chiên một lần rồi chiên hai lần để lớp vỏ bên ngoài giòn."}
+{"id": 832, "ja": "このカレー、辛すぎない？", "gg": "Món cà ri này có cay quá không?"}
+{"id": 833, "ja": "だしの取り方を祖母から教わった。", "gg": "Bà tôi đã dạy tôi cách làm dashi."}
+{"id": 834, "ja": "冷蔵庫にある材料だけで、なんとか一品作れそう。", "gg": "Bạn có thể làm một món ăn chỉ với những nguyên liệu có sẵn trong tủ lạnh."}
+{"id": 835, "ja": "手作りのおにぎりを持って公園に行こう。", "gg": "Cùng đi công viên với món cơm nắm tự làm nhé."}
+{"id": 836, "ja": "天ぷらを揚げるときの油の温度は何度くらいがいいですか。", "gg": "Nên sử dụng dầu ở nhiệt độ bao nhiêu khi chiên tempura?"}
+{"id": 837, "ja": "賞味期限が切れているみたいだから、これは捨てよう。", "gg": "Có vẻ như nó đã hết hạn nên tôi sẽ vứt nó đi."}
+{"id": 838, "ja": "出汁の効いた煮物は本当に体に優しい味がする。", "gg": "Các món hầm làm từ nước dùng dashi có hương vị thực sự tốt cho sức khỏe."}
+{"id": 839, "ja": "卵を三つ、ボウルに割り入れてかき混ぜてください。", "gg": "Đập ba quả trứng vào tô và khuấy đều."}
+{"id": 840, "ja": "すみません、メニューをもらえますか。", "gg": "Xin lỗi, cho tôi xin thực đơn được không?"}
+{"id": 841, "ja": "二名で予約したいのですが、七時は空いていますか。", "gg": "Tôi muốn đặt chỗ cho hai người. Bạn có rảnh lúc 7 giờ không?"}
+{"id": 842, "ja": "おすすめは何ですか。", "gg": "Bạn đề xuất món gì."}
+{"id": 843, "ja": "これ、辛くないですか。", "gg": "Cái này không cay à?"}
+{"id": 844, "ja": "お会計をお願いします。", "gg": "Vui lòng thanh toán hóa đơn."}
+{"id": 845, "ja": "ラーメンの替え玉お願いします。", "gg": "Làm ơn cho tôi một tô ramen dự phòng."}
+{"id": 846, "ja": "アレルギーがあるので、卵は入れないでもらえますか。", "gg": "Tôi bị dị ứng, vậy bạn có thể để nó không có trứng được không?"}
+{"id": 847, "ja": "この店の看板メニューは何ですか。", "gg": "Thực đơn đặc trưng của nhà hàng này là gì?"}
+{"id": 848, "ja": "すみません、注文いいですか。", "gg": "Xin lỗi, tôi có thể gọi món được không?"}
+{"id": 849, "ja": "焼肉食べ放題のコースにしよう。", "gg": "Hãy tổ chức một bữa ăn yakiniku ăn thỏa sức nhé."}
+{"id": 850, "ja": "お冷やをもう一杯いただけますか。", "gg": "Tôi có thể uống thêm đồ uống lạnh được không?"}
+{"id": 851, "ja": "カウンター席でもいいですか。", "gg": "Tôi có thể ngồi ở quầy được không?"}
+{"id": 852, "ja": "デザートは別腹だよね。", "gg": "Món tráng miệng là thứ khác."}
+{"id": 853, "ja": "コースメニューの中に、飲み物は含まれていますか。", "gg": "Đồ uống có bao gồm trong thực đơn khóa học không?"}
+{"id": 854, "ja": "この店、行列がすごいけど、実際に食べてみたら評判通りの美味しさで、並んだ甲斐があったと心から思った。", "gg": "Quán này xếp hàng dài nhưng khi ăn thử mới thấy ngon không kém gì danh tiếng, đáng để chờ đợi."}
+{"id": 855, "ja": "すみません、テーブルの上のこのお皿、下げてもらってもいいですか。", "gg": "Xin lỗi, tôi có thể lấy cái đĩa này ra khỏi bàn được không?"}
+{"id": 856, "ja": "個室を予約したのですが、確認をお願いできますか。", "gg": "Tôi đã đặt phòng riêng, bạn có thể vui lòng xác nhận được không?"}
+{"id": 857, "ja": "お腹いっぱい！もう一品も入らないよ。", "gg": "Tôi no rồi! Tôi không thể phù hợp với một món đồ khác."}
+{"id": 858, "ja": "定食にはお味噌汁とご飯がついてきます。", "gg": "Bữa ăn gồm có súp miso và cơm."}
+{"id": 859, "ja": "このお店、深夜まで営業しているので助かる。", "gg": "Cửa hàng này mở cửa đến tận đêm khuya, điều này rất hữu ích."}
+{"id": 860, "ja": "最近、頭痛がひどくて困っている。", "gg": "Gần đây tôi bị đau đầu rất nhiều."}
+{"id": 861, "ja": "お腹が痛いので、薬局で薬を買ってきた。", "gg": "Tôi bị đau bụng nên tôi mua thuốc ở hiệu thuốc."}
+{"id": 862, "ja": "熱はありますか。", "gg": "Bạn có bị sốt không?"}
+{"id": 863, "ja": "三日前から咳が止まらないんです。", "gg": "Đã ba ngày nay tôi không thể ngừng ho."}
+{"id": 864, "ja": "花粉症の季節がまたやってきたね。", "gg": "Mùa sốt cỏ khô lại đến rồi."}
+{"id": 865, "ja": "このシロップを一日三回、食後に飲んでください。", "gg": "Uống xi-rô này ba lần một ngày sau bữa ăn."}
+{"id": 866, "ja": "病院の予約は来週の水曜日に取りました。", "gg": "Tôi đã hẹn ở bệnh viện vào thứ Tư tuần sau."}
+{"id": 867, "ja": "腰が痛くて、長時間座っていられない。", "gg": "Phần lưng dưới của tôi bị đau và tôi không thể ngồi lâu được."}
+{"id": 868, "ja": "健康診断の結果はどうだった？", "gg": "Kết quả khám sức khoẻ của bạn thế nào?"}
+{"id": 869, "ja": "マスクをつけたほうがいいと思う。", "gg": "Tôi nghĩ tốt hơn là nên đeo mặt nạ."}
+{"id": 870, "ja": "睡眠不足が続くと、免疫力が落ちて風邪をひきやすくなるだけでなく、集中力も低下してしまうそうなので、最近は早めに寝るようにしている。", "gg": "Thiếu ngủ không chỉ làm suy yếu hệ thống miễn dịch và khiến bạn dễ bị cảm lạnh mà còn làm giảm khả năng tập trung nên gần đây tôi đã cố gắng đi ngủ sớm hơn."}
+{"id": 871, "ja": "足首をひねってしまって、歩くのがつらい。", "gg": "Tôi bị trật mắt cá chân và đi lại rất khó khăn."}
+{"id": 872, "ja": "血圧を測ってもらえますか。", "gg": "Bạn có thể vui lòng đo huyết áp cho tôi được không?"}
+{"id": 873, "ja": "このアレルギー薬、眠くなる成分は入っていますか。", "gg": "Thuốc dị ứng này có chứa thành phần khiến bạn buồn ngủ không?"}
+{"id": 874, "ja": "毎朝ストレッチをすると、体が軽くなる気がする。", "gg": "Khi tôi giãn cơ vào mỗi buổi sáng, tôi cảm thấy cơ thể mình nhẹ nhàng hơn."}
+{"id": 875, "ja": "インフルエンザの予防接種はもう受けましたか。", "gg": "Bạn đã tiêm phòng cúm chưa?"}
+{"id": 876, "ja": "目が疲れているから、少し休憩しよう。", "gg": "Mắt tôi mỏi quá rồi, chúng ta hãy nghỉ ngơi một lát nhé."}
+{"id": 877, "ja": "医者に、塩分を控えるように言われた。", "gg": "Bác sĩ khuyên tôi nên giảm muối."}
+{"id": 878, "ja": "傷口を消毒してから、絆創膏を貼ってください。", "gg": "Sát trùng vết thương rồi băng lại."}
+{"id": 879, "ja": "体調が悪いなら、無理して来なくていいよ。", "gg": "Nếu cảm thấy không khỏe, bạn không cần phải ép mình đến."}
+{"id": 880, "ja": "これ、試着できますか。", "gg": "Tôi có thể thử cái này được không?"}
+{"id": 881, "ja": "サイズはMとLどちらがありますか。", "gg": "Có size nào, M hay L?"}
+{"id": 882, "ja": "もう少し安くなりませんか。", "gg": "Chẳng phải nó sẽ rẻ hơn một chút sao?"}
+{"id": 883, "ja": "これ、返品したいのですが。", "gg": "Tôi muốn trả lại cái này."}
+{"id": 884, "ja": "現金とカード、どちらで払いますか。", "gg": "Bạn muốn thanh toán bằng tiền mặt hay thẻ?"}
+{"id": 885, "ja": "このセーター、色違いはありますか。", "gg": "Áo len này có nhiều màu khác nhau không?"}
+{"id": 886, "ja": "レジはどこですか。", "gg": "Máy tính tiền ở đâu?"}
+{"id": 887, "ja": "ポイントカードはお持ちですか。", "gg": "Bạn có thẻ tích điểm không?"}
+{"id": 888, "ja": "このバッグ、可愛いけど値段がちょっと高いな。", "gg": "Túi này đẹp nhưng giá hơi cao."}
+{"id": 889, "ja": "今、セール中で全品二割引です。", "gg": "Hiện đang được giảm giá 20% cho tất cả các mặt hàng."}
+{"id": 890, "ja": "領収書をもらえますか。", "gg": "Tôi có thể có biên lai được không?"}
+{"id": 891, "ja": "靴のサイズが合わなくて店員さんに相談したら、在庫を確認してくれて、無事にワンサイズ大きいものに交換してもらえた。", "gg": "Khi tôi hỏi ý kiến ​​nhân viên cửa hàng về cỡ giày không vừa với tôi, cô ấy đã kiểm tra kho hàng và đổi lấy một cỡ lớn hơn."}
+{"id": 892, "ja": "このシャツ、洗濯したら縮んじゃった。", "gg": "Chiếc áo sơ mi này bị co lại sau khi tôi giặt nó."}
+{"id": 893, "ja": "袋は要りません、そのまま入れてください。", "gg": "Bạn không cần một chiếc túi, chỉ cần đặt nó vào."}
+{"id": 894, "ja": "プレゼント用に包装してもらえますか。", "gg": "Bạn có thể gói nó để làm quà không?"}
+{"id": 895, "ja": "このジャケット、着てみてもいいですか。", "gg": "Tôi có thể thử chiếc áo khoác này được không?"}
+{"id": 896, "ja": "支払いは分割にできますか。", "gg": "Tôi có thể trả góp được không?"}
+{"id": 897, "ja": "免税手続きはどこでできますか。", "gg": "Tôi có thể nộp đơn xin miễn thuế ở đâu?"}
+{"id": 898, "ja": "店員さんがとても丁寧に接客してくれて、サイズが合わない服を交換してもらえただけでなく、コーディネートの相談にも親切に応じてくれた。", "gg": "Nhân viên cửa hàng rất lịch sự, không chỉ đổi quần áo không vừa vặn mà còn tận tình tư vấn cách phối đồ."}
+{"id": 899, "ja": "在庫がなければ、取り寄せてもらえますか。", "gg": "Nếu không có hàng thì đặt hàng được không?"}
+{"id": 900, "ja": "明日は晴れるらしいよ。", "gg": "Có vẻ như ngày mai trời sẽ nắng."}
+{"id": 901, "ja": "今日は蒸し暑いね。", "gg": "Hôm nay trời nóng và ẩm ướt."}
+{"id": 902, "ja": "台風が近づいているので、外出は控えたほうがいい。", "gg": "Bão đang đến gần, tốt nhất bạn nên hạn chế ra ngoài."}
+{"id": 903, "ja": "桜が咲き始めたら、お花見に行こう。", "gg": "Khi hoa anh đào bắt đầu nở, chúng ta hãy đi ngắm chúng nhé."}
+{"id": 904, "ja": "今年の夏は例年より暑くなる見込みです。", "gg": "Mùa hè năm nay dự kiến ​​sẽ nóng hơn thường lệ."}
+{"id": 905, "ja": "雪が積もって、電車が止まってしまった。", "gg": "Tuyết rơi dày đặc và tàu dừng lại."}
+{"id": 906, "ja": "傘を持っていったほうがいいと思う。", "gg": "Tôi nghĩ bạn nên mang theo một chiếc ô."}
+{"id": 907, "ja": "紅葉がきれいな季節になったね。", "gg": "Đó là mùa của những chiếc lá mùa thu tuyệt đẹp."}
+{"id": 908, "ja": "梅雨の時期は湿気がひどくて、洗濯物が乾かない。", "gg": "Vào mùa mưa, trời ẩm ướt khiến đồ giặt không khô."}
+{"id": 909, "ja": "気温が急に下がったから、風邪をひかないように。", "gg": "Nhiệt độ đã giảm đột ngột, vì vậy đừng để bị cảm lạnh."}
+{"id": 910, "ja": "天気予報によると、午後から雨が降るそうだ。", "gg": "Theo dự báo thời tiết, trời sẽ mưa vào buổi chiều."}
+{"id": 911, "ja": "今朝は霜が降りていて、道が凍っていた。", "gg": "Sáng nay trời lạnh và đường cũng đóng băng."}
+{"id": 912, "ja": "こんなに暑い日は、かき氷が食べたくなる。", "gg": "Trời nóng thế này mà thèm ăn đá bào quá."}
+{"id": 913, "ja": "冬になると、日が短くなって寂しい気持ちになる。", "gg": "Vào mùa đông, ngày trở nên ngắn hơn và tôi cảm thấy cô đơn."}
+{"id": 914, "ja": "湿度が高い日は、汗が全然乾かない。", "gg": "Vào những ngày ẩm ướt, mồ hôi không bao giờ khô."}
+{"id": 915, "ja": "秋の空は澄んでいて、遠くの山まで見える。", "gg": "Bầu trời mùa thu trong xanh đến mức bạn thậm chí có thể nhìn thấy những ngọn núi ở phía xa."}
+{"id": 916, "ja": "今年は雪が少なくて、スキー場が困っているらしい。", "gg": "Có vẻ như năm nay không có nhiều tuyết và các khu trượt tuyết đang gặp khó khăn."}
+{"id": 917, "ja": "春一番が吹いて、花粉が一気に舞い上がった。", "gg": "Làn gió đầu tiên của mùa xuân thổi qua, phấn hoa bay đi cùng một lúc."}
+{"id": 918, "ja": "夕立が来る前に、洗濯物を取り込んでおこう。", "gg": "Chúng ta hãy đi giặt đồ trước khi tắm."}
+{"id": 919, "ja": "猛暑日が続いているので、熱中症に気をつけてください。", "gg": "Những ngày nắng nóng vẫn tiếp tục kéo dài nên các bạn hãy cẩn thận bị say nắng nhé."}
+{"id": 920, "ja": "毎週日曜日にサッカーの練習がある。", "gg": "Chúng tôi có buổi tập bóng đá vào mỗi Chủ Nhật."}
+{"id": 921, "ja": "野球の試合、何対何だった？", "gg": "Trận đấu bóng chày nói về điều gì?"}
+{"id": 922, "ja": "マラソンを完走したときは、涙が出た。", "gg": "Khi tôi hoàn thành cuộc chạy marathon, tôi đã khóc."}
+{"id": 923, "ja": "ジムに週三回通っている。", "gg": "Tôi đến phòng tập thể dục ba lần một tuần."}
+{"id": 924, "ja": "このチームは今シーズン、絶好調だね。", "gg": "Đội bóng này đang chơi rất tốt ở mùa giải này."}
+{"id": 925, "ja": "筋トレを始めてから、体つきが変わってきた。", "gg": "Kể từ khi tôi bắt đầu tập tạ, vóc dáng của tôi đã thay đổi."}
+{"id": 926, "ja": "バスケの試合を観に行かない？", "gg": "Bạn có muốn đi xem một trận bóng rổ không?"}
+{"id": 927, "ja": "水泳は全身運動になるからおすすめだよ。", "gg": "Bơi lội được khuyến khích vì nó rèn luyện toàn bộ cơ thể."}
+{"id": 928, "ja": "昨日のオリンピックの決勝、見た？", "gg": "Bạn có xem trận chung kết Olympic ngày hôm qua không?"}
+{"id": 929, "ja": "卓球のラケットを新しく買った。", "gg": "Tôi đã mua một cây vợt bóng bàn mới."}
+{"id": 930, "ja": "トレーニングの後は、しっかりストレッチをすること。", "gg": "Sau khi tập luyện, hãy nhớ giãn cơ thật kỹ."}
+{"id": 931, "ja": "サッカーボールを蹴る練習を毎日している。", "gg": "Tôi tập đá bóng mỗi ngày."}
+{"id": 932, "ja": "マラソン大会にエントリーしたけど、練習不足で心配だ。", "gg": "Tôi đã tham gia một cuộc chạy marathon nhưng tôi lo lắng vì chưa luyện tập đủ."}
+{"id": 933, "ja": "コーチに、フォームが良くなったと言われた。", "gg": "Huấn luyện viên của tôi nói với tôi rằng phong độ của tôi đã được cải thiện."}
+{"id": 934, "ja": "部活の朝練は本当にきつい。", "gg": "Việc luyện tập buổi sáng cho hoạt động câu lạc bộ thực sự rất khó khăn."}
+{"id": 935, "ja": "ヨガを始めてから、体が柔らかくなった気がする。", "gg": "Từ khi tập yoga, tôi cảm thấy cơ thể mình trở nên linh hoạt hơn."}
+{"id": 936, "ja": "試合前は緊張して、なかなか眠れなかった。", "gg": "Tôi đã rất lo lắng trước trận đấu đến nỗi không thể ngủ ngon được."}
+{"id": 937, "ja": "スキーで転んで、腕を痛めてしまった。", "gg": "Tôi bị ngã khi trượt tuyết và bị thương ở cánh tay."}
+{"id": 938, "ja": "自転車競技には興味があるけど、機材が高い。", "gg": "Tôi quan tâm đến môn đua xe đạp cạnh tranh nhưng thiết bị thì đắt tiền."}
+{"id": 939, "ja": "決勝戦は延長戦にもつれ込んで、最後まで目が離せなかった。", "gg": "Trận đấu cuối cùng bước vào hiệp phụ và tôi không thể rời mắt cho đến phút cuối cùng."}
+{"id": 940, "ja": "すみません、駅はどちらですか。", "gg": "Xin lỗi, đó là ga nào?"}
+{"id": 941, "ja": "この道をまっすぐ行くと、交差点に出ます。", "gg": "Nếu đi thẳng theo con đường này sẽ đến một ngã tư."}
+{"id": 942, "ja": "次の角を右に曲がってください。", "gg": "Rẽ phải ở góc tiếp theo."}
+{"id": 943, "ja": "ここから歩いて何分くらいかかりますか。", "gg": "Từ đây đi bộ mất bao nhiêu phút?"}
+{"id": 944, "ja": "コンビニの隣に、目的の建物があります。", "gg": "Tòa nhà mục tiêu nằm cạnh cửa hàng tiện lợi."}
+{"id": 945, "ja": "すみません、道に迷ってしまったんですが。", "gg": "Xin lỗi, tôi bị lạc."}
+{"id": 946, "ja": "郵便局はこの近くにありますか。", "gg": "Có bưu điện nào gần đây không?"}
+{"id": 947, "ja": "信号を渡って、二つ目のビルです。", "gg": "Đây là tòa nhà thứ hai sau khi vượt đèn giao thông."}
+{"id": 948, "ja": "あそこの橋を渡ったら、すぐ見えてくる。", "gg": "Khi bạn đi qua cây cầu đó, bạn sẽ nhìn thấy nó ngay."}
+{"id": 949, "ja": "この地図で今どこにいるか分かりますか。", "gg": "Bạn có thể cho biết mình đang ở đâu trên bản đồ này không?"}
+{"id": 950, "ja": "まっすぐ行って、突き当たりを左に曲がってください。", "gg": "Đi thẳng và rẽ trái ở cuối."}
+{"id": 951, "ja": "目印になる大きな看板があるので、見つけやすいと思う。", "gg": "Tôi nghĩ rất dễ tìm vì có một tấm biển lớn để đánh dấu."}
+{"id": 952, "ja": "すみません、この住所まで行きたいのですが、地図で示していただけますか。", "gg": "Xin lỗi, tôi muốn đến địa chỉ này, bạn có thể chỉ cho tôi trên bản đồ được không?"}
+{"id": 953, "ja": "あの交差点を過ぎたら、すぐ左手に見えます。", "gg": "Sau khi bạn vượt qua ngã tư đó, bạn sẽ thấy nó ở bên trái."}
+{"id": 954, "ja": "ここから一番近いコンビニはどこですか。", "gg": "Cửa hàng tiện lợi gần đây nhất ở đâu?"}
+{"id": 955, "ja": "地下鉄の出口を間違えて、逆方向に歩いてしまった。", "gg": "Tôi đã đi nhầm lối ra khỏi tàu điện ngầm và cuối cùng lại đi bộ theo hướng ngược lại."}
+{"id": 956, "ja": "公園の入り口を通り過ぎると、噴水が見えます。", "gg": "Khi bạn đi qua lối vào công viên, bạn sẽ thấy một đài phun nước."}
+{"id": 957, "ja": "その建物の裏に、小さな駐車場があります。", "gg": "Có một bãi đậu xe nhỏ phía sau tòa nhà."}
+{"id": 958, "ja": "案内板に従って進めば、迷わないと思います。", "gg": "Nếu bạn đi theo bảng hướng dẫn, tôi không nghĩ bạn sẽ bị lạc."}
+{"id": 959, "ja": "すみません、この近くにトイレはありますか。", "gg": "Xin lỗi, có nhà vệ sinh nào gần đây không?"}
+{"id": 960, "ja": "次の電車は何分後に来ますか。", "gg": "Sau bao nhiêu phút thì chuyến tàu tiếp theo sẽ đến?"}
+{"id": 961, "ja": "この電車は新宿に止まりますか。", "gg": "Chuyến tàu này có dừng ở Shinjuku không?"}
+{"id": 962, "ja": "切符はどこで買えますか。", "gg": "Tôi mua vé ở đâu."}
+{"id": 963, "ja": "終電に間に合わなかった。", "gg": "Tôi đã lỡ chuyến tàu cuối cùng."}
+{"id": 964, "ja": "バスの時刻表を確認しておこう。", "gg": "Hãy kiểm tra lịch trình xe buýt."}
+{"id": 965, "ja": "タクシーを呼んでもらえますか。", "gg": "Bạn có thể gọi cho tôi một chiếc taxi được không?"}
+{"id": 966, "ja": "満員電車、本当に疲れる。", "gg": "Những chuyến tàu đông đúc thực sự rất mệt mỏi."}
+{"id": 967, "ja": "この路線は東京駅で乗り換えが必要です。", "gg": "Tuyến này yêu cầu chuyển tuyến tại Ga Tokyo."}
+{"id": 968, "ja": "ICカードの残高が足りなくて、改札で止められた。", "gg": "Tôi bị dừng lại ở cổng soát vé vì không có đủ số dư trong thẻ IC."}
+{"id": 969, "ja": "新幹線の指定席を予約したい。", "gg": "Tôi muốn đặt chỗ trên tàu Shinkansen."}
+{"id": 970, "ja": "この時間帯は道が混んでいて、タクシーがなかなか来ないので、電車で行ったほうが早いかもしれない。", "gg": "Vào thời điểm này trong ngày, đường rất đông và khó có taxi nên đi bằng tàu hỏa có thể sẽ nhanh hơn."}
+{"id": 971, "ja": "駐車場はどこにありますか。", "gg": "Bãi đậu xe ở đâu?"}
+{"id": 972, "ja": "飛行機の出発が遅れているらしい。", "gg": "Có vẻ như chuyến bay khởi hành đã bị trì hoãn."}
+{"id": 973, "ja": "自転車で通勤しているので、雨の日は大変だ。", "gg": "Tôi đi lại bằng xe đạp nên những ngày mưa thật khó khăn."}
+{"id": 974, "ja": "バス停はここから少し離れています。", "gg": "Trạm xe buýt cách đây hơi xa."}
+{"id": 975, "ja": "高速道路が事故で通行止めになっているそうだ。", "gg": "Rõ ràng đường cao tốc bị đóng cửa do một vụ tai nạn."}
+{"id": 976, "ja": "電車を乗り過ごして、一駅先まで行ってしまった。", "gg": "Tôi lỡ chuyến tàu và đi mất một ga."}
+{"id": 977, "ja": "レンタカーを借りて、地方をドライブするのも楽しそうだ。", "gg": "Có thể sẽ rất thú vị nếu thuê một chiếc ô tô và lái vòng quanh vùng nông thôn."}
+{"id": 978, "ja": "この時間だと、まだ通勤ラッシュが続いているはずだ。", "gg": "Lúc này chắc hẳn vẫn đang là giờ cao điểm."}
+{"id": 979, "ja": "フェリーの乗船時間は何時ですか。", "gg": "Mấy giờ phà cập bến?"}
+{"id": 980, "ja": "やっぱり日本の夏は蒸し暑いなあ。", "gg": "Xét cho cùng, mùa hè ở Nhật Bản rất nóng và ẩm."}
+{"id": 981, "ja": "これ、本当に美味しい！", "gg": "Món này thực sự rất ngon!"}
+{"id": 982, "ja": "気をつけて行ってきてね！", "gg": "Hãy cẩn thận khi bạn đi!"}
+{"id": 983, "ja": "まさか、こんなに市場が混んでいるとは思わなかった。", "gg": "Tôi không ngờ chợ lại đông đúc đến thế."}
+{"id": 984, "ja": "ちょっと待ってください、今切符を探しています。", "gg": "Đợi một chút, tôi đang tìm vé ngay bây giờ."}
+{"id": 985, "ja": "うわ、すごい人だかりだね、祭りかな。", "gg": "Wow, có một đám đông rất lớn, tôi đoán đó là một lễ hội."}
+{"id": 986, "ja": "さすが、京都の紅葉は評判通りだった。", "gg": "Đúng như dự đoán, lá mùa thu ở Kyoto đã xứng đáng với danh tiếng của nó."}
+{"id": 987, "ja": "どうしよう、新幹線に荷物を忘れてしまった。", "gg": "Tôi quên hành lý trên tàu Shinkansen."}
+{"id": 988, "ja": "なるほど、この定食にはドリンクも付いているのか。", "gg": "Tôi hiểu rồi, suất ăn này cũng có kèm theo đồ uống."}
+{"id": 989, "ja": "びっくりした！急に雷が鳴って、雨も降ってきた。", "gg": "Tôi đã rất ngạc nhiên! Đột nhiên có sấm sét và trời bắt đầu mưa."}
+{"id": 990, "ja": "お会計、ありがとうございました。", "gg": "Cảm ơn bạn đã thanh toán."}
+{"id": 991, "ja": "案内よろしくお願いします。", "gg": "Cảm ơn bạn đã hướng dẫn của bạn."}
+{"id": 992, "ja": "ちょっと聞いてもいいですか、この近くに両替できる場所はありますか。", "gg": "Cho em hỏi gần đây có chỗ nào đổi tiền được không ạ?"}
+{"id": 993, "ja": "親切に道を教えていただいて、本当にありがとうございました。", "gg": "Cảm ơn bạn rất nhiều vì đã vui lòng chỉ đường cho tôi."}
+{"id": 994, "ja": "暗くなってきたから、気をつけて帰ってね。", "gg": "Trời sắp tối rồi, về nhà hãy cẩn thận nhé."}
+{"id": 995, "ja": "また今度、あの温泉に来てね。", "gg": "Hãy đến suối nước nóng đó lần sau nhé."}
+{"id": 996, "ja": "荷物が届かなかったなんて、それは大変だったね。", "gg": "Chắc hẳn việc không giao gói hàng của bạn là một vấn đề lớn."}
+{"id": 997, "ja": "来週の旅行、楽しみにしています。", "gg": "Tôi đang mong chờ chuyến đi vào tuần tới."}
+{"id": 998, "ja": "お土産、どういたしまして。", "gg": "Bạn được chào đón như một món quà lưu niệm."}
+{"id": 999, "ja": "お先に会計を済ませておきます。", "gg": "Tôi sẽ thanh toán hóa đơn trước."}
+{"id": 1000, "ja": "政府は来年度予算案において社会保障費を前年比三・二パーセント増となる三十八兆円台に積み上げる方針を固めた。", "gg": "Trong đề xuất ngân sách năm tới, chính phủ đã quyết định tăng chi phí an sinh xã hội lên 38 nghìn tỷ yên, tăng 3,2% so với năm trước."}
+{"id": 1001, "ja": "少子化に歯止めがかからず、昨年の出生数は七十万人を割り込み、統計開始以来の最低を更新した。", "gg": "Tỷ lệ sinh giảm tiếp tục không suy giảm, với số ca sinh giảm xuống dưới 700.000 vào năm ngoái, mức thấp nhất kể từ khi số liệu thống kê bắt đầu được lưu giữ."}
+{"id": 1002, "ja": "灯台下暗しというように、身近な課題ほど見過ごされやすいものだ。", "gg": "Vấn đề càng quen thuộc thì càng dễ bị bỏ qua, chẳng hạn như khi trời tối dưới ngọn hải đăng."}
+{"id": 1003, "ja": "円安の長期化を受け、輸入原材料に依存する中小企業の経営は一段と厳しさを増している。", "gg": "Do đồng yên mất giá kéo dài, việc quản lý các doanh nghiệp vừa và nhỏ dựa vào nguyên liệu nhập khẩu ngày càng trở nên khó khăn."}
+{"id": 1004, "ja": "与党内では憲法改正論議を加速させるべきだとの声が強まっている一方、慎重な対応を求める議員も少なくない。", "gg": "Trong khi ngày càng có nhiều lời kêu gọi trong nội bộ đảng cầm quyền đẩy nhanh các cuộc thảo luận về sửa đổi hiến pháp, thì cũng có nhiều thành viên kêu gọi cách tiếp cận thận trọng."}
+{"id": 1005, "ja": "東京都内の私立大学の入学金は平均で二十五万円前後に達し、家庭の教育費負担は依然重い。", "gg": "Phí vào cửa trung bình của các trường đại học tư ở Tokyo đạt khoảng 250.000 yên và gánh nặng chi phí giáo dục đối với các gia đình vẫn còn nặng nề."}
+{"id": 1006, "ja": "新しい習慣を長く続けられる人は少なく、多くが数週間のうちに元の生活へ戻ってしまうという調査結果がある。", "gg": "Nghiên cứu cho thấy rất ít người gắn bó lâu dài với những thói quen mới và hầu hết mọi người sẽ quay lại thói quen cũ trong vòng vài tuần."}
+{"id": 1007, "ja": "地方自治体の多くが人口減少による税収の縮小に頭を悩ませている。", "gg": "Nhiều chính quyền địa phương lo ngại nguồn thu thuế sụt giảm do dân số sụt giảm."}
+{"id": 1008, "ja": "気候変動対策として再生可能エネルギーの比率を高める動きが加速しているが、安定供給の課題は残されたままだ。", "gg": "Mặc dù phong trào tăng tỷ lệ năng lượng tái tạo như một biện pháp chống biến đổi khí hậu đang được đẩy mạnh nhưng vấn đề nguồn cung ổn định vẫn còn."}
+{"id": 1009, "ja": "有識者の間では、労働時間の短縮が生産性の向上につながるという見方が広がっている。", "gg": "Có một quan điểm rộng rãi giữa các chuyên gia rằng việc rút ngắn thời gian làm việc sẽ dẫn đến năng suất được cải thiện."}
+{"id": 1010, "ja": "伝統工芸の技法を見直す動きが、地方における新たな産業の芽として注目され始めている。", "gg": "Phong trào rà soát kỹ thuật thủ công truyền thống đang bắt đầu thu hút sự chú ý khi là mầm non của ngành công nghiệp mới ở nông thôn."}
+{"id": 1011, "ja": "外国人労働者の受け入れ拡大に向け、政府は制度改正の検討に入ったと発表した。", "gg": "Chính phủ thông báo rằng họ đã bắt đầu xem xét cải cách hệ thống để mở rộng việc tiếp nhận lao động nước ngoài."}
+{"id": 1012, "ja": "一部の専門家は、今後十年で国内総生産の成長率は一パーセント台にとどまると予測している。", "gg": "Một số chuyên gia dự đoán rằng tăng trưởng tổng sản phẩm quốc nội sẽ duy trì ở mức 1% trong thập kỷ tới."}
+{"id": 1013, "ja": "若者の投票率は前回の選挙でわずか三十四パーセントにすぎず、政治への関心の低さが浮き彫りになった。", "gg": "Tỷ lệ cử tri đi bầu trong giới trẻ chỉ là 34% trong cuộc bầu cử vừa qua, cho thấy họ ít quan tâm đến chính trị."}
+{"id": 1014, "ja": "教育現場ではデジタル教材の導入が進む一方、教員の負担増を懸念する声も上がっている。", "gg": "Trong khi việc áp dụng các tài liệu giảng dạy kỹ thuật số đang tiến triển trong môi trường giáo dục, cũng có những lo ngại về gánh nặng ngày càng tăng đối với giáo viên."}
+{"id": 1015, "ja": "「二兎を追う者は一兎をも得ず」ということわざは、経営戦略の選択と集中を考える上で示唆に富む。", "gg": "Câu tục ngữ “Ai đuổi hai con thỏ sẽ không bao giờ bắt được một con” mang lại nhiều gợi ý khi xem xét việc lựa chọn và tập trung các chiến lược quản lý."}
+{"id": 1016, "ja": "物価上昇が続く中、家計の実質所得は三年連続で減少した。", "gg": "Khi giá cả tiếp tục tăng, thu nhập thực tế của hộ gia đình giảm năm thứ ba liên tiếp."}
+{"id": 1017, "ja": "地域医療を支える医師の不足は、過疎地においてとりわけ深刻な問題となっている。", "gg": "Tình trạng thiếu bác sĩ để hỗ trợ chăm sóc y tế cộng đồng là một vấn đề đặc biệt nghiêm trọng ở các khu vực đông dân cư."}
+{"id": 1018, "ja": "文化庁の調査によれば、伝統芸能の担い手の平均年齢は六十歳を超えている。", "gg": "Theo khảo sát của Cục Văn hóa, độ tuổi trung bình của các nghệ sĩ biểu diễn truyền thống là trên 60 tuổi."}
+{"id": 1019, "ja": "経済界からは、法人税の負担軽減を求める要望書が相次いで提出された。", "gg": "Cộng đồng doanh nghiệp gửi hàng loạt yêu cầu giảm gánh nặng thuế doanh nghiệp."}
+{"id": 1020, "ja": "大学進学率は上昇を続けているものの、地方と都市の教育格差はむしろ拡大しているという指摘がある。", "gg": "Mặc dù tỷ lệ học sinh tiếp tục học lên đại học tiếp tục tăng nhưng người ta chỉ ra rằng sự chênh lệch về trình độ học vấn giữa khu vực nông thôn và thành thị ngày càng gia tăng."}
+{"id": 1021, "ja": "為替市場では一時、一ドル百六十円台まで円が急落し、市場関係者に動揺が広がった。", "gg": "Trên thị trường ngoại hối, có thời điểm đồng yên giảm mạnh xuống mức 160 yên ăn 1 USD, gây bất ổn cho những người tham gia thị trường."}
+{"id": 1022, "ja": "「転ばぬ先の杖」ということわざどおり、災害への備えは平時にこそ整えておくべきである。", "gg": "Như người ta thường nói, “chiếc nạng giúp bạn không bị ngã”, cách tốt nhất là chuẩn bị cho những thảm họa trong thời gian bình thường."}
+{"id": 1023, "ja": "政府の有識者会議は、少子化対策の財源確保について結論を先送りした。", "gg": "Nhóm chuyên gia của chính phủ đã trì hoãn việc đưa ra kết luận về việc đảm bảo nguồn tài chính để chống lại tỷ lệ sinh đang giảm."}
+{"id": 1024, "ja": "高齢者の単独世帯が全世帯の四分の一を超え、孤立死の防止が急務となっている。", "gg": "Các hộ gia đình độc thân có người cao tuổi chiếm hơn 1/4 tổng số hộ gia đình, khiến việc ngăn ngừa tử vong do cách ly trở nên cấp thiết."}
+{"id": 1025, "ja": "地方創生を掲げる自治体の多くは、若年層の流出をいかに食い止めるかで苦慮している。", "gg": "Nhiều chính quyền địa phương ủng hộ việc phục hồi khu vực đang phải vật lộn với việc làm thế nào để ngăn chặn làn sóng di cư của giới trẻ."}
+{"id": 1026, "ja": "世論調査では、内閣支持率が前月から五ポイント下落し三十パーセント台に落ち込んだ。", "gg": "Theo các cuộc thăm dò dư luận, tỷ lệ tán thành của Nội các đã giảm xuống mức 30%, giảm 5 điểm so với tháng trước."}
+{"id": 1027, "ja": "木を見て森を見ずという態度では、複雑化する国際情勢を正しく読み解くことはできない。", "gg": "Nếu không nhìn thấy rừng mà thấy cây, chúng ta sẽ không thể giải thích chính xác tình hình quốc tế ngày càng phức tạp."}
+{"id": 1028, "ja": "企業の賃上げ率は平均三・八パーセントとなり、三十年ぶりの高水準を記録した。", "gg": "Mức tăng lương doanh nghiệp trung bình là 3,8%, mức cao nhất trong 30 năm."}
+{"id": 1029, "ja": "政治への不信感が広がる中、若い世代の間では「どうせ変わらない」というあきらめの声も聞かれる。", "gg": "Trong bối cảnh ngày càng mất niềm tin vào chính trị, một số thế hệ trẻ đang từ bỏ và nói rằng, “Sẽ không có gì thay đổi”."}
+{"id": 1030, "ja": "有言実行を旨とする経営者ほど、社員からの信頼を集めやすいという調査結果が出ている。", "gg": "Nghiên cứu đã chỉ ra rằng những nhà quản lý cam kết làm theo lời họ sẽ có nhiều khả năng nhận được sự tin tưởng của nhân viên hơn."}
+{"id": 1031, "ja": "自治体の財政難を背景に、公共施設の統廃合が各地で進められている。", "gg": "Trong bối cảnh khó khăn tài chính của chính quyền địa phương, việc hợp nhất và bãi bỏ các cơ sở công cộng đang được tiến hành ở nhiều khu vực khác nhau."}
+{"id": 1032, "ja": "なぜ日本の労働生産性は主要先進国の中で低い水準にとどまっているのか、経済学者の間でも議論が続いている。", "gg": "Các nhà kinh tế vẫn đang tranh cãi vì sao năng suất lao động của Nhật Bản vẫn ở mức thấp so với các nước phát triển lớn."}
+{"id": 1033, "ja": "環境省は、プラスチックごみの削減目標を新たに設定する方針を明らかにした。", "gg": "Bộ Môi trường đã công bố chính sách đặt ra các mục tiêu mới để giảm thiểu rác thải nhựa."}
+{"id": 1034, "ja": "「井の中の蛙」にならぬよう、若い世代には海外の多様な価値観に触れる機会を積極的に設けてほしい。", "gg": "Để tránh trở thành “ếch ngồi đáy giếng”, tôi mong muốn thế hệ trẻ hãy chủ động tạo cơ hội trải nghiệm những giá trị đa dạng từ các quốc gia khác."}
+{"id": 1035, "ja": "政府統計によると、非正規雇用の割合は労働者全体の三十七パーセントに達している。", "gg": "Theo thống kê của chính phủ, việc làm không thường xuyên chiếm 37% tổng lực lượng lao động."}
+{"id": 1036, "ja": "一方で、地方の中小企業では後継者不在による廃業が相次いでいる。", "gg": "Mặt khác, nhiều doanh nghiệp vừa và nhỏ ở địa phương đang phải đóng cửa do thiếu người kế thừa."}
+{"id": 1037, "ja": "教育とは知識を教えるだけでなく、考える力を育む営みでなければならない。", "gg": "Giáo dục không chỉ dạy kiến ​​thức mà còn bồi dưỡng khả năng tư duy."}
+{"id": 1038, "ja": "覆水盆に返らずというが、失われた自然環境を元に戻すには数十年の時間が必要になる。", "gg": "Người ta cho rằng khu vực này sẽ không trở lại trạng thái ban đầu mà phải mất vài chục năm mới có thể khôi phục lại môi trường tự nhiên đã bị mất."}
+{"id": 1039, "ja": "経済安全保障の観点から、半導体の国内生産体制を強化する動きが官民で進んでいる。", "gg": "Từ góc độ an ninh kinh tế, các động thái đang được tiến hành trong khu vực công và tư nhân nhằm tăng cường hệ thống sản xuất chất bán dẫn trong nước."}
+{"id": 1040, "ja": "世界的な資源価格の高騰は、エネルギーを輸入に依存する日本経済に重い影を落としている。", "gg": "Giá tài nguyên toàn cầu tăng vọt đang phủ bóng đen lên nền kinh tế Nhật Bản vốn phụ thuộc vào năng lượng nhập khẩu."}
+{"id": 1041, "ja": "「二階から目薬」のような対策では、深刻化する人手不足の解消には至らない。", "gg": "Các biện pháp như “thuốc nhỏ mắt bậc hai” sẽ không giải quyết được tình trạng thiếu lao động ngày càng trầm trọng."}
+{"id": 1042, "ja": "総務省の発表によれば、空き家の総数は全国で九百万戸を超え、過去最多を更新した。", "gg": "Theo thông báo của Bộ Nội vụ và Truyền thông, tổng số nhà trống trên toàn quốc đã vượt 9 triệu, mức cao kỷ lục mới."}
+{"id": 1043, "ja": "政治家の発言一つが市場を動かす時代にあって、言葉の重みはかつてないほど増している。", "gg": "Trong thời đại mà một tuyên bố duy nhất của một chính trị gia có thể làm rung chuyển thị trường, lời nói có sức nặng hơn bao giờ hết."}
+{"id": 1044, "ja": "果たして、経済成長と環境保護は本当に両立し得るのだろうか？", "gg": "Liệu tăng trưởng kinh tế và bảo vệ môi trường có thực sự đi đôi với nhau?"}
+{"id": 1045, "ja": "出生率の低下は単なる数字の問題ではなく、社会の持続可能性そのものを問う課題である。", "gg": "Tỷ lệ sinh giảm không chỉ là vấn đề con số mà còn là vấn đề đặt ra câu hỏi về tính bền vững của xã hội."}
+{"id": 1046, "ja": "有識者の多くは、賃金と物価の好循環が実現するまでにはなお時間がかかると見ている。", "gg": "Nhiều chuyên gia tin rằng vẫn cần thời gian để một chu kỳ tích cực về tiền lương và giá cả thành hiện thực."}
+{"id": 1047, "ja": "企業の間では、週休三日制を導入する動きが徐々に広がりを見せている。", "gg": "Phong trào áp dụng tuần làm việc ba ngày đang dần được các công ty hưởng ứng."}
+{"id": 1048, "ja": "情報過多の時代において、何を信じるべきかを見極める力がますます求められている。", "gg": "Trong thời đại quá tải thông tin, con người ngày càng được yêu cầu phải có khả năng phân biệt những gì nên tin."}
+{"id": 1049, "ja": "「一石二鳥」を狙った政策も、実際には副作用を伴うことが少なくない。", "gg": "Chính sách nhằm một mũi tên trúng hai con chim thường có tác dụng phụ."}
+{"id": 1050, "ja": "過疎地域における公共交通の縮小は、高齢者の生活の足を奪う深刻な問題となっている。", "gg": "Việc giảm phương tiện giao thông công cộng ở các khu vực đông dân cư đã trở thành một vấn đề nghiêm trọng khiến người cao tuổi mất đi sinh kế."}
+{"id": 1051, "ja": "経済団体連合会は、賃上げの流れを中小企業にも広げるべきだと訴えている。", "gg": "Liên đoàn các tổ chức kinh tế đang kêu gọi mở rộng việc tăng lương cho các doanh nghiệp vừa và nhỏ."}
+{"id": 1052, "ja": "読書離れが進む若年層に対し、図書館や学校では新たな取り組みを模索している。", "gg": "Các thư viện và trường học đang tìm kiếm những cách tiếp cận mới để giúp giới trẻ bớt hứng thú với việc đọc sách hơn."}
+{"id": 1053, "ja": "政府は、来年の通常国会に働き方改革関連法案の再改正案を提出する見通しだ。", "gg": "Chính phủ dự kiến ​​sẽ đệ trình dự luật sửa đổi dự luật cải cách phong cách làm việc trong phiên họp thường kỳ của Quốc hội vào năm tới."}
+{"id": 1054, "ja": "「光陰矢のごとし」と言われるように、平成から令和へと移り変わる時代の速さに驚かされる。", "gg": "Như người ta thường nói, “ánh sáng và bóng tối di chuyển như những mũi tên”, chúng ta ngạc nhiên về tốc độ thay đổi của thời đại từ thời Heisei sang thời Reiwa."}
+{"id": 1055, "ja": "世論の分断が進む社会において、対話を通じた合意形成の重要性はますます高まっている。", "gg": "Trong một xã hội mà dư luận ngày càng bị chia rẽ, việc xây dựng sự đồng thuận thông qua đối thoại ngày càng trở nên quan trọng."}
+{"id": 1056, "ja": "地方銀行の統合が相次ぐ背景には、人口減少による経営環境の悪化がある。", "gg": "Nguyên nhân đằng sau sự hợp nhất liên tiếp của các ngân hàng trong nước là sự suy thoái của môi trường kinh doanh do dân số giảm."}
+{"id": 1057, "ja": "教育格差の是正には、家庭の経済状況にかかわらず学べる仕組みづくりが欠かせない。", "gg": "Để khắc phục sự chênh lệch về giáo dục, điều cần thiết là phải tạo ra một hệ thống cho phép trẻ em học tập bất kể hoàn cảnh kinh tế của gia đình chúng như thế nào."}
+{"id": 1058, "ja": "中央銀行は、金融政策の正常化に向けた道筋を慎重に見極めているとみられる。", "gg": "Ngân hàng trung ương dường như đang đánh giá cẩn thận con đường hướng tới bình thường hóa chính sách tiền tệ."}
+{"id": 1059, "ja": "「七転び八起き」の精神こそが、変化の激しい時代を生き抜く力になるのではないか。", "gg": "Tinh thần “bảy lần vấp ngã và tám lần đứng dậy” có thể là thứ mang lại cho chúng ta sức mạnh để tồn tại trong thời kỳ thay đổi nhanh chóng."}
+{"id": 1060, "ja": "少子高齢化が進む日本社会において、社会保障制度の持続可能性は避けて通れない論点だ。", "gg": "Trong xã hội Nhật Bản, nơi tỷ lệ sinh ngày càng giảm và dân số đang già đi, tính bền vững của hệ thống an sinh xã hội là vấn đề tất yếu."}
+{"id": 1061, "ja": "農業従事者の高齢化は深刻で、担い手の平均年齢はすでに六十八歳を超えている。", "gg": "Sự già đi của lao động nông nghiệp là một vấn đề nghiêm trọng, với độ tuổi trung bình của nông dân đã trên 68 tuổi."}
+{"id": 1062, "ja": "政府は観光立国を掲げ、訪日外国人数を年間六千万人まで引き上げる目標を設定した。", "gg": "Chính phủ đã đặt mục tiêu nâng số lượng du khách nước ngoài đến Nhật Bản lên 60 triệu mỗi năm, nhằm đưa Nhật Bản trở thành quốc gia định hướng du lịch."}
+{"id": 1063, "ja": "デジタル化の波に取り残される高齢者への支援策も、同時に講じられるべきである。", "gg": "Đồng thời cũng cần thực hiện các biện pháp hỗ trợ người cao tuổi bị bỏ lại phía sau trong làn sóng số hóa."}
+{"id": 1064, "ja": "「弱肉強食」の市場競争が行き過ぎれば、社会全体の分断を招く恐れがある。", "gg": "Nếu sự cạnh tranh trên thị trường trong đó “thịt của kẻ mạnh nhất” đi quá xa, nó có thể dẫn đến sự chia rẽ trong toàn xã hội."}
+{"id": 1065, "ja": "地方議会の議員選挙では、無投票当選が全体の三割近くに達したと報じられている。", "gg": "Được biết, gần 30% cuộc bầu cử hội đồng địa phương đã giành chiến thắng mà không cần bỏ phiếu."}
+{"id": 1066, "ja": "大企業と中小企業の間で賃上げの実施率に大きな差が生じていることが調査で明らかになった。", "gg": "Cuộc khảo sát cho thấy có sự khác biệt lớn về tỷ lệ thực hiện tăng lương giữa các công ty lớn và các công ty vừa và nhỏ."}
+{"id": 1067, "ja": "若者の間では、安定した公務員志望が再び高まる傾向がみられる。", "gg": "Trong giới trẻ, mong muốn trở thành một công chức ổn định đang trỗi dậy."}
+{"id": 1068, "ja": "「切磋琢磨」という言葉が示すように、競争は必ずしも敵対を意味するものではない。", "gg": "Như từ “cạnh tranh thân thiện” gợi ý, cạnh tranh không nhất thiết có nghĩa là thù địch."}
+{"id": 1069, "ja": "政府の少子化対策予算は過去最大となったが、効果はまだ数字に表れていない。", "gg": "Ngân sách của chính phủ để chống lại tỷ lệ sinh giảm là lớn nhất từ ​​trước đến nay, nhưng những tác động vẫn chưa thấy rõ qua các con số."}
+{"id": 1070, "ja": "大都市圏への人口集中は、地方の過疎化と表裏一体の問題である。", "gg": "Sự tập trung dân số ở các khu vực đô thị là một vấn đề gắn bó chặt chẽ với tình trạng giảm dân số ở nông thôn."}
+{"id": 1071, "ja": "気象庁は、今夏の平均気温が過去最高を記録する可能性が高いと発表した。", "gg": "Cơ quan Khí tượng Nhật Bản công bố nhiệt độ trung bình trong mùa hè năm nay có khả năng đạt mức cao kỷ lục."}
+{"id": 1072, "ja": "「起死回生」の一手として打ち出された経済対策も、思うような効果を上げていない。", "gg": "Các biện pháp kinh tế được đưa ra như một phương tiện “hồi sinh” đã không mang lại hiệu quả như mong muốn."}
+{"id": 1073, "ja": "労働組合は、実質賃金の回復を最優先課題として掲げる方針を示した。", "gg": "Liên đoàn lao động đã chỉ ra rằng họ sẽ ưu tiên khôi phục mức lương thực tế."}
+{"id": 1074, "ja": "教育現場でのいじめ問題は、依然として抜本的な解決策が見いだせていない。", "gg": "Chưa có giải pháp cơ bản nào được tìm thấy cho vấn đề bắt nạt trong môi trường giáo dục."}
+{"id": 1075, "ja": "政治資金の透明性を求める声は、有権者の間で年々強まっている。", "gg": "Cử tri ngày càng kêu gọi sự minh bạch trong tài trợ chính trị."}
+{"id": 1076, "ja": "そもそも、経済的な豊かさは本当に人々の幸福と結びついているのだろうか？", "gg": "Trước hết, liệu sự giàu có về kinh tế có thực sự liên quan đến hạnh phúc của con người?"}
+{"id": 1077, "ja": "「玉石混交」のインターネット情報の中から真実を見極める力が、これからの教育に求められる。", "gg": "Giáo dục trong tương lai sẽ đòi hỏi khả năng nhận ra sự thật từ “hỗn hợp” thông tin trên Internet."}
+{"id": 1078, "ja": "高齢化率が三十パーセントを超える自治体は、すでに全国の四割に達している。", "gg": "Hiện 40% chính quyền địa phương trên toàn quốc có tỷ lệ già hóa trên 30%."}
+{"id": 1079, "ja": "若手研究者の海外流出を防ぐため、研究資金の拡充を求める声が学界から上がっている。", "gg": "Để ngăn chặn các nhà nghiên cứu trẻ rời khỏi đất nước, giới học thuật đã có những lời kêu gọi tăng cường tài trợ cho nghiên cứu."}
+{"id": 1080, "ja": "消費税率の再引き上げについては、与野党の間でなお慎重な議論が続いている。", "gg": "Các cuộc thảo luận thận trọng vẫn tiếp tục diễn ra giữa các đảng cầm quyền và phe đối lập về việc tăng thuế tiêu dùng một lần nữa."}
+{"id": 1081, "ja": "地域コミュニティの希薄化は、災害時の助け合いの機能を弱める要因になっている。", "gg": "Sự loãng của cộng đồng địa phương là yếu tố làm suy yếu khả năng giúp đỡ lẫn nhau khi có thiên tai."}
+{"id": 1082, "ja": "「紆余曲折」を経て成立した法案だが、施行後の運用には課題が残るとの指摘もある。", "gg": "Mặc dù dự luật đã được thông qua sau khi trải qua nhiều khúc mắc, nhưng một số người chỉ ra rằng vẫn còn những vấn đề trong việc thực thi nó sau khi nó có hiệu lực."}
+{"id": 1083, "ja": "女性管理職の比率は上昇傾向にあるものの、主要先進国と比べればなお低い水準にある。", "gg": "Mặc dù tỷ lệ phụ nữ nắm giữ các vị trí quản lý ngày càng tăng nhưng vẫn ở mức thấp so với các nước phát triển lớn."}
+{"id": 1084, "ja": "文化財の保存には多額の費用がかかり、自治体の財源不足が修復の遅れを招いている。", "gg": "Việc bảo tồn các tài sản văn hóa tốn rất nhiều tiền và việc thiếu nguồn tài chính của chính quyền địa phương đang gây ra sự chậm trễ trong việc phục hồi."}
+{"id": 1085, "ja": "経済学者の中には、賃金上昇こそがデフレ脱却の鍵だと主張する者が少なくない。", "gg": "Nhiều nhà kinh tế cho rằng tăng lương là chìa khóa để khắc phục tình trạng giảm phát."}
+{"id": 1086, "ja": "「人間万事塞翁が馬」というように、目先の不運が後の幸運につながることもある。", "gg": "Như người ta thường nói, “Ông già là con ngựa trong mọi việc”, và vận rủi trước mắt có thể dẫn đến vận may sau này."}
+{"id": 1087, "ja": "若年層の非婚化が進む背景には、経済的な不安定さが少なからず影響している。", "gg": "Sự bất ổn kinh tế góp phần không nhỏ vào việc ngày càng có nhiều người trẻ chưa lập gia đình."}
+{"id": 1088, "ja": "フリーランス労働者を保護する新法の施行に向け、準備が進められている。", "gg": "Việc chuẩn bị ban hành luật mới nhằm bảo vệ người lao động tự do đang được tiến hành."}
+{"id": 1089, "ja": "教育のICT化が進む一方で、家庭間のデジタル環境の差が新たな不平等を生んでいる。", "gg": "Trong khi việc sử dụng CNTT trong giáo dục đang tiến triển thì sự khác biệt về môi trường kỹ thuật số giữa các hộ gia đình đang tạo ra những bất bình đẳng mới."}
+{"id": 1090, "ja": "地方から都市へ、そして都市から地方へという人の流れは、時代によって振り子のように揺れ動く。", "gg": "Dòng người từ nông thôn ra thành phố, từ thành phố về nông thôn dao động như một con lắc tùy theo thời điểm."}
+{"id": 1091, "ja": "「焼け石に水」との批判もあるが、政府は追加の物価対策を打ち出した。", "gg": "Mặc dù một số người chỉ trích động thái này là “ngõ cụt”, chính phủ đã đưa ra các biện pháp bổ sung về giá."}
+{"id": 1092, "ja": "国内の出生数減少は、労働力不足という形で早晩、経済全体に影を落とすだろう。", "gg": "Tỷ lệ sinh giảm ở Nhật Bản sớm hay muộn sẽ phủ bóng đen lên toàn bộ nền kinh tế dưới hình thức thiếu hụt lao động."}
+{"id": 1093, "ja": "世界経済の先行き不透明感が強まる中、企業の投資意欲は総じて慎重姿勢を崩していない。", "gg": "Khi triển vọng của nền kinh tế thế giới ngày càng trở nên không chắc chắn, các công ty nhìn chung vẫn thận trọng trong khẩu vị đầu tư của mình."}
+{"id": 1094, "ja": "「一朝一夕」には解決し得ない教育問題ではあるが、対話を諦めるべきではない。", "gg": "Vấn đề giáo dục không thể giải quyết trong một sớm một chiều, nhưng chúng ta không nên từ bỏ đối thoại."}
+{"id": 1095, "ja": "統計上、単身世帯の割合は今後も増加を続けると予測されている。", "gg": "Theo thống kê, người ta dự đoán tỷ lệ hộ gia đình độc thân sẽ tiếp tục tăng."}
+{"id": 1096, "ja": "有権者の政治的無関心は、民主主義そのものの基盤を揺るがしかねない問題である。", "gg": "Sự thờ ơ về chính trị của cử tri là một vấn đề có nguy cơ làm lung lay nền tảng của nền dân chủ."}
+{"id": 1097, "ja": "地域経済の活性化には、観光客誘致だけでなく地元産業の振興が欠かせない。", "gg": "Để phục hồi nền kinh tế địa phương, điều cần thiết không chỉ là thu hút khách du lịch mà còn phải thúc đẩy ngành công nghiệp địa phương."}
+{"id": 1098, "ja": "安易に「自業自得」と切り捨てる前に、社会構造そのものの問題を見つめ直す必要がある。", "gg": "Trước khi đơn giản bác bỏ điều này là “tự gây ra”, chúng ta cần xem xét lại vấn đề với chính cấu trúc xã hội."}
+{"id": 1099, "ja": "高校生を対象にした調査では、将来に希望を持てないと答えた生徒が四割に上った。", "gg": "Trong một cuộc khảo sát với học sinh trung học, 40% trong số họ nói rằng họ không có hy vọng gì cho tương lai."}
+{"id": 1100, "ja": "政府と経済界の間には、賃上げの持続性について依然として認識の隔たりがある。", "gg": "Vẫn còn khoảng cách trong hiểu biết giữa chính phủ và cộng đồng doanh nghiệp về tính bền vững của việc tăng lương."}
+{"id": 1101, "ja": "図書館の利用者数は減少傾向にあるが、電子書籍の貸出は着実に伸びている。", "gg": "Mặc dù số lượng người sử dụng thư viện đang giảm nhưng việc cho thuê sách điện tử vẫn tăng đều đặn."}
+{"id": 1102, "ja": "「適材適所」の人事が徹底されれば、組織全体の生産性は大きく向上するはずだ。", "gg": "Nếu nhân viên được phân công triệt để, đúng người, đúng chỗ thì năng suất của toàn bộ tổ chức sẽ được cải thiện đáng kể."}
+{"id": 1103, "ja": "高齢者医療費の増大は、若い世代の負担感を年々強めている。", "gg": "Chi phí chăm sóc y tế cho người già ngày càng tăng đang khiến thế hệ trẻ ngày càng cảm thấy gánh nặng."}
+{"id": 1104, "ja": "看板だけに終わった地方創生事業も多く、成果が見えないとの指摘は根強い。", "gg": "Nhiều dự án phục hồi khu vực cuối cùng chỉ mang lại kết quả không khác gì các bảng quảng cáo và có những lời phàn nàn dai dẳng rằng kết quả không thể nhìn thấy được."}
+{"id": 1105, "ja": "なぜ人は、目の前の小さな利益のために将来の大きな損失を見過ごしてしまうのか？", "gg": "Tại sao mọi người lại bỏ qua những mất mát lớn trong tương lai để lấy những lợi ích nhỏ trước mắt?"}
+{"id": 1106, "ja": "他国の制度を過度に理想化することにも、危うさがあるとの指摘は根強い。", "gg": "Người ta đã liên tục chỉ ra rằng có những mối nguy hiểm trong việc lý tưởng hóa quá mức hệ thống của các quốc gia khác."}
+{"id": 1107, "ja": "少子化対策として導入された給付金制度も、出生数の反転にはつながっていない。", "gg": "Hệ thống phúc lợi được đưa ra như một biện pháp đối phó với tỷ lệ sinh giảm đã không dẫn đến sự đảo ngược về số lượng sinh."}
+{"id": 1108, "ja": "デジタル広告市場の拡大は、既存メディアの経営基盤を大きく揺さぶっている。", "gg": "Việc mở rộng thị trường quảng cáo kỹ thuật số đang làm rung chuyển đáng kể nền tảng quản lý của các phương tiện truyền thông hiện có."}
+{"id": 1109, "ja": "教育無償化の議論は、財源をどう確保するかという壁に常にぶつかる。", "gg": "Các cuộc thảo luận về việc cung cấp giáo dục miễn phí luôn vấp phải trở ngại về cách đảm bảo nguồn tài chính."}
+{"id": 1110, "ja": "不正の放置は小さな綻びから組織全体の信頼を損なうことがあると、識者は警告する。", "gg": "Các chuyên gia cảnh báo rằng nếu gian lận không được giải quyết, ngay cả một vi phạm nhỏ cũng có thể làm suy yếu niềm tin vào toàn bộ tổ chức."}
+{"id": 1111, "ja": "先端技術の輸出管理強化は、国際貿易の枠組みそのものを揺さぶっている。", "gg": "Việc thắt chặt kiểm soát xuất khẩu đối với công nghệ tiên tiến đang làm rung chuyển chính khuôn khổ thương mại quốc tế."}
+{"id": 1112, "ja": "若者文化の中心が街から画面の中へと移り変わったことは、消費行動にも影響を及ぼしている。", "gg": "Sự chuyển dịch trung tâm văn hóa giới trẻ từ đường phố sang màn hình cũng đang tác động đến hành vi của người tiêu dùng."}
+{"id": 1113, "ja": "地方紙の休廃刊が相次ぐ中、地域報道の担い手不足が懸念されている。", "gg": "Khi các tờ báo địa phương tiếp tục ngừng xuất bản, người ta lo ngại về việc thiếu người chịu trách nhiệm đưa tin địa phương."}
+{"id": 1114, "ja": "長年の苦労を経て進めてきた改革が、ようやく成果を結び始めている。", "gg": "Những cải cách trải qua nhiều năm gian khổ cuối cùng cũng bắt đầu đơm hoa kết trái."}
+{"id": 1115, "ja": "世論調査によれば、憲法改正に賛成する回答は全体の四十六パーセントにとどまった。", "gg": "Theo một cuộc thăm dò dư luận, chỉ có 46% số người được hỏi ủng hộ việc sửa đổi hiến pháp."}
+{"id": 1116, "ja": "労働市場の流動化は、優秀な人材の確保を難しくする一方で、企業の新陳代謝を促す面もある。", "gg": "Trong khi tính linh hoạt của thị trường lao động gây khó khăn cho việc đảm bảo nguồn nhân lực tài năng, nó cũng khuyến khích các công ty đổi mới."}
+{"id": 1117, "ja": "高等教育への公的支出は、国内総生産比で見ると主要国の中でも低い水準にある。", "gg": "Chi tiêu công cho giáo dục đại học ở mức thấp so với các nước lớn tính theo phần trăm tổng sản phẩm quốc nội."}
+{"id": 1118, "ja": "三度目の交渉もまた決裂に終わり、関係者の間には焦りの色が広がっている。", "gg": "Vòng đàm phán thứ ba cũng thất bại và những người liên quan có cảm giác thiếu kiên nhẫn."}
+{"id": 1119, "ja": "地域おこし協力隊の制度は、都市から地方への人材移動を後押ししている。", "gg": "Hệ thống Tình nguyện viên Hợp tác Phục hồi Khu vực hỗ trợ việc di chuyển nguồn nhân lực từ thành phố về nông thôn."}
+{"id": 1120, "ja": "政治不信の根底には、政策決定過程の不透明さがあるのではないか？", "gg": "Phải chăng sự thiếu minh bạch trong quá trình hoạch định chính sách là gốc rễ của sự mất lòng tin chính trị?"}
+{"id": 1121, "ja": "経済団体の調査では、企業の七割が人手不足を経営上の最大の課題と回答した。", "gg": "Trong một cuộc khảo sát do một tổ chức kinh tế thực hiện, 70% công ty cho rằng tình trạng thiếu lao động là vấn đề quản lý lớn nhất của họ."}
+{"id": 1122, "ja": "明らかになった不正はごく一部にすぎないとの指摘もあるが、関係者に衝撃を与えた。", "gg": "Mặc dù người ta đã chỉ ra rằng chỉ một phần nhỏ của vụ lừa đảo bị phát hiện nhưng đó vẫn là một cú sốc đối với những người liên quan."}
+{"id": 1123, "ja": "高齢化が進む農村地域では、耕作放棄地の拡大が止まらない。", "gg": "Ở những vùng nông thôn nơi dân số đang già đi, đất nông nghiệp bị bỏ hoang tiếp tục mở rộng."}
+{"id": 1124, "ja": "若者の政治参加を促す取り組みとして、模擬選挙を導入する高校が増えている。", "gg": "Ngày càng có nhiều trường trung học tổ chức các cuộc bầu cử giả nhằm khuyến khích giới trẻ tham gia chính trị."}
+{"id": 1125, "ja": "経済成長の果実が広く分配されなければ、社会の一体感は損なわれていく。", "gg": "Trừ khi thành quả của tăng trưởng kinh tế được phân phối rộng rãi, nếu không cảm giác gắn kết xã hội sẽ bị suy yếu."}
+{"id": 1126, "ja": "地道な努力の積み重ねこそが、幸運任せの期待よりも確かな結果を生む。", "gg": "Những nỗ lực kiên định tạo ra kết quả đáng tin cậy hơn là dựa vào may mắn."}
+{"id": 1127, "ja": "地方分権の進展は、住民自治の強化につながると期待されている。", "gg": "Tiến bộ trong việc phân cấp dự kiến ​​sẽ dẫn tới việc tăng cường quyền tự chủ của người dân."}
+{"id": 1128, "ja": "教育現場における教員不足は、採用試験の倍率低下という形で如実に表れている。", "gg": "Sự thiếu hụt giáo viên trong lĩnh vực giáo dục thể hiện rõ ở việc tỷ lệ thi tuyển tuyển dụng sụt giảm."}
+{"id": 1129, "ja": "世界的なインフレの波は、輸入依存度の高い島国経済にとって特に重い負担となる。", "gg": "Làn sóng lạm phát toàn cầu sẽ đặt gánh nặng đặc biệt nặng nề lên các nền kinh tế đảo vốn phụ thuộc nhiều vào nhập khẩu."}
+{"id": 1130, "ja": "不用意な発言を戒める風潮は、SNS時代においてこそ重みを増している。", "gg": "Xu hướng khiển trách những người đưa ra những phát ngôn bất cẩn đang ngày càng trở nên phổ biến trong thời đại truyền thông xã hội."}
+{"id": 1131, "ja": "出生数の減少に加え、地方から都市への人口移動が過疎地の高齢化を加速させている。", "gg": "Ngoài việc giảm số lượng sinh, sự di cư của dân số từ nông thôn ra thành phố đang đẩy nhanh quá trình già hóa dân số ở các khu vực đông dân."}
+{"id": 1132, "ja": "経済の実態と株価の動きが必ずしも一致しないことは、専門家の間でもしばしば議論の的となる。", "gg": "Việc điều kiện kinh tế và biến động giá cổ phiếu không nhất thiết phải trùng khớp là chủ đề thảo luận thường xuyên giữa các chuyên gia."}
+{"id": 1133, "ja": "情報を持つ者と持たない者の格差は、今後さらに広がりかねないとの見方が強い。", "gg": "Có một quan điểm mạnh mẽ rằng khoảng cách giữa những người có thông tin và những người không có thông tin có thể ngày càng rộng hơn trong tương lai."}
+{"id": 1134, "ja": "政府の子育て支援策は拡充されつつあるが、利用しづらいという声も根強い。", "gg": "Mặc dù các biện pháp hỗ trợ chăm sóc trẻ em của chính phủ đang được mở rộng nhưng vẫn có những khiếu nại dai dẳng rằng chúng khó áp dụng."}
+{"id": 1135, "ja": "高等学校の統廃合が進む地方では、通学に片道一時間以上かかる生徒も少なくない。", "gg": "Ở những khu vực nơi các trường trung học đang được củng cố, nhiều học sinh phải mất hơn một giờ để đi lại mỗi chiều."}
+{"id": 1136, "ja": "若い世代の声に耳を貸さない姿勢では、政策への信頼を得ることはできない。", "gg": "Nếu không lắng nghe tiếng nói của thế hệ trẻ, chúng ta sẽ không thể có được niềm tin vào chính sách của mình."}
+{"id": 1137, "ja": "自由貿易と保護主義のバランスをどう取るかは、各国政府にとって外交上の難題として残されている。", "gg": "Làm thế nào để cân bằng thương mại tự do và chủ nghĩa bảo hộ vẫn là một thách thức ngoại giao đối với các chính phủ."}
+{"id": 1138, "ja": "地域医療の担い手を確保するには、医師の働き方改革と偏在の是正を同時に進める必要がある。", "gg": "Để đảm bảo đủ nhân lực thực hiện công tác chăm sóc y tế tại địa phương, cần phải đồng thời cải cách cách thức làm việc của bác sĩ và điều chỉnh sự phân bổ không đồng đều của họ."}
+{"id": 1139, "ja": "専門家であっても判断を誤ることは避けられないと、当事者は振り返る。", "gg": "Những người liên quan phản ánh rằng việc ngay cả các chuyên gia cũng mắc sai lầm trong phán đoán là điều không thể tránh khỏi."}
+{"id": 1140, "ja": "世論の関心が薄れがちな地方議会選挙こそ、住民の暮らしを直接左右する場である。", "gg": "Các cuộc bầu cử hội đồng địa phương, trong đó lợi ích công có xu hướng suy yếu, lại là những cuộc bầu cử ảnh hưởng trực tiếp đến đời sống của người dân."}
+{"id": 1141, "ja": "家庭の教育費負担の重さは、少子化の一因として繰り返し指摘されてきた。", "gg": "Gánh nặng chi phí giáo dục đối với các gia đình đã nhiều lần được chỉ ra là một yếu tố góp phần làm giảm tỷ lệ sinh."}
+{"id": 1142, "ja": "政治家は、有権者の声にもっと真摯に耳を傾けるべきだとの批判が根強い。", "gg": "Có những lời chỉ trích dai dẳng rằng các chính trị gia nên lắng nghe nghiêm túc hơn tiếng nói của cử tri."}
+{"id": 1143, "ja": "経済統計の発表を受け、市場では今後の金融政策の行方を巡る思惑が交錯した。", "gg": "Sau khi số liệu thống kê kinh tế được công bố, thị trường đã có sự nhầm lẫn về định hướng tương lai của chính sách tiền tệ."}
+{"id": 1144, "ja": "高齢者の運転による事故の増加は、地方の交通手段の乏しさという裏の問題を浮かび上がらせる。", "gg": "Sự gia tăng số vụ tai nạn do người lái xe lớn tuổi gây ra đã làm sáng tỏ vấn đề tiềm ẩn về các lựa chọn giao thông kém ở khu vực nông thôn."}
+{"id": 1145, "ja": "失敗と思われた政策が予想外の効果をもたらすこともある。", "gg": "Những chính sách tưởng chừng như thất bại đôi khi lại có những tác động không ngờ tới."}
+{"id": 1146, "ja": "デジタル教育の推進は、教員自身のICTスキル向上という新たな課題を生んでいる。", "gg": "Việc thúc đẩy giáo dục số đang tạo ra thách thức mới: nâng cao kỹ năng CNTT của giáo viên."}
+{"id": 1147, "ja": "若い世代の間で広がる「推し活」文化は、地域経済にも一定の波及効果をもたらしている。", "gg": "Văn hóa ``Oshikatsu'' đang lan rộng trong thế hệ trẻ đang có tác động lan tỏa nhất định đến nền kinh tế địa phương."}
+{"id": 1148, "ja": "多文化共生社会が進む中、郷に従うことだけを求める発想はむしろ再考を要する。", "gg": "Khi một xã hội đa văn hóa ngày càng phát triển, ý tưởng chỉ theo quê hương cần phải được xem xét lại."}
+{"id": 1149, "ja": "政府統計は、正規雇用と非正規雇用の賃金差が縮小傾向にあることを示している。", "gg": "Thống kê của chính phủ cho thấy khoảng cách tiền lương giữa nhân viên thường xuyên và không thường xuyên đang được thu hẹp."}
+{"id": 1150, "ja": "地方の商店街は、大型店の進出とネット通販の普及という二重の圧力にさらされている。", "gg": "Các khu mua sắm địa phương đang chịu áp lực gấp đôi từ việc mở rộng các cửa hàng quy mô lớn và sự lan rộng của mua sắm trực tuyến."}
+{"id": 1151, "ja": "小さな政策の積み重ねが、社会を確実に変えていくことも少なくない。", "gg": "Thông thường, việc tích lũy các chính sách nhỏ chắc chắn có thể thay đổi xã hội."}
+{"id": 1152, "ja": "教育投資の効果は短期では測りにくく、長期的な視点での評価が求められる。", "gg": "Tác động của đầu tư giáo dục rất khó đo lường trong thời gian ngắn và cần phải đánh giá từ góc độ dài hạn."}
+{"id": 1153, "ja": "世界的な人口移動の流れは、労働市場のあり方を根本から問い直す契機となっている。", "gg": "Dòng di cư dân số toàn cầu đang tạo cơ hội để xem xét lại một cách cơ bản bản chất của thị trường lao động."}
+{"id": 1154, "ja": "疑いを招く行動を慎むべきだという戒めを忘れた政治家の言動が、しばしば問題視される。", "gg": "Lời nói và hành động của các chính trị gia quên điều răn kiềm chế những hành động gây nghi ngờ thường bị nghi ngờ."}
+{"id": 1155, "ja": "高齢者の孤立を防ぐため、地域住民同士のつながりを再構築する取り組みが各地で進んでいる。", "gg": "Các nỗ lực đang được tiến hành ở nhiều khu vực khác nhau nhằm xây dựng lại mối liên hệ giữa người dân địa phương nhằm ngăn chặn người già bị cô lập."}
+{"id": 1156, "ja": "経済のグローバル化が進むほど、国内産業の空洞化への懸念も同時に強まっていく。", "gg": "Khi quá trình toàn cầu hóa kinh tế diễn ra, mối lo ngại về sự suy thoái của ngành công nghiệp trong nước cũng tăng lên."}
+{"id": 1157, "ja": "対立の末に組織にもたらされた傷は、簡単には癒えないとの見方が根強い。", "gg": "Có một quan điểm sâu xa rằng thiệt hại gây ra cho tổ chức do xung đột không thể dễ dàng chữa lành."}
+{"id": 1158, "ja": "政治の世界では、一度失った信頼を回復するのに何年もの時間がかかることが多い。", "gg": "Trong thế giới chính trị, thường phải mất nhiều năm mới lấy lại được niềm tin sau khi đã đánh mất."}
+{"id": 1159, "ja": "出生前診断の普及は、生命倫理に関する新たな議論を社会に投げかけている。", "gg": "Sự lan rộng của chẩn đoán trước sinh đang làm dấy lên những cuộc tranh luận mới về đạo đức sinh học trong xã hội."}
+{"id": 1160, "ja": "掛け声ばかりが目立つ地方創生とは裏腹に、若年女性の東京圏への流出は歯止めがかかっていない。", "gg": "Mặc dù có nhiều thảo luận về việc khôi phục khu vực, làn sóng phụ nữ trẻ đổ xô đến khu vực Tokyo vẫn không thể ngăn cản được."}
+{"id": 1161, "ja": "他人の不幸を面白がるような風潮は、SNS上の反応にしばしば見て取れる。", "gg": "Xu hướng tìm niềm vui trên nỗi bất hạnh của người khác thường được thể hiện qua các phản ứng trên mạng xã hội."}
+{"id": 1162, "ja": "文化予算の国内総生産比は主要国の中でも低く、芸術支援の拡充を求める声が根強い。", "gg": "Tỷ lệ ngân sách văn hóa trên tổng sản phẩm quốc nội là một trong những tỷ lệ thấp nhất trong số các nước lớn và luôn có những lời kêu gọi mở rộng hỗ trợ cho nghệ thuật."}
+{"id": 1163, "ja": "教育の機会均等という理念は、現実の家庭の経済力によって大きく揺らいでいる。", "gg": "Ý tưởng về cơ hội giáo dục bình đẳng bị lung lay mạnh mẽ bởi sức mạnh kinh tế thực tế của các gia đình."}
+{"id": 1164, "ja": "理想論より実利を重視する層が増えているとの指摘もある。", "gg": "Một số người chỉ ra rằng ngày càng có nhiều người coi trọng lợi ích thiết thực hơn chủ nghĩa lý tưởng."}
+{"id": 1165, "ja": "高齢社会における医療と介護の連携は、いまだ十分に機能しているとは言えない。", "gg": "Sự hợp tác giữa chăm sóc y tế và chăm sóc điều dưỡng trong một xã hội già hóa vẫn chưa thể nói là hoạt động tốt."}
+{"id": 1166, "ja": "政府の情報公開の姿勢が問われる中、記者会見での質疑応答の質も改めて注目されている。", "gg": "Khi lập trường của Chính phủ về công bố thông tin đang bị đặt dấu hỏi, chất lượng các phiên hỏi đáp tại các cuộc họp báo một lần nữa lại thu hút sự chú ý."}
+{"id": 1167, "ja": "リスクを取らない経営に、大きな成長は望めない。", "gg": "Ban quản lý không chấp nhận rủi ro không thể mong đợi sự tăng trưởng đáng kể."}
+{"id": 1168, "ja": "少子化の進行は、将来の年金制度そのものの持続可能性を直接揺るがす問題である。", "gg": "Tỷ lệ sinh giảm là vấn đề đe dọa trực tiếp đến tính bền vững của chính hệ thống lương hưu trong tương lai."}
+{"id": 1169, "ja": "地方大学の定員割れは、地域の高等教育機能そのものの衰退を意味しかねない。", "gg": "Việc thiếu tuyển sinh tại các trường đại học địa phương có thể đồng nghĩa với sự suy giảm chức năng giáo dục đại học địa phương."}
+{"id": 1170, "ja": "一つの失言が、政治家のキャリアを一瞬で崩すこともある。", "gg": "Một lời lỡ miệng có thể hủy hoại sự nghiệp của một chính trị gia ngay lập tức."}
+{"id": 1171, "ja": "経済成長率の下方修正は、企業の来年度予算編成にも影を落としている。", "gg": "Việc điều chỉnh giảm tốc độ tăng trưởng kinh tế cũng đang phủ bóng đen lên việc xây dựng ngân sách của các công ty cho năm tới."}
+{"id": 1172, "ja": "体罰禁止の徹底は、指導方法そのものの見直しを学校現場に迫っている。", "gg": "Lệnh cấm nghiêm khắc đối với nhục hình đang buộc các trường học phải tự xem xét lại phương pháp giảng dạy của mình."}
+{"id": 1173, "ja": "待ち望んでいた政策発表であったが、実施までの道筋はいまだ不透明なままだ。", "gg": "Mặc dù đây là một thông báo chính sách được chờ đợi từ lâu nhưng lộ trình thực hiện vẫn chưa rõ ràng."}
+{"id": 1174, "ja": "若者の海外留学者数の減少は、国際競争力の低下につながるとの懸念を招いている。", "gg": "Sự sụt giảm số lượng người trẻ đi du học đang làm dấy lên lo ngại sẽ dẫn đến suy giảm khả năng cạnh tranh quốc tế."}
+{"id": 1175, "ja": "人手不足に陥った市町村の職員体制は、災害対応の遅れという形で住民生活に直結しかねない。", "gg": "Sự thiếu hụt nhân viên thành phố có thể ảnh hưởng trực tiếp đến cuộc sống của người dân dưới hình thức làm chậm trễ việc ứng phó với thiên tai."}
+{"id": 1176, "ja": "政策の実行には、想像以上の困難が伴うことも多い。", "gg": "Việc thực thi chính sách thường khó khăn hơn dự kiến."}
+{"id": 1177, "ja": "産業界からは、規制緩和による新規事業の創出を求める声が強まっている。", "gg": "Ngày càng có nhiều lời kêu gọi từ thế giới công nghiệp về việc thành lập các doanh nghiệp mới thông qua việc bãi bỏ quy định."}
+{"id": 1178, "ja": "高齢化社会における住宅政策は、単身高齢者向けの支援を軸に見直されるべきだ。", "gg": "Chính sách nhà ở trong một xã hội già hóa cần được xem xét lại với trọng tâm là hỗ trợ người già độc thân."}
+{"id": 1179, "ja": "「良薬は口に苦し」というように、痛みを伴う改革こそが長期的には社会を強くする。", "gg": "Như người ta thường nói, “thuốc đắng” và những cải cách đau đớn có thể làm cho xã hội mạnh mẽ hơn về lâu dài."}
+{"id": 1180, "ja": "政治的な分断が深まる社会では、少数意見への配慮がとかく後回しにされやすい。", "gg": "Trong một xã hội mà sự chia rẽ chính trị ngày càng sâu sắc, việc xem xét các ý kiến ​​thiểu số có xu hướng bị gác lại."}
+{"id": 1181, "ja": "子どものデジタル端末利用が広がる一方、視力低下という副作用も報告されている。", "gg": "Trong khi việc trẻ em sử dụng các thiết bị kỹ thuật số ngày càng mở rộng thì cũng có những báo cáo về tác dụng phụ như giảm thị lực."}
+{"id": 1182, "ja": "災害対策は、後手に回ってからでは遅い。", "gg": "Sẽ là quá muộn để chuẩn bị cho thảm họa nếu bạn đợi đến sau này."}
+{"id": 1183, "ja": "地方の空き家問題は、所有者不明の土地の増加という別の課題とも密接に絡んでいる。", "gg": "Vấn đề nhà trống ở nông thôn liên quan mật thiết đến một vấn đề khác: tình trạng gia tăng đất đai không rõ chủ."}
+{"id": 1184, "ja": "経済的な自立を望む若者が増える一方、賃金水準がその期待に応えていないのが実情だ。", "gg": "Trong khi số người trẻ mong muốn độc lập về kinh tế ngày càng tăng thì thực tế là mức lương không đáp ứng được kỳ vọng của họ."}
+{"id": 1185, "ja": "「言うは易く行うは難し」との言葉どおり、脱炭素社会の実現には想像以上の困難が待ち構えている。", "gg": "Như người ta thường nói, “Nói dễ hơn làm”, việc đạt được một xã hội khử cacbon sẽ khó khăn hơn tưởng tượng."}
+{"id": 1186, "ja": "高齢者を狙った詐欺被害は増加の一途をたどり、被害額は年間数百億円に及ぶ。", "gg": "Số nạn nhân của vụ lừa đảo nhắm vào người cao tuổi tiếp tục gia tăng, với thiệt hại lên tới hàng chục tỷ yên mỗi năm."}
+{"id": 1187, "ja": "政府の統計不正問題は、行政への信頼そのものを揺るがす事態に発展した。", "gg": "Vấn đề gian lận thống kê của chính phủ đã phát triển thành một tình huống làm lung lay niềm tin vào chính phủ."}
+{"id": 1188, "ja": "限られた予算での成果は、時間の無駄遣いを続けていては望めない。", "gg": "Bạn sẽ không thể đạt được kết quả với ngân sách hạn hẹp nếu cứ tiếp tục lãng phí thời gian."}
+{"id": 1189, "ja": "理数系への進学を選ぶ女子生徒の割合は、依然として男子生徒の半数程度にとどまっている。", "gg": "Tỷ lệ học sinh nữ chọn theo đuổi khoa học và toán học vẫn chỉ bằng khoảng một nửa so với học sinh nam."}
+{"id": 1190, "ja": "議会に占める女性の割合は、地方においていまだ二割に届いていない。", "gg": "Tỷ lệ nữ đại biểu quốc hội ở nông thôn vẫn chưa đạt 20%."}
+{"id": 1191, "ja": "気長に成果を待つだけの姿勢では、変化の速い国際社会に取り残されてしまう。", "gg": "Nếu chỉ kiên nhẫn chờ đợi kết quả, chúng ta sẽ bị bỏ lại phía sau trong một xã hội quốc tế đang thay đổi nhanh chóng."}
+{"id": 1192, "ja": "自国優先主義の広がりを背景に、先端技術の輸出規制が各国で相次いで強化されている。", "gg": "Trong bối cảnh chủ nghĩa dân tộc lan rộng, các biện pháp kiểm soát xuất khẩu công nghệ tiên tiến lần lượt được thắt chặt ở mỗi quốc gia."}
+{"id": 1193, "ja": "少子化と高齢化が同時に進む社会構造は、これまでの制度設計の前提を大きく変えつつある。", "gg": "Cấu trúc xã hội, nơi tỷ lệ sinh giảm và dân số già đi đồng thời, đang thay đổi mạnh mẽ các giả định về thiết kế hệ thống trước đó."}
+{"id": 1194, "ja": "専門分野には専門家の知見を生かすべきだという原則は、行政の現場でも軽視されがちだ。", "gg": "Nguyên tắc kiến ​​thức của các chuyên gia nên được sử dụng trong các lĩnh vực chuyên môn cũng thường bị bỏ qua trong môi trường hành chính."}
+{"id": 1195, "ja": "若年層の投票率向上に向けた取り組みは、選挙のたびに繰り返し議論されるが実効性は乏しい。", "gg": "Những nỗ lực nhằm tăng tỷ lệ cử tri đi bầu trong giới trẻ được thảo luận nhiều lần tại mỗi cuộc bầu cử nhưng chưa có hiệu quả."}
+{"id": 1196, "ja": "政治とお金の問題は、時代が変わっても繰り返し社会の関心を集めるテーマである。", "gg": "Các vấn đề chính trị và tiền bạc là những chủ đề liên tục thu hút sự chú ý của xã hội ngay cả khi thời thế thay đổi."}
+{"id": 1197, "ja": "学ぶことの本質は、正解を覚えることではなく問いを立てる姿勢にあるのかもしれない。", "gg": "Có lẽ bản chất của việc học nằm ở thái độ đặt câu hỏi hơn là ghi nhớ câu trả lời đúng."}
+{"id": 1198, "ja": "「捨てる神あれば拾う神あり」という言葉のとおり、支援を打ち切られた事業が別の形で再生することもある。", "gg": "Người ta thường nói: “Có thần vứt đi thì cũng có thần nhặt lên”. Những dự án đã ngừng hỗ trợ đôi khi được hồi sinh dưới những hình thức khác."}
+{"id": 1199, "ja": "結局のところ、社会が本当に成熟しているかどうかは、弱者への配慮の在り方に表れるのではないか。", "gg": "Cuối cùng, một xã hội có thực sự trưởng thành hay không được phản ánh qua cách nó quan tâm đến người yếu thế."}
