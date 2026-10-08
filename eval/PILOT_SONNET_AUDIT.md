@@ -29,4 +29,22 @@
 
 - **§T3 audit thầy: PASS.** Sonnet 5 (qua subagent subscription) đủ chuẩn làm thầy KD — độ chuẩn + tự nhiên đều cao, sửa đúng 100% các bẫy đã định. **Không cần đường API trả tiền** cho pilot; scale cũng chạy subagent được (như job Haiku 1200).
 - **Chốt teacher = Sonnet 5 (subscription).** Bung KD khi có nguồn câu (T0 corpus + sinh seed ①②).
-- **Việc còn lại trước scale:** (a) T0 chuyển corpus về Máy A; (b) sửa prompt thầy cho bucket §T2f + audit riêng ~60 mảnh; (c) bạn duyệt 7 dòng `AUDIENCE` glossary.
+- **Việc còn lại trước scale:** (a) T0 chuyển corpus về Máy A; (b) ~~sửa prompt thầy §T2f + audit~~ **✅ XONG (mục dưới)**; (c) bạn duyệt 7 dòng `AUDIENCE` glossary.
+
+## Phụ lục — Mini-audit thầy Sonnet trên câu cụt (§T2f), 61 mảnh
+
+> Prompt thầy RIÊNG cho fragment: "dịch lửng, cấm bịa vị ngữ/hoàn thành câu". Nguồn: 61 mảnh
+> cắt câu sẵn có tại ranh giới trợ từ (30 sau-trợ-từ, 27 giữa-danh-ngữ, một số cắt-giữa-từ như
+> STT thật) + ca THẬT từ transcript app 07-30. Tiêu chí PASS: dịch trung thực phần đang có +
+> **để lửng, KHÔNG bịa thêm vị ngữ / KHÔNG hoàn thành câu** (không tính chuyện hoàn thành từ cụt).
+
+**KẾT QUẢ: 61/61 PASS — 0 ca bịa vị ngữ, 0 ca tự hoàn thành câu.**
+
+- **Ca THẬT nặng nhất (v7a từng bịa "Đội ngũ ĐÃ PHÁT TRIỂN Bitch đó"):** 「そのブリッチとしてそのベトノムの開発チームと日本の」 → Sonnet "Với tư cách là cầu nối đó, đội ngũ phát triển Việt Nam đó và của Nhật Bản…" — để lửng đúng, KHÔNG bịa vị ngữ, còn đoán ブリッチ=cầu nối (bridge) hợp lý. ✅
+- Cắt-trước-vị-ngữ (chủ đích): 「財務部から予算超過の」→ "Từ phòng tài chính, về việc vượt ngân sách…" (KHÔNG thêm "bị nhắc nhở"); 「…ログインボーナスを」→ "…tiền thưởng đăng nhập…" (KHÔNG thêm "phải đi lấy"). ✅
+- **Giữ đúng cực/thì ngay trong mảnh:** ログインできなくなった→"không thể đăng nhập" (#42), 終わらなくて→"không xong" (#53), 始まった→"đã bắt đầu" (#60); và bài học glossary vẫn giữ: 乗り換え→chuyển tàu, 十分→mười phút, バックアップ→sao lưu.
+- Dùng "…" nhất quán đánh dấu chỗ đứt; render đúng thể liên kết/điều kiện (と/たら→khi/nếu, ので/から→vì…nên, て→rồi).
+
+**Lưu ý trung thực:** vài bản dịch hơi lấn cấn tiếng Việt vì bị ép để lửng (vd "một cách đáng kể…", "còn của đám mây…"). Đây là **đặc tính mong muốn** của đích §T2f (thà lửng-trung-thực còn hơn mượt-mà-bịa), không phải lỗi.
+
+**Kết luận §T2f:** prompt thầy fragment **ĐẠT** — Sonnet sinh được data câu-cụt chuẩn (lửng, không bịa). Sẵn sàng dùng để sinh KD §T2f khi có nguồn câu (cắt từ corpus sau T0). Nghiệm thu cuối vẫn là fragment-probe trên chính model v8 (§T7), không phải trên thầy.
