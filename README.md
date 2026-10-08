@@ -15,7 +15,7 @@
 ## 🌟 Executive Summary & Pitch
 
 Deploying real-time machine translation on battery-constrained edge devices (laptops, mobile phones, embedded hardware) is traditionally blocked by an efficiency trilemma:
-1. **Cloud LLM APIs (GPT-4o, Gemini):** Impose high recurring API bills ($0.01+/query), network latency spikes (500–1,500ms), and data privacy compliance hurdles.
+1. **Commercial Cloud LLM APIs:** Impose high recurring API bills ($0.01+/query), network latency spikes (500–1,500ms), and data privacy compliance hurdles.
 2. **Standard Local Models (NLLB-200 600M, MarianMT):** Demand hundreds of megabytes of VRAM or sluggish CPU FP16 matrix operations, draining battery and generating excessive thermal throttling.
 3. **Naive Post-Training Quantization (PTQ):** Severely degrades contextual nuance, honorifics, and syntax in asymmetric language pairs like Japanese ↔ Vietnamese.
 
@@ -36,8 +36,8 @@ Running on a standard consumer laptop CPU without requiring a discrete GPU, Bit-
    │ Training Pipeline    │                  │ Edge Deployment      │
    │ • 15.98M Sentences   │                  │ • Format: GGUF i2_s  │
    │ • QAT + STE Master   │                  │ • Size: 77.56 MB     │
-   │ • Teacher KD (Opus/  │                  │ • RAM: ~125 MB       │
-   │   Sonnet/Gemini)     │                  │ • Speed: ~350 tok/s  │
+   │ • Teacher KD (Frontier │                  │ • RAM: ~125 MB       │
+   │   Multimodal LLMs)   │                  │ • Speed: ~350 tok/s  │
    └──────────────────────┘                  └──────────────────────┘
 ```
 
@@ -93,7 +93,7 @@ To establish the fundamental Pareto frontier of low-bit quantization, extreme Po
 ```
   OPUS / Tatoeba / OpenSubtitles / JParaCrawl
                       ↓
-  Synthetic Teacher Distillation (Gemini Live & Claude Opus/Sonnet)
+  Synthetic Teacher Distillation (Frontier Multimodal LLMs)
                       ↓
   Dataset Deduplication & Leakage Filtering (15.98M Sentence Pairs)
                       ↓
